@@ -1,0 +1,73 @@
+Je veux tester une nouvelle direction visuelle sur un bloc isolé, sans modifier le reste du site.
+
+IMPORTANT :
+- ne modifie aucun composant existant ;
+- ne change pas le design system actuel ;
+- ne touche pas à la home ;
+- ne touche pas aux autres pages ;
+- crée uniquement une zone de test indépendante ;
+- aucune animation pour l’instant.
+
+Crée un petit bloc de démonstration avec les éléments suivants :
+
+1. Fond principal :
+#F5F4F0
+
+2. Texte principal :
+#3E3934
+
+3. Surface / carte :
+#EEEAE5
+
+4. Couleur principale CTA :
+#C76D4B
+
+5. Hover CTA principal :
+#B55B3B
+
+6. Couleur secondaire :
+#ACB8AA
+
+7. Hover secondaire :
+#A2B7A4
+
+8. Bordure douce :
+#D4CCC9
+
+Style recherché :
+- soft UI très léger ;
+- pas de neumorphisme excessif ;
+- ombres douces ;
+- rendu tactile ;
+- chaleureux ;
+- élégant ;
+- minimal ;
+- premium ;
+- compatible avec des illustrations digital painting chaudes.
+
+Radius :
+- petits éléments : 8px
+- boutons : 10 à 12px
+- cartes : 14 à 16px
+
+Ombres :
+- discrètes ;
+- douces ;
+- pas de gros relief ;
+- pas d’effet plastique.
+
+Le bloc de test doit contenir :
+- un titre ;
+- un court paragraphe ;
+- une carte simple ;
+- un bouton principal terracotta ;
+- un bouton secondaire sauge ;
+- un champ input ;
+- un petit état hover visible si possible.
+
+Le but est uniquement de comparer visuellement cette direction avec le design actuel.
+
+Ne remplace rien.
+Ne réécris rien.
+Ne supprime rien.
+Crée seulement ce prototype visuel indépendant.

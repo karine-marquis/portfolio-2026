@@ -1,0 +1,65 @@
+prompt maître de style :
+
+Transforme l’image fournie en conservant strictement sa composition, son cadrage, la position des personnages, les objets, le décor et les proportions générales.
+
+Ne change pas la scène.
+Ne supprime aucun élément important.
+N’ajoute aucun objet inutile.
+Ne modifie pas la posture, les vêtements, la coiffure ni l’expression du personnage.
+Ne recadre pas l’image.
+
+Applique exactement cette direction artistique :
+
+– peinture numérique semi-réaliste très détaillée ;
+– rendu réaliste mais légèrement pictural ;
+– lumière naturelle chaude de fin d’après-midi ;
+– ambiance golden hour intérieure ;
+– ombres douces projetées par une fenêtre ;
+– palette beige, ivoire, brun chaud, bois naturel et terracotta ;
+– contraste doux ;
+– profondeur réaliste ;
+– textures fines et crédibles ;
+– peau naturelle ;
+– cheveux détaillés avec mèches visibles ;
+– plis des vêtements réalistes ;
+– matières naturelles : lin, bois, céramique, papier ;
+– atmosphère calme, élégante, chaleureuse et premium ;
+– esthétique éditoriale ;
+– intérieur minimaliste, humain et lumineux ;
+– finition propre, raffinée et immersive.
+
+Le résultat ne doit pas ressembler à :
+– une aquarelle ;
+– un dessin au trait ;
+– une illustration cartoon ;
+– un rendu anime ;
+– une photo brute ;
+– une image 3D ;
+– un visuel Canva ;
+– une peinture trop floue ;
+– un rendu trop lisse ou plastique.
+
+Le personnage doit rester réaliste et élégant, avec des proportions naturelles et une expression crédible.
+
+La lumière doit créer une ambiance proche d’un bureau chaleureux éclairé par le soleil, avec des ombres douces sur les murs et un rendu beige doré cohérent.
+
+Conserve les zones de vide présentes dans l’image lorsqu’elles servent à accueillir du texte dans une mise en page web.
+
+Aucun texte ajouté.
+Aucun logo.
+Aucune icône ajoutée.
+Aucune modification de la composition.
+
+Format final : 4:3.
+
+
+Pour les images avec un tableau, un écran ou des documents:
+Conserve la structure visuelle générale du tableau, de l’écran ou des documents, mais rends leur contenu discret, crédible et cohérent avec la scène. Évite le faux texte trop visible ou illisible. Privilégie des lignes, formes, post-its et graphiques réalistes sans générer de longues phrases.
+
+
+quand tu utilises une image de référence:
+L’image 1 est le contenu à transformer.
+L’image 2 est la référence de style.
+
+Applique uniquement le style, la lumière, les matières, la palette et le niveau de réalisme de l’image 2 à l’image 1.
+Ne mélange pas les compositions.
