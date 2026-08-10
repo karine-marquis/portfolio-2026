@@ -15,9 +15,13 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Anti-cache CSS parameter -->
-  <link rel="stylesheet" href="styles.css?v=20260727_3">
+  <link rel="stylesheet" href="styles.css?v=20260811_cursor_contrast_halo">
 </head>
 <body>
+
+  <!-- CUSTOM CURSOR INTERACTIF SOFT MAGNÉTIQUE -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="custom-cursor-dot" id="customCursorDot"></div>
 
   <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Approche - Offre - Projets - À propos - À lire) -->
   <header class="navbar">
@@ -30,11 +34,11 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="#home" class="nav-link active" onclick="navigateTo('home'); return false;">Accueil</a></li>
-          <li><a href="#approach" class="nav-link" onclick="navigateTo('approach'); return false;">Approche</a></li>
-          <li><a href="#offer" class="nav-link" onclick="navigateTo('offer'); return false;">Offre</a></li>
-          <li><a href="#projects" class="nav-link" onclick="navigateTo('projects'); return false;">Projets</a></li>
-          <li><a href="#about" class="nav-link" onclick="navigateTo('about'); return false;">À propos</a></li>
-          <li><a href="#blog" class="nav-link" onclick="navigateTo('blog'); return false;">À lire</a></li>
+          <li><a href="#approach" class="nav-link" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
+          <li><a href="#offer" class="nav-link" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
+          <li><a href="#projects" class="nav-link" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
+          <li><a href="#about" class="nav-link" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
+          <li><a href="#blog" class="nav-link" onclick="navigateTo('blog'); return false;">Journal</a></li>
         </ul>
       </nav>
 
@@ -83,6 +87,62 @@
             </div>
           </div>
         </div>
+
+        <!-- FOOTER FULL-WIDTH INTEGRÉ DANS LA SCÈNE FULL COVER -->
+        <footer class="site-footer">
+          <div class="footer-container">
+            
+            <!-- BLOC 1: MARQUE & TAGLINE -->
+            <div class="footer-col-brand">
+              <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;">
+                <span class="brand-km">KM</span>
+                <span class="brand-sub">UX - UI Designer</span>
+              </a>
+              <div class="footer-availability-badge">
+                <span class="status-dot"></span> Disponible pour une nouvelle mission
+              </div>
+            </div>
+
+            <!-- BLOC 2: SITEMAP SLIM INLINE -->
+            <div class="footer-col-links">
+              <ul class="footer-inline-links">
+                <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
+                <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
+                <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
+                <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
+                <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
+                <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+              </ul>
+            </div>
+
+            <!-- BLOC 3: CONTACT & RÉSEAUX DISCRETS -->
+            <div class="footer-col-contact">
+              <a href="mailto:contact@km-ux.net" class="footer-contact-link">
+                <i data-lucide="mail"></i> contact@km-ux.net
+              </a>
+              <div class="footer-socials-wrap">
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn">LinkedIn</a>
+                <span class="social-dot-sep">•</span>
+                <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn">Malt</a>
+                <span class="social-dot-sep">•</span>
+                <a href="https://github.com/caprie/portfolio-ux" target="_blank" rel="noopener" class="footer-social-btn">GitHub</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- BANDEAU ULTRA LÉGER CITATION & COPYRIGHT -->
+          <div class="footer-bottom-bar">
+            <div class="footer-container footer-bottom-flex">
+              <div class="footer-copyright">
+                © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+              </div>
+              <div class="footer-quote-italic">
+                "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+              </div>
+            </div>
+          </div>
+        </footer>
 
       </div>
     </section>
@@ -297,64 +357,6 @@
       <div id="projectDrawerContainer"></div>
     </div>
   </div>
-
-  <!-- ==========================================================================
-     FOOTER ULTRA-COMPACT
-     ========================================================================== -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      
-      <!-- BLOC 1: MARQUE & TAGLINE -->
-      <div class="footer-col-brand">
-        <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;">
-          <span class="brand-km">KM</span>
-          <span class="brand-sub">UX - UI Designer</span>
-        </a>
-        <div class="footer-availability-badge">
-          <span class="status-dot"></span> Disponible pour nouvelles missions
-        </div>
-      </div>
-
-      <!-- BLOC 2: SITEMAP SLIM INLINE -->
-      <div class="footer-col-links">
-        <ul class="footer-inline-links">
-          <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
-          <li><a href="#approach" onclick="navigateTo('approach'); return false;">Approche</a></li>
-          <li><a href="#offer" onclick="navigateTo('offer'); return false;">Offre</a></li>
-          <li><a href="#projects" onclick="navigateTo('projects'); return false;">Projets</a></li>
-          <li><a href="#about" onclick="navigateTo('about'); return false;">À propos</a></li>
-          <li><a href="#blog" onclick="navigateTo('blog'); return false;">À lire</a></li>
-        </ul>
-      </div>
-
-      <!-- BLOC 3: CONTACT & RÉSEAUX DISCRETS -->
-      <div class="footer-col-contact">
-        <a href="mailto:contact@km-ux.net" class="footer-contact-link">
-          <i data-lucide="mail"></i> contact@km-ux.net
-        </a>
-        <div class="footer-socials-wrap">
-          <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn">LinkedIn</a>
-          <span class="social-dot-sep">•</span>
-          <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn">Malt</a>
-          <span class="social-dot-sep">•</span>
-          <a href="https://github.com/caprie/portfolio-ux" target="_blank" rel="noopener" class="footer-social-btn">GitHub</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- BANDEAU ULTRA LÉGER CITATION & COPYRIGHT -->
-    <div class="footer-bottom-bar">
-      <div class="footer-container footer-bottom-flex">
-        <div class="footer-copyright">
-          © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-        </div>
-        <div class="footer-quote-italic">
-          "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <script src="data.js"></script>
   <script src="app.js"></script>

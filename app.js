@@ -190,3 +190,51 @@ function handleContactSubmit(e) {
   e.preventDefault();
   alert('Merci ! Ton message a été envoyé avec succès.');
 }
+
+/* ==========================================================================
+   5. CUSTOM CURSOR INTERACTIF SOFT MAGNÉTIQUE
+   ========================================================================== */
+function initCustomCursor() {
+  const cursor = document.getElementById('customCursor');
+  const dot = document.getElementById('customCursorDot');
+  if (!cursor || !dot) return;
+
+  let mouseX = -100, mouseY = -100;
+  let cursorX = -100, cursorY = -100;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
+  });
+
+  function animateCursor() {
+    cursorX += (mouseX - cursorX) * 0.18;
+    cursorY += (mouseY - cursorY) * 0.18;
+    cursor.style.left = `${cursorX}px`;
+    cursor.style.top = `${cursorY}px`;
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  const interactiveSelector = 'a, button, .btn-primary, .btn-secondary, .nav-link, .case-study-item-card, .footer-social-btn, .footer-contact-link, input, textarea, label, .drawer-close-btn';
+
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      cursor.classList.add('hovered');
+    }
+  });
+
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      cursor.classList.remove('hovered');
+    }
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCustomCursor);
+} else {
+  initCustomCursor();
+}
