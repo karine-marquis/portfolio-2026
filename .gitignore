@@ -1,0 +1,30 @@
+# Audio & Video heavy media files not used directly by site
+*.m4a
+*.mp4
+*.MP3
+*.mhtml
+*.pdf
+*.docx
+
+# Temporary archive folders & duplicate backup trees
+PORTFOLIO/
+Portfolio-vs/
+Livrables/
+"A mettre dans portfolio/"
+Antigravity/
+kooijman ancien/
+cordons bleus ancien/
+presentation projets general ancien/
+test capcut/
+Podcasts/
+Projets contenus/
+T'ES QUI/
+PROJETS/
+Bambinets ancien/
+Captures site/
+Foodles ancien/
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+.vscode/

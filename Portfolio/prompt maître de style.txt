@@ -1,65 +1,73 @@
-prompt maître de style :
+Je veux tester une nouvelle direction visuelle sur un bloc isolé, sans modifier le reste du site.
 
-Transforme l’image fournie en conservant strictement sa composition, son cadrage, la position des personnages, les objets, le décor et les proportions générales.
+IMPORTANT :
+- ne modifie aucun composant existant ;
+- ne change pas le design system actuel ;
+- ne touche pas à la home ;
+- ne touche pas aux autres pages ;
+- crée uniquement une zone de test indépendante ;
+- aucune animation pour l’instant.
 
-Ne change pas la scène.
-Ne supprime aucun élément important.
-N’ajoute aucun objet inutile.
-Ne modifie pas la posture, les vêtements, la coiffure ni l’expression du personnage.
-Ne recadre pas l’image.
+Crée un petit bloc de démonstration avec les éléments suivants :
 
-Applique exactement cette direction artistique :
+1. Fond principal :
+#F5F4F0
 
-– peinture numérique semi-réaliste très détaillée ;
-– rendu réaliste mais légèrement pictural ;
-– lumière naturelle chaude de fin d’après-midi ;
-– ambiance golden hour intérieure ;
-– ombres douces projetées par une fenêtre ;
-– palette beige, ivoire, brun chaud, bois naturel et terracotta ;
-– contraste doux ;
-– profondeur réaliste ;
-– textures fines et crédibles ;
-– peau naturelle ;
-– cheveux détaillés avec mèches visibles ;
-– plis des vêtements réalistes ;
-– matières naturelles : lin, bois, céramique, papier ;
-– atmosphère calme, élégante, chaleureuse et premium ;
-– esthétique éditoriale ;
-– intérieur minimaliste, humain et lumineux ;
-– finition propre, raffinée et immersive.
+2. Texte principal :
+#3E3934
 
-Le résultat ne doit pas ressembler à :
-– une aquarelle ;
-– un dessin au trait ;
-– une illustration cartoon ;
-– un rendu anime ;
-– une photo brute ;
-– une image 3D ;
-– un visuel Canva ;
-– une peinture trop floue ;
-– un rendu trop lisse ou plastique.
+3. Surface / carte :
+#EEEAE5
 
-Le personnage doit rester réaliste et élégant, avec des proportions naturelles et une expression crédible.
+4. Couleur principale CTA :
+#C76D4B
 
-La lumière doit créer une ambiance proche d’un bureau chaleureux éclairé par le soleil, avec des ombres douces sur les murs et un rendu beige doré cohérent.
+5. Hover CTA principal :
+#B55B3B
 
-Conserve les zones de vide présentes dans l’image lorsqu’elles servent à accueillir du texte dans une mise en page web.
+6. Couleur secondaire :
+#ACB8AA
 
-Aucun texte ajouté.
-Aucun logo.
-Aucune icône ajoutée.
-Aucune modification de la composition.
+7. Hover secondaire :
+#A2B7A4
 
-Format final : 4:3.
+8. Bordure douce :
+#D4CCC9
 
+Style recherché :
+- soft UI très léger ;
+- pas de neumorphisme excessif ;
+- ombres douces ;
+- rendu tactile ;
+- chaleureux ;
+- élégant ;
+- minimal ;
+- premium ;
+- compatible avec des illustrations digital painting chaudes.
 
-Pour les images avec un tableau, un écran ou des documents:
-Conserve la structure visuelle générale du tableau, de l’écran ou des documents, mais rends leur contenu discret, crédible et cohérent avec la scène. Évite le faux texte trop visible ou illisible. Privilégie des lignes, formes, post-its et graphiques réalistes sans générer de longues phrases.
+Radius :
+- petits éléments : 8px
+- boutons : 10 à 12px
+- cartes : 14 à 16px
 
+Ombres :
+- discrètes ;
+- douces ;
+- pas de gros relief ;
+- pas d’effet plastique.
 
-quand tu utilises une image de référence:
-L’image 1 est le contenu à transformer.
-L’image 2 est la référence de style.
+Le bloc de test doit contenir :
+- un titre ;
+- un court paragraphe ;
+- une carte simple ;
+- un bouton principal terracotta ;
+- un bouton secondaire sauge ;
+- un champ input ;
+- un petit état hover visible si possible.
 
-Applique uniquement le style, la lumière, les matières, la palette et le niveau de réalisme de l’image 2 à l’image 1.
-Ne mélange pas les compositions.
+Le but est uniquement de comparer visuellement cette direction avec le design actuel.
+
+Ne remplace rien.
+Ne réécris rien.
+Ne supprime rien.
+Crée seulement ce prototype visuel indépendant.

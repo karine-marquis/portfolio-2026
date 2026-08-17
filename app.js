@@ -47,72 +47,66 @@ function renderCaseStudiesList() {
   const container = document.getElementById('caseStudiesContainer');
   if (!container) return;
 
+  container.className = 'case-studies-glance-list';
   container.innerHTML = '';
 
   CASE_STUDIES_PRESENTATION.forEach(cs => {
     const card = document.createElement('article');
-    card.className = 'case-study-item-card';
+    card.className = 'project-glance-card';
 
-    const mediaHTML = cs.image ? `
-      <div class="cs-card-media">
-        <img src="${cs.image}" alt="${cs.title}">
-      </div>
-    ` : `
-      <div class="cs-card-media-placeholder">
-        <div class="cs-placeholder-inner">
-          <div class="cs-placeholder-icon"><i data-lucide="image"></i></div>
-          <div class="cs-placeholder-text">Visuel ${cs.title.split('–')[0]}</div>
-          <div class="cs-placeholder-sub">(Emplacement réservé)</div>
+    // 4-step process HTML
+    const glanceStepsHTML = (cs.glanceSteps || []).map((step, idx) => `
+      <div class="glance-step-item">
+        <div class="glance-step-num">${step.num}</div>
+        <div class="glance-step-icon-circle">
+          <i data-lucide="${step.icon}" aria-hidden="true"></i>
         </div>
+        <div class="glance-step-label">${step.name}</div>
+        ${idx < (cs.glanceSteps.length - 1) ? '<div class="glance-step-arrow">→</div>' : ''}
       </div>
-    `;
+    `).join('');
+
+    // Methodology items HTML
+    const methodologyHTML = (cs.methodology || []).map((item, idx) => `
+      <span class="glance-methodo-item">
+        <i data-lucide="${item.icon}" style="width:13px; height:13px;" aria-hidden="true"></i> ${item.name}
+      </span>
+      ${idx < (cs.methodology.length - 1) ? '<span class="glance-methodo-sep">|</span>' : ''}
+    `).join('');
 
     card.innerHTML = `
-      ${mediaHTML}
-
-      <div class="cs-card-body">
-        <div>
-          <div class="cs-card-header-row">
-            <span class="cs-card-number">${cs.number}</span>
-            <span class="cs-card-tags">${cs.tags.join(' • ')}</span>
-          </div>
-
-          <h2 class="cs-card-title">${cs.title}</h2>
-          <p class="cs-card-subtitle-italic">${cs.subtitle}</p>
-
-          <div class="cs-card-details-grid">
-            <div>
-              <div class="cs-detail-col-title">Le problème</div>
-              <div class="cs-detail-col-text">${cs.problem}</div>
-            </div>
-            <div>
-              <div class="cs-detail-col-title">Ma démarche</div>
-              <div class="cs-detail-col-text">${cs.demarche}</div>
-            </div>
-            <div>
-              <div class="cs-detail-col-title">Livrables clés</div>
-              <div class="cs-detail-col-text">${cs.livrables}</div>
-            </div>
-          </div>
-
-          <div class="cs-steps-row">
-            ${cs.steps.map(s => `
-              <div class="cs-step-badge-item">
-                <div class="cs-step-icon-circle"><i data-lucide="${s.icon}"></i></div>
-                <div class="cs-step-label">${s.name}</div>
-              </div>
-            `).join('')}
-          </div>
+      <div class="glance-card-main">
+        <div class="glance-media-col">
+          <img src="${cs.image}" alt="Aperçu du projet UX : ${cs.title}">
         </div>
 
-        <div class="cs-card-ctas-row">
-          <button class="cs-btn-canva-main" onclick="openCanvaModal('${cs.canvaUrl}', '${cs.title.replace(/'/g, "\\'")}')">
-            Voir la présentation du projet <i data-lucide="external-link" style="width:14px; height:14px;"></i>
-          </button>
-          
-          <a href="#contact" class="cs-btn-deliverables-link" onclick="navigateTo('contact'); return false;">
-            Demander les livrables détaillés
-          </a>
+        <div class="glance-content-col">
+          <div>
+            <div class="glance-card-header">
+              <h2 class="glance-project-title">${cs.title}</h2>
+              <div class="glance-project-subtitle">${cs.category}</div>
+              
+              <h3 class="glance-headline-quote">${cs.headline}</h3>
+              <p class="glance-project-desc">${cs.description}</p>
+            </div>
+
+            <div class="glance-steps-section">
+              <div class="glance-steps-title-wrap">
+                <span class="glance-steps-title">LE PROJET EN UN COUP D'ŒIL</span>
+                <span class="glance-steps-line"></span>
+              </div>
+              <div class="glance-steps-grid">
+                ${glanceStepsHTML}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glance-methodo-bar">
+        <span class="glance-methodo-label">Méthodologie :</span>
+        <div class="glance-methodo-list">
+          ${methodologyHTML}
         </div>
       </div>
     `;

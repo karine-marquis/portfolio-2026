@@ -15,18 +15,16 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Anti-cache CSS parameter -->
-  <link rel="stylesheet" href="styles.css?v=20260811_crisp_footer_text">
+  <link rel="stylesheet" href="styles.css?v=20260817_official_ds_typography">
 </head>
 <body>
 
-  <!-- CUSTOM CURSOR INTERACTIF SOFT MAGNÉTIQUE -->
-  <div class="custom-cursor" id="customCursor"></div>
-  <div class="custom-cursor-dot" id="customCursorDot"></div>
+
 
   <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Approche - Offre - Projets - À propos - À lire) -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;">
+      <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil KM UX - UI Designer">
         <span class="brand-km">KM</span>
         <span class="brand-sub">UX - UI Designer</span>
       </a>
@@ -42,7 +40,7 @@
         </ul>
       </nav>
 
-      <a href="#contact" class="btn-primary" onclick="navigateTo('contact'); return false;">
+      <a href="#contact" class="btn-nav-outline" onclick="navigateTo('contact'); return false;">
         On en parle ?
       </a>
     </div>
@@ -59,22 +57,17 @@
         <div class="home-hero-align-container">
           <div class="home-hero-content-left">
             <h1 class="hero-home-title">
-              La difficulté n’est pas l’utilisateur.<br>
-              <span style="color: var(--color-primary); font-style: italic;">C’est le chemin.</span>
+              Ce n’est pas l’utilisateur qu’il faut changer.<br>
+              <span style="color: #A63A2B !important; font-style: italic;">C’est le chemin qu’on lui donne à suivre.</span>
             </h1>
 
-            <p class="hero-home-subtitle" style="font-size: 15px; line-height: 1.4; opacity: 0.92; margin-bottom: 12px;">
-              Quand une interface oblige à chercher, deviner ou retenir trop d’informations, ce n’est pas l’utilisateur qui manque de logique. C’est le parcours qui lui demande trop d’effort.
+            <p class="hero-home-subtitle" style="font-size: 16px; font-weight: 500; line-height: 1.45; opacity: 0.95; margin-bottom: 12px;">
+              Des parcours plus clairs.<br>
+              Des expériences qui aident à <strong>comprendre, apprendre et passer à l’action.</strong>
             </p>
 
-            <p class="hero-home-desc" style="font-size: 14.5px; opacity: 0.85; margin-bottom: 14px;">
-              Une information mal placée, une étape de trop, un choix mal expliqué :<br>
-              il n’en faut parfois pas davantage pour rendre un parcours inutilement difficile.
-            </p>
-
-            <p style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 15.5px !important; color: var(--color-heading); opacity: 0.95; line-height: 1.4; margin-bottom: 24px !important;">
-              Je conçois des expériences plus claires, plus humaines et plus faciles à suivre,<br>
-              avec une attention particulière aux parcours d’apprentissage et de transmission.
+            <p class="hero-home-desc" style="font-size: 14.5px; opacity: 0.88; line-height: 1.5; margin-bottom: 24px;">
+              J’aide à clarifier les parcours pour que l’expérience demande moins d’effort — et un peu moins de patience héroïque.
             </p>
 
             <div class="hero-home-ctas">
@@ -94,7 +87,7 @@
             
             <!-- BLOC 1: MARQUE & TAGLINE -->
             <div class="footer-col-brand">
-              <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;">
+              <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil Karine Marquis">
                 <span class="brand-km">KM</span>
                 <span class="brand-sub">UX - UI Designer</span>
               </a>
@@ -117,15 +110,13 @@
 
             <!-- BLOC 3: CONTACT & RÉSEAUX DISCRETS -->
             <div class="footer-col-contact">
-              <a href="mailto:contact@km-ux.net" class="footer-contact-link">
-                <i data-lucide="mail"></i> contact@km-ux.net
+              <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
+                <i data-lucide="mail" aria-hidden="true"></i> Me contacter par e-mail
               </a>
               <div class="footer-socials-wrap">
-                <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn">LinkedIn</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">LinkedIn</a>
                 <span class="social-dot-sep">•</span>
-                <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn">Malt</a>
-                <span class="social-dot-sep">•</span>
-                <a href="https://github.com/caprie/portfolio-ux" target="_blank" rel="noopener" class="footer-social-btn">GitHub</a>
+                <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">Malt</a>
               </div>
             </div>
 
@@ -353,12 +344,12 @@
   <!-- CASE STUDY CANVA DRAWER MODAL INTERACTIF -->
   <div class="drawer-overlay" id="projectDrawerOverlay">
     <div class="drawer-content" style="max-width: 900px;">
-      <button class="drawer-close-btn" onclick="closeProjectDrawer()"><i data-lucide="x"></i></button>
+      <button class="drawer-close-btn" onclick="closeProjectDrawer()" aria-label="Fermer la fenêtre du projet"><i data-lucide="x" aria-hidden="true"></i></button>
       <div id="projectDrawerContainer"></div>
     </div>
   </div>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js?v=20260816_chef_jpg_fixed"></script>
+  <script src="app.js?v=20260816_chef_jpg_fixed"></script>
 </body>
 </html>

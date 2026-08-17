@@ -4,80 +4,71 @@
 
 const CASE_STUDIES_PRESENTATION = [
   {
-    id: "foodles",
+    id: "cordons-bleus",
     number: "01",
-    tags: ["RECHERCHE UX", "TESTS UTILISATEURS", "PROTOTYPE"],
-    title: "Foodles – Le frigo connecté au bureau",
-    subtitle: "Comprendre les véritables usages d'un frigo connecté en entreprise pour concevoir une expérience utile et adoptée au quotidien.",
-    problem: "Peu d'adoption après le lancement : l'application ne s'intègre ni dans les usages ni dans les routines.",
-    demarche: "Recherche utilisateurs, tests en situation réelle, analyse des freins et opportunités.",
-    livrables: "Recommandations UX, parcours clés, prototype interactif.",
-    steps: [
-      { name: "Recherche terrain", icon: "users" },
-      { name: "Entretiens utilisateurs", icon: "user-check" },
-      { name: "Tests utilisateurs", icon: "file-text" },
-      { name: "Analyse & synthèse", icon: "bar-chart-2" },
-      { name: "Prototypage hi-fi", icon: "layout" }
+    title: "LES CORDONS BLEUS",
+    category: "Conception UX & digital learning",
+    headline: "Entre l’apprentissage guidé et la pratique autonome, le passage n’est pas toujours si simple.",
+    description: "La refonte explore comment créer une continuité entre l’expérience en cuisine et l’expérience numérique.",
+    image: "assets/PROJTS/CORDONS%20BLEUS/cordons_bleus_chef_hd.jpg",
+    glanceSteps: [
+      { num: "01", name: "Rupture d'apprentissage", icon: "link-2-off" },
+      { num: "02", name: "Analyse des besoins", icon: "search" },
+      { num: "03", name: "Continuité présentiel/digital", icon: "user" },
+      { num: "04", name: "Solutions prioritaires", icon: "chef-hat" }
     ],
-    canvaUrl: "https://www.canva.com", // Lien vers la présentation Canva en accès libre
-    image: "assets/PROJTS/FOODLES/presentation%20foodles.png"
+    methodology: [
+      { name: "analyse documentaire", icon: "search" },
+      { name: "personas", icon: "user" },
+      { name: "benchmark", icon: "bar-chart-2" },
+      { name: "service blueprint", icon: "git-branch" },
+      { name: "architecture", icon: "layout" },
+      { name: "accessibilité", icon: "accessibility" },
+      { name: "roadmap", icon: "calendar" }
+    ]
   },
   {
     id: "bambinets",
     number: "02",
-    tags: ["UX RESEARCH", "PARCOURS", "PROTOTYPE"],
-    title: "Bambinets – L’apprentissage des parents",
-    subtitle: "Concevoir une application mobile de micro-learning pour accompagner les parents dans leur quotidien.",
-    problem: "Les contenus existent, mais les parents manquent de temps et de repères.",
-    demarche: "Parcours utilisateurs, tri de cartes, idéation, tests utilisateurs, itérations.",
-    livrables: "Arborescences, parcours prioritaires, prototype hi-fi, recommandations stratégiques.",
-    steps: [
-      { name: "Recherche utilisateur", icon: "users" },
-      { name: "Tri de cartes", icon: "layers" },
-      { name: "Parcours utilisateur", icon: "map-pin" },
-      { name: "Tests d'utilisabilité", icon: "smile" },
-      { name: "Prototypage hi-fi", icon: "smartphone" }
+    title: "BAMBINETS",
+    category: "UX Research & Micro-Learning",
+    headline: "Accompagner les jeunes parents quand le temps et l'énergie manquent.",
+    description: "Concevoir une application mobile de micro-learning adaptée au rythme effréné des familles.",
+    image: "assets/PROJTS/BAMBINETS/project-bambinets.png.png",
+    glanceSteps: [
+      { num: "01", name: "Surcharge mentale", icon: "brain" },
+      { num: "02", name: "Tri de cartes", icon: "layers" },
+      { num: "03", name: "Micro-parcours", icon: "map-pin" },
+      { num: "04", name: "Maquettes hi-fi", icon: "smartphone" }
     ],
-    canvaUrl: "https://www.canva.com",
-    image: "assets/PROJTS/BAMBINETS/project-bambinets.png.png"
+    methodology: [
+      { name: "recherche utilisateur", icon: "users" },
+      { name: "tri de cartes", icon: "layers" },
+      { name: "parcours client", icon: "map-pin" },
+      { name: "tests hi-fi", icon: "smile" }
+    ]
   },
   {
-    id: "cordons-bleus",
+    id: "foodles",
     number: "03",
-    tags: ["E-LEARNING", "CONCEPTION PÉDAGOGIQUE", "UX"],
-    title: "Cordons bleus – Formation en ligne",
-    subtitle: "Refonte d’un parcours e-learning pour rendre l’apprentissage des techniques culinaires plus engageant et efficace.",
-    problem: "Un parcours peu engageant et des abandons élevés aux fins des modules.",
-    demarche: "Audit pédagogique & UX, analyse des données, ateliers d'idéation, de déploiement.",
-    livrables: "Scénario pédagogique, storyboard, maquettes & prototype, roadmap de déploiement.",
-    steps: [
-      { name: "Audit UX & pédagogique", icon: "search" },
-      { name: "Ateliers d'idéation", icon: "lightbulb" },
-      { name: "Scénario pédagogique", icon: "book-open" },
-      { name: "Maquettes & Prototypes", icon: "tablet" },
-      { name: "Roadmap & Priorisation", icon: "target" }
+    title: "FOODLES",
+    category: "Recherche UX & Frigo Connecté",
+    headline: "Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.",
+    description: "Comprendre les véritables usages d'un frigo connecté en entreprise pour concevoir une expérience utile et adoptée au quotidien.",
+    image: "assets/PROJTS/FOODLES/presentation%20foodles.png",
+    glanceSteps: [
+      { num: "01", name: "Freins d'usage", icon: "alert-circle" },
+      { num: "02", name: "Entretiens terrain", icon: "users" },
+      { num: "03", name: "Simplification parcours", icon: "sparkles" },
+      { num: "04", name: "Prototype hi-fi", icon: "smartphone" }
     ],
-    canvaUrl: "https://www.canva.com",
-    image: "assets/PROJTS/CORDONS%20BLEUS/0095ccd6-8d9e-479e-b1ac-9738bf60631f.png"
-  },
-  {
-    id: "florence-kooijman",
-    number: "04",
-    tags: ["AUDIT UX", "ACCESSIBILITÉ", "PARCOURS CLIENT"],
-    title: "Florence Kooijman – Audit UX complet",
-    subtitle: "Audit du parcours d’achat d’un site e-commerce de chaussures sur-mesure pour identifier les freins et améliorer la conversion.",
-    problem: "Un parcours complexe qui entraîne de la confusion et des abandons.",
-    demarche: "Audit heuristique, tests utilisateurs, analyse quantitative, benchmark concurrentiel.",
-    livrables: "Rapport d'audit, recommandations priorisées, quick wins, plan d'action.",
-    steps: [
-      { name: "Audit heuristique", icon: "check-square" },
-      { name: "Tests utilisateurs", icon: "users" },
-      { name: "Analyse quantitative", icon: "trending-up" },
-      { name: "Recommandations priorisées", icon: "list-checks" },
-      { name: "Plan d'action", icon: "flag" }
-    ],
-    canvaUrl: "https://www.canva.com",
-    image: "assets/PROJTS/KOOIJMAN/project-kooijman-generale.png.png"
+    methodology: [
+      { name: "recherche terrain", icon: "users" },
+      { name: "entretiens", icon: "user-check" },
+      { name: "tests d'utilisabilité", icon: "file-text" },
+      { name: "prototypage", icon: "layout" },
+      { name: "recommandations", icon: "check-circle" }
+    ]
   }
 ];
 
