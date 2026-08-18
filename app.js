@@ -109,6 +109,12 @@ function renderCaseStudiesList() {
           ${methodologyHTML}
         </div>
       </div>
+
+      <div class="glance-card-footer">
+        <button class="glance-card-cta" onclick="openProjectDrawer('${cs.id}'); return false;">
+          Entrer dans le projet <span class="cta-arrow-icon">→</span>
+        </button>
+      </div>
     `;
 
     container.appendChild(card);
@@ -118,31 +124,337 @@ function renderCaseStudiesList() {
 }
 
 /* ==========================================================================
-   3. MODALE CANVA (DRAWER INTERACTIF CANVA EMBED)
+   3. MODALE PROJET (CASE STUDY DRAWER WITH YOUTUBE & AI NOTE)
    ========================================================================== */
-function openCanvaModal(canvaUrl, projectTitle) {
+function openProjectDrawer(projectId) {
   const overlay = document.getElementById('projectDrawerOverlay');
   const drawerContainer = document.getElementById('projectDrawerContainer');
 
   if (!overlay || !drawerContainer) return;
 
   drawerContainer.innerHTML = `
-    <div class="canva-modal-container">
-      <div class="canva-modal-header">
-        <h3 class="canva-modal-title">${projectTitle} — Présentation Canva</h3>
-        <a href="${canvaUrl}" target="_blank" rel="noopener" class="btn-primary" style="font-size: 13.5px; padding: 8px 16px !important;">
-          Ouvrir sur Canva.com ↗
-        </a>
-      </div>
+    <div class="lbc-v2-modal-layout">
+      
+      <!-- SIDEBAR GAUCHE (NAVIGATION 8 ÉTAPES) -->
+      <aside class="lbc-v2-sidebar">
+        <div class="lbc-v2-sidebar-brand">
+          <h2 class="lbc-v2-brand-title">Les Cordons Bleus</h2>
+          <div class="lbc-v2-brand-category">UX & digital learning</div>
+          <p class="lbc-v2-brand-tagline">Prolonger l'apprentissage au-delà de l'atelier.</p>
+        </div>
 
-      <div class="canva-iframe-wrapper">
-        <iframe src="${canvaUrl}" allowfullscreen allow="fullscreen" title="${projectTitle}"></iframe>
+        <div class="lbc-v2-sidebar-sep"></div>
+
+        <ul class="lbc-v2-menu-list">
+          <li class="lbc-v2-menu-item active" onclick="scrollToLbcSection('lbc-sec-1', this)">
+            <span class="menu-num">1</span>
+            <span class="menu-label">Le point de départ</span>
+          </li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-2', this)">
+            <span class="menu-num">2</span>
+            <span class="menu-label">Ce que j'ai cherché à comprendre</span>
+          </li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3', this)">
+            <span class="menu-num">3</span>
+            <span class="menu-label">Ma démarche</span>
+          </li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-4', this)">
+            <span class="menu-num">4</span>
+            <span class="menu-label">Ce que j'ai découvert</span>
+          </li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-5', this)">
+            <span class="menu-num">5</span>
+            <span class="menu-label">Les solutions retenues</span>
+          </li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-6', this)">
+            <span class="menu-num">6</span>
+            <span class="menu-label">Entrer dans les coulisses du projet</span>
+          </li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-7', this)">
+            <span class="menu-num">7</span>
+            <span class="menu-label">Écouter le projet autrement</span>
+          </li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)">
+            <span class="menu-num">8</span>
+            <span class="menu-label">Ce que la refonte devait permettre</span>
+          </li>
+        </ul>
+
+        <img src="assets/lbc_sidebar_utensils.png" alt="Cuisine Ustensiles" class="lbc-v2-sidebar-bg-img">
+      </aside>
+
+      <!-- PANNEAU PRINCIPAL À DROITE (DYNAMIQUE ET STRUCTURÉ HTML/CSS) -->
+      <main class="lbc-v2-main-content" id="lbcMainScroll">
+        
+        <!-- HERO ROW -->
+        <div class="lbc-v2-hero-row" id="lbc-sec-1">
+          <div class="lbc-v2-hero-text">
+            <span class="lbc-v2-pill-badge">Le projet en détail</span>
+            <h1 class="lbc-v2-main-title">Du constat aux solutions</h1>
+            <p class="lbc-v2-intro-p">
+              Entre l’apprentissage guidé et la pratique autonome, le passage n’est pas toujours <strong>si simple</strong>.
+            </p>
+            <p class="lbc-v2-intro-p">
+              La refonte explore comment créer une <strong>continuité</strong> entre l’expérience en cuisine et l’expérience numérique.
+            </p>
+
+            <div class="lbc-v2-tags-wrap">
+              <span class="lbc-v2-tag-pill">⟡ Recherche UX</span>
+              <span class="lbc-v2-tag-pill">⟡ Architecture de l'information</span>
+              <span class="lbc-v2-tag-pill">⟡ Tests utilisateurs</span>
+              <span class="lbc-v2-tag-pill">⟡ Digital learning</span>
+            </div>
+          </div>
+
+          <div class="lbc-v2-hero-img-wrap">
+            <img src="assets/lbc_hero_kitchen.png" alt="Atelier Les Cordons Bleus">
+          </div>
+        </div>
+
+        <!-- GRILLE DES 3 CARTES PRINCIPALES -->
+        <div class="lbc-v2-cards-grid" id="lbc-sec-2">
+          <!-- CARD 1 -->
+          <div class="lbc-v2-card" id="lbc-sec-3">
+            <div class="lbc-v2-card-icon"><i data-lucide="target"></i></div>
+            <h3 class="lbc-v2-card-title">Le défi</h3>
+            <p class="lbc-v2-card-body">
+              Réussir une recette avec un chef, c'est une chose. <strong>La refaire seul</strong> chez soi, c'en est une autre.<br><br>
+              La <strong>continuité</strong> après l'atelier est <strong>faible</strong> : peu de repères, peu de <strong>suivi</strong>, et une expérience numérique qui ne répond pas aux vrais besoins des apprenants.
+            </p>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="lbc-v2-card" id="lbc-sec-4">
+            <div class="lbc-v2-card-icon"><i data-lucide="user"></i></div>
+            <h3 class="lbc-v2-card-title">Ma mission</h3>
+            <p class="lbc-v2-card-body">
+              Faire en sorte que l'expérience ne <strong>retombe pas</strong> dès que le tablier est rangé.<br><br>
+              J'ai repensé le parcours <strong>avant, pendant</strong> et <strong>après</strong> le cours pour créer un <strong>lien durable</strong> entre l'<strong>apprentissage</strong> en cuisine et la <strong>pratique à la maison</strong>.
+            </p>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="lbc-v2-card" id="lbc-sec-5">
+            <div class="lbc-v2-card-icon"><i data-lucide="trending-up"></i></div>
+            <h3 class="lbc-v2-card-title" style="font-size: 18px !important;">Ce que la refonte devait permettre</h3>
+            <ul class="lbc-v2-card-bullets">
+              <li><strong>Renforcer la mémorisation</strong> et la <strong>mise en pratique</strong> à la maison</li>
+              <li><strong>Prolonger l'engagement</strong> après l'atelier</li>
+              <li>Créer une <strong>expérience fluide</strong>, accessible et motivante</li>
+              <li><strong>Valoriser l'expertise</strong> des chefs</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SECTION COULISSES -->
+        <div id="lbc-sec-6">
+          <h3 class="lbc-v2-coulisses-title">Entrer dans les coulisses du projet</h3>
+
+          <div class="lbc-v2-coulisses-grid" id="lbc-sec-7">
+            
+            <!-- SUBCARD PODCAST AUDIO -->
+            <div class="lbc-v2-subcard">
+              <div class="lbc-v2-audio-header">
+                <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
+                <div class="lbc-v2-audio-title-wrap">
+                  <h4>Écouter le projet autrement</h4>
+                  <span class="lbc-v2-audio-duration">Durée d'écoute : 08:45</span>
+                </div>
+              </div>
+
+              <!-- LECTEUR AUDIO HTML5 AVEC BOUTON INTERACTIF -->
+              <div class="lbc-v2-custom-player">
+                <button class="lbc-v2-play-btn" onclick="toggleLbcAudio(this)" aria-label="Écouter le podcast">
+                  <i data-lucide="play" id="lbcPlayIcon" style="width: 16px; height: 16px;"></i>
+                </button>
+                <span class="lbc-v2-player-timer" id="lbcAudioTimer">0:00</span>
+                <input type="range" class="lbc-v2-player-slider" id="lbcAudioSeek" value="0" max="100" oninput="seekLbcAudio(this)">
+                <span class="lbc-v2-player-timer">08:45</span>
+                <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);"></i>
+              </div>
+
+              <audio id="lbcAudioElement" src="assets/podcasts/cordons-bleus-podcast.m4a" ontimeupdate="updateLbcAudioProgress()"></audio>
+
+              <p class="lbc-v2-disclaimer-note">
+                ✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>
+                Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.
+              </p>
+            </div>
+
+            <!-- SUBCARD PRÉSENTATION YOUTUBE -->
+            <div class="lbc-v2-subcard" id="lbc-sec-8">
+              <div class="lbc-v2-pres-flex">
+                <div class="lbc-v2-pres-info">
+                  <h4>La présentation complète</h4>
+                  <p>
+                    Le projet, de la problématique aux solutions retenues, avec les principaux choix de conception et livrables.
+                  </p>
+                  <a href="https://www.youtube.com/watch?v=JhXAkBDHNaE" target="_blank" rel="noopener" class="lbc-v2-youtube-btn">
+                    <i data-lucide="play" style="width: 14px; height: 14px;"></i> Voir la présentation sur YouTube ➔
+                  </a>
+                </div>
+                <img src="assets/lbc_presentation_thumb.png" alt="Aperçu Présentation" class="lbc-v2-pres-thumb">
+              </div>
+
+              <p class="lbc-v2-disclaimer-note" style="margin-top: 10px;">
+                ⓘ <strong>À regarder tranquillement :</strong> la présentation défile vite.<br>
+                Pour une lecture confortable, je recommande une vitesse de <strong>0,5x</strong> — voire <strong>0,25x</strong> si vous souhaitez prendre le temps de lire chaque écran.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BOTTOM CONTACT CTA CARD -->
+        <div class="lbc-v2-contact-card">
+          <div class="lbc-v2-contact-left">
+            <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="mail"></i></div>
+            <div class="lbc-v2-contact-info">
+              <h4>Besoin d'aller plus loin ?</h4>
+              <p>Certains livrables du projet peuvent être présentés sur demande.</p>
+            </div>
+          </div>
+          <a href="mailto:karinemarquis.ux@gmail.com" class="lbc-v2-contact-btn">
+            Me contacter ➔
+          </a>
+        </div>
+
+      </main>
+
+      <!-- BOUTON FLÈCHE FLOTTANTE DISCRÈTE DE SCROLL -->
+      <div id="lbcScrollPill" class="lbc-scroll-pill-indicator" aria-label="Défiler vers le bas">
+        <span class="scroll-arrow">↓</span>
       </div>
     </div>
   `;
 
   overlay.classList.add('active');
+
+  // Gérer le curseur suiveur de souris et la synchronisation dynamique du menu au défilement
+  const mainScroll = document.getElementById('lbcMainScroll');
+  const scrollPill = document.getElementById('lbcScrollPill');
+
+  if (mainScroll && scrollPill) {
+    mainScroll.addEventListener('mousemove', function handleMouseMove(e) {
+      if (mainScroll.scrollTop < 40) {
+        const rect = mainScroll.getBoundingClientRect();
+        const relativeY = e.clientY - rect.top;
+        scrollPill.style.top = (relativeY + mainScroll.scrollTop) + 'px';
+        scrollPill.style.opacity = '1';
+      } else {
+        scrollPill.style.opacity = '0';
+      }
+    });
+
+    mainScroll.addEventListener('mouseleave', function handleMouseLeave() {
+      scrollPill.style.opacity = '0';
+    });
+
+    mainScroll.addEventListener('scroll', function handlePillScroll() {
+      if (mainScroll.scrollTop > 40) {
+        scrollPill.style.opacity = '0';
+      } else {
+        scrollPill.style.opacity = '1';
+      }
+
+      // Synchroniser automatiquement l'étape active (1 à 8) dans la sidebar
+      const sections = [
+        { id: 'lbc-sec-1', index: 0 },
+        { id: 'lbc-sec-2', index: 1 },
+        { id: 'lbc-sec-3', index: 2 },
+        { id: 'lbc-sec-4', index: 3 },
+        { id: 'lbc-sec-5', index: 4 },
+        { id: 'lbc-sec-6', index: 5 },
+        { id: 'lbc-sec-7', index: 6 },
+        { id: 'lbc-sec-8', index: 7 }
+      ];
+
+      const menuItems = document.querySelectorAll('.lbc-v2-menu-item');
+      let currentActiveIndex = 0;
+
+      sections.forEach(sec => {
+        const el = document.getElementById(sec.id);
+        if (el) {
+          const top = el.offsetTop - mainScroll.offsetTop - 80;
+          if (mainScroll.scrollTop >= top) {
+            currentActiveIndex = sec.index;
+          }
+        }
+      });
+
+      menuItems.forEach((item, idx) => {
+        if (idx === currentActiveIndex) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    });
+  }
+
   if (window.lucide) lucide.createIcons();
+}
+
+/* HELPER SCROLL ET AUDIO POUR LA MODALE V2 */
+function scrollToLbcSection(secId, itemEl) {
+  const target = document.getElementById(secId);
+  const scrollContainer = document.getElementById('lbcMainScroll');
+  if (target && scrollContainer) {
+    const topPos = target.offsetTop - scrollContainer.offsetTop - 20;
+    scrollContainer.scrollTo({ top: topPos, behavior: 'smooth' });
+  }
+
+  if (itemEl) {
+    document.querySelectorAll('.lbc-v2-menu-item').forEach(el => el.classList.remove('active'));
+    itemEl.classList.add('active');
+  }
+}
+
+function toggleLbcAudio(btn) {
+  const audio = document.getElementById('lbcAudioElement');
+  const icon = document.getElementById('lbcPlayIcon');
+  if (!audio) return;
+
+  if (audio.paused) {
+    audio.play();
+    if (icon) {
+      icon.setAttribute('data-lucide', 'pause');
+      if (window.lucide) lucide.createIcons();
+    }
+  } else {
+    audio.pause();
+    if (icon) {
+      icon.setAttribute('data-lucide', 'play');
+      if (window.lucide) lucide.createIcons();
+    }
+  }
+}
+
+function updateLbcAudioProgress() {
+  const audio = document.getElementById('lbcAudioElement');
+  const timer = document.getElementById('lbcAudioTimer');
+  const seek = document.getElementById('lbcAudioSeek');
+  if (!audio) return;
+
+  if (timer) {
+    const mins = Math.floor(audio.currentTime / 60);
+    const secs = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+    timer.textContent = `${mins}:${secs}`;
+  }
+
+  if (seek && audio.duration) {
+    seek.value = (audio.currentTime / audio.duration) * 100;
+  }
+}
+
+function seekLbcAudio(slider) {
+  const audio = document.getElementById('lbcAudioElement');
+  if (!audio || !audio.duration) return;
+  audio.currentTime = (slider.value / 100) * audio.duration;
+}
+
+function openCanvaModal(canvaUrl, projectTitle) {
+  openProjectDrawer('cordons-bleus');
 }
 
 function closeProjectDrawer() {

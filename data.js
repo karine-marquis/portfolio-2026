@@ -8,9 +8,9 @@ const CASE_STUDIES_PRESENTATION = [
     number: "01",
     title: "LES CORDONS BLEUS",
     category: "Conception UX & digital learning",
-    headline: "Entre l’apprentissage guidé et la pratique autonome, le passage n’est pas toujours si simple.",
+    headline: "Entre l’apprentissage guidé<br>et la pratique autonome,<br>le passage n’est pas toujours si simple.",
     description: "La refonte explore comment créer une continuité entre l’expérience en cuisine et l’expérience numérique.",
-    image: "assets/PROJTS/CORDONS%20BLEUS/cordons_bleus_chef_hd.jpg",
+    image: "assets/PROJTS/CORDONS%20BLEUS/illustration_coup_d_oeil.png",
     glanceSteps: [
       { num: "01", name: "Rupture d'apprentissage", icon: "link-2-off" },
       { num: "02", name: "Analyse des besoins", icon: "search" },
