@@ -11,11 +11,279 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
 
-  <!-- Anti-cache CSS parameter -->
-  <link rel="stylesheet" href="styles.css?v=20260818_lbc_vertical_axis_arrow">
+  <script>
+    function navigateTo(pageId) {
+      if (!pageId) pageId = 'home';
+      const cleanId = pageId.replace(/^#/, '').replace(/^page-/, '');
+      const sections = document.querySelectorAll('.spa-page-section');
+      sections.forEach(function(sec) {
+        sec.classList.remove('active');
+        sec.style.display = 'none';
+      });
+      const target = document.getElementById('page-' + cleanId) || document.getElementById('page-home');
+      if (target) {
+        target.classList.add('active');
+        target.style.display = 'block';
+      }
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(function(link) {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === '#' + cleanId || href === '#page-' + cleanId) {
+          link.classList.add('active');
+        }
+      });
+      try {
+        if (window.location.hash !== '#' + cleanId && window.location.hash !== '#page-' + cleanId) {
+          history.pushState(null, '', '#' + cleanId);
+        }
+      } catch (e) {}
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function initRoutingFromHash() {
+      const hash = window.location.hash.replace(/^#/, '').replace(/^page-/, '');
+      navigateTo(hash || 'home');
+    }
+
+    window.addEventListener('hashchange', initRoutingFromHash);
+    document.addEventListener('DOMContentLoaded', initRoutingFromHash);
+    window.addEventListener('load', initRoutingFromHash);
+
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[href^="#"]');
+      if (link) {
+        const href = link.getAttribute('href');
+        if (href && href.length > 1 && !href.startsWith('#lbc-sec-')) {
+          const cleanId = href.replace(/^#/, '').replace(/^page-/, '');
+          const targetSec = document.getElementById('page-' + cleanId);
+          if (targetSec) {
+            e.preventDefault();
+            navigateTo(cleanId);
+          }
+        }
+      }
+    });
+
+    function initIconsSafely() {
+      if (window.lucide && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+      }
+    }
+    window.addEventListener('load', initIconsSafely);
+    document.addEventListener('DOMContentLoaded', initIconsSafely);
+    setInterval(initIconsSafely, 500);
+
+    function closeProjectDrawer() {
+      const overlay = document.getElementById('projectDrawerOverlay');
+      if (overlay) overlay.classList.remove('active');
+    }
+
+    function scrollToLbcSection(secId, itemEl) {
+      const target = document.getElementById(secId);
+      const scrollContainer = document.getElementById('lbcMainScroll');
+      if (target && scrollContainer) {
+        const topPos = target.offsetTop - scrollContainer.offsetTop - 20;
+        scrollContainer.scrollTo({ top: topPos, behavior: 'smooth' });
+      }
+      if (itemEl) {
+        document.querySelectorAll('.lbc-v2-menu-item').forEach(function(el) { el.classList.remove('active'); });
+        itemEl.classList.add('active');
+      }
+    }
+
+    function toggleLbcAudio(btn) {
+      const audio = document.getElementById('lbcAudioElement');
+      const icon = document.getElementById('lbcPlayIcon');
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play();
+        if (icon) {
+          icon.setAttribute('data-lucide', 'pause');
+          if (window.lucide) lucide.createIcons();
+        }
+      } else {
+        audio.pause();
+        if (icon) {
+          icon.setAttribute('data-lucide', 'play');
+          if (window.lucide) lucide.createIcons();
+        }
+      }
+    }
+
+    function updateLbcAudioProgress() {
+      const audio = document.getElementById('lbcAudioElement');
+      const timer = document.getElementById('lbcAudioTimer');
+      const seek = document.getElementById('lbcAudioSeek');
+      if (!audio) return;
+      if (timer) {
+        const mins = Math.floor(audio.currentTime / 60);
+        const secs = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+        timer.textContent = mins + ':' + secs;
+      }
+      if (seek && audio.duration) {
+        seek.value = (audio.currentTime / audio.duration) * 100;
+      }
+    }
+
+    function seekLbcAudio(slider) {
+      const audio = document.getElementById('lbcAudioElement');
+      if (!audio || !audio.duration) return;
+      audio.currentTime = (slider.value / 100) * audio.duration;
+    }
+
+    function openProjectDrawer(projectId) {
+      const overlay = document.getElementById('projectDrawerOverlay');
+      const drawerContainer = document.getElementById('projectDrawerContainer');
+      if (!overlay || !drawerContainer) return;
+
+      drawerContainer.innerHTML = `
+        <div class="lbc-v2-modal-layout">
+          <aside class="lbc-v2-sidebar">
+            <div class="lbc-v2-sidebar-brand">
+              <h2 class="lbc-v2-brand-title">Les Cordons Bleus</h2>
+              <div class="lbc-v2-brand-category">UX & digital learning</div>
+              <p class="lbc-v2-brand-tagline">Prolonger l'apprentissage au-delà de l'atelier.</p>
+            </div>
+            <div class="lbc-v2-sidebar-sep"></div>
+            <ul class="lbc-v2-menu-list">
+              <li class="lbc-v2-menu-item active" onclick="scrollToLbcSection('lbc-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le point de départ</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Ce que j'ai cherché à comprendre</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Ma démarche</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-4', this)"><span class="menu-num">4</span><span class="menu-label">Ce que j'ai découvert</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-5', this)"><span class="menu-num">5</span><span class="menu-label">Les solutions retenues</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-6', this)"><span class="menu-num">6</span><span class="menu-label">Entrer dans les coulisses du projet</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-7', this)"><span class="menu-num">7</span><span class="menu-label">Écouter le projet autrement</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)"><span class="menu-num">8</span><span class="menu-label">Ce que la refonte devait permettre</span></li>
+            </ul>
+            <img src="assets/lbc_sidebar_utensils.png" alt="Cuisine Ustensiles" class="lbc-v2-sidebar-bg-img">
+          </aside>
+          <main class="lbc-v2-main-content" id="lbcMainScroll">
+            <div class="lbc-v2-hero-row" id="lbc-sec-1">
+              <div class="lbc-v2-hero-text">
+                <span class="lbc-v2-pill-badge">Le projet en détail</span>
+                <h1 class="lbc-v2-main-title">Du constat aux solutions</h1>
+                <p class="lbc-v2-intro-p">Entre l’apprentissage guidé et la pratique autonome, le passage n’est pas toujours <strong>si simple</strong>.</p>
+                <p class="lbc-v2-intro-p">La refonte explore comment créer une <strong>continuité</strong> entre l’expérience en cuisine et l’expérience numérique.</p>
+                <div class="lbc-v2-tags-wrap">
+                  <span class="lbc-v2-tag-pill">⟡ Recherche UX</span>
+                  <span class="lbc-v2-tag-pill">⟡ Architecture de l'information</span>
+                  <span class="lbc-v2-tag-pill">⟡ Tests utilisateurs</span>
+                  <span class="lbc-v2-tag-pill">⟡ Digital learning</span>
+                </div>
+              </div>
+              <div class="lbc-v2-hero-img-wrap"><img src="assets/lbc_hero_kitchen.png" alt="Atelier Les Cordons Bleus"></div>
+            </div>
+            <div class="lbc-v2-cards-grid" id="lbc-sec-2">
+              <div class="lbc-v2-card" id="lbc-sec-3">
+                <div class="lbc-v2-card-icon"><i data-lucide="target"></i></div>
+                <h3 class="lbc-v2-card-title">Le défi</h3>
+                <p class="lbc-v2-card-body">Réussir une recette avec un chef, c'est une chose. <strong>La refaire seul</strong> chez soi, c'en est une autre.<br><br>La <strong>continuité</strong> après l'atelier est <strong>faible</strong> : peu de repères, peu de <strong>suivi</strong>, et une expérience numérique qui ne répond pas aux vrais besoins des apprenants.</p>
+              </div>
+              <div class="lbc-v2-card" id="lbc-sec-4">
+                <div class="lbc-v2-card-icon"><i data-lucide="user"></i></div>
+                <h3 class="lbc-v2-card-title">Ma mission</h3>
+                <p class="lbc-v2-card-body">Faire en sorte que l'expérience ne <strong>retombe pas</strong> dès que le tablier est rangé.<br><br>J'ai repensé le parcours <strong>avant, pendant</strong> et <strong>après</strong> le cours pour créer un <strong>lien durable</strong> entre l'<strong>apprentissage</strong> en cuisine et la <strong>pratique à la maison</strong>.</p>
+              </div>
+              <div class="lbc-v2-card" id="lbc-sec-5">
+                <div class="lbc-v2-card-icon"><i data-lucide="trending-up"></i></div>
+                <h3 class="lbc-v2-card-title" style="font-size: 18px !important;">Ce que la refonte devait permettre</h3>
+                <ul class="lbc-v2-card-bullets">
+                  <li><strong>Renforcer la mémorisation</strong> et la <strong>mise en pratique</strong> à la maison</li>
+                  <li><strong>Prolonger l'engagement</strong> après l'atelier</li>
+                  <li>Créer une <strong>expérience fluide</strong>, accessible et motivante</li>
+                  <li><strong>Valoriser l'expertise</strong> des chefs</li>
+                </ul>
+              </div>
+            </div>
+            <div id="lbc-sec-6">
+              <h3 class="lbc-v2-coulisses-title">Entrer dans les coulisses du projet</h3>
+              <div class="lbc-v2-coulisses-grid" id="lbc-sec-7">
+                <div class="lbc-v2-subcard">
+                  <div class="lbc-v2-audio-header">
+                    <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
+                    <div class="lbc-v2-audio-title-wrap">
+                      <h4>Écouter le projet autrement</h4>
+                      <span class="lbc-v2-audio-duration">Durée d'écoute : 08:45</span>
+                    </div>
+                  </div>
+                  <div class="lbc-v2-custom-player">
+                    <button class="lbc-v2-play-btn" onclick="toggleLbcAudio(this)" aria-label="Écouter le podcast"><i data-lucide="play" id="lbcPlayIcon" style="width: 16px; height: 16px;"></i></button>
+                    <span class="lbc-v2-player-timer" id="lbcAudioTimer">0:00</span>
+                    <input type="range" class="lbc-v2-player-slider" id="lbcAudioSeek" value="0" max="100" oninput="seekLbcAudio(this)">
+                    <span class="lbc-v2-player-timer">08:45</span>
+                    <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);"></i>
+                  </div>
+                  <audio id="lbcAudioElement" src="assets/podcasts/cordons-bleus-podcast.m4a" ontimeupdate="updateLbcAudioProgress()"></audio>
+                  <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
+                </div>
+                <div class="lbc-v2-subcard" id="lbc-sec-8">
+                  <div class="lbc-v2-pres-flex">
+                    <div class="lbc-v2-pres-info">
+                      <h4>La présentation complète</h4>
+                      <p>Le projet, de la problématique aux solutions retenues, avec les principaux choix de conception et livrables.</p>
+                      <a href="https://www.youtube.com/watch?v=JhXAkBDHNaE" target="_blank" rel="noopener" class="lbc-v2-youtube-btn"><i data-lucide="play" style="width: 14px; height: 14px;"></i> Voir la présentation sur YouTube ➔</a>
+                    </div>
+                    <img src="assets/lbc_presentation_thumb.png" alt="Aperçu Présentation" class="lbc-v2-pres-thumb">
+                  </div>
+                  <p class="lbc-v2-disclaimer-note" style="margin-top: 10px;">ⓘ <strong>À regarder tranquillement :</strong> la présentation défile vite.<br>Pour une lecture confortable, je recommande une vitesse de <strong>0,5x</strong> — voire <strong>0,25x</strong> si vous souhaitez prendre le temps de lire chaque écran.</p>
+                </div>
+              </div>
+            </div>
+            <div class="lbc-v2-contact-card">
+              <div class="lbc-v2-contact-left">
+                <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="mail"></i></div>
+                <div class="lbc-v2-contact-info">
+                  <h4>Besoin d'aller plus loin ?</h4>
+                  <p>Certains livrables du projet peuvent être présentés sur demande.</p>
+                </div>
+              </div>
+              <a href="mailto:karinemarquis.ux@gmail.com" class="lbc-v2-contact-btn">Me contacter ➔</a>
+            </div>
+          </main>
+          <div id="lbcScrollPill" class="lbc-scroll-pill-indicator" aria-label="Défiler vers le bas"><span class="scroll-arrow">↓</span></div>
+        </div>
+      `;
+
+      overlay.classList.add('active');
+
+      const mainScroll = document.getElementById('lbcMainScroll');
+      const scrollPill = document.getElementById('lbcScrollPill');
+      let lastScrollTop = 0;
+      if (mainScroll && scrollPill) {
+        const arrowSpan = scrollPill.querySelector('.scroll-arrow');
+        function updateParallaxArrowPosition() {
+          const currentScrollTop = mainScroll.scrollTop;
+          const maxScroll = mainScroll.scrollHeight - mainScroll.clientHeight;
+          const scrollProgress = maxScroll > 0 ? (currentScrollTop / maxScroll) : 0;
+          const availableTrack = mainScroll.clientHeight - 120;
+          const targetTop = currentScrollTop + 60 + (scrollProgress * availableTrack);
+          scrollPill.style.top = targetTop + 'px';
+          scrollPill.style.opacity = '1';
+          if (arrowSpan) {
+            if (currentScrollTop > lastScrollTop + 1) { arrowSpan.textContent = '↓'; }
+            else if (currentScrollTop < lastScrollTop - 1) { arrowSpan.textContent = '↑'; }
+          }
+          lastScrollTop = currentScrollTop;
+        }
+        mainScroll.addEventListener('wheel', function(e) {
+          if (arrowSpan) {
+            if (e.deltaY > 0) { arrowSpan.textContent = '↓'; }
+            else if (e.deltaY < 0) { arrowSpan.textContent = '↑'; }
+          }
+        }, { passive: true });
+        mainScroll.addEventListener('scroll', updateParallaxArrowPosition);
+        updateParallaxArrowPosition();
+      }
+      initIconsSafely();
+    }
+  </script>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="https://unpkg.com/lucide@latest" onload="initIconsSafely()"></script>
 </head>
 <body>
 
@@ -24,23 +292,23 @@
   <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Approche - Offre - Projets - À propos - À lire) -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil KM UX - UI Designer">
+      <a href="#page-home" class="brand-logo-wrap" aria-label="Retour à l'accueil KM UX - UI Designer">
         <span class="brand-km">KM</span>
         <span class="brand-sub">UX - UI Designer</span>
       </a>
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="#home" class="nav-link active" onclick="navigateTo('home'); return false;">Accueil</a></li>
-          <li><a href="#approach" class="nav-link" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
-          <li><a href="#offer" class="nav-link" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
-          <li><a href="#projects" class="nav-link" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
-          <li><a href="#about" class="nav-link" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
-          <li><a href="#blog" class="nav-link" onclick="navigateTo('blog'); return false;">Journal</a></li>
+          <li><a href="#page-home" class="nav-link active">Accueil</a></li>
+          <li><a href="#page-approach" class="nav-link">Mon approche</a></li>
+          <li><a href="#page-offer" class="nav-link">Mon offre</a></li>
+          <li><a href="#page-projects" class="nav-link">Mes projets</a></li>
+          <li><a href="#page-about" class="nav-link">Qui suis-je ?</a></li>
+          <li><a href="#page-blog" class="nav-link">Journal</a></li>
         </ul>
       </nav>
 
-      <a href="#contact" class="btn-nav-outline" onclick="navigateTo('contact'); return false;">
+      <a href="#page-contact" class="btn-nav-outline">
         On en parle ?
       </a>
     </div>
@@ -71,10 +339,10 @@
             </p>
 
             <div class="hero-home-ctas">
-              <a href="#projects" class="btn-primary hero-btn-main" onclick="navigateTo('projects'); return false;">
+              <a href="#page-projects" class="btn-primary hero-btn-main">
                 Découvrir mes projets
               </a>
-              <a href="#approach" class="btn-secondary hero-btn-sec" onclick="navigateTo('approach'); return false;">
+              <a href="#page-approach" class="btn-secondary hero-btn-sec">
                 Voir mon approche
               </a>
             </div>
@@ -87,7 +355,7 @@
             
             <!-- BLOC 1: MARQUE & TAGLINE -->
             <div class="footer-col-brand">
-              <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil Karine Marquis">
+              <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
                 <span class="brand-km">KM</span>
                 <span class="brand-sub">UX - UI Designer</span>
               </a>
@@ -99,12 +367,12 @@
             <!-- BLOC 2: SITEMAP SLIM INLINE -->
             <div class="footer-col-links">
               <ul class="footer-inline-links">
-                <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
-                <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
-                <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
-                <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
-                <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
-                <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+                <li><a href="#page-home" >Accueil</a></li>
+                <li><a href="#page-approach" >Mon approche</a></li>
+                <li><a href="#page-offer" >Mon offre</a></li>
+                <li><a href="#page-projects" >Mes projets</a></li>
+                <li><a href="#page-about" >Qui suis-je ?</a></li>
+                <li><a href="#page-blog" >Journal</a></li>
               </ul>
             </div>
 
@@ -145,7 +413,7 @@
       <div class="content-wrap section-spacing">
         
         <div style="margin-bottom: 56px;">
-          <a href="#home" class="back-home-link" onclick="navigateTo('home'); return false;" aria-label="Retourner à la page d'accueil">
+          <a href="#page-home" class="back-home-link"  aria-label="Retourner à la page d'accueil">
             <span class="back-arrow">←</span> Retour à l'accueil
           </a>
           <h1 class="projects-main-title" style="font-family: 'Playfair Display', serif; font-size: 46px; margin-bottom: 4px;">Mes projets</h1>
@@ -154,8 +422,145 @@
           </p>
         </div>
 
-        <div class="case-studies-list" id="caseStudiesContainer">
-          <!-- Injecté par app.js (4 Cartes Projets) -->
+        <div class="case-studies-glance-list" id="caseStudiesContainer">
+          <!-- CARTE 1 : LES CORDONS BLEUS -->
+          <article class="project-glance-card" style="cursor: pointer;" onclick="openProjectDrawer('cordons-bleus')">
+            <div class="glance-card-main">
+              <div class="glance-media-col" onclick="openProjectDrawer('cordons-bleus')">
+                <img src="assets/PROJTS/CORDONS%20BLEUS/illustration_coup_d_oeil.png" alt="Aperçu du projet UX : LES CORDONS BLEUS">
+              </div>
+              <div class="glance-content-col">
+                <div>
+                  <div class="glance-card-header">
+                    <h2 class="glance-project-title" onclick="openProjectDrawer('cordons-bleus')">LES CORDONS BLEUS</h2>
+                    <div class="glance-project-subtitle">Conception UX & digital learning</div>
+                    <h3 class="glance-headline-quote">Entre l’apprentissage guidé<br>et la pratique autonome,<br>le passage n’est pas toujours si simple.</h3>
+                    <p class="glance-project-desc">La refonte explore comment créer une continuité entre l’expérience en cuisine et l’expérience numérique.</p>
+                  </div>
+                  <div class="glance-steps-section">
+                    <div class="glance-steps-title-wrap">
+                      <span class="glance-steps-title">LE PROJET EN UN COUP D'ŒIL</span>
+                      <span class="glance-steps-line"></span>
+                    </div>
+                    <div class="glance-steps-grid">
+                      <div class="glance-step-item"><div class="glance-step-num">01</div><div class="glance-step-icon-circle"><i data-lucide="link-2-off"></i></div><div class="glance-step-label">Rupture d'apprentissage</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">02</div><div class="glance-step-icon-circle"><i data-lucide="search"></i></div><div class="glance-step-label">Analyse des besoins</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">03</div><div class="glance-step-icon-circle"><i data-lucide="user"></i></div><div class="glance-step-label">Continuité présentiel/digital</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">04</div><div class="glance-step-icon-circle"><i data-lucide="chef-hat"></i></div><div class="glance-step-label">Solutions prioritaires</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glance-methodo-bar">
+              <span class="glance-methodo-label">Méthodologie :</span>
+              <div class="glance-methodo-list">
+                <span class="glance-methodo-item"><i data-lucide="search" style="width:13px; height:13px;"></i> analyse documentaire</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="user" style="width:13px; height:13px;"></i> personas</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="bar-chart-2" style="width:13px; height:13px;"></i> benchmark</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="git-branch" style="width:13px; height:13px;"></i> service blueprint</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="layout" style="width:13px; height:13px;"></i> architecture</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="accessibility" style="width:13px; height:13px;"></i> accessibilité</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="calendar" style="width:13px; height:13px;"></i> roadmap</span>
+              </div>
+            </div>
+            <div class="glance-card-footer">
+              <button class="glance-card-cta" onclick="event.stopPropagation(); openProjectDrawer('cordons-bleus'); return false;">
+                Entrer dans le projet <span class="cta-arrow-icon">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- CARTE 2 : BAMBINETS -->
+          <article class="project-glance-card" style="cursor: pointer;" onclick="openProjectDrawer('bambinets')">
+            <div class="glance-card-main">
+              <div class="glance-media-col" onclick="openProjectDrawer('bambinets')">
+                <img src="assets/PROJTS/BAMBINETS/project-bambinets.png.png" alt="Aperçu du projet UX : BAMBINETS">
+              </div>
+              <div class="glance-content-col">
+                <div>
+                  <div class="glance-card-header">
+                    <h2 class="glance-project-title" onclick="openProjectDrawer('bambinets')">BAMBINETS</h2>
+                    <div class="glance-project-subtitle">UX Research & Micro-Learning</div>
+                    <h3 class="glance-headline-quote">Accompagner les jeunes parents quand le temps et l'énergie manquent.</h3>
+                    <p class="glance-project-desc">Concevoir une application mobile de micro-learning adaptée au rythme effréné des familles.</p>
+                  </div>
+                  <div class="glance-steps-section">
+                    <div class="glance-steps-title-wrap">
+                      <span class="glance-steps-title">LE PROJET EN UN COUP D'ŒIL</span>
+                      <span class="glance-steps-line"></span>
+                    </div>
+                    <div class="glance-steps-grid">
+                      <div class="glance-step-item"><div class="glance-step-num">01</div><div class="glance-step-icon-circle"><i data-lucide="brain"></i></div><div class="glance-step-label">Surcharge mentale</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">02</div><div class="glance-step-icon-circle"><i data-lucide="layers"></i></div><div class="glance-step-label">Tri de cartes</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">03</div><div class="glance-step-icon-circle"><i data-lucide="map-pin"></i></div><div class="glance-step-label">Micro-parcours</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">04</div><div class="glance-step-icon-circle"><i data-lucide="smartphone"></i></div><div class="glance-step-label">Maquettes hi-fi</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glance-methodo-bar">
+              <span class="glance-methodo-label">Méthodologie :</span>
+              <div class="glance-methodo-list">
+                <span class="glance-methodo-item"><i data-lucide="users" style="width:13px; height:13px;"></i> recherche utilisateur</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="layers" style="width:13px; height:13px;"></i> tri de cartes</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="map-pin" style="width:13px; height:13px;"></i> parcours client</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="smile" style="width:13px; height:13px;"></i> tests hi-fi</span>
+              </div>
+            </div>
+            <div class="glance-card-footer">
+              <button class="glance-card-cta" onclick="event.stopPropagation(); openProjectDrawer('bambinets'); return false;">
+                Entrer dans le projet <span class="cta-arrow-icon">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- CARTE 3 : FOODLES -->
+          <article class="project-glance-card" style="cursor: pointer;" onclick="openProjectDrawer('foodles')">
+            <div class="glance-card-main">
+              <div class="glance-media-col" onclick="openProjectDrawer('foodles')">
+                <img src="assets/PROJTS/FOODLES/presentation%20foodles.png" alt="Aperçu du projet UX : FOODLES">
+              </div>
+              <div class="glance-content-col">
+                <div>
+                  <div class="glance-card-header">
+                    <h2 class="glance-project-title" onclick="openProjectDrawer('foodles')">FOODLES</h2>
+                    <div class="glance-project-subtitle">Recherche UX & Frigo Connecté</div>
+                    <h3 class="glance-headline-quote">Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.</h3>
+                    <p class="glance-project-desc">Comprendre les véritables usages d'un frigo connecté en entreprise pour concevoir une expérience utile et adoptée au quotidien.</p>
+                  </div>
+                  <div class="glance-steps-section">
+                    <div class="glance-steps-title-wrap">
+                      <span class="glance-steps-title">LE PROJET EN UN COUP D'ŒIL</span>
+                      <span class="glance-steps-line"></span>
+                    </div>
+                    <div class="glance-steps-grid">
+                      <div class="glance-step-item"><div class="glance-step-num">01</div><div class="glance-step-icon-circle"><i data-lucide="alert-circle"></i></div><div class="glance-step-label">Freins d'usage</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">02</div><div class="glance-step-icon-circle"><i data-lucide="users"></i></div><div class="glance-step-label">Entretiens terrain</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">03</div><div class="glance-step-icon-circle"><i data-lucide="sparkles"></i></div><div class="glance-step-label">Simplification parcours</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">04</div><div class="glance-step-icon-circle"><i data-lucide="smartphone"></i></div><div class="glance-step-label">Prototype hi-fi</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glance-methodo-bar">
+              <span class="glance-methodo-label">Méthodologie :</span>
+              <div class="glance-methodo-list">
+                <span class="glance-methodo-item"><i data-lucide="users" style="width:13px; height:13px;"></i> recherche terrain</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="user-check" style="width:13px; height:13px;"></i> entretiens</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="file-text" style="width:13px; height:13px;"></i> tests d'utilisabilité</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="layout" style="width:13px; height:13px;"></i> prototypage</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="check-circle" style="width:13px; height:13px;"></i> recommandations</span>
+              </div>
+            </div>
+            <div class="glance-card-footer">
+              <button class="glance-card-cta" onclick="event.stopPropagation(); openProjectDrawer('foodles'); return false;">
+                Entrer dans le projet <span class="cta-arrow-icon">→</span>
+              </button>
+            </div>
+          </article>
         </div>
 
       </div>
@@ -166,7 +571,7 @@
           
           <!-- BLOC 1: MARQUE & TAGLINE -->
           <div class="footer-col-brand">
-            <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil Karine Marquis">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
               <span class="brand-km">KM</span>
               <span class="brand-sub">UX - UI Designer</span>
             </a>
@@ -178,12 +583,12 @@
           <!-- BLOC 2: SITEMAP SLIM INLINE -->
           <div class="footer-col-links">
             <ul class="footer-inline-links">
-              <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
-              <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
-              <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
-              <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
-              <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
-              <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
             </ul>
           </div>
 
@@ -270,7 +675,7 @@
       <footer class="site-footer" style="margin-top: 80px;">
         <div class="footer-container">
           <div class="footer-col-brand">
-            <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil Karine Marquis">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
               <span class="brand-km">KM</span>
               <span class="brand-sub">UX - UI Designer</span>
             </a>
@@ -280,12 +685,12 @@
           </div>
           <div class="footer-col-links">
             <ul class="footer-inline-links">
-              <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
-              <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
-              <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
-              <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
-              <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
-              <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
             </ul>
           </div>
           <div class="footer-col-contact">
@@ -341,7 +746,7 @@
       <footer class="site-footer" style="margin-top: 80px;">
         <div class="footer-container">
           <div class="footer-col-brand">
-            <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil Karine Marquis">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
               <span class="brand-km">KM</span>
               <span class="brand-sub">UX - UI Designer</span>
             </a>
@@ -351,12 +756,12 @@
           </div>
           <div class="footer-col-links">
             <ul class="footer-inline-links">
-              <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
-              <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
-              <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
-              <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
-              <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
-              <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
             </ul>
           </div>
           <div class="footer-col-contact">
@@ -420,7 +825,7 @@
       <footer class="site-footer" style="margin-top: 80px;">
         <div class="footer-container">
           <div class="footer-col-brand">
-            <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil Karine Marquis">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
               <span class="brand-km">KM</span>
               <span class="brand-sub">UX - UI Designer</span>
             </a>
@@ -430,12 +835,12 @@
           </div>
           <div class="footer-col-links">
             <ul class="footer-inline-links">
-              <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
-              <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
-              <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
-              <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
-              <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
-              <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
             </ul>
           </div>
           <div class="footer-col-contact">
@@ -481,7 +886,7 @@
       <footer class="site-footer" style="margin-top: 80px;">
         <div class="footer-container">
           <div class="footer-col-brand">
-            <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil Karine Marquis">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
               <span class="brand-km">KM</span>
               <span class="brand-sub">UX - UI Designer</span>
             </a>
@@ -491,12 +896,12 @@
           </div>
           <div class="footer-col-links">
             <ul class="footer-inline-links">
-              <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
-              <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
-              <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
-              <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
-              <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
-              <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
             </ul>
           </div>
           <div class="footer-col-contact">
@@ -542,7 +947,7 @@
       <footer class="site-footer" style="margin-top: 80px;">
         <div class="footer-container">
           <div class="footer-col-brand">
-            <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil Karine Marquis">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
               <span class="brand-km">KM</span>
               <span class="brand-sub">UX - UI Designer</span>
             </a>
@@ -552,12 +957,12 @@
           </div>
           <div class="footer-col-links">
             <ul class="footer-inline-links">
-              <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
-              <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
-              <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
-              <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
-              <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
-              <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
             </ul>
           </div>
           <div class="footer-col-contact">
@@ -624,7 +1029,7 @@
       <footer class="site-footer" style="margin-top: 80px;">
         <div class="footer-container">
           <div class="footer-col-brand">
-            <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;" aria-label="Retour à l'accueil Karine Marquis">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
               <span class="brand-km">KM</span>
               <span class="brand-sub">UX - UI Designer</span>
             </a>
@@ -634,12 +1039,12 @@
           </div>
           <div class="footer-col-links">
             <ul class="footer-inline-links">
-              <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
-              <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
-              <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
-              <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
-              <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
-              <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
             </ul>
           </div>
           <div class="footer-col-contact">
@@ -676,7 +1081,6 @@
     </div>
   </div>
 
-  <script src="data.js?v=20260818_lbc_vertical_axis_arrow"></script>
-  <script src="app.js?v=20260818_lbc_vertical_axis_arrow"></script>
 </body>
 </html>
+

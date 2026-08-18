@@ -1,42 +1,84 @@
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.lucide) {
-    lucide.createIcons();
-  }
+  try { if (window.lucide) lucide.createIcons(); } catch(e){}
+  try { renderCaseStudiesList(); } catch(e){ console.error('Case studies error:', e); }
+  try { renderPricingPacks(); } catch(e){ console.error('Pricing error:', e); }
+  try { renderArticles(); } catch(e){ console.error('Articles error:', e); }
+  try { initRoutingFromHash(); } catch(e){ console.error('Routing error:', e); }
 
-  renderCaseStudiesList();
-  renderPricingPacks();
-  renderArticles();
-  initRoutingFromHash();
+  window.addEventListener('hashchange', initRoutingFromHash);
+  window.addEventListener('popstate', initRoutingFromHash);
+
+  // Écouteur global pour tous les liens d'ancres (Bouton Home, Navbar, Footer...)
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (link) {
+      const href = link.getAttribute('href');
+      if (href && href.length > 1 && !href.startsWith('#lbc-sec-')) {
+        const cleanId = href.replace(/^#/, '').replace(/^page-/, '');
+        const targetSec = document.getElementById(`page-${cleanId}`);
+        if (targetSec) {
+          e.preventDefault();
+          navigateTo(cleanId);
+        }
+      }
+    }
+  });
 });
+
+window.addEventListener('load', initRoutingFromHash);
 
 /* ==========================================================================
    1. SPA ROUTING NAVIGATION
    ========================================================================== */
 function navigateTo(pageId) {
-  const sections = document.querySelectorAll('.spa-page-section');
-  sections.forEach(sec => sec.classList.remove('active'));
+  if (!pageId) return;
+  const cleanId = pageId.replace(/^#/, '').replace(/^page-/, '');
 
-  const targetSection = document.getElementById(`page-${pageId}`);
+  const sections = document.querySelectorAll('.spa-page-section');
+  sections.forEach(sec => {
+    sec.classList.remove('active');
+    sec.style.display = 'none';
+  });
+
+  const targetSection = document.getElementById(`page-${cleanId}`);
   if (targetSection) {
     targetSection.classList.add('active');
+    targetSection.style.display = 'block';
+  } else {
+    const homeSec = document.getElementById('page-home');
+    if (homeSec) {
+      homeSec.classList.add('active');
+      homeSec.style.display = 'block';
+    }
   }
 
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
     link.classList.remove('active');
-    if (link.getAttribute('href') === `#${pageId}`) {
+    const href = link.getAttribute('href');
+    if (href === `#${cleanId}` || href === `#page-${cleanId}`) {
       link.classList.add('active');
     }
   });
+
+  try {
+    if (window.location.hash !== `#${cleanId}`) {
+      history.pushState(null, '', `#${cleanId}`);
+    }
+  } catch (e) {
+    // Fallback silencieux si file:// restreint pushState
+  }
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (window.lucide) lucide.createIcons();
 }
 
 function initRoutingFromHash() {
-  const hash = window.location.hash.replace('#', '');
+  const hash = window.location.hash.replace(/^#/, '').replace(/^page-/, '');
   if (hash && document.getElementById(`page-${hash}`)) {
     navigateTo(hash);
+  } else if (!hash) {
+    navigateTo('home');
   }
 }
 
@@ -45,7 +87,7 @@ function initRoutingFromHash() {
    ========================================================================== */
 function renderCaseStudiesList() {
   const container = document.getElementById('caseStudiesContainer');
-  if (!container) return;
+  if (!container || typeof CASE_STUDIES_PRESENTATION === 'undefined' || !Array.isArray(CASE_STUDIES_PRESENTATION)) return;
 
   container.className = 'case-studies-glance-list';
   container.innerHTML = '';
@@ -53,6 +95,8 @@ function renderCaseStudiesList() {
   CASE_STUDIES_PRESENTATION.forEach(cs => {
     const card = document.createElement('article');
     card.className = 'project-glance-card';
+    card.style.cursor = 'pointer';
+    card.setAttribute('onclick', `openProjectDrawer('${cs.id}')`);
 
     // 4-step process HTML
     const glanceStepsHTML = (cs.glanceSteps || []).map((step, idx) => `
@@ -76,14 +120,14 @@ function renderCaseStudiesList() {
 
     card.innerHTML = `
       <div class="glance-card-main">
-        <div class="glance-media-col">
+        <div class="glance-media-col" onclick="openProjectDrawer('${cs.id}')">
           <img src="${cs.image}" alt="Aperçu du projet UX : ${cs.title}">
         </div>
 
         <div class="glance-content-col">
           <div>
             <div class="glance-card-header">
-              <h2 class="glance-project-title">${cs.title}</h2>
+              <h2 class="glance-project-title" onclick="openProjectDrawer('${cs.id}')">${cs.title}</h2>
               <div class="glance-project-subtitle">${cs.category}</div>
               
               <h3 class="glance-headline-quote">${cs.headline}</h3>
@@ -111,7 +155,7 @@ function renderCaseStudiesList() {
       </div>
 
       <div class="glance-card-footer">
-        <button class="glance-card-cta" onclick="openProjectDrawer('${cs.id}'); return false;">
+        <button class="glance-card-cta" onclick="event.stopPropagation(); openProjectDrawer('${cs.id}'); return false;">
           Entrer dans le projet <span class="cta-arrow-icon">→</span>
         </button>
       </div>
@@ -330,32 +374,50 @@ function openProjectDrawer(projectId) {
 
   overlay.classList.add('active');
 
-  // Gérer le curseur suiveur de souris et la synchronisation dynamique du menu au défilement
+  // Gérer la flèche flottante continue en parallaxe (orientation dynamique haut/bas) et le menu
   const mainScroll = document.getElementById('lbcMainScroll');
   const scrollPill = document.getElementById('lbcScrollPill');
+  let lastScrollTop = 0;
 
   if (mainScroll && scrollPill) {
-    mainScroll.addEventListener('mousemove', function handleMouseMove(e) {
-      if (mainScroll.scrollTop < 40) {
-        const rect = mainScroll.getBoundingClientRect();
-        const relativeY = e.clientY - rect.top;
-        scrollPill.style.top = (relativeY + mainScroll.scrollTop) + 'px';
-        scrollPill.style.opacity = '1';
-      } else {
-        scrollPill.style.opacity = '0';
-      }
-    });
+    const arrowSpan = scrollPill.querySelector('.scroll-arrow');
 
-    mainScroll.addEventListener('mouseleave', function handleMouseLeave() {
-      scrollPill.style.opacity = '0';
-    });
+    function updateParallaxArrowPosition() {
+      const currentScrollTop = mainScroll.scrollTop;
+      const maxScroll = mainScroll.scrollHeight - mainScroll.clientHeight;
+      const scrollProgress = maxScroll > 0 ? (currentScrollTop / maxScroll) : 0;
+      const availableTrack = mainScroll.clientHeight - 120;
+      
+      // Position parallaxe fluide le long du panneau de droite
+      const targetTop = currentScrollTop + 60 + (scrollProgress * availableTrack);
+      scrollPill.style.top = targetTop + 'px';
+      scrollPill.style.opacity = '1';
 
-    mainScroll.addEventListener('scroll', function handlePillScroll() {
-      if (mainScroll.scrollTop > 40) {
-        scrollPill.style.opacity = '0';
-      } else {
-        scrollPill.style.opacity = '1';
+      if (arrowSpan) {
+        if (currentScrollTop > lastScrollTop + 1) {
+          // Défilement vers le bas -> flèche vers le bas ↓
+          arrowSpan.textContent = '↓';
+        } else if (currentScrollTop < lastScrollTop - 1) {
+          // Défilement vers le haut -> flèche vers le haut ↑
+          arrowSpan.textContent = '↑';
+        }
       }
+      lastScrollTop = currentScrollTop;
+    }
+
+    // Écouteur de la molette pour une réactivité instantanée de l'orientation de la flèche
+    mainScroll.addEventListener('wheel', function(e) {
+      if (arrowSpan) {
+        if (e.deltaY > 0) {
+          arrowSpan.textContent = '↓';
+        } else if (e.deltaY < 0) {
+          arrowSpan.textContent = '↑';
+        }
+      }
+    }, { passive: true });
+
+    mainScroll.addEventListener('scroll', updateParallaxArrowPosition);
+    updateParallaxArrowPosition();
 
       // Synchroniser automatiquement l'étape active (1 à 8) dans la sidebar
       const sections = [
@@ -469,7 +531,7 @@ function closeProjectDrawer() {
    ========================================================================== */
 function renderPricingPacks() {
   const container = document.getElementById('pricingPacksContainer');
-  if (!container) return;
+  if (!container || typeof PRICING_PACKS === 'undefined' || !Array.isArray(PRICING_PACKS)) return;
   container.innerHTML = PRICING_PACKS.map(p => `
     <div class="card-japandi">
       <div style="font-size: 13px; font-weight: 700; color: var(--color-primary); margin-bottom: 6px;">${p.delay}</div>
@@ -482,7 +544,7 @@ function renderPricingPacks() {
 
 function renderArticles() {
   const container = document.getElementById('blogArticlesContainer');
-  if (!container) return;
+  if (!container || typeof ARTICLES_DATA === 'undefined' || !Array.isArray(ARTICLES_DATA)) return;
   container.innerHTML = ARTICLES_DATA.map(a => `
     <div class="card-japandi" style="margin-bottom: 16px;">
       <div style="font-size: 12px; color: var(--color-primary); font-weight: 600; margin-bottom: 4px;">${a.category} • ${a.date}</div>
