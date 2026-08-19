@@ -1904,11 +1904,19 @@ strong, b {
 }
 
 .lbc-v2-card {
-  background: #FFFFFF !important;
+  background: var(--color-surface) !important;
   border-radius: 20px;
   padding: 26px 30px;
   border: 1px solid #F0E6DD;
-  box-shadow: 0 4px 16px rgba(70, 40, 25, 0.04);
+  box-shadow: 0 6px 20px rgba(70, 40, 25, 0.06), 0 2px 6px rgba(199, 109, 75, 0.03) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+}
+
+.lbc-v2-card:hover,
+.lbc-v2-subcard:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(199, 109, 75, 0.35) !important;
+  box-shadow: 0 16px 36px rgba(50, 30, 20, 0.12), 0 4px 12px rgba(199, 109, 75, 0.08) !important;
 }
 
 .lbc-v2-card .lbc-v2-card-icon {
@@ -1995,11 +2003,12 @@ strong, b {
 }
 
 .lbc-v2-subcard {
-  background: #FFFFFF !important;
+  background: var(--color-surface) !important;
   border-radius: 20px;
   padding: 22px;
   border: 1px solid #F0E6DD;
-  box-shadow: 0 4px 16px rgba(70, 40, 25, 0.04);
+  box-shadow: 0 6px 20px rgba(70, 40, 25, 0.06), 0 2px 6px rgba(199, 109, 75, 0.03) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
 }
 
 .lbc-v2-audio-header {
