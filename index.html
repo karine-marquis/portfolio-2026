@@ -97,7 +97,7 @@
       if (target && scrollContainer) {
         const containerRect = scrollContainer.getBoundingClientRect();
         const targetRect = target.getBoundingClientRect();
-        const topPos = targetRect.top - containerRect.top + scrollContainer.scrollTop - 20;
+        const topPos = targetRect.top - containerRect.top + scrollContainer.scrollTop - 100;
         scrollContainer.scrollTo({ top: topPos, behavior: 'smooth' });
       }
       if (itemEl) {
@@ -122,13 +122,12 @@
       ];
       const menuItems = document.querySelectorAll('.lbc-v2-menu-item');
       let currentActiveIndex = 0;
-      const containerRect = scrollContainer.getBoundingClientRect();
+      const triggerPoint = window.innerHeight * 0.45;
       sections.forEach(function(sec) {
         const el = document.getElementById(sec.id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          const relativeTop = rect.top - containerRect.top;
-          if (relativeTop <= 160) {
+          if (rect.top <= triggerPoint) {
             currentActiveIndex = sec.index;
           }
         }

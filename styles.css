@@ -1618,8 +1618,8 @@ strong, b {
   min-height: 100%;
   background: #FAF6F0;
   border-radius: 28px !important;
-  overflow: hidden !important;
-  align-items: stretch !important;
+  overflow: visible !important;
+  align-items: flex-start !important;
 }
 
 .lbc-v2-sidebar {
@@ -1630,10 +1630,12 @@ strong, b {
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgba(199, 109, 75, 0.15);
-  position: relative;
+  position: sticky !important;
+  top: 40px !important;
+  align-self: flex-start !important;
+  z-index: 10;
+  border-radius: 28px 0 0 28px !important;
   overflow: hidden !important;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
 }
 
 .lbc-v2-sidebar::-webkit-scrollbar {
@@ -1782,10 +1784,10 @@ strong, b {
 .lbc-v2-sidebar-bottom-wrap {
   display: block !important;
   margin-top: auto !important;
-  width: calc(100% + 64px) !important;
-  margin-left: -32px !important;
-  margin-right: -32px !important;
-  margin-bottom: -32px !important;
+  width: calc(100% + 56px) !important;
+  margin-left: -28px !important;
+  margin-right: -28px !important;
+  margin-bottom: -24px !important;
   overflow: hidden !important;
   border-radius: 0 0 0 28px !important;
   line-height: 0;
@@ -1797,6 +1799,10 @@ strong, b {
   height: auto !important;
   display: block !important;
   opacity: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: scale(1.24) translate(-8px, 10px) !important;
+  transform-origin: bottom left !important;
   border-radius: 0 0 0 28px !important;
   mask-image: linear-gradient(to top, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%) !important;
   -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%) !important;
@@ -1877,7 +1883,7 @@ strong, b {
   height: 100%;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: -8px 14px 32px rgba(42, 32, 27, 0.14), 0 4px 12px rgba(199, 109, 75, 0.08);
+  box-shadow: 18px 22px 38px rgba(35, 25, 20, 0.38), 6px 10px 22px rgba(180, 85, 50, 0.25) !important;
 }
 
 .lbc-v2-hero-img-wrap img {
@@ -1892,17 +1898,21 @@ strong, b {
 
 .lbc-v2-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 24px;
   margin-bottom: 36px;
 }
 
 .lbc-v2-card {
   background: #FFFFFF !important;
   border-radius: 20px;
-  padding: 22px;
+  padding: 26px 30px;
   border: 1px solid #F0E6DD;
   box-shadow: 0 4px 16px rgba(70, 40, 25, 0.04);
+}
+
+.lbc-v2-card .lbc-v2-card-icon {
+  display: none !important;
 }
 
 .lbc-v2-card-icon {
