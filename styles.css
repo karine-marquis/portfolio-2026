@@ -59,7 +59,7 @@ html, body {
 .spa-page-section {
   background-color: var(--color-background);
   min-height: 100vh;
-  padding-top: 120px !important;
+  padding-top: 85px !important;
 }
 
 #page-home {
@@ -392,7 +392,7 @@ strong, b {
 }
 
 .section-spacing {
-  padding: 80px 0 40px 0;
+  padding: 20px 0 40px 0;
 }
 
 /* ==========================================================================
@@ -892,8 +892,9 @@ strong, b {
 }
 
 .drawer-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  display: flex !important;
 }
 
 .drawer-content {
@@ -961,24 +962,35 @@ strong, b {
 
 .drawer-close-btn {
   position: absolute;
-  top: 24px;
+  top: 20px;
   right: 24px;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: var(--color-surface);
-  border: 1px solid rgba(217, 210, 200, 0.8);
-  display: flex;
+  background: #FFFDFC !important;
+  border: 1.5px solid rgba(199, 109, 75, 0.25) !important;
+  color: #3B2C25 !important;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  z-index: 1000 !important;
+  box-shadow: 0 4px 14px rgba(42, 32, 27, 0.12) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.drawer-close-btn i {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2px;
 }
 
 .drawer-close-btn:hover {
-  background: var(--color-primary);
-  color: #FFFFFF;
-  border-color: var(--color-primary);
+  background: var(--color-accent) !important;
+  color: #FFFFFF !important;
+  border-color: var(--color-accent) !important;
+  transform: rotate(90deg) scale(1.08) !important;
+  box-shadow: 0 6px 18px rgba(199, 109, 75, 0.3) !important;
 }
 
 .canva-modal-container {
@@ -1620,6 +1632,17 @@ strong, b {
   margin-bottom: 20px;
 }
 
+.lbc-v2-sidebar-kicker {
+  font-family: var(--font-sans) !important;
+  font-size: 9.5px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent) !important;
+  margin-bottom: 2px !important;
+  opacity: 0.7;
+}
+
 .lbc-v2-brand-title {
   font-family: var(--font-h1) !important;
   font-size: 26px !important;
@@ -1642,6 +1665,33 @@ strong, b {
   font-style: italic !important;
   color: var(--color-body) !important;
   line-height: 1.4 !important;
+}
+
+.lbc-v2-sidebar-meta-block {
+  margin-top: 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lbc-v2-meta-label {
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent) !important;
+  margin-bottom: 2px !important;
+  opacity: 0.9;
+}
+
+.lbc-v2-meta-value {
+  font-family: var(--font-sans) !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: #3B2C25 !important;
+  line-height: 1.35 !important;
 }
 
 .lbc-v2-sidebar-sep {
@@ -1740,10 +1790,10 @@ strong, b {
 
 .lbc-v2-hero-row {
   display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 28px;
-  margin-bottom: 32px;
-  align-items: start;
+  grid-template-columns: 1fr 440px;
+  gap: 32px;
+  margin-bottom: 36px;
+  align-items: stretch;
 }
 
 .lbc-v2-pill-badge {
@@ -1795,16 +1845,20 @@ strong, b {
 
 .lbc-v2-hero-img-wrap {
   width: 100%;
+  height: 100%;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(42, 32, 27, 0.12);
+  box-shadow: -8px 14px 32px rgba(42, 32, 27, 0.14), 0 4px 12px rgba(199, 109, 75, 0.08);
 }
 
 .lbc-v2-hero-img-wrap img {
   width: 100%;
-  height: 230px;
+  height: 100%;
+  min-height: 270px;
   object-fit: cover;
   display: block;
+  transform: scale(1.15);
+  transform-origin: center center;
 }
 
 .lbc-v2-cards-grid {
@@ -2104,4 +2158,20 @@ strong, b {
   .glance-card-main { grid-template-columns: 1fr; }
   .glance-steps-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .glance-step-arrow { display: none; }
+}
+
+/* ZÉRO BARRE DE DÉFILEMENT - ÉPURE TOTALE (OPTION 3) */
+.lbc-scroll-pill-indicator {
+  display: none !important;
+}
+
+.lbc-v2-main-content {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.lbc-v2-main-content::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }

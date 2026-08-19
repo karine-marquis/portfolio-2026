@@ -44,8 +44,13 @@
     }
 
     function initRoutingFromHash() {
-      const hash = window.location.hash.replace(/^#/, '').replace(/^page-/, '');
-      navigateTo(hash || 'home');
+      const rawHash = window.location.hash.replace(/^#/, '').replace(/^page-/, '');
+      if (rawHash === 'cordons-bleus' || rawHash === 'bambinets' || rawHash === 'foodles') {
+        navigateTo('projects');
+        openProjectDrawer(rawHash);
+      } else {
+        navigateTo(rawHash || 'home');
+      }
     }
 
     window.addEventListener('hashchange', initRoutingFromHash);
@@ -79,13 +84,20 @@
     function closeProjectDrawer() {
       const overlay = document.getElementById('projectDrawerOverlay');
       if (overlay) overlay.classList.remove('active');
+      try {
+        if (window.location.hash !== '#projects') {
+          history.pushState(null, '', '#projects');
+        }
+      } catch (e) {}
     }
 
     function scrollToLbcSection(secId, itemEl) {
       const target = document.getElementById(secId);
       const scrollContainer = document.getElementById('lbcMainScroll');
       if (target && scrollContainer) {
-        const topPos = target.offsetTop - scrollContainer.offsetTop - 20;
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const topPos = targetRect.top - containerRect.top + scrollContainer.scrollTop - 20;
         scrollContainer.scrollTo({ top: topPos, behavior: 'smooth' });
       }
       if (itemEl) {
@@ -93,6 +105,54 @@
         itemEl.classList.add('active');
       }
     }
+
+    function updateActiveMenuItem() {
+      const mainScroll = document.getElementById('lbcMainScroll');
+      if (!mainScroll) return;
+      const sections = [
+        { id: 'lbc-sec-1', index: 0 },
+        { id: 'lbc-sec-2', index: 1 },
+        { id: 'lbc-sec-3', index: 2 },
+        { id: 'lbc-sec-4', index: 3 },
+        { id: 'lbc-sec-5', index: 4 },
+        { id: 'lbc-sec-6', index: 5 },
+        { id: 'lbc-sec-7', index: 6 },
+        { id: 'lbc-sec-8', index: 7 },
+        { id: 'lbc-sec-9', index: 8 }
+      ];
+      const menuItems = document.querySelectorAll('.lbc-v2-menu-item');
+      let currentActiveIndex = 0;
+      const containerRect = mainScroll.getBoundingClientRect();
+      sections.forEach(function(sec) {
+        const el = document.getElementById(sec.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const relativeTop = rect.top - containerRect.top;
+          if (relativeTop <= 140) {
+            currentActiveIndex = sec.index;
+          }
+        }
+      });
+      menuItems.forEach(function(item, idx) {
+        if (idx === currentActiveIndex) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
+
+    function initModalScrollListener() {
+      const mainScroll = document.getElementById('lbcMainScroll');
+      if (mainScroll) {
+        mainScroll.removeEventListener('scroll', updateActiveMenuItem);
+        mainScroll.addEventListener('scroll', updateActiveMenuItem);
+        updateActiveMenuItem();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initModalScrollListener);
+    window.addEventListener('load', initModalScrollListener);
 
     function toggleLbcAudio(btn) {
       const audio = document.getElementById('lbcAudioElement');
@@ -136,27 +196,71 @@
 
     function openProjectDrawer(projectId) {
       const overlay = document.getElementById('projectDrawerOverlay');
-      const drawerContainer = document.getElementById('projectDrawerContainer');
-      if (!overlay || !drawerContainer) return;
+      if (!overlay) return;
+      overlay.classList.add('active');
+      initModalScrollListener();
+      initIconsSafely();
+      try {
+        if (window.location.hash !== '#' + projectId) {
+          history.pushState(null, '', '#' + projectId);
+        }
+      } catch (e) {}
+    }
+  </script>
 
-      drawerContainer.innerHTML = `
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script src="https://unpkg.com/lucide@latest" onload="initIconsSafely()"></script>
+</head>
+<body>
+
+  <!-- CASE STUDY CANVA DRAWER MODAL INTERACTIF EMBEDDED -->
+  <div class="drawer-overlay" id="projectDrawerOverlay">
+    <div class="drawer-content" style="max-width: 1280px; background: #FFFDFC; padding: 0;">
+      <button class="drawer-close-btn" onclick="closeProjectDrawer()" aria-label="Fermer la fenêtre du projet"><i data-lucide="x" aria-hidden="true"></i></button>
+      <div id="projectDrawerContainer">
         <div class="lbc-v2-modal-layout">
           <aside class="lbc-v2-sidebar">
             <div class="lbc-v2-sidebar-brand">
+              <div class="lbc-v2-sidebar-kicker">Case Study</div>
               <h2 class="lbc-v2-brand-title">Les Cordons Bleus</h2>
               <div class="lbc-v2-brand-category">UX & digital learning</div>
               <p class="lbc-v2-brand-tagline">Prolonger l'apprentissage au-delà de l'atelier.</p>
             </div>
+            <div class="lbc-v2-sidebar-meta-block">
+              <div class="lbc-v2-meta-item">
+                <div class="lbc-v2-meta-label">
+                  <i data-lucide="layout" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                  TYPE DE PROJET
+                </div>
+                <div class="lbc-v2-meta-value">Refonte du site web et accompagnement UX</div>
+              </div>
+              <div class="lbc-v2-meta-item">
+                <div class="lbc-v2-meta-label">
+                  <i data-lucide="clock" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                  DURÉE
+                </div>
+                <div class="lbc-v2-meta-value">6 mois</div>
+              </div>
+              <div class="lbc-v2-meta-item">
+                <div class="lbc-v2-meta-label">
+                  <i data-lucide="user-check" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                  MON RÔLE
+                </div>
+                <div class="lbc-v2-meta-value">UX/UI Designer & cheffe de projet</div>
+              </div>
+            </div>
             <div class="lbc-v2-sidebar-sep"></div>
             <ul class="lbc-v2-menu-list">
               <li class="lbc-v2-menu-item active" onclick="scrollToLbcSection('lbc-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le point de départ</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Ce que j'ai cherché à comprendre</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Ma démarche</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-4', this)"><span class="menu-num">4</span><span class="menu-label">Ce que j'ai découvert</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-5', this)"><span class="menu-num">5</span><span class="menu-label">Les solutions retenues</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-6', this)"><span class="menu-num">6</span><span class="menu-label">Entrer dans les coulisses du projet</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-7', this)"><span class="menu-num">7</span><span class="menu-label">Écouter le projet autrement</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)"><span class="menu-num">8</span><span class="menu-label">Ce que la refonte devait permettre</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Ce que j’ai cherché à comprendre</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Ce que la refonte devait permettre</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-4', this)"><span class="menu-num">4</span><span class="menu-label">Ma démarche</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-5', this)"><span class="menu-num">5</span><span class="menu-label">Ce que j’ai découvert</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-6', this)"><span class="menu-num">6</span><span class="menu-label">Les solutions retenues</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-7', this)"><span class="menu-num">7</span><span class="menu-label">Ce que j’ai appris</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)"><span class="menu-num">8</span><span class="menu-label">Entrez dans le projet</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-9', this)"><span class="menu-num">9</span><span class="menu-label">Écouter le projet autrement</span></li>
             </ul>
             <img src="assets/lbc_sidebar_utensils.png" alt="Cuisine Ustensiles" class="lbc-v2-sidebar-bg-img">
           </aside>
@@ -176,18 +280,13 @@
               </div>
               <div class="lbc-v2-hero-img-wrap"><img src="assets/lbc_hero_kitchen.png" alt="Atelier Les Cordons Bleus"></div>
             </div>
-            <div class="lbc-v2-cards-grid" id="lbc-sec-2">
-              <div class="lbc-v2-card" id="lbc-sec-3">
+            <div class="lbc-v2-cards-grid">
+              <div class="lbc-v2-card" id="lbc-sec-2">
                 <div class="lbc-v2-card-icon"><i data-lucide="target"></i></div>
                 <h3 class="lbc-v2-card-title">Le défi</h3>
                 <p class="lbc-v2-card-body">Réussir une recette avec un chef, c'est une chose. <strong>La refaire seul</strong> chez soi, c'en est une autre.<br><br>La <strong>continuité</strong> après l'atelier est <strong>faible</strong> : peu de repères, peu de <strong>suivi</strong>, et une expérience numérique qui ne répond pas aux vrais besoins des apprenants.</p>
               </div>
-              <div class="lbc-v2-card" id="lbc-sec-4">
-                <div class="lbc-v2-card-icon"><i data-lucide="user"></i></div>
-                <h3 class="lbc-v2-card-title">Ma mission</h3>
-                <p class="lbc-v2-card-body">Faire en sorte que l'expérience ne <strong>retombe pas</strong> dès que le tablier est rangé.<br><br>J'ai repensé le parcours <strong>avant, pendant</strong> et <strong>après</strong> le cours pour créer un <strong>lien durable</strong> entre l'<strong>apprentissage</strong> en cuisine et la <strong>pratique à la maison</strong>.</p>
-              </div>
-              <div class="lbc-v2-card" id="lbc-sec-5">
+              <div class="lbc-v2-card" id="lbc-sec-3">
                 <div class="lbc-v2-card-icon"><i data-lucide="trending-up"></i></div>
                 <h3 class="lbc-v2-card-title" style="font-size: 18px !important;">Ce que la refonte devait permettre</h3>
                 <ul class="lbc-v2-card-bullets">
@@ -197,11 +296,42 @@
                   <li><strong>Valoriser l'expertise</strong> des chefs</li>
                 </ul>
               </div>
+              <div class="lbc-v2-card" id="lbc-sec-4">
+                <div class="lbc-v2-card-icon"><i data-lucide="user"></i></div>
+                <h3 class="lbc-v2-card-title">Ma démarche</h3>
+                <p class="lbc-v2-card-body">Faire en sorte que l'expérience ne <strong>retombe pas</strong> dès que le tablier est rangé.<br><br>J'ai repensé le parcours <strong>avant, pendant</strong> et <strong>après</strong> le cours pour créer un <strong>lien durable</strong> entre l'<strong>apprentissage</strong> en cuisine et la <strong>pratique à la maison</strong>.</p>
+              </div>
+              <div class="lbc-v2-card" id="lbc-sec-5">
+                <div class="lbc-v2-card-icon"><i data-lucide="search"></i></div>
+                <h3 class="lbc-v2-card-title">Ce que j’ai découvert</h3>
+                <p class="lbc-v2-card-body">L'observation sur le terrain révèle que l'apprenant recherche des <strong>repères visuels rapides</strong> et une <strong>structure progressive</strong> pour ne pas rompre la dynamique d'apprentissage.</p>
+              </div>
+              <div class="lbc-v2-card" id="lbc-sec-6">
+                <div class="lbc-v2-card-icon"><i data-lucide="check-circle"></i></div>
+                <h3 class="lbc-v2-card-title">Les solutions retenues</h3>
+                <p class="lbc-v2-card-body">Un compagnon numérique axé sur des <strong>micro-étapes guidées</strong>, un suivi personnalisé et une <strong>passerelle fluide</strong> entre l'atelier présentiel et la cuisine personnelle.</p>
+              </div>
+              <div class="lbc-v2-card" id="lbc-sec-7">
+                <div class="lbc-v2-card-icon"><i data-lucide="award"></i></div>
+                <h3 class="lbc-v2-card-title">Ce que j’ai appris</h3>
+                <p class="lbc-v2-card-body">Simplifier un parcours complexe exige de **séparer la charge cognitive** d'apprentissage de l'effort d'exécution pratique. La clarté prime sur l'abondance d'information.</p>
+              </div>
             </div>
-            <div id="lbc-sec-6">
-              <h3 class="lbc-v2-coulisses-title">Entrer dans les coulisses du projet</h3>
-              <div class="lbc-v2-coulisses-grid" id="lbc-sec-7">
+            <div id="lbc-sec-8">
+              <h3 class="lbc-v2-coulisses-title">Entrer dans le projet</h3>
+              <div class="lbc-v2-coulisses-grid">
                 <div class="lbc-v2-subcard">
+                  <div class="lbc-v2-pres-flex">
+                    <div class="lbc-v2-pres-info">
+                      <h4>La présentation complète</h4>
+                      <p>Le projet, de la problématique aux solutions retenues, avec les principaux choix de conception et livrables.</p>
+                      <a href="https://www.youtube.com/watch?v=JhXAkBDHNaE" target="_blank" rel="noopener" class="lbc-v2-youtube-btn"><i data-lucide="play" style="width: 14px; height: 14px;"></i> Voir la présentation sur YouTube ➔</a>
+                    </div>
+                    <img src="assets/lbc_presentation_thumb.png" alt="Aperçu Présentation" class="lbc-v2-pres-thumb">
+                  </div>
+                  <p class="lbc-v2-disclaimer-note" style="margin-top: 10px;">ⓘ <strong>À regarder tranquillement :</strong> la présentation défile vite.<br>Pour une lecture confortable, je recommande une vitesse de <strong>0,5x</strong> — voire <strong>0,25x</strong> si vous souhaitez prendre le temps de lire chaque écran.</p>
+                </div>
+                <div class="lbc-v2-subcard" id="lbc-sec-9">
                   <div class="lbc-v2-audio-header">
                     <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
                     <div class="lbc-v2-audio-title-wrap">
@@ -219,17 +349,6 @@
                   <audio id="lbcAudioElement" src="assets/podcasts/cordons-bleus-podcast.m4a" ontimeupdate="updateLbcAudioProgress()"></audio>
                   <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
                 </div>
-                <div class="lbc-v2-subcard" id="lbc-sec-8">
-                  <div class="lbc-v2-pres-flex">
-                    <div class="lbc-v2-pres-info">
-                      <h4>La présentation complète</h4>
-                      <p>Le projet, de la problématique aux solutions retenues, avec les principaux choix de conception et livrables.</p>
-                      <a href="https://www.youtube.com/watch?v=JhXAkBDHNaE" target="_blank" rel="noopener" class="lbc-v2-youtube-btn"><i data-lucide="play" style="width: 14px; height: 14px;"></i> Voir la présentation sur YouTube ➔</a>
-                    </div>
-                    <img src="assets/lbc_presentation_thumb.png" alt="Aperçu Présentation" class="lbc-v2-pres-thumb">
-                  </div>
-                  <p class="lbc-v2-disclaimer-note" style="margin-top: 10px;">ⓘ <strong>À regarder tranquillement :</strong> la présentation défile vite.<br>Pour une lecture confortable, je recommande une vitesse de <strong>0,5x</strong> — voire <strong>0,25x</strong> si vous souhaitez prendre le temps de lire chaque écran.</p>
-                </div>
               </div>
             </div>
             <div class="lbc-v2-contact-card">
@@ -245,47 +364,9 @@
           </main>
           <div id="lbcScrollPill" class="lbc-scroll-pill-indicator" aria-label="Défiler vers le bas"><span class="scroll-arrow">↓</span></div>
         </div>
-      `;
-
-      overlay.classList.add('active');
-
-      const mainScroll = document.getElementById('lbcMainScroll');
-      const scrollPill = document.getElementById('lbcScrollPill');
-      let lastScrollTop = 0;
-      if (mainScroll && scrollPill) {
-        const arrowSpan = scrollPill.querySelector('.scroll-arrow');
-        function updateParallaxArrowPosition() {
-          const currentScrollTop = mainScroll.scrollTop;
-          const maxScroll = mainScroll.scrollHeight - mainScroll.clientHeight;
-          const scrollProgress = maxScroll > 0 ? (currentScrollTop / maxScroll) : 0;
-          const availableTrack = mainScroll.clientHeight - 120;
-          const targetTop = currentScrollTop + 60 + (scrollProgress * availableTrack);
-          scrollPill.style.top = targetTop + 'px';
-          scrollPill.style.opacity = '1';
-          if (arrowSpan) {
-            if (currentScrollTop > lastScrollTop + 1) { arrowSpan.textContent = '↓'; }
-            else if (currentScrollTop < lastScrollTop - 1) { arrowSpan.textContent = '↑'; }
-          }
-          lastScrollTop = currentScrollTop;
-        }
-        mainScroll.addEventListener('wheel', function(e) {
-          if (arrowSpan) {
-            if (e.deltaY > 0) { arrowSpan.textContent = '↓'; }
-            else if (e.deltaY < 0) { arrowSpan.textContent = '↑'; }
-          }
-        }, { passive: true });
-        mainScroll.addEventListener('scroll', updateParallaxArrowPosition);
-        updateParallaxArrowPosition();
-      }
-      initIconsSafely();
-    }
-  </script>
-
-  <script src="data.js"></script>
-  <script src="app.js"></script>
-  <script src="https://unpkg.com/lucide@latest" onload="initIconsSafely()"></script>
-</head>
-<body>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -412,7 +493,7 @@
     <section id="page-projects" class="spa-page-section">
       <div class="content-wrap section-spacing">
         
-        <div style="margin-bottom: 56px;">
+        <div style="margin-bottom: 32px;">
           <a href="#page-home" class="back-home-link"  aria-label="Retourner à la page d'accueil">
             <span class="back-arrow">←</span> Retour à l'accueil
           </a>
@@ -1072,14 +1153,6 @@
     </section>
 
   </main>
-
-  <!-- CASE STUDY CANVA DRAWER MODAL INTERACTIF -->
-  <div class="drawer-overlay" id="projectDrawerOverlay">
-    <div class="drawer-content" style="max-width: 1280px; background: #FFFDFC; padding: 0;">
-      <button class="drawer-close-btn" onclick="closeProjectDrawer()" aria-label="Fermer la fenêtre du projet"><i data-lucide="x" aria-hidden="true"></i></button>
-      <div id="projectDrawerContainer"></div>
-    </div>
-  </div>
 
 </body>
 </html>
