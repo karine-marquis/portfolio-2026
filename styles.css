@@ -878,7 +878,7 @@ strong, b {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(40, 30, 25, 0.35) !important;
+  background: rgba(40, 30, 25, 0.45) !important;
   backdrop-filter: blur(12px) saturate(140%) !important;
   -webkit-backdrop-filter: blur(12px) saturate(140%) !important;
   z-index: 2000;
@@ -887,8 +887,17 @@ strong, b {
   transition: opacity var(--transition-smooth);
   display: flex;
   justify-content: center !important;
-  align-items: center !important;
-  padding: 24px !important;
+  align-items: flex-start !important;
+  padding: 40px 0 40px 0 !important;
+  overflow-y: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.drawer-overlay::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .drawer-overlay.active {
@@ -899,18 +908,15 @@ strong, b {
 
 .drawer-content {
   width: 95%;
-  max-width: 1280px;
-  max-height: 92vh;
+  max-width: 1360px;
+  height: auto !important;
+  min-height: calc(100vh - 80px);
   background: transparent !important;
   border-radius: 28px !important;
-  box-shadow: 0 30px 80px rgba(40, 30, 25, 0.28), 0 8px 30px rgba(199, 109, 75, 0.12) !important;
+  box-shadow: 0 20px 60px rgba(40, 30, 25, 0.3) !important;
   padding: 0 !important;
-  overflow-y: auto;
-  transform: scale(0.96);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  overflow: visible !important;
   position: relative;
-  -ms-overflow-style: none !important;
-  scrollbar-width: none !important;
 }
 
 /* MASQUAGE DE LA BARRE DE SCROLL BRUTE ET DESIGN ÉPURÉ */
@@ -1609,23 +1615,30 @@ strong, b {
 .lbc-v2-modal-layout {
   display: flex;
   width: 100%;
-  height: 100%;
-  min-height: 820px;
+  min-height: 100%;
   background: #FAF6F0;
-  border-radius: 28px;
-  overflow: hidden;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  align-items: stretch !important;
 }
 
 .lbc-v2-sidebar {
-  width: 310px;
-  min-width: 290px;
+  width: 320px;
+  min-width: 300px;
   background: #F4EFEA;
   padding: 36px 28px 24px 28px;
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgba(199, 109, 75, 0.15);
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.lbc-v2-sidebar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
 }
 
 .lbc-v2-sidebar-brand {
@@ -1703,11 +1716,11 @@ strong, b {
 .lbc-v2-menu-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 24px 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 2;
+  z-index: 5 !important;
   position: relative;
 }
 
@@ -1766,26 +1779,42 @@ strong, b {
   box-shadow: 0 3px 10px rgba(199, 109, 75, 0.3);
 }
 
-.lbc-v2-sidebar-bg-img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  opacity: 0.85;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
-  z-index: 1;
+.lbc-v2-sidebar-bottom-wrap {
+  display: block !important;
+  margin-top: auto !important;
+  width: calc(100% + 64px) !important;
+  margin-left: -32px !important;
+  margin-right: -32px !important;
+  margin-bottom: -32px !important;
+  overflow: hidden !important;
+  border-radius: 0 0 0 28px !important;
+  line-height: 0;
   pointer-events: none;
+}
+
+.lbc-v2-sidebar-bottom-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  opacity: 1 !important;
+  border-radius: 0 0 0 28px !important;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%) !important;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%) !important;
+}
+
+.lbc-v2-sidebar-bg-img,
+.lbc-v2-page-bottom-illustration {
+  display: none !important;
 }
 
 .lbc-v2-main-content {
   flex: 1;
   padding: 36px 40px;
-  overflow-y: auto;
+  height: auto !important;
+  overflow: visible !important;
   position: relative;
   background: var(--color-background);
+  border-radius: 0 28px 28px 0 !important;
 }
 
 .lbc-v2-hero-row {

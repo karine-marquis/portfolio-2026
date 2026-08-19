@@ -93,7 +93,7 @@
 
     function scrollToLbcSection(secId, itemEl) {
       const target = document.getElementById(secId);
-      const scrollContainer = document.getElementById('lbcMainScroll');
+      const scrollContainer = document.getElementById('projectDrawerOverlay');
       if (target && scrollContainer) {
         const containerRect = scrollContainer.getBoundingClientRect();
         const targetRect = target.getBoundingClientRect();
@@ -107,8 +107,8 @@
     }
 
     function updateActiveMenuItem() {
-      const mainScroll = document.getElementById('lbcMainScroll');
-      if (!mainScroll) return;
+      const scrollContainer = document.getElementById('projectDrawerOverlay');
+      if (!scrollContainer) return;
       const sections = [
         { id: 'lbc-sec-1', index: 0 },
         { id: 'lbc-sec-2', index: 1 },
@@ -122,13 +122,13 @@
       ];
       const menuItems = document.querySelectorAll('.lbc-v2-menu-item');
       let currentActiveIndex = 0;
-      const containerRect = mainScroll.getBoundingClientRect();
+      const containerRect = scrollContainer.getBoundingClientRect();
       sections.forEach(function(sec) {
         const el = document.getElementById(sec.id);
         if (el) {
           const rect = el.getBoundingClientRect();
           const relativeTop = rect.top - containerRect.top;
-          if (relativeTop <= 140) {
+          if (relativeTop <= 160) {
             currentActiveIndex = sec.index;
           }
         }
@@ -143,10 +143,10 @@
     }
 
     function initModalScrollListener() {
-      const mainScroll = document.getElementById('lbcMainScroll');
-      if (mainScroll) {
-        mainScroll.removeEventListener('scroll', updateActiveMenuItem);
-        mainScroll.addEventListener('scroll', updateActiveMenuItem);
+      const scrollContainer = document.getElementById('projectDrawerOverlay');
+      if (scrollContainer) {
+        scrollContainer.removeEventListener('scroll', updateActiveMenuItem);
+        scrollContainer.addEventListener('scroll', updateActiveMenuItem);
         updateActiveMenuItem();
       }
     }
@@ -262,7 +262,9 @@
               <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)"><span class="menu-num">8</span><span class="menu-label">Entrez dans le projet</span></li>
               <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-9', this)"><span class="menu-num">9</span><span class="menu-label">Écouter le projet autrement</span></li>
             </ul>
-            <img src="assets/lbc_sidebar_utensils.png" alt="Cuisine Ustensiles" class="lbc-v2-sidebar-bg-img">
+            <div class="lbc-v2-sidebar-bottom-wrap">
+              <img src="assets/lbc_sidebar_utensils.png" alt="Cuisine Ustensiles" class="lbc-v2-sidebar-bottom-img">
+            </div>
           </aside>
           <main class="lbc-v2-main-content" id="lbcMainScroll">
             <div class="lbc-v2-hero-row" id="lbc-sec-1">
