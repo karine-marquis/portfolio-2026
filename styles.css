@@ -913,7 +913,7 @@ strong, b {
   min-height: calc(100vh - 80px);
   background: transparent !important;
   border-radius: 28px !important;
-  box-shadow: 0 20px 60px rgba(40, 30, 25, 0.3) !important;
+  box-shadow: 0 28px 72px rgba(25, 15, 10, 0.35), 0 10px 28px rgba(42, 32, 27, 0.22) !important;
   padding: 0 !important;
   overflow: visible !important;
   position: relative;
@@ -1620,6 +1620,7 @@ strong, b {
   border-radius: 28px !important;
   overflow: visible !important;
   align-items: flex-start !important;
+  box-shadow: 0 28px 72px rgba(25, 15, 10, 0.35), 0 10px 28px rgba(42, 32, 27, 0.22) !important;
 }
 
 .lbc-v2-sidebar {
