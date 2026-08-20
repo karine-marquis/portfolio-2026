@@ -2405,3 +2405,21 @@ strong, b {
   image-rendering: crisp-edges;
   filter: contrast(1.15) saturate(1.22) brightness(0.96);
 }
+
+/* SECTION CE QUE J'AI APPRIS — GRILLE HORIZONTALE 3 CARTE S */
+.lbc-v2-learnings-block {
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+.lbc-v2-learnings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 820px) {
+  .lbc-v2-learnings-grid {
+    grid-template-columns: 1fr;
+  }
+}
