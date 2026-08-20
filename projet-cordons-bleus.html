@@ -5,166 +5,258 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Les Cordons Bleus — Karine Marquis UX Designer</title>
     <meta name="description" content="Étude de cas UX/UI & Digital Learning — Les Cordons Bleus par Karine Marquis" />
-    <link rel="stylesheet" href="styles.css?v=20260817_cordons_bleus_audio" />
+    <link rel="stylesheet" href="styles.css?v=20260820_japandi" />
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body.page-inner {
+        background-color: var(--color-surface, #FFFDFC) !important;
+        margin: 0;
+        padding: 0;
+      }
+      .lbc-v2-modal-layout {
+        display: flex;
+        min-height: 100vh;
+        width: 100%;
+        max-width: 1380px;
+        margin: 0 auto;
+      }
+      .lbc-v2-sidebar {
+        width: 320px;
+        min-width: 320px;
+        background: #FAF4EE;
+        border-right: 1px solid #F0E6DD;
+        padding: 36px 28px;
+        display: flex;
+        flex-direction: column;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        box-sizing: border-box;
+      }
+      .lbc-v2-main-content {
+        flex: 1;
+        padding: 40px 48px 60px 48px;
+        overflow-y: auto;
+        box-sizing: border-box;
+      }
+      @media (max-width: 960px) {
+        .lbc-v2-modal-layout {
+          flex-direction: column;
+        }
+        .lbc-v2-sidebar {
+          width: 100%;
+          min-width: 100%;
+          height: auto;
+          position: relative;
+          border-right: none;
+          border-bottom: 1px solid #F0E6DD;
+          padding: 24px;
+        }
+        .lbc-v2-main-content {
+          padding: 24px;
+        }
+      }
+    </style>
   </head>
-  <body class="page-inner" style="background-color: #FAF4EE; color: #2A201B; font-family: 'Montserrat', sans-serif;">
+  <body class="page-inner">
     
-    <div class="content-wrap section-spacing" style="max-width: 900px; margin: 40px auto; padding: 0 24px;">
-      
-      <!-- NAV HAUT -->
-      <div style="margin-bottom: 24px;">
-        <a href="index.html#projects" class="back-home-link">
-          <span class="back-arrow">←</span> Retour aux projets
-        </a>
-      </div>
-
-      <!-- HEADER PROJET -->
-      <header style="margin-bottom: 36px;">
-        <div class="modal-project-category">Conception UX & Digital Learning</div>
-        <h1 class="modal-project-title" style="font-size: 42px; margin-bottom: 16px;">Les Cordons Bleus</h1>
-        <h2 class="modal-project-headline" style="font-size: 22px; font-style: italic; color: #3B2C25; margin-bottom: 16px;">
-          "Entre l’apprentissage guidé et la pratique autonome, le passage n’est pas toujours si simple."
-        </h2>
-        <p class="modal-project-desc" style="font-size: 16px; line-height: 1.6; color: #5C473C;">
-          La refonte explore comment créer une continuité entre l’expérience en cuisine et l’expérience numérique.
-        </p>
-      </header>
-
-      <!-- PRESENTATION VIDEO YOUTUBE -->
-      <section style="margin-bottom: 40px;">
-        <div class="modal-section-title-wrap">
-          <h3 class="modal-section-title">Présentation Vidéo du Projet</h3>
-          <span class="modal-section-line"></span>
+    <div class="lbc-v2-modal-layout">
+      <!-- SIDEBAR JAPANDI -->
+      <aside class="lbc-v2-sidebar">
+        <div style="margin-bottom: 16px;">
+          <a href="index.html#projects" class="back-home-link" style="font-size: 13px; font-weight: 500; color: var(--color-accent, #C76D4B); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            ← Retour aux projets
+          </a>
         </div>
-        
-        <div class="youtube-responsive-wrapper">
-          <iframe 
-            src="https://www.youtube-nocookie.com/embed/JhXAkBDHNaE?rel=0&modestbranding=1" 
-            title="Présentation UX - Les Cordons Bleus par Karine Marquis" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
+        <div class="lbc-v2-sidebar-brand">
+          <div class="lbc-v2-sidebar-kicker">Case Study</div>
+          <h2 class="lbc-v2-brand-title">Les Cordons Bleus</h2>
+          <div class="lbc-v2-brand-category">UX & digital learning</div>
+          <p class="lbc-v2-brand-tagline">Prolonger l'apprentissage au-delà de l'atelier.</p>
         </div>
-        <div class="video-caption-note">
-          💡 <strong>Astuce de lecture :</strong> Vous pouvez ajuster la vitesse de lecture (0,75x / 0,5x) ou activer les sous-titres automatiques directement dans les paramètres du lecteur vidéo YouTube.
-        </div>
-      </section>
-
-      <!-- PODCAST AUDIO & IA -->
-      <section style="margin-bottom: 40px;">
-        <div class="modal-section-title-wrap">
-          <h3 class="modal-section-title">Podcast & Synthèse IA</h3>
-          <span class="modal-section-line"></span>
-        </div>
-
-        <div class="ai-transparency-card">
-          <div class="podcast-player-wrap" style="margin-bottom: 18px; background: #F9F0E8; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(199, 109, 75, 0.25);">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; color: #2A201B;">
-              <span style="display: flex; align-items: center; gap: 8px;">
-                <i data-lucide="headphones" style="color: #C76D4B;"></i> Podcast : L'UX au menu des Cordons Bleus
-              </span>
-              <span style="font-size: 12px; font-weight: 500; color: #8A7367; background: #FFFDFC; padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(199, 109, 75, 0.2);">Synthèse Audio</span>
+        <div class="lbc-v2-sidebar-meta-block">
+          <div class="lbc-v2-meta-item">
+            <div class="lbc-v2-meta-label">
+              <i data-lucide="layout" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+              TYPE DE PROJET
             </div>
-            <audio controls style="width: 100%; height: 42px; border-radius: 8px;" src="assets/podcasts/cordons-bleus-podcast.m4a">
-              Votre navigateur ne prend pas en charge l'élément audio.
-            </audio>
+            <div class="lbc-v2-meta-value">Refonte du site web et accompagnement UX</div>
           </div>
-
-          <div class="ai-badge-header">
-            <i data-lucide="sparkles"></i> <strong>Note de Transparence IA :</strong>
+          <div class="lbc-v2-meta-item">
+            <div class="lbc-v2-meta-label">
+              <i data-lucide="clock" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+              DURÉE
+            </div>
+            <div class="lbc-v2-meta-value">6 mois</div>
           </div>
-          <p class="ai-badge-text">
-            La présentation vidéo et l'ensemble de la démarche UX/UI ci-dessus ont été entièrement conçus par <strong>Karine Marquis</strong>. Le podcast audio de synthèse a été généré à l'aide de l'IA à partir de mes notes de recherche et d'analyse documentaire pour offrir un format d'écoute complémentaire.
-          </p>
-        </div>
-      </section>
-
-      <!-- CE QUE J'AI APPRIS (3 CARTES HORIZONTALES SANS ICONES) -->
-      <section style="margin-bottom: 40px;">
-        <div class="modal-section-title-wrap" style="margin-bottom: 20px;">
-          <h3 class="modal-section-title">Ce que j’ai appris</h3>
-          <span class="modal-section-line"></span>
-        </div>
-
-        <div style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important;">
-          <div style="background: #FFFDFC; border-radius: 16px; padding: 22px 24px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.05);">
-            <h4 style="font-size: 15.5px; font-weight: 600; color: #2A201B; margin-bottom: 8px; line-height: 1.35;">Penser l’après, pas seulement le parcours immédiat.</h4>
-            <p style="font-size: 13.5px; line-height: 1.5; color: #5C473C; margin: 0;">La vraie expérience ne s’arrête pas à l’atelier. Une fois rentré chez soi, il faut encore pouvoir <strong>retrouver, pratiquer et prolonger</strong> ce qui a été appris.</p>
-          </div>
-
-          <div style="background: #FFFDFC; border-radius: 16px; padding: 22px 24px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.05);">
-            <h4 style="font-size: 15.5px; font-weight: 600; color: #2A201B; margin-bottom: 8px; line-height: 1.35;">Concevoir un service, pas seulement des écrans</h4>
-            <p style="font-size: 13.5px; line-height: 1.5; color: #5C473C; margin: 0;">Le service blueprint permet de dépasser ce que l’utilisateur voit à l’écran. Derrière une expérience fluide, il y a aussi des contenus à produire, des plannings à coordonner, des échanges à organiser — bref, <strong>tout un système à faire tenir ensemble</strong>.</p>
-          </div>
-
-          <div style="background: #FFFDFC; border-radius: 16px; padding: 22px 24px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.05);">
-            <h4 style="font-size: 15.5px; font-weight: 600; color: #2A201B; margin-bottom: 8px; line-height: 1.35;">Mesurer et ajuster</h4>
-            <p style="font-size: 13.5px; line-height: 1.5; color: #5C473C; margin: 0;">La mise en ligne n’est pas la ligne d’arrivée. Le <strong>suivi des KPI à 1 mois, puis tous les 3 mois</strong>, doit permettre de vérifier ce qui fonctionne vraiment, ce qui doit encore évoluer, et d’ajuster les choix de conception à partir des usages réels.</p>
+          <div class="lbc-v2-meta-item">
+            <div class="lbc-v2-meta-label">
+              <i data-lucide="user-check" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+              MON RÔLE
+            </div>
+            <div class="lbc-v2-meta-value">UX/UI Designer & cheffe de projet</div>
           </div>
         </div>
-      </section>
+        <div class="lbc-v2-sidebar-sep"></div>
+        <ul class="lbc-v2-menu-list">
+          <li class="lbc-v2-menu-item active" onclick="scrollToLbcSection('lbc-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le point de départ</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Ce que j’ai cherché à comprendre</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Ce que la refonte devait permettre</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-4', this)"><span class="menu-num">4</span><span class="menu-label">Ma démarche</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-5', this)"><span class="menu-num">5</span><span class="menu-label">Ce que j’ai découvert</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-6', this)"><span class="menu-num">6</span><span class="menu-label">Les solutions retenues</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-7', this)"><span class="menu-num">7</span><span class="menu-label">Ce que j’ai appris</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)"><span class="menu-num">8</span><span class="menu-label">Explorer le projet autrement</span></li>
+        </ul>
+        <div class="lbc-v2-sidebar-bottom-wrap" style="margin-top: auto;">
+          <img src="assets/lbc_sidebar_utensils.png" alt="Cuisine Ustensiles" class="lbc-v2-sidebar-bottom-img">
+        </div>
+      </aside>
 
-      <!-- LIVRABLES & DEMARCHE -->
-      <section style="margin-bottom: 40px;">
-        <div class="modal-section-title-wrap">
-          <h3 class="modal-section-title">Démarche & Livrables Clés</h3>
-          <span class="modal-section-line"></span>
+      <!-- CONTENU PRINCIPAL JAPANDI -->
+      <main class="lbc-v2-main-content">
+        <!-- SEC 1 : HERO -->
+        <div class="lbc-v2-hero-row" id="lbc-sec-1">
+          <div class="lbc-v2-hero-text">
+            <span class="lbc-v2-pill-badge">Le projet en détail</span>
+            <h1 class="lbc-v2-main-title">Du constat aux solutions</h1>
+            <p class="lbc-v2-intro-p">Entre l’apprentissage guidé et la pratique autonome, le passage n’est pas toujours <strong>si simple</strong>.</p>
+            <p class="lbc-v2-intro-p">La refonte explore comment créer une <strong>continuité</strong> entre l’expérience en cuisine et l’expérience numérique.</p>
+            <div class="lbc-v2-tags-wrap">
+              <span class="lbc-v2-tag-pill">⟡ Recherche UX</span>
+              <span class="lbc-v2-tag-pill">⟡ Architecture de l'information</span>
+              <span class="lbc-v2-tag-pill">⟡ Tests utilisateurs</span>
+              <span class="lbc-v2-tag-pill">⟡ Digital learning</span>
+            </div>
+          </div>
+          <div class="lbc-v2-hero-img-wrap"><img src="assets/lbc_hero_kitchen.png" alt="Atelier Les Cordons Bleus"></div>
         </div>
 
-        <div class="modal-deliverables-grid">
-          <div class="deliverable-item-card">
-            <div class="deliverable-icon-circle"><i data-lucide="search"></i></div>
-            <h5>1. Analyse Documentaire</h5>
-            <p>Audit d'ergonomie, recueil du besoin initial et cartographie des points de friction.</p>
+        <!-- GRILLE DE CARTES 2 À 6 -->
+        <div class="lbc-v2-cards-grid">
+          <div class="lbc-v2-card" id="lbc-sec-2">
+            <h3 class="lbc-v2-card-title">Le défi</h3>
+            <p class="lbc-v2-card-body">Réussir une recette avec un chef, c'est une chose. <strong>La refaire seul</strong> chez soi, c'en est une autre.<br><br>La <strong>continuité</strong> après l'atelier est <strong>faible</strong> : peu de repères, peu de <strong>suivi</strong>, et une expérience numérique qui ne répond pas aux vrais besoins des apprenants.</p>
           </div>
-
-          <div class="deliverable-item-card">
-            <div class="deliverable-icon-circle"><i data-lucide="user"></i></div>
-            <h5>2. Personas & Empathie</h5>
-            <p>Modélisation des profils d'apprenants et cartographie des parcours (User Journeys).</p>
+          <div class="lbc-v2-card" id="lbc-sec-3">
+            <h3 class="lbc-v2-card-title" style="font-size: 18px !important;">Ce que la refonte devait permettre</h3>
+            <ul class="lbc-v2-card-bullets">
+              <li><strong>Renforcer la mémorisation</strong> et la <strong>mise en pratique</strong> à la maison</li>
+              <li><strong>Prolonger l'engagement</strong> après l'atelier</li>
+              <li>Créer une <strong>expérience fluide</strong>, accessible et motivante</li>
+              <li><strong>Valoriser l'expertise</strong> des chefs</li>
+            </ul>
           </div>
-
-          <div class="deliverable-item-card">
-            <div class="deliverable-icon-circle"><i data-lucide="bar-chart-2"></i></div>
-            <h5>3. Benchmark Ergonomique</h5>
-            <p>Analyse comparative des meilleures pratiques d'apprentissage hybride et mobile.</p>
+          <div class="lbc-v2-card" id="lbc-sec-4">
+            <h3 class="lbc-v2-card-title">Ma démarche</h3>
+            <p class="lbc-v2-card-body">Faire en sorte que l'expérience ne <strong>retombe pas</strong> dès que le tablier est rangé.<br><br>J'ai repensé le parcours <strong>avant, pendant</strong> et <strong>après</strong> le cours pour créer un <strong>lien durable</strong> entre l'<strong>apprentissage</strong> en cuisine et la <strong>pratique à la maison</strong>.</p>
           </div>
-
-          <div class="deliverable-item-card">
-            <div class="deliverable-icon-circle"><i data-lucide="git-branch"></i></div>
-            <h5>4. Service Blueprint</h5>
-            <p>Synchronisation des interactions physiques en cuisine et des étapes numériques.</p>
-            <a href="assets/PROJTS/CORDONS%20BLEUS/Blueprint.pdf" target="_blank" rel="noopener" class="pdf-link-btn">
-              <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Voir le Blueprint (PDF) ↗
-            </a>
+          <div class="lbc-v2-card" id="lbc-sec-5">
+            <h3 class="lbc-v2-card-title">Ce que j’ai découvert</h3>
+            <p class="lbc-v2-card-body">L'observation sur le terrain révèle que l'apprenant recherche des <strong>repères visuels rapides</strong> et une <strong>structure progressive</strong> pour ne pas rompre la dynamique d'apprentissage.</p>
           </div>
-
-          <div class="deliverable-item-card">
-            <div class="deliverable-icon-circle"><i data-lucide="file-text"></i></div>
-            <h5>5. Retours Utilisateurs</h5>
-            <p>Synthèse des enseignements terrain, verbatims et opportunités de refonte.</p>
-            <a href="assets/PROJTS/CORDONS%20BLEUS/Synth%C3%A8se%20des%20retours%20utilisateurs.pdf" target="_blank" rel="noopener" class="pdf-link-btn">
-              <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Synthèse utilisateurs (PDF) ↗
-            </a>
-          </div>
-
-          <div class="deliverable-item-card">
-            <div class="deliverable-icon-circle"><i data-lucide="book-open"></i></div>
-            <h5>6. Dossier UX Final (UXBM)</h5>
-            <p>Dossier complet de cadrage, méthodologie et maquettes de la refonte.</p>
-            <a href="assets/PROJTS/CORDONS%20BLEUS/UXBM_final.pdf" target="_blank" rel="noopener" class="pdf-link-btn">
-              <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Dossier complet (PDF) ↗
-            </a>
+          <div class="lbc-v2-card" id="lbc-sec-6">
+            <h3 class="lbc-v2-card-title">Les solutions retenues</h3>
+            <p class="lbc-v2-card-body">Un compagnon numérique axé sur des <strong>micro-étapes guidées</strong>, un suivi personnalisé et une <strong>passerelle fluide</strong> entre l'atelier présentiel et la cuisine personnelle.</p>
           </div>
         </div>
-      </section>
 
+        <!-- SECTION 7 : CE QUE J'AI APPRIS (GRILLE HORIZONTALE DE 3 CARTES SANS ICONES) -->
+        <div id="lbc-sec-7" class="lbc-v2-learnings-block" style="margin-top: 32px; margin-bottom: 40px;">
+          <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 16px;">Ce que j’ai appris</h3>
+          <div class="lbc-v2-learnings-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important; margin-bottom: 32px !important;">
+            <div class="lbc-v2-card">
+              <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Penser l’après, pas seulement le parcours immédiat.</h4>
+              <p class="lbc-v2-card-body">La vraie expérience ne s’arrête pas à l’atelier. Une fois rentré chez soi, il faut encore pouvoir <strong>retrouver, pratiquer et prolonger</strong> ce qui a été appris.</p>
+            </div>
+            <div class="lbc-v2-card">
+              <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Concevoir un service, pas seulement des écrans</h4>
+              <p class="lbc-v2-card-body">Le service blueprint permet de dépasser ce que l’utilisateur voit à l’écran. Derrière une expérience fluide, il y a aussi des contenus à produire, des plannings à coordonner, des échanges à organiser — bref, <strong>tout un système à faire tenir ensemble</strong>.</p>
+            </div>
+            <div class="lbc-v2-card">
+              <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Mesurer et ajuster</h4>
+              <p class="lbc-v2-card-body">La mise en ligne n’est pas la ligne d’arrivée. Le <strong>suivi des KPI à 1 mois, puis tous les 3 mois</strong>, doit permettre de vérifier ce qui fonctionne vraiment, ce qui doit encore évoluer, et d’ajuster les choix de conception à partir des usages réels.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEC 8 : EXPLORER AUTREMENT -->
+        <div id="lbc-sec-8">
+          <h3 class="lbc-v2-coulisses-title">Explorer le projet autrement</h3>
+          <div class="lbc-v2-coulisses-grid">
+            <div class="lbc-v2-subcard">
+              <div class="lbc-v2-audio-header">
+                <div class="lbc-v2-card-icon" style="margin-bottom: 0; display: none !important;"><i data-lucide="video"></i></div>
+                <div class="lbc-v2-audio-title-wrap">
+                  <h4>La présentation complète</h4>
+                  <span class="lbc-v2-audio-duration">Format vidéo (1080p)</span>
+                </div>
+              </div>
+              <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 8px !important;">Le projet, de la problématique aux solutions retenues, avec les principaux choix de conception et livrables.</p>
+              <p class="lbc-v2-disclaimer-note" style="margin-bottom: 12px; margin-top: 6px;">ⓘ <strong>À regarder tranquillement :</strong> la présentation défile vite. Pour une lecture confortable, je recommande une vitesse de <strong>0,5x</strong> (voire <strong>0,25x</strong>).</p>
+              
+              <div class="youtube-responsive-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+                <iframe 
+                  src="https://www.youtube.com/embed/JhXAkBDHNaE" 
+                  title="Présentation UX - Les Cordons Bleus" 
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <div class="lbc-v2-coulisses-right-stack">
+              <div class="lbc-v2-subcard">
+                <div class="lbc-v2-audio-header">
+                  <div class="lbc-v2-audio-title-wrap">
+                    <h4>Écouter le projet autrement</h4>
+                    <span class="lbc-v2-audio-duration">Durée d'écoute : 11:47 min</span>
+                  </div>
+                </div>
+                <div style="margin-top: 10px; margin-bottom: 12px;">
+                  <audio controls style="width: 100%; height: 40px; border-radius: 8px;" src="assets/podcasts/cordons-bleus-podcast.m4a">
+                    Votre navigateur ne prend pas en charge l'élément audio.
+                  </audio>
+                </div>
+                <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
+              </div>
+
+              <div class="lbc-v2-subcard">
+                <div class="lbc-v2-audio-header">
+                  <div class="lbc-v2-audio-title-wrap">
+                    <h4>Documents &amp; Livrables PDF</h4>
+                    <span class="lbc-v2-audio-duration">Livrables de conception</span>
+                  </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+                  <a href="assets/PROJTS/CORDONS%20BLEUS/Blueprint.pdf" target="_blank" rel="noopener" class="btn-outline-terracotta" style="font-size: 13px; padding: 8px 14px;"><i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Voir le Service Blueprint (PDF) ↗</a>
+                  <a href="assets/PROJTS/CORDONS%20BLEUS/Synth%C3%A8se%20des%20retours%20utilisateurs.pdf" target="_blank" rel="noopener" class="btn-outline-terracotta" style="font-size: 13px; padding: 8px 14px;"><i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Synthèse retours utilisateurs (PDF) ↗</a>
+                  <a href="assets/PROJTS/CORDONS%20BLEUS/UXBM_final.pdf" target="_blank" rel="noopener" class="btn-outline-terracotta" style="font-size: 13px; padding: 8px 14px;"><i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Dossier UXBM complet (PDF) ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lbc-v2-contact-card" style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 40px 0 24px 0;">
+          <a href="index.html#page-contact" class="btn-primary">On en parle ? ➔</a>
+        </div>
+      </main>
     </div>
 
     <script>
       if (window.lucide) lucide.createIcons();
+      function scrollToLbcSection(secId, el) {
+        const target = document.getElementById(secId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+        if (el) {
+          document.querySelectorAll('.lbc-v2-menu-item').forEach(item => item.classList.remove('active'));
+          el.classList.add('active');
+        }
+      }
     </script>
   </body>
 </html>
