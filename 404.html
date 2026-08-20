@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page non trouvée | Karine Marquis — UX / UI Designer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background-color: var(--color-surface) !important;
+    }
+    .error-404-hero-img {
+      width: 100%;
+      max-width: 860px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body class="theme-japandi" style="background-color: var(--color-surface) !important; display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh;">
+  <header class="site-header sticky-header" style="background-color: rgba(255, 253, 252, 0.95) !important;">
+    <div class="nav-container">
+      <a href="index.html#page-home" class="brand-logo-wrap" aria-label="Retour à l'accueil KM UX - UI Designer">
+        <span class="brand-km">KM</span>
+        <span class="brand-sub">UX - UI Designer</span>
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html#page-home" class="nav-link">Accueil</a></li>
+          <li><a href="index.html#page-approach" class="nav-link">Mon approche</a></li>
+          <li><a href="index.html#page-offer" class="nav-link">Mon offre</a></li>
+          <li><a href="index.html#page-projects" class="nav-link">Mes projets</a></li>
+          <li><a href="index.html#page-about" class="nav-link">Qui suis-je ?</a></li>
+          <li><a href="index.html#page-blog" class="nav-link">Journal</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#page-contact" class="btn-primary">On en parle ?</a>
+    </div>
+  </header>
+
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; width: 100%; padding-top: 60px; background-color: var(--color-surface) !important;">
+    <section class="spa-page-section active" style="width: 100%; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface) !important;">
+      <div class="content-wrap" style="width: 100%; display: flex; align-items: center; justify-content: center; padding: 0;">
+        
+        <div class="error-404-layout" style="position: relative; width: 100%; max-width: 860px; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
+          <img src="assets/404-illustration.png" alt="Cette page a clairement pris une mauvaise direction - 404 Karine Marquis" class="error-404-hero-img">
+          
+          <!-- Interactive overlay click zones over the image buttons -->
+          <a href="index.html#page-home" style="position: absolute; top: 55%; left: 50.5%; width: 19%; height: 16%; border-radius: 12px; cursor: pointer;" aria-label="Retour à l'accueil"></a>
+          <a href="index.html#page-projects" style="position: absolute; top: 55%; left: 70%; width: 18%; height: 16%; border-radius: 12px; cursor: pointer;" aria-label="Voir les projets"></a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>

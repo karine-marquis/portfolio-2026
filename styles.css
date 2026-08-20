@@ -2394,3 +2394,11 @@ strong, b {
   width: 0 !important;
   height: 0 !important;
 }
+
+.error-404-hero-img {
+  width: 100%;
+  max-width: 820px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
