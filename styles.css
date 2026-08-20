@@ -2397,11 +2397,11 @@ strong, b {
 
 .error-404-hero-img {
   width: 100%;
-  max-width: 612px;
+  max-width: 720px;
   height: auto;
   display: block;
   margin: 0 auto;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
-  filter: contrast(1.1) saturate(1.18);
+  filter: contrast(1.15) saturate(1.22) brightness(0.96);
 }
