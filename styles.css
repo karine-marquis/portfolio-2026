@@ -1921,8 +1921,7 @@ strong, b {
 }
 
 .lbc-v2-card .lbc-v2-card-icon {
-  display: flex !important;
-  margin-bottom: 12px !important;
+  display: none !important;
 }
 
 .lbc-v2-card-icon {
