@@ -258,6 +258,7 @@
               <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-6', this)"><span class="menu-num">6</span><span class="menu-label">Les solutions retenues</span></li>
               <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-7', this)"><span class="menu-num">7</span><span class="menu-label">Ce que j’ai appris</span></li>
               <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)"><span class="menu-num">8</span><span class="menu-label">Explorer le projet autrement</span></li>
+              <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('lbc-sec-1')"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 500;">Remonter en haut</span></li>
             </ul>
             <div class="lbc-v2-sidebar-bottom-wrap">
               <img src="assets/lbc_sidebar_utensils.png" alt="Cuisine Ustensiles" class="lbc-v2-sidebar-bottom-img">
@@ -335,14 +336,14 @@
                     <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
                     <div class="lbc-v2-audio-title-wrap">
                       <h4>Écouter le projet autrement</h4>
-                      <span class="lbc-v2-audio-duration">Durée d'écoute : 08:45</span>
+                      <span class="lbc-v2-audio-duration">Durée d'écoute : 11:47 min</span>
                     </div>
                   </div>
                   <div class="lbc-v2-custom-player">
                     <button class="lbc-v2-play-btn" onclick="toggleLbcAudio(this)" aria-label="Écouter le podcast"><i data-lucide="play" id="lbcPlayIcon" style="width: 16px; height: 16px;"></i></button>
                     <span class="lbc-v2-player-timer" id="lbcAudioTimer">0:00</span>
                     <input type="range" class="lbc-v2-player-slider" id="lbcAudioSeek" value="0" max="100" oninput="seekLbcAudio(this)">
-                    <span class="lbc-v2-player-timer">08:45</span>
+                    <span class="lbc-v2-player-timer">11:47</span>
                     <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);"></i>
                   </div>
                   <audio id="lbcAudioElement" src="assets/podcasts/cordons-bleus-podcast.m4a" ontimeupdate="updateLbcAudioProgress()"></audio>
@@ -351,7 +352,7 @@
               </div>
             </div>
             <div class="lbc-v2-contact-card" style="justify-content: center; padding: 24px;">
-              <a href="mailto:karinemarquis.ux@gmail.com" class="lbc-v2-contact-btn" style="font-size: 14px; padding: 10px 24px;">On en parle ? ➔</a>
+              <a href="#page-contact" onclick="closeProjectDrawer(); navigateTo('contact');" class="lbc-v2-contact-btn" style="font-size: 14px; padding: 10px 24px;">On en parle ? ➔</a>
             </div>
           </main>
           <div id="lbcScrollPill" class="lbc-scroll-pill-indicator" aria-label="Défiler vers le bas"><span class="scroll-arrow">↓</span></div>

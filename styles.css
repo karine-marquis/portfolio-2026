@@ -2196,6 +2196,40 @@ strong, b {
   box-shadow: 0 6px 18px rgba(199, 109, 75, 0.35) !important;
 }
 
+.lbc-v2-menu-back-top {
+  margin-top: 10px !important;
+  border-top: 1px dashed rgba(199, 109, 75, 0.25) !important;
+  padding-top: 10px !important;
+  opacity: 0.88;
+}
+
+.lbc-v2-menu-back-top:hover {
+  opacity: 1 !important;
+  color: var(--color-accent) !important;
+}
+
+.lbc-v2-back-top-btn {
+  background: transparent !important;
+  border: none !important;
+  color: var(--color-body) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  opacity: 0.8 !important;
+  transition: all 0.25s ease !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+}
+
+.lbc-v2-back-top-btn:hover {
+  opacity: 1 !important;
+  color: var(--color-accent) !important;
+  transform: translateY(-2px) !important;
+}
+
 @media (max-width: 1024px) {
   .lbc-v2-modal-layout { flex-direction: column; }
   .lbc-v2-sidebar { width: 100%; min-width: auto; }
