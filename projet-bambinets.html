@@ -58,7 +58,7 @@
       });
     </script>
     <style>
-      .page-inner { background: #FFFDFC; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #2C2623; margin: 0; padding: 0; }
+      .page-inner { background: var(--color-surface, #FFFDFC); font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #2C2623; margin: 0; padding: 0; }
       .site-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; border-bottom: 1px solid #F0E6DD; background: rgba(255,253,252,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
       .brand { display: flex; align-items: center; text-decoration: none; color: inherit; gap: 12px; }
       .text-logo-km { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; color: #1E1915; }
@@ -66,7 +66,7 @@
       .nav { display: flex; gap: 24px; }
       .nav-link { text-decoration: none; color: #6C5A50; font-size: 14px; font-weight: 500; transition: color 0.2s; }
       .nav-link:hover, .nav-link.active { color: var(--color-primary, #C76D4B); font-weight: 600; }
-      .nav-cta { background: var(--color-primary, #C76D4B); color: #FFFDFC; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 30px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.25); transition: transform 0.2s; }
+      .nav-cta { background: var(--color-primary, #C76D4B); color: var(--color-surface, #FFFDFC); text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 30px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.25); transition: transform 0.2s; }
       .nav-cta:hover { transform: translateY(-1px); }
 
       .bambinets-page-container { max-width: 1240px; margin: 40px auto; padding: 0 24px; display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: start; }
@@ -78,11 +78,11 @@
 
       .bambinets-sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
       .bambinets-menu-item { display: flex; align-items: center; padding: 10px 12px; border-radius: 8px; text-decoration: none; color: #5C473C; font-size: 13px; font-weight: 500; transition: all 0.2s; cursor: pointer; }
-      .bambinets-menu-item:hover, .bambinets-menu-item.active { background: #FFFDFC; color: var(--color-primary, #C76D4B); font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+      .bambinets-menu-item:hover, .bambinets-menu-item.active { background: var(--color-surface, #FFFDFC); color: var(--color-primary, #C76D4B); font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
       .bambinets-menu-num { font-size: 11px; font-weight: 700; opacity: 0.6; margin-right: 8px; font-family: monospace; }
 
       .bambinets-main-content { display: flex; flex-direction: column; gap: 32px; }
-      .bambinets-v2-card { background: #FFFDFC; border-radius: 16px; padding: 32px; border: 1px solid #F0E6DD; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+      .bambinets-v2-card { background: var(--color-surface, #FFFDFC); border-radius: 16px; padding: 32px; border: 1px solid #F0E6DD; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
       .bambinets-v2-card-title { font-size: 20px; font-weight: 700; color: #1E1915; margin: 0 0 16px 0; }
       .bambinets-v2-card-body { font-size: 14.5px; color: #4A3E37; line-height: 1.65; margin: 0; }
 
