@@ -3,139 +3,309 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Karine Marquis — UX Designer — Portfolio interactif</title>
-    <meta name="description" content="Portfolio UX/UI interactif" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <title>Bambinets — Karine Marquis UX Designer</title>
+    <meta name="description" content="Étude de cas UX Research & Micro-Learning — Bambinets par Karine Marquis" />
+    <link rel="stylesheet" href="styles.css?v=20260820_japandi" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      function openLightbox(imgSrc, captionText) {
+        let lightbox = document.getElementById('imageLightboxOverlay');
+        if (!lightbox) {
+          lightbox = document.createElement('div');
+          lightbox.id = 'imageLightboxOverlay';
+          lightbox.className = 'image-lightbox-overlay';
+          lightbox.innerHTML = `
+            <button class="image-lightbox-close" aria-label="Fermer le zoom" onclick="closeLightbox()">✕</button>
+            <div class="image-lightbox-container" id="imageLightboxContainer">
+              <img id="imageLightboxImg" class="image-lightbox-img" src="" alt="Agrandissement plein écran" onclick="toggleZoomHD(event)">
+            </div>
+            <div id="imageLightboxCaption" class="image-lightbox-caption">
+              <span id="imageLightboxCaptionText"></span>
+              <button class="image-lightbox-btn-hd" onclick="toggleZoomHD(event)">🔎 Zoom 175% HD</button>
+            </div>
+          `;
+          document.body.appendChild(lightbox);
+        }
+        const imgEl = document.getElementById('imageLightboxImg');
+        const captionTextEl = document.getElementById('imageLightboxCaptionText');
+        if (imgEl) {
+          imgEl.src = imgSrc;
+          imgEl.classList.remove('zoomed-hd');
+        }
+        if (captionTextEl) captionTextEl.textContent = captionText || 'Cliquer sur l’image pour basculer en Zoom HD';
+        lightbox.classList.add('active');
+      }
+
+      function toggleZoomHD(e) {
+        if (e) e.stopPropagation();
+        const imgEl = document.getElementById('imageLightboxImg');
+        if (imgEl) {
+          imgEl.classList.toggle('zoomed-hd');
+        }
+      }
+
+      function closeLightbox() {
+        const lightbox = document.getElementById('imageLightboxOverlay');
+        if (lightbox) {
+          lightbox.classList.remove('active');
+          const imgEl = document.getElementById('imageLightboxImg');
+          if (imgEl) imgEl.classList.remove('zoomed-hd');
+        }
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    </script>
+    <style>
+      .page-inner { background: #FFFDFC; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #2C2623; margin: 0; padding: 0; }
+      .site-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; border-bottom: 1px solid #F0E6DD; background: rgba(255,253,252,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
+      .brand { display: flex; align-items: center; text-decoration: none; color: inherit; gap: 12px; }
+      .text-logo-km { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; color: #1E1915; }
+      .text-logo-sub { font-size: 13px; color: #6C5A50; font-weight: 500; }
+      .nav { display: flex; gap: 24px; }
+      .nav-link { text-decoration: none; color: #6C5A50; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+      .nav-link:hover, .nav-link.active { color: var(--color-primary, #C76D4B); font-weight: 600; }
+      .nav-cta { background: var(--color-primary, #C76D4B); color: #FFFDFC; text-decoration: none; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 30px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.25); transition: transform 0.2s; }
+      .nav-cta:hover { transform: translateY(-1px); }
+
+      .bambinets-page-container { max-width: 1240px; margin: 40px auto; padding: 0 24px; display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: start; }
+      .bambinets-sidebar { position: sticky; top: 100px; background: #FAF5F0; border-radius: 16px; padding: 24px; border: 1px solid #F0E6DD; }
+      .bambinets-sidebar-kicker { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-primary, #C76D4B); margin-bottom: 4px; }
+      .bambinets-brand-title { font-size: 24px; font-weight: 800; color: #1E1915; margin: 0 0 4px 0; }
+      .bambinets-brand-category { font-size: 13px; color: #6C5A50; font-weight: 500; margin-bottom: 8px; }
+      .bambinets-brand-tagline { font-size: 12px; color: #8A7669; font-style: italic; line-height: 1.4; margin-bottom: 20px; border-bottom: 1px solid #E6DAD0; padding-bottom: 16px; }
+
+      .bambinets-sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+      .bambinets-menu-item { display: flex; align-items: center; padding: 10px 12px; border-radius: 8px; text-decoration: none; color: #5C473C; font-size: 13px; font-weight: 500; transition: all 0.2s; cursor: pointer; }
+      .bambinets-menu-item:hover, .bambinets-menu-item.active { background: #FFFDFC; color: var(--color-primary, #C76D4B); font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+      .bambinets-menu-num { font-size: 11px; font-weight: 700; opacity: 0.6; margin-right: 8px; font-family: monospace; }
+
+      .bambinets-main-content { display: flex; flex-direction: column; gap: 32px; }
+      .bambinets-v2-card { background: #FFFDFC; border-radius: 16px; padding: 32px; border: 1px solid #F0E6DD; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+      .bambinets-v2-card-title { font-size: 20px; font-weight: 700; color: #1E1915; margin: 0 0 16px 0; }
+      .bambinets-v2-card-body { font-size: 14.5px; color: #4A3E37; line-height: 1.65; margin: 0; }
+
+      .bambinets-hero-card { background: linear-gradient(135deg, #FAF5F0 0%, #FFFDFC 100%); }
+      .bambinets-tag-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+      .bambinets-tag { background: rgba(199, 109, 75, 0.1); color: var(--color-primary, #C76D4B); font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; }
+      .bambinets-hero-headline { font-size: 28px; font-weight: 800; color: #1E1915; line-height: 1.25; margin: 0 0 16px 0; }
+
+      .bambinets-financial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 16px; }
+      .bambinets-fin-card { background: #FAF5F0; border-radius: 12px; padding: 20px; border: 1px solid #F0E6DD; }
+      .bambinets-fin-num { font-size: 24px; font-weight: 800; color: var(--color-primary, #C76D4B); margin-bottom: 6px; }
+      .bambinets-fin-title { font-size: 13px; font-weight: 700; color: #1E1915; margin-bottom: 8px; }
+      .bambinets-fin-desc { font-size: 12px; color: #6C5A50; line-height: 1.45; }
+
+      .bambinets-learnings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 16px; }
+      .bambinets-learn-card { background: #FAF5F0; border-radius: 12px; padding: 20px; border: 1px solid #F0E6DD; }
+      .bambinets-learn-num { font-size: 13px; font-weight: 800; color: var(--color-primary, #C76D4B); margin-bottom: 8px; }
+      .bambinets-learn-title { font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px; }
+      .bambinets-learn-desc { font-size: 12.5px; color: #5C473C; line-height: 1.5; }
+
+      @media (max-width: 900px) {
+        .bambinets-page-container { grid-template-columns: 1fr; }
+        .bambinets-sidebar { position: static; }
+        .bambinets-financial-grid, .bambinets-learnings-grid { grid-template-columns: 1fr; }
+      }
+    </style>
   </head>
   <body class="page-inner">
-  <div class="noise"></div>
-
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Retour accueil">
-      <span class="text-logo" aria-label="KM UX Designer">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Retour accueil">
         <span class="text-logo-km">KM</span>
         <span class="text-logo-sub">UX Designer</span>
-      </span>
-      <span class="brand-line"></span>
-    </a>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav-link" href="index.html">Accueil</a>
+        <a class="nav-link active" href="index.html#projets">Projets</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <a class="nav-cta" href="contact.html">On en parle ?</a>
+    </header>
 
-    <nav class="nav" aria-label="Navigation principale">
-      <a class="nav-link" href="index.html">Accueil</a>
-      <a class="nav-link active" href="projets.html">Projets</a>
-      <a class="nav-link" href="offre.html">Offre</a>
-      <a class="nav-link" href="approche.html">Approche</a>
-      <a class="nav-link" href="apropos.html">À propos</a>
-      <a class="nav-link" href="journal.html">À lire</a>
-      <a class="nav-link" href="contact.html">Contact</a>
-    </nav>
+    <main class="bambinets-page-container">
+      <!-- SIDEBAR -->
+      <aside class="bambinets-sidebar">
+        <div class="bambinets-sidebar-kicker">Case Study · Petite Enfance</div>
+        <h1 class="bambinets-brand-title">BAMBINETS</h1>
+        <div class="bambinets-brand-category">UX Research & Micro-Learning</div>
+        <div class="bambinets-brand-tagline">Apprendre les signes avec bébé dans un format simple et quotidien.</div>
 
-    <a class="nav-cta" href="contact.html">On en parle ?</a>
+        <nav class="bambinets-sidebar-nav">
+          <a class="bambinets-menu-item active" onclick="document.getElementById('sec-hero').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">01</span> En un coup d'œil</a>
+          <a class="bambinets-menu-item" onclick="document.getElementById('sec-defi').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">02</span> Le défi</a>
+          <a class="bambinets-menu-item" onclick="document.getElementById('sec-objectifs').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">03</span> Ce que la refonte devait permettre</a>
+          <a class="bambinets-menu-item" onclick="document.getElementById('sec-projet').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">04</span> Le projet derrière les écrans</a>
+          <a class="bambinets-menu-item" onclick="document.getElementById('sec-demarche').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">05</span> Ma démarche & Architecture</a>
+          <a class="bambinets-menu-item" onclick="document.getElementById('sec-solutions').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">06</span> Les solutions retenues</a>
+          <a class="bambinets-menu-item" onclick="document.getElementById('sec-learnings').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">07</span> Ce que j'ai appris</a>
+          <a class="bambinets-menu-item" onclick="document.getElementById('sec-explore').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">08</span> Explorer le projet autrement</a>
+        </nav>
+      </aside>
 
-    <button class="burger" aria-label="Ouvrir le menu">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-    <main class="container">
-      <section class="page-hero reveal">
-        <p class="kicker">Étude de cas · UX/UI · Micro-learning</p>
-        <h1 class="page-title">Bambinets</h1>
-        <p class="lead">
-          Apprendre à communiquer avec un enfant qui ne parle pas encore, ce
-          n’est pas une question de théorie. C’est une question de simplicité.
-          L’objectif : retrouver un signe assez vite pour qu’il puisse encore
-          servir avant que la situation ait déjà changé trois fois.
-        </p>
-        <div class="actions">
-          <a class="btn" href="contact.html">Discuter d’un projet →</a
-          ><a class="btn secondary" href="projets.html">← Retour aux projets</a>
-        </div>
-      </section>
-      <section class="grid-2 section reveal">
-        <div class="card">
-          <h3>Problème identifié</h3>
-          <p>
-            Ce qui rendait l’expérience délicate, ce n’était pas d’apprendre la
-            langue des signes comme un cours. C’était de pouvoir retrouver un
-            signe au moment où il sert vraiment : quand l’enfant cherche à
-            exprimer un besoin, que l’adulte doit comprendre vite, et que
-            l’application ne doit pas ajouter une couche de recherche. L’enjeu
-            était donc de transformer l’apprentissage en geste simple, immédiat,
-            et réutilisable au quotidien.
+      <!-- CONTENT -->
+      <div class="bambinets-main-content">
+        <!-- HERO -->
+        <section id="sec-hero" class="bambinets-v2-card bambinets-hero-card">
+          <div class="bambinets-tag-group">
+            <span class="bambinets-tag">UX Research</span>
+            <span class="bambinets-tag">Mobile App</span>
+            <span class="bambinets-tag">Petite Enfance</span>
+            <span class="bambinets-tag">Micro-Learning</span>
+          </div>
+          <h2 class="bambinets-hero-headline">Transformer un besoin pédagogique en parcours mobile simple.</h2>
+          <p class="bambinets-v2-card-body">
+            Une application mobile pensée pour aider les professionnels de crèche et les parents à apprendre les premiers signes avec bébé, dans un format simple, visuel et directement utilisable au quotidien.<br><br>
+            <strong>L’objectif :</strong> rendre l’apprentissage accessible, rapide et rassurant, sans transformer l’interface en manuel pédagogique de 80 pages.
           </p>
-        </div>
-        <div class="card">
-          <h3>Réponse UX</h3>
-          <p>
-            La réponse UX a été de construire des parcours courts, pensés pour
-            l’action. L’utilisateur ne vient pas forcément “apprendre une leçon”
-            : il cherche un signe, veut le comprendre vite, puis pouvoir
-            l’utiliser. L’interface devait donc réduire le chemin entre “je
-            cherche” et “je peux faire”.
+          <div onclick="openLightbox('assets/PROJTS/BAMBINETS/bambinets .png', 'Bambinets — Apprendre les signes avec bébé au quotidien — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="margin-top: 24px; border-radius: 14px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in;">
+            <img src="assets/PROJTS/BAMBINETS/bambinets .png" alt="Bambinets Illustration UX Mobile Petite Enfance" style="width: 100%; display: block; border-radius: 14px;">
+            <span style="position: absolute; bottom: 12px; right: 12px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+          </div>
+        </section>
+
+        <!-- LE DEFI -->
+        <section id="sec-defi" class="bambinets-v2-card">
+          <h3 class="bambinets-v2-card-title">02. Le défi — Apprendre un signe quand on a déjà les mains occupées</h3>
+          <p class="bambinets-v2-card-body">
+            Ce qui rendait l’expérience délicate, ce n’était pas d’apprendre la langue des signes comme un cours académique. C’était de pouvoir <strong>retrouver un signe au moment exact où il sert vraiment</strong> : quand l’enfant cherche à exprimer un besoin immédiat, que l’adulte doit comprendre vite, et que l’application ne doit surtout pas ajouter une couche de recherche complexe.<br><br>
+            Le contexte d'usage en crèche ou à la maison impose une interface très simple : les utilisateurs peuvent être débutants, en déplacement, avec un enfant dans les bras ou une attention déjà très sollicitée. L'application devait aller à l'essentiel.
           </p>
-        </div>
-        <div class="card">
-          <h3>Méthode</h3>
-          <p>
-            Je suis partie d’un cas très simple : un parent ou le personnel
-            cherche un signe, là, maintenant. Il n’a pas envie de fouiller, de
-            comprendre une logique compliquée ou de traverser trois menus. À
-            partir de cette situation réelle, j’ai construit des parcours
-            courts, puis des wireframes et un prototype Figma pour vérifier que
-            l’accès aux signes restait fluide.
+        </section>
+
+        <!-- CE QUE LA REFONTE DEVAIT PERMETTRE -->
+        <section id="sec-objectifs" class="bambinets-v2-card">
+          <h3 class="bambinets-v2-card-title">03. Ce que la conception devait permettre</h3>
+          <p class="bambinets-v2-card-body">
+            L'utilisateur ne vient pas pour lire une longue théorie : il cherche un signe, veut le comprendre en 5 secondes, puis l'appliquer tout de suite.
           </p>
-        </div>
-        <div class="card">
-          <h3>Impact attendu</h3>
-          <p>
-            L’impact attendu, c’est que l’application puisse servir dans le vrai
-            moment d’usage : quand l’adulte cherche un signe, le trouve vite, le
-            comprend sans effort et peut l’utiliser aussitôt. Moins de
-            recherche, moins d’hésitation, et une expérience qui accompagne le
-            quotidien au lieu de lui ajouter une couche de complexité.
+          <ul style="margin-top: 16px; padding-left: 20px; font-size: 14.5px; color: #4A3E37; line-height: 1.7;">
+            <li><strong>Recherche immédiate par catégories</strong> : Entrées thématiques claires (Émotions, Besoins, Repas, Quotidien, Social).</li>
+            <li><strong>Fiches signes visuelles et directes</strong> : Boucle vidéo courte, illustration du geste et phrase d'explication claire.</li>
+            <li><strong>Mise en favoris en 1 geste</strong> : Sauvegarde rapide des signes de la semaine pour un accès instantané en cas de besoin.</li>
+            <li><strong>Quiz d'entraînement légers</strong> : Consolidation de la mémorisation avec suivi de progression bienveillant.</li>
+          </ul>
+        </section>
+
+        <!-- LE PROJET DERRIERE LES ECRANS -->
+        <section id="sec-projet" class="bambinets-v2-card">
+          <h3 class="bambinets-v2-card-title">04. Le projet derrière les écrans</h3>
+          <p class="bambinets-v2-card-body">Structure d’estimation financière et méthodologique pour une application mobile de micro-learning petite enfance :</p>
+          <div class="bambinets-financial-grid">
+            <div class="bambinets-fin-card">
+              <div class="bambinets-fin-num">35 000 €</div>
+              <div class="bambinets-fin-title">Budget prévisionnel estimé</div>
+              <div class="bambinets-fin-desc">Recherche UX terrain en crèche (9k€), architecture & tri de cartes (6k€), Design System Mobile (8k€), Prototypage Hi-Fi Figma (12k€).</div>
+            </div>
+            <div class="bambinets-fin-card">
+              <div class="bambinets-fin-num">15 %</div>
+              <div class="bambinets-fin-title">Marge de contingence</div>
+              <div class="bambinets-fin-desc">Incertitudes sur les retours ergonomiques des puéricultrices et ajustements du moteur de recherche des signes.</div>
+            </div>
+            <div class="bambinets-fin-card">
+              <div class="bambinets-fin-num">M+1 / M+6</div>
+              <div class="bambinets-fin-title">Suivi & Rétention d'usage</div>
+              <div class="bambinets-fin-desc">Forfait annuel (1 800 €) pour l'analyse des KPI d'adoption en crèche et optimisation continue des parcours.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- MA DEMARCHE & FLOWCHART MIRO -->
+        <section id="sec-demarche" class="bambinets-v2-card">
+          <h3 class="bambinets-v2-card-title">05. Ma démarche — Structurer le parcours sans perdre l'utilisateur</h3>
+          <p class="bambinets-v2-card-body">
+            J’ai structuré l’application autour de <strong>quatre entrées principales : Glossaire, Favoris, Quiz et FAQ</strong>.<br><br>
+            Le glossaire permet de chercher un signe par ordre alphabétique ou par catégorie. Le quiz vient ensuite consolider l’apprentissage avec quelques questions et une progression rassurante.
           </p>
-        </div>
-      </section>
+
+          <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #F0E6DD;">
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">Flowchart UX Miro — Organiser l'apprentissage mobile</h4>
+            <p style="font-size: 12px; color: #6C5A50; line-height: 1.45; margin-bottom: 10px;">Cartographie complète des flux de décision : de la recherche d'un signe à sa mise en favoris et son évaluation par quiz.</p>
+            <div onclick="openLightbox('assets/PROJTS/BAMBINETS/Flow Chart Bambinets .jpg', 'Flowchart du parcours principal Bambinets — Miro — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in;">
+              <img src="assets/PROJTS/BAMBINETS/Flow Chart Bambinets .jpg" alt="Flowchart UX Miro Bambinets" style="width: 100%; display: block; border-radius: 12px;">
+              <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- LES SOLUTIONS RETENUES & FIGMA -->
+        <section id="sec-solutions" class="bambinets-v2-card">
+          <h3 class="bambinets-v2-card-title">06. Les solutions retenues — Passer d’une structure claire à une interface rassurante</h3>
+          <p class="bambinets-v2-card-body">
+            J’ai conçu un prototype mobile centré sur quelques actions essentielles. L’interface repose sur des repères simples, des écrans épurés et une hiérarchie visuelle douce, pour limiter la charge cognitive sous stress.
+          </p>
+
+          <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #F0E6DD;">
+            <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">Prototype Mobile Hi-Fi — Écrans & Interactions clés</h4>
+            <p style="font-size: 12px; color: #6C5A50; line-height: 1.45; margin-bottom: 10px;">Vue d'ensemble des interfaces finales : Glossaire, Fiche signe détaillée et Résultats de quiz d'entraînement.</p>
+            <div onclick="openLightbox('assets/PROJTS/BAMBINETS/proto hifi couleur.png', 'Prototype Mobile Hi-Fi Bambinets — Figma — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in;">
+              <img src="assets/PROJTS/BAMBINETS/proto hifi couleur.png" alt="Prototype Hi-Fi Mobile Bambinets Figma" style="width: 100%; display: block; border-radius: 12px;">
+              <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- CE QUE J'AI APPRIS -->
+        <section id="sec-learnings" class="bambinets-v2-card">
+          <h3 class="bambinets-v2-card-title">07. Ce que ce projet m’a appris</h3>
+          <p class="bambinets-v2-card-body">Un projet pédagogique n’a pas besoin d’ajouter beaucoup de choses. Il doit surtout enlever ce qui complique l’apprentissage.</p>
+
+          <div class="bambinets-learnings-grid">
+            <div class="bambinets-learn-card">
+              <div class="bambinets-learn-num">01</div>
+              <div class="bambinets-learn-title">Simplifier sans appauvrir</div>
+              <div class="bambinets-learn-desc">Limiter les contenus ne veut pas dire réduire l’expérience. Cela oblige à hiérarchiser et choisir les parcours utiles.</div>
+            </div>
+            <div class="bambinets-learn-card">
+              <div class="bambinets-learn-num">02</div>
+              <div class="bambinets-learn-title">Guider sans infantiliser</div>
+              <div class="bambinets-learn-desc">L’interface devait rester douce et rassurante, tout en respectant les adultes qui l’utilisent : parents et puéricultrices.</div>
+            </div>
+            <div class="bambinets-learn-card">
+              <div class="bambinets-learn-num">03</div>
+              <div class="bambinets-learn-title">Penser l’usage réel</div>
+              <div class="bambinets-learn-desc">Dans un contexte petite enfance, l’attention est déjà sollicitée. Le parcours doit donc être direct et utilisable à une main.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPLORER LE PROJET AUTREMENT -->
+        <section id="sec-explore" class="bambinets-v2-card" style="background: linear-gradient(135deg, #FAF5F0 0%, #FFFDFC 100%);">
+          <h3 class="bambinets-v2-card-title">08. Explorer le projet autrement</h3>
+          <p class="bambinets-v2-card-body" style="margin-bottom: 24px;">Découvrez la présentation vidéo, l'épisode de podcast ou explorez directement le prototype Figma et le flowchart Miro :</p>
+
+          <!-- YOUTUBE VIDEO EMBED -->
+          <div style="margin-bottom: 24px; border-radius: 14px; overflow: hidden; border: 1px solid #F0E6DD; background: #000;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+              <iframe src="https://www.youtube.com/embed/9aJIyxHNOaw" title="Présentation Bambinets par Karine Marquis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+            </div>
+            <div style="padding: 12px 16px; background: #FAF5F0; border-top: 1px solid #F0E6DD; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 12.5px; color: #5C473C; font-weight: 500;">🎥 Présentation vidéo du projet Bambinets (3 min)</span>
+              <a href="https://youtu.be/9aJIyxHNOaw?si=7NElQ3QqQsLscsEs" target="_blank" rel="noopener" style="background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; text-decoration: none;">Voir sur YouTube ↗</a>
+            </div>
+          </div>
+
+          <!-- PODCAST AUDIO -->
+          <div style="background: #FFFDFC; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; margin-bottom: 24px;">
+            <div style="font-weight: 700; font-size: 14px; color: #1E1915; margin-bottom: 8px;">🎧 Écouter le retour d'expérience audio — Bambinets</div>
+            <audio controls style="width: 100%; border-radius: 30px; margin-top: 8px;">
+              <source src="assets/podcasts/bambinets.m4a" type="audio/mp4">
+              Votre navigateur ne supporte pas l'élément audio.
+            </audio>
+          </div>
+
+          <!-- EXTERNAL LINKS BUTTONS -->
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://www.figma.com/proto/k0obRF21UNiAWdAZ22JpsM/Les-Bambinets-HI-FI?node-id=7747-2" target="_blank" rel="noopener" style="background: #1E1915; color: #FFFDFC; text-decoration: none; font-size: 13px; font-weight: 600; padding: 12px 24px; border-radius: 30px;">Tester le prototype Figma ↗</a>
+            <a href="https://miro.com/welcomeonboard/SnJiUWJ5bjBEZ0U0aEZhOGRROEFPUXpTWFRPWHZhYW5SNXJlWCtqeUN4TlJzWThucEVZVTRFVURTUUJ4Z2w2UTZzcFdEU00rbGJlT290cWN0Z1VCRXdhOG1KYjJ1QjVhTkh5bE1uZDUycy9WVHo1dklHNm1wa1hEYy9TOWlaWTl0R2lncW1vRmFBVnlLcVJzNmdEdnNRPT0hdjE=?share_link_id=134761423130" target="_blank" rel="noopener" style="background: #FAF5F0; color: #5C473C; text-decoration: none; font-size: 13px; font-weight: 600; padding: 12px 24px; border-radius: 30px; border: 1px solid #F0E6DD;">Voir le Flowchart Miro ↗</a>
+          </div>
+        </section>
+      </div>
     </main>
-    <footer class="footer">
-      <div class="container footer-grid">
-        <div>
-          <span class="text-logo footer-text-logo" aria-label="KM UX Designer">
-            <span class="text-logo-km">KM</span>
-            <span class="text-logo-sub">UX Designer</span>
-          </span>
 
-          <p class="lead" style="font-size: 15px">UX/UI designer freelance.</p>
-        </div>
-        <div>
-          <p class="kicker">Explorer</p>
-          <nav class="footer-nav" aria-label="Navigation secondaire">
-            <a href="index.html">Accueil</a>
-            <a href="approche.html">Approche</a>
-            <a href="projets.html">Projets</a>
-            <a href="offre.html">Offre</a>
-            <a href="apropos.html">À propos</a>
-            <a href="journal.html">À lire</a>
-            <a class="nav-cta" href="contact.html">Contact</a>
-          </nav>
-        </div>
-        <div>
-          <p class="kicker">Contact</p>
-          <p>contact@km-ux.net<br />Full remote · France / international</p>
-        </div>
-      </div>
-      <div
-        class="container"
-        style="margin-top: 28px; color: var(--muted); font-size: 13px"
-      >
-        <div class="container footer-bottom">
-          <span>© 2026 Karine Marquis</span>
-          <span
-            >Quand l’expérience devient moins évidente, mon travail commence :
-            révéler les frictions, clarifier le parcours.</span
-          >
-        </div>
-      </div>
+    <footer style="padding: 40px; text-align: center; border-top: 1px solid #F0E6DD; background: #FAF5F0; font-size: 13px; color: #8A7669; margin-top: 60px;">
+      © 2026 Karine Marquis — UX/UI Designer. Tous droits réservés.
     </footer>
-    <script src="assets/script.js"></script>
   </body>
 </html>

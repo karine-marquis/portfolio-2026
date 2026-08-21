@@ -182,14 +182,19 @@ function openProjectDrawer(projectId) {
 /* HELPER SCROLL ET AUDIO POUR LA MODALE V2 */
 function scrollToLbcSection(secId, itemEl) {
   const target = document.getElementById(secId);
-  const scrollContainer = document.getElementById('lbcMainScroll');
+  const scrollContainer = target ? (target.closest('.lbc-v2-main-scroll') || document.getElementById('lbcMainScroll')) : document.getElementById('lbcMainScroll');
   if (target && scrollContainer) {
     const topPos = target.offsetTop - scrollContainer.offsetTop - 20;
     scrollContainer.scrollTo({ top: topPos, behavior: 'smooth' });
   }
 
   if (itemEl) {
-    document.querySelectorAll('.lbc-v2-menu-item').forEach(el => el.classList.remove('active'));
+    const parentSidebar = itemEl.closest('aside');
+    if (parentSidebar) {
+      parentSidebar.querySelectorAll('.lbc-v2-menu-item').forEach(el => el.classList.remove('active'));
+    } else {
+      document.querySelectorAll('.lbc-v2-menu-item').forEach(el => el.classList.remove('active'));
+    }
     itemEl.classList.add('active');
   }
 }
