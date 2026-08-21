@@ -241,6 +241,25 @@ function openCanvaModal(canvaUrl, projectTitle) {
   openProjectDrawer('cordons-bleus');
 }
 
+function playLbcVideo(container, videoId) {
+  if (!container || !videoId) return;
+  const isLocal = window.location.protocol === 'file:';
+  if (isLocal) {
+    window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+    return;
+  }
+  const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+  container.innerHTML = `
+    <iframe 
+      src="${videoUrl}" 
+      title="Présentation vidéo du projet Les Cordons Bleus" 
+      style="width: 100%; height: 100%; min-height: 280px; border: 0; border-radius: 12px;" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  `;
+}
+
 function closeProjectDrawer() {
   const overlay = document.getElementById('projectDrawerOverlay');
   if (overlay) {
