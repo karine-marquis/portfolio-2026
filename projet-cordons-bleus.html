@@ -7,6 +7,39 @@
     <meta name="description" content="Étude de cas UX/UI & Digital Learning — Les Cordons Bleus par Karine Marquis" />
     <link rel="stylesheet" href="styles.css?v=20260820_japandi" />
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      function openLightbox(imgSrc, captionText) {
+        let lightbox = document.getElementById('imageLightboxOverlay');
+        if (!lightbox) {
+          lightbox = document.createElement('div');
+          lightbox.id = 'imageLightboxOverlay';
+          lightbox.className = 'image-lightbox-overlay';
+          lightbox.setAttribute('onclick', 'closeLightbox()');
+          lightbox.innerHTML = `
+            <button class="image-lightbox-close" aria-label="Fermer le zoom" onclick="closeLightbox()">✕</button>
+            <img id="imageLightboxImg" class="image-lightbox-img" src="" alt="Agrandissement plein écran">
+            <div id="imageLightboxCaption" class="image-lightbox-caption"></div>
+          `;
+          document.body.appendChild(lightbox);
+        }
+        const imgEl = document.getElementById('imageLightboxImg');
+        const captionEl = document.getElementById('imageLightboxCaption');
+        if (imgEl) imgEl.src = imgSrc;
+        if (captionEl) captionEl.textContent = captionText || 'Cliquer n\'importe où pour fermer ✕';
+        lightbox.classList.add('active');
+      }
+
+      function closeLightbox() {
+        const lightbox = document.getElementById('imageLightboxOverlay');
+        if (lightbox) {
+          lightbox.classList.remove('active');
+        }
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    </script>
     <style>
       body.page-inner {
         background-color: var(--color-surface, #FFFDFC) !important;
