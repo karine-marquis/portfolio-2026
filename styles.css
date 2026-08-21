@@ -1940,9 +1940,9 @@ strong, b {
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  background: rgba(15, 12, 10, 0.92) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  background: rgba(10, 8, 7, 0.94) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
   z-index: 9999999 !important;
   display: flex !important;
   flex-direction: column !important;
@@ -1951,7 +1951,7 @@ strong, b {
   opacity: 0 !important;
   pointer-events: none !important;
   transition: opacity 0.25s ease !important;
-  padding: 24px !important;
+  padding: 16px !important;
   box-sizing: border-box !important;
 }
 
@@ -1960,23 +1960,60 @@ strong, b {
   pointer-events: auto !important;
 }
 
+.image-lightbox-container {
+  width: 100% !important;
+  height: 88vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: auto !important;
+  position: relative !important;
+}
+
 .image-lightbox-img {
-  max-width: 95vw !important;
-  max-height: 88vh !important;
+  max-width: 98vw !important;
+  max-height: 92vh !important;
   object-fit: contain !important;
-  border-radius: 12px !important;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.7) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.8) !important;
+  cursor: zoom-in !important;
+  transition: width 0.25s ease, max-width 0.25s ease, max-height 0.25s ease !important;
+}
+
+.image-lightbox-img.zoomed-hd {
+  max-width: none !important;
+  max-height: none !important;
+  width: 175% !important;
   cursor: zoom-out !important;
 }
 
 .image-lightbox-caption {
-  margin-top: 14px !important;
+  margin-top: 10px !important;
   color: #FFFDFC !important;
-  font-size: 14px !important;
+  font-size: 13.5px !important;
   font-family: var(--font-body, 'Montserrat', sans-serif) !important;
-  opacity: 0.9 !important;
+  opacity: 0.92 !important;
   text-align: center !important;
   font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.image-lightbox-btn-hd {
+  background: #C76D4B !important;
+  color: white !important;
+  border: none !important;
+  padding: 6px 14px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: transform 0.15s ease, background 0.15s ease !important;
+}
+.image-lightbox-btn-hd:hover {
+  background: #B35C3A !important;
+  transform: scale(1.05) !important;
 }
 
 .image-lightbox-close {
