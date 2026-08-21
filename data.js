@@ -34,7 +34,7 @@ const CASE_STUDIES_PRESENTATION = [
     category: "UX Research & Micro-Learning",
     headline: "Accompagner les jeunes parents quand le temps et l'énergie manquent.",
     description: "Concevoir une application mobile de micro-learning adaptée au rythme effréné des familles.",
-    image: "assets/PROJTS/BAMBINETS/project-bambinets.png.png",
+    image: "assets/PROJTS/BAMBINETS/vignette_bambinets.png",
     glanceSteps: [
       { num: "01", name: "Surcharge mentale", icon: "brain" },
       { num: "02", name: "Tri de cartes", icon: "layers" },
