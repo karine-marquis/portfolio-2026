@@ -31,9 +31,9 @@ const CASE_STUDIES_PRESENTATION = [
     id: "bambinets",
     number: "02",
     title: "BAMBINETS",
-    category: "UX Research & Micro-Learning",
-    headline: "Accompagner les jeunes parents quand le temps et l'énergie manquent.",
-    description: "Concevoir une application mobile de micro-learning adaptée au rythme effréné des familles.",
+    category: "UX Design & Micro-learning",
+    headline: "Apprendre quelques signes pour mieux se comprendre avant les premiers mots.",
+    description: "Avant de savoir parler, un enfant sait déjà exprimer beaucoup de choses. Encore faut-il pouvoir se comprendre.<br><br>La crèche Les Bambinets voulait un outil simple pour aider les professionnels de la petite enfance — et les parents — à apprendre quelques signes utiles au quotidien, sans transformer ça en formation lourde.<br><br>L’idée était donc de concevoir une application mobile pensée pour des usages très concrets : peu de temps, une attention souvent partagée, et le besoin de retrouver ou mémoriser un signe rapidement.",
     image: "assets/PROJTS/BAMBINETS/vignette_bambinets.png",
     glanceSteps: [
       { num: "01", name: "Surcharge mentale", icon: "brain" },
