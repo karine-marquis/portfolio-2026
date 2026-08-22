@@ -699,32 +699,74 @@
                 </div>
               </div>
 
-              <!-- EXPLORER -->
-              <section id="bb-sec-8" class="lbc-v2-card">
-                <h3 class="bambinets-v2-card-title">Explorer le projet autrement</h3>
-                <p class="bambinets-v2-card-body" style="margin-bottom: 24px;">Présentation vidéo, épisode de podcast audio et liens directs vers les livrables :</p>
-
-                <!-- YOUTUBE EMBED -->
-                <div style="margin-bottom: 24px; border-radius: 14px; overflow: hidden; border: 1px solid #F0E6DD; background: #000;">
-                  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                    <iframe src="https://www.youtube.com/embed/9aJIyxHNOaw" title="Présentation Bambinets par Karine Marquis" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+              <!-- EXPLORER LE PROJET AUTREMENT (EXACTEMENT LE MEME DESIGN QUE LES CORDONS BLEUS) -->
+              <div id="bb-sec-8">
+                <h3 class="lbc-v2-coulisses-title">Explorer le projet autrement</h3>
+                <div class="lbc-v2-coulisses-grid">
+                  <!-- CARTE VIDEO (GAUCHE) -->
+                  <div class="lbc-v2-subcard">
+                    <div class="lbc-v2-audio-header">
+                      <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="video"></i></div>
+                      <div class="lbc-v2-audio-title-wrap">
+                        <h4>La présentation complète</h4>
+                        <span class="lbc-v2-audio-duration">Format vidéo (1080p)</span>
+                      </div>
+                    </div>
+                    <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 8px !important;">Le projet, de la problématique aux solutions retenues, avec les principaux choix de conception et livrables.</p>
+                    <p class="lbc-v2-disclaimer-note" style="margin-bottom: 12px; margin-top: 6px;">ⓘ <strong>À regarder tranquillement :</strong> la présentation défile vite. Pour une lecture confortable, je recommande une vitesse de <strong>0,5x</strong> (voire <strong>0,25x</strong>).</p>
+                    <div class="lbc-v2-video-cover-wrap" onclick="playLbcVideo(this, '9aJIyxHNOaw')">
+                      <img src="assets/PROJTS/BAMBINETS/bambinets_hero.jpg" alt="Aperçu Présentation Bambinets" class="lbc-v2-video-cover-img">
+                      <div class="lbc-v2-video-play-overlay">
+                        <button class="lbc-v2-video-play-btn" aria-label="Lancer la vidéo"><i data-lucide="play" style="width: 22px; height: 22px; margin-left: 3px;"></i></button>
+                      </div>
+                    </div>
+                    <div style="margin-top: 10px; text-align: center;">
+                      <a href="https://youtu.be/9aJIyxHNOaw?si=7NElQ3QqQsLscsEs" target="_blank" rel="noopener" class="btn-outline-terracotta" style="font-size: 12px; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px;">
+                        <i data-lucide="external-link" style="width: 13px; height: 13px;"></i> Regarder directement sur YouTube ↗
+                      </a>
+                    </div>
                   </div>
-                  <div style="padding: 12px 16px; background: var(--color-surface, #FFFDFC); border-top: 1px solid #F0E6DD; display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 12.5px; color: #5C473C; font-weight: 500;">🎥 Présentation vidéo du projet Bambinets (3 min)</span>
-                    <a href="https://youtu.be/9aJIyxHNOaw?si=7NElQ3QqQsLscsEs" target="_blank" rel="noopener" style="background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; text-decoration: none;">Voir sur YouTube ↗</a>
+
+                  <!-- CARTE PODCAST & CTA (DROITE) -->
+                  <div class="lbc-v2-coulisses-right-stack">
+                    <div class="lbc-v2-subcard">
+                      <div class="lbc-v2-audio-header">
+                        <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
+                        <div class="lbc-v2-audio-title-wrap">
+                          <h4>Écouter le projet autrement</h4>
+                          <span class="lbc-v2-audio-duration">Durée d'écoute : 13:49 min</span>
+                        </div>
+                      </div>
+                      <div class="lbc-v2-custom-player">
+                        <button class="lbc-v2-play-btn" onclick="toggleBambinetsAudio(this)" aria-label="Écouter le podcast"><i data-lucide="play" id="bbPlayIcon" style="width: 16px; height: 16px;"></i></button>
+                        <span class="lbc-v2-player-timer" id="bbAudioTimer">0:00</span>
+                        <input type="range" class="lbc-v2-player-slider" id="bbAudioSeek" value="0" max="100" oninput="seekBambinetsAudio(this)">
+                        <span class="lbc-v2-player-timer">13:49</span>
+                        <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);"></i>
+                      </div>
+                      <audio id="bbAudioElement" src="assets/podcasts/bambinets.m4a" ontimeupdate="updateBambinetsAudioProgress()"></audio>
+                      <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
+                    </div>
+
+                    <div class="lbc-v2-subcard">
+                      <div class="lbc-v2-audio-header">
+                        <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="file-text"></i></div>
+                        <div class="lbc-v2-audio-title-wrap">
+                          <h4>Vous préférez lire ?</h4>
+                          <span class="lbc-v2-audio-duration">Document PDF accessible</span>
+                        </div>
+                      </div>
+                      <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 14px !important;">Une version textuelle accessible reprend les éléments essentiels de la présentation.</p>
+                      <a href="#page-contact" onclick="closeProjectDrawer(); navigateTo('contact');" class="btn-outline-terracotta"><i data-lucide="mail" style="width: 14px; height: 14px; color: currentColor;"></i> Me contacter pour la version textuelle (PDF) ➔</a>
+                    </div>
                   </div>
                 </div>
+              </div>
 
-                <!-- PODCAST AUDIO -->
-                <div style="background: #FFFDFC; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; margin-bottom: 24px;">
-                  <div style="font-weight: 700; font-size: 14px; color: #1E1915; margin-bottom: 8px;">🎧 Écouter le retour d'expérience audio — Bambinets</div>
-                  <audio controls style="width: 100%; border-radius: 30px; margin-top: 8px;">
-                    <source src="assets/podcasts/bambinets.m4a" type="audio/mp4">
-                    Votre navigateur ne supporte pas l'élément audio.
-                  </audio>
-                </div>
-
-              </section>
+              <!-- BOUTON CONTACT EN BAS -->
+              <div class="lbc-v2-contact-card" style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 36px 0 24px 0;">
+                <a href="#page-contact" onclick="closeProjectDrawer(); navigateTo('contact');" class="btn-primary">On en parle ? ➔</a>
+              </div>
             </main>
           </div>
         </div>

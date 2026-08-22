@@ -200,8 +200,32 @@ function scrollToLbcSection(secId, itemEl) {
 }
 
 function toggleLbcAudio(btn) {
-  const audio = document.getElementById('lbcAudioElement');
-  const icon = document.getElementById('lbcPlayIcon');
+  toggleAudio('lbcAudioElement', 'lbcPlayIcon');
+}
+
+function updateLbcAudioProgress() {
+  updateAudioProgress('lbcAudioElement', 'lbcAudioTimer', 'lbcAudioSeek');
+}
+
+function seekLbcAudio(slider) {
+  seekAudio(slider, 'lbcAudioElement');
+}
+
+function toggleBambinetsAudio(btn) {
+  toggleAudio('bbAudioElement', 'bbPlayIcon');
+}
+
+function updateBambinetsAudioProgress() {
+  updateAudioProgress('bbAudioElement', 'bbAudioTimer', 'bbAudioSeek');
+}
+
+function seekBambinetsAudio(slider) {
+  seekAudio(slider, 'bbAudioElement');
+}
+
+function toggleAudio(audioId, iconId) {
+  const audio = document.getElementById(audioId);
+  const icon = document.getElementById(iconId);
   if (!audio) return;
 
   if (audio.paused) {
@@ -219,10 +243,10 @@ function toggleLbcAudio(btn) {
   }
 }
 
-function updateLbcAudioProgress() {
-  const audio = document.getElementById('lbcAudioElement');
-  const timer = document.getElementById('lbcAudioTimer');
-  const seek = document.getElementById('lbcAudioSeek');
+function updateAudioProgress(audioId, timerId, seekId) {
+  const audio = document.getElementById(audioId);
+  const timer = document.getElementById(timerId);
+  const seek = document.getElementById(seekId);
   if (!audio) return;
 
   if (timer) {
@@ -236,8 +260,8 @@ function updateLbcAudioProgress() {
   }
 }
 
-function seekLbcAudio(slider) {
-  const audio = document.getElementById('lbcAudioElement');
+function seekAudio(slider, audioId) {
+  const audio = document.getElementById(audioId);
   if (!audio || !audio.duration) return;
   audio.currentTime = (slider.value / 100) * audio.duration;
 }
