@@ -1924,7 +1924,17 @@ strong, b {
   display: none !important;
 }
 
-/* LIGHTBOX IMAGE ZOOM MODAL */
+/* LIGHTBOX IMAGE ZOOM MODAL & SHADOWS POUR TOUTES LES ILLUSTRATIONS */
+div[onclick*="openLightbox"] {
+  box-shadow: 0 10px 28px rgba(45, 30, 20, 0.08), 0 2px 8px rgba(199, 109, 75, 0.04) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+}
+
+div[onclick*="openLightbox"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 36px rgba(35, 25, 20, 0.12), 0 4px 14px rgba(199, 109, 75, 0.08) !important;
+}
+
 .zoomable-img {
   cursor: zoom-in !important;
   transition: transform 0.2s ease, opacity 0.2s ease;
