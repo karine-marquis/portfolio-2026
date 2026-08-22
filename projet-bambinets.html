@@ -151,14 +151,14 @@
     <main class="bambinets-page-container">
       <!-- SIDEBAR -->
       <aside class="bambinets-sidebar">
-        <div class="bambinets-sidebar-kicker">Case Study · Petite Enfance</div>
-        <h1 class="bambinets-brand-title">BAMBINETS</h1>
-        <div class="bambinets-brand-category">UX Research & Micro-Learning</div>
-        <div class="bambinets-brand-tagline">Apprendre les signes avec bébé dans un format simple et quotidien.</div>
+        <div class="bambinets-sidebar-kicker" style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">CASE STUDY</div>
+        <h1 class="bambinets-brand-title">Bambinets</h1>
+        <div class="bambinets-brand-category">UX Design & Micro-learning</div>
+        <div class="bambinets-brand-tagline">Apprendre quelques signes pour mieux se comprendre avant les premiers mots.</div>
 
         <nav class="bambinets-sidebar-nav">
-          <a class="bambinets-menu-item active" onclick="document.getElementById('sec-hero').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">01</span> En un coup d'œil</a>
-          <a class="bambinets-menu-item" onclick="document.getElementById('sec-defi').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">02</span> Le défi</a>
+          <a class="bambinets-menu-item active" onclick="document.getElementById('sec-hero').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">01</span> Le point de départ</a>
+          <a class="bambinets-menu-item" onclick="document.getElementById('sec-defi').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">02</span> Ce que j’ai cherché à comprendre</a>
           <a class="bambinets-menu-item" onclick="document.getElementById('sec-objectifs').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">03</span> Ce que la refonte devait permettre</a>
           <a class="bambinets-menu-item" onclick="document.getElementById('sec-projet').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">04</span> Le projet derrière les écrans</a>
           <a class="bambinets-menu-item" onclick="document.getElementById('sec-demarche').scrollIntoView({behavior:'smooth'})"><span class="bambinets-menu-num">05</span> Ma démarche & Architecture</a>
@@ -171,21 +171,23 @@
       <!-- CONTENT -->
       <div class="bambinets-main-content">
         <!-- HERO -->
-        <section id="sec-hero" class="bambinets-v2-card bambinets-hero-card">
-          <div class="bambinets-tag-group">
-            <span class="bambinets-tag">UX Design</span>
-            <span class="bambinets-tag">Application mobile</span>
-            <span class="bambinets-tag">Petite enfance</span>
-            <span class="bambinets-tag">Micro-learning</span>
+        <section id="sec-hero" class="bambinets-v2-card bambinets-hero-card" style="display: grid; grid-template-columns: 1fr 400px; gap: 32px; align-items: center;">
+          <div>
+            <span class="lbc-v2-pill-badge" style="display: inline-block; background: var(--color-primary, #C76D4B); color: #FFFFFF; font-size: 12px; font-weight: 600; padding: 5px 14px; border-radius: 20px; margin-bottom: 14px;">Le projet en détail</span>
+            <h1 class="bambinets-hero-headline" style="font-family: var(--font-h1), Georgia, serif; font-size: 32px; font-weight: 700; color: #1E1915; margin-bottom: 16px;">Du besoin au bon geste</h1>
+            <p class="bambinets-v2-card-body" style="margin-bottom: 12px;">Apprendre quelques signes pour mieux se comprendre avant les <strong>premiers mots</strong>.</p>
+            <p class="bambinets-v2-card-body" style="margin-bottom: 12px;">La crèche Les Bambinets souhaitait un outil simple pour aider les professionnels de la petite enfance — et les parents — à apprendre rapidement quelques signes utiles pour communiquer avec les enfants de moins de 3 ans.</p>
+            <p class="bambinets-v2-card-body"><strong>L’objectif :</strong> proposer un apprentissage court, visuel et rassurant, adapté à des situations où le temps est limité et l’attention souvent partagée.</p>
+            <div class="bambinets-tag-group" style="margin-top: 18px;">
+              <span class="bambinets-tag">⟡ UX Design</span>
+              <span class="bambinets-tag">⟡ Application mobile</span>
+              <span class="bambinets-tag">⟡ Petite enfance</span>
+              <span class="bambinets-tag">⟡ Micro-learning</span>
+            </div>
           </div>
-          <h2 class="bambinets-hero-headline">Apprendre quelques signes pour mieux se comprendre avant les premiers mots.</h2>
-          <p class="bambinets-v2-card-body">
-            La crèche Les Bambinets souhaitait un outil simple pour aider les professionnels de la petite enfance — et les parents — à apprendre rapidement quelques signes utiles pour communiquer avec les enfants de moins de 3 ans.<br><br>
-            <strong>L’objectif :</strong> proposer un apprentissage court, visuel et rassurant, adapté à des situations où le temps est limité et l’attention souvent partagée.
-          </p>
-          <div onclick="openLightbox('assets/PROJTS/BAMBINETS/bambinets_hero.jpg', 'Bambinets — Apprendre les signes avec bébé au quotidien — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="margin-top: 24px; border-radius: 14px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in;">
-            <img src="assets/PROJTS/BAMBINETS/bambinets_hero.jpg" alt="Bambinets Illustration UX Mobile Petite Enfance" style="width: 100%; display: block; border-radius: 14px;">
-            <span style="position: absolute; bottom: 12px; right: 12px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+          <div onclick="openLightbox('assets/PROJTS/BAMBINETS/bambinets_hero.jpg', 'Bambinets — Apprendre les signes avec bébé au quotidien — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="border-radius: 20px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in; box-shadow: 18px 22px 38px rgba(35, 25, 20, 0.25);">
+            <img src="assets/PROJTS/BAMBINETS/bambinets_hero.jpg" alt="Bambinets Illustration UX Mobile Petite Enfance" style="width: 100%; display: block; border-radius: 20px; height: 100%; object-fit: cover;">
+            <span style="position: absolute; bottom: 12px; right: 12px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
           </div>
         </section>
 
