@@ -1639,6 +1639,78 @@ strong, b {
   overflow: hidden !important;
 }
 
+.lbc-v2-sidebar-brand {
+  margin-bottom: 20px;
+}
+
+.lbc-v2-sidebar-kicker {
+  font-family: var(--font-sans) !important;
+  font-size: 9.5px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent) !important;
+  margin-bottom: 2px !important;
+  opacity: 0.7;
+}
+
+.lbc-v2-brand-title {
+  font-family: var(--font-h1) !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  color: var(--color-h1) !important;
+  margin-bottom: 4px !important;
+}
+
+.lbc-v2-brand-category {
+  font-family: var(--font-sans) !important;
+  font-size: 13.5px !important;
+  color: var(--color-accent) !important;
+  font-weight: 600 !important;
+  margin-bottom: 6px !important;
+}
+
+.lbc-v2-brand-tagline {
+  font-family: var(--font-h1) !important;
+  font-size: 13px !important;
+  font-style: italic !important;
+  color: var(--color-body) !important;
+  line-height: 1.4 !important;
+}
+
+.lbc-v2-sidebar-meta-block {
+  margin-top: 14px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lbc-v2-meta-label {
+  font-family: var(--font-sans) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent) !important;
+  margin-bottom: 2px !important;
+  opacity: 0.9;
+}
+
+.lbc-v2-meta-value {
+  font-family: var(--font-sans) !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: #3B2C25 !important;
+  line-height: 1.35 !important;
+}
+
+.lbc-v2-sidebar-sep {
+  height: 1px;
+  background: rgba(199, 109, 75, 0.2);
+  margin-bottom: 20px;
+}
+
 .lbc-v2-menu-list {
   list-style: none;
   padding: 0;
