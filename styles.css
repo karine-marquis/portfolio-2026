@@ -1736,50 +1736,58 @@ strong, b {
   font-weight: 500 !important;
   color: var(--color-body) !important;
   cursor: pointer;
-  padding: 6px 10px;
+  padding: 7px 12px;
   border-radius: 20px;
   transition: all 0.25s ease;
 }
 
 .lbc-v2-menu-item:hover {
   color: var(--color-accent) !important;
+  background: rgba(199, 109, 75, 0.08) !important;
 }
 
 .lbc-v2-menu-item .menu-num {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 12px !important;
-  font-weight: 600 !important;
-  color: var(--color-subtle);
-  background: transparent;
+  font-weight: 700 !important;
+  color: var(--color-accent);
+  background: rgba(199, 109, 75, 0.12);
   flex-shrink: 0;
   transition: all 0.25s ease;
 }
 
+.lbc-v2-menu-item:hover .menu-num {
+  background: var(--color-accent) !important;
+  color: #FFFFFF !important;
+  transform: scale(1.08);
+  box-shadow: 0 3px 8px rgba(199, 109, 75, 0.3) !important;
+}
+
 .lbc-v2-menu-item.active {
-  background: transparent !important;
-  color: var(--color-h1) !important;
-  font-weight: 600 !important;
+  background: rgba(199, 109, 75, 0.14) !important;
+  color: var(--color-accent) !important;
+  font-weight: 700 !important;
   box-shadow: none !important;
-  margin-left: 0 !important;
-  padding: 4px 0 !important;
+  border-radius: 20px !important;
+  padding: 7px 12px !important;
 }
 
 .lbc-v2-menu-item.active .menu-num {
   background: var(--color-accent) !important;
   color: #FFFFFF !important;
-  margin-left: -28px !important;
-  padding-left: 28px !important;
-  padding-right: 12px !important;
-  width: auto !important;
-  min-width: 54px !important;
-  height: 28px !important;
-  border-radius: 0 14px 14px 0 !important;
-  box-shadow: 0 3px 10px rgba(199, 109, 75, 0.3);
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  border-radius: 50% !important;
+  margin-left: 0 !important;
+  padding: 0 !important;
+  box-shadow: 0 3px 10px rgba(199, 109, 75, 0.38) !important;
+  transform: scale(1.06);
 }
 
 .lbc-v2-sidebar-bottom-wrap {
