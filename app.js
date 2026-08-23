@@ -217,17 +217,18 @@ function scrollToLbcSection(secId, itemEl) {
 /* SCROLLSPY AUTOMATIQUE POUR LES SIDEBARS AU SCROLL */
 function initSidebarScrollSpy() {
   const updateActiveSections = () => {
-    const sidebars = document.querySelectorAll('.lbc-v2-sidebar');
+    const sidebars = document.querySelectorAll('.lbc-v2-sidebar, .bambinets-sidebar');
     sidebars.forEach(sidebar => {
       if (sidebar.offsetWidth === 0 || sidebar.offsetHeight === 0 || getComputedStyle(sidebar).display === 'none') return;
 
-      const menuItems = Array.from(sidebar.querySelectorAll('.lbc-v2-menu-item:not(.lbc-v2-menu-back-top)'));
+      const menuItems = Array.from(sidebar.querySelectorAll('.lbc-v2-menu-item:not(.lbc-v2-menu-back-top), .bambinets-menu-item'));
       if (!menuItems.length) return;
 
       const sectionTargets = [];
       menuItems.forEach(item => {
         const onclickAttr = item.getAttribute('onclick') || '';
-        const match = onclickAttr.match(/scrollToLbcSection\(['"]([^'"]+)['"]/);
+        const match = onclickAttr.match(/scrollToLbcSection\(['"]([^'"]+)['"]\)/) || 
+                      onclickAttr.match(/getElementById\(['"]([^'"]+)['"]\)/);
         if (match && match[1]) {
           const secEl = document.getElementById(match[1]);
           if (secEl) {
@@ -265,7 +266,7 @@ function initSidebarScrollSpy() {
   window._globalScrollSpyHandler = updateActiveSections;
   window.addEventListener('scroll', updateActiveSections, { passive: true });
 
-  document.querySelectorAll('.drawer-content, .project-modal-wrapper, .lbc-v2-main-content').forEach(el => {
+  document.querySelectorAll('.drawer-content, .project-modal-wrapper, .lbc-v2-main-content, #projectDrawerOverlay').forEach(el => {
     el.removeEventListener('scroll', window._globalScrollSpyHandler);
     el.addEventListener('scroll', updateActiveSections, { passive: true });
   });
