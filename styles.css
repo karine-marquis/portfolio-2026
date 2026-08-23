@@ -1814,11 +1814,10 @@ strong, b {
   opacity: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
-  transform: scale(1.18) translate(-6px, 8px) !important;
-  transform-origin: bottom left !important;
+  transform: none !important;
   border-radius: 0 0 0 28px !important;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%) !important;
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%) !important;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%) !important;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%) !important;
 }
 
 .lbc-v2-sidebar-bg-img,
