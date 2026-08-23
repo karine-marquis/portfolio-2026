@@ -1805,12 +1805,11 @@ strong, b {
 
 .lbc-v2-sidebar-bottom-wrap {
   display: block !important;
-  margin-top: 8px !important;
+  margin-top: 12px !important;
   width: calc(100% + 48px) !important;
   margin-left: -24px !important;
   margin-right: -24px !important;
   margin-bottom: -12px !important;
-  max-height: 130px !important;
   overflow: hidden !important;
   border-radius: 0 0 0 28px !important;
   line-height: 0;
@@ -1819,17 +1818,15 @@ strong, b {
 
 .lbc-v2-sidebar-bottom-img {
   width: 100% !important;
-  height: 130px !important;
-  object-fit: cover !important;
-  object-position: top left !important;
+  height: auto !important;
   display: block !important;
   opacity: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
   transform: none !important;
   border-radius: 0 0 0 28px !important;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%) !important;
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%) !important;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%) !important;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%) !important;
 }
 
 .lbc-v2-sidebar-bg-img,
