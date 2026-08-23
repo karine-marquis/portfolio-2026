@@ -2480,14 +2480,25 @@ strong, b {
 
 .lbc-v2-menu-back-top {
   margin-top: 10px !important;
-  border-top: 1px dashed rgba(199, 109, 75, 0.25) !important;
+  border-top: 1px dashed rgba(199, 109, 75, 0.3) !important;
   padding-top: 10px !important;
-  opacity: 0.88;
+  color: var(--color-accent, #C76D4B) !important;
+}
+
+.lbc-v2-menu-back-top .menu-label,
+.lbc-v2-menu-back-top .menu-num {
+  color: var(--color-accent, #C76D4B) !important;
+  font-weight: 600 !important;
 }
 
 .lbc-v2-menu-back-top:hover {
   opacity: 1 !important;
-  color: var(--color-accent) !important;
+  color: var(--color-accent-hover, #B05836) !important;
+}
+
+.lbc-v2-menu-back-top:hover .menu-label,
+.lbc-v2-menu-back-top:hover .menu-num {
+  color: var(--color-accent-hover, #B05836) !important;
 }
 
 .lbc-v2-back-top-btn {
