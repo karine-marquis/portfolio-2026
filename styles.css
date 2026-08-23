@@ -1801,6 +1801,7 @@ strong, b {
   margin-left: -28px !important;
   margin-right: -28px !important;
   margin-bottom: -24px !important;
+  max-height: 160px !important;
   overflow: hidden !important;
   border-radius: 0 0 0 28px !important;
   line-height: 0;
@@ -1809,15 +1810,17 @@ strong, b {
 
 .lbc-v2-sidebar-bottom-img {
   width: 100% !important;
-  height: auto !important;
+  height: 160px !important;
+  object-fit: cover !important;
+  object-position: bottom left !important;
   display: block !important;
   opacity: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
   transform: none !important;
   border-radius: 0 0 0 28px !important;
-  mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%) !important;
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%) !important;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%) !important;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%) !important;
 }
 
 .lbc-v2-sidebar-bg-img,
