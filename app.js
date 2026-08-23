@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try { renderPricingPacks(); } catch(e){ console.error('Pricing error:', e); }
   try { renderArticles(); } catch(e){ console.error('Articles error:', e); }
   try { initRoutingFromHash(); } catch(e){ console.error('Routing error:', e); }
+  try { initSidebarScrollSpy(); } catch(e){ console.error('Scrollspy error:', e); }
 
   window.addEventListener('hashchange', initRoutingFromHash);
   window.addEventListener('popstate', initRoutingFromHash);
@@ -173,10 +174,24 @@ function renderCaseStudiesList() {
 function openProjectDrawer(projectId) {
   const overlay = document.getElementById('projectDrawerOverlay');
   if (!overlay) return;
-  overlay.classList.add('active');
+
+  const mCordons = document.getElementById('modal-cordons-bleus');
+  const mBambinets = document.getElementById('modal-bambinets');
+
+  if (projectId === 'bambinets') {
+    if (mCordons) mCordons.style.display = 'none';
+    if (mBambinets) mBambinets.style.display = 'block';
+  } else {
+    if (mCordons) mCordons.style.display = 'block';
+    if (mBambinets) mBambinets.style.display = 'none';
   }
 
+  overlay.classList.add('active');
   if (window.lucide) lucide.createIcons();
+
+  setTimeout(() => {
+    initSidebarScrollSpy();
+  }, 100);
 }
 
 /* HELPER SCROLL ET AUDIO POUR LA MODALE V2 */
@@ -197,6 +212,90 @@ function scrollToLbcSection(secId, itemEl) {
     }
     itemEl.classList.add('active');
   }
+}
+
+/* SCROLLSPY AUTOMATIQUE POUR LES SIDEBARS AU SCROLL */
+function initSidebarScrollSpy() {
+  const scrollConfigs = [
+    {
+      scrollEl: document.getElementById('bbMainScroll'),
+      sidebar: document.querySelector('#modal-bambinets .lbc-v2-sidebar')
+    },
+    {
+      scrollEl: document.getElementById('lbcMainScroll'),
+      sidebar: document.querySelector('#modal-cordons-bleus .lbc-v2-sidebar')
+    },
+    {
+      scrollEl: window,
+      sidebar: document.querySelector('body > .lbc-v2-modal-layout .lbc-v2-sidebar') || document.querySelector('.lbc-v2-sidebar')
+    }
+  ];
+
+  scrollConfigs.forEach(config => {
+    const { scrollEl, sidebar } = config;
+    if (!scrollEl || !sidebar) return;
+
+    const isWindow = (scrollEl === window);
+    const menuItems = Array.from(sidebar.querySelectorAll('.lbc-v2-menu-item:not(.lbc-v2-menu-back-top)'));
+    if (!menuItems.length) return;
+
+    const sectionTargets = [];
+    menuItems.forEach(item => {
+      const onclickAttr = item.getAttribute('onclick') || '';
+      const match = onclickAttr.match(/scrollToLbcSection\(['"]([^'"]+)['"]/);
+      if (match && match[1]) {
+        const secEl = document.getElementById(match[1]);
+        if (secEl) {
+          sectionTargets.push({ id: match[1], secEl, menuItem: item });
+        }
+      }
+    });
+
+    if (!sectionTargets.length) return;
+
+    const onScroll = () => {
+      let activeItem = null;
+
+      if (isWindow) {
+        const scrollPos = window.scrollY || window.pageYOffset;
+        for (let i = sectionTargets.length - 1; i >= 0; i--) {
+          const { secEl, menuItem } = sectionTargets[i];
+          const top = secEl.offsetTop - 140;
+          if (scrollPos >= top) {
+            activeItem = menuItem;
+            break;
+          }
+        }
+      } else {
+        const containerTop = scrollEl.getBoundingClientRect().top;
+        for (let i = sectionTargets.length - 1; i >= 0; i--) {
+          const { secEl, menuItem } = sectionTargets[i];
+          const secRect = secEl.getBoundingClientRect();
+          const relativeTop = secRect.top - containerTop;
+          if (relativeTop <= 180) {
+            activeItem = menuItem;
+            break;
+          }
+        }
+      }
+
+      if (!activeItem && sectionTargets.length > 0) {
+        activeItem = sectionTargets[0].menuItem;
+      }
+
+      if (activeItem) {
+        menuItems.forEach(item => item.classList.remove('active'));
+        activeItem.classList.add('active');
+      }
+    };
+
+    if (scrollEl._scrollSpyHandler) {
+      scrollEl.removeEventListener('scroll', scrollEl._scrollSpyHandler);
+    }
+    scrollEl._scrollSpyHandler = onScroll;
+    scrollEl.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  });
 }
 
 function toggleLbcAudio(btn) {
