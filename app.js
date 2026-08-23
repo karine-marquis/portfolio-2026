@@ -216,66 +216,37 @@ function scrollToLbcSection(secId, itemEl) {
 
 /* SCROLLSPY AUTOMATIQUE POUR LES SIDEBARS AU SCROLL */
 function initSidebarScrollSpy() {
-  const scrollConfigs = [
-    {
-      scrollEl: document.getElementById('bbMainScroll'),
-      sidebar: document.querySelector('#modal-bambinets .lbc-v2-sidebar')
-    },
-    {
-      scrollEl: document.getElementById('lbcMainScroll'),
-      sidebar: document.querySelector('#modal-cordons-bleus .lbc-v2-sidebar')
-    },
-    {
-      scrollEl: window,
-      sidebar: document.querySelector('body > .lbc-v2-modal-layout .lbc-v2-sidebar') || document.querySelector('.lbc-v2-sidebar')
-    }
-  ];
+  const updateActiveSections = () => {
+    const sidebars = document.querySelectorAll('.lbc-v2-sidebar');
+    sidebars.forEach(sidebar => {
+      if (sidebar.offsetWidth === 0 || sidebar.offsetHeight === 0 || getComputedStyle(sidebar).display === 'none') return;
 
-  scrollConfigs.forEach(config => {
-    const { scrollEl, sidebar } = config;
-    if (!scrollEl || !sidebar) return;
+      const menuItems = Array.from(sidebar.querySelectorAll('.lbc-v2-menu-item:not(.lbc-v2-menu-back-top)'));
+      if (!menuItems.length) return;
 
-    const isWindow = (scrollEl === window);
-    const menuItems = Array.from(sidebar.querySelectorAll('.lbc-v2-menu-item:not(.lbc-v2-menu-back-top)'));
-    if (!menuItems.length) return;
-
-    const sectionTargets = [];
-    menuItems.forEach(item => {
-      const onclickAttr = item.getAttribute('onclick') || '';
-      const match = onclickAttr.match(/scrollToLbcSection\(['"]([^'"]+)['"]/);
-      if (match && match[1]) {
-        const secEl = document.getElementById(match[1]);
-        if (secEl) {
-          sectionTargets.push({ id: match[1], secEl, menuItem: item });
+      const sectionTargets = [];
+      menuItems.forEach(item => {
+        const onclickAttr = item.getAttribute('onclick') || '';
+        const match = onclickAttr.match(/scrollToLbcSection\(['"]([^'"]+)['"]/);
+        if (match && match[1]) {
+          const secEl = document.getElementById(match[1]);
+          if (secEl) {
+            sectionTargets.push({ id: match[1], secEl, menuItem: item });
+          }
         }
-      }
-    });
+      });
 
-    if (!sectionTargets.length) return;
+      if (!sectionTargets.length) return;
 
-    const onScroll = () => {
       let activeItem = null;
+      const threshold = window.innerHeight * 0.45;
 
-      if (isWindow) {
-        const scrollPos = window.scrollY || window.pageYOffset;
-        for (let i = sectionTargets.length - 1; i >= 0; i--) {
-          const { secEl, menuItem } = sectionTargets[i];
-          const top = secEl.offsetTop - 140;
-          if (scrollPos >= top) {
-            activeItem = menuItem;
-            break;
-          }
-        }
-      } else {
-        const containerTop = scrollEl.getBoundingClientRect().top;
-        for (let i = sectionTargets.length - 1; i >= 0; i--) {
-          const { secEl, menuItem } = sectionTargets[i];
-          const secRect = secEl.getBoundingClientRect();
-          const relativeTop = secRect.top - containerTop;
-          if (relativeTop <= 180) {
-            activeItem = menuItem;
-            break;
-          }
+      for (let i = sectionTargets.length - 1; i >= 0; i--) {
+        const { secEl, menuItem } = sectionTargets[i];
+        const rect = secEl.getBoundingClientRect();
+        if (rect.top <= threshold) {
+          activeItem = menuItem;
+          break;
         }
       }
 
@@ -287,15 +258,19 @@ function initSidebarScrollSpy() {
         menuItems.forEach(item => item.classList.remove('active'));
         activeItem.classList.add('active');
       }
-    };
+    });
+  };
 
-    if (scrollEl._scrollSpyHandler) {
-      scrollEl.removeEventListener('scroll', scrollEl._scrollSpyHandler);
-    }
-    scrollEl._scrollSpyHandler = onScroll;
-    scrollEl.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+  window.removeEventListener('scroll', window._globalScrollSpyHandler);
+  window._globalScrollSpyHandler = updateActiveSections;
+  window.addEventListener('scroll', updateActiveSections, { passive: true });
+
+  document.querySelectorAll('.drawer-content, .project-modal-wrapper, .lbc-v2-main-content').forEach(el => {
+    el.removeEventListener('scroll', window._globalScrollSpyHandler);
+    el.addEventListener('scroll', updateActiveSections, { passive: true });
   });
+
+  updateActiveSections();
 }
 
 function toggleLbcAudio(btn) {
