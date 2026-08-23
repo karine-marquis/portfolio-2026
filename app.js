@@ -244,8 +244,9 @@ function initSidebarScrollSpy() {
 
       for (let i = sectionTargets.length - 1; i >= 0; i--) {
         const { secEl, menuItem } = sectionTargets[i];
+        if (!secEl) continue;
         const rect = secEl.getBoundingClientRect();
-        if (rect.top <= threshold) {
+        if (rect && rect.top <= threshold) {
           activeItem = menuItem;
           break;
         }
