@@ -1806,9 +1806,9 @@ strong, b {
 .lbc-v2-sidebar-bottom-wrap {
   display: block !important;
   margin-top: 12px !important;
-  width: calc(100% + 48px) !important;
-  margin-left: -24px !important;
-  margin-right: -24px !important;
+  width: calc(100% + 52px) !important;
+  margin-left: -26px !important;
+  margin-right: -26px !important;
   margin-bottom: -12px !important;
   overflow: hidden !important;
   border-radius: 0 0 0 28px !important;
@@ -1823,7 +1823,11 @@ strong, b {
   opacity: 1 !important;
   margin: 0 !important;
   padding: 0 !important;
-  transform: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transform: scale(1.04) !important;
+  transform-origin: bottom center !important;
   border-radius: 0 0 0 28px !important;
   mask-image: linear-gradient(to top, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%) !important;
   -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%) !important;
