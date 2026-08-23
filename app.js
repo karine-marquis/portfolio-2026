@@ -197,18 +197,22 @@ function openProjectDrawer(projectId) {
 /* HELPER SCROLL ET AUDIO POUR LA MODALE V2 */
 function scrollToLbcSection(secId, itemEl) {
   const target = document.getElementById(secId);
-  const scrollContainer = target ? (target.closest('.lbc-v2-main-content') || document.getElementById('bbMainScroll') || document.getElementById('lbcMainScroll')) : (document.getElementById('bbMainScroll') || document.getElementById('lbcMainScroll'));
-  if (target && scrollContainer) {
-    const topPos = target.offsetTop - scrollContainer.offsetTop - 20;
-    scrollContainer.scrollTo({ top: topPos, behavior: 'smooth' });
+  if (target) {
+    const overlay = document.getElementById('projectDrawerOverlay');
+    if (overlay && overlay.classList.contains('active')) {
+      const topPos = target.getBoundingClientRect().top + overlay.scrollTop - overlay.getBoundingClientRect().top - 20;
+      overlay.scrollTo({ top: topPos, behavior: 'smooth' });
+    } else {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   if (itemEl) {
-    const parentSidebar = itemEl.closest('aside');
+    const parentSidebar = itemEl.closest('aside') || itemEl.closest('ul');
     if (parentSidebar) {
-      parentSidebar.querySelectorAll('.lbc-v2-menu-item').forEach(el => el.classList.remove('active'));
+      parentSidebar.querySelectorAll('.lbc-v2-menu-item, .bambinets-menu-item').forEach(el => el.classList.remove('active'));
     } else {
-      document.querySelectorAll('.lbc-v2-menu-item').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lbc-v2-menu-item, .bambinets-menu-item').forEach(el => el.classList.remove('active'));
     }
     itemEl.classList.add('active');
   }
@@ -227,8 +231,7 @@ function initSidebarScrollSpy() {
       const sectionTargets = [];
       menuItems.forEach(item => {
         const onclickAttr = item.getAttribute('onclick') || '';
-        const match = onclickAttr.match(/scrollToLbcSection\(['"]([^'"]+)['"]/) || 
-                      onclickAttr.match(/getElementById\(['"]([^'"]+)['"]/);
+        const match = onclickAttr.match(/['"](bb-sec-\d+|lbc-sec-[\d-]+|sec-[a-z]+)['"]/);
         if (match && match[1]) {
           const secEl = document.getElementById(match[1]);
           if (secEl) {
@@ -267,30 +270,11 @@ function initSidebarScrollSpy() {
   window._globalScrollSpyHandler = updateActiveSections;
   window.addEventListener('scroll', updateActiveSections, { capture: true, passive: true });
 
-  document.querySelectorAll('.drawer-overlay, .drawer-content, .project-modal-wrapper, .lbc-v2-main-content, #projectDrawerOverlay, #bbMainScroll, #lbcMainScroll').forEach(el => {
+  const scrollables = document.querySelectorAll('.drawer-overlay, .drawer-content, .project-modal-wrapper, .lbc-v2-main-content, #projectDrawerOverlay, #bbMainScroll, #lbcMainScroll');
+  scrollables.forEach(el => {
     el.removeEventListener('scroll', window._globalScrollSpyHandler, true);
     el.addEventListener('scroll', updateActiveSections, { capture: true, passive: true });
   });
-
-  if ('IntersectionObserver' in window) {
-    if (window._sidebarObserver) {
-      window._sidebarObserver.disconnect();
-    }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          updateActiveSections();
-        }
-      });
-    }, {
-      rootMargin: '-10% 0px -50% 0px',
-      threshold: 0
-    });
-    document.querySelectorAll('[id^="bb-sec-"], [id^="lbc-sec-"], [id^="sec-"]').forEach(sec => {
-      observer.observe(sec);
-    });
-    window._sidebarObserver = observer;
-  }
 
   updateActiveSections();
 }
