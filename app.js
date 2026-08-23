@@ -227,8 +227,8 @@ function initSidebarScrollSpy() {
       const sectionTargets = [];
       menuItems.forEach(item => {
         const onclickAttr = item.getAttribute('onclick') || '';
-        const match = onclickAttr.match(/scrollToLbcSection\(['"]([^'"]+)['"]\)/) || 
-                      onclickAttr.match(/getElementById\(['"]([^'"]+)['"]\)/);
+        const match = onclickAttr.match(/scrollToLbcSection\(['"]([^'"]+)['"]/) || 
+                      onclickAttr.match(/getElementById\(['"]([^'"]+)['"]/);
         if (match && match[1]) {
           const secEl = document.getElementById(match[1]);
           if (secEl) {
@@ -263,14 +263,34 @@ function initSidebarScrollSpy() {
     });
   };
 
-  window.removeEventListener('scroll', window._globalScrollSpyHandler);
+  window.removeEventListener('scroll', window._globalScrollSpyHandler, true);
   window._globalScrollSpyHandler = updateActiveSections;
-  window.addEventListener('scroll', updateActiveSections, { passive: true });
+  window.addEventListener('scroll', updateActiveSections, { capture: true, passive: true });
 
-  document.querySelectorAll('.drawer-content, .project-modal-wrapper, .lbc-v2-main-content, #projectDrawerOverlay').forEach(el => {
-    el.removeEventListener('scroll', window._globalScrollSpyHandler);
-    el.addEventListener('scroll', updateActiveSections, { passive: true });
+  document.querySelectorAll('.drawer-overlay, .drawer-content, .project-modal-wrapper, .lbc-v2-main-content, #projectDrawerOverlay, #bbMainScroll, #lbcMainScroll').forEach(el => {
+    el.removeEventListener('scroll', window._globalScrollSpyHandler, true);
+    el.addEventListener('scroll', updateActiveSections, { capture: true, passive: true });
   });
+
+  if ('IntersectionObserver' in window) {
+    if (window._sidebarObserver) {
+      window._sidebarObserver.disconnect();
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateActiveSections();
+        }
+      });
+    }, {
+      rootMargin: '-10% 0px -50% 0px',
+      threshold: 0
+    });
+    document.querySelectorAll('[id^="bb-sec-"], [id^="lbc-sec-"], [id^="sec-"]').forEach(sec => {
+      observer.observe(sec);
+    });
+    window._sidebarObserver = observer;
+  }
 
   updateActiveSections();
 }
