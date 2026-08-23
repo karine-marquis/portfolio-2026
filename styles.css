@@ -1627,25 +1627,16 @@ strong, b {
   width: 320px;
   min-width: 300px;
   background: #F4EFEA !important;
-  padding: 28px 28px 20px 28px;
+  padding: 32px 28px 24px 28px;
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgba(199, 109, 75, 0.15);
   position: sticky !important;
-  top: 30px !important;
-  max-height: calc(100vh - 60px) !important;
-  overflow-y: auto !important;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-  align-self: flex-start !important;
+  top: 0 !important;
+  align-self: stretch !important;
   z-index: 10;
   border-radius: 28px 0 0 28px !important;
-}
-
-.lbc-v2-sidebar::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
+  overflow: hidden !important;
 }
 
 .lbc-v2-sidebar-brand {
