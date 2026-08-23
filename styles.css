@@ -1632,8 +1632,8 @@ strong, b {
   flex-direction: column;
   border-right: 1px solid rgba(199, 109, 75, 0.15);
   position: sticky !important;
-  top: 0 !important;
-  align-self: stretch !important;
+  top: 20px !important;
+  align-self: flex-start !important;
   z-index: 10;
   border-radius: 28px 0 0 28px !important;
   overflow: hidden !important;
