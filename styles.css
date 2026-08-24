@@ -2584,3 +2584,32 @@ strong, b {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* BOUTON CROIX DE FERMETURE EN HAUT DE LA MODALE */
+.drawer-close-btn {
+  position: fixed !important;
+  top: 20px !important;
+  right: 24px !important;
+  z-index: 10010 !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: var(--color-surface, #FFFDFC) !important;
+  border: 1px solid #F0E6DD !important;
+  color: var(--color-accent, #C76D4B) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 16px rgba(70, 40, 25, 0.12) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  font-size: 18px !important;
+}
+
+.drawer-close-btn:hover,
+.modal-close-cross-btn:hover {
+  background: var(--color-accent, #C76D4B) !important;
+  color: #FFFFFF !important;
+  border-color: var(--color-accent, #C76D4B) !important;
+  transform: scale(1.1) rotate(90deg) !important;
+}
