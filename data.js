@@ -62,12 +62,12 @@ const CASE_STUDIES_PRESENTATION = [
       { num: "03", name: "Simplification parcours", icon: "sparkles" },
       { num: "04", name: "Prototype hi-fi", icon: "smartphone" }
     ],
-    methodologyLabel: "Ma démarche :",
+    methodologyLabel: "Ma Démarche :",
     methodology: [
-      { name: "partir des hypothèses" },
-      { name: "observer les usages" },
-      { name: "faire émerger les faits" },
-      { name: "transformer les insights en décisions" }
+      { name: "Partir Des Hypothèses" },
+      { name: "Observer Les Usages" },
+      { name: "Faire Émerger Les Faits" },
+      { name: "Transformer Les Insights En Décisions" }
     ]
   }
 ];
