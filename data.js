@@ -55,7 +55,7 @@ const CASE_STUDIES_PRESENTATION = [
     category: "UX Research & optimisation mobile",
     headline: "Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.",
     description: "Comprendre les véritables usages d'un frigo connecté en entreprise pour concevoir une expérience utile et adoptée au quotidien.",
-    image: "assets/PROJTS/FOODLES/presentation%20foodles.png",
+    image: "assets/PROJTS/FOODLES/frigo_foodles.png",
     glanceSteps: [
       { num: "01", name: "Freins d'usage", icon: "alert-circle" },
       { num: "02", name: "Entretiens terrain", icon: "users" },
