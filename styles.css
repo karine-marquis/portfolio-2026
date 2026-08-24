@@ -2627,3 +2627,10 @@ strong, b {
   text-decoration: none !important;
   border-bottom: none !important;
 }
+
+/* SUPPRESSION DÉFINITIVE DES ILLUSTRATIONS EN BAS DE SIDEBAR */
+.lbc-v2-sidebar-bottom-wrap,
+.lbc-v2-sidebar-bottom-img,
+.lbc-v2-sidebar-bg-img {
+  display: none !important;
+}
