@@ -62,12 +62,12 @@ const CASE_STUDIES_PRESENTATION = [
       { num: "03", name: "Simplification parcours", icon: "sparkles" },
       { num: "04", name: "Prototype hi-fi", icon: "smartphone" }
     ],
+    methodologyLabel: "Ma démarche :",
     methodology: [
-      { name: "recherche terrain", icon: "users" },
-      { name: "entretiens", icon: "user-check" },
-      { name: "tests d'utilisabilité", icon: "file-text" },
-      { name: "prototypage", icon: "layout" },
-      { name: "recommandations", icon: "check-circle" }
+      { name: "partir des hypothèses" },
+      { name: "observer les usages" },
+      { name: "faire émerger les faits" },
+      { name: "transformer les insights en décisions" }
     ]
   }
 ];
