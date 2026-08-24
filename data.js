@@ -57,10 +57,10 @@ const CASE_STUDIES_PRESENTATION = [
     description: "Comprendre les véritables usages d'un frigo connecté en entreprise pour concevoir une expérience utile et adoptée au quotidien.",
     image: "assets/PROJTS/FOODLES/frigo_foodles.png",
     glanceSteps: [
-      { num: "01", name: "Freins d'usage", icon: "alert-circle" },
-      { num: "02", name: "Entretiens terrain", icon: "users" },
-      { num: "03", name: "Simplification parcours", icon: "sparkles" },
-      { num: "04", name: "Prototype hi-fi", icon: "smartphone" }
+      { num: "01", name: "Remontées internes", icon: "message-square" },
+      { num: "02", name: "Hypothèses UX", icon: "help-circle" },
+      { num: "03", name: "Tests utilisateurs", icon: "users" },
+      { num: "04", name: "Insights & recommandations", icon: "sparkles" }
     ],
     methodologyLabel: "Ma Démarche :",
     methodology: [
