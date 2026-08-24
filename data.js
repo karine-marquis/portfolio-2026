@@ -52,7 +52,7 @@ const CASE_STUDIES_PRESENTATION = [
     id: "foodles",
     number: "03",
     title: "FOODLES",
-    category: "Recherche UX & Frigo Connecté",
+    category: "UX Research & optimisation mobile",
     headline: "Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.",
     description: "Comprendre les véritables usages d'un frigo connecté en entreprise pour concevoir une expérience utile et adoptée au quotidien.",
     image: "assets/PROJTS/FOODLES/presentation%20foodles.png",
