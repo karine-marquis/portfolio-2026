@@ -177,13 +177,20 @@ function openProjectDrawer(projectId) {
 
   const mCordons = document.getElementById('modal-cordons-bleus');
   const mBambinets = document.getElementById('modal-bambinets');
+  const mFoodles = document.getElementById('modal-foodles');
 
   if (projectId === 'bambinets') {
     if (mCordons) mCordons.style.display = 'none';
     if (mBambinets) mBambinets.style.display = 'block';
+    if (mFoodles) mFoodles.style.display = 'none';
+  } else if (projectId === 'foodles') {
+    if (mCordons) mCordons.style.display = 'none';
+    if (mBambinets) mBambinets.style.display = 'none';
+    if (mFoodles) mFoodles.style.display = 'block';
   } else {
     if (mCordons) mCordons.style.display = 'block';
     if (mBambinets) mBambinets.style.display = 'none';
+    if (mFoodles) mFoodles.style.display = 'none';
   }
 
   overlay.classList.add('active');

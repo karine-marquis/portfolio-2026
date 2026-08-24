@@ -3,141 +3,334 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Karine Marquis — UX Designer — Portfolio interactif</title>
-    <meta name="description" content="Portfolio UX/UI interactif" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <title>FOODLES — Karine Marquis UX Designer</title>
+    <meta name="description" content="Étude de cas UX/UI & Frigo Connecté — Foodles par Karine Marquis" />
+    <link rel="stylesheet" href="styles.css?v=20260824_japandi" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      function openLightbox(imgSrc, captionText) {
+        let lightbox = document.getElementById('imageLightboxOverlay');
+        if (!lightbox) {
+          lightbox = document.createElement('div');
+          lightbox.id = 'imageLightboxOverlay';
+          lightbox.className = 'image-lightbox-overlay';
+          lightbox.innerHTML = `
+            <button class="image-lightbox-close" aria-label="Fermer le zoom" onclick="closeLightbox()">✕</button>
+            <div class="image-lightbox-container" id="imageLightboxContainer">
+              <img id="imageLightboxImg" class="image-lightbox-img" src="" alt="Agrandissement plein écran" onclick="toggleZoomHD(event)">
+            </div>
+            <div id="imageLightboxCaption" class="image-lightbox-caption">
+              <span id="imageLightboxCaptionText"></span>
+              <button class="image-lightbox-btn-hd" onclick="toggleZoomHD(event)">🔎 Zoom 175% HD</button>
+            </div>
+          `;
+          document.body.appendChild(lightbox);
+        }
+        const imgEl = document.getElementById('imageLightboxImg');
+        const captionTextEl = document.getElementById('imageLightboxCaptionText');
+        if (imgEl) {
+          imgEl.src = imgSrc;
+          imgEl.classList.remove('zoomed-hd');
+        }
+        if (captionTextEl) captionTextEl.textContent = captionText || 'Cliquer sur l’image pour basculer en Zoom HD';
+        lightbox.classList.add('active');
+      }
+
+      function toggleZoomHD(e) {
+        if (e) e.stopPropagation();
+        const imgEl = document.getElementById('imageLightboxImg');
+        if (imgEl) {
+          imgEl.classList.toggle('zoomed-hd');
+        }
+      }
+
+      function closeLightbox() {
+        const lightbox = document.getElementById('imageLightboxOverlay');
+        if (lightbox) {
+          lightbox.classList.remove('active');
+          const imgEl = document.getElementById('imageLightboxImg');
+          if (imgEl) imgEl.classList.remove('zoomed-hd');
+        }
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    </script>
+    <style>
+      body.page-inner {
+        background-color: var(--color-surface, #FFFDFC) !important;
+        margin: 0;
+        padding: 0;
+      }
+      .lbc-v2-modal-layout {
+        display: flex;
+        min-height: 100vh;
+        width: 100%;
+        max-width: 1380px;
+        margin: 0 auto;
+      }
+      .lbc-v2-sidebar {
+        width: 320px;
+        min-width: 320px;
+        background: #FAF4EE;
+        border-right: 1px solid #F0E6DD;
+        padding: 36px 28px;
+        display: flex;
+        flex-direction: column;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        box-sizing: border-box;
+      }
+      .lbc-v2-main-content {
+        flex: 1;
+        padding: 40px 48px 60px 48px;
+        overflow-y: auto;
+        box-sizing: border-box;
+      }
+      @media (max-width: 960px) {
+        .lbc-v2-modal-layout {
+          flex-direction: column;
+        }
+        .lbc-v2-sidebar {
+          width: 100%;
+          min-width: 100%;
+          height: auto;
+          position: relative;
+          border-right: none;
+          border-bottom: 1px solid #F0E6DD;
+          padding: 24px;
+        }
+        .lbc-v2-main-content {
+          padding: 24px;
+        }
+      }
+    </style>
   </head>
   <body class="page-inner">
-  <div class="noise"></div>
+    
+    <div class="lbc-v2-modal-layout">
+      <!-- SIDEBAR JAPANDI -->
+      <aside class="lbc-v2-sidebar">
+        <div style="margin-bottom: 16px;">
+          <a href="index.html#projects" class="back-home-link" style="font-size: 13px; font-weight: 500; color: var(--color-accent, #C76D4B); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            ← Retour aux projets
+          </a>
+        </div>
+        <div class="lbc-v2-sidebar-brand">
+          <div class="lbc-v2-sidebar-kicker">Case Study</div>
+          <h2 class="lbc-v2-brand-title">FOODLES</h2>
+          <div class="lbc-v2-brand-category">Recherche UX & Frigo Connecté</div>
+          <p class="lbc-v2-brand-tagline">Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.</p>
+        </div>
+        <div class="lbc-v2-sidebar-meta-block">
+          <div class="lbc-v2-meta-item">
+            <div class="lbc-v2-meta-label">
+              <i data-lucide="layout" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+              TYPE DE PROJET
+            </div>
+            <div class="lbc-v2-meta-value">Audit UX, Recherche terrain & Refonte</div>
+          </div>
+          <div class="lbc-v2-meta-item">
+            <div class="lbc-v2-meta-label">
+              <i data-lucide="clock" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+              DURÉE
+            </div>
+            <div class="lbc-v2-meta-value">4 mois</div>
+          </div>
+          <div class="lbc-v2-meta-item">
+            <div class="lbc-v2-meta-label">
+              <i data-lucide="user-check" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+              MON RÔLE
+            </div>
+            <div class="lbc-v2-meta-value">UX Designer & Ergonome</div>
+          </div>
+        </div>
+        <div class="lbc-v2-sidebar-sep"></div>
+        <ul class="lbc-v2-menu-list">
+          <li class="lbc-v2-menu-item active" onclick="scrollToLbcSection('fd-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le problème</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('fd-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Ce que j’ai cherché à comprendre</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('fd-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Ce que la refonte devait permettre</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('fd-sec-4', this)"><span class="menu-num">4</span><span class="menu-label">Le projet derrière les écrans</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('fd-sec-5', this)"><span class="menu-num">5</span><span class="menu-label">Ma démarche</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('fd-sec-6', this)"><span class="menu-num">6</span><span class="menu-label">Ce que j’ai découvert</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('fd-sec-7', this)"><span class="menu-num">7</span><span class="menu-label">Les solutions retenues</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('fd-sec-8', this)"><span class="menu-num">8</span><span class="menu-label">Ce que j’en retiens</span></li>
+          <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('fd-sec-9', this)"><span class="menu-num">9</span><span class="menu-label">Explorer le projet autrement</span></li>
+        </ul>
+        <div class="lbc-v2-sidebar-bottom-wrap" style="margin-top: auto;">
+          <img src="assets/PROJTS/FOODLES/presentation foodles.png" alt="Aperçu Application Foodles" class="lbc-v2-sidebar-bottom-img">
+        </div>
+      </aside>
 
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Retour accueil">
-      <span class="text-logo" aria-label="KM UX Designer">
-        <span class="text-logo-km">KM</span>
-        <span class="text-logo-sub">UX Designer</span>
-      </span>
-      <span class="brand-line"></span>
-    </a>
+      <!-- CONTENU PRINCIPAL JAPANDI -->
+      <main class="lbc-v2-main-content">
+        <!-- SEC 1 : HERO -->
+        <div class="lbc-v2-hero-row" id="fd-sec-1">
+          <div class="lbc-v2-hero-text">
+            <span class="lbc-v2-pill-badge">Le projet en détail</span>
+            <h1 class="lbc-v2-main-title">Du problème à l’usage fluide</h1>
+            <p class="lbc-v2-intro-p">Il est 12h30. La pause déjeuner arrive. L’application <strong>Foodles</strong> permet de réserver un repas disponible dans un frigo connecté au bureau.</p>
+            <p class="lbc-v2-intro-p">Sur le papier, tout devrait être simple. Dans la réalité, l’expérience demande plus d’effort qu’elle ne devrait : indisponibilité découverte tardivement, retours en arrière fréquents, actions peu explicites.</p>
+            <p class="lbc-v2-intro-p"><strong>L’objectif :</strong> révéler les vrais freins d'usage et faire remonter les informations décisives avant que l’utilisateur s'engage dans le parcours.</p>
+            <div class="lbc-v2-tags-wrap">
+              <span class="lbc-v2-tag-pill">⟡ Recherche UX</span>
+              <span class="lbc-v2-tag-pill">⟡ Audit d'ergonomie</span>
+              <span class="lbc-v2-tag-pill">⟡ Frigo connecté</span>
+              <span class="lbc-v2-tag-pill">⟡ Tests utilisateurs</span>
+            </div>
+          </div>
+          <div class="lbc-v2-hero-img-wrap" onclick="openLightbox('assets/PROJTS/FOODLES/presentation foodles.png', 'Foodles — Audit & Refonte du parcours de réservation — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="cursor: zoom-in; position: relative;">
+            <img src="assets/PROJTS/FOODLES/presentation foodles.png" alt="Foodles Illustration UX Frigo Connecté">
+            <span style="position: absolute; bottom: 12px; right: 12px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+          </div>
+        </div>
 
-    <nav class="nav" aria-label="Navigation principale">
-      <a class="nav-link" href="index.html">Accueil</a>
-      <a class="nav-link active" href="projets.html">Projets</a>
-      <a class="nav-link" href="offre.html">Offre</a>
-      <a class="nav-link" href="approche.html">Approche</a>
-      <a class="nav-link" href="apropos.html">À propos</a>
-      <a class="nav-link" href="journal.html">À lire</a>
-      <a class="nav-link" href="contact.html">Contact</a>
-    </nav>
+        <!-- GRILLE DE CARTES 2 À 3 -->
+        <div class="lbc-v2-cards-grid">
+          <div class="lbc-v2-card" id="fd-sec-2">
+            <h3 class="lbc-v2-card-title">Ce que j’ai cherché à comprendre</h3>
+            <p class="lbc-v2-card-body">Ce qui freine l’expérience, ce n’est pas un bug technique. L'application remplit son rôle. Mais elle demande de petits efforts au pire moment : quand l’utilisateur a faim, peu de temps, et aucune envie de chercher l'information cachée.</p>
+            <div onclick="openLightbox('assets/PROJTS/FOODLES/foodles2.png', 'Analyse du parcours de réservation Foodles — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="margin-top: 16px; border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in; background: #FAF6F2; padding: 12px; text-align: center;">
+              <img src="assets/PROJTS/FOODLES/foodles2.png" alt="Analyse des points de friction Foodles" style="max-height: 380px; width: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
+              <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+            </div>
+          </div>
+          <div class="lbc-v2-card" id="fd-sec-3">
+            <h3 class="lbc-v2-card-title" style="font-size: 18px !important;">Ce que la refonte devait permettre</h3>
+            <ul class="lbc-v2-card-bullets">
+              <li><strong>Faire remonter les informations décisives</strong> (disponibilité du plat, état de réservation) avant la validation</li>
+              <li><strong>Éliminer les retours en arrière inutiles</strong> et clarifier l'action suivante à chaque étape</li>
+              <li><strong>Réduire la charge cognitive</strong> durant la pause déjeuner pour une réservation sans effort</li>
+              <li><strong>Accroître le taux d'adoption</strong> et la satisfaction quotidienne des salariés au bureau</li>
+            </ul>
+          </div>
+        </div>
 
-    <a class="nav-cta" href="contact.html">On en parle ?</a>
+        <!-- SECTION : LE PROJET DERRIERE LES ECRANS -->
+        <div id="fd-sec-4" class="lbc-v2-learnings-block" style="margin-top: 28px; margin-bottom: 32px;">
+          <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 16px;">Le projet derrière les écrans</h3>
+          <div class="lbc-v2-learnings-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important; margin-bottom: 24px !important;">
+            <div class="lbc-v2-card">
+              <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Grille d'observation</h4>
+              <p class="lbc-v2-card-body">Analyse qualitative des gestes et hésitations des collaborateurs lors du retrait des plats devant le frigo.</p>
+            </div>
+            <div class="lbc-v2-card">
+              <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Tri de cartes (Card Sorting)</h4>
+              <p class="lbc-v2-card-body">Atelier avec les salariés pour regrouper les plats, menus et filtres d'allergènes selon leur logique naturelle.</p>
+            </div>
+            <div class="lbc-v2-card">
+              <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Tests d'utilisabilité</h4>
+              <p class="lbc-v2-card-body">Vérification auprès des utilisateurs pour valider la réduction du temps de réservation et la clarté des stocks.</p>
+            </div>
+          </div>
+        </div>
 
-    <button class="burger" aria-label="Ouvrir le menu">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-    <main class="container">
-      <section class="page-hero reveal">
-        <p class="kicker">Étude de cas · Audit UX · Parcours de réservation</p>
-        <h1 class="page-title">Foodles</h1>
-        <p class="lead">
-          Il est 12h30. La pause déjeuner arrive. L’application Foodles permet
-          de réserver un repas disponible dans un frigo connecté au bureau. Sur
-          le papier, tout devrait être simple. Dans la réalité, l’expérience
-          demande plus d’effort qu’elle ne devrait.
-        </p>
-        <div class="actions">
-          <a class="btn" href="contact.html">Discuter d’un projet →</a
-          ><a class="btn secondary" href="projets.html">← Retour aux projets</a>
+        <div class="lbc-v2-cards-grid">
+          <div class="lbc-v2-card" id="fd-sec-5">
+            <h3 class="lbc-v2-card-title">Ma démarche</h3>
+            <p class="lbc-v2-card-body">Je suis partie des retours existants et d'observations terrain pour comprendre ce qui se jouait dans le parcours : les informations masquées, les actions à deviner, les moments de frustration.<br><br>Le tri de cartes et les tests utilisateurs ont permis de confronter les intuitions au réel au lieu de rester sur une simple impression d'interface.</p>
+          </div>
+          <div class="lbc-v2-card" id="fd-sec-6">
+            <h3 class="lbc-v2-card-title">Ce que j’ai découvert</h3>
+            <p class="lbc-v2-card-body">Les utilisateurs ne veulent pas chercher la composition du plat ou la disponibilité restante. Ils souhaitent valider leur choix en 3 secondes chrono sans risquer d'arriver devant un frigo vide.</p>
+            <div onclick="openLightbox('assets/PROJTS/FOODLES/foodles-4.png', 'Synthèse des découvertes Foodles — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="margin-top: 16px; border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in; background: #FAF6F2; padding: 12px; text-align: center;">
+              <img src="assets/PROJTS/FOODLES/foodles-4.png" alt="Synthèse des découvertes Foodles" style="max-height: 380px; width: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
+              <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+            </div>
+          </div>
+          <div class="lbc-v2-card" id="fd-sec-7">
+            <h3 class="lbc-v2-card-title">Les solutions retenues</h3>
+            <p class="lbc-v2-card-body">Affichage en temps réel des stocks par frigo, simplification de la fiche recette, guidage visuel jusqu me au déverrouillage de la porte et confirmation claire de commande.</p>
+            <div onclick="openLightbox('assets/PROJTS/FOODLES/foodles-4.2.png', 'Maquettes Hi-Fi et solutions Foodles — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="margin-top: 16px; border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in; background: #FAF6F2; padding: 12px; text-align: center;">
+              <img src="assets/PROJTS/FOODLES/foodles-4.2.png" alt="Solutions et Maquettes Hi-Fi Foodles" style="max-height: 380px; width: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
+              <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+            </div>
+          </div>
         </div>
-      </section>
-      <section class="grid-2 section reveal">
-        <div class="card">
-          <h3>Problème identifié</h3>
-          <p>
-            Ce qui freine l’expérience, ce n’est pas le fonctionnement de
-            l’application. Elle remplit son rôle. Mais elle demande de petits
-            efforts au pire moment : quand l’utilisateur a faim, peu de temps,
-            et absolument aucune envie de jouer à “où est passée l’information
-            importante ?”. Disponibilité du plat, action suivante, retour en
-            arrière… chaque détail ajoute un peu d’effort là où le parcours
-            devrait rester simple.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Réponse UX</h3>
-          <p>
-            La réponse UX, est de faire remonter les informations décisives
-            avant que l’utilisateur ait déjà avancé dans le parcours.
-            Disponibilité du plat, état de réservation, action suivante : chaque
-            élément doit être visible au moment où la décision se prend. Moins
-            d’allers-retours, moins d’hésitation, plus de fluidité.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Méthode</h3>
-          <p>
-            Je suis partie des retours existants pour comprendre ce qui se
-            jouait vraiment dans le parcours : les informations que
-            l’utilisateur ne voit pas, les actions qu’il doit deviner, les
-            moments où la réservation perd en fluidité. Le tri de cartes (card
-            sorting), les hypothèses UX et les tests utilisateurs ont permis de
-            confronter ces intuitions au réel, au lieu de rester sur une simple
-            impression d’interface “pas assez claire”.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Impact attendu</h3>
-          <p>
-            L’impact attendu, c’est une réservation qui demande moins d’effort
-            au moment où l’utilisateur veut surtout aller vite. Voir plus tôt ce
-            qui est disponible, comprendre plus facilement quoi faire ensuite,
-            éviter les retours en arrière inutiles : autant de petits
-            ajustements qui rendent le parcours plus simple, plus fiable, et
-            moins agaçant au quotidien.
-          </p>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="container footer-grid">
-        <div>
-          <span class="text-logo footer-text-logo" aria-label="KM UX Designer">
-            <span class="text-logo-km">KM</span>
-            <span class="text-logo-sub">UX Designer</span>
-          </span>
 
-          <p class="lead" style="font-size: 15px">UX/UI designer freelance.</p>
+        <!-- SECTION 8 : CE QUE J'AI APPRIS -->
+        <div id="fd-sec-8" class="lbc-v2-learnings-block" style="margin-top: 32px; margin-bottom: 40px;">
+          <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 16px;">Ce que j’ai appris</h3>
+          <div class="lbc-v2-learnings-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important; margin-bottom: 32px !important;">
+            <div class="lbc-v2-card">
+              <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Concevoir pour un moment de hâte</h4>
+              <p class="lbc-v2-card-body">La pause déjeuner est un moment où l'attention est limitée. Chaque écran doit apporter une réponse immédiate sans détour.</p>
+            </div>
+            <div class="lbc-v2-card">
+              <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Anticiper l'information clé</h4>
+              <p class="lbc-v2-card-body">Faire remonter le stock et la disponibilité dès l'accueil évite les déceptions et les retours en arrière frustrants.</p>
+            </div>
+            <div class="lbc-v2-card">
+              <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Relier le physique au digital</h4>
+              <p class="lbc-v2-card-body">L'expérience ne s'arrête pas au clic : l'ouverture du frigo et le retrait du plat doivent être en parfaite synchro avec l'application.</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <p class="kicker">Explorer</p>
-          <nav class="footer-nav" aria-label="Navigation secondaire">
-            <a href="index.html">Accueil</a>
-            <a href="approche.html">Approche</a>
-            <a href="projets.html">Projets</a>
-            <a href="offre.html">Offre</a>
-            <a href="apropos.html">À propos</a>
-            <a href="journal.html">À lire</a>
-            <a class="nav-cta" href="contact.html">Contact</a>
-          </nav>
+
+        <!-- SEC 9 : EXPLORER AUTREMENT -->
+        <div id="fd-sec-9">
+          <h3 class="lbc-v2-coulisses-title">Explorer le projet autrement</h3>
+          <div class="lbc-v2-coulisses-grid">
+            <div class="lbc-v2-subcard">
+              <div class="lbc-v2-audio-header">
+                <div class="lbc-v2-audio-title-wrap">
+                  <h4>La présentation complète</h4>
+                  <span class="lbc-v2-audio-duration">Format vidéo (1080p)</span>
+                </div>
+              </div>
+              <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 8px !important;">Le projet Foodles, de la problématique aux solutions retenues, avec les choix d'ergonomie et livrables.</p>
+              <p class="lbc-v2-disclaimer-note" style="margin-bottom: 12px; margin-top: 6px;">ⓘ <strong>À regarder tranquillement :</strong> la présentation défile vite. Pour une lecture confortable, je recommande une vitesse de <strong>0,5x</strong>.</p>
+              
+              <div class="lbc-v2-video-cover-wrap" onclick="playLbcVideo(this, 'Wi7B5p7eKl0')" style="position: relative; cursor: pointer; border-radius: 12px; overflow: hidden;">
+                <img src="assets/PROJTS/FOODLES/presentation foodles.png" alt="Aperçu Présentation Vidéo Foodles" class="lbc-v2-video-cover-img" style="width: 100%; display: block; border-radius: 12px;">
+                <div class="lbc-v2-video-play-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25);">
+                  <button class="lbc-v2-video-play-btn" aria-label="Regarder la présentation sur YouTube" style="width: 56px; height: 56px; border-radius: 50%; background: #C76D4B; border: none; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i data-lucide="play" style="width: 24px; height: 24px; margin-left: 3px;"></i></button>
+                </div>
+              </div>
+              <div style="margin-top: 10px; text-align: center;">
+                <a href="https://youtu.be/Wi7B5p7eKl0" target="_blank" rel="noopener" class="btn-outline-terracotta" style="font-size: 12.5px; padding: 7px 16px; display: inline-flex; align-items: center; gap: 6px;">
+                  <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Regarder directement sur YouTube ↗
+                </a>
+              </div>
+            </div>
+
+            <div class="lbc-v2-coulisses-right-stack">
+              <div class="lbc-v2-subcard">
+                <div class="lbc-v2-audio-header">
+                  <div class="lbc-v2-audio-title-wrap">
+                    <h4>Documents &amp; Livrables PDF</h4>
+                    <span class="lbc-v2-audio-duration">Livrables de conception</span>
+                  </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+                  <a href="assets/PROJTS/FOODLES/2.2 Projet FOODLES.pdf" target="_blank" rel="noopener" class="btn-outline-terracotta" style="font-size: 13px; padding: 8px 14px;"><i data-lucide="file-text" style="width: 14px; height: 14px;"></i> Voir la présentation complète Foodles (PDF) ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <p class="kicker">Contact</p>
-          <p>contact@km-ux.net<br />Full remote · France / international</p>
+
+        <div class="lbc-v2-contact-card" style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 40px 0 24px 0;">
+          <a href="index.html#page-contact" class="btn-primary">On en parle ? ➔</a>
         </div>
-      </div>
-      <div
-        class="container"
-        style="margin-top: 28px; color: var(--muted); font-size: 13px"
-      >
-        <div class="container footer-bottom">
-          <span>© 2026 Karine Marquis</span>
-          <span
-            >Quand l’expérience devient moins évidente, mon travail commence :
-            révéler les frictions, clarifier le parcours.</span
-          >
-        </div>
-      </div>
-    </footer>
-    <script src="assets/script.js"></script>
+      </main>
+    </div>
+
+    <script>
+      if (window.lucide) lucide.createIcons();
+      function scrollToLbcSection(secId, el) {
+        const target = document.getElementById(secId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+        if (el) {
+          document.querySelectorAll('.lbc-v2-menu-item').forEach(item => item.classList.remove('active'));
+          el.classList.add('active');
+        }
+      }
+    </script>
+    <script src="app.js"></script>
   </body>
 </html>
