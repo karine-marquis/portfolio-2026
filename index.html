@@ -156,12 +156,10 @@
     }
 
     function updateActiveMenuItem() {
-      const overlay = document.getElementById('projectDrawerOverlay');
-      if (!overlay) return;
-
       const activeModal = document.querySelector('.project-modal-wrapper:not([style*="display: none"])');
       if (!activeModal) return;
 
+      const mainContent = activeModal.querySelector('.lbc-v2-main-content, .bambinets-main-content, .foodles-main-content') || activeModal;
       const sidebar = activeModal.querySelector('.lbc-v2-sidebar, .bambinets-sidebar, .foodles-sidebar, aside');
       if (!sidebar) return;
 
@@ -171,7 +169,7 @@
       const sectionTargets = [];
       menuItems.forEach(function(item) {
         const onclickAttr = item.getAttribute('onclick') || '';
-        const match = onclickAttr.match(/['"]([a-zA-Z0-9_-]+-sec-[\d-]+|[a-zA-Z0-9_-]+-sec-\d+|sec-[a-zA-Z0-9_-]+)['"]/);
+        const match = onclickAttr.match(/['"]([a-zA-Z0-9_-]+-sec-[\d-]+|[a-zA-Z0-9_-]+-sec-\d+|sec-[a-zA-Z0-9_-]+|fd-sec-\d+|lbc-sec-[\d-]+)['"]/);
         if (match && match[1]) {
           const secEl = document.getElementById(match[1]);
           if (secEl) {
@@ -182,13 +180,14 @@
 
       if (!sectionTargets.length) return;
 
+      const containerRect = mainContent.getBoundingClientRect();
       let activeItem = null;
-      const triggerPoint = window.innerHeight * 0.45;
+      const targetThreshold = containerRect.top + 200;
 
       for (let i = sectionTargets.length - 1; i >= 0; i--) {
         const target = sectionTargets[i];
         const rect = target.secEl.getBoundingClientRect();
-        if (rect && rect.top <= triggerPoint) {
+        if (rect && rect.top <= targetThreshold) {
           activeItem = target.item;
           break;
         }
@@ -211,12 +210,15 @@
     }
 
     function initModalScrollListener() {
-      const scrollContainer = document.getElementById('projectDrawerOverlay');
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('scroll', updateActiveMenuItem);
-        scrollContainer.addEventListener('scroll', updateActiveMenuItem);
-        updateActiveMenuItem();
-      }
+      const scrollables = document.querySelectorAll('#projectDrawerOverlay, .lbc-v2-main-content, .bambinets-main-content, .foodles-main-content');
+      scrollables.forEach(function(el) {
+        if (!el) return;
+        el.removeEventListener('scroll', updateActiveMenuItem);
+        el.addEventListener('scroll', updateActiveMenuItem, { passive: true });
+      });
+      window.removeEventListener('scroll', updateActiveMenuItem);
+      window.addEventListener('scroll', updateActiveMenuItem, { passive: true });
+      updateActiveMenuItem();
     }
 
     document.addEventListener('DOMContentLoaded', initModalScrollListener);

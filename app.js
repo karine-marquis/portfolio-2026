@@ -236,9 +236,13 @@ function scrollToLbcSection(secId, itemEl) {
 /* SCROLLSPY AUTOMATIQUE POUR LES SIDEBARS AU SCROLL */
 function initSidebarScrollSpy() {
   const updateActiveSections = () => {
-    const sidebars = document.querySelectorAll('.lbc-v2-sidebar, .bambinets-sidebar, .foodles-sidebar, aside');
-    sidebars.forEach(sidebar => {
-      if (!sidebar || sidebar.offsetWidth === 0 || sidebar.offsetHeight === 0 || getComputedStyle(sidebar).display === 'none') return;
+    const mainContainers = document.querySelectorAll('.lbc-v2-main-content, .bambinets-main-content, .foodles-main-content, .lbc-v2-modal-layout, .bambinets-page-container');
+    
+    mainContainers.forEach(container => {
+      if (!container || container.offsetWidth === 0 || container.offsetHeight === 0) return;
+      const parentLayout = container.closest('.lbc-v2-modal-layout, .bambinets-page-container, body') || document;
+      const sidebar = parentLayout.querySelector('.lbc-v2-sidebar, .bambinets-sidebar, .foodles-sidebar, aside');
+      if (!sidebar) return;
 
       const menuItems = Array.from(sidebar.querySelectorAll('.lbc-v2-menu-item:not(.lbc-v2-menu-back-top), .bambinets-menu-item, .foodles-menu-item, li[onclick]'));
       if (!menuItems.length) return;
@@ -257,14 +261,15 @@ function initSidebarScrollSpy() {
 
       if (!sectionTargets.length) return;
 
+      const containerRect = container.getBoundingClientRect();
       let activeItem = null;
-      const threshold = window.innerHeight * 0.45;
+      const targetThreshold = containerRect.top + 200;
 
       for (let i = sectionTargets.length - 1; i >= 0; i--) {
         const { secEl, menuItem } = sectionTargets[i];
         if (!secEl) continue;
         const rect = secEl.getBoundingClientRect();
-        if (rect && rect.top <= threshold) {
+        if (rect.top <= targetThreshold) {
           activeItem = menuItem;
           break;
         }
@@ -281,14 +286,18 @@ function initSidebarScrollSpy() {
     });
   };
 
-  window.removeEventListener('scroll', window._globalScrollSpyHandler, true);
-  window._globalScrollSpyHandler = updateActiveSections;
-  window.addEventListener('scroll', updateActiveSections, { capture: true, passive: true });
+  const scrollTargets = [
+    window,
+    document,
+    ...document.querySelectorAll('.lbc-v2-main-content, .bambinets-main-content, .foodles-main-content, #projectDrawerOverlay, .project-modal-wrapper')
+  ];
 
-  const scrollables = document.querySelectorAll('.drawer-overlay, .drawer-content, .project-modal-wrapper, .lbc-v2-main-content, #projectDrawerOverlay, #bbMainScroll, #lbcMainScroll');
-  scrollables.forEach(el => {
-    el.removeEventListener('scroll', window._globalScrollSpyHandler, true);
-    el.addEventListener('scroll', updateActiveSections, { capture: true, passive: true });
+  scrollTargets.forEach(el => {
+    if (!el) return;
+    try {
+      el.removeEventListener('scroll', updateActiveSections);
+      el.addEventListener('scroll', updateActiveSections, { passive: true });
+    } catch(e){}
   });
 
   updateActiveSections();
