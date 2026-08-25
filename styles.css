@@ -309,7 +309,7 @@ strong, b {
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background: #E3D4C4 url("assets/nouvelle%20home%202.jpg") no-repeat right top / cover;
+  background: #E3D4C4 url("assets/nouvelle_home_2.jpg") no-repeat right top / cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1041,7 +1041,7 @@ strong, b {
 @media (max-width: 1024px) {
   .site-footer { margin-top: 0; }
   .home-hero-full-scene {
-    background: #E3D4C4 url("assets/nouvelle%20home%202.jpg") no-repeat center center / cover;
+    background: #E3D4C4 url("assets/nouvelle_home_2.jpg") no-repeat center center / cover;
     min-height: 100vh;
     align-items: flex-start;
     padding-bottom: 0;
