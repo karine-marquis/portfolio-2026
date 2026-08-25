@@ -1,0 +1,171 @@
+﻿- **700f56c** (2026-08-24) : feat(foodles): deplacement de 'Quand chaque seconde compte' en section 2 Les utilisateurs (id=fd-sec-2)
+- **4043096** (2026-08-24) : content(foodles): mise a jour de la derniere phrase de la carte 'Quand chaque seconde compte'
+- **773608c** (2026-08-24) : content(foodles): remplacement du libelle de l'element 3 du menu par '3 Les hypotheses'
+- **5177638** (2026-08-24) : feat(foodles): deplacement de la section 'Quand chaque seconde compte' en 4eme position dans la page
+- **e4cf2dd** (2026-08-24) : content(foodles): mise a jour du libelle de l'element 4 du menu par '4 Ce que l'experience devait mieux permettre'
+- **58c17ba** (2026-08-24) : style(foodles): integration du titre h3 dans la colonne texte de la carte 2 et centrage vertical parfait de l'image
+- **6844490** (2026-08-24) : style(foodles): ajustements carte 2 - texte abaisse, image centree verticalement et marges laterales retirees
+- **8cd6627** (2026-08-24) : style(foodles): augmentation de la hauteur de utilisation_appli a 480px avec cadrage sur le haut (top center)
+- **e4398d7** (2026-08-24) : style(foodles): agrandissement de l'image de la carte 2 a 420px de large et suppression totale des marges d'encadrement
+- **3325a1b** (2026-08-24) : feat(foodles): mise en page de la carte 2 en 2 colonnes avec texte a gauche et illustration utilisation_appli.png a droite
+- **4670b6f** (2026-08-24) : content(foodles): mise a jour du texte explicatif de la carte 2 'Quand chaque seconde compte'
+- **716d034** (2026-08-24) : content(foodles): remplacement de l'intitule 2 du menu par '2 Les utilisateurs'
+- **30064ce** (2026-08-24) : content(foodles): mise a jour du titre de la carte section 2 par 'Quand chaque seconde compte'
+- **759a085** (2026-08-24) : style(hero): augmentation de la hauteur de l'illustration hero a 580px (+50%) pour reveler tout le bas de l'image
+- **6a2eee6** (2026-08-24) : style(hero): calage de l'image en haut du texte avec object-fit cover sans aucune marge blanche
+- **02ab9c5** (2026-08-24) : style(hero): redimensionnement propre de l'illustration d'en-tete droite avec object-fit contain sans aucun rognage
+- **4ba4804** (2026-08-24) : content(foodles): ajout et mise a jour des 4 pilules de mots-cles sous la description Foodles
+- **6f3cd8c** (2026-08-24) : content(foodles): mise a jour des 4 etapes Le projet en un coup d'oeil dans la carte Foodles
+- **c932eaa** (2026-08-24) : content(foodles): mise a jour du paragraphe Mon objectif dans l'en-tete Foodles
+- **8924ee8** (2026-08-24) : content(foodles): mise a jour du texte d'introduction sous le titre h1 dans Foodles
+- **3416972** (2026-08-24) : content(foodles): mise a jour du titre principal h1 par 'Tout le monde avait une idee du probleme'
+- **81397bd** (2026-08-24) : feat(foodles): remplacement de l'illustration en haut a droite de la modale Foodles par cage_foodles.png
+- **ce85463** (2026-08-24) : feat(foodles): remplacement du visuel de la carte projet Foodles par frigo_foodles.png
+- **2763c48** (2026-08-24) : style(foodles): ajout des majuscules au debut de chaque mot dans le bandeau terracotta Ma Demarche
+- **e241841** (2026-08-24) : content(foodles): mise a jour du bandeau terracotta de la carte projet Foodles par Ma demarche et les 4 etapes
+- **473dd6f** (2026-08-24) : style(sidebar): suppression definitive des illustrations/apercus d'applications en bas du menu lateral gauche
+- **c8a959f** (2026-08-24) : content(foodles): mise a jour desintitules du menu lateral Foodles en 8 etapes
+- **78cd4a8** (2026-08-24) : content(foodles): mise a jour du texte MON ROLE par 'UX Researcher & UX Designer'
+- **c49cf6c** (2026-08-24) : content(foodles): mise a jour du texte de DUREE par 'Ôëê 2 semaines' et explication du perimetre resserre
+- **b1d6961** (2026-08-24) : content(foodles): mise a jour du texte sous TYPE DE PROJET dans la sidebar avec conservation exacte du style
+- **a28d4c5** (2026-08-24) : fix(modal): repositionnement exact du bouton croix blanc Ô£ò a l'interieur du coin superieur droit de la carte modale sans soulignement
+- **e683428** (2026-08-24) : fix(modal): reproduction exacte de la croix de fermeture cercle blanc avec ombre en haut a droite de la carte modale
+- **58df19f** (2026-08-24) : fix(modal): remplacement des icones x par des caracteres html purs Ô£ò garantissant l'affichage instantane de la croix de fermeture
+- **0e7e4c4** (2026-08-24) : feat(modal): ajout de la croix de fermeture en haut a droite et dans la navigation de toutes les modales
+- **7e89f61** (2026-08-24) : style(foodles): mise a jour de la sous-titre/categorie par 'UX Research & optimisation mobile' en terracotta
+- **2261461** (2026-08-24) : style(sidebar): augmentation de la taille du titre de marque lbc-v2-brand-title a 26px pour une pr├®sence visuelle harmonieuse
+- **6b5559f** (2026-08-24) : style(foodles): mise a jour du titre de marque en 'Foodles' dans la sidebar
+- **5b74771** (2026-08-24) : feat(foodles): integration complete du 3eme case study Foodles en modale Japandi et page autonome avec sidebar, pills, video et lightbox
+- **85c990b** (2026-08-23) : feat(scrollspy): generalisation universelle de la detection des sections pour le 3eme projet Foodles et tous les futurs projets
+- **d610024** (2026-08-23) : fix(scrollspy): correction majeure de updateActiveMenuItem dans index.html pour cibler dynamiquement la modale active Bambinets et Cordons Bleus
+- **a185d85** (2026-08-23) : fix(scrollspy): refonte complete du calculateur de position et du defilement doux pour la modale Bambinets et Les Cordons Bleus
+- **556e7bf** (2026-08-23) : fix(scrollspy): correction de la regex d'extraction des identifiants onclick et ajout de l'IntersectionObserver natif avec ecoute globale
+- **8303ed8** (2026-08-23) : fix(bambinets): alignement parfait des identifiants de section 1 ├á 7 et s├®curisation blind├®e anti-crash du ScrollSpy
+- **3222259** (2026-08-23) : fix(bambinets): r├®alignement des identifiants de section HTML (bb-sec-1 ├á bb-sec-8) et ├®couteur de d├®filement sur le conteneur modale projectDrawerOverlay
+- **9ff3174** (2026-08-23) : fix(scrollspy): correction de la d├®tection de d├®filement pour faire basculer dynamiquement l'onglet Terracotta sur les 8 sections de Bambinets au scroll
+- **f989952** (2026-08-23) : feat(scrollspy): ajout du suivi de scroll dynamique (ScrollSpy) pour basculer automatiquement l'onglet actif du menu en couleur Terracotta au d├®filement
+- **62144b4** (2026-08-23) : style(cordons-bleus): harmonisation compacte et ├®l├®gante des diagrammes (Personas, Blueprint, Roadmap, Matrice) dans la modale et la page d├®di├®e
+- **e48b905** (2026-08-23) : style(cheminement): r├®tablissement du format banni├¿re panoramique plein bord (width: 100%, sans marge interne) pour l'illustration du chemin
+- **f7623f7** (2026-08-23) : style(illustrations): redimensionnement compact et ├®l├®gant des illustrations (max-height: 380px, fond Japandi neutre #FAF6F2) sur toutes les cartes pour a├®rer la lecture
+- **16cb3ab** (2026-08-23) : style(sidebar): passage de l'├®l├®ment 'Ôåæ Remonter en haut' en couleur Terracotta (#C76D4B)
+- **454fce5** (2026-08-23) : style(sidebar): suppression des liser├®s lat├®raux ├á gauche et ├á droite de l'illustration (├®largissement ├á +52px et micro-scale 1.04)
+- **44b12f8** (2026-08-23) : style(sidebar): lib├®ration de la hauteur de l'illustration (height: auto) sans aucun d├®coupage pour afficher l'int├®gralit├® du bas de l'image
+- **3962cc7** (2026-08-23) : fix(sidebar): r├®duction compacte des espacements verticaux pour afficher 100% de l'illustration en permanence ├á l'├®cran sans aucun rognage
+- **fcaf8f4** (2026-08-23) : fix(sidebar): attachement direct de l'illustration sous le menu sticky (margin-top: 16px) pour qu'elle suive le menu au scroll, et r├®duction nette du masque (85% net)
+- **58114f4** (2026-08-23) : fix(sidebar): encadrement strict de la hauteur (height: 160px) et positionnement (object-position: bottom left) de l'illustration pour garantir sa visibilit├® int├®grale sur l'├®cran
+- **0b854b1** (2026-08-23) : fix(sidebar): suppression du zoom (scale) et du d├®calage (translate) sur l'illustration du bas pour qu'elle s'affiche enti├¿rement sans ├¬tre tronqu├®e
+- **c122643** (2026-08-23) : style(sidebar): r├®activation exacte du comportement sticky (position: sticky, top: 20px, align-self: flex-start)
+- **ffe3ff8** (2026-08-23) : fix(sidebar): suppression de la marge excessive en haut (top: 0) et r├®tablissement de l'affichage complet de l'illustration en bas de la colonne (align-self: stretch)
+- **4fc79bb** (2026-08-23) : fix(sidebar): optimisation de la hauteur verticale de la colonne de gauche et activation du scroll autonome invisible pour garantir la visibilit├® 100% permanente du menu sur tous les ├®crans
+- **29253b7** (2026-08-23) : style(sidebar): modification de l'├®l├®ment 7 du menu en 'Ce que jÔÇÖen retiens' (pointe vers apprentissages, limites du projet, ce que tu am├®liorerais ensuite)
+- **2fadb1e** (2026-08-23) : style(sidebar): modification de l'├®l├®ment 6 du menu en 'Accessibilit├®' (pointe vers WCAG AA, lisibilit├®, contrastes, tailles de texte, navigation simple)
+- **b35e90f** (2026-08-23) : style(sidebar): modification de l'├®l├®ment 5 du menu en 'Le prototype' (pointe vers ├®crans hi-fi, interactions, glossaire, favoris, quiz, FAQ)
+- **b3f76bc** (2026-08-23) : style(sidebar): interversion des ├®l├®ments 3 ('Le projet derri├¿re les ├®crans') et 4 ('La conception') du menu
+- **c6bc68b** (2026-08-23) : style(sidebar): modification de l'├®l├®ment 3 du menu en 'La conception' (pointe vers architecture, flowchart, wireframes, logique des parcours)
+- **5f83446** (2026-08-23) : style(sidebar): modification de l'├®l├®ment 2 du menu en 'Le besoin' (pointe vers contexte, publics, probl├¿me ├á r├®soudre, contraintes terrain)
+- **97ba10b** (2026-08-23) : style(sidebar): modification de l'├®l├®ment 1 du menu de la colonne de gauche en 'Le projet' (pointe vers le bloc d'intro + Le projet en un coup d'┼ôil)
+- **81112ad** (2026-08-23) : fix(sidebar): restauration compl├¿te des styles du haut de la colonne de gauche (marque, kicker, tagline, m├®tadonn├®es) et ajout du bouton 'Remonter en haut'
+- **2d8074c** (2026-08-23) : fix(sidebar): restauration parfaite de l'illustration en bas de la colonne de gauche (bambinets_sidebar_appli.png) avec le masque d'opacit├® vers le haut exact
+- **e74b412** (2026-08-23) : fix(sidebar): renforcement du masque en d├®grad├® (flou vers le haut), ajustement de l'opacit├® et limitation de la hauteur de l'illustration pour garantir la lisibilit├® parfaite du menu sticky
+- **31005cd** (2026-08-23) : feat(bambinets): ajout de l'illustration en bas de la colonne de gauche (bambinets_sidebar_appli.png) avec le masque en d├®grad├® flou vers le haut identique ├á Les Cordons Bleus
+- **49d93c5** (2026-08-23) : style(sidebar): application de l'onglet pilule Terracotta attach├® au bord gauche de la sidebar AU SURVOL (:hover) ET AU CLIC (.active)
+- **713ba25** (2026-08-23) : fix(sidebar): correction du style du menu lat├®ral - suppression de l'effet d'├®chelle sur les textes et restauration stricte de l'onglet actif Terracotta comme sur Les Cordons Bleus
+- **ad1a86b** (2026-08-23) : style(sidebar): r├®tablissement exact de l'onglet pilule Terracotta attach├® au bord gauche de la sidebar au clic (active) comme sur Les Cordons Bleus
+- **b7b2894** (2026-08-23) : style(sidebar): r├®tablissement des puces pilules Terracotta (#C76D4B) sur le menu de la colonne de gauche au survol (hover) et au clic (active)
+- **d7bd59b** (2026-08-23) : accessibility(global): renforcement syst├®matique des aria-label, role='button', tabindex=0, onkeydown et des descriptions d'accessibilit├® sur tous les conteneurs d'illustrations, boutons et m├®dias
+- **81da61d** (2026-08-23) : style(global): ajout d'une ombre Japandi douce et d'un survol sur toutes les illustrations (Cordons Bleus, Bambinets)
+- **43440b6** (2026-08-23) : style(bambinets): suppression du bouton 'Ouvrir la page d├®di├®e' tout en bas de la colonne gauche
+- **3491814** (2026-08-23) : feat(bambinets): mise ├á jour du lien vid├®o YouTube, podcast audio bambinets.m4a et int├®gration du PDF d'inclusivit├® version textuelle accessible
+- **ecad4cb** (2026-08-23) : style(bambinets): refonte compl├¿te de la section 8 'Explorer le projet autrement' avec le design 2 colonnes, lecteur audio personnalis├® et lecteur vid├®o cover identique ├á Les Cordons Bleus
+- **03a2871** (2026-08-23) : style(bambinets): passage du titre 'Ce que ce projet m'a appris' en typographie Terracotta (#C76D4B) Playfair Display
+- **f5dbb14** (2026-08-23) : feat(bambinets): remplacement de l'illustration du prototype hifi par proto_hifi_liaison2.png dans la section 6
+- **0adb816** (2026-08-23) : feat(bambinets): remplacement de l'illustration du flowchart par flowchart_bambinets2.png dans la section 5
+- **a2b9f3d** (2026-08-23) : style(bambinets): application de la typographie Serif/Playfair Display sur les 3 titres de cartes (1 signe prototyp├®, 4 entr├®es, 4 mois)
+- **f1c5832** (2026-08-23) : style(bambinets): d├®placement de l'illustration du chemin entre la carte 1 (Le d├®fi) et la carte 2 (Passer du besoin au bon geste)
+- **5b36612** (2026-08-23) : style(bambinets): application de la typographie Serif/Playfair Display sur 'Le projet derri├¿re les ├®crans' identique ├á Les Cordons Bleus
+- **1deb444** (2026-08-23) : feat(bambinets): ajout de l'illustration bambinets_chemin.png cliquable/lightbox dans la section Le d├®fi
+- **06e7d70** (2026-08-23) : style(bambinets): application du design ├á puces (lbc-v2-card-bullets) sur Le d├®fi et Passer du besoin au bon geste identique ├á Les Cordons Bleus
+- **e64a6bc** (2026-08-23) : style(bambinets): reproduction exacte du design de la partie sup├®rieure de la modale Les Cordons Bleus (Hero 2 colonnes & sidebar)
+- **dff106b** (2026-08-22) : style(bambinets): suppression d├®finitive du bloc de boutons tout en bas de la modale
+- **02247e9** (2026-08-22) : style(bambinets): harmonisation des deux boutons Figma avec le style btn-outline-terracotta
+- **f754300** (2026-08-22) : fix(bambinets): mise ├á jour de l'URL du bouton D├®couvrir les maquettes haute fid├®lit├®
+- **259f58d** (2026-08-22) : style(bambinets): remplacement du CTA hifi par le lien discret vers le prototype basse fid├®lit├® sur Figma
+- **77684b5** (2026-08-22) : style(bambinets): suppression du lien secondaire low-fi Figma sous le flowchart Miro
+- **157daa0** (2026-08-22) : fix(bambinets): mise ├á jour de l'URL Miro live-embed pour le bouton Explorer le flowchart complet
+- **d692071** (2026-08-22) : feat(bambinets): ajout et correction des 4 liens des livrables (Miro, low-fi Figma, hifi Figma et prototype interactif)
+- **66a0b4c** (2026-08-22) : style(bambinets): suppression du bouton Miro en bas de page pour ne garder que le CTA Figma
+- **5954ec4** (2026-08-22) : fix(bambinets): mise ├á jour du lien officiel Miro du flowchart
+- **7b438f0** (2026-08-22) : content(bambinets): mise ├á jour de la section Ce que ce projet mÔÇÖa appris (titres et 3 cartes)
+- **8f7397a** (2026-08-22) : style(bambinets): mise ├á jour de la mention du prototype (sans le mot synth├®tique)
+- **e89cecf** (2026-08-22) : style(bambinets): mise ├á jour de la mention du flowchart (sans le mot simplifi├®e)
+- **6307dae** (2026-08-22) : content(bambinets): mise ├á jour de la section Donner forme ├á un apprentissage qui tient dans le quotidien avec boutons Miro et Figma
+- **b88b006** (2026-08-22) : content(bambinets): mise ├á jour des 4 textes de la section Dessiner les chemins avant de construire les ├®crans
+- **004836f** (2026-08-22) : content(bambinets): remplacement des donn├®es financi├¿res par les 3 cartes projet derri├¿re les ├®crans
+- **de56dfd** (2026-08-22) : content(bambinets): mise ├á jour du bloc Passer du besoin au bon geste dans la modale Bambinets
+- **1e6d3d5** (2026-08-22) : content(bambinets): mise ├á jour du bloc Le d├®fi dans la modale Bambinets
+- **36d8483** (2026-08-22) : content(bambinets): mise ├á jour du bloc de pr├®sentation sup├®rieur dans la modale Bambinets
+- **2d13f94** (2026-08-22) : feat(cordons-bleus): mise ├á jour du lien et du lecteur vid├®o YouTube de la pr├®sentation Les Cordons Bleus
+- **c1279f3** (2026-08-22) : content(cordons-bleus): mise ├á jour du texte ├®ditorial de la carte projet Les Cordons Bleus
+- **0d16b69** (2026-08-22) : content(bambinets): mise ├á jour du texte de pr├®sentation de la carte projet Bambinets
+- **4578a60** (2026-08-22) : feat(bambinets): remplacement de l'illustration du Prototype Hi-Fi par la cartographie des flux interactifs
+- **6249d94** (2026-08-22) : feat(bambinets): remplacement du flowchart Miro par la version Japandi V2 (vert sauge & terracotta)
+- **c001458** (2026-08-22) : style(ui): conversion de toutes les sous-cartes Bambinets en Blanc Porcelaine avec effet hover interactif
+- **710bcca** (2026-08-22) : style(ui): application syst├®matique du Blanc Porcelaine var(--color-surface, #FFFDFC) du root
+- **88a7062** (2026-08-22) : feat(bambinets): remplacement de l'illustration Hero principale dans la modale et la page d├®di├®e
+- **fbb9db5** (2026-08-22) : feat(bambinets): mise ├á jour de la vignette de carte projet Bambinets avec la nouvelle illustration Japandi
+- **1abd4ce** (2026-08-21) : feat(bambinets): cr├®ation compl├¿te du cas d'├®tude Bambinets en modale SPA et page d├®di├®e Japandi V2
+- **70845ee** (2026-08-21) : feat(ui): mise ├á jour du visuel Probl├¿me -> Opportunit├® -> Fonctionnalit├® avec sous-titre Terracotta
+- **b31cc91** (2026-08-21) : style(ui): passage des 2 sous-titres Service Blueprint et Roadmap en couleur Terracotta
+- **c9910ad** (2026-08-21) : style(text): mise ├á jour exacte du titre et de la l├®gende explicative de la Roadmap du service
+- **1cb087e** (2026-08-21) : style(text): mise ├á jour exacte du titre et de la l├®gende explicative du Service Blueprint
+- **bb08743** (2026-08-21) : feat(ui): ajout des titres et l├®gendes explicatives sous le Service Blueprint et la Roadmap
+- **571674f** (2026-08-21) : feat(ui): remplacement du blueprint et ajout de la roadmap du service dans Ma d├®marche
+- **864ec91** (2026-08-21) : fix(video): mise ├á jour du lien et ID de la nouvelle vid├®o YouTube de pr├®sentation
+- **fa0ed46** (2026-08-21) : feat(ux): int├®gration de la matrice Probl├¿me -> Opportunit├® -> Fonctionnalit├® dans les solutions retenues
+- **98bb98b** (2026-08-21) : style(ui): passage du badge 'Cliquer pour agrandir' en fond Terracotta avec ombre douce
+- **17737ff** (2026-08-21) : feat(lightbox): ajout du bouton et mode Zoom 175% Ultra-HD avec conteneur d├®filable
+- **8421ad4** (2026-08-21) : fix(lightbox): z-index 9999999 et fonction de zoom inline dans le head
+- **5e0415c** (2026-08-21) : fix(script): inclusion de app.js et activation du zoom au clic sur tout le bloc d'image
+- **2ace1f1** (2026-08-21) : feat(ui): ajout de la fonctionnalit├® de zoom plein ├®cran (Lightbox) sur les sch├®mas Personas et Blueprint
+- **851e192** (2026-08-21) : feat(ux): ajout de la planche officielle des 3 Personas (Camille, Marc, Sarah)
+- **e88511e** (2026-08-21) : style(ui): retrait de l'image d'illustration pour garder des cartes synth├®tiques
+- **1d09b10** (2026-08-21) : feat(ui): ajout du visuel de travail sur les wireframes dans les solutions retenues
+- **a46e29b** (2026-08-21) : style(ui): suppression du visuel superflu sur la carte des solutions retenues
+- **246f923** (2026-08-21) : feat(ui): int├®gration des 3 visuels phares (Diagramme Opportunit├®, Service Blueprint, Maquette iPad)
+- **2816c50** (2026-08-21) : fix(video): ajout de la fonction playLbcVideo et du bouton direct YouTube
+- **64c8f94** (2026-08-21) : accessibility(404): ajout du titre H1 accessible screen-reader pour conformit├® WAVE 100%
+- **d9ec057** (2026-08-21) : fix(typo): suppression de l'espace avant la virgule apr├¿s 'exp├®rience fluide'
+- **d0f1855** (2026-08-21) : style(lbc): mise en valeur terracotta du montant 50 000 Ôé¼
+- **5fafe3f** (2026-08-21) : style(lbc): suppression des ic├┤nes sur toutes les cartes pour un design 100% ├®pur├®
+- **2e5770a** (2026-08-21) : feat(lbc): ajout de la section 4 'Le projet derri├¿re les ├®crans' (grille 3 cartes financi├¿res)
+- **7546864** (2026-08-20) : feat: page de test directe pour la section 7 des 3 cartes
+- **ee524b8** (2026-08-20) : feat(lbc): harmonisation compl├¿te de projet-cordons-bleus.html avec le design Japandi V2
+- **526d123** (2026-08-20) : fix(lbc): fermeture balise HTML cass├®e et inline style force 3 colonnes horizontales
+- **6ceb6d7** (2026-08-20) : fix(lbc): suppression des ic├┤nes dans les 3 cartes de la section 7
+- **6eff023** (2026-08-20) : fix(lbc): force affichage grille 3 colonnes horizontales et ic├┤nes visibles
+- **4ee661e** (2026-08-20) : feat(lbc-modal): ajout carte 3 'Mesurer et ajuster' et passage au pr├®sent des cartes 1 et 2
+- **66b6f89** (2026-08-20) : feat(lbc-modal): refonte de la section 7 'Ce que j'ai appris' en grille horizontale de 3 cartes
+- **26b3a4b** (2026-08-20) : feat(404): ajout du bouton discret 'Retourner ├á l'accueil' sous l'illustration
+- **0d337a7** (2026-08-20) : style(404): agrandissement de l'illustration (720px) et accentuation de la densit├® du texte
+- **68eeae8** (2026-08-20) : style(404): renforcement des contrastes et de la saturation de la couleur terracotta
+- **cceee1a** (2026-08-20) : assets(404): sur├®chantillonnage HD 3x (1836px) pour nettet├® ultra-haute r├®solution
+- **7465722** (2026-08-20) : fix(404): calage taille nette 1:1 ├á 612px et r├¿gles CSS antiflous
+- **1f29a9f** (2026-08-20) : assets(404): mise ├á jour de l'illustration 404
+- **f0e0b8d** (2026-08-20) : assets(404): mise ├á jour illustration 404 sans fond
+- **981382c** (2026-08-20) : fix(404): ajustement positionnement et int├®gration nouvelle illustration transparente
+- **a974206** (2026-08-20) : feat: alignement portfolio sur les 3 projets (Cordons Bleus, Bambinets, Foodles) et ajustements page 404
+- **378f629** (2026-08-20) : feat: add accessible PDF text transcript subcard, 2-column balanced layout, custom video cover and Terracotta outline secondary CTA
+- **1734fd4** (2026-08-20) : accessibility: darken homepage terracotta text to #8C3B1E for high contrast readability
+- **174b9a4** (2026-08-20) : style: add deep 3D warm drop shadow around modal container
+- **1da03f9** (2026-08-20) : feat: complete Les Cordons Bleus case study modal layout, 8-step storytelling menu, sticky navigation, audio player duration and CTA refinements
+- **3b06410** (2026-08-19) : style: enforce official root design system variables, micro-elevation hover animations and warm ambient card shadows
+- **e071920** (2026-08-19) : feat: refine case study menu to 8 storytelling steps, solid Terracotta On en parle CTA and seamless background harmonization
+- **62a40de** (2026-08-19) : feat: switch cards grid to 1-column layout, sticky sidebar navigation and hide card icon circles for Japandi editorial design
+- **64d898d** (2026-08-19) : feat: refine sidebar bottom illustration position, uncropped full height, modal corner radius and top fade gradient
+- **2cfcd8a** (2026-08-19) : feat: update 9-step case study drawer menu, sidebar metadata block, discrete case study kicker and hero illustration layout
+- **8931fd7** (2026-08-18) : fix: restore full SPA navigation, instant inline routing, project cards and cordons bleus case study modal
+- **2ef3621** (2026-08-18) : feat(lbc-modal): refonte 2 colonnes Cordons Bleus (DS Japandi HTML/CSS)
+- **756a6a0** (2026-08-17) : feat(design-system): lock background #F9F0E8, white cards, navbar glassmorphism, and official DS typography & palette tokens
+- **d244c62** (2026-08-12) : Design: Harmonie de couleur du footer sans d├®marcation, lisibilit├® des textes et custom cursor haute visibilit├®
+- **1e53947** (2026-08-11) : Design: Refonte du footer fluide Japandi, typographie navbar 13.5px, accent Sienne Br├╗l├®e et Custom Cursor Magn├®tique
+- **d8789d2** (2026-08-10) : Refactorisation UX/UI du portfolio, harmonisation des couleurs Sienne Brulee et retouches de l'illustration d'accueil
