@@ -236,17 +236,17 @@ function scrollToLbcSection(secId, itemEl) {
 /* SCROLLSPY AUTOMATIQUE POUR LES SIDEBARS AU SCROLL */
 function initSidebarScrollSpy() {
   const updateActiveSections = () => {
-    const sidebars = document.querySelectorAll('.lbc-v2-sidebar, .bambinets-sidebar');
+    const sidebars = document.querySelectorAll('.lbc-v2-sidebar, .bambinets-sidebar, .foodles-sidebar, aside');
     sidebars.forEach(sidebar => {
-      if (sidebar.offsetWidth === 0 || sidebar.offsetHeight === 0 || getComputedStyle(sidebar).display === 'none') return;
+      if (!sidebar || sidebar.offsetWidth === 0 || sidebar.offsetHeight === 0 || getComputedStyle(sidebar).display === 'none') return;
 
-      const menuItems = Array.from(sidebar.querySelectorAll('.lbc-v2-menu-item:not(.lbc-v2-menu-back-top), .bambinets-menu-item'));
+      const menuItems = Array.from(sidebar.querySelectorAll('.lbc-v2-menu-item:not(.lbc-v2-menu-back-top), .bambinets-menu-item, .foodles-menu-item, li[onclick]'));
       if (!menuItems.length) return;
 
       const sectionTargets = [];
       menuItems.forEach(item => {
         const onclickAttr = item.getAttribute('onclick') || '';
-        const match = onclickAttr.match(/['"](bb-sec-\d+|lbc-sec-[\d-]+|sec-[a-z]+)['"]/);
+        const match = onclickAttr.match(/['"]([a-zA-Z0-9_-]+-sec-[\d-]+|[a-zA-Z0-9_-]+-sec-\d+|sec-[a-zA-Z0-9_-]+|fd-sec-\d+|lbc-sec-[\d-]+)['"]/);
         if (match && match[1]) {
           const secEl = document.getElementById(match[1]);
           if (secEl) {

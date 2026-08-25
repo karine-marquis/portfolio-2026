@@ -1772,13 +1772,21 @@ strong, b {
 }
 
 .lbc-v2-menu-item:hover .menu-label,
-.lbc-v2-menu-item.active .menu-label {
+.lbc-v2-menu-item.active .menu-label,
+.bambinets-menu-item:hover .menu-label,
+.bambinets-menu-item.active .menu-label,
+.foodles-menu-item:hover .menu-label,
+.foodles-menu-item.active .menu-label {
   color: #1E1612 !important;
   font-weight: 700 !important;
 }
 
 .lbc-v2-menu-item:hover .menu-num,
-.lbc-v2-menu-item.active .menu-num {
+.lbc-v2-menu-item.active .menu-num,
+.bambinets-menu-item:hover .menu-num,
+.bambinets-menu-item.active .menu-num,
+.foodles-menu-item:hover .menu-num,
+.foodles-menu-item.active .menu-num {
   background: var(--color-accent, #C76D4B) !important;
   color: #FFFFFF !important;
   margin-left: -24px !important;
@@ -1795,7 +1803,9 @@ strong, b {
   transform: none !important;
 }
 
-.lbc-v2-menu-item.active {
+.lbc-v2-menu-item.active,
+.bambinets-menu-item.active,
+.foodles-menu-item.active {
   background: transparent !important;
   color: #1E1612 !important;
   font-weight: 700 !important;
