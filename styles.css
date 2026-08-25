@@ -309,7 +309,7 @@ strong, b {
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background: #E3D4C4 url("assets/nouvelle%20home%202.jpg") no-repeat right top / cover;
+  background: #E3D4C4 url("Assets/nouvelle%20home%202.jpg") no-repeat right top / cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

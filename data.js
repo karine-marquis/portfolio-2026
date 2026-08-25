@@ -10,7 +10,7 @@ const CASE_STUDIES_PRESENTATION = [
     category: "Conception UX & digital learning",
     headline: "Quand le cours se termine, l’apprentissage ne devrait pas s’arrêter avec lui.",
     description: "L’école proposait une expérience riche en présentiel, mais une fois l’atelier terminé, les élèves se retrouvaient seuls : peu de ressources pour revoir, pratiquer ou prolonger ce qu’ils venaient d’apprendre.<br><br>J’ai travaillé sur une refonte du site pour créer une continuité entre l’expérience en cuisine et l’expérience numérique, tout en améliorant la personnalisation et les repères avant réservation.",
-    image: "assets/PROJTS/CORDONS%20BLEUS/illustration_coup_d_oeil.png",
+    image: "Assets/PROJTS/CORDONS%20BLEUS/illustration_coup_d_oeil.png",
     glanceSteps: [
       { num: "01", name: "Rupture d'apprentissage", icon: "link-2-off" },
       { num: "02", name: "Analyse des besoins", icon: "search" },
@@ -34,7 +34,7 @@ const CASE_STUDIES_PRESENTATION = [
     category: "UX Design & Micro-learning",
     headline: "Apprendre quelques signes pour mieux se comprendre avant les premiers mots.",
     description: "Avant de savoir parler, un enfant sait déjà exprimer beaucoup de choses. Encore faut-il pouvoir se comprendre.<br><br>La crèche Les Bambinets voulait un outil simple pour aider les professionnels de la petite enfance — et les parents — à apprendre quelques signes utiles au quotidien, sans transformer ça en formation lourde.<br><br>L’idée était donc de concevoir une application mobile pensée pour des usages très concrets : peu de temps, une attention souvent partagée, et le besoin de retrouver ou mémoriser un signe rapidement.",
-    image: "assets/PROJTS/BAMBINETS/vignette_bambinets.png",
+    image: "Assets/PROJTS/BAMBINETS/vignette_bambinets.png",
     glanceSteps: [
       { num: "01", name: "Surcharge mentale", icon: "brain" },
       { num: "02", name: "Tri de cartes", icon: "layers" },
@@ -55,7 +55,7 @@ const CASE_STUDIES_PRESENTATION = [
     category: "UX Research & optimisation mobile",
     headline: "Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.",
     description: "Comprendre les véritables usages d'un frigo connecté en entreprise pour concevoir une expérience utile et adoptée au quotidien.",
-    image: "assets/PROJTS/FOODLES/frigo_foodles.png",
+    image: "Assets/PROJTS/FOODLES/frigo_foodles.png",
     glanceSteps: [
       { num: "01", name: "Remontées internes", icon: "message-square" },
       { num: "02", name: "Hypothèses UX", icon: "help-circle" },
