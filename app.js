@@ -193,6 +193,14 @@ function openProjectDrawer(projectId) {
     if (mFoodles) mFoodles.style.display = 'none';
   }
 
+  overlay.scrollTop = 0;
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  const activeModal = document.querySelector('.project-modal-wrapper:not([style*="display: none"])');
+  if (activeModal) {
+    const mainContent = activeModal.querySelector('.lbc-v2-main-content, .bambinets-main-content, .foodles-main-content');
+    if (mainContent) mainContent.scrollTop = 0;
+  }
+
   overlay.classList.add('active');
   if (window.lucide) lucide.createIcons();
 

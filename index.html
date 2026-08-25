@@ -268,8 +268,14 @@
 
       document.querySelectorAll('.project-modal-wrapper').forEach(el => el.style.display = 'none');
       const targetModal = document.getElementById('modal-' + projectId) || document.getElementById('modal-cordons-bleus');
-      if (targetModal) targetModal.style.display = 'block';
+      if (targetModal) {
+        targetModal.style.display = 'block';
+        const mainContent = targetModal.querySelector('.lbc-v2-main-content, .bambinets-main-content, .foodles-main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+      }
 
+      overlay.scrollTop = 0;
+      window.scrollTo({ top: 0, behavior: 'instant' });
       overlay.classList.add('active');
       initModalScrollListener();
       initIconsSafely();
