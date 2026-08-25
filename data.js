@@ -34,7 +34,7 @@ const CASE_STUDIES_PRESENTATION = [
     category: "UX Design & Micro-learning",
     headline: "Apprendre quelques signes pour mieux se comprendre avant les premiers mots.",
     description: "Avant de savoir parler, un enfant sait déjà exprimer beaucoup de choses. Encore faut-il pouvoir se comprendre.<br><br>La crèche Les Bambinets voulait un outil simple pour aider les professionnels de la petite enfance — et les parents — à apprendre quelques signes utiles au quotidien, sans transformer ça en formation lourde.<br><br>L’idée était donc de concevoir une application mobile pensée pour des usages très concrets : peu de temps, une attention souvent partagée, et le besoin de retrouver ou mémoriser un signe rapidement.",
-    image: "Assets/PROJTS/BAMBINETS/vignette_bambinets.png",
+    image: "assets/PROJTS/BAMBINETS/vignette_bambinets.png",
     glanceSteps: [
       { num: "01", name: "Surcharge mentale", icon: "brain" },
       { num: "02", name: "Tri de cartes", icon: "layers" },
@@ -55,7 +55,7 @@ const CASE_STUDIES_PRESENTATION = [
     category: "UX Research & optimisation mobile",
     headline: "Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.",
     description: "Comprendre les véritables usages d'un frigo connecté en entreprise pour concevoir une expérience utile et adoptée au quotidien.",
-    image: "Assets/PROJTS/FOODLES/frigo_foodles.png",
+    image: "assets/PROJTS/FOODLES/frigo_foodles.png",
     glanceSteps: [
       { num: "01", name: "Remontées internes", icon: "message-square" },
       { num: "02", name: "Hypothèses UX", icon: "help-circle" },
