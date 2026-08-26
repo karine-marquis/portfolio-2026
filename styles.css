@@ -2114,6 +2114,11 @@ strong, b {
   line-height: 1.6 !important;
 }
 
+.lbc-v2-card-body.text-terracotta,
+.text-terracotta {
+  color: #C76D4B !important;
+}
+
 .lbc-v2-card-bullets {
   list-style: none;
   padding: 0;
