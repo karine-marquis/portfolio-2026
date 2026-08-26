@@ -28,6 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('load', initRoutingFromHash);
 
+function scrollToLbcSection(secId, el) {
+  const target = document.getElementById(secId);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  if (el) {
+    document.querySelectorAll('.lbc-v2-menu-item').forEach(item => item.classList.remove('active'));
+    const parentLi = el.closest ? el.closest('.lbc-v2-menu-item') : el;
+    if (parentLi) parentLi.classList.add('active');
+  }
+}
+
 /* ==========================================================================
    1. SPA ROUTING NAVIGATION
    ========================================================================== */

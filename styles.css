@@ -2652,3 +2652,31 @@ strong, b {
 .lbc-v2-sidebar-bg-img {
   display: none !important;
 }
+
+/* ANCRES ET SCROLL FLUIDE FOODLES */
+html {
+  scroll-behavior: smooth;
+}
+
+#foodles-top,
+#foodles-probleme,
+#foodles-seconde-compte,
+#foodles-a-verifier,
+#foodles-terrain-tranche,
+#foodles-atomic-research,
+#foodles-resultats-tests,
+#foodles-ameliorations,
+#foodles-apprentissages,
+#foodles-explorer-autrement {
+  scroll-margin-top: 90px;
+}
+
+.lbc-v2-menu-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
