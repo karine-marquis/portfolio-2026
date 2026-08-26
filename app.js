@@ -40,6 +40,50 @@ function scrollToLbcSection(secId, el) {
   }
 }
 
+/* CONTROLES AUDIO PODCAST FOODLES & BAMBINETS */
+function toggleFoodlesAudio(btn) {
+  const audio = document.getElementById('fdAudioElement');
+  const icon = document.getElementById('fdPlayIcon');
+  if (!audio) return;
+  if (audio.paused) {
+    audio.play();
+    if (icon) icon.setAttribute('data-lucide', 'pause');
+  } else {
+    audio.pause();
+    if (icon) icon.setAttribute('data-lucide', 'play');
+  }
+  if (window.lucide) lucide.createIcons();
+}
+
+function updateFoodlesAudioProgress() {
+  const audio = document.getElementById('fdAudioElement');
+  const seek = document.getElementById('fdAudioSeek');
+  const timer = document.getElementById('fdAudioTimer');
+  const durText = document.getElementById('fdAudioDurationText');
+  if (!audio) return;
+
+  if (seek && audio.duration) {
+    seek.value = (audio.currentTime / audio.duration) * 100;
+  }
+  if (timer) {
+    const m = Math.floor(audio.currentTime / 60);
+    const s = Math.floor(audio.currentTime % 60);
+    timer.textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+  }
+  if (durText && audio.duration && !isNaN(audio.duration)) {
+    const dm = Math.floor(audio.duration / 60);
+    const ds = Math.floor(audio.duration % 60);
+    durText.textContent = `${dm}:${ds < 10 ? '0' : ''}${ds}`;
+  }
+}
+
+function seekFoodlesAudio(slider) {
+  const audio = document.getElementById('fdAudioElement');
+  if (audio && audio.duration) {
+    audio.currentTime = (slider.value / 100) * audio.duration;
+  }
+}
+
 /* ==========================================================================
    1. SPA ROUTING NAVIGATION
    ========================================================================== */

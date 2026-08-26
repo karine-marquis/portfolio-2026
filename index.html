@@ -1306,17 +1306,18 @@
                       <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
                       <div class="lbc-v2-audio-title-wrap">
                         <h4>Écouter le projet autrement</h4>
-                        <span class="lbc-v2-audio-duration">Durée d'écoute : 10:30 min</span>
+                        <span class="lbc-v2-audio-duration">Podcast IA (NotebookLM)</span>
                       </div>
                     </div>
                     <div class="lbc-v2-custom-player">
-                      <button class="lbc-v2-play-btn" onclick="toggleLbcAudio(this)" aria-label="Écouter le podcast Foodles"><i data-lucide="play" id="fdPlayIcon" style="width: 16px; height: 16px;"></i></button>
+                      <button class="lbc-v2-play-btn" onclick="toggleFoodlesAudio(this)" aria-label="Écouter le podcast Foodles"><i data-lucide="play" id="fdPlayIcon" style="width: 16px; height: 16px;"></i></button>
                       <span class="lbc-v2-player-timer" id="fdAudioTimer">0:00</span>
-                      <input type="range" class="lbc-v2-player-slider" id="fdAudioSeek" value="0" max="100" aria-label="Contrôle de progression du podcast Foodles">
-                      <span class="lbc-v2-player-timer">10:30</span>
+                      <input type="range" class="lbc-v2-player-slider" id="fdAudioSeek" value="0" max="100" oninput="seekFoodlesAudio(this)" aria-label="Contrôle de progression du podcast Foodles">
+                      <span class="lbc-v2-player-timer" id="fdAudioDurationText">--:--</span>
                       <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);" aria-hidden="true"></i>
                     </div>
-                    <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
+                    <audio id="fdAudioElement" src="assets/podcasts/foodles.m4a" ontimeupdate="updateFoodlesAudioProgress()"></audio>
+                    <p class="lbc-v2-disclaimer-note" style="margin-top: 12px; font-size: 11.5px; color: #6C5A50; line-height: 1.45;">✨ <strong>Podcast généré avec NotebookLM — Note méthodologique :</strong><br>Le podcast évoque un « Card Sorting » qui n’a pas été utilisé sur ce périmètre (la recherche s’est appuyée sur 5 entretiens semi-directifs et Atomic UX Research). Les IA génératives extrapolent parfois certains termes, mais la synthèse reste fidèle aux faits observés.</p>
                   </div>
 
                   <div class="lbc-v2-subcard">
