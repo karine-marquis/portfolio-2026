@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Foodles — Version Textuelle Accessible de la Présentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #2C221E;
+      background-color: #FFFDFC;
+      line-height: 1.6;
+      margin: 0;
+      padding: 40px 50px;
+    }
+    .header {
+      border-bottom: 2px solid #C76D4B;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    .kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #C76D4B;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: #1E1915;
+      margin: 0 0 10px 0;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #6C5A50;
+      margin: 0;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: #1E1915;
+      border-left: 3px solid #C76D4B;
+      padding-left: 12px;
+      margin-top: 28px;
+      margin-bottom: 14px;
+    }
+    p {
+      font-size: 12.5px;
+      color: #4A3C34;
+      margin-bottom: 12px;
+    }
+    .highlight-box {
+      background: #FAF6F2;
+      border: 1px solid #F0E6DD;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 14px 0;
+    }
+    .highlight-box h3 {
+      font-size: 13.5px;
+      color: #C76D4B;
+      margin: 0 0 6px 0;
+    }
+    ul {
+      margin: 10px 0 20px 20px;
+      padding: 0;
+    }
+    li {
+      font-size: 12.5px;
+      color: #4A3C34;
+      margin-bottom: 8px;
+    }
+    .footer-note {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid #EAE0D5;
+      font-size: 11px;
+      color: #8A7669;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="kicker">Case Study UX Research — Version Textuelle Accessible</div>
+    <h1>Foodles : Audit & Refonte du Parcours de Réservation Mobile</h1>
+    <p class="subtitle">Retranscription intégrale et structurée du support de présentation vidéo (5 min 30 s)</p>
+  </div>
+
+  <h2>1. Contexte & Problématique</h2>
+  <p>Il est 12h30 au bureau. L’application mobile <strong>Foodles</strong> permet aux collaborateurs de consulter le menu et de réserver leurs repas disponibles dans les frigos connectés de leur entreprise.</p>
+  <p>Côté équipes produit et support, de nombreux retours informels s'accumulaient : difficultés à trouver les allergènes, hésitations sur la disponibilité en temps réel, navigation horizontale déroutante ou manque de repères visuels.</p>
+  <p><strong>L’objectif de la démarche UX :</strong> Ne pas se baser sur de simples intuitions internes, mais conduire une recherche méthodique sur le terrain pour identifier les frictions réelles et les transformer en opportunités d'amélioration tangibles.</p>
+
+  <h2>2. Périmètre & Méthodologie</h2>
+  <p>Le projet a été mené sur un sprint court de 2 semaines, articulé autour de deux leviers méthodologiques majeurs :</p>
+  <ul>
+    <li><strong>5 Entretiens semi-directifs et tests d’utilisabilité</strong> menés sur le prototype mobile auprès d'utilisateurs représentatifs, sans les guider.</li>
+    <li><strong>Analyse Atomic UX Research</strong> : structuration des observations en faits objectifs, insights et conclusions opérationnelles pour garantir une traçabilité totale.</li>
+  </ul>
+
+  <h2>3. Enseignements des Tests Utilisateurs (Les 4 Constats Majeurs)</h2>
+  <div class="highlight-box">
+    <h3>Constat 01 — Recherche d’informations critiques</h3>
+    <p>Trouver les allergènes, les régimes alimentaires et les ingrédients demandait un effort cognitif inutile. L’information existait mais n’était pas disponible au bon moment du parcours.</p>
+  </div>
+  <div class="highlight-box">
+    <h3>Constat 02 — Navigation et Scroll Horizontal</h3>
+    <p>Le défilement horizontal des catégories sur le menu a dérouté plusieurs participants qui cherchaient instinctivement à descendre verticalement dans la page.</p>
+  </div>
+  <div class="highlight-box">
+    <h3>Constat 03 — Hiérarchie de la Fiche Produit</h3>
+    <p>La fiche produit présentait beaucoup d’informations, mais les repères essentiels (temps de réchauffage, pictogrammes, contrastes de texte) manquaient de lisibilité immédiate.</p>
+  </div>
+  <div class="highlight-box">
+    <h3>Constat 04 — Confirmation de l'action</h3>
+    <p>L’ajout d'un plat au panier laissait parfois planer un doute quant à la prise en compte de la commande, générant des hésitations évitables.</p>
+  </div>
+
+  <h2>4. Recommandations et Axes de Solution</h2>
+  <p>Plutôt que de tout reconstruire, la stratégie visait à remettre les bonnes informations au bon endroit :</p>
+  <ul>
+    <li><strong>Axe 1 — Anticipation :</strong> Faire remonter la disponibilité, les allergènes et les ingrédients clés dès l’écran de sélection.</li>
+    <li><strong>Axe 2 — Navigation intuitive :</strong> Adopter des motifs de navigation verticaux familiers pour fluidifier le défilement.</li>
+    <li><strong>Axe 3 — Feedback visuel immédiat :</strong> Confirmer chaque ajout au panier de manière explicite et rassurante.</li>
+    <li><strong>Axe 4 — Réassurance & Confiance :</strong> Valoriser les repères de qualité (origine des produits, temps de chauffe, pictogrammes lisibles).</li>
+  </ul>
+
+  <h2>5. Conclusion</h2>
+  <p>Mis bout à bout, ces ajustements visent une expérience sans friction : permettre à chaque utilisateur d'accéder à son déjeuner en quelques secondes, avec sérénité et clarté.</p>
+
+  <div class="footer-note">
+    Document préparé par Karine Marquis — UX Researcher & UX Designer · Portfolio 2026
+  </div>
+</body>
+</html>
