@@ -1093,15 +1093,16 @@ strong, b {
 
 .glance-card-main {
   display: grid;
-  grid-template-columns: 44% 56%;
-  min-height: 520px;
+  grid-template-columns: 42% 58%;
+  min-height: 340px;
 }
 
 .glance-media-col {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 480px;
+  min-height: 320px;
+  max-height: 420px;
   overflow: hidden;
   background: #FFFDFC !important;
 }
@@ -1110,43 +1111,45 @@ strong, b {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   display: block;
 }
 
 .project-glance-card:hover .glance-media-col img {
-  transform: none !important;
+  transform: scale(1.02) !important;
+  transition: transform 0.4s ease !important;
 }
 
 .glance-content-col {
-  padding: 40px 48px;
+  padding: 28px 36px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .glance-card-header {
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .glance-project-title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 36px !important;
+  font-size: 32px !important;
   font-weight: 500 !important;
   color: #3B2C25 !important;
   letter-spacing: 0.02em;
-  margin-bottom: 12px !important;
+  margin-bottom: 8px !important;
   text-transform: uppercase;
 }
 
 .glance-project-subtitle {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   font-weight: 500 !important;
   color: #C76D4B !important;
   display: inline-block;
-  margin-bottom: 20px !important;
+  margin-bottom: 12px !important;
   position: relative;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
 }
 
 .glance-project-subtitle::after {
@@ -1162,10 +1165,10 @@ strong, b {
 
 .glance-headline-quote {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 21px !important;
-  line-height: 1.38 !important;
+  font-size: 19px !important;
+  line-height: 1.35 !important;
   color: #3B2C25 !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 10px !important;
 }
 
 .glance-headline-quote span {
@@ -1175,10 +1178,10 @@ strong, b {
 
 .glance-project-desc {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 14.5px !important;
-  line-height: 1.55 !important;
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
   color: #5C473C !important;
-  margin-bottom: 28px !important;
+  margin-bottom: 14px !important;
 }
 
 /* SECTION "LE PROJET EN UN COUP D'ŒIL" */
