@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KM UX - UI Designer — Karine Marquis | UX/UI & E-Learning</title>
+  <meta name="description" content="Portfolio de KM (Karine Marquis) — UX - UI Designer Senior. Conception d'expériences utiles, claires et humaines.">
+  
+  <!-- Fonts: Playfair Display & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css?v=20260826_terracotta">
+
+  <script>
+    function openLightbox(imgSrc, captionText) {
+      let lightbox = document.getElementById('imageLightboxOverlay');
+      if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'imageLightboxOverlay';
+        lightbox.className = 'image-lightbox-overlay';
+        lightbox.innerHTML = `
+          <button class="image-lightbox-close" aria-label="Fermer le zoom" onclick="closeLightbox()">✕</button>
+          <div class="image-lightbox-container" id="imageLightboxContainer">
+            <img id="imageLightboxImg" class="image-lightbox-img" src="" alt="Agrandissement plein écran" onclick="toggleZoomHD(event)">
+          </div>
+          <div id="imageLightboxCaption" class="image-lightbox-caption">
+            <span id="imageLightboxCaptionText"></span>
+            <button class="image-lightbox-btn-hd" onclick="toggleZoomHD(event)">🔎 Zoom 175% HD</button>
+          </div>
+        `;
+        document.body.appendChild(lightbox);
+      }
+      const imgEl = document.getElementById('imageLightboxImg');
+      const captionTextEl = document.getElementById('imageLightboxCaptionText');
+      if (imgEl) {
+        imgEl.src = imgSrc;
+        imgEl.classList.remove('zoomed-hd');
+      }
+      if (captionTextEl) captionTextEl.textContent = captionText || 'Cliquer sur l’image pour basculer en Zoom HD';
+      lightbox.classList.add('active');
+    }
+
+    function toggleZoomHD(e) {
+      if (e) e.stopPropagation();
+      const imgEl = document.getElementById('imageLightboxImg');
+      if (imgEl) {
+        imgEl.classList.toggle('zoomed-hd');
+      }
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('imageLightboxOverlay');
+      if (lightbox) {
+        lightbox.classList.remove('active');
+        const imgEl = document.getElementById('imageLightboxImg');
+        if (imgEl) imgEl.classList.remove('zoomed-hd');
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    function navigateTo(pageId) {
+      if (!pageId) pageId = 'home';
+      const cleanId = pageId.replace(/^#/, '').replace(/^page-/, '');
+      const sections = document.querySelectorAll('.spa-page-section');
+      sections.forEach(function(sec) {
+        sec.classList.remove('active');
+        sec.style.display = 'none';
+      });
+      const target = document.getElementById('page-' + cleanId) || document.getElementById('page-home');
+      if (target) {
+        target.classList.add('active');
+        target.style.display = 'block';
+      }
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(function(link) {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === '#' + cleanId || href === '#page-' + cleanId) {
+          link.classList.add('active');
+        }
+      });
+      try {
+        if (window.location.hash !== '#' + cleanId && window.location.hash !== '#page-' + cleanId) {
+          history.pushState(null, '', '#' + cleanId);
+        }
+      } catch (e) {}
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function initRoutingFromHash() {
+      const rawHash = window.location.hash.replace(/^#/, '').replace(/^page-/, '');
+      if (rawHash === 'cordons-bleus' || rawHash === 'bambinets' || rawHash === 'foodles') {
+        navigateTo('projects');
+        openProjectDrawer(rawHash);
+      } else {
+        navigateTo(rawHash || 'home');
+      }
+    }
+
+    window.addEventListener('hashchange', initRoutingFromHash);
+    document.addEventListener('DOMContentLoaded', initRoutingFromHash);
+    window.addEventListener('load', initRoutingFromHash);
+
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[href^="#"]');
+      if (link) {
+        const href = link.getAttribute('href');
+        if (href && href.length > 1 && !href.startsWith('#lbc-sec-')) {
+          const cleanId = href.replace(/^#/, '').replace(/^page-/, '');
+          const targetSec = document.getElementById('page-' + cleanId);
+          if (targetSec) {
+            e.preventDefault();
+            navigateTo(cleanId);
+          }
+        }
+      }
+    });
+
+    function initIconsSafely() {
+      if (window.lucide && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+      }
+    }
+    window.addEventListener('load', initIconsSafely);
+    document.addEventListener('DOMContentLoaded', initIconsSafely);
+    setInterval(initIconsSafely, 500);
+
+    function closeProjectDrawer() {
+      const overlay = document.getElementById('projectDrawerOverlay');
+      if (overlay) overlay.classList.remove('active');
+      try {
+        if (window.location.hash !== '#projects') {
+          history.pushState(null, '', '#projects');
+        }
+      } catch (e) {}
+    }
+
+    function scrollToLbcSection(secId, itemEl) {
+      const target = document.getElementById(secId);
+      const scrollContainer = document.getElementById('projectDrawerOverlay');
+      if (target && scrollContainer) {
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const topPos = targetRect.top - containerRect.top + scrollContainer.scrollTop - 100;
+        scrollContainer.scrollTo({ top: topPos, behavior: 'smooth' });
+      }
+      if (itemEl) {
+        document.querySelectorAll('.lbc-v2-menu-item').forEach(function(el) { el.classList.remove('active'); });
+        itemEl.classList.add('active');
+      }
+    }
+
+    function updateActiveMenuItem() {
+      const activeModal = document.querySelector('.project-modal-wrapper:not([style*="display: none"])');
+      if (!activeModal) return;
+
+      const mainContent = activeModal.querySelector('.lbc-v2-main-content, .bambinets-main-content, .foodles-main-content') || activeModal;
+      const sidebar = activeModal.querySelector('.lbc-v2-sidebar, .bambinets-sidebar, .foodles-sidebar, aside');
+      if (!sidebar) return;
+
+      const menuItems = Array.from(sidebar.querySelectorAll('.lbc-v2-menu-item:not(.lbc-v2-menu-back-top), .bambinets-menu-item, .foodles-menu-item, li[onclick]'));
+      if (!menuItems.length) return;
+
+      const sectionTargets = [];
+      menuItems.forEach(function(item) {
+        const onclickAttr = item.getAttribute('onclick') || '';
+        const match = onclickAttr.match(/['"]([a-zA-Z0-9_-]+-sec-[\d-]+|[a-zA-Z0-9_-]+-sec-\d+|sec-[a-zA-Z0-9_-]+|fd-sec-\d+|lbc-sec-[\d-]+)['"]/);
+        if (match && match[1]) {
+          const secEl = document.getElementById(match[1]);
+          if (secEl) {
+            sectionTargets.push({ secEl: secEl, item: item });
+          }
+        }
+      });
+
+      if (!sectionTargets.length) return;
+
+      const containerRect = mainContent.getBoundingClientRect();
+      let activeItem = null;
+      const targetThreshold = containerRect.top + 200;
+
+      for (let i = sectionTargets.length - 1; i >= 0; i--) {
+        const target = sectionTargets[i];
+        const rect = target.secEl.getBoundingClientRect();
+        if (rect && rect.top <= targetThreshold) {
+          activeItem = target.item;
+          break;
+        }
+      }
+
+      if (!activeItem && sectionTargets.length > 0) {
+        activeItem = sectionTargets[0].item;
+      }
+
+      if (activeItem) {
+        menuItems.forEach(function(item) { item.classList.remove('active'); });
+        activeItem.classList.add('active');
+      }
+    }
+
+    function playLbcVideo(containerEl, videoId) {
+      if (!containerEl) return;
+      containerEl.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" title="Présentation complète" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lbc-v2-video-iframe"></iframe>';
+      containerEl.style.cursor = 'default';
+    }
+
+    function initModalScrollListener() {
+      const scrollables = document.querySelectorAll('#projectDrawerOverlay, .lbc-v2-main-content, .bambinets-main-content, .foodles-main-content');
+      scrollables.forEach(function(el) {
+        if (!el) return;
+        el.removeEventListener('scroll', updateActiveMenuItem);
+        el.addEventListener('scroll', updateActiveMenuItem, { passive: true });
+      });
+      window.removeEventListener('scroll', updateActiveMenuItem);
+      window.addEventListener('scroll', updateActiveMenuItem, { passive: true });
+      updateActiveMenuItem();
+    }
+
+    document.addEventListener('DOMContentLoaded', initModalScrollListener);
+    window.addEventListener('load', initModalScrollListener);
+
+    function toggleLbcAudio(btn) {
+      const audio = document.getElementById('lbcAudioElement');
+      const icon = document.getElementById('lbcPlayIcon');
+      if (!audio) return;
+      if (audio.paused) {
+        audio.play();
+        if (icon) {
+          icon.setAttribute('data-lucide', 'pause');
+          if (window.lucide) lucide.createIcons();
+        }
+      } else {
+        audio.pause();
+        if (icon) {
+          icon.setAttribute('data-lucide', 'play');
+          if (window.lucide) lucide.createIcons();
+        }
+      }
+    }
+
+    function updateLbcAudioProgress() {
+      const audio = document.getElementById('lbcAudioElement');
+      const timer = document.getElementById('lbcAudioTimer');
+      const seek = document.getElementById('lbcAudioSeek');
+      if (!audio) return;
+      if (timer) {
+        const mins = Math.floor(audio.currentTime / 60);
+        const secs = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+        timer.textContent = mins + ':' + secs;
+      }
+      if (seek && audio.duration) {
+        seek.value = (audio.currentTime / audio.duration) * 100;
+      }
+    }
+
+    function seekLbcAudio(slider) {
+      const audio = document.getElementById('lbcAudioElement');
+      if (!audio || !audio.duration) return;
+      audio.currentTime = (slider.value / 100) * audio.duration;
+    }
+
+    function openProjectDrawer(projectId) {
+      const overlay = document.getElementById('projectDrawerOverlay');
+      if (!overlay) return;
+
+      document.querySelectorAll('.project-modal-wrapper').forEach(el => el.style.display = 'none');
+      const targetModal = document.getElementById('modal-' + projectId) || document.getElementById('modal-cordons-bleus');
+      if (targetModal) {
+        targetModal.style.display = 'block';
+        const mainContent = targetModal.querySelector('.lbc-v2-main-content, .bambinets-main-content, .foodles-main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+      }
+
+      overlay.scrollTop = 0;
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      overlay.classList.add('active');
+      initModalScrollListener();
+      initIconsSafely();
+      try {
+        if (window.location.hash !== '#' + projectId) {
+          history.pushState(null, '', '#' + projectId);
+        }
+      } catch (e) {}
+    }
+  </script>
+
+  <script src="data.js?v=20260825_final"></script>
+  <script src="app.js"></script>
+  <script src="https://unpkg.com/lucide@latest" onload="initIconsSafely()"></script>
+</head>
+<body>
+
+  <!-- CASE STUDY CANVA DRAWER MODAL INTERACTIF EMBEDDED -->
+  <div class="drawer-overlay" id="projectDrawerOverlay">
+    <div class="drawer-content" style="max-width: 1280px; background: var(--color-surface, #FFFDFC); padding: 0;">
+      <div id="projectDrawerContainer">
+        <!-- MODALE CORDONS BLEUS -->
+        <div id="modal-cordons-bleus" class="project-modal-wrapper" style="display: block;">
+          <div class="lbc-v2-modal-layout">
+            <button class="modal-card-close-btn" onclick="closeProjectDrawer()" aria-label="Fermer la modale">✕</button>
+          <aside class="lbc-v2-sidebar">
+            <div class="modal-top-nav" style="margin-bottom: 20px;">
+              <button class="back-projects-btn" onclick="closeProjectDrawer()" aria-label="Retour aux projets">
+                <i data-lucide="arrow-left" class="back-arrow"></i>
+                Retour aux projets
+              </button>
+            </div>
+            <div class="lbc-v2-sidebar-brand">
+              <div class="lbc-v2-sidebar-kicker">Case Study</div>
+              <h2 class="lbc-v2-brand-title">Les Cordons Bleus</h2>
+              <div class="lbc-v2-brand-category">UX & digital learning</div>
+              <p class="lbc-v2-brand-tagline">Prolonger l'apprentissage au-delà de l'atelier.</p>
+            </div>
+            <div class="lbc-v2-sidebar-meta-block">
+              <div class="lbc-v2-meta-item">
+                <div class="lbc-v2-meta-label">
+                  <i data-lucide="layout" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                  TYPE DE PROJET
+                </div>
+                <div class="lbc-v2-meta-value">Refonte du site web et accompagnement UX</div>
+              </div>
+              <div class="lbc-v2-meta-item">
+                <div class="lbc-v2-meta-label">
+                  <i data-lucide="clock" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                  DURÉE
+                </div>
+                <div class="lbc-v2-meta-value">6 mois</div>
+              </div>
+              <div class="lbc-v2-meta-item">
+                <div class="lbc-v2-meta-label">
+                  <i data-lucide="user-check" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                  MON RÔLE
+                </div>
+                <div class="lbc-v2-meta-value">UX/UI Designer & cheffe de projet</div>
+              </div>
+            </div>
+            <div class="lbc-v2-sidebar-sep"></div>
+            <ul class="lbc-v2-menu-list">
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le point de départ</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Ce que j’ai cherché à comprendre</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Ce que la refonte devait permettre</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3-5', this)"><span class="menu-num">4</span><span class="menu-label">Le projet derrière les écrans</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-4', this)"><span class="menu-num">5</span><span class="menu-label">Ma démarche</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-5', this)"><span class="menu-num">6</span><span class="menu-label">Ce que j’ai découvert</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-6', this)"><span class="menu-num">7</span><span class="menu-label">Les solutions retenues</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-7', this)"><span class="menu-num">8</span><span class="menu-label">Ce que j’ai appris</span></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)"><span class="menu-num">9</span><span class="menu-label">Explorer le projet autrement</span></li>
+              <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('lbc-sec-1')"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></li>
+            </ul>
+          </aside>
+          <main class="lbc-v2-main-content" id="lbcMainScroll">
+            <div class="lbc-v2-hero-row" id="lbc-sec-1">
+              <div class="lbc-v2-hero-text">
+                <span class="lbc-v2-pill-badge">Le projet en détail</span>
+                <h1 class="lbc-v2-main-title">Du constat aux solutions</h1>
+                <p class="lbc-v2-intro-p">Entre l’apprentissage guidé et la pratique autonome, le passage n’est pas toujours <strong>si simple</strong>.</p>
+                <p class="lbc-v2-intro-p">La refonte explore comment créer une <strong>continuité</strong> entre l’expérience en cuisine et l’expérience numérique.</p>
+                <div class="lbc-v2-tags-wrap">
+                  <span class="lbc-v2-tag-pill">⟡ Recherche UX</span>
+                  <span class="lbc-v2-tag-pill">⟡ Architecture de l'information</span>
+                  <span class="lbc-v2-tag-pill">⟡ Tests utilisateurs</span>
+                  <span class="lbc-v2-tag-pill">⟡ Digital learning</span>
+                </div>
+              </div>
+              <div class="lbc-v2-hero-img-wrap"><img src="assets/lbc_hero_kitchen.png" alt="Atelier Les Cordons Bleus"></div>
+            </div>
+            <div class="lbc-v2-cards-grid">
+              <div class="lbc-v2-card" id="lbc-sec-2">
+                <h3 class="lbc-v2-card-title">Ce que j’ai cherché à comprendre</h3>
+                <p class="lbc-v2-card-body">Réussir une recette avec un chef, c'est une chose. <strong>La refaire seul</strong> chez soi, c'en est une autre.<br><br>La <strong>continuité</strong> après l'atelier est <strong>faible</strong> : peu de repères, peu de <strong>suivi</strong>, et une expérience numérique qui ne répond pas aux vrais besoins des apprenants.</p>
+                <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/personas_lcb.png', 'Planche des 3 Personas UX (Camille, Marc, Sarah) — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/personas_lcb.png', 'Planche des 3 Personas UX (Camille, Marc, Sarah) — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir la planche des Personas UX Les Cordons Bleus en plein écran" title="🔍 Cliquer pour agrandir en plein écran" style="margin-top: 16px; border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in; background: #FAF6F2; padding: 12px; text-align: center;">
+                  <img src="assets/PROJTS/CORDONS_BLEUS/personas_lcb.png" alt="Personas UX Les Cordons Bleus (Camille, Marc, Sarah)" style="max-height: 380px; width: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
+                  <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+                </div>
+              </div>
+              <div class="lbc-v2-card" id="lbc-sec-3">
+                <h3 class="lbc-v2-card-title" style="font-size: 18px !important;">Ce que la refonte devait permettre</h3>
+                <ul class="lbc-v2-card-bullets">
+                  <li><strong>Renforcer la mémorisation</strong> et la <strong>mise en pratique</strong> à la maison</li>
+                  <li><strong>Prolonger l'engagement</strong> après l'atelier</li>
+                  <li>Créer une <strong>expérience fluide,</strong> accessible et motivante</li>
+                  <li><strong>Valoriser l'expertise</strong> des chefs</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- SECTION : LE PROJET DERRIERE LES ECRANS (3 CARTES HORIZONTALES) -->
+            <div id="lbc-sec-3-5" class="lbc-v2-learnings-block" style="margin-top: 28px; margin-bottom: 32px;">
+              <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 16px;">Le projet derrière les écrans</h3>
+              <div class="lbc-v2-learnings-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important; margin-bottom: 24px !important;">
+                <div class="lbc-v2-card">
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Budget prévisionnel : <span style="color: var(--color-primary, #C76D4B); font-weight: 700;">50 000 €</span></h4>
+                  <p class="lbc-v2-card-body">UX/UI · gestion de projet · développement · production de contenus · accessibilité</p>
+                </div>
+                <div class="lbc-v2-card">
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Marge de contingence</h4>
+                  <p class="lbc-v2-card-body">Jusqu’à <strong>20 %</strong> selon les aléas ou évolutions de périmètre.</p>
+                </div>
+                <div class="lbc-v2-card">
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Suivi post-lancement</h4>
+                  <p class="lbc-v2-card-body">Analyse des <strong>KPI à M+1, M+3, M+6 et M+9</strong>, avec restitution et recommandations d’ajustement.<br><br><span style="font-weight: 600; color: var(--color-primary, #C76D4B);">Forfait estimé : 2 500 €</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lbc-v2-cards-grid">
+              <div class="lbc-v2-card" id="lbc-sec-4">
+                <h3 class="lbc-v2-card-title">Ma démarche</h3>
+                <p class="lbc-v2-card-body">Faire en sorte que l'expérience ne <strong>retombe pas</strong> dès que le tablier est rangé.<br><br>J'ai repensé le parcours <strong>avant, pendant</strong> et <strong>après</strong> le cours pour créer un <strong>lien durable</strong> entre l'<strong>apprentissage</strong> en cuisine et la <strong>pratique à la maison</strong>.</p>
+                
+                <!-- SERVICE BLUEPRINT -->
+                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #F0E6DD;">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">Service Blueprint — Voir l’expérience au-delà de l’écran</h4>
+                  <p style="font-size: 12px; color: #6C5A50; line-height: 1.45; margin-bottom: 10px;">Le parcours ne se joue pas uniquement dans l’interface. Chaque action visible côté utilisateur dépend aussi de ce qui se passe en coulisses. Cette cartographie m’a permis de relier les deux pour penser l’expérience comme un service complet, pas comme une simple succession d’écrans.</p>
+                  <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/blueprint_cb.png', 'Service Blueprint — De la découverte du site à l’après-cours — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/blueprint_cb.png', 'Service Blueprint — De la découverte du site à l’après-cours — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir l'illustration du Service Blueprint Les Cordons Bleus en plein écran" title="🔍 Cliquer pour agrandir en plein écran" style="border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in; background: #FAF6F2; padding: 12px; text-align: center;">
+                    <img src="assets/PROJTS/CORDONS_BLEUS/blueprint_cb.png" alt="Service Blueprint Les Cordons Bleus" style="max-height: 380px; width: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
+                    <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+                  </div>
+                </div>
+
+                <!-- ROADMAP DU SERVICE -->
+                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #F0E6DD;">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">Roadmap du service — Passer des intentions à un plan d’action</h4>
+                  <p style="font-size: 12px; color: #6C5A50; line-height: 1.45; margin-bottom: 10px;">Les idées ne manquaient pas. Le vrai enjeu était de savoir quoi faire d’abord, quoi mesurer, et comment faire évoluer l’expérience dans le temps. Cette roadmap m’a permis de structurer le projet en trois phases — découverte, engagement, fidélisation — avec des objectifs, des actions et des indicateurs clairs à chaque étape.</p>
+                  <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/roadmap_lcb.png', 'Roadmap du service et du parcours en 3 phases — Les Cordons Bleus — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/roadmap_lcb.png', 'Roadmap du service et du parcours en 3 phases — Les Cordons Bleus — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir l'illustration de la Roadmap du service Les Cordons Bleus en plein écran" title="🔍 Cliquer pour agrandir en plein écran" style="border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in; background: #FAF6F2; padding: 12px; text-align: center;">
+                    <img src="assets/PROJTS/CORDONS_BLEUS/roadmap_lcb.png" alt="Roadmap du service et du parcours Les Cordons Bleus" style="max-height: 380px; width: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
+                    <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+                  </div>
+                </div>
+              </div>
+              <div class="lbc-v2-card" id="lbc-sec-5">
+                <h3 class="lbc-v2-card-title">Ce que j’ai découvert</h3>
+                <p class="lbc-v2-card-body">L'observation sur le terrain révèle que l'apprenant recherche des <strong>repères visuels rapides</strong> et une <strong>structure progressive</strong> pour ne pas rompre la dynamique d'apprentissage.</p>
+              </div>
+              <div class="lbc-v2-card" id="lbc-sec-6">
+                <h3 class="lbc-v2-card-title">Les solutions retenues</h3>
+                <p class="lbc-v2-card-body">Un compagnon numérique axé sur des <strong>micro-étapes guidées</strong>, un suivi personnalisé et une <strong>passerelle fluide</strong> entre l'atelier présentiel et la cuisine personnelle.</p>
+                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #F0E6DD;">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">Problème ➔ Opportunité ➔ Fonctionnalité</h4>
+                  <p style="font-size: 12px; color: #6C5A50; line-height: 1.45; margin-bottom: 10px;">Chaque fonctionnalité retenue répond directement à un point de douleur identifié lors de l’analyse des besoins.</p>
+                  <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/matrix_probleme_opportunite.png', 'Matrice Problème ➔ Opportunité ➔ Fonctionnalité — Les Cordons Bleus — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/matrix_probleme_opportunite.png', 'Matrice Problème ➔ Opportunité ➔ Fonctionnalité — Les Cordons Bleus — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir l'illustration de la Matrice Opportunité Les Cordons Bleus en plein écran" title="🔍 Cliquer pour agrandir en plein écran" style="border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; position: relative; cursor: zoom-in; background: #FAF6F2; padding: 12px; text-align: center;">
+                    <img src="assets/PROJTS/CORDONS_BLEUS/matrix_probleme_opportunite.png" alt="Matrice Problème ➔ Opportunité ➔ Fonctionnalité UX Les Cordons Bleus" style="max-height: 380px; width: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
+                    <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px; box-shadow: 0 4px 12px rgba(199, 109, 75, 0.4); pointer-events: none;">🔍 Cliquer pour agrandir</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 7 : CE QUE J'AI APPRIS (GRILLE HORIZONTALE DE 3 CARTES SANS ICONES) -->
+            <div id="lbc-sec-7" class="lbc-v2-learnings-block">
+              <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 16px;">Ce que j’ai appris</h3>
+              <div class="lbc-v2-learnings-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important; margin-bottom: 32px !important;">
+                <div class="lbc-v2-card">
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Penser l’après, pas seulement le parcours immédiat.</h4>
+                  <p class="lbc-v2-card-body">La vraie expérience ne s’arrête pas à l’atelier. Une fois rentré chez soi, il faut encore pouvoir <strong>retrouver, pratiquer et prolonger</strong> ce qui a été appris.</p>
+                </div>
+                <div class="lbc-v2-card">
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Concevoir un service, pas seulement des écrans</h4>
+                  <p class="lbc-v2-card-body">Le service blueprint permet de dépasser ce que l’utilisateur voit à l’écran. Derrière une expérience fluide, il y a aussi des contenus à produire, des plannings à coordonner, des échanges à organiser — bref, <strong>tout un système à faire tenir ensemble</strong>.</p>
+                </div>
+                <div class="lbc-v2-card">
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Mesurer et ajuster</h4>
+                  <p class="lbc-v2-card-body">La mise en ligne n’est pas la ligne d’arrivée. Le <strong>suivi des KPI à 1 mois, puis tous les 3 mois</strong>, doit permettre de vérifier ce qui fonctionne vraiment, ce qui doit encore évoluer, et d’ajuster les choix de conception à partir des usages réels.</p>
+                </div>
+              </div>
+            </div>
+            <div id="lbc-sec-8">
+              <h3 class="lbc-v2-coulisses-title">Explorer le projet autrement</h3>
+              <div class="lbc-v2-coulisses-grid">
+                <div class="lbc-v2-subcard">
+                  <div class="lbc-v2-audio-header">
+                    <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="video"></i></div>
+                    <div class="lbc-v2-audio-title-wrap">
+                      <h4>La présentation complète</h4>
+                      <span class="lbc-v2-audio-duration">Format vidéo (1080p)</span>
+                    </div>
+                  </div>
+                  <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 8px !important;">Le projet, de la problématique aux solutions retenues, avec les principaux choix de conception et livrables.</p>
+                  <p class="lbc-v2-disclaimer-note" style="margin-bottom: 12px; margin-top: 6px;">ⓘ <strong>À regarder tranquillement :</strong> la présentation défile vite. Pour une lecture confortable, je recommande une vitesse de <strong>0,5x</strong> (voire <strong>0,25x</strong>).</p>
+                  <div class="lbc-v2-video-cover-wrap" onclick="playLbcVideo(this, 'x-wnRW4ojiY')">
+                    <img src="assets/lbc_video_cover.png" alt="Aperçu Présentation" class="lbc-v2-video-cover-img">
+                    <div class="lbc-v2-video-play-overlay">
+                      <button class="lbc-v2-video-play-btn" aria-label="Lancer la vidéo"><i data-lucide="play" style="width: 22px; height: 22px; margin-left: 3px;"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="lbc-v2-coulisses-right-stack">
+                  <div class="lbc-v2-subcard">
+                    <div class="lbc-v2-audio-header">
+                      <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
+                      <div class="lbc-v2-audio-title-wrap">
+                        <h4>Écouter le projet autrement</h4>
+                        <span class="lbc-v2-audio-duration">Durée d'écoute : 11:47 min</span>
+                      </div>
+                    </div>
+                    <div class="lbc-v2-custom-player">
+                      <button class="lbc-v2-play-btn" onclick="toggleLbcAudio(this)" aria-label="Écouter le podcast"><i data-lucide="play" id="lbcPlayIcon" style="width: 16px; height: 16px;"></i></button>
+                      <span class="lbc-v2-player-timer" id="lbcAudioTimer">0:00</span>
+                      <input type="range" class="lbc-v2-player-slider" id="lbcAudioSeek" value="0" max="100" oninput="seekLbcAudio(this)">
+                      <span class="lbc-v2-player-timer">11:47</span>
+                      <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);"></i>
+                    </div>
+                    <audio id="lbcAudioElement" src="assets/podcasts/cordons-bleus-podcast.m4a" ontimeupdate="updateLbcAudioProgress()"></audio>
+                    <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
+                  </div>
+                  <div class="lbc-v2-subcard">
+                    <div class="lbc-v2-audio-header">
+                      <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="file-text"></i></div>
+                      <div class="lbc-v2-audio-title-wrap">
+                        <h4>Vous préférez lire ?</h4>
+                        <span class="lbc-v2-audio-duration">Document PDF accessible</span>
+                      </div>
+                    </div>
+                    <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 14px !important;">Une version textuelle accessible reprend les éléments essentiels de la présentation.</p>
+                    <a href="assets/retranscription-presentation-cordons-bleus.pdf" target="_blank" rel="noopener" class="btn-outline-terracotta"><i data-lucide="download" style="width: 14px; height: 14px; color: currentColor;"></i> Lire la version textuelle (PDF) ➔</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lbc-v2-contact-card" style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 36px 0 24px 0;">
+              <a href="#page-contact" onclick="closeProjectDrawer(); navigateTo('contact');" class="btn-primary">On en parle ? ➔</a>
+            </div>
+          </main>
+          <div id="lbcScrollPill" class="lbc-scroll-pill-indicator" aria-label="Défiler vers le bas"><span class="scroll-arrow">↓</span></div>
+        </div>
+        </div>
+
+        <!-- MODALE BAMBINETS -->
+        <div id="modal-bambinets" class="project-modal-wrapper" style="display: none;">
+          <div class="lbc-v2-modal-layout">
+            <button class="modal-card-close-btn" onclick="closeProjectDrawer()" aria-label="Fermer la modale">✕</button>
+            <aside class="lbc-v2-sidebar">
+              <div class="modal-top-nav" style="margin-bottom: 20px;">
+                <button class="back-projects-btn" onclick="closeProjectDrawer()" aria-label="Retour aux projets">
+                  <i data-lucide="arrow-left" class="back-arrow"></i>
+                  Retour aux projets
+                </button>
+              </div>
+              <div class="lbc-v2-sidebar-brand">
+                <div class="lbc-v2-sidebar-kicker">CASE STUDY</div>
+                <h2 class="lbc-v2-brand-title">Bambinets</h2>
+                <div class="lbc-v2-brand-category">UX Design & Micro-learning</div>
+                <p class="lbc-v2-brand-tagline">Apprendre quelques signes pour mieux se comprendre avant les premiers mots.</p>
+              </div>
+              <div class="lbc-v2-sidebar-meta-block">
+                <div class="lbc-v2-meta-item">
+                  <div class="lbc-v2-meta-label">
+                    <i data-lucide="layout" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                    TYPE DE PROJET
+                  </div>
+                  <div class="lbc-v2-meta-value">Application mobile & Micro-learning</div>
+                </div>
+                <div class="lbc-v2-meta-item">
+                  <div class="lbc-v2-meta-label">
+                    <i data-lucide="clock" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                    DURÉE
+                  </div>
+                  <div class="lbc-v2-meta-value">4 mois</div>
+                </div>
+                <div class="lbc-v2-meta-item">
+                  <div class="lbc-v2-meta-label">
+                    <i data-lucide="user-check" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                    MON RÔLE
+                  </div>
+                  <div class="lbc-v2-meta-value">UX/UI Designer & Recherche</div>
+                </div>
+              </div>
+              <div class="lbc-v2-sidebar-sep"></div>
+              <ul class="lbc-v2-menu-list">
+                <li class="lbc-v2-menu-item active" onclick="scrollToLbcSection('bb-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le projet</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Le besoin</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Le projet derrière les écrans</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-4', this)"><span class="menu-num">4</span><span class="menu-label">La conception</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-5', this)"><span class="menu-num">5</span><span class="menu-label">Le prototype</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-7', this)"><span class="menu-num">6</span><span class="menu-label">Ce que j’en retiens</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-8', this)"><span class="menu-num">7</span><span class="menu-label">Explorer le projet autrement</span></li>
+                <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('bb-sec-1')"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></li>
+              </ul>
+            </aside>
+
+            <main class="lbc-v2-main-content" id="bbMainScroll">
+              <!-- HERO ROW (DESIGN IDENTIQUE A CORDONS BLEUS) -->
+              <div class="lbc-v2-hero-row" id="bb-sec-1">
+                <div class="lbc-v2-hero-text">
+                  <span class="lbc-v2-pill-badge">Le projet en détail</span>
+                  <h1 class="lbc-v2-main-title">Du besoin au bon geste</h1>
+                  <p class="lbc-v2-intro-p">Apprendre quelques signes pour mieux se comprendre avant les <strong>premiers mots</strong>.</p>
+                  <p class="lbc-v2-intro-p">La crèche Les Bambinets souhaitait un outil simple pour aider les professionnels de la petite enfance — et les parents — à apprendre rapidement quelques signes utiles pour communiquer avec les enfants de moins de 3 ans.</p>
+                  <p class="lbc-v2-intro-p"><strong>L’objectif :</strong> proposer un apprentissage court, visuel et rassurant, adapté à des situations où le temps est limité et l’attention souvent partagée.</p>
+                  <div class="lbc-v2-tags-wrap">
+                    <span class="lbc-v2-tag-pill">⟡ UX Design</span>
+                    <span class="lbc-v2-tag-pill">⟡ Application mobile</span>
+                    <span class="lbc-v2-tag-pill">⟡ Petite enfance</span>
+                    <span class="lbc-v2-tag-pill">⟡ Micro-learning</span>
+                  </div>
+                </div>
+                <div class="lbc-v2-hero-img-wrap">
+                  <img src="assets/PROJTS/BAMBINETS/bambinets_hero.jpg" alt="Bambinets Illustration UX Mobile Petite Enfance">
+                </div>
+              </div>
+
+              <!-- CARDS GRID -->
+              <div class="lbc-v2-cards-grid" style="gap: 24px;" id="bb-sec-2">
+                <div class="lbc-v2-card">
+                  <h3 class="lbc-v2-card-title">Le défi — Apprendre avec peu de temps et une attention partagée</h3>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 12px;">En crèche comme à la maison, les utilisateurs disposent de peu de temps pour apprendre ou retrouver un signe. L’application devait répondre à trois impératifs :</p>
+                  <ul class="lbc-v2-card-bullets">
+                    <li>Proposer un <strong>accès rapide</strong> au bon signe en quelques secondes</li>
+                    <li>Offrir une <strong>navigation immédiatement compréhensible</strong> sans formation préalable</li>
+                    <li>Délivrer des <strong>contenus courts</strong>, utilisables sans interrompre le quotidien</li>
+                  </ul>
+                </div>
+
+                <!-- ILLUSTRATION DU PARCOURS / CHEMINEMENT ENTRE LES DEUX CARTES -->
+                <div style="border-radius: 16px; overflow: hidden; border: 1px solid #F0E6DD; box-shadow: 0 6px 20px rgba(70, 40, 25, 0.06); background: var(--color-surface, #FFFDFC);">
+                  <img src="assets/PROJTS/BAMBINETS/bambinets_chemin.png" alt="Parcours et cheminement Bambinets" style="width: 100%; display: block; border-radius: 16px;">
+                </div>
+
+                <div class="lbc-v2-card">
+                  <h3 class="lbc-v2-card-title">Passer du besoin au bon geste, sans perdre de temps</h3>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 12px;">Glossaire vidéo, recherche par catégories, favoris et micro-quiz construisent un parcours court :</p>
+                  <ul class="lbc-v2-card-bullets">
+                    <li><strong>Voir et découvrir</strong> un signe au moment exact où il devient utile</li>
+                    <li><strong>Retrouver facilement</strong> les gestes du quotidien grâce aux catégories et aux favoris</li>
+                    <li><strong>Répéter et mémoriser</strong> progressivement avec les micro-quiz</li>
+                    <li><strong>Vérifier ses acquis</strong> sans alourdir le rythme de la journée</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- LE PROJET DERRIERE LES ECRANS -->
+              <div id="bb-sec-3" class="lbc-v2-learnings-block" style="margin-top: 28px; margin-bottom: 32px;">
+                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px;">Le projet derrière les écrans</h3>
+                <p class="lbc-v2-intro-p" style="margin-bottom: 16px;">Une expérience simple ne se résume pas à quelques jolis écrans. Pour permettre à chacun de trouver le bon signe au bon moment, il a fallu cadrer le périmètre, organiser les parcours et rendre chaque action immédiatement compréhensible.</p>
+                <div class="lbc-v2-learnings-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important; margin-bottom: 24px !important;">
+                  <div class="lbc-v2-card">
+                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">1 signe prototypé</div>
+                    <div style="font-size: 12.5px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Concevoir un parcours complet, sans simuler toute l’application</div>
+                    <div style="font-size: 11.5px; color: #6C5A50; line-height: 1.4;">L’application finale devait accueillir un glossaire d’environ 20 signes. Pour la maquette haute fidélité, un signe a été développé en détail afin de montrer tout le parcours : le trouver, consulter sa démonstration, comprendre le geste et l’ajouter aux favoris.</div>
+                  </div>
+                  <div class="lbc-v2-card">
+                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">4 entrées</div>
+                    <div style="font-size: 12.5px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Un besoin, un chemin évident</div>
+                    <div style="font-size: 11.5px; color: #6C5A50; line-height: 1.4;">Consulter un signe, retrouver ses favoris, vérifier ses acquis ou obtenir une réponse : Glossaire, Favoris, Quiz et FAQ donnent à chaque intention une entrée clairement identifiable, sans détour inutile.</div>
+                  </div>
+                  <div class="lbc-v2-card">
+                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">4 mois</div>
+                    <div style="font-size: 12.5px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Du besoin initial au prototype interactif</div>
+                    <div style="font-size: 11.5px; color: #6C5A50; line-height: 1.4;">Le projet s’est construit progressivement : comprendre et cadrer la demande, organiser l’information, relier les parcours dans un flowchart, simplifier les écrans en wireframes, puis donner vie à l’ensemble dans un prototype haute fidélité en vérifiant sa lisibilité et son accessibilité.</div>
+                    <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #F0E6DD; font-size: 10.5px; color: #8A7669; line-height: 1.4;">Cadrage → Architecture → Flowchart → Wireframes → Prototype hi-fi → Accessibilité</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DEMARCHE & SOLUTIONS -->
+              <div class="lbc-v2-cards-grid">
+                <div class="lbc-v2-card" id="bb-sec-4">
+                  <h3 class="lbc-v2-card-title">Dessiner les chemins avant de construire les écrans</h3>
+                  <p class="lbc-v2-card-body">
+                    Un design system existait déjà. Mon travail n’était donc pas de réinventer l’identité de Bambinets, mais de comprendre comment la traduire en une expérience mobile simple, cohérente et adaptée à des utilisateurs débutants.<br><br>
+                    Avant d’appliquer les composants aux écrans, j’ai commencé par une question très concrète : comment permettre à quelqu’un qui dispose de peu de temps d’arriver immédiatement au bon contenu ?
+                  </p>
+                  <div style="margin-top: 16px; border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; padding: 16px;">
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">Le flowchart — Donner une place claire à chaque intention</h4>
+                    <p style="font-size: 12px; color: #6C5A50; margin-bottom: 8px;">J’ai organisé l’expérience autour de quatre entrées : découvrir un signe dans le Glossaire, le retrouver dans les Favoris, consolider ses acquis avec le Quiz ou obtenir une réponse dans la FAQ. Le flowchart m’a permis de relier ces parcours, d’anticiper les retours possibles et d’éviter les impasses avant de traduire cette structure avec les composants du design system.</p>
+                    <div onclick="openLightbox('assets/PROJTS/BAMBINETS/flowchart_bambinets2.png', 'Flowchart UX du parcours principal — Bambinets — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/BAMBINETS/flowchart_bambinets2.png', 'Flowchart UX du parcours principal — Bambinets — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir l'illustration du Flowchart Bambinets en plein écran" style="position: relative; cursor: zoom-in; background: #FAF6F2; padding: 12px; border-radius: 12px; text-align: center;">
+                      <img src="assets/PROJTS/BAMBINETS/flowchart_bambinets2.png" alt="Flowchart UX Japandi Bambinets" style="max-height: 380px; width: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
+                      <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px;">🔍 Cliquer pour agrandir</span>
+                    </div>
+                    <p style="font-size: 11.5px; color: #8A7669; margin-top: 12px; margin-bottom: 8px; font-style: italic;">Cette vue est une illustration simplifiée de l’architecture. Le flowchart complet est disponible sur Miro.</p>
+                    <div>
+                      <a href="https://miro.com/app/live-embed/uXjVGOHAlBA=/?focusWidget=3458764664048727312&embedMode=view_only_without_ui&embedId=66393186859" target="_blank" rel="noopener noreferrer" class="btn-outline-terracotta" style="font-size: 12px; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;" aria-label="Explorer le flowchart complet du projet Bambinets sur Miro (s'ouvre dans un nouvel onglet)">Explorer le flowchart complet sur Miro ↗</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lbc-v2-card" id="bb-sec-5">
+                  <h3 class="lbc-v2-card-title">Donner forme à un apprentissage qui tient dans le quotidien</h3>
+                  <p class="lbc-v2-card-body">Une fois les parcours clarifiés, il restait à leur donner vie avec le design system existant. Chaque écran devait permettre de comprendre où aller, quoi regarder et comment continuer, sans demander un effort supplémentaire à des utilisateurs déjà très sollicités.</p>
+                  <div style="margin-top: 16px; border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; padding: 16px;">
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: var(--color-primary, #C76D4B); margin-bottom: 4px;">Du parcours aux écrans — Le prototype haute fidélité</h4>
+                    <p style="font-size: 12px; color: #6C5A50; margin-bottom: 8px;">Le glossaire, les favoris, le détail d’un signe, le quiz et la FAQ ont été réunis dans une interface cohérente, rassurante et facile à reprendre. Les composants du design system créent des repères constants tandis que les vidéos, la progression et le feedback soutiennent l’apprentissage.</p>
+                    <div onclick="openLightbox('assets/PROJTS/BAMBINETS/bambinets-proto-hifi-couleur-2.png', 'Prototype Mobile Hi-Fi & Cartographie des flux d’interaction — Bambinets — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/BAMBINETS/bambinets-proto-hifi-couleur-2.png', 'Prototype Mobile Hi-Fi & Cartographie des flux d’interaction — Bambinets — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir l'illustration du Prototype Hi-Fi Bambinets en plein écran" style="position: relative; cursor: zoom-in; background: #FAF6F2; padding: 12px; border-radius: 12px; text-align: center;">
+                      <img src="assets/PROJTS/BAMBINETS/bambinets-proto-hifi-couleur-2.png" alt="Prototype Mobile Hi-Fi & Liaisons d’interactions Bambinets" style="max-height: 380px; width: auto; max-width: 100%; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
+                      <span style="position: absolute; bottom: 10px; right: 10px; background: var(--color-primary, #C76D4B); color: #FFFDFC; font-size: 11.5px; font-weight: 600; padding: 6px 14px; border-radius: 20px;">🔍 Cliquer pour agrandir</span>
+                    </div>
+                    <p style="font-size: 11.5px; color: #8A7669; margin-top: 12px; margin-bottom: 12px; font-style: italic;">Cette vue rassemble les principaux écrans du projet. Les maquettes complètes et le prototype interactif sont disponibles sur Figma.</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+                      <a href="https://www.figma.com/proto/k0obRF21UNiAWdAZ22JpsM/Les-Bambinets-HI-FI?node-id=7747-2&t=8UhgSRq7c4ZWggrr-1&scaling=scale-down&content-scaling=fixed&page-id=7587%3A2" target="_blank" rel="noopener noreferrer" class="btn-outline-terracotta" style="font-size: 11.5px; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;" aria-label="Découvrir les maquettes haute fidélité sur Figma (s'ouvre dans un nouvel onglet)">Découvrir les maquettes haute fidélité sur Figma ↗</a>
+                      <a href="https://www.figma.com/design/k0obRF21UNiAWdAZ22JpsM/Les-Bambinets-HI-FI?node-id=7741-2&t=CyQusabg6xXrcJhH-1" target="_blank" rel="noopener noreferrer" class="btn-outline-terracotta" style="font-size: 11.5px; padding: 6px 14px; display: inline-flex; align-items: center; gap: 6px; text-decoration: none;" aria-label="Voir le prototype basse fidélité interactif sur Figma (s'ouvre dans un nouvel onglet)">Voir Prototype basse fidélité interactif sur Figma ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- APPRIS -->
+              <div id="bb-sec-6" class="lbc-v2-learnings-block" style="margin-top: 32px; margin-bottom: 40px;">
+                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-primary, #C76D4B) !important;">Ce que ce projet m’a appris</h3>
+                <p class="lbc-v2-intro-p" style="margin-bottom: 24px;">Concevoir pour la petite enfance ne signifie pas seulement rendre une interface douce ou colorée. Cela demande surtout de comprendre les adultes qui l’utiliseront, le temps dont ils disposent et le contexte dans lequel chaque écran devra réellement les aider.</p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                  <div class="lbc-v2-subcard">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #C76D4B); margin-bottom: 6px;">01</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Simplifier, c’est choisir</div>
+                    <div style="font-size: 12.5px; color: #5C473C; line-height: 1.5;">J’ai appris qu’une expérience simple ne vient pas d’une interface vide, mais de décisions claires. Limiter le contenu, hiérarchiser les actions et raccourcir les parcours permet de préserver l’essentiel sans appauvrir l’apprentissage.</div>
+                  </div>
+                  <div class="lbc-v2-subcard">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #C76D4B); margin-bottom: 6px;">02</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Créer un univers doux sans infantiliser</div>
+                    <div style="font-size: 12.5px; color: #5C473C; line-height: 1.5;">Le design system apportait déjà les couleurs, les composants et l’identité de Bambinets. Mon rôle a été de les traduire dans une interface rassurante pour l’univers de la petite enfance, tout en restant claire, crédible et professionnelle pour les adultes.</div>
+                  </div>
+                  <div class="lbc-v2-subcard">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #C76D4B); margin-bottom: 6px;">03</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Concevoir pour une attention qui n’est jamais entière</div>
+                    <div style="font-size: 12.5px; color: #5C473C; line-height: 1.5;">En crèche comme à la maison, l’utilisateur peut être interrompu ou devoir gérer plusieurs choses à la fois. Chaque écran devait donc être rapidement compréhensible, facile à reprendre et suffisamment explicite pour ne pas ajouter de charge au quotidien.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- EXPLORER LE PROJET AUTREMENT (EXACTEMENT LE MEME DESIGN QUE LES CORDONS BLEUS) -->
+              <div id="bb-sec-7">
+                <h3 class="lbc-v2-coulisses-title">Explorer le projet autrement</h3>
+                <div class="lbc-v2-coulisses-grid">
+                  <!-- CARTE VIDEO (GAUCHE) -->
+                  <div class="lbc-v2-subcard">
+                    <div class="lbc-v2-audio-header">
+                      <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="video"></i></div>
+                      <div class="lbc-v2-audio-title-wrap">
+                        <h4>La présentation complète</h4>
+                        <span class="lbc-v2-audio-duration">Format vidéo (720p · 1m10)</span>
+                      </div>
+                    </div>
+                    <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 12px !important;">Le projet, de la problématique aux solutions retenues, avec les principaux choix de conception et livrables.</p>
+                    <div class="lbc-v2-video-cover-wrap" onclick="playLbcVideo(this, 'fK4IdCgoH7M')" onkeydown="if(event.key==='Enter'||event.key===' ') playLbcVideo(this, 'fK4IdCgoH7M')" role="button" tabindex="0" aria-label="Lancer la vidéo de présentation du projet Bambinets dans le lecteur embarqué">
+                      <img src="assets/PROJTS/BAMBINETS/bambinets_hero.jpg" alt="Aperçu vidéo Présentation Bambinets" class="lbc-v2-video-cover-img">
+                      <div class="lbc-v2-video-play-overlay">
+                        <button class="lbc-v2-video-play-btn" aria-label="Lancer la vidéo de présentation Bambinets"><i data-lucide="play" style="width: 22px; height: 22px; margin-left: 3px;"></i></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- CARTE PODCAST & CTA (DROITE) -->
+                  <div class="lbc-v2-coulisses-right-stack">
+                    <div class="lbc-v2-subcard">
+                      <div class="lbc-v2-audio-header">
+                        <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
+                        <div class="lbc-v2-audio-title-wrap">
+                          <h4>Écouter le projet autrement</h4>
+                          <span class="lbc-v2-audio-duration">Durée d'écoute : 13:49 min</span>
+                        </div>
+                      </div>
+                      <div class="lbc-v2-custom-player">
+                        <button class="lbc-v2-play-btn" onclick="toggleBambinetsAudio(this)" aria-label="Écouter le podcast Bambinets"><i data-lucide="play" id="bbPlayIcon" style="width: 16px; height: 16px;"></i></button>
+                        <span class="lbc-v2-player-timer" id="bbAudioTimer">0:00</span>
+                        <input type="range" class="lbc-v2-player-slider" id="bbAudioSeek" value="0" max="100" oninput="seekBambinetsAudio(this)" aria-label="Contrôle de progression du podcast Bambinets">
+                        <span class="lbc-v2-player-timer">13:49</span>
+                        <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);" aria-hidden="true"></i>
+                      </div>
+                      <audio id="bbAudioElement" src="assets/podcasts/bambinets.m4a" ontimeupdate="updateBambinetsAudioProgress()"></audio>
+                      <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
+                    </div>
+
+                    <div class="lbc-v2-subcard">
+                      <div class="lbc-v2-audio-header">
+                        <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="file-text"></i></div>
+                        <div class="lbc-v2-audio-title-wrap">
+                          <h4>Vous préférez lire ?</h4>
+                          <span class="lbc-v2-audio-duration">Document PDF accessible</span>
+                        </div>
+                      </div>
+                      <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 14px !important;">Une version textuelle accessible reprend les éléments essentiels de la présentation.</p>
+                      <a href="assets/bambinets-canva-version-textuelle-accessible.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline-terracotta" aria-label="Lire la retranscription textuelle accessible du projet Bambinets au format PDF (s'ouvre dans un nouvel onglet)"><i data-lucide="download" style="width: 14px; height: 14px; color: currentColor;"></i> Lire la version textuelle (PDF) ➔</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BOUTON CONTACT EN BAS -->
+              <div class="lbc-v2-contact-card" style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 36px 0 24px 0;">
+                <a href="#page-contact" onclick="closeProjectDrawer(); navigateTo('contact');" class="btn-primary">On en parle ? ➔</a>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODALE PROJET 3 : FOODLES -->
+      <div id="modal-foodles" class="project-modal-wrapper" style="display: none;">
+        <div class="lbc-v2-modal-layout" id="foodles-top">
+          <button class="modal-card-close-btn" onclick="closeProjectDrawer()" aria-label="Fermer la modale">✕</button>
+          <!-- SIDEBAR JAPANDI -->
+          <aside class="lbc-v2-sidebar">
+            <div class="modal-top-nav" style="margin-bottom: 20px;">
+              <button class="back-projects-btn" onclick="closeProjectDrawer()" aria-label="Retour aux projets">
+                <i data-lucide="arrow-left" class="back-arrow"></i>
+                Retour aux projets
+              </button>
+            </div>
+            <div class="lbc-v2-sidebar-brand">
+              <div class="lbc-v2-sidebar-kicker">Case Study</div>
+              <h2 class="lbc-v2-brand-title">Foodles</h2>
+              <div class="lbc-v2-brand-category">UX Research & optimisation mobile</div>
+              <p class="lbc-v2-brand-tagline">Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.</p>
+            </div>
+            <div class="lbc-v2-sidebar-meta-block">
+              <div class="lbc-v2-meta-item">
+                <div class="lbc-v2-meta-label">
+                  <i data-lucide="layout" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                  TYPE DE PROJET
+                </div>
+                <div class="lbc-v2-meta-value">Tout le monde avait une idée du problème. Il fallait encore vérifier ce que vivaient vraiment les utilisateurs.</div>
+              </div>
+              <div class="lbc-v2-meta-item">
+                <div class="lbc-v2-meta-label">
+                  <i data-lucide="clock" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                  DURÉE
+                </div>
+                <div class="lbc-v2-meta-value"><strong>≈ 2 semaines</strong><br>Un périmètre volontairement resserré pour tester vite, apprendre du terrain et transformer les observations en décisions sans alourdir le processus.</div>
+              </div>
+              <div class="lbc-v2-meta-item">
+                <div class="lbc-v2-meta-label">
+                  <i data-lucide="user-check" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+                  MON RÔLE
+                </div>
+                <div class="lbc-v2-meta-value">UX Researcher & UX Designer</div>
+              </div>
+            </div>
+            <div class="lbc-v2-sidebar-sep"></div>
+            <ul class="lbc-v2-menu-list">
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-probleme', this)"><a href="#foodles-probleme"><span class="menu-num">1</span><span class="menu-label">Tout le monde avait une idée du problème</span></a></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-seconde-compte', this)"><a href="#foodles-seconde-compte"><span class="menu-num">2</span><span class="menu-label">Quand chaque seconde compte</span></a></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-a-verifier', this)"><a href="#foodles-a-verifier"><span class="menu-num">3</span><span class="menu-label">Ce qu’il fallait vérifier</span></a></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-terrain-tranche', this)"><a href="#foodles-terrain-tranche"><span class="menu-num">4</span><span class="menu-label">Le terrain tranche</span></a></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-atomic-research', this)"><a href="#foodles-atomic-research"><span class="menu-num">5</span><span class="menu-label">Des observations aux preuves — Atomic UX Research</span></a></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-resultats-tests', this)"><a href="#foodles-resultats-tests"><span class="menu-num">6</span><span class="menu-label">Ce que les tests ont révélé</span></a></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-ameliorations', this)"><a href="#foodles-ameliorations"><span class="menu-num">7</span><span class="menu-label">Ce que l’expérience devait mieux permettre</span></a></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-apprentissages', this)"><a href="#foodles-apprentissages"><span class="menu-num">8</span><span class="menu-label">Ce que ce projet m’a appris</span></a></li>
+              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-explorer-autrement', this)"><a href="#foodles-explorer-autrement"><span class="menu-num">9</span><span class="menu-label">Explorer le projet autrement</span></a></li>
+              <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('foodles-top')"><a href="#foodles-top"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></a></li>
+            </ul>
+          </aside>
+
+          <!-- CONTENU PRINCIPAL JAPANDI -->
+          <main class="lbc-v2-main-content" id="fdMainScroll">
+            <!-- HERO ROW -->
+            <div class="lbc-v2-hero-row" id="foodles-probleme">
+              <div class="lbc-v2-hero-text">
+                <span class="lbc-v2-pill-badge">Le projet en détail</span>
+                <h1 class="lbc-v2-main-title">Tout le monde avait une idée du problème</h1>
+                <p class="lbc-v2-intro-p">Il est 12h30. Au bureau, <strong>Foodles</strong> permet de réserver un repas disponible dans un frigo connecté.</p>
+                <p class="lbc-v2-intro-p">Côté équipes, les remontées s’accumulent : disponibilité des plats, allergènes difficiles à repérer, navigation peu évidente, manque de repères dans le parcours… Chacun voit une partie du problème.</p>
+                <p class="lbc-v2-intro-p"><strong>Mais une remarque interne n’est pas encore une preuve utilisateur.</strong></p>
+                <p class="lbc-v2-intro-p"><strong>Mon objectif :</strong> transformer ces intuitions en hypothèses testables, les confronter à des usages réels et identifier ce qui mérite vraiment d’être corrigé. Cinq tests utilisateurs, puis une analyse Atomic UX Research, me permettront de relier chaque recommandation à un fait observé.</p>
+                    <div class="lbc-v2-tags-wrap" style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px;">
+                      <span class="lbc-v2-tag-pill">✦ Recherche UX</span>
+                      <span class="lbc-v2-tag-pill">✦ Lean UX</span>
+                      <span class="lbc-v2-tag-pill">✦ Atomic UX Research</span>
+                      <span class="lbc-v2-tag-pill">✦ Tests utilisateurs</span>
+                    </div>
+              </div>
+              <div class="lbc-v2-hero-img-wrap">
+                <img src="assets/PROJTS/FOODLES/cage_foodles.png" alt="Foodles Illustration UX Frigo Connecté">
+              </div>
+            </div>
+
+            <!-- SECTION 2 : LES UTILISATEURS (QUAND CHAQUE SECONDE COMPTE) -->
+            <div class="lbc-v2-cards-grid" style="gap: 24px; margin-bottom: 32px;">
+              <div class="lbc-v2-card" id="foodles-seconde-compte">
+                <div style="display: grid; grid-template-columns: 1fr 440px; gap: 28px; align-items: center;">
+                  <div>
+                    <h3 class="lbc-v2-card-title" style="margin-top: 0; margin-bottom: 16px;">Quand chaque seconde compte</h3>
+                    <p class="lbc-v2-card-body" style="margin-bottom: 12px;">À l’heure du déjeuner, l’utilisateur ne vient pas explorer une application. Il veut savoir rapidement ce qu’il peut manger, ce qui est encore disponible et si le plat lui convient.</p>
+                    <p class="lbc-v2-card-body" style="margin-bottom: 12px;">Dans ce contexte, chaque hésitation compte : une information difficile à trouver, un retour en arrière ou un manque de repère suffit à alourdir une expérience pourtant pensée pour être simple.</p>
+                    <p class="lbc-v2-card-body text-terracotta" style="margin: 0; font-weight: 700 !important;">C’est cette réalité d’usage qui a guidé la recherche : comprendre où l’utilisateur perd du temps, doute ou doit chercher une information qui devrait venir à lui.</p>
+                  </div>
+                  <div style="border-radius: 16px; overflow: hidden; border: 1px solid #F0E6DD; box-shadow: 0 6px 22px rgba(70, 40, 25, 0.1); background: transparent; padding: 0; margin: 0; line-height: 0;">
+                    <img src="assets/PROJTS/FOODLES/utilisation_appli.png" alt="Utilisation Application Foodles" style="width: 100%; height: 100%; max-height: 480px; object-fit: cover; object-position: center top; display: block; border-radius: 16px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 3 : CE QU'IL FALLAIT VÉRIFIER -->
+            <div class="lbc-v2-cards-grid" style="gap: 24px; margin-bottom: 32px;">
+              <div class="lbc-v2-card" id="foodles-a-verifier">
+                <h3 class="lbc-v2-card-title" style="font-size: 18.5px !important; margin-bottom: 16px;">Ce qu’il fallait vérifier</h3>
+                <p class="lbc-v2-card-body" style="margin-bottom: 12px;">À ce stade, j’avais surtout une collection de signaux : des remarques, des doutes, des points de friction supposés.</p>
+                <p class="lbc-v2-card-body" style="margin-bottom: 12px;">Mais tant que personne ne regardait un utilisateur chercher un plat, hésiter, revenir en arrière ou passer à côté d’une information, impossible de savoir ce qui comptait vraiment.</p>
+                <p class="lbc-v2-card-body" style="margin-bottom: 24px;">Il fallait donc transformer ces intuitions en quelques questions simples, puis laisser le prototype répondre.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 18px;">
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 12px; padding: 16px; border: 1px solid #F0E6DD; box-shadow: 0 3px 10px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Question 01</div>
+                    <h4 style="font-size: 13px; font-weight: 600; color: #2C221E; margin: 0 0 6px 0; line-height: 1.4;">Ce qui est disponible se voit-il tout de suite ?</h4>
+                    <p style="font-size: 11.5px; color: #7C6A5F; line-height: 1.4; margin: 0;">Plats, disponibilité, allergènes, informations essentielles.</p>
+                  </div>
+
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 12px; padding: 16px; border: 1px solid #F0E6DD; box-shadow: 0 3px 10px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Question 02</div>
+                    <h4 style="font-size: 13px; font-weight: 600; color: #2C221E; margin: 0 0 6px 0; line-height: 1.4;">Est-ce qu’on comprend naturellement où aller ?</h4>
+                    <p style="font-size: 11.5px; color: #7C6A5F; line-height: 1.4; margin: 0;">Navigation, catégories, repères.</p>
+                  </div>
+
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 12px; padding: 16px; border: 1px solid #F0E6DD; box-shadow: 0 3px 10px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Question 03</div>
+                    <h4 style="font-size: 13px; font-weight: 600; color: #2C221E; margin: 0 0 6px 0; line-height: 1.4;">L’information importante ressort-elle assez vite ?</h4>
+                    <p style="font-size: 11.5px; color: #7C6A5F; line-height: 1.4; margin: 0;">Lisibilité de la fiche, hiérarchie des contenus.</p>
+                  </div>
+
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 12px; padding: 16px; border: 1px solid #F0E6DD; box-shadow: 0 3px 10px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Question 04</div>
+                    <h4 style="font-size: 13px; font-weight: 600; color: #2C221E; margin: 0 0 6px 0; line-height: 1.4;">Le premier écran donne-t-il immédiatement envie d’avancer ?</h4>
+                    <p style="font-size: 11.5px; color: #7C6A5F; line-height: 1.4; margin: 0;">Compréhension de l’offre, visibilité des plats, première impression.</p>
+                  </div>
+                </div>
+
+                <p class="lbc-v2-card-body text-terracotta" style="margin-top: 24px; margin-bottom: 0; font-weight: 700 !important;">Ces questions ont servi de fil conducteur à cinq entretiens semi-directifs menés sur le prototype.</p>
+              </div>
+            </div>
+
+            <!-- SECTION 4 : LE TERRAIN TRANCHE -->
+            <div class="lbc-v2-cards-grid" style="gap: 24px; margin-bottom: 32px;">
+              <div class="lbc-v2-card" id="foodles-terrain-tranche">
+                <div style="display: grid; grid-template-columns: 1fr 440px; gap: 28px; align-items: center;">
+                  <div>
+                    <h3 class="lbc-v2-card-title" style="margin-top: 0; margin-bottom: 16px;">Le terrain tranche</h3>
+                    <p class="lbc-v2-card-body" style="margin-bottom: 12px;">Les hypothèses étaient posées. Il fallait maintenant les confronter à de vraies utilisations.</p>
+                    <p class="lbc-v2-card-body" style="margin-bottom: 12px;">J’ai mené cinq entretiens semi-directifs sur le prototype, avec des tâches simples à réaliser sans guider les participants.</p>
+                    <p class="lbc-v2-card-body" style="margin: 0; color: #C76D4B !important; font-weight: 600 !important;">Ce qui comptait n’était pas seulement ce qu’ils disaient, mais aussi où ils hésitaient, ce qu’ils cherchaient, les détours qu’ils faisaient et les informations qu’ils ne voyaient pas tout de suite.</p>
+                  </div>
+                  <div>
+                    <div style="border-radius: 14px; overflow: hidden; border: 1px solid #F0E6DD; background: #1E1915; box-shadow: 0 6px 22px rgba(70, 40, 25, 0.1);">
+                      <video controls style="width: 100%; max-height: 320px; display: block; border-radius: 14px;" preload="metadata" poster="assets/PROJTS/FOODLES/foodles-vignette-extrait.png">
+                        <source src="assets/PROJTS/FOODLES/foodles-test-user-TM-apercu.mp4" type="video/mp4">
+                        Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
+                      </video>
+                    </div>
+                    <span style="font-size: 11.5px; color: #8A7669; margin-top: 8px; display: block; text-align: center;">Extrait d’un entretien semi-directif sur le prototype</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 5 : ATOMIC UX RESEARCH -->
+            <div class="lbc-v2-cards-grid" style="gap: 24px; margin-bottom: 44px;">
+              <div class="lbc-v2-card" id="foodles-atomic-research">
+                <h3 class="lbc-v2-card-title">Des observations aux preuves — Atomic UX Research</h3>
+                <p class="lbc-v2-card-body" style="margin-bottom: 12px;">À la fin des entretiens, j’avais des hésitations, des remarques, des comportements parfois répétés, parfois isolés.</p>
+                <p class="lbc-v2-card-body" style="margin-bottom: 12px;">Mais une phrase entendue une fois ne devient pas automatiquement une décision de design.</p>
+                <p class="lbc-v2-card-body" style="margin-bottom: 12px;">J’ai donc utilisé Atomic UX Research pour remettre chaque observation dans son contexte, séparer les faits des interprétations et garder une trace claire du chemin qui mène jusqu’à la recommandation.</p>
+                <p class="lbc-v2-card-body" style="margin-bottom: 24px; color: #C76D4B !important; font-weight: 600 !important;">Autrement dit : partir de ce qui s’est réellement passé pendant le test, comprendre ce que cela révèle, puis seulement décider ce qu’il faut améliorer.</p>
+
+                <!-- PROCESS HORIZONTAL SOBRE 4 ETAPES -->
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #F0E6DD;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; flex-wrap: nowrap;">
+                    <div style="flex: 1; background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; text-align: center;">
+                      <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">01</span>
+                      <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Expérience</span>
+                    </div>
+                    <span style="color: var(--color-primary, #C76D4B); font-size: 16px; font-weight: 700;">→</span>
+                    <div style="flex: 1; background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; text-align: center;">
+                      <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">02</span>
+                      <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Fait</span>
+                    </div>
+                    <span style="color: var(--color-primary, #C76D4B); font-size: 16px; font-weight: 700;">→</span>
+                    <div style="flex: 1; background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; text-align: center;">
+                      <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">03</span>
+                      <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Insight</span>
+                    </div>
+                    <span style="color: var(--color-primary, #C76D4B); font-size: 16px; font-weight: 700;">→</span>
+                    <div style="flex: 1; background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; text-align: center;">
+                      <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">04</span>
+                      <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Conclusion</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 6 : CE QUE LES TESTS ONT RÉVÉLÉ -->
+            <div class="lbc-v2-cards-grid" style="gap: 24px; margin-bottom: 32px;">
+              <div class="lbc-v2-card" id="foodles-resultats-tests">
+                <h3 class="lbc-v2-card-title" style="margin-top: 0; margin-bottom: 16px;">Ce que les tests ont révélé</h3>
+                
+                <div style="max-width: 680px; margin-bottom: 24px;">
+                  <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Au départ, l’interface semblait plutôt simple.</p>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Les photos étaient soignées, les plats donnaient envie, et la structure paraissait familière.</p>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Puis les utilisateurs ont commencé à chercher.</p>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Un allergène. Une catégorie. Un plat disponible. Le temps de chauffe. Une confirmation après avoir ajouté quelque chose au panier.</p>
+                  <p class="lbc-v2-card-body" style="margin: 0; color: #C76D4B !important; font-weight: 600 !important;">Et c’est là que les petites hésitations se sont accumulées.</p>
+                </div>
+
+                <!-- ILLUSTRATION FEMME AU TELEPHONE ET LUMIERE DOREE -->
+                <div style="margin-bottom: 28px; border-radius: 14px; overflow: hidden; border: 1px solid #F0E6DD; background: #FAF6F2; text-align: center; box-shadow: 0 4px 16px rgba(70, 40, 25, 0.05);">
+                  <img src="assets/PROJTS/FOODLES/foodles-tests-revele.png" alt="Observation des comportements utilisateurs Foodles" style="width: 100%; height: auto; max-height: 520px; display: block; border-radius: 14px; object-fit: cover;">
+                </div>
+
+                <!-- GRILLE DE 4 CONSTATS (2x2 DESKTOP) -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;">
+                  
+                  <!-- CARTE 01 -->
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 01</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">Trouver ce qu’on peut manger demandait trop d’effort</h4>
+                    <p style="font-size: 12px; color: #5C473C; line-height: 1.5; margin: 0 0 8px 0;">Les utilisateurs arrivaient à trouver l’information, mais souvent après plusieurs détours.</p>
+                    <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">Allergènes, régimes alimentaires, pictogrammes : tout était là, sans être assez visible ni assez immédiat.</p>
+                  </div>
+
+                  <!-- CARTE 02 -->
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 02</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">La navigation ne suivait pas toujours les réflexes naturels</h4>
+                    <p style="font-size: 12px; color: #5C473C; line-height: 1.5; margin: 0 0 8px 0;">Le scroll horizontal a surpris plusieurs participants. Certains cherchaient instinctivement à descendre, d’autres ne voyaient pas immédiatement qu’il fallait glisser sur le côté.</p>
+                    <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">La navigation finissait par fonctionner, mais pas toujours de façon évidente.</p>
+                  </div>
+
+                  <!-- CARTE 03 -->
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 03</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">La fiche produit donnait beaucoup d’informations, sans toujours montrer les bonnes en premier</h4>
+                    <p style="font-size: 12px; color: #5C473C; line-height: 1.5; margin: 0 0 8px 0;">Les allergènes se perdaient dans la page, le temps de chauffe manquait, certains textes étaient difficiles à lire.</p>
+                    <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">L’information existait, mais elle ne venait pas toujours au bon moment.</p>
+                  </div>
+
+                  <!-- CARTE 04 -->
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 04</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">Et parfois, le doute apparaissait après l’action</h4>
+                    <p style="font-size: 12px; color: #5C473C; line-height: 1.5; margin: 0 0 8px 0;">Ajouter un plat au panier sans confirmation suffisamment visible obligeait l’utilisateur à se demander : <span style="color: #C76D4B; font-weight: 600;">« Est-ce que ça a marché ? »</span></p>
+                    <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">Ce manque de feedback ajoutait un doute inutile à une action pourtant simple.</p>
+                  </div>
+
+                </div>
+
+                <!-- BLOC CONFIANCE HORIZONTAL -->
+                <div style="margin-top: 24px; background: #FAF6F2; border-radius: 14px; padding: 20px 24px; border: 1px solid #F0E6DD; border-left: 4px solid var(--color-primary, #C76D4B); box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                  <h4 style="font-size: 15px; font-weight: 700; color: #1E1915; margin: 0 0 8px 0; line-height: 1.35;">Une autre question est apparue : la confiance</h4>
+                  <p style="font-size: 12.5px; color: #5C473C; line-height: 1.5; margin: 0 0 6px 0;">Les photos étaient attractives, mais certains participants cherchaient davantage de repères sur la qualité, l’origine ou la composition des plats.</p>
+                  <p style="font-size: 12.5px; color: #C76D4B !important; font-weight: 600 !important; line-height: 1.5; margin: 0;">Une belle image ne suffit pas toujours à rassurer quand on choisit ce qu’on va manger.</p>
+                </div>
+
+                <!-- BLOC CITATIONS VERBATIMS -->
+                <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid #F0E6DD;">
+                  <h4 style="font-size: 15px; font-weight: 700; color: #1E1915; margin: 0 0 16px 0;">Quelques mots entendus pendant les tests</h4>
+                  
+                  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;">
+                    
+                    <div style="background: #FFFDFC; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; font-style: italic;">
+                      <span style="color: var(--color-primary, #C76D4B); font-size: 18px; font-weight: 700; font-style: normal; line-height: 1; display: inline-block; margin-right: 4px;">“</span>
+                      <span style="font-size: 12px; color: #4A3A31; line-height: 1.45;">T’es obligé de scroller sur le côté, ce qui n’est pas forcément ce que t’as envie de faire.</span>
+                      <span style="color: var(--color-primary, #C76D4B); font-size: 18px; font-weight: 700; font-style: normal; line-height: 1; display: inline-block; margin-left: 2px;">”</span>
+                    </div>
+
+                    <div style="background: #FFFDFC; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; font-style: italic;">
+                      <span style="color: var(--color-primary, #C76D4B); font-size: 18px; font-weight: 700; font-style: normal; line-height: 1; display: inline-block; margin-right: 4px;">“</span>
+                      <span style="font-size: 12px; color: #4A3A31; line-height: 1.45;">Les allergènes sont noyés dans la page.</span>
+                      <span style="color: var(--color-primary, #C76D4B); font-size: 18px; font-weight: 700; font-style: normal; line-height: 1; display: inline-block; margin-left: 2px;">”</span>
+                    </div>
+
+                    <div style="background: #FFFDFC; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; font-style: italic;">
+                      <span style="color: var(--color-primary, #C76D4B); font-size: 18px; font-weight: 700; font-style: normal; line-height: 1; display: inline-block; margin-right: 4px;">“</span>
+                      <span style="font-size: 12px; color: #4A3A31; line-height: 1.45;">Il n’y a pas de temps indiqué, c’est un petit truc qui me ferait hésiter.</span>
+                      <span style="color: var(--color-primary, #C76D4B); font-size: 18px; font-weight: 700; font-style: normal; line-height: 1; display: inline-block; margin-left: 2px;">”</span>
+                    </div>
+
+                    <div style="background: #FFFDFC; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; font-style: italic;">
+                      <span style="color: var(--color-primary, #C76D4B); font-size: 18px; font-weight: 700; font-style: normal; line-height: 1; display: inline-block; margin-right: 4px;">“</span>
+                      <span style="font-size: 12px; color: #4A3A31; line-height: 1.45;">Le logo, on dirait “téléchargez mon plat pour imprimante 3D”.</span>
+                      <span style="color: var(--color-primary, #C76D4B); font-size: 18px; font-weight: 700; font-style: normal; line-height: 1; display: inline-block; margin-left: 2px;">”</span>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- BLOC SCORES : LES HYPOTHÈSES À L'ÉPREUVE DES TESTS -->
+                <div style="margin-top: 32px; padding-top: 28px; border-top: 1.5px dashed #EADCD3;">
+                  <h4 style="font-size: 15px; font-weight: 700; color: #1E1915; margin: 0 0 16px 0;">Les hypothèses à l’épreuve des tests</h4>
+                  
+                  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                    
+                    <!-- H2 -->
+                    <div style="background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                      <div>
+                        <span style="font-size: 10.5px; font-weight: 700; color: #C76D4B; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H2</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Allergènes et ingrédients</h5>
+                      </div>
+                      <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;">
+                        <span style="font-size: 11px; font-weight: 600; background: #F5EBE6; color: #9E4D32; padding: 4px 10px; border-radius: 14px; border: 1px solid #EADCD3;">4 partiels (sur 4 obs.)</span>
+                      </div>
+                    </div>
+
+                    <!-- H4 -->
+                    <div style="background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                      <div>
+                        <span style="font-size: 10.5px; font-weight: 700; color: #C76D4B; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H4</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Visuels produits</h5>
+                      </div>
+                      <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end;">
+                        <span style="font-size: 10.5px; font-weight: 600; background: #EADCD3; color: #5C3222; padding: 3px 8px; border-radius: 12px;">2 validés</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #FFFDFC; color: #7C6A5F; padding: 3px 8px; border-radius: 12px; border: 1px solid #EADCD3;">3 partiels</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #F5EBE6; color: #C76D4B; padding: 3px 8px; border-radius: 12px;">1 invalidé</span>
+                      </div>
+                    </div>
+
+                    <!-- H5 -->
+                    <div style="background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                      <div>
+                        <span style="font-size: 10.5px; font-weight: 700; color: #C76D4B; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H5</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Catégorisation des plats</h5>
+                      </div>
+                      <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end;">
+                        <span style="font-size: 10.5px; font-weight: 600; background: #EADCD3; color: #5C3222; padding: 3px 8px; border-radius: 12px;">1 validé</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #FFFDFC; color: #7C6A5F; padding: 3px 8px; border-radius: 12px; border: 1px solid #EADCD3;">3 partiels</span>
+                      </div>
+                    </div>
+
+                    <!-- H7 -->
+                    <div style="background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                      <div>
+                        <span style="font-size: 10.5px; font-weight: 700; color: #C76D4B; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H7</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Scroll horizontal</h5>
+                      </div>
+                      <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end;">
+                        <span style="font-size: 10.5px; font-weight: 600; background: #EADCD3; color: #5C3222; padding: 3px 8px; border-radius: 12px;">2 validés</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #FFFDFC; color: #7C6A5F; padding: 3px 8px; border-radius: 12px; border: 1px solid #EADCD3;">2 partiels</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #F5EBE6; color: #C76D4B; padding: 3px 8px; border-radius: 12px;">1 invalidé</span>
+                      </div>
+                    </div>
+
+                    <!-- H8 -->
+                    <div style="background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                      <div>
+                        <span style="font-size: 10.5px; font-weight: 700; color: #C76D4B; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H8</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Lisibilité de la fiche produit</h5>
+                      </div>
+                      <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;">
+                        <span style="font-size: 11px; font-weight: 600; background: #F5EBE6; color: #9E4D32; padding: 4px 10px; border-radius: 14px; border: 1px solid #EADCD3;">4 partiels (sur 4 obs.)</span>
+                      </div>
+                    </div>
+
+                    <!-- H11 -->
+                    <div style="background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                      <div>
+                        <span style="font-size: 10.5px; font-weight: 700; color: #C76D4B; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H11</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Lisibilité et contrastes</h5>
+                      </div>
+                      <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;">
+                        <span style="font-size: 11px; font-weight: 600; background: #F5EBE6; color: #9E4D32; padding: 4px 10px; border-radius: 14px; border: 1px solid #EADCD3;">3 partiels (sur 3 obs.)</span>
+                      </div>
+                    </div>
+
+                    <!-- H12 -->
+                    <div style="background: #FAF6F2; border-radius: 12px; padding: 14px 16px; border: 1px solid #F0E6DD; display: flex; align-items: center; justify-content: space-between; gap: 12px; grid-column: span 2;">
+                      <div>
+                        <span style="font-size: 10.5px; font-weight: 700; color: #C76D4B; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H12</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Valorisation du premier écran</h5>
+                      </div>
+                      <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end;">
+                        <span style="font-size: 10.5px; font-weight: 600; background: #EADCD3; color: #5C3222; padding: 3px 8px; border-radius: 12px;">2 validés</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #FFFDFC; color: #7C6A5F; padding: 3px 8px; border-radius: 12px; border: 1px solid #EADCD3;">2 partiels</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #F5EBE6; color: #C76D4B; padding: 3px 8px; border-radius: 12px;">1 invalidé</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- PHRASE DE CONCLUSION SECTION 6 -->
+                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #F0E6DD;">
+                  <p class="lbc-v2-card-body" style="margin-bottom: 8px;">Pris séparément, ces résultats peuvent sembler mineurs.</p>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 8px;">Mis bout à bout, ils racontent tous la même chose :</p>
+                  <p class="lbc-v2-card-body" style="margin: 0; color: #C76D4B !important; font-weight: 600 !important; font-size: 13.5px !important; line-height: 1.55;">l’interface fonctionne, mais elle demande encore trop souvent à l’utilisateur de chercher, interpréter ou vérifier ce qui devrait être évident.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 7 : CE QUE L'EXPÉRIENCE DEVAIET MIEUX PERMETTRE -->
+            <div class="lbc-v2-cards-grid" style="gap: 24px; margin-bottom: 32px;">
+              <div class="lbc-v2-card" id="foodles-ameliorations">
+                <h3 class="lbc-v2-card-title" style="margin-top: 0; margin-bottom: 16px;">Ce que l’expérience devait mieux permettre</h3>
+                
+                <div style="max-width: 720px; margin-bottom: 24px;">
+                  <p class="lbc-v2-card-body" style="margin-bottom: 10px;">À ce stade, les tests avaient fait leur travail.</p>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 10px;">On savait où les utilisateurs hésitaient, quelles informations arrivaient trop tard, et à quels moments l’interface leur demandait un effort qui n’aurait pas dû exister.</p>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Il ne s’agissait donc pas de tout reconstruire. Il fallait surtout remettre les bonnes informations au bon endroit, au bon moment.</p>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Au moment de choisir son déjeuner, personne n’a envie d’enquêter. L’utilisateur veut savoir rapidement ce qui est disponible, vérifier qu’un plat lui convient, comprendre ce qu’il doit faire ensuite et être certain que son action a bien été prise en compte.</p>
+                  <p class="lbc-v2-card-body" style="margin: 0; color: #C76D4B !important; font-weight: 600 !important;">C’est là que les recommandations ont pris forme.</p>
+                </div>
+
+                <!-- ILLUSTRATION SOLUTIONS RETENUES -->
+                <div style="margin-bottom: 28px; border-radius: 14px; overflow: hidden; border: 1px solid #F0E6DD; background: #FAF6F2; text-align: center; box-shadow: 0 4px 16px rgba(70, 40, 25, 0.05);">
+                  <img src="assets/PROJTS/FOODLES/foodles-solutions-retenues.png" alt="Solutions et recommandations d'expérience Foodles" style="width: 100%; height: auto; max-height: 520px; display: block; border-radius: 14px; object-fit: cover;">
+                </div>
+
+                <!-- GRILLE DE 4 RECOMMANDATIONS (2x2 DESKTOP) -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;">
+                  
+                  <!-- RECO 01 -->
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Axe 01</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">Voir ce qui compte avant d’avoir à le chercher</h4>
+                    <p style="font-size: 12px; color: #5C473C; line-height: 1.5; margin: 0 0 8px 0;">La disponibilité du plat, les allergènes, la composition ou encore les informations utiles au choix devaient apparaître plus tôt dans le parcours.</p>
+                    <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">L’objectif : éviter que l’utilisateur découvre une information décisive une fois son choix déjà engagé.</p>
+                  </div>
+
+                  <!-- RECO 02 -->
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Axe 02</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">Avancer sans avoir à deviner</h4>
+                    <p style="font-size: 12px; color: #5C473C; line-height: 1.5; margin: 0 0 8px 0;">Le scroll horizontal, certains pictogrammes ou certaines actions demandaient parfois un temps d’interprétation.</p>
+                    <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">L’interface devait donner davantage de repères et s’appuyer sur des comportements déjà familiers, pour que la navigation devienne presque instinctive.</p>
+                  </div>
+
+                  <!-- RECO 03 -->
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Axe 03</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">Savoir immédiatement que l’action a fonctionné</h4>
+                    <p style="font-size: 12px; color: #5C473C; line-height: 1.5; margin: 0 0 8px 0;">Ajouter un plat au panier ne devrait jamais laisser place au doute.</p>
+                    <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">Une confirmation claire, un compteur ou un changement d’état visible suffit parfois à transformer une action incertaine en interaction rassurante.</p>
+                  </div>
+
+                  <!-- RECO 04 -->
+                  <div class="lbc-v2-subcard" style="background: #FAF6F2; border-radius: 14px; padding: 20px; border: 1px solid #F0E6DD; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #C76D4B); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Axe 04</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">Donner des raisons de faire confiance</h4>
+                    <p style="font-size: 12px; color: #5C473C; line-height: 1.5; margin: 0 0 8px 0;">Une belle photo attire l’œil. Mais pour choisir ce qu’on va réellement manger, elle ne suffit pas toujours.</p>
+                    <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">Origine, composition, labels, qualité : quelques informations bien choisies peuvent donner à l’utilisateur les repères qui lui manquent pour décider sereinement.</p>
+                  </div>
+
+                </div>
+
+                <!-- CONCLUSION EN CLAIR -->
+                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #F0E6DD;">
+                  <h4 style="font-size: 15px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0;">En clair</h4>
+                  <p class="lbc-v2-card-body" style="margin-bottom: 8px;">Les recommandations ne cherchaient pas à ajouter davantage d’interface.</p>
+                  <p class="lbc-v2-card-body" style="margin: 0; color: #C76D4B !important; font-weight: 600 !important; font-size: 13.5px !important; line-height: 1.55;">Elles cherchaient au contraire à retirer de l’effort : moins chercher, moins interpréter, moins hésiter — et pouvoir choisir plus simplement.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- APPRIS (8) -->
+            <div id="foodles-apprentissages" class="lbc-v2-learnings-block" style="margin-top: 32px; margin-bottom: 40px;">
+              <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-primary, #C76D4B) !important;">Ce que ce projet m’a appris</h3>
+              <p class="lbc-v2-intro-p" style="margin-bottom: 24px;">Concevoir pour un usage quotidien au travail exige d'éliminer les moindres frictions. Une réservation sans effort est le meilleur vecteur d'adoption.</p>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                <div class="lbc-v2-subcard">
+                  <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #C76D4B); margin-bottom: 6px;">01</div>
+                  <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Concevoir pour un moment de hâte</div>
+                  <div style="font-size: 12.5px; color: #5C473C; line-height: 1.5;">La pause déjeuner est un moment où l'attention est limitée. Chaque écran doit apporter une réponse immédiate sans détour.</div>
+                </div>
+                <div class="lbc-v2-subcard">
+                  <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #C76D4B); margin-bottom: 6px;">02</div>
+                  <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Anticiper l'information clé</div>
+                  <div style="font-size: 12.5px; color: #5C473C; line-height: 1.5;">Faire remonter le stock et la disponibilité dès l'accueil évite les déceptions et les retours en arrière frustrants.</div>
+                </div>
+                <div class="lbc-v2-subcard">
+                  <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #C76D4B); margin-bottom: 6px;">03</div>
+                  <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Relier le physique au digital</div>
+                  <div style="font-size: 12.5px; color: #5C473C; line-height: 1.5;">L'expérience ne s'arrête pas au clic : l'ouverture du frigo et le retrait du plat doivent être en parfaite synchro avec l'application.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- EXPLORER LE PROJET AUTREMENT (9) -->
+            <div id="foodles-explorer-autrement">
+              <h3 class="lbc-v2-coulisses-title">Explorer le projet autrement</h3>
+              <div class="lbc-v2-coulisses-grid">
+                <!-- CARTE VIDEO (GAUCHE) -->
+                <div class="lbc-v2-subcard">
+                  <div class="lbc-v2-audio-header">
+                    <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="video"></i></div>
+                    <div class="lbc-v2-audio-title-wrap">
+                      <h4>La présentation complète</h4>
+                      <span class="lbc-v2-audio-duration">Format vidéo (MP4)</span>
+                    </div>
+                  </div>
+                  <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 12px !important;">Le projet Foodles, de la problématique aux solutions retenues, avec les choix d'ergonomie et livrables.</p>
+                  
+                  <div style="border-radius: 12px; overflow: hidden; border: 1px solid #F0E6DD; background: #1E1915; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.05);">
+                    <video controls style="width: 100%; max-height: 400px; display: block; border-radius: 12px;" preload="metadata" poster="assets/PROJTS/FOODLES/presentation foodles.png">
+                      <source src="assets/PROJTS/FOODLES/foodles-presentation-2.mp4" type="video/mp4">
+                      Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
+                    </video>
+                  </div>
+                </div>
+
+                <!-- CARTE PODCAST & CTA (DROITE) -->
+                <div class="lbc-v2-coulisses-right-stack">
+                  <div class="lbc-v2-subcard">
+                    <div class="lbc-v2-audio-header">
+                      <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
+                      <div class="lbc-v2-audio-title-wrap">
+                        <h4>Écouter le projet autrement</h4>
+                        <span class="lbc-v2-audio-duration">Podcast IA (NotebookLM)</span>
+                      </div>
+                    </div>
+                    <div class="lbc-v2-custom-player">
+                      <button class="lbc-v2-play-btn" onclick="toggleFoodlesAudio(this)" aria-label="Écouter le podcast Foodles"><i data-lucide="play" id="fdPlayIcon" style="width: 16px; height: 16px;"></i></button>
+                      <span class="lbc-v2-player-timer" id="fdAudioTimer">0:00</span>
+                      <input type="range" class="lbc-v2-player-slider" id="fdAudioSeek" value="0" max="100" oninput="seekFoodlesAudio(this)" aria-label="Contrôle de progression du podcast Foodles">
+                      <span class="lbc-v2-player-timer" id="fdAudioDurationText">--:--</span>
+                      <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);" aria-hidden="true"></i>
+                    </div>
+                    <audio id="fdAudioElement" src="assets/podcasts/foodles.m4a" ontimeupdate="updateFoodlesAudioProgress()"></audio>
+                    <p class="lbc-v2-disclaimer-note" style="margin-top: 12px; font-size: 11.5px; color: #6C5A50; line-height: 1.5;">
+                      ✨ <strong>Podcast réalisé avec NotebookLM (IA) — Version 1 :</strong><br>
+                      • <em>Forme :</em> Ce podcast est généré automatiquement par IA, de légères imperfections de prononciation ou de fluidité peuvent subsister.<br>
+                      • <em>Fond :</em> Le podcast évoque un « Card Sorting » qui n’a pas été utilisé sur ce sprint (la recherche repose sur 5 entretiens semi-directifs et Atomic UX Research). L’analyse globale reste néanmoins fidèle aux enseignements du terrain.
+                    </p>
+                  </div>
+
+                  <div class="lbc-v2-subcard">
+                    <div class="lbc-v2-audio-header">
+                      <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="file-text"></i></div>
+                      <div class="lbc-v2-audio-title-wrap">
+                        <h4>Vous préférez lire ?</h4>
+                        <span class="lbc-v2-audio-duration">Document PDF accessible</span>
+                      </div>
+                    </div>
+                    <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6C5A50 !important; line-height: 1.45 !important; margin-bottom: 14px !important;">Une version textuelle accessible reprend les éléments essentiels de la présentation.</p>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                      <a href="assets/foodles-canva-version-textuelle-accessible.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline-terracotta" style="font-size: 12.5px; padding: 8px 14px;" aria-label="Lire la retranscription textuelle accessible du projet Foodles au format PDF (s'ouvre dans un nouvel onglet)"><i data-lucide="download" style="width: 14px; height: 14px; color: currentColor;"></i> Lire la version textuelle (PDF) ➔</a>
+                      <a href="assets/PROJTS/FOODLES/2.2 Projet FOODLES.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline-terracotta" style="font-size: 12.5px; padding: 8px 14px;" aria-label="Voir le support complet de présentation Foodles au format PDF (s'ouvre dans un nouvel onglet)"><i data-lucide="file-text" style="width: 14px; height: 14px; color: currentColor;"></i> Support complet de présentation (PDF) ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOUTON CONTACT EN BAS -->
+            <div class="lbc-v2-contact-card" style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 36px 0 24px 0;">
+              <a href="#page-contact" onclick="closeProjectDrawer(); navigateTo('contact');" class="btn-primary">On en parle ? ➔</a>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Approche - Offre - Projets - À propos - À lire) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#page-home" class="brand-logo-wrap" aria-label="Retour à l'accueil KM UX - UI Designer">
+        <span class="brand-km">KM</span>
+        <span class="brand-sub">UX - UI Designer</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#page-home" class="nav-link active">Accueil</a></li>
+          <li><a href="#page-approach" class="nav-link">Mon approche</a></li>
+          <li><a href="#page-offer" class="nav-link">Mon offre</a></li>
+          <li><a href="#page-projects" class="nav-link">Mes projets</a></li>
+          <li><a href="#page-about" class="nav-link">Qui suis-je ?</a></li>
+          <li><a href="#page-blog" class="nav-link">Journal</a></li>
+        </ul>
+      </nav>
+
+      <a href="#page-contact" class="btn-nav-outline">
+        On en parle ?
+      </a>
+    </div>
+  </header>
+
+  <main class="main-body-wrap">
+
+    <!-- ==========================================================================
+       PAGE 1: ACCUEIL — FOND FULL COVER UNIFIÉ
+       ========================================================================== -->
+    <section id="page-home" class="spa-page-section active">
+      <div class="home-hero-full-scene">
+        
+        <div class="home-hero-align-container">
+          <div class="home-hero-grid">
+            <div class="home-hero-content-left">
+              <h1 class="hero-home-title">
+                Ce n’est pas l’utilisateur qu’il faut changer.<br>
+                <span style="color: #8C3B1E !important; font-style: italic;">C’est le chemin qu’on lui donne à suivre.</span>
+              </h1>
+
+              <p class="hero-home-subtitle" style="font-size: 16px; font-weight: 500; line-height: 1.45; color: #3B2C25 !important; opacity: 1; margin-bottom: 12px;">
+                Des parcours plus clairs.<br>
+                Des expériences qui aident à <strong style="color: #8C3B1E !important; font-weight: 700;">comprendre, apprendre et passer à l’action.</strong>
+              </p>
+
+              <p class="hero-home-desc" style="font-size: 14.5px; opacity: 0.88; line-height: 1.5; margin-bottom: 24px;">
+                J’aide à clarifier les parcours pour que l’expérience demande moins d’effort — et un peu moins de patience héroïque.
+              </p>
+
+              <div class="hero-home-ctas">
+                <a href="#page-projects" class="btn-primary hero-btn-main">
+                  Découvrir mes projets
+                </a>
+                <a href="#page-approach" class="btn-secondary hero-btn-sec">
+                  Voir mon approche
+                </a>
+              </div>
+            </div>
+
+            <div class="home-hero-media-right">
+              <img src="assets/nouvelle_home_2.jpg" alt="Illustration Karine Marquis - UX & UI Designer">
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER FULL-WIDTH INTEGRÉ DANS LA SCÈNE FULL COVER -->
+        <footer class="site-footer">
+          <div class="footer-container">
+            
+            <!-- BLOC 1: MARQUE & TAGLINE -->
+            <div class="footer-col-brand">
+              <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
+                <span class="brand-km">KM</span>
+                <span class="brand-sub">UX - UI Designer</span>
+              </a>
+              <div class="footer-availability-badge">
+                <span class="status-dot"></span> Disponible pour une nouvelle mission
+              </div>
+            </div>
+
+            <!-- BLOC 2: SITEMAP SLIM INLINE -->
+            <div class="footer-col-links">
+              <ul class="footer-inline-links">
+                <li><a href="#page-home" >Accueil</a></li>
+                <li><a href="#page-approach" >Mon approche</a></li>
+                <li><a href="#page-offer" >Mon offre</a></li>
+                <li><a href="#page-projects" >Mes projets</a></li>
+                <li><a href="#page-about" >Qui suis-je ?</a></li>
+                <li><a href="#page-blog" >Journal</a></li>
+              </ul>
+            </div>
+
+            <!-- BLOC 3: CONTACT & RÉSEAUX DISCRETS -->
+            <div class="footer-col-contact">
+              <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
+                <i data-lucide="mail" aria-hidden="true"></i> Me contacter par e-mail
+              </a>
+              <div class="footer-socials-wrap">
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">LinkedIn</a>
+                <span class="social-dot-sep">•</span>
+                <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">Malt</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- BANDEAU ULTRA LÉGER CITATION & COPYRIGHT -->
+          <div class="footer-bottom-bar">
+            <div class="footer-container footer-bottom-flex">
+              <div class="footer-copyright">
+                © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+              </div>
+              <div class="footer-quote-italic">
+                "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+              </div>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 2: PROJETS (FIDELE AU MOCKUP AVEC MODALE CANVA)
+       ========================================================================== -->
+    <section id="page-projects" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        
+        <div style="margin-bottom: 32px;">
+          <a href="#page-home" class="back-home-link"  aria-label="Retourner à la page d'accueil">
+            <span class="back-arrow">←</span> Retour à l'accueil
+          </a>
+          <h1 class="projects-main-title" style="font-family: 'Playfair Display', serif; font-size: 46px; margin-bottom: 4px;">Mes projets</h1>
+          <p class="body-large" style="max-width: 800px; font-size: 16px; opacity: 0.9;">
+            Chaque projet est une rencontre, un contexte unique et des utilisateurs réels. Voici <strong>une sélection de missions</strong> qui illustrent ma démarche.
+          </p>
+        </div>
+
+        <div class="case-studies-glance-list" id="caseStudiesContainer">
+          <!-- CARTE 1 : LES CORDONS BLEUS -->
+          <article class="project-glance-card" style="cursor: pointer;" onclick="openProjectDrawer('cordons-bleus')">
+            <div class="glance-card-main">
+              <div class="glance-media-col" onclick="openProjectDrawer('cordons-bleus')">
+                <img src="assets/PROJTS/CORDONS_BLEUS/illustration_coup_d_oeil.png" alt="Aperçu du projet UX : LES CORDONS BLEUS">
+              </div>
+              <div class="glance-content-col">
+                <div>
+                  <div class="glance-card-header">
+                    <h2 class="glance-project-title" onclick="openProjectDrawer('cordons-bleus')">LES CORDONS BLEUS</h2>
+                    <div class="glance-project-subtitle">Conception UX & digital learning</div>
+                    <h3 class="glance-headline-quote">Quand le cours se termine, l’apprentissage ne devrait pas s’arrêter avec lui.</h3>
+                    <div class="glance-project-desc">
+                      Refonte globale du site pour créer une continuité fluide entre l’apprentissage en atelier et l’expérience numérique, tout en facilitant la réservation.
+                    </div>
+                  </div>
+                  <div class="glance-steps-section">
+                    <div class="glance-steps-title-wrap">
+                      <span class="glance-steps-title">LE PROJET EN UN COUP D'ŒIL</span>
+                      <span class="glance-steps-line"></span>
+                    </div>
+                    <div class="glance-steps-grid">
+                      <div class="glance-step-item"><div class="glance-step-num">01</div><div class="glance-step-icon-circle"><i data-lucide="link-2-off"></i></div><div class="glance-step-label">Rupture d'apprentissage</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">02</div><div class="glance-step-icon-circle"><i data-lucide="search"></i></div><div class="glance-step-label">Analyse des besoins</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">03</div><div class="glance-step-icon-circle"><i data-lucide="user"></i></div><div class="glance-step-label">Continuité présentiel/digital</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">04</div><div class="glance-step-icon-circle"><i data-lucide="chef-hat"></i></div><div class="glance-step-label">Solutions prioritaires</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glance-methodo-bar">
+              <span class="glance-methodo-label">Méthodologie :</span>
+              <div class="glance-methodo-list">
+                <span class="glance-methodo-item"><i data-lucide="search" style="width:13px; height:13px;"></i> analyse documentaire</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="user" style="width:13px; height:13px;"></i> personas</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="bar-chart-2" style="width:13px; height:13px;"></i> benchmark</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="git-branch" style="width:13px; height:13px;"></i> service blueprint</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="layout" style="width:13px; height:13px;"></i> architecture</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="accessibility" style="width:13px; height:13px;"></i> accessibilité</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="calendar" style="width:13px; height:13px;"></i> roadmap</span>
+              </div>
+            </div>
+            <div class="glance-card-footer">
+              <button class="glance-card-cta" onclick="event.stopPropagation(); openProjectDrawer('cordons-bleus'); return false;">
+                Entrer dans le projet <span class="cta-arrow-icon">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- CARTE 2 : BAMBINETS -->
+          <article class="project-glance-card" style="cursor: pointer;" onclick="openProjectDrawer('bambinets')">
+            <div class="glance-card-main">
+              <div class="glance-media-col" onclick="openProjectDrawer('bambinets')">
+                <img src="assets/PROJTS/BAMBINETS/vignette_bambinets.png" alt="Aperçu du projet UX : BAMBINETS">
+              </div>
+              <div class="glance-content-col">
+                <div>
+                  <div class="glance-card-header">
+                    <h2 class="glance-project-title" onclick="openProjectDrawer('bambinets')">BAMBINETS</h2>
+                    <div class="glance-project-subtitle">UX Design & Micro-learning</div>
+                    <h3 class="glance-headline-quote">Apprendre quelques signes pour mieux se comprendre avant les premiers mots.</h3>
+                    <div class="glance-project-desc">
+                      Conception d'une application mobile de micro-learning pour aider les professionnels de la petite enfance et les parents à apprendre quelques signes utiles au quotidien.
+                    </div>
+                  </div>
+                  <div class="glance-steps-section">
+                    <div class="glance-steps-title-wrap">
+                      <span class="glance-steps-title">LE PROJET EN UN COUP D'ŒIL</span>
+                      <span class="glance-steps-line"></span>
+                    </div>
+                    <div class="glance-steps-grid">
+                      <div class="glance-step-item"><div class="glance-step-num">01</div><div class="glance-step-icon-circle"><i data-lucide="brain"></i></div><div class="glance-step-label">Surcharge mentale</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">02</div><div class="glance-step-icon-circle"><i data-lucide="layers"></i></div><div class="glance-step-label">Tri de cartes</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">03</div><div class="glance-step-icon-circle"><i data-lucide="map-pin"></i></div><div class="glance-step-label">Micro-parcours</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">04</div><div class="glance-step-icon-circle"><i data-lucide="smartphone"></i></div><div class="glance-step-label">Maquettes hi-fi</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glance-methodo-bar">
+              <span class="glance-methodo-label">Méthodologie :</span>
+              <div class="glance-methodo-list">
+                <span class="glance-methodo-item"><i data-lucide="users" style="width:13px; height:13px;"></i> recherche utilisateur</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="layers" style="width:13px; height:13px;"></i> tri de cartes</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="map-pin" style="width:13px; height:13px;"></i> parcours client</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item"><i data-lucide="smile" style="width:13px; height:13px;"></i> tests hi-fi</span>
+              </div>
+            </div>
+            <div class="glance-card-footer">
+              <button class="glance-card-cta" onclick="event.stopPropagation(); openProjectDrawer('bambinets'); return false;">
+                Entrer dans le projet <span class="cta-arrow-icon">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- CARTE 3 : FOODLES -->
+          <article class="project-glance-card" style="cursor: pointer;" onclick="openProjectDrawer('foodles')">
+            <div class="glance-card-main">
+              <div class="glance-media-col" onclick="openProjectDrawer('foodles')">
+                <img src="assets/PROJTS/FOODLES/frigo_foodles.png" alt="Aperçu du projet UX : FOODLES">
+              </div>
+              <div class="glance-content-col">
+                <div>
+                  <div class="glance-card-header">
+                    <h2 class="glance-project-title" onclick="openProjectDrawer('foodles')">FOODLES</h2>
+                    <div class="glance-project-subtitle">Recherche UX & optimisation mobile</div>
+                    <h3 class="glance-headline-quote">Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.</h3>
+                    <div class="glance-project-desc">
+                      Audit UX, tests d'utilisabilité et analyse Atomic UX Research pour identifier les frictions réelles du frigo connecté et optimiser le parcours mobile.
+                    </div>
+                    <div class="lbc-v2-tags-wrap" style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px;">
+                      <span class="lbc-v2-tag-pill">✦ Recherche UX</span>
+                      <span class="lbc-v2-tag-pill">✦ Lean UX</span>
+                      <span class="lbc-v2-tag-pill">✦ Atomic UX Research</span>
+                      <span class="lbc-v2-tag-pill">✦ Tests utilisateurs</span>
+                    </div>
+                  </div>
+                  <div class="glance-steps-section">
+                    <div class="glance-steps-title-wrap">
+                      <span class="glance-steps-title">LE PROJET EN UN COUP D'ŒIL</span>
+                      <span class="glance-steps-line"></span>
+                    </div>
+                    <div class="glance-steps-grid">
+                      <div class="glance-step-item"><div class="glance-step-num">01</div><div class="glance-step-icon-circle"><i data-lucide="message-square"></i></div><div class="glance-step-label">Remontées internes</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">02</div><div class="glance-step-icon-circle"><i data-lucide="help-circle"></i></div><div class="glance-step-label">Hypothèses UX</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">03</div><div class="glance-step-icon-circle"><i data-lucide="users"></i></div><div class="glance-step-label">Tests utilisateurs</div><div class="glance-step-arrow">→</div></div>
+                      <div class="glance-step-item"><div class="glance-step-num">04</div><div class="glance-step-icon-circle"><i data-lucide="sparkles"></i></div><div class="glance-step-label">Insights & recommandations</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glance-methodo-bar">
+              <span class="glance-methodo-label">Ma Démarche :</span>
+              <div class="glance-methodo-list">
+                <span class="glance-methodo-item">Partir Des Hypothèses</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item">Observer Les Usages</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item">Faire Émerger Les Faits</span> <span class="glance-methodo-sep">|</span>
+                <span class="glance-methodo-item">Transformer Les Insights En Décisions</span>
+              </div>
+            </div>
+            <div class="glance-card-footer">
+              <button class="glance-card-cta" onclick="event.stopPropagation(); openProjectDrawer('foodles'); return false;">
+                Entrer dans le projet <span class="cta-arrow-icon">→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <!-- FOOTER FULL-WIDTH INTEGRÉ -->
+      <footer class="site-footer" style="margin-top: 80px;">
+        <div class="footer-container">
+          
+          <!-- BLOC 1: MARQUE & TAGLINE -->
+          <div class="footer-col-brand">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
+              <span class="brand-km">KM</span>
+              <span class="brand-sub">UX - UI Designer</span>
+            </a>
+            <div class="footer-availability-badge">
+              <span class="status-dot"></span> Disponible pour une nouvelle mission
+            </div>
+          </div>
+
+          <!-- BLOC 2: SITEMAP SLIM INLINE -->
+          <div class="footer-col-links">
+            <ul class="footer-inline-links">
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
+            </ul>
+          </div>
+
+          <!-- BLOC 3: CONTACT & RÉSEAUX DISCRETS -->
+          <div class="footer-col-contact">
+            <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
+              <i data-lucide="mail" aria-hidden="true"></i> Me contacter par e-mail
+            </a>
+            <div class="footer-socials-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">LinkedIn</a>
+              <span class="social-dot-sep">•</span>
+              <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">Malt</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BANDEAU ULTRA LÉGER CITATION & COPYRIGHT -->
+        <div class="footer-bottom-bar">
+          <div class="footer-container footer-bottom-flex">
+            <div class="footer-copyright">
+              © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+            </div>
+            <div class="footer-quote-italic">
+              "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 3: MON APPROCHE
+       ========================================================================== -->
+    <section id="page-approach" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">L'Approche UX/UI de Bout en Bout</h2>
+          <p class="section-subtitle body-large">
+            De la recherche utilisateur initiale jusqu'à la mesure d'impact, chaque étape vise la clarté et l'engagement durable.
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          <div class="card-japandi">
+            <div class="step-card-number">01</div>
+            <h3>1. Empathie & Recherche</h3>
+            <p class="body-small">Interviews utilisateurs, audit d'ergonomie, personas et cartographie des parcours (User Journeys).</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">02</div>
+            <h3>2. Définition du Problème</h3>
+            <p class="body-small">Formulation précise du besoin humain sous-jacent et élimination des points de friction.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">03</div>
+            <h3>3. Idéation & Co-construction</h3>
+            <p class="body-small">Tri de cartes, arborescence de l'information et ateliers d'idéation avec les équipes métier.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">04</div>
+            <h3>4. Prototypage Rapide</h3>
+            <p class="body-small">Wireframes épurés sur papier puis prototypes interactifs haute-fidélité sur Figma avec tokens de design.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">05</div>
+            <h3>5. Tests Utilisateurs</h3>
+            <p class="body-small">Mise à l'épreuve des prototypes auprès d'utilisateurs réels pour observer l'ergonomie et valider l'utilisabilité.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">06</div>
+            <h3>6. Recette & Hand-off</h3>
+            <p class="body-small">Spécifications rigoureuses pour les développeurs, suivi de l'intégration et amélioration continue.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER FULL-WIDTH INTEGRÉ -->
+      <footer class="site-footer" style="margin-top: 80px;">
+        <div class="footer-container">
+          <div class="footer-col-brand">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
+              <span class="brand-km">KM</span>
+              <span class="brand-sub">UX - UI Designer</span>
+            </a>
+            <div class="footer-availability-badge">
+              <span class="status-dot"></span> Disponible pour une nouvelle mission
+            </div>
+          </div>
+          <div class="footer-col-links">
+            <ul class="footer-inline-links">
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col-contact">
+            <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
+              <i data-lucide="mail" aria-hidden="true"></i> Me contacter par e-mail
+            </a>
+            <div class="footer-socials-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">LinkedIn</a>
+              <span class="social-dot-sep">•</span>
+              <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">Malt</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <div class="footer-container footer-bottom-flex">
+            <div class="footer-copyright">
+              © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+            </div>
+            <div class="footer-quote-italic">
+              "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 4: À PROPOS
+       ========================================================================== -->
+    <section id="page-about" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Un parcours non linéaire (et c'est tant mieux !)</h2>
+          <p class="section-subtitle body-large">
+            Une expérience riche alliant création artistique, rigueur d'ingénieur et expertise en gestion de projets e-learning.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+          <div style="border-radius: var(--radius-md); overflow: hidden; height: 380px;">
+            <img src="assets/nouvelle%20home%202.jpg" alt="Karine Marquis à son atelier UX" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div>
+            <h3 style="font-size: 26px; margin-bottom: 12px;">Artiste, Ingénieure & UX - UI Designer</h3>
+            <p class="body-normal">
+              Fortement animée par la pédagogie et l'apprentissage sous toutes ses formes, je conçois des interfaces comme on tracerait un chemin : sans embûches inutiles, avec des repères visuels clairs et une intention bienveillante à chaque étape.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER FULL-WIDTH INTEGRÉ -->
+      <footer class="site-footer" style="margin-top: 80px;">
+        <div class="footer-container">
+          <div class="footer-col-brand">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
+              <span class="brand-km">KM</span>
+              <span class="brand-sub">UX - UI Designer</span>
+            </a>
+            <div class="footer-availability-badge">
+              <span class="status-dot"></span> Disponible pour une nouvelle mission
+            </div>
+          </div>
+          <div class="footer-col-links">
+            <ul class="footer-inline-links">
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col-contact">
+            <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
+              <i data-lucide="mail" aria-hidden="true"></i> Me contacter par e-mail
+            </a>
+            <div class="footer-socials-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">LinkedIn</a>
+              <span class="social-dot-sep">•</span>
+              <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">Malt</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <div class="footer-container footer-bottom-flex">
+            <div class="footer-copyright">
+              © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+            </div>
+            <div class="footer-quote-italic">
+              "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 5: OFFRE
+       ========================================================================== -->
+    <section id="page-offer" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Accompagnement UX/UI Sur-Mesure</h2>
+          <p class="section-subtitle body-large">
+            Du diagnostic ergonomique rapide à la refonte complète d'un produit E-Learning.
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          <div class="card-japandi">
+            <div style="font-size: 13px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">Pilier 1</div>
+            <h3>Audit UX & Diagnostic Ergonomique</h3>
+            <p class="body-small">Analyse poussée de ton produit ou LMS existant pour identifier pourquoi tes utilisateurs bloquent et où ils abandonnent.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div style="font-size: 13px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">Pilier 2</div>
+            <h3>Design System & Jetons Figma</h3>
+            <p class="body-small">Construction d'une bibliothèque UI propre, accessible WCAG AAA et réutilisable pour tes équipes dev.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div style="font-size: 13px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">Pilier 3</div>
+            <h3>Conception E-Learning Sur-Mesure</h3>
+            <p class="body-small">De l’idée initiale jusqu’au prototype haute-fidélité prêt pour la recette dev : recherche, wireframes, UI et tests.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER FULL-WIDTH INTEGRÉ -->
+      <footer class="site-footer" style="margin-top: 80px;">
+        <div class="footer-container">
+          <div class="footer-col-brand">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
+              <span class="brand-km">KM</span>
+              <span class="brand-sub">UX - UI Designer</span>
+            </a>
+            <div class="footer-availability-badge">
+              <span class="status-dot"></span> Disponible pour une nouvelle mission
+            </div>
+          </div>
+          <div class="footer-col-links">
+            <ul class="footer-inline-links">
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col-contact">
+            <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
+              <i data-lucide="mail" aria-hidden="true"></i> Me contacter par e-mail
+            </a>
+            <div class="footer-socials-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">LinkedIn</a>
+              <span class="social-dot-sep">•</span>
+              <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">Malt</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <div class="footer-container footer-bottom-flex">
+            <div class="footer-copyright">
+              © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+            </div>
+            <div class="footer-quote-italic">
+              "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 6: TARIFS (TJM 450 € & PACKS)
+       ========================================================================== -->
+    <section id="page-pricing" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Taux Journalier Moyen (TJM) : 450 € / Jour</h2>
+          <p class="section-subtitle body-large">Ou forfaits d'accompagnement sur-mesure au projet ci-dessous.</p>
+        </div>
+
+        <div class="pricing-grid" id="pricingPacksContainer">
+          <!-- Injecté par app.js -->
+        </div>
+      </div>
+
+      <!-- FOOTER FULL-WIDTH INTEGRÉ -->
+      <footer class="site-footer" style="margin-top: 80px;">
+        <div class="footer-container">
+          <div class="footer-col-brand">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
+              <span class="brand-km">KM</span>
+              <span class="brand-sub">UX - UI Designer</span>
+            </a>
+            <div class="footer-availability-badge">
+              <span class="status-dot"></span> Disponible pour une nouvelle mission
+            </div>
+          </div>
+          <div class="footer-col-links">
+            <ul class="footer-inline-links">
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col-contact">
+            <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
+              <i data-lucide="mail" aria-hidden="true"></i> Me contacter par e-mail
+            </a>
+            <div class="footer-socials-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">LinkedIn</a>
+              <span class="social-dot-sep">•</span>
+              <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">Malt</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <div class="footer-container footer-bottom-flex">
+            <div class="footer-copyright">
+              © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+            </div>
+            <div class="footer-quote-italic">
+              "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 7: VEILLE / À LIRE
+       ========================================================================== -->
+    <section id="page-blog" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">À lire — Articles, Veille & Retours d'Expérience</h2>
+          <p class="section-subtitle body-large">Réflexions sur l'ergonomie, la charge cognitive, la technique et l'apprentissage digital.</p>
+        </div>
+
+        <div class="story-timeline" id="blogArticlesContainer">
+          <!-- Injecté par app.js -->
+        </div>
+      </div>
+
+      <!-- FOOTER FULL-WIDTH INTEGRÉ -->
+      <footer class="site-footer" style="margin-top: 80px;">
+        <div class="footer-container">
+          <div class="footer-col-brand">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
+              <span class="brand-km">KM</span>
+              <span class="brand-sub">UX - UI Designer</span>
+            </a>
+            <div class="footer-availability-badge">
+              <span class="status-dot"></span> Disponible pour une nouvelle mission
+            </div>
+          </div>
+          <div class="footer-col-links">
+            <ul class="footer-inline-links">
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col-contact">
+            <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
+              <i data-lucide="mail" aria-hidden="true"></i> Me contacter par e-mail
+            </a>
+            <div class="footer-socials-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">LinkedIn</a>
+              <span class="social-dot-sep">•</span>
+              <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">Malt</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <div class="footer-container footer-bottom-flex">
+            <div class="footer-copyright">
+              © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+            </div>
+            <div class="footer-quote-italic">
+              "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 8: CONTACT
+       ========================================================================== -->
+    <section id="page-contact" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Discutons de ton projet</h2>
+          <p class="section-subtitle body-large">Une question, une refonte E-Learning ou un besoin en Design System ? Envoie-moi un message.</p>
+        </div>
+
+        <div class="card-japandi" style="max-width: 700px; margin: 0 auto;">
+          <form id="contactFormSpa" onsubmit="handleContactSubmit(event)">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px;">
+              <div>
+                <label class="body-small" style="font-weight: 600; display: block; margin-bottom: 6px; color: var(--color-heading);">Ton Nom / Entreprise *</label>
+                <input type="text" required placeholder="ex: Sarah Connor, TechCorp" style="width: 100%; padding: 12px 16px; background: var(--color-background); border: 1px solid rgba(217,210,200,0.8); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px;">
+              </div>
+
+              <div>
+                <label class="body-small" style="font-weight: 600; display: block; margin-bottom: 6px; color: var(--color-heading);">Adresse Email *</label>
+                <input type="email" required placeholder="sarah@entreprise.com" style="width: 100%; padding: 12px 16px; background: var(--color-background); border: 1px solid rgba(217,210,200,0.8); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px;">
+              </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label class="body-small" style="font-weight: 600; display: block; margin-bottom: 6px; color: var(--color-heading);">Détails de ton projet</label>
+              <textarea rows="4" placeholder="Décris en quelques mots tes objectifs et tes échéances..." style="width: 100%; padding: 12px 16px; background: var(--color-background); border: 1px solid rgba(217,210,200,0.8); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%;">
+              <i data-lucide="send"></i> Envoyer le message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- FOOTER FULL-WIDTH INTEGRÉ -->
+      <footer class="site-footer" style="margin-top: 80px;">
+        <div class="footer-container">
+          <div class="footer-col-brand">
+            <a href="#page-home" class="brand-logo-wrap"  aria-label="Retour à l'accueil Karine Marquis">
+              <span class="brand-km">KM</span>
+              <span class="brand-sub">UX - UI Designer</span>
+            </a>
+            <div class="footer-availability-badge">
+              <span class="status-dot"></span> Disponible pour une nouvelle mission
+            </div>
+          </div>
+          <div class="footer-col-links">
+            <ul class="footer-inline-links">
+              <li><a href="#page-home" >Accueil</a></li>
+              <li><a href="#page-approach" >Mon approche</a></li>
+              <li><a href="#page-offer" >Mon offre</a></li>
+              <li><a href="#page-projects" >Mes projets</a></li>
+              <li><a href="#page-about" >Qui suis-je ?</a></li>
+              <li><a href="#page-blog" >Journal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col-contact">
+            <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
+              <i data-lucide="mail" aria-hidden="true"></i> Me contacter par e-mail
+            </a>
+            <div class="footer-socials-wrap">
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">LinkedIn</a>
+              <span class="social-dot-sep">•</span>
+              <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">Malt</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-bar">
+          <div class="footer-container footer-bottom-flex">
+            <div class="footer-copyright">
+              © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+            </div>
+            <div class="footer-quote-italic">
+              "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 404 : PATHWAY ERROR (PAGE NON TROUVÉE)
+       ========================================================================== -->
+    <section id="page-404" class="spa-page-section" style="width: 100%; min-height: calc(100vh - 100px); display: flex; align-items: center; justify-content: center; background-color: var(--color-surface) !important;">
+      <div class="content-wrap" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px 0; background-color: var(--color-surface) !important;">
+        <div class="error-404-layout" style="position: relative; width: 100%; max-width: 860px; margin: 0 auto; display: flex; justify-content: center; align-items: center;">
+          <img src="assets/404-illustration.png" alt="Cette page a clairement pris une mauvaise direction - 404 Karine Marquis" class="error-404-hero-img">
+          
+          <!-- Interactive overlay click zones over the image buttons -->
+          <a href="#page-home" style="position: absolute; top: 55%; left: 50.5%; width: 19%; height: 16%; border-radius: 12px; cursor: pointer;" aria-label="Retour à l'accueil"></a>
+          <a href="#page-projects" style="position: absolute; top: 55%; left: 70%; width: 18%; height: 16%; border-radius: 12px; cursor: pointer;" aria-label="Voir les projets"></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="data.js?v=20260825_final"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
