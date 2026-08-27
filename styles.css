@@ -912,6 +912,45 @@ strong, b {
   text-align: center !important;
 }
 
+/* ANIMATION FLÈCHE SCROLL CUE JAPANDI */
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.scroll-bounce-arrow {
+  animation: scrollBounce 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.hero-v2-scroll-cue {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 36px;
+  color: #3E3934;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-v2-scroll-cue:hover {
+  opacity: 1 !important;
+}
+
+.hero-v2-scroll-cue:hover span {
+  color: #C47D3B !important;
+}
+
 .spa-page-section {
   display: none;
   animation: fadeIn 250ms ease forwards;
