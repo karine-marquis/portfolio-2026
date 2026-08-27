@@ -815,7 +815,7 @@ strong, b {
 .footer-col-contact {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 24px;
 }
 
 .footer-contact-link {
@@ -839,7 +839,7 @@ strong, b {
 .footer-socials-wrap {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
 }
 
 .social-dot-sep {
