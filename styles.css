@@ -347,8 +347,8 @@ strong, b {
   max-height: 480px;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 48px rgba(40, 30, 25, 0.14), 0 6px 18px rgba(199, 109, 75, 0.12);
-  border: 1px solid rgba(199, 109, 75, 0.22);
+  box-shadow: 0 24px 60px rgba(35, 20, 15, 0.28), 0 8px 24px rgba(199, 109, 75, 0.32);
+  border: 1.5px solid rgba(199, 109, 75, 0.35);
   background: #FAF5F0;
   animation: heroFloat 6s ease-in-out infinite;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
@@ -356,8 +356,8 @@ strong, b {
 
 .home-hero-media-right:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 28px 60px rgba(40, 30, 25, 0.18), 0 8px 24px rgba(199, 109, 75, 0.22);
-  border-color: rgba(199, 109, 75, 0.4);
+  box-shadow: 0 32px 76px rgba(35, 20, 15, 0.38), 0 12px 32px rgba(199, 109, 75, 0.45);
+  border-color: rgba(199, 109, 75, 0.6);
 }
 
 .home-hero-media-right img {
