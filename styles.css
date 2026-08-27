@@ -307,9 +307,9 @@ strong, b {
 /* HERO SCÈNE */
 .home-hero-full-scene {
   position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
-  background: #E3D4C4 url("assets/nouvelle_home_2.jpg") no-repeat right top / cover;
+  background: #E3D4C4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -318,18 +318,47 @@ strong, b {
 
 .home-hero-align-container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 100px 48px 40px 48px;
+  padding: 80px 48px 40px 48px;
   flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  gap: 48px;
+  align-items: center;
+  width: 100%;
 }
 
 .home-hero-content-left {
   position: relative;
   z-index: 10;
-  max-width: 520px;
-  padding-top: 24px;
+  max-width: 620px;
+  padding-top: 0;
   margin-top: 0;
+}
+
+.home-hero-media-right {
+  width: 100%;
+  max-height: 480px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(40, 30, 25, 0.12);
+  border: 1px solid rgba(199, 109, 75, 0.18);
+  background: #FAF5F0;
+}
+
+.home-hero-media-right img {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .hero-home-title {
