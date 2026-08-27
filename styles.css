@@ -742,13 +742,13 @@ strong, b {
 }
 
 .footer-container {
-  max-width: 1180px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
@@ -815,7 +815,8 @@ strong, b {
 .footer-col-contact {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 14px;
+  white-space: nowrap;
 }
 
 .footer-contact-link {
