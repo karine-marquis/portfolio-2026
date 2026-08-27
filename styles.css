@@ -817,6 +817,7 @@ strong, b {
   align-items: center;
   gap: 20px;
   white-space: nowrap;
+  margin-right: 28px;
 }
 
 .footer-contact-link {
