@@ -771,22 +771,22 @@ strong, b {
 .footer-availability-badge {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   font-size: 11.5px !important;
-  color: var(--color-primary);
+  color: #C47D3B !important;
   font-weight: 600 !important;
-  background: rgba(166, 58, 43, 0.1);
-  padding: 3px 12px;
+  background: transparent !important;
+  padding: 3px 10px;
   border-radius: 12px;
-  border: 1px solid rgba(166, 58, 43, 0.25);
+  border: 1px solid rgba(196, 125, 59, 0.35) !important;
   box-shadow: none;
 }
 
 .status-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background-color: var(--color-primary);
+  background-color: #C47D3B !important;
 }
 
 .footer-inline-links {
