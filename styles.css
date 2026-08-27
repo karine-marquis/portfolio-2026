@@ -173,28 +173,28 @@ strong, b {
 .nav-link {
   text-decoration: none;
   color: var(--color-body) !important;
-  font-size: 13.5px !important;
-  font-weight: 500 !important;
+  font-size: 12.5px !important;
+  font-weight: 400 !important;
   position: relative;
   padding: 6px 0;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   transition: color 0.3s ease, font-weight 0.2s ease;
 }
 
 .nav-link:hover {
   color: #C47D3B !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 /* INDICATEUR ACCUEIL / PAGE ACTIVE */
 .nav-link.active {
   color: #C47D3B !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 .nav-link.active:hover {
   color: #B36F30 !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 .nav-link.active::after {
@@ -252,12 +252,12 @@ strong, b {
 .btn-nav-outline {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   background-color: transparent !important;
   color: #C47D3B !important;
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
   letter-spacing: 0.02em;
   border-radius: 0 !important;
   border: none !important;
