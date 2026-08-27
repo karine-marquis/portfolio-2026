@@ -1371,46 +1371,50 @@
   <main class="main-body-wrap">
 
     <!-- ==========================================================================
-       PAGE 1: ACCUEIL — FOND FULL COVER UNIFIÉ
+       PAGE 1: ACCUEIL — CONCEPT ÉDITORIAL JAPANDI UNIFIÉ (VERSION 2)
        ========================================================================== -->
     <section id="page-home" class="spa-page-section active">
-      <div class="home-hero-full-scene">
+      <div class="home-hero-v2-scene" style="background: #E0CFC3; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding-top: 20px;">
         
-        <div class="home-hero-align-container">
-          <div class="home-hero-grid">
-            <div class="home-hero-content-left">
-              <h1 class="hero-home-title">
-                Ce n’est pas l’utilisateur qu’il faut changer.<br>
-                <span style="color: #8C3B1E !important; font-style: italic;">C’est le chemin qu’on lui donne à suivre.</span>
-              </h1>
-
-              <p class="hero-home-subtitle" style="font-size: 16px; font-weight: 500; line-height: 1.45; color: #3B2C25 !important; opacity: 1; margin-bottom: 12px;">
-                Des parcours plus clairs.<br>
-                Des expériences qui aident à <strong style="color: #8C3B1E !important; font-weight: 700;">comprendre, apprendre et passer à l’action.</strong>
-              </p>
-
-              <p class="hero-home-desc" style="font-size: 14.5px; opacity: 0.88; line-height: 1.5; margin-bottom: 24px;">
-                J’aide à clarifier les parcours pour que l’expérience demande moins d’effort — et un peu moins de patience héroïque.
-              </p>
-
-              <div class="hero-home-ctas">
-                <a href="#page-projects" class="btn-primary hero-btn-main">
-                  Découvrir mes projets
-                </a>
-                <a href="#page-approach" class="btn-secondary hero-btn-sec">
-                  Voir mon approche
-                </a>
-              </div>
-            </div>
-
-            <div class="home-hero-media-right">
-              <img src="assets/nouvelle_home_2.jpg" alt="Illustration Karine Marquis - UX & UI Designer">
-            </div>
+        <div class="home-hero-v2-container" style="max-width: 1180px; margin: 0 auto; padding: 40px 48px 60px 48px; width: 100%; flex-grow: 1;">
+          
+          <!-- GRAND MOT PORTFOLIO ÉDITORIAL -->
+          <div class="hero-v2-portfolio-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 132px; font-weight: 400; color: #3E3934; letter-spacing: 0.04em; line-height: 0.95; margin-bottom: 52px; text-transform: uppercase;">
+            PORTFOLIO
           </div>
+
+          <!-- TITRE H1 SUR DEUX LIGNES DESKTOP -->
+          <h1 class="hero-v2-h1" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; margin-bottom: 44px; line-height: 1.28; text-align: left;">
+            <span style="font-size: 40px; color: #3E3934; display: block; margin-bottom: 4px; letter-spacing: -0.01em; white-space: nowrap;">Ce n’est pas l’utilisateur qu’il faut corriger.</span>
+            <span style="font-size: 40px; color: #C09E85; font-style: italic; display: block; letter-spacing: -0.01em; white-space: nowrap;">C’est le chemin qu’on lui donne à suivre.</span>
+          </h1>
+
+          <!-- PREMIER BLOC DE TEXTE (2 PHRASES DENSES ET COMPACTES) -->
+          <div class="hero-v2-paragraph-1" style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #3E3934; line-height: 1.42; margin-bottom: 32px; max-width: 900px;">
+            <span style="display: block; margin-bottom: 2px;">Des parcours plus clairs.</span>
+            <span style="display: block;">Des expériences qui aident à <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: #C09E85; font-size: 17.5px;">comprendre, apprendre et passer à l’action.</span></span>
+          </div>
+
+          <!-- DEUXIÈME PARAGRAPHE (AVEC ESPACE VERTICAL EXPANDU ET SUR UNE SEULE LIGNE) -->
+          <p class="hero-v2-paragraph-2" style="font-family: 'Montserrat', sans-serif; font-size: 15.5px; color: #3E3934; line-height: 1.5; margin-bottom: 56px; max-width: 1040px; white-space: nowrap;">
+            J’aide à clarifier les parcours pour que l’expérience demande moins d’effort — et un peu moins de patience héroïque.
+          </p>
+
+          <!-- BLOC DES DEUX CTAS EN LIEN TEXTE SOULIGNÉ -->
+          <div class="hero-v2-ctas-row" style="display: flex; align-items: center; gap: 52px;">
+            <a href="#page-contact" onclick="navigateTo('contact')" class="hero-v2-cta-primary" style="font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 600; color: #C09E85; text-decoration: none; border-bottom: 1.5px solid #C09E85; padding-bottom: 4px; display: inline-flex; align-items: center; gap: 8px; transition: opacity 0.25s ease;">
+              On en parle ? →
+            </a>
+
+            <a href="#page-projects" onclick="navigateTo('projects')" class="hero-v2-cta-secondary" style="font-family: 'Montserrat', sans-serif; font-size: 16.5px; font-weight: 400; color: #3E3934; text-decoration: none; border-bottom: 1.5px solid #3E3934; padding-bottom: 4px; display: inline-flex; align-items: center; gap: 8px; transition: opacity 0.25s ease;">
+              Voir mes projets →
+            </a>
+          </div>
+
         </div>
 
         <!-- FOOTER FULL-WIDTH INTEGRÉ DANS LA SCÈNE FULL COVER -->
-        <footer class="site-footer">
+        <footer class="site-footer" style="background: transparent !important;">
           <div class="footer-container">
             
             <!-- BLOC 1: MARQUE & TAGLINE -->
