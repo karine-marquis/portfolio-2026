@@ -252,16 +252,16 @@ strong, b {
 .btn-nav-outline {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background-color: transparent !important;
   color: #C47D3B !important;
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 16.5px !important;
+  font-size: 15px !important;
   font-weight: 600 !important;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   border-radius: 0 !important;
   border: none !important;
-  border-bottom: 2px solid #C47D3B !important;
+  border-bottom: 1.5px solid #C47D3B !important;
   padding: 2px 0 4px 0 !important;
   cursor: pointer;
   text-decoration: none;
@@ -273,7 +273,7 @@ strong, b {
   background-color: transparent !important;
   color: #B36F30 !important;
   border-bottom-color: #B36F30 !important;
-  transform: translateX(4px);
+  transform: translateX(3px);
   box-shadow: none !important;
 }
 
