@@ -754,8 +754,9 @@ strong, b {
 
 .footer-col-brand {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .footer-col-brand .brand-km {
