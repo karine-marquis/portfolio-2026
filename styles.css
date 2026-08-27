@@ -878,10 +878,24 @@ strong, b {
 
 .footer-bottom-flex {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-quote-italic {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-style: italic;
+  font-size: 13.5px !important;
+  color: #C47D3B !important;
+  opacity: 1 !important;
+  font-weight: 400 !important;
+  text-align: center !important;
+  width: 100%;
+  margin-bottom: 2px;
 }
 
 .footer-copyright {
@@ -891,15 +905,7 @@ strong, b {
   opacity: 0.75 !important;
   font-weight: 400 !important;
   letter-spacing: 0.02em;
-}
-
-.footer-quote-italic {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-style: italic;
-  font-size: 11.5px !important;
-  color: #3E3934 !important;
-  opacity: 0.8 !important;
-  font-weight: 400 !important;
+  text-align: center !important;
 }
 
 .spa-page-section {
