@@ -9,6 +9,7 @@ const CASE_STUDIES_PRESENTATION = [
     title: "LES CORDONS BLEUS",
     category: "Conception UX & digital learning",
     headline: "Le vrai défi commence quand le cours s’arrête.",
+    subheadline: "« Comment aider les apprenants à continuer seuls, sans perdre l’élan ? »",
     description: "",
     image: "assets/PROJTS/CORDONS_BLEUS/illustration_coup_d_oeil.png",
     glanceSteps: [
