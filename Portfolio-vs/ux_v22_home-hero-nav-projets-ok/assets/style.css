@@ -2303,14 +2303,14 @@ backdrop-filter: none;
 }
 
 .home-v21 .btn-primary {
-   background-color: #a9736b;
+   background-color: #7A4217;
   color: #fffaf1;
   border: 1px solid rgba(139, 92, 82, 0.55);
   box-shadow: 0 10px 24px rgba(76, 52, 35, 0.30);
 }
 
 .home-v21 .btn-primary:hover {
-  background-color: #a9736b;
+  background-color: #7A4217;
   border-color: rgba(127, 83, 74, 0.72);
   color: #fffaf1;
   transform: translateY(-1px);
@@ -2394,7 +2394,7 @@ backdrop-filter: none;
 }
 
 .home-v21 .nav-cta:hover {
-  background-color: #a9736b;
+  background-color: #7A4217;
   border-color: rgba(127, 83, 74, 0.72);
   color: #fffaf1;
   transform: translateY(-1px);

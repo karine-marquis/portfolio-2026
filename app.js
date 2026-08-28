@@ -188,7 +188,7 @@ function renderCaseStudiesList() {
               <div class="glance-project-subtitle">${cs.category}</div>
               
               <h3 class="glance-headline-quote">${cs.headline}</h3>
-              ${cs.subheadline ? `<div class="glance-project-subquote" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 13px; color: #C09E85; opacity: 0.9; margin-top: -6px; margin-bottom: 28px;">${cs.subheadline}</div>` : ''}
+              ${cs.subheadline ? `<div class="glance-project-subquote" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 13px; color: #9B5620; opacity: 0.9; margin-top: -6px; margin-bottom: 28px;">${cs.subheadline}</div>` : ''}
               ${cs.description ? `<p class="glance-project-desc">${cs.description}</p>` : ''}
             </div>
 

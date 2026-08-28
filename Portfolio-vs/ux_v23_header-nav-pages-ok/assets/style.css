@@ -2296,14 +2296,14 @@ backdrop-filter: none;
 
 .home-v21 .btn-primary {
   padding: 0 22px !important;
-   background-color: #a9736b;
+   background-color: #7A4217;
   color: #fffaf1;
   border: 1px solid rgba(139, 92, 82, 0.55);
   box-shadow: 0 10px 24px rgba(76, 52, 35, 0.30);
 }
 
 .home-v21 .btn-primary:hover {
-  background-color: #a9736b;
+  background-color: #7A4217;
   border-color: rgba(127, 83, 74, 0.72);
   color: #fffaf1;
   transform: translateY(-1px);
@@ -2388,7 +2388,7 @@ backdrop-filter: none;
 }
 
 .home-v21 .nav-cta:hover {
-  background-color: #a9736b;
+  background-color: #7A4217;
   border-color: rgba(127, 83, 74, 0.72);
   color: #fffaf1;
   transform: translateY(-1px);
@@ -2536,7 +2536,7 @@ button:focus-visible,
 
 /* HERO — couleur accent titre */
 .home-v21 .home-hero .hero-title-accent {
-  color: #a9736b !important;
+  color: #7A4217 !important;
 }
 
 /* BOUTONS HOME — harmonisation rose / terracotta */
@@ -2602,7 +2602,7 @@ button:focus-visible,
   width: 1px;
   height: 1px;
   border-radius: 999px;
-  background: #a9736b;
+  background: #7A4217;
   transform: translateX(-50%);
 }
 
@@ -2630,7 +2630,7 @@ button:focus-visible,
    min-width: 6px;
   min-height: 6px;
   border-radius: 999px;
-  background: #a9736b;
+  background: #7A4217;
   transform: translate(-50%);
   margin-bottom: -1px;
 }
@@ -2663,7 +2663,7 @@ button:focus-visible,
   min-width: 6px;
   min-height: 6px;
   border-radius: 50%;
-  background: #a9736b;
+  background: #7A4217;
 }
 
 /* NAVBAR — underline propre aligné au centre du point */
@@ -2705,7 +2705,7 @@ button:focus-visible,
   min-width: 6px !important;
   min-height: 6px !important;
   border-radius: 50% !important;
-  background: #a9736b !important;
+  background: #7A4217 !important;
   transform: translateX(-50%) !important;
   z-index: 2;
 }
@@ -2793,7 +2793,7 @@ nav.nav {
   min-width: 6px !important;
   min-height: 6px !important;
   border-radius: 50% !important;
-  background: #a9736b !important;
+  background: #7A4217 !important;
   transform: translateX(-50%) !important;
 }
 
@@ -2851,7 +2851,7 @@ nav.nav {
 
 .site-header .nav-link.active {
   font-weight: 600;
-  color: #a9736b;
+  color: #7A4217;
 }
 
 /* HEADER — pages internes fond rose très atténué */
@@ -2924,7 +2924,7 @@ body.page-inner .site-header .nav-cta {
 }
 
 body.page-inner .site-header .nav-cta:hover {
-  background: #a9736b !important;
+  background: #7A4217 !important;
   color: #fffaf6 !important;
   border-color: rgba(169, 115, 107, 0.7) !important;
   transform: translateY(-2px);
@@ -2936,7 +2936,7 @@ body.page-inner .site-header .nav-cta:hover {
 /* BOUTONS — hover plus visible et plus propre */
 .nav-cta:hover,
 .btn-primary:hover {
-  background: #a9736b !important;
+  background: #7A4217 !important;
   color: #fffaf6 !important;
   border-color: rgba(169, 115, 107, 0.85) !important;
   transform: translateY(-4px) scale(1.015) !important;
