@@ -34,9 +34,10 @@
   --color-ochre-soft: #DCB482;   /* Ocre doux (Accent tertiaire très ponctuel) */
 
   /* ACCENTS VERT SAUGE (RESPIRATION & ACCENTS SECONDAIRES) */
-  --color-sauge-soft: #ACB8AA;  /* Vert sauge doux (Tags, icônes, repères visuels, méthodologie) */
-  --color-sauge-dark: #606C5A;  /* Vert sauge foncé (Texte court ponctuel, icône, état actif) */
-  --color-sauge-muted: #B0B9A8; /* Sauge grisé (Fond de tag, petit encart) */
+  --color-sauge-soft: #C7D1BF;  /* Vert sauge principal (Tags, pills, repères visuels) */
+  --color-sauge-dark: #55624F;  /* Vert sauge foncé (Texte sur fond sauge, état actif) */
+  --color-sauge-border: #AEBBA6;/* Bordure vert sauge */
+  --color-sauge-muted: #C7D1BF; /* Sauge doux */
   --color-taupe-warm: #8F837A;  /* Taupe chaud (Éléments très secondaires, petits pictos, traits) */
 
   --font-h1: 'Playfair Display', Georgia, serif;
@@ -1487,7 +1488,7 @@ strong, b {
 }
 
 .glance-methodo-item i {
-  color: #606C5A !important;
+  color: #55624F !important;
 }
 
 .glance-methodo-sep {
