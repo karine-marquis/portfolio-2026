@@ -2846,3 +2846,99 @@ html {
   width: 100%;
 }
 
+/* ==========================================================================
+   GRAMMAIRE D'ANIMATION GLOBALE JAPANDI HAUT DE GAMME & PREMIUM (UX/UI SPEC)
+   ========================================================================== */
+
+/* 1. TYPOLOGIE & TEMPOS ET COURBES D'ACCÉLÉRATION */
+:root {
+  --ease-japandi: cubic-bezier(0.16, 1, 0.3, 1); /* Courbe douce et raffinée */
+  --duration-hover: 0.25s;  /* Micro-interactions (250 ms) */
+  --duration-state: 0.35s;  /* Changements d'état (350 ms) */
+  --duration-appear: 0.5s;   /* Apparitions et modales (500 ms) */
+}
+
+/* 2. DÉFILEMENT FLUIDE & ANCRES NATURELLES */
+html {
+  scroll-behavior: smooth !important;
+}
+
+[id^="lbc-sec-"],
+[id^="bambinets-"],
+[id^="foodles-"] {
+  scroll-margin-top: 80px;
+}
+
+/* 3. NAVIGATION, LIENS ET TRANSITIONS DE COULEUR PROGRESSIVES */
+a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-item {
+  transition: color var(--duration-hover) var(--ease-japandi), 
+              background-color var(--duration-hover) var(--ease-japandi), 
+              border-color var(--duration-hover) var(--ease-japandi), 
+              opacity var(--duration-hover) var(--ease-japandi),
+              transform var(--duration-hover) var(--ease-japandi),
+              box-shadow var(--duration-state) var(--ease-japandi) !important;
+}
+
+/* 4. BOUTONS & CTAs (MICRO-DÉPLACEMENT VERTICAL -1.5PX & FLÈCHE +3PX) */
+.btn-primary, .btn-secondary, .glance-card-cta, .cs-btn-canva-main, .footer-contact-link {
+  transition: transform var(--duration-state) var(--ease-japandi),
+              background-color var(--duration-hover) var(--ease-japandi),
+              border-color var(--duration-hover) var(--ease-japandi),
+              box-shadow var(--duration-state) var(--ease-japandi),
+              color var(--duration-hover) var(--ease-japandi) !important;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .glance-card-cta:hover, .cs-btn-canva-main:hover {
+  transform: translateY(-1.5px) !important;
+}
+
+.cta-arrow-icon {
+  display: inline-block;
+  transition: transform var(--duration-hover) var(--ease-japandi) !important;
+}
+
+.glance-card-cta:hover .cta-arrow-icon,
+.btn-primary:hover .cta-arrow-icon {
+  transform: translateX(3px) !important;
+}
+
+/* 5. CARTES ET ENCARTS (MICRO-ÉLÉVATION PROGRESSIVE -3PX SANS DEPLACEMENT BRUSQUE) */
+.glance-card-item, .card-japandi, .lbc-v2-card, .lbc-v2-subcard {
+  transition: transform var(--duration-state) var(--ease-japandi),
+              box-shadow var(--duration-state) var(--ease-japandi),
+              border-color var(--duration-state) var(--ease-japandi) !important;
+}
+
+.glance-card-item:hover, .card-japandi:hover {
+  transform: translateY(-3px) !important;
+}
+
+/* 6. MODALES (FONDU DOUX & SLIDE-UP SUBTIL 12PX) */
+.project-drawer-overlay, .image-lightbox-overlay {
+  transition: opacity var(--duration-appear) var(--ease-japandi),
+              visibility var(--duration-appear) var(--ease-japandi) !important;
+}
+
+.drawer-content {
+  transition: transform var(--duration-appear) var(--ease-japandi),
+              opacity var(--duration-appear) var(--ease-japandi) !important;
+}
+
+.drawer-content, .lbc-v2-main-content, .bambinets-main-content, .foodles-main-content {
+  scroll-behavior: smooth !important;
+}
+
+/* 7. RESPECT STRICT DE PREFERS-REDUCED-MOTION (ACCESSIBILITÉ WCAG AAA) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}
+
