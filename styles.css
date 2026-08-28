@@ -1217,31 +1217,32 @@ strong, b {
 
 .glance-card-main {
   display: grid;
-  grid-template-columns: 29% 71%;
-  min-height: 250px;
+  grid-template-columns: 33% 67%;
+  align-items: stretch;
 }
 
 .glance-media-col {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 230px;
-  max-height: 300px;
+  min-height: 280px;
   overflow: hidden;
-  background: #EEEAE5 !important;
+  background: transparent !important;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  padding: 12px;
+  padding: 16px 0 12px 18px;
 }
 
 .glance-media-col img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   display: block;
-  border-radius: 14px;
+  border-radius: 16px;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .project-glance-card:hover .glance-media-col img {
