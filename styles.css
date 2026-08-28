@@ -106,7 +106,7 @@ p, body, .glance-project-desc, .glance-step-label, .body-large, .body-normal, .b
   color: #D4CCC9 !important;
 }
 
-.glance-methodo-bar, .btn-primary {
+.btn-primary {
   background-color: #9B5620 !important;
 }
 
@@ -1398,11 +1398,12 @@ strong, b {
 
 /* BANDEAU MÉTHODOLOGIE SIENNE BRÛLÉE DÉCOLLÉ & ÉLÉGANT */
 .glance-methodo-bar {
-  background: var(--color-accent);
-  color: #FFFFFF !important;
-  padding: 14px 28px;
+  background: #F5F4F0 !important;
+  color: #3E3934 !important;
+  padding: 12px 22px;
   margin: 16px 28px 24px 28px;
   border-radius: 12px;
+  border: 1px solid #D4CCC9 !important;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -1411,10 +1412,11 @@ strong, b {
 
 .glance-methodo-label {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 13.5px !important;
+  font-size: 12.5px !important;
   font-weight: 600 !important;
-  color: #FFFFFF !important;
+  color: #9B5620 !important;
   white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 .glance-methodo-list {
@@ -1431,12 +1433,17 @@ strong, b {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12.5px !important;
   font-weight: 400 !important;
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: #3E3934 !important;
   white-space: nowrap;
 }
 
+.glance-methodo-item i {
+  color: #606C5A !important;
+}
+
 .glance-methodo-sep {
-  opacity: 0.4;
+  color: #D4CCC9 !important;
+  opacity: 0.8;
   font-size: 11px;
 }
 
