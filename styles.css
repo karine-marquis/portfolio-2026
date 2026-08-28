@@ -1401,7 +1401,7 @@ strong, b {
   background: #E2E7E0 !important;
   color: #3E3934 !important;
   padding: 12px 22px;
-  margin: 16px 28px 24px 28px;
+  margin: 16px 28px 12px 28px;
   border-radius: 12px;
   border: 1px solid #C2CBC0 !important;
   display: flex;
@@ -1451,8 +1451,8 @@ strong, b {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 8px 28px 24px 28px;
-  margin-top: 16px;
+  padding: 0px 28px 18px 28px;
+  margin-top: 0px;
 }
 
 .glance-card-cta {
