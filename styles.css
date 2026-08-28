@@ -2051,8 +2051,8 @@ strong, b {
 
 .lbc-v2-hero-row {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 28px;
+  grid-template-columns: 1fr 360px;
+  gap: 22px;
   margin-bottom: 28px;
   align-items: center !important;
 }
@@ -2118,13 +2118,13 @@ strong, b {
 
 .lbc-v2-hero-img-wrap {
   width: 100%;
-  height: 270px !important;
-  border-radius: 16px;
+  height: 290px !important;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 24px rgba(62, 57, 52, 0.12) !important;
+  box-shadow: 0 14px 32px rgba(62, 57, 52, 0.10), 0 4px 12px rgba(62, 57, 52, 0.05) !important;
   background: transparent !important;
   display: block !important;
-  border: 1px solid #D4CCC9 !important;
+  border: none !important;
 }
 
 .lbc-v2-hero-img-wrap img {
@@ -2134,7 +2134,7 @@ strong, b {
   object-position: center top !important;
   display: block;
   transform: none !important;
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
 .lbc-v2-cards-grid {
