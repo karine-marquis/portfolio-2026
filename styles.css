@@ -132,7 +132,7 @@ strong, b {
   width: 100%;
   height: 75px;
   z-index: 1000;
-  background: linear-gradient(to bottom, rgba(249, 240, 232, 0.9) 0%, rgba(249, 240, 232, 0.55) 75%, transparent 100%) !important;
+  background: linear-gradient(to bottom, rgba(245, 244, 240, 0.92) 0%, rgba(245, 244, 240, 0.6) 75%, transparent 100%) !important;
   backdrop-filter: blur(18px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 75%, rgba(0, 0, 0, 0) 100%);
@@ -747,7 +747,7 @@ strong, b {
   position: relative;
   width: 100%;
   margin-top: 0px;
-  background: linear-gradient(to top, rgba(222, 204, 186, 0.98) 0%, rgba(222, 204, 186, 0.75) 60%, rgba(222, 204, 186, 0) 100%) !important;
+  background: #F5F4F0 !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   color: #3E3934 !important;
