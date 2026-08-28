@@ -16,11 +16,11 @@
   --color-subtle: #5C473C;
   --color-heading: #2A201B;
 
-  --color-accent: #C76D4B;       /* Accent Sienne/Terracotta Éclatant */
+  --color-accent: #9B5620;       /* Accent Sienne/Terracotta Éclatant */
   --color-accent-hover: #B45C3A;
   --color-accent-soft: #A9736B;  /* Accent Doux Vieux Rose/Terracotta Poudré */
 
-  --color-primary: #C76D4B;       /* Accent Principal */
+  --color-primary: #9B5620;       /* Accent Principal */
   --color-primary-hover: #B45C3A;
   --color-primary-soft: #A9736B;
 
@@ -948,7 +948,7 @@ strong, b {
 }
 
 .hero-v2-scroll-cue:hover span {
-  color: #C47D3B !important;
+  color: #9B5620 !important;
 }
 
 .spa-page-section {
@@ -1252,7 +1252,7 @@ strong, b {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 13px !important;
   font-weight: 500 !important;
-  color: #C76D4B !important;
+  color: #9B5620 !important;
   display: inline-block;
   margin-bottom: 12px !important;
   position: relative;
@@ -1266,7 +1266,7 @@ strong, b {
   left: 0;
   width: 48px;
   height: 1.5px;
-  background-color: #C76D4B;
+  background-color: #9B5620;
   opacity: 0.7;
 }
 
@@ -1307,7 +1307,7 @@ strong, b {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 11.5px !important;
   font-weight: 600 !important;
-  color: #C76D4B !important;
+  color: #9B5620 !important;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -1338,7 +1338,7 @@ strong, b {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12px !important;
   font-weight: 600 !important;
-  color: #C76D4B !important;
+  color: #9B5620 !important;
   margin-bottom: 6px;
 }
 
@@ -1359,7 +1359,7 @@ strong, b {
 
 .glance-step-item:hover .glance-step-icon-circle {
   background: rgba(199, 109, 75, 0.12);
-  border-color: #C76D4B;
+  border-color: #9B5620;
   transform: translateY(-2px);
 }
 
@@ -1458,14 +1458,14 @@ strong, b {
 }
 
 .glance-card-cta:hover {
-  color: #C76D4B !important;
-  border-bottom-color: #C76D4B !important;
+  color: #9B5620 !important;
+  border-bottom-color: #9B5620 !important;
   filter: drop-shadow(0 3px 6px rgba(199, 109, 75, 0.2));
 }
 
 .glance-card-cta:hover .cta-arrow-icon {
   transform: translateX(5px);
-  color: #C76D4B !important;
+  color: #9B5620 !important;
 }
 
 /* BOUTON LIEN "← RETOUR À L'ACCUEIL" EN HAUT DES PAGES */
@@ -1489,12 +1489,12 @@ strong, b {
 }
 
 .back-home-link:hover {
-  color: #C76D4B !important;
+  color: #9B5620 !important;
 }
 
 .back-home-link:hover .back-arrow {
   transform: translateX(-4px);
-  color: #C76D4B !important;
+  color: #9B5620 !important;
 }
 
 /* STYLES DE LA MODALE PROJET (CASE STUDY DRAWER) */
@@ -1521,19 +1521,19 @@ strong, b {
 }
 
 .back-projects-btn:hover {
-  color: #C76D4B !important;
+  color: #9B5620 !important;
 }
 
 .back-projects-btn:hover .back-arrow {
   transform: translateX(-4px);
-  color: #C76D4B !important;
+  color: #9B5620 !important;
 }
 
 .modal-project-category {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 13px !important;
   font-weight: 600 !important;
-  color: #C76D4B !important;
+  color: #9B5620 !important;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 6px;
@@ -1614,7 +1614,7 @@ strong, b {
   background: rgba(255, 253, 252, 0.8);
   padding: 12px 18px;
   border-radius: 12px;
-  border-left: 3px solid #C76D4B;
+  border-left: 3px solid #9B5620;
 }
 
 /* CARTE DE TRANSPARENCE IA */
@@ -1632,7 +1632,7 @@ strong, b {
   gap: 8px;
   font-family: 'Montserrat', sans-serif !important;
   font-size: 14px !important;
-  color: #C76D4B !important;
+  color: #9B5620 !important;
   margin-bottom: 8px;
 }
 
@@ -1674,7 +1674,7 @@ strong, b {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #C76D4B;
+  color: #9B5620;
   margin-bottom: 12px;
 }
 
@@ -1701,7 +1701,7 @@ strong, b {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12.5px !important;
   font-weight: 600 !important;
-  color: #C76D4B !important;
+  color: #9B5620 !important;
   text-decoration: none;
   background: #F9F0E8;
   padding: 6px 12px;
@@ -1712,9 +1712,9 @@ strong, b {
 }
 
 .pdf-link-btn:hover {
-  background: #C76D4B !important;
+  background: #9B5620 !important;
   color: #FFFFFF !important;
-  border-color: #C76D4B !important;
+  border-color: #9B5620 !important;
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(199, 109, 75, 0.25);
 }
@@ -1897,7 +1897,7 @@ strong, b {
 .bambinets-menu-item.active .menu-num,
 .foodles-menu-item:hover .menu-num,
 .foodles-menu-item.active .menu-num {
-  background: var(--color-accent, #C76D4B) !important;
+  background: var(--color-accent, #9B5620) !important;
   color: #FFFFFF !important;
   margin-left: -24px !important;
   padding-left: 24px !important;
@@ -2159,7 +2159,7 @@ strong, b {
 }
 
 .image-lightbox-btn-hd {
-  background: #C76D4B !important;
+  background: #9B5620 !important;
   color: white !important;
   border: none !important;
   padding: 6px 14px !important;
@@ -2226,7 +2226,7 @@ strong, b {
 
 .lbc-v2-card-body.text-terracotta,
 .text-terracotta {
-  color: #C76D4B !important;
+  color: #9B5620 !important;
 }
 
 .lbc-v2-card-bullets {
@@ -2611,12 +2611,12 @@ strong, b {
   margin-top: 10px !important;
   border-top: 1px dashed rgba(199, 109, 75, 0.3) !important;
   padding-top: 10px !important;
-  color: var(--color-accent, #C76D4B) !important;
+  color: var(--color-accent, #9B5620) !important;
 }
 
 .lbc-v2-menu-back-top .menu-label,
 .lbc-v2-menu-back-top .menu-num {
-  color: var(--color-accent, #C76D4B) !important;
+  color: var(--color-accent, #9B5620) !important;
   font-weight: 600 !important;
 }
 
@@ -2748,8 +2748,8 @@ strong, b {
 .modal-card-close-btn:hover,
 .drawer-close-btn:hover {
   background: #FFFFFF !important;
-  color: var(--color-accent, #C76D4B) !important;
-  border-color: var(--color-accent, #C76D4B) !important;
+  color: var(--color-accent, #9B5620) !important;
+  border-color: var(--color-accent, #9B5620) !important;
   transform: scale(1.08) !important;
   box-shadow: 0 6px 18px rgba(199, 109, 75, 0.18) !important;
   text-decoration: none !important;
