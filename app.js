@@ -206,7 +206,7 @@ function renderCaseStudiesList() {
       </div>
 
       <div class="glance-methodo-bar">
-        <span class="glance-methodo-label">Méthodologie :</span>
+        <span class="glance-methodo-label">${cs.methodologyLabel || 'Approche & outils :'}</span>
         <div class="glance-methodo-list">
           ${methodologyHTML}
         </div>

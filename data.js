@@ -18,6 +18,7 @@ const CASE_STUDIES_PRESENTATION = [
       { num: "03", name: "Continuité présentiel/digital", icon: "user" },
       { num: "04", name: "Solutions prioritaires", icon: "chef-hat" }
     ],
+    methodologyLabel: "Approche & outils :",
     methodology: [
       { name: "recherche UX", icon: "search" },
       { name: "personas", icon: "user" },
@@ -42,6 +43,7 @@ const CASE_STUDIES_PRESENTATION = [
       { num: "03", name: "Micro-parcours", icon: "map-pin" },
       { num: "04", name: "Maquettes hi-fi", icon: "smartphone" }
     ],
+    methodologyLabel: "Approche & outils :",
     methodology: [
       { name: "recherche utilisateur", icon: "users" },
       { name: "tri de cartes", icon: "layers" },
