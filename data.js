@@ -19,13 +19,12 @@ const CASE_STUDIES_PRESENTATION = [
       { num: "04", name: "Solutions prioritaires", icon: "chef-hat" }
     ],
     methodology: [
-      { name: "analyse documentaire", icon: "search" },
+      { name: "recherche UX", icon: "search" },
       { name: "personas", icon: "user" },
-      { name: "benchmark", icon: "bar-chart-2" },
+      { name: "architecture de l’information", icon: "layout" },
       { name: "service blueprint", icon: "git-branch" },
-      { name: "architecture", icon: "layout" },
-      { name: "accessibilité", icon: "accessibility" },
-      { name: "roadmap", icon: "calendar" }
+      { name: "roadmap", icon: "calendar" },
+      { name: "digital learning", icon: "graduation-cap" }
     ]
   },
   {
