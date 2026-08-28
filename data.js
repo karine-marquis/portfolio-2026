@@ -65,7 +65,7 @@ const CASE_STUDIES_PRESENTATION = [
       { num: "03", name: "Tests utilisateurs", icon: "users" },
       { num: "04", name: "Insights & recommandations", icon: "sparkles" }
     ],
-    methodologyLabel: "Méthodologie :",
+    methodologyLabel: "Approche & outils :",
     methodology: [
       { name: "hypothèses UX", icon: "help-circle" },
       { name: "observation des usages", icon: "search" },
