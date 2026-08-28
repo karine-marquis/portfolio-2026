@@ -34,7 +34,8 @@ const CASE_STUDIES_PRESENTATION = [
     title: "BAMBINETS",
     category: "UX Design & Micro-learning",
     headline: "Apprendre quelques signes pour mieux se comprendre avant les premiers mots.",
-    description: "Avant de savoir parler, un enfant sait déjà exprimer beaucoup de choses. Encore faut-il pouvoir se comprendre.<br><br>La crèche Les Bambinets voulait un outil simple pour aider les professionnels de la petite enfance — et les parents — à apprendre quelques signes utiles au quotidien, sans transformer ça en formation lourde.<br><br>L’idée était donc de concevoir une application mobile pensée pour des usages très concrets : peu de temps, une attention souvent partagée, et le besoin de retrouver ou mémoriser un signe rapidement.",
+    subheadline: "« Comment faciliter la communication quotidienne entre pro et tout-petits ? »",
+    description: "",
     image: "assets/PROJTS/BAMBINETS/vignette_bambinets.png",
     glanceSteps: [
       { num: "01", name: "Surcharge mentale", icon: "brain" },
@@ -46,6 +47,7 @@ const CASE_STUDIES_PRESENTATION = [
       { name: "recherche utilisateur", icon: "users" },
       { name: "tri de cartes", icon: "layers" },
       { name: "parcours client", icon: "map-pin" },
+      { name: "prototype mobile", icon: "smartphone" },
       { name: "tests hi-fi", icon: "smile" }
     ]
   },
@@ -55,7 +57,8 @@ const CASE_STUDIES_PRESENTATION = [
     title: "FOODLES",
     category: "UX Research & optimisation mobile",
     headline: "Adopter une nouvelle habitude au bureau demande de la simplicité à chaque clic.",
-    description: "Comprendre les véritables usages d'un frigo connecté en entreprise pour concevoir une expérience utile et adoptée au quotidien.",
+    subheadline: "« Comment lever les frictions d'usage sur un frigo connecté en entreprise ? »",
+    description: "",
     image: "assets/PROJTS/FOODLES/frigo_foodles.png",
     glanceSteps: [
       { num: "01", name: "Remontées internes", icon: "message-square" },
@@ -63,12 +66,12 @@ const CASE_STUDIES_PRESENTATION = [
       { num: "03", name: "Tests utilisateurs", icon: "users" },
       { num: "04", name: "Insights & recommandations", icon: "sparkles" }
     ],
-    methodologyLabel: "Ma Démarche :",
+    methodologyLabel: "Méthodologie :",
     methodology: [
-      { name: "Partir Des Hypothèses" },
-      { name: "Observer Les Usages" },
-      { name: "Faire Émerger Les Faits" },
-      { name: "Transformer Les Insights En Décisions" }
+      { name: "hypothèses UX", icon: "help-circle" },
+      { name: "observation des usages", icon: "search" },
+      { name: "atomic UX research", icon: "sparkles" },
+      { name: "préconisations", icon: "check-circle-2" }
     ]
   }
 ];

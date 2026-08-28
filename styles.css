@@ -1250,6 +1250,19 @@ strong, b {
   transition: transform 0.4s ease !important;
 }
 
+/* CADRAGE SUR-MESURE POUR CHAQUE VISUEL EN PANNEAU */
+.glance-media-col img[src*="illustration_coup_d_oeil"] {
+  object-position: center 15% !important;
+}
+
+.glance-media-col img[src*="vignette_bambinets"] {
+  object-position: center 20% !important;
+}
+
+.glance-media-col img[src*="frigo_foodles"] {
+  object-position: center 25% !important;
+}
+
 .glance-content-col {
   padding: 24px 36px 10px 36px;
   display: flex;
