@@ -188,7 +188,7 @@ function renderCaseStudiesList() {
               <div class="glance-project-subtitle">${cs.category}</div>
               
               <h3 class="glance-headline-quote">${cs.headline}</h3>
-              <p class="glance-project-desc">${cs.description}</p>
+              ${cs.description ? `<p class="glance-project-desc">${cs.description}</p>` : ''}
             </div>
 
             <div class="glance-steps-section">
