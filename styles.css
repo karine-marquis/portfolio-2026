@@ -2175,29 +2175,29 @@ strong, b {
   margin-top: 18px !important;
   border-radius: 16px !important;
   overflow: hidden !important;
-  border: 1px solid rgba(199, 109, 75, 0.2) !important;
+  border: 1px solid #D4CCC9 !important;
   position: relative !important;
   cursor: zoom-in !important;
   background: #F7F3EE !important;
   padding: 12px !important;
   text-align: center !important;
-  box-shadow: 0 6px 20px rgba(62, 57, 52, 0.06) !important;
+  box-shadow: 0 6px 20px rgba(62, 57, 52, 0.05) !important;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
 }
 
 .lbc-v2-personas-wrapper:hover {
   transform: translateY(-2px) !important;
   border-color: rgba(199, 109, 75, 0.4) !important;
-  box-shadow: 0 12px 30px rgba(62, 57, 52, 0.10) !important;
+  box-shadow: 0 12px 30px rgba(62, 57, 52, 0.09) !important;
 }
 
 .lbc-v2-personas-img {
-  max-height: 440px !important;
+  max-height: 380px !important;
   width: auto !important;
   max-width: 100% !important;
   display: block !important;
   margin: 0 auto !important;
-  border-radius: 12px !important;
+  border-radius: 8px !important;
   object-fit: contain !important;
   opacity: 1 !important;
   filter: none !important;
