@@ -1308,21 +1308,22 @@ strong, b {
   margin-bottom: 14px !important;
 }
 
-/* SECTION "LE PROJET EN UN COUP D'ŒIL" */
+/* SECTION "LE PROJET EN UN COUP D'ŒIL" (COMPACTE -28%) */
 .glance-steps-section {
-  margin-top: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .glance-steps-title-wrap {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .glance-steps-title {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 11.5px !important;
+  font-size: 11px !important;
   font-weight: 600 !important;
   color: #9B5620 !important;
   letter-spacing: 0.08em;
@@ -1333,13 +1334,13 @@ strong, b {
 .glance-steps-line {
   flex: 1;
   height: 1px;
-  background-color: rgba(155, 86, 32, 0.3);
+  background-color: rgba(155, 86, 32, 0.25);
 }
 
 .glance-steps-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 10px;
   position: relative;
 }
 
@@ -1353,47 +1354,53 @@ strong, b {
 
 .glance-step-num {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 12px !important;
+  font-size: 10.5px !important;
   font-weight: 600 !important;
   color: #9B5620 !important;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 
 .glance-step-icon-circle {
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--color-background) !important;
-  border: 1px solid rgba(155, 86, 32, 0.25);
+  border: 1px solid rgba(155, 86, 32, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #3E3934 !important;
-  margin-bottom: 10px;
-  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.5);
-  transition: all 0.3s ease;
+  margin-bottom: 4px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transition: all 0.25s ease;
+}
+
+.glance-step-icon-circle i,
+.glance-step-icon-circle svg {
+  width: 17px !important;
+  height: 17px !important;
 }
 
 .glance-step-item:hover .glance-step-icon-circle {
-  background: rgba(155, 86, 32, 0.12);
+  background: rgba(155, 86, 32, 0.10);
   border-color: #9B5620;
-  transform: translateY(-2px);
+  transform: translateY(-1.5px);
 }
 
 .glance-step-label {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   font-weight: 500 !important;
   color: #3E3934 !important;
-  line-height: 1.35 !important;
+  line-height: 1.25 !important;
 }
 
 .glance-step-arrow {
   position: absolute;
-  right: -10px;
-  top: 36px;
-  color: rgba(166, 58, 43, 0.4);
-  font-size: 14px;
+  right: -8px;
+  top: 22px;
+  color: rgba(155, 86, 32, 0.35);
+  font-size: 13px;
 }
 
 /* BANDEAU MÉTHODOLOGIE SIENNE BRÛLÉE DÉCOLLÉ & ÉLÉGANT */
