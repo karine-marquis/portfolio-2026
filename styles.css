@@ -1463,8 +1463,8 @@ strong, b {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0px 28px 10px 28px !important;
-  margin-top: 0px;
+  padding: 6px 28px 22px 28px !important;
+  margin-top: 10px;
 }
 
 .glance-card-cta {
