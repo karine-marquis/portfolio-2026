@@ -1038,7 +1038,7 @@ strong, b {
   max-width: 1280px;
   height: auto !important;
   min-height: calc(100vh - 80px);
-  background: #F1E7E1 !important;
+  background: #F2E5DE !important;
   border-radius: 28px !important;
   box-shadow: 0 24px 60px rgba(62, 57, 52, 0.18), 0 8px 24px rgba(62, 57, 52, 0.12) !important;
   padding: 0 !important;
@@ -1798,7 +1798,7 @@ strong, b {
   display: flex;
   width: 100%;
   min-height: 100%;
-  background: #F1E7E1 !important;
+  background: #F2E5DE !important;
   border-radius: 28px !important;
   overflow: visible !important;
   align-items: flex-start !important;
@@ -1808,7 +1808,7 @@ strong, b {
 .lbc-v2-sidebar {
   width: 320px;
   min-width: 290px;
-  background: #F1E7E1 !important;
+  background: #F2E5DE !important;
   padding: 20px 24px 12px 24px !important;
   display: flex;
   flex-direction: column;
@@ -2102,17 +2102,17 @@ strong, b {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 11.5px !important;
   font-weight: 600 !important;
-  color: #3E3934 !important;
-  background: rgba(172, 184, 170, 0.22) !important;
+  color: #55624F !important;
+  background: #C7D1BF !important;
   padding: 5px 13px;
   border-radius: 18px;
-  border: 1px solid #ACB8AA !important;
+  border: 1px solid #AEBBA6 !important;
   transition: all 0.2s ease !important;
 }
 
 .lbc-v2-tag-pill:hover {
-  background: rgba(172, 184, 170, 0.38) !important;
-  border-color: #9AA898 !important;
+  background: #BAC6B3 !important;
+  border-color: #9EA995 !important;
 }
 
 .lbc-v2-hero-img-wrap {
@@ -2144,7 +2144,7 @@ strong, b {
 }
 
 .lbc-v2-card {
-  background: #EEEAE5 !important;
+  background: #F7F3EE !important;
   border-radius: 20px;
   padding: 26px 30px;
   border: 1px solid #D4CCC9;
@@ -2395,11 +2395,11 @@ strong, b {
 }
 
 .lbc-v2-subcard {
-  background: var(--color-surface) !important;
+  background: #F7F3EE !important;
   border-radius: 20px;
   padding: 22px;
   border: 1px solid #D4CCC9;
-  box-shadow: 0 6px 20px rgba(70, 40, 25, 0.06), 0 2px 6px rgba(155, 86, 32, 0.03) !important;
+  box-shadow: 0 6px 20px rgba(70, 40, 25, 0.05), 0 2px 6px rgba(155, 86, 32, 0.02) !important;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
 }
 
