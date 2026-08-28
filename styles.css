@@ -1038,7 +1038,7 @@ strong, b {
   max-width: 1280px;
   height: auto !important;
   min-height: calc(100vh - 80px);
-  background: #EEEAE5 !important;
+  background: #F1E7E1 !important;
   border-radius: 28px !important;
   box-shadow: 0 24px 60px rgba(62, 57, 52, 0.18), 0 8px 24px rgba(62, 57, 52, 0.12) !important;
   padding: 0 !important;
@@ -1798,7 +1798,7 @@ strong, b {
   display: flex;
   width: 100%;
   min-height: 100%;
-  background: #EEEAE5 !important;
+  background: #F1E7E1 !important;
   border-radius: 28px !important;
   overflow: visible !important;
   align-items: flex-start !important;
@@ -1808,7 +1808,7 @@ strong, b {
 .lbc-v2-sidebar {
   width: 320px;
   min-width: 290px;
-  background: #EEEAE5 !important;
+  background: #F1E7E1 !important;
   padding: 20px 24px 12px 24px !important;
   display: flex;
   flex-direction: column;
@@ -2044,7 +2044,7 @@ strong, b {
   height: auto !important;
   overflow: visible !important;
   position: relative;
-  background: #EEEAE5 !important;
+  background: #F1E7E1 !important;
   border-radius: 0 28px 28px 0 !important;
 }
 
@@ -2060,16 +2060,16 @@ strong, b {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(199, 109, 75, 0.09) !important;
+  background: #E0CFC3 !important;
   color: #C76D4B !important;
   font-family: var(--font-sans) !important;
   font-size: 11px !important;
   font-weight: 700 !important;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
-  border: 1px solid rgba(199, 109, 75, 0.22);
+  border: 1px solid rgba(199, 109, 75, 0.25);
   margin-bottom: 12px;
 }
 
@@ -2144,11 +2144,11 @@ strong, b {
 }
 
 .lbc-v2-card {
-  background: var(--color-surface) !important;
+  background: #EEEAE5 !important;
   border-radius: 20px;
   padding: 26px 30px;
   border: 1px solid #D4CCC9;
-  box-shadow: 0 6px 20px rgba(70, 40, 25, 0.06), 0 2px 6px rgba(155, 86, 32, 0.03) !important;
+  box-shadow: 0 6px 20px rgba(70, 40, 25, 0.05), 0 2px 6px rgba(155, 86, 32, 0.02) !important;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
 }
 
