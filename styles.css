@@ -1798,7 +1798,7 @@ strong, b {
   display: flex;
   width: 100%;
   min-height: 100%;
-  background: #F4EFEA !important;
+  background: #EEEAE5 !important;
   border-radius: 28px !important;
   overflow: visible !important;
   align-items: flex-start !important;
@@ -1808,7 +1808,7 @@ strong, b {
 .lbc-v2-sidebar {
   width: 320px;
   min-width: 290px;
-  background: #F4EFEA !important;
+  background: #EEEAE5 !important;
   padding: 20px 24px 12px 24px !important;
   display: flex;
   flex-direction: column;
@@ -2044,7 +2044,7 @@ strong, b {
   height: auto !important;
   overflow: visible !important;
   position: relative;
-  background: var(--color-background);
+  background: #EEEAE5 !important;
   border-radius: 0 28px 28px 0 !important;
 }
 
@@ -2937,7 +2937,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 }
 
 /* 6. MODALES (FONDU DOUX & SLIDE-UP SUBTIL 12PX) */
-.project-drawer-overlay, .image-lightbox-overlay {
+.drawer-overlay, .image-lightbox-overlay {
   transition: opacity var(--duration-appear) var(--ease-japandi),
               visibility var(--duration-appear) var(--ease-japandi) !important;
 }
