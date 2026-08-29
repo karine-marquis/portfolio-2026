@@ -2175,7 +2175,7 @@ strong, b {
   margin-top: 18px !important;
   border-radius: 16px !important;
   overflow: hidden !important;
-  border: 1px solid #D4CCC9 !important;
+  border: 1px solid #AEBBA6 !important;
   position: relative !important;
   cursor: zoom-in !important;
   background: #F7F3EE !important;
@@ -2187,7 +2187,7 @@ strong, b {
 
 .lbc-v2-personas-wrapper:hover {
   transform: translateY(-2px) !important;
-  border-color: rgba(199, 109, 75, 0.4) !important;
+  border-color: #C76D4B !important;
   box-shadow: 0 12px 30px rgba(62, 57, 52, 0.09) !important;
 }
 
