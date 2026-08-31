@@ -433,7 +433,7 @@ function openCanvaModal(canvaUrl, projectTitle) {
 
 function playLbcVideo(container, videoId) {
   if (!container || !videoId) return;
-  const videoUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+  const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
   container.style.position = 'relative';
   container.style.aspectRatio = '16/9';
   container.style.height = 'auto';
@@ -444,6 +444,7 @@ function playLbcVideo(container, videoId) {
       title="Présentation vidéo du projet Les Cordons Bleus" 
       style="width: 100%; height: 100%; min-height: 260px; border: 0; border-radius: 12px; display: block;" 
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
       allowfullscreen>
     </iframe>
   `;
