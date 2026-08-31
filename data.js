@@ -22,9 +22,9 @@ const CASE_STUDIES_PRESENTATION = [
     methodology: [
       { name: "recherche UX", icon: "search" },
       { name: "personas", icon: "user" },
+      { name: "journey map", icon: "map" },
       { name: "architecture de l’information", icon: "layout" },
       { name: "service blueprint", icon: "git-branch" },
-      { name: "roadmap", icon: "calendar" },
       { name: "digital learning", icon: "graduation-cap" }
     ]
   },
