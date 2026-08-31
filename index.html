@@ -403,23 +403,34 @@
               </div>
             </div>
 
-            <!-- SECTION : LE PROJET DERRIERE LES ECRANS (3 CARTES HORIZONTALES) -->
+            <!-- SECTION : LE PROJET DERRIERE LES ECRANS (3 CARTES + GANTT) -->
             <div id="lbc-sec-3-5" class="lbc-v2-learnings-block" style="margin-top: 28px; margin-bottom: 32px;">
               <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px;">Le projet derrière les écrans</h3>
               <p class="lbc-v2-card-body" style="margin-bottom: 16px; color: #5C5248;">Concevoir une bonne expérience ne suffisait pas. Il fallait aussi vérifier qu’elle puisse <strong>réellement exister</strong> : avec un budget, des imprévus possibles et une manière de <strong>mesurer ce qui se passe après le lancement</strong>.</p>
-              <div class="lbc-v2-learnings-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important; margin-bottom: 24px !important;">
-                <div class="lbc-v2-card">
-                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Budget prévisionnel : <span style="color: var(--color-primary, #9B5620); font-weight: 700;">50 000 €</span></h4>
-                  <p class="lbc-v2-card-body">UX/UI · gestion de projet · développement · production de contenus · accessibilité</p>
+              
+              <!-- 3 CARTES HARMONISÉES EN SURFACE CLAIRE ET RESPIRANTE -->
+              <div class="lbc-v2-learnings-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important; margin-bottom: 20px !important;">
+                <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid #D4CCC9 !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important;">
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px; color: #3E3934;">Budget prévisionnel : <span style="color: #C76D4B; font-weight: 700;">50 000 €</span></h4>
+                  <p class="lbc-v2-card-body" style="font-size: 13.5px; color: #5C5248; line-height: 1.5;">UX/UI · gestion de projet · développement · production de contenus · accessibilité</p>
                 </div>
-                <div class="lbc-v2-card">
-                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Marge de contingence</h4>
-                  <p class="lbc-v2-card-body">Jusqu’à <strong>20 %</strong> selon les aléas ou évolutions de périmètre.</p>
+                <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid #D4CCC9 !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important;">
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px; color: #3E3934;">Marge de contingence</h4>
+                  <p class="lbc-v2-card-body" style="font-size: 13.5px; color: #5C5248; line-height: 1.5;">Jusqu’à <strong style="color: #55624F;">20 %</strong> selon les aléas ou évolutions de périmètre.</p>
                 </div>
-                <div class="lbc-v2-card">
-                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px;">Suivi post-lancement</h4>
-                  <p class="lbc-v2-card-body">Analyse des <strong>KPI à M+1, M+3, M+6 et M+9</strong>, avec restitution et recommandations d’ajustement.<br><br><span style="font-weight: 600; color: var(--color-primary, #9B5620);">Forfait estimé : 2 500 €</span></p>
+                <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid #D4CCC9 !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important;">
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px; color: #3E3934;">Suivi post-lancement</h4>
+                  <p class="lbc-v2-card-body" style="font-size: 13.5px; color: #5C5248; line-height: 1.5;">Analyse des <strong>KPI à M+1, M+3, M+6 et M+9</strong>, avec restitution et recommandations d’ajustement.<br><br><span style="font-weight: 600; color: #C76D4B;">Forfait estimé : 2 500 €</span></p>
                 </div>
+              </div>
+
+              <!-- TEXTE DE TRANSITION VERS LE GANTT -->
+              <p class="lbc-v2-card-body" style="margin-top: 20px; margin-bottom: 12px; font-size: 14px; color: #5C5248; line-height: 1.55;">Une fois le cadre posé, il fallait transformer les intentions en planning réaliste. Le Gantt m’a permis de visualiser les dépendances, les chevauchements et les grandes phases du projet sur six mois.</p>
+
+              <!-- DIAGRAMME DE GANTT INTEGRÉ ET GRAND FORMAT -->
+              <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/planning de Gantt.png', 'Diagramme de Gantt — Planning de pilotage Les Cordons Bleus — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/planning de Gantt.png', 'Diagramme de Gantt — Planning de pilotage Les Cordons Bleus — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir le diagramme de Gantt Les Cordons Bleus en plein écran" title="🔍 Cliquer pour agrandir en plein écran" class="lbc-v2-deliverable-horizontal">
+                <img src="assets/PROJTS/CORDONS_BLEUS/planning de Gantt.png" alt="Diagramme de Gantt — Planning de pilotage Les Cordons Bleus">
+                <span class="deliverable-zoom-badge">🔍 Cliquer pour agrandir</span>
               </div>
             </div>
 
