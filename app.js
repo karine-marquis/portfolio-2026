@@ -574,3 +574,120 @@ document.addEventListener('keydown', function(e) {
     closeLightbox();
   }
 });
+
+/* ==========================================================================
+   7. GESTION DU CARROUSEL ÉDITORIAL DES PERSONAS (LES CORDONS BLEUS)
+   ========================================================================== */
+const LBC_PERSONA_DATA = {
+  camille: {
+    src: 'assets/PROJTS/CORDONS_BLEUS/persona_camille.png',
+    alt: 'Fiche Persona UX Les Cordons Bleus — Camille',
+    caption: 'Fiche Persona UX — Camille (Passionnée d’apprentissage) — Cliquer pour fermer ✕'
+  },
+  marc: {
+    src: 'assets/PROJTS/CORDONS_BLEUS/persona_marc.png',
+    alt: 'Fiche Persona UX Les Cordons Bleus — Marc',
+    caption: 'Fiche Persona UX — Marc (Débutant en quête d’autonomie) — Cliquer pour fermer ✕'
+  },
+  sarah: {
+    src: 'assets/PROJTS/CORDONS_BLEUS/persona_sarah.png',
+    alt: 'Fiche Persona UX Les Cordons Bleus — Sarah',
+    caption: 'Fiche Persona UX — Sarah / Parent (Pratique avec les enfants) — Cliquer pour fermer ✕'
+  }
+};
+
+let lbcCurrentPersona = 'camille';
+const lbcPersonaKeys = ['camille', 'marc', 'sarah'];
+
+function switchPersona(name) {
+  if (!LBC_PERSONA_DATA[name] || lbcCurrentPersona === name) return;
+
+  const targets = [
+    document.getElementById('lbc-active-persona-img'),
+    document.getElementById('lbc-active-persona-img-page')
+  ].filter(Boolean);
+
+  const tabs = document.querySelectorAll('.lbc-v2-persona-tab');
+
+  tabs.forEach(tab => {
+    const isTarget = tab.getAttribute('onclick') && tab.getAttribute('onclick').includes(`'${name}'`);
+    if (isTarget) {
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+    } else {
+      tab.classList.remove('active');
+      tab.setAttribute('aria-selected', 'false');
+    }
+  });
+
+  lbcCurrentPersona = name;
+  const data = LBC_PERSONA_DATA[name];
+
+  targets.forEach(imgEl => {
+    imgEl.classList.remove('active');
+    imgEl.classList.add('entering');
+
+    setTimeout(() => {
+      imgEl.src = data.src;
+      imgEl.alt = data.alt;
+
+      requestAnimationFrame(() => {
+        imgEl.classList.remove('entering');
+        imgEl.classList.add('active');
+      });
+    }, 140);
+  });
+}
+
+function triggerActivePersonaLightbox() {
+  const data = LBC_PERSONA_DATA[lbcCurrentPersona] || LBC_PERSONA_DATA['camille'];
+  openLightbox(data.src, data.caption);
+}
+
+// Touch swipe support for mobile
+let lbcTouchStartX = 0;
+let lbcTouchEndX = 0;
+
+document.addEventListener('touchstart', function(e) {
+  const wrapper = e.target.closest('#panel-persona, #panel-persona-page');
+  if (wrapper) {
+    lbcTouchStartX = e.changedTouches[0].screenX;
+  }
+}, { passive: true });
+
+document.addEventListener('touchend', function(e) {
+  const wrapper = e.target.closest('#panel-persona, #panel-persona-page');
+  if (wrapper) {
+    lbcTouchEndX = e.changedTouches[0].screenX;
+    const diff = lbcTouchEndX - lbcTouchStartX;
+    if (Math.abs(diff) > 40) {
+      const idx = lbcPersonaKeys.indexOf(lbcCurrentPersona);
+      if (diff < 0 && idx < lbcPersonaKeys.length - 1) {
+        switchPersona(lbcPersonaKeys[idx + 1]);
+      } else if (diff > 0 && idx > 0) {
+        switchPersona(lbcPersonaKeys[idx - 1]);
+      }
+    }
+  }
+}, { passive: true });
+
+// Keyboard Navigation for tabs
+document.addEventListener('keydown', function(e) {
+  const activeTab = document.activeElement;
+  if (activeTab && activeTab.classList.contains('lbc-v2-persona-tab')) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const idx = lbcPersonaKeys.indexOf(lbcCurrentPersona);
+      if (e.key === 'ArrowRight' && idx < lbcPersonaKeys.length - 1) {
+        switchPersona(lbcPersonaKeys[idx + 1]);
+        const nextTab = document.querySelectorAll('.lbc-v2-persona-tab')[idx + 1];
+        if (nextTab) nextTab.focus();
+      } else if (e.key === 'ArrowLeft' && idx > 0) {
+        switchPersona(lbcPersonaKeys[idx - 1]);
+        const prevTab = document.querySelectorAll('.lbc-v2-persona-tab')[idx - 1];
+        if (prevTab) prevTab.focus();
+      }
+    }
+  }
+});
+

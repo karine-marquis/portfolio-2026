@@ -2171,8 +2171,98 @@ strong, b {
 }
 
 /* PLANCHE PERSONAS HARMONISÉE ÉDITORIALE & DOUCE */
+.lbc-v2-persona-tabs {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-top: 14px !important;
+  margin-bottom: 8px !important;
+  border-bottom: 1px solid #E0CFC3 !important;
+  padding-bottom: 8px !important;
+  padding-left: 2px !important;
+}
+
+.lbc-v2-persona-tab {
+  background: transparent !important;
+  border: none !important;
+  font-family: inherit !important;
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  color: #5C5248 !important;
+  cursor: pointer !important;
+  padding: 4px 10px !important;
+  position: relative !important;
+  transition: color 0.25s ease !important;
+  outline: none !important;
+  border-radius: 6px !important;
+}
+
+.lbc-v2-persona-tab:hover {
+  color: #C76D4B !important;
+}
+
+.lbc-v2-persona-tab.active {
+  color: #C76D4B !important;
+  font-weight: 700 !important;
+}
+
+.lbc-v2-persona-tab.active::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -9px !important;
+  left: 6px !important;
+  right: 6px !important;
+  height: 2.5px !important;
+  background-color: #C76D4B !important;
+  border-radius: 2px !important;
+}
+
+.lbc-v2-persona-tab-sep {
+  color: #D4CCC9 !important;
+  font-size: 12px !important;
+  user-select: none !important;
+}
+
+.lbc-v2-persona-display {
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+.lbc-v2-persona-img-animated {
+  max-height: 480px !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border-radius: 8px !important;
+  object-fit: contain !important;
+  transition: opacity 0.28s cubic-bezier(0.25, 1, 0.5, 1), transform 0.28s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  will-change: opacity, transform !important;
+}
+
+.lbc-v2-persona-img-animated.entering {
+  opacity: 0 !important;
+  transform: translateX(8px) !important;
+}
+
+.lbc-v2-persona-img-animated.active {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lbc-v2-persona-img-animated {
+    transition: opacity 0.15s ease-out !important;
+    transform: none !important;
+  }
+  .lbc-v2-persona-img-animated.entering {
+    transform: none !important;
+  }
+}
+
 .lbc-v2-personas-wrapper {
-  margin-top: 18px !important;
+  margin-top: 10px !important;
   border-radius: 16px !important;
   overflow: hidden !important;
   border: 1px solid #AEBBA6 !important;
@@ -2192,7 +2282,7 @@ strong, b {
 }
 
 .lbc-v2-personas-img {
-  max-height: 380px !important;
+  max-height: 480px !important;
   width: auto !important;
   max-width: 100% !important;
   display: block !important;
