@@ -3038,6 +3038,69 @@ strong, b {
   }
 }
 
+/* ==========================================================================
+   FOODLES SECTION 7 — CE QUE L'EXPÉRIENCE DEVAIT MIEUX PERMETTRE (4 AXES ÉDITORIAUX)
+   ========================================================================== */
+.foodles-axes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 48px;
+  margin-top: 28px;
+  margin-bottom: 32px;
+}
+
+.foodles-axe-item {
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 0 24px 0 !important;
+  border-bottom: 1px solid #E5DCD3 !important;
+}
+
+.foodles-axe-num {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #9B5620 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+.foodles-axe-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 16.5px !important;
+  font-weight: 500 !important;
+  color: #2C221E !important;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.35 !important;
+}
+
+.foodles-axe-text {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  color: #3E3934 !important;
+  line-height: 1.55 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.foodles-axe-subtext {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  color: #7C6A5F !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .foodles-axes-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
 .lbc-v2-contact-left {
   display: flex;
   align-items: center;
