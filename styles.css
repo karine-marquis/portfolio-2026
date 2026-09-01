@@ -2888,6 +2888,97 @@ strong, b {
   box-shadow: 0 4px 14px rgba(85, 98, 79, 0.25) !important;
 }
 
+/* ==========================================================================
+   BULLES DE PAROLE ÉDITORIALES — VERBATIMS TESTERS (FOODLES & PROJETS)
+   ========================================================================== */
+.verbatim-bubbles-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 28px;
+  margin-top: 18px;
+  align-items: start;
+}
+
+.verbatim-bubble-card {
+  position: relative;
+  background: #FAF7F2 !important;
+  border: 1px solid #E3D9D1 !important;
+  padding: 16px 20px !important;
+  box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.verbatim-bubble-left {
+  border-radius: 18px 18px 18px 4px !important;
+}
+
+.verbatim-bubble-right {
+  border-radius: 18px 18px 4px 18px !important;
+}
+
+.verbatim-bubble-left::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 22px;
+  width: 11px;
+  height: 11px;
+  background: #FAF7F2;
+  border-right: 1px solid #E3D9D1;
+  border-bottom: 1px solid #E3D9D1;
+  transform: rotate(45deg);
+  border-bottom-right-radius: 2px;
+}
+
+.verbatim-bubble-right::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 22px;
+  width: 11px;
+  height: 11px;
+  background: #FAF7F2;
+  border-right: 1px solid #E3D9D1;
+  border-bottom: 1px solid #E3D9D1;
+  transform: rotate(45deg);
+  border-bottom-right-radius: 2px;
+}
+
+.verbatim-bubble-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(70, 40, 25, 0.06) !important;
+}
+
+.verbatim-bubbles-container > .verbatim-bubble-card:nth-child(2) {
+  margin-top: 14px;
+}
+.verbatim-bubbles-container > .verbatim-bubble-card:nth-child(3) {
+  margin-top: -4px;
+}
+.verbatim-bubbles-container > .verbatim-bubble-card:nth-child(4) {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .verbatim-bubbles-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .verbatim-bubbles-container > .verbatim-bubble-card:nth-child(n) {
+    margin-top: 0;
+  }
+}
+
+.verbatim-bubble-text {
+  font-family: 'Caveat', cursive, 'Playfair Display', Georgia, serif !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #394435 !important;
+  line-height: 1.35 !important;
+  margin: 0 !important;
+  letter-spacing: 0.01em !important;
+}
+
 .lbc-v2-contact-left {
   display: flex;
   align-items: center;
