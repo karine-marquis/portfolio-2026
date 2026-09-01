@@ -132,6 +132,29 @@
       .bambinets-learn-title { font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px; }
       .bambinets-learn-desc { font-size: 12.5px; color: #3E3934; line-height: 1.5; }
 
+      .bambinets-narrative-chemin-wrap {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid #D4CCC9;
+        box-shadow: 0 4px 16px rgba(70, 40, 25, 0.05);
+        background: var(--color-surface, #FFFDFC);
+        max-width: 58%;
+        margin: 8px auto;
+        padding: 0;
+      }
+      @media (max-width: 1024px) {
+        .bambinets-narrative-chemin-wrap {
+          max-width: 78%;
+          margin: 8px auto;
+        }
+      }
+      @media (max-width: 640px) {
+        .bambinets-narrative-chemin-wrap {
+          max-width: 100%;
+          margin: 6px auto;
+        }
+      }
+
       @media (max-width: 900px) {
         .bambinets-page-container { grid-template-columns: 1fr; }
         .bambinets-sidebar { position: static; }
@@ -208,7 +231,7 @@
         </section>
 
         <!-- ILLUSTRATION DU PARCOURS / CHEMINEMENT ENTRE LES DEUX SECTIONS -->
-        <div style="border-radius: 16px; overflow: hidden; border: 1px solid #D4CCC9; box-shadow: 0 4px 16px rgba(70, 40, 25, 0.05); background: var(--color-surface, #FFFDFC); max-width: 72%; margin: 12px auto; padding: 0;">
+        <div class="bambinets-narrative-chemin-wrap">
           <img src="assets/PROJTS/BAMBINETS/bambinets_chemin.png" alt="Parcours et cheminement Bambinets" style="width: 100%; height: auto; object-fit: contain; display: block; border-radius: 16px;">
         </div>
 
