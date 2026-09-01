@@ -66,14 +66,14 @@ const CASE_STUDIES_PRESENTATION = [
       { num: "01", name: "Remontées internes", icon: "message-square" },
       { num: "02", name: "Hypothèses UX", icon: "help-circle" },
       { num: "03", name: "Tests utilisateurs", icon: "users" },
-      { num: "04", name: "Insights & recommandations", icon: "sparkles" }
+      { num: "04", name: "Recommandations UX", icon: "sparkles" }
     ],
     methodologyLabel: "Approche & outils :",
     methodology: [
-      { name: "hypothèses UX", icon: "help-circle" },
-      { name: "observation des usages", icon: "search" },
-      { name: "atomic UX research", icon: "sparkles" },
-      { name: "préconisations", icon: "check-circle-2" }
+      { name: "Hypothèses UX", icon: "help-circle" },
+      { name: "Tests utilisateurs", icon: "users" },
+      { name: "Atomic UX Research", icon: "sparkles" },
+      { name: "Recommandations UX", icon: "check-circle-2" }
     ]
   }
 ];
