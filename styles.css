@@ -2854,10 +2854,39 @@ strong, b {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 40px 0 20px 0 !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 12px 0 8px 0 !important;
+  margin-top: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: translateX(-160px) !important;
+}
+
+@media (max-width: 991px) {
+  .lbc-v2-contact-card {
+    transform: none !important;
+  }
+}
+
+.lbc-v2-contact-card .btn-primary {
+  background-color: #55624F !important;
+  color: #FFFDFC !important;
+  border: 1px solid #485443 !important;
+  padding: 4px 14px !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.03em !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 6px rgba(85, 98, 79, 0.12) !important;
+  transition: all 0.25s ease !important;
+}
+
+.lbc-v2-contact-card .btn-primary:hover {
+  background-color: #44513E !important;
+  color: #FFFFFF !important;
+  border-color: #394435 !important;
+  transform: translateY(-1.5px) !important;
+  box-shadow: 0 4px 14px rgba(85, 98, 79, 0.25) !important;
 }
 
 .lbc-v2-contact-left {
