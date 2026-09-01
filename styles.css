@@ -3101,6 +3101,39 @@ strong, b {
   }
 }
 
+/* ==========================================================================
+   ILLUSTRATIONS NARRATIVES FOODLES (PONCTUATIONS VISUELLES CENTRÉES A 62%)
+   ========================================================================== */
+.foodles-narrative-img-wrap {
+  width: 100% !important;
+  max-width: 62% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 16px !important;
+  margin-bottom: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.foodles-narrative-img-wrap img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 1024px) {
+  .foodles-narrative-img-wrap {
+    max-width: 78% !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .foodles-narrative-img-wrap {
+    max-width: 100% !important;
+  }
+}
+
 .lbc-v2-contact-left {
   display: flex;
   align-items: center;
