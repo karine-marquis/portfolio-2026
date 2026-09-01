@@ -2979,6 +2979,61 @@ strong, b {
   letter-spacing: 0.01em !important;
 }
 
+/* ==========================================================================
+   FOODLES SECTION 3 — CE QU'IL FALLAIT VÉRIFIER (PRÉSENTATION ÉDITORIALE)
+   ========================================================================== */
+.foodles-questions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 36px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.foodles-question-item {
+  position: relative;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 0 18px 0 !important;
+  border-bottom: 1px solid #E5DCD3 !important;
+}
+
+.foodles-question-num {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #9B5620 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+.foodles-question-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #2C221E !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.35 !important;
+}
+
+.foodles-question-desc {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  color: #6F635B !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .foodles-questions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 .lbc-v2-contact-left {
   display: flex;
   align-items: center;
