@@ -38,18 +38,19 @@ const CASE_STUDIES_PRESENTATION = [
     description: "",
     image: "assets/PROJTS/BAMBINETS/vignette_bambinets.png",
     glanceSteps: [
-      { num: "01", name: "Surcharge mentale", icon: "brain" },
-      { num: "02", name: "Tri de cartes", icon: "layers" },
+      { num: "01", name: "Besoin pédagogique", icon: "book-open" },
+      { num: "02", name: "Architecture", icon: "layout" },
       { num: "03", name: "Micro-parcours", icon: "map-pin" },
-      { num: "04", name: "Maquettes hi-fi", icon: "smartphone" }
+      { num: "04", name: "Prototype hi-fi", icon: "smartphone" }
     ],
     methodologyLabel: "Approche & outils :",
     methodology: [
-      { name: "recherche utilisateur", icon: "users" },
-      { name: "tri de cartes", icon: "layers" },
-      { name: "parcours client", icon: "map-pin" },
-      { name: "prototype mobile", icon: "smartphone" },
-      { name: "tests hi-fi", icon: "smile" }
+      { name: "Brief UX", icon: "file-text" },
+      { name: "Architecture de l’information", icon: "layout" },
+      { name: "Micro-learning", icon: "book-open" },
+      { name: "Wireframes", icon: "grid" },
+      { name: "Prototype Figma", icon: "figma" },
+      { name: "Accessibilité", icon: "eye" }
     ]
   },
   {

@@ -267,33 +267,32 @@ strong, b {
   box-shadow: 0 8px 22px rgba(180, 92, 58, 0.35) !important;
 }
 
-/* BOUTON CTA NAVBAR ÉDITORIAL UNIFIÉ (TEXTE LIEN SOULIGNÉ OCRE C47D3B) */
+/* BOUTON CTA NAVBAR ÉDITORIAL UNIFIÉ (VERT SAUGE COMPACT) */
 .btn-nav-outline {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background-color: transparent !important;
-  color: #9B5620 !important;
+  background-color: #55624F !important;
+  color: #FFFDFC !important;
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 13.5px !important;
+  font-size: 12.5px !important;
   font-weight: 500 !important;
-  letter-spacing: 0.02em;
-  border-radius: 0 !important;
-  border: none !important;
-  border-bottom: 1.5px solid #9B5620 !important;
-  padding: 2px 0 4px 0 !important;
+  letter-spacing: 0.03em !important;
+  border-radius: 6px !important;
+  border: 1px solid #485443 !important;
+  padding: 5px 14px !important;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: none !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 6px rgba(85, 98, 79, 0.12) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .btn-nav-outline:hover {
-  background-color: transparent !important;
-  color: #7A4217 !important;
-  border-bottom-color: #7A4217 !important;
-  transform: translateX(3px);
-  box-shadow: none !important;
+  background-color: #44513E !important;
+  color: #FFFFFF !important;
+  border-color: #394435 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(85, 98, 79, 0.25) !important;
 }
 
 /* CTA SECONDAIRE EN LIEN TEXTE SOULIGNÉ */
@@ -912,7 +911,7 @@ strong, b {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-style: italic;
   font-size: 13.5px !important;
-  color: #9B5620 !important;
+  color: #333F30 !important;
   opacity: 1 !important;
   font-weight: 400 !important;
   text-align: center !important;
