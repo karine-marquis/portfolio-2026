@@ -2173,54 +2173,69 @@ strong, b {
 /* PLANCHE PERSONAS HARMONISÉE ÉDITORIALE & DOUCE */
 .lbc-v2-persona-tabs {
   display: flex !important;
+  justify-content: center !important;
   align-items: center !important;
-  gap: 12px !important;
-  margin-top: 14px !important;
-  margin-bottom: 8px !important;
-  border-bottom: 1px solid #E0CFC3 !important;
-  padding-bottom: 8px !important;
-  padding-left: 2px !important;
+  gap: 6px !important;
+  margin: 18px auto 14px auto !important;
+  background: #EFEAE4 !important;
+  padding: 5px !important;
+  border-radius: 30px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  border: 1px solid #E0D7CD !important;
+  box-shadow: inset 0 1px 3px rgba(62, 57, 52, 0.06), 0 2px 8px rgba(62, 57, 52, 0.03) !important;
 }
 
 .lbc-v2-persona-tab {
   background: transparent !important;
   border: none !important;
   font-family: inherit !important;
-  font-size: 14.5px !important;
-  font-weight: 500 !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
   color: #5C5248 !important;
   cursor: pointer !important;
-  padding: 4px 10px !important;
-  position: relative !important;
-  transition: color 0.25s ease !important;
+  padding: 8px 18px !important;
+  border-radius: 22px !important;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1) !important;
   outline: none !important;
-  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  white-space: nowrap !important;
+}
+
+.lbc-v2-persona-tab .persona-tab-name {
+  font-weight: 700 !important;
+}
+
+.lbc-v2-persona-tab .persona-tab-role {
+  font-size: 11.5px !important;
+  font-weight: 500 !important;
+  opacity: 0.8 !important;
 }
 
 .lbc-v2-persona-tab:hover {
   color: #C76D4B !important;
+  background: rgba(255, 255, 255, 0.6) !important;
 }
 
 .lbc-v2-persona-tab.active {
-  color: #C76D4B !important;
+  background: #C76D4B !important;
+  color: #FFFDFC !important;
   font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(199, 109, 75, 0.35) !important;
+}
+
+.lbc-v2-persona-tab.active .persona-tab-role {
+  opacity: 0.92 !important;
 }
 
 .lbc-v2-persona-tab.active::after {
-  content: "" !important;
-  position: absolute !important;
-  bottom: -9px !important;
-  left: 6px !important;
-  right: 6px !important;
-  height: 2.5px !important;
-  background-color: #C76D4B !important;
-  border-radius: 2px !important;
+  display: none !important;
 }
 
 .lbc-v2-persona-tab-sep {
-  color: #D4CCC9 !important;
-  font-size: 12px !important;
-  user-select: none !important;
+  display: none !important;
 }
 
 .lbc-v2-persona-display {
