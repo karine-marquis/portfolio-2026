@@ -2175,59 +2175,50 @@ strong, b {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  gap: 6px !important;
-  margin: 18px auto 14px auto !important;
-  background: #EFEAE4 !important;
-  padding: 5px !important;
-  border-radius: 30px !important;
+  gap: 4px !important;
+  margin: 14px auto 12px auto !important;
+  background: #F4EFEA !important;
+  padding: 3px 4px !important;
+  border-radius: 20px !important;
   width: fit-content !important;
   max-width: 100% !important;
-  border: 1px solid #E0D7CD !important;
-  box-shadow: inset 0 1px 3px rgba(62, 57, 52, 0.06), 0 2px 8px rgba(62, 57, 52, 0.03) !important;
+  border: 1px solid #E8E0D7 !important;
 }
 
 .lbc-v2-persona-tab {
   background: transparent !important;
   border: none !important;
   font-family: inherit !important;
-  font-size: 13.5px !important;
-  font-weight: 600 !important;
-  color: #5C5248 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #6E6359 !important;
   cursor: pointer !important;
-  padding: 8px 18px !important;
-  border-radius: 22px !important;
-  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  padding: 5px 14px !important;
+  border-radius: 16px !important;
+  transition: all 0.2s ease !important;
   outline: none !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 5px !important;
   white-space: nowrap !important;
 }
 
 .lbc-v2-persona-tab .persona-tab-name {
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .lbc-v2-persona-tab .persona-tab-role {
-  font-size: 11.5px !important;
-  font-weight: 500 !important;
-  opacity: 0.8 !important;
+  display: none !important;
 }
 
 .lbc-v2-persona-tab:hover {
   color: #C76D4B !important;
-  background: rgba(255, 255, 255, 0.6) !important;
 }
 
 .lbc-v2-persona-tab.active {
-  background: #C76D4B !important;
-  color: #FFFDFC !important;
+  background: #FFFDFC !important;
+  color: #C76D4B !important;
   font-weight: 700 !important;
-  box-shadow: 0 4px 12px rgba(199, 109, 75, 0.35) !important;
-}
-
-.lbc-v2-persona-tab.active .persona-tab-role {
-  opacity: 0.92 !important;
+  box-shadow: 0 2px 6px rgba(62, 57, 52, 0.08) !important;
 }
 
 .lbc-v2-persona-tab.active::after {
