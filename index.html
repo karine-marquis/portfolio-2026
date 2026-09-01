@@ -613,8 +613,9 @@
                 <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Le projet derrière les écrans</span></li>
                 <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-4', this)"><span class="menu-num">4</span><span class="menu-label">La conception</span></li>
                 <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-5', this)"><span class="menu-num">5</span><span class="menu-label">Le prototype</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-7', this)"><span class="menu-num">6</span><span class="menu-label">Ce que j’en retiens</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-8', this)"><span class="menu-num">7</span><span class="menu-label">Explorer le projet autrement</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-6', this)"><span class="menu-num">6</span><span class="menu-label">Points d’attention</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-learnings', this)"><span class="menu-num">7</span><span class="menu-label">Ce que j’ai appris</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-7', this)"><span class="menu-num">8</span><span class="menu-label">Explorer le projet autrement</span></li>
                 <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('bb-sec-1')"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></li>
               </ul>
             </aside>
@@ -834,6 +835,36 @@
                 </div>
 
                 <p style="font-size: 11.5px; color: #8A7669; font-style: italic; line-height: 1.45; margin-top: 14px; margin-bottom: 0;">Ces éléments sont des points d’attention de conception identifiés à partir de mon prototype. Ils ne correspondent pas aux résultats d’une campagne formelle de tests utilisateurs.</p>
+              </div>
+
+              <!-- CE QUE J'AI APPRIS -->
+              <div id="bb-sec-learnings" class="lbc-v2-learnings-block" style="margin-top: 32px; margin-bottom: 40px;">
+                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 16px; color: var(--color-primary, #9B5620) !important;">Ce que j’ai appris</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 20px;">
+                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9;">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">01</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Simplifier demande plus de choix qu’on ne l’imagine</div>
+                    <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Sur Bambinets, j’ai compris que rendre une interface simple ne consiste pas à enlever des éléments au hasard. Il faut décider ce qui mérite vraiment l’attention, ce qui peut attendre et ce qui risque de créer une hésitation inutile.</div>
+                  </div>
+                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9;">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">02</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Concevoir pour un public débutant change la manière de hiérarchiser</div>
+                    <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Quand l’utilisateur ne connaît ni le sujet ni l’outil, chaque libellé, chaque repère et chaque transition compte davantage. Il faut accompagner suffisamment pour rassurer, sans transformer le parcours en mode d’emploi permanent.</div>
+                  </div>
+                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9;">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">03</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Un design system n’est pas une cage</div>
+                    <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Travailler à partir d’un univers graphique déjà défini m’a appris à ne pas confondre cohérence visuelle et rigidité. Quand la lisibilité ou la compréhension l’exige, certains éléments doivent pouvoir être ajustés sans casser l’identité du produit.</div>
+                  </div>
+                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9;">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">04</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">L’accessibilité ne s’arrête pas à la maquette</div>
+                    <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Vérifier les contrastes, la hiérarchie et les zones interactives est nécessaire, mais ce projet m’a aussi rappelé qu’une interface ne devient pas accessible parce qu’un prototype coche quelques critères. Une partie essentielle du travail se joue ensuite dans l’implémentation.</div>
+                  </div>
+                </div>
+
+                <p class="lbc-v2-card-body" style="margin-top: 16px; font-weight: 600; color: #C76D4B !important;">Au final, Bambinets m’a surtout appris qu’une interface pédagogique réussie ne doit pas montrer tout ce qu’elle sait faire. Elle doit aider l’utilisateur à apprendre sans lui demander d’apprendre l’interface en même temps.</p>
               </div>
 
               <!-- EXPLORER LE PROJET AUTREMENT (EXACTEMENT LE MEME DESIGN QUE LES CORDONS BLEUS) -->
