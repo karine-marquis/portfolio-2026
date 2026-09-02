@@ -3570,5 +3570,70 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     font-size: 11.5px !important;
     white-space: nowrap !important;
   }
+
+  /* ÉTAPE 2 : HERO HOME RESPONSIVE */
+  .home-hero-v2-container {
+    padding: 76px 20px 32px 20px !important;
+  }
+
+  .hero-v2-portfolio-title {
+    font-size: 42px !important;
+    line-height: 1 !important;
+    margin-bottom: 12px !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  .hero-v2-subtitle-pillars {
+    font-size: 9.5px !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-v2-subtitle-pillars span {
+    margin: 0 4px !important;
+  }
+
+  .hero-v2-body-wrapper {
+    margin-top: 24px !important;
+  }
+
+  .hero-v2-h1 {
+    margin-bottom: 24px !important;
+    line-height: 1.3 !important;
+  }
+
+  .hero-v2-h1 span {
+    font-size: 22px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  .hero-v2-paragraph-1 {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .hero-v2-paragraph-1 span span {
+    font-size: 15px !important;
+  }
+
+  .hero-v2-paragraph-2 {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-v2-arrow-divider {
+    margin-bottom: 24px !important;
+  }
+
+  .hero-v2-ctas-row {
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
 }
 
