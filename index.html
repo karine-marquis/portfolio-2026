@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=20260902_home_hero">
+  <link rel="stylesheet" href="styles.css?v=20260902_hamburger_menu">
   <style>
     .bambinets-narrative-chemin-wrap {
       border-radius: 16px;
@@ -326,6 +326,27 @@
           history.pushState(null, '', '#' + projectId);
         }
       } catch (e) {}
+    }
+
+    function toggleMobileMenu() {
+      const overlay = document.getElementById('mobileMenuOverlay');
+      if (!overlay) return;
+      const isOpen = overlay.classList.contains('active');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        overlay.classList.add('active');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeMobileMenu() {
+      const overlay = document.getElementById('mobileMenuOverlay');
+      if (!overlay) return;
+      overlay.classList.remove('active');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
     }
   </script>
 
@@ -1575,29 +1596,61 @@
 
 
   <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Approche - Offre - Projets - À propos - À lire) -->
+  <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Approche - Offre - Projets - À propos - À lire) -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="#page-home" class="brand-logo-wrap" aria-label="Retour à l'accueil KM UX - UI Designer">
+      <a href="#page-home" onclick="navigateTo('home')" class="brand-logo-wrap" aria-label="Retour à l'accueil KM UX - UI Designer">
         <span class="brand-km">KM</span>
         <span class="brand-sub">UX - UI Designer</span>
       </a>
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="#page-home" class="nav-link active">Accueil</a></li>
-          <li><a href="#page-approach" class="nav-link">Mon approche</a></li>
-          <li><a href="#page-offer" class="nav-link">Mon offre</a></li>
-          <li><a href="#page-projects" class="nav-link">Mes projets</a></li>
-          <li><a href="#page-about" class="nav-link">Qui suis-je ?</a></li>
-          <li><a href="#page-blog" class="nav-link">Journal</a></li>
+          <li><a href="#page-home" onclick="navigateTo('home'); return false;" class="nav-link active">Accueil</a></li>
+          <li><a href="#page-approach" onclick="navigateTo('approach'); return false;" class="nav-link">Mon approche</a></li>
+          <li><a href="#page-offer" onclick="navigateTo('offer'); return false;" class="nav-link">Mon offre</a></li>
+          <li><a href="#page-projects" onclick="navigateTo('projects'); return false;" class="nav-link">Mes projets</a></li>
+          <li><a href="#page-about" onclick="navigateTo('about'); return false;" class="nav-link">Qui suis-je ?</a></li>
+          <li><a href="#page-blog" onclick="navigateTo('blog'); return false;" class="nav-link">Journal</a></li>
         </ul>
       </nav>
 
-      <a href="#page-contact" onclick="navigateTo('contact')" class="btn-nav-outline">
+      <div class="nav-right-wrap">
+        <a href="#page-contact" onclick="navigateTo('contact')" class="btn-nav-outline">
+          On en parle ? →
+        </a>
+        <button class="mobile-hamburger-btn" onclick="toggleMobileMenu()" aria-label="Ouvrir le menu mobile">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE OVERLAY JAPANDI -->
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <a href="#page-home" onclick="navigateTo('home'); closeMobileMenu();" class="brand-logo-wrap" aria-label="Retour à l'accueil KM UX - UI Designer">
+        <span class="brand-km">KM</span>
+        <span class="brand-sub">UX - UI Designer</span>
+      </a>
+      <button class="mobile-menu-close-btn" onclick="closeMobileMenu()" aria-label="Fermer le menu mobile">✕</button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <ul class="mobile-menu-list">
+        <li><a href="#page-home" onclick="navigateTo('home'); closeMobileMenu();" class="mobile-menu-link">Accueil</a></li>
+        <li><a href="#page-approach" onclick="navigateTo('approach'); closeMobileMenu();" class="mobile-menu-link">Mon approche</a></li>
+        <li><a href="#page-offer" onclick="navigateTo('offer'); closeMobileMenu();" class="mobile-menu-link">Mon offre</a></li>
+        <li><a href="#page-projects" onclick="navigateTo('projects'); closeMobileMenu();" class="mobile-menu-link">Mes projets</a></li>
+        <li><a href="#page-about" onclick="navigateTo('about'); closeMobileMenu();" class="mobile-menu-link">Qui suis-je ?</a></li>
+        <li><a href="#page-blog" onclick="navigateTo('blog'); closeMobileMenu();" class="mobile-menu-link">Journal</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-footer">
+      <a href="#page-contact" onclick="navigateTo('contact'); closeMobileMenu();" class="btn-nav-outline" style="width: 100%; justify-content: center; padding: 10px 18px !important; font-size: 13.5px !important;">
         On en parle ? →
       </a>
     </div>
-  </header>
+  </div>
 
   <main class="main-body-wrap">
 

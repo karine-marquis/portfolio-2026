@@ -3637,3 +3637,129 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
+/* ==========================================================================
+   BOUTON HAMBURGER ET MENU MOBILE OVERLAY JAPANDI
+   ========================================================================== */
+.nav-right-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.mobile-hamburger-btn {
+  display: none !important;
+  background: transparent !important;
+  border: 1px solid #D4CCC9 !important;
+  border-radius: 6px !important;
+  width: 34px !important;
+  height: 32px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #3E3934 !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  transition: all 0.2s ease !important;
+}
+
+.mobile-hamburger-btn:hover {
+  background: rgba(155, 86, 32, 0.08) !important;
+  color: #9B5620 !important;
+  border-color: #9B5620 !important;
+}
+
+.mobile-menu-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  z-index: 10000 !important;
+  background: #F5F4F0 !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 20px 24px 36px 24px !important;
+  box-sizing: border-box !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease !important;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.mobile-menu-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 16px !important;
+  border-bottom: 1px solid #E5DCD3 !important;
+}
+
+.mobile-menu-close-btn {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  border: 1px solid #D4CCC9 !important;
+  color: #3E3934 !important;
+  font-size: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.mobile-menu-close-btn:hover {
+  color: #9B5620 !important;
+  border-color: #9B5620 !important;
+}
+
+.mobile-menu-nav {
+  margin: auto 0 !important;
+  padding: 24px 0 !important;
+}
+
+.mobile-menu-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 22px !important;
+  text-align: center !important;
+}
+
+.mobile-menu-link {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+  display: inline-block !important;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active {
+  color: #9B5620 !important;
+}
+
+.mobile-menu-footer {
+  padding-top: 16px !important;
+  border-top: 1px solid #E5DCD3 !important;
+}
+
+@media (max-width: 768px) {
+  .mobile-hamburger-btn {
+    display: inline-flex !important;
+  }
+}
+
