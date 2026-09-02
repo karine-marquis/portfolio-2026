@@ -3937,3 +3937,36 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
+/* ==========================================================================
+   HERO PAGE PROJETS RESPONSIVE MOBILE (≤ 768px & 390px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  #page-projects .content-wrap {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  #page-projects .projects-hero-header {
+    padding-top: 24px !important;
+    margin-bottom: 36px !important;
+  }
+
+  #page-projects .projects-main-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 42px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 16px !important;
+    color: #3E3934 !important;
+    word-break: break-word !important;
+  }
+
+  #page-projects .body-large {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+    max-width: 100% !important;
+    color: #3E3934 !important;
+    opacity: 0.9 !important;
+  }
+}
+
