@@ -3937,36 +3937,128 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
+/* STYLES ÉDITORIAUX DU H1 ET PARAGRAPHE PAGE PROJETS */
+.projects-main-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.projects-title-lead {
+  display: block;
+  font-size: 46px;
+  font-weight: 400;
+  color: #3E3934;
+  margin-bottom: 6px;
+}
+
+.projects-title-sub {
+  display: block;
+  font-size: 28px;
+  font-weight: 500;
+  color: #9B5620;
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.projects-hero-paragraph {
+  max-width: 860px;
+  font-size: 16px;
+  color: #3E3934;
+  line-height: 1.55;
+}
+
+.projects-intro-text {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.projects-hero-role {
+  display: block;
+  margin-top: 10px;
+  padding-left: 14px;
+  border-left: 2px solid #9B5620;
+  color: #3E3934;
+  opacity: 0.95;
+}
+
 /* ==========================================================================
-   HERO PAGE PROJETS RESPONSIVE MOBILE — COMPACT & ÉDITORIAL (≤ 768px & 390px)
+   OPTION 1 : HERO PAGE PROJETS RESPONSIVE MOBILE — L'ÉQUILIBRE ÉDITORIAL JAPANDI (≤ 768px & 390px)
    ========================================================================== */
 @media (max-width: 768px) {
+  #page-projects .content-wrap.section-spacing,
   #page-projects .content-wrap {
-    padding-left: 22px !important;
-    padding-right: 22px !important;
+    padding-top: 10px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   #page-projects .projects-hero-header {
-    padding-top: 16px !important;
-    margin-bottom: 24px !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
   }
 
   #page-projects .projects-main-title {
-    font-family: 'Playfair Display', Georgia, serif !important;
-    font-size: 36px !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.01em !important;
+    margin-top: 0 !important;
     margin-bottom: 10px !important;
-    color: #3E3934 !important;
     word-break: break-word !important;
   }
 
-  #page-projects .body-large {
-    font-size: 15px !important;
+  #page-projects .projects-title-lead {
+    font-size: 34px !important;
+    line-height: 1.05 !important;
+    margin-bottom: 4px !important;
+  }
+
+  #page-projects .projects-title-sub {
+    font-size: 22px !important;
+    line-height: 1.22 !important;
+  }
+
+  #page-projects .projects-hero-paragraph {
+    font-size: 14.5px !important;
     line-height: 1.5 !important;
-    max-width: 320px !important;
-    color: #3E3934 !important;
-    opacity: 0.9 !important;
+    max-width: 100% !important;
+  }
+
+  #page-projects .projects-intro-text {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+    margin-bottom: 10px !important;
+  }
+
+  #page-projects .projects-hero-role {
+    margin-top: 10px !important;
+    padding-left: 12px !important;
+    border-left: 2.5px solid #9B5620 !important;
+    text-align: left !important;
+    font-size: 14px !important;
+    line-height: 1.48 !important;
+  }
+
+  /* CENTRAGE PARFAIT & SANS RECADRAGE DES IMAGES CARTE SUR MOBILE */
+  .project-glance-card .glance-media-col {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 16px 16px 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+  }
+
+  .project-glance-card .glance-media-col img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 200px !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    margin: 0 auto !important;
+    border-radius: 14px !important;
   }
 }
 
