@@ -2579,10 +2579,11 @@ strong, b {
 }
 
 .lbc-v2-card-bullets li::before {
-  content: "âœ¦";
+  content: "\2726" !important;
   color: var(--color-accent) !important;
-  font-size: 11px;
-  flex-shrink: 0;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
 }
 
 .lbc-v2-card-bullet-content {
