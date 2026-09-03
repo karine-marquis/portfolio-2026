@@ -4626,6 +4626,10 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   /* 5 PETITES CARTES (CE QUE LA REFONTE DEVAIT PERMETTRE) SUR MOBILE */
   .lbc-v2-card-bullets li {
     align-items: flex-start !important;
+    background: #F7F3EE !important;
+    border: 1px solid #D4CCC9 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
     padding: 10px 14px !important;
     height: auto !important;
     min-height: 0 !important;
@@ -4650,6 +4654,74 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     font-style: normal !important;
     font-weight: 400 !important;
     line-height: 1.45 !important;
+  }
+
+  /* LIGNE FORFAIT ESTIMÉ RAPPROCHÉE DU BLOC SUIVI POST-LANCEMENT SUR MOBILE */
+  .lbc-v2-forfait-line {
+    display: inline-block !important;
+    margin-top: 4px !important;
+  }
+
+  /* ACTION D'AGRANDISSEMENT DES LIVRABLES "MA DÉMARCHE" SOUS L'IMAGE ET ALIGNÉE À DROITE SUR MOBILE */
+  .lbc-v2-deliverable-horizontal {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    position: relative !important;
+  }
+
+  .lbc-v2-deliverable-horizontal .deliverable-zoom-badge {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    background: transparent !important;
+    border: none !important;
+    color: #477A6A !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin-top: 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    pointer-events: auto !important;
+    transition: color 0.15s ease !important;
+  }
+
+  .lbc-v2-deliverable-horizontal .deliverable-zoom-badge:hover,
+  .lbc-v2-deliverable-horizontal .deliverable-zoom-badge:active,
+  .lbc-v2-deliverable-horizontal .deliverable-zoom-badge:focus {
+    color: #355C50 !important;
+  }
+
+  .lbc-v2-deliverable-horizontal .deliverable-zoom-badge svg {
+    color: inherit !important;
+    stroke: currentColor !important;
+    vertical-align: -1px !important;
+  }
+
+  /* SECTION "CE QUE J'AI DÉCOUVERT" SANS CARTE EXTERIEURE SUR MOBILE */
+  #lbc-sec-5 {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-top: 24px !important;
+    margin-bottom: 28px !important;
+  }
+
+  /* SECTION "LES SOLUTIONS RETENUES" SANS CARTE EXTERIEURE SUR MOBILE */
+  #lbc-sec-6 {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-top: 24px !important;
+    margin-bottom: 28px !important;
   }
 }
 
