@@ -2585,6 +2585,33 @@ strong, b {
   flex-shrink: 0;
 }
 
+.lbc-v2-card-bullet-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.lbc-v2-bullet-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #C76D4B !important;
+  font-size: 13.5px;
+  line-height: 1.35;
+  display: block;
+}
+
+.lbc-v2-bullet-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #3E3934 !important;
+  font-size: 12.5px;
+  line-height: 1.45;
+  display: block;
+}
+
 .lbc-v2-coulisses-title {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 24px !important;
@@ -4447,9 +4474,9 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   .lbc-v2-hero-row {
-    margin-top: 12px !important;
+    margin-top: 6px !important;
     padding-top: 0 !important;
-    gap: 12px !important;
+    gap: 16px !important;
   }
 
   .lbc-v2-hero-text {
@@ -4457,21 +4484,46 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     padding-top: 0 !important;
   }
 
-  /* ÉTIQUETTE ÉDITORIALE TERRACOTTA "LE PROJET EN DÉTAIL" SUR MOBILE */
+  /* ÉTIQUETTE ÉDITORIALE VERT SAUGE "LE PROJET EN DÉTAIL" SUR MOBILE */
   .lbc-v2-pill-badge {
     display: inline-block !important;
-    background: #F7F3EE !important;
-    color: #C76D4B !important;
-    border: 1px solid rgba(199, 109, 75, 0.35) !important;
+    background: #E2E8DD !important;
+    color: #333F30 !important;
+    border: 1px solid #B8C4AF !important;
     border-radius: 5px !important;
     padding: 4px 8px !important;
     font-size: 10px !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.06em !important;
-    margin-top: 8px !important;
-    margin-bottom: 10px !important;
+    margin-top: 2px !important;
+    margin-bottom: 8px !important;
     box-shadow: none !important;
+  }
+
+  /* IMAGE HERO RECENTRÉE ET LÉGÈREMENT COMPACTÉE SUR MOBILE */
+  .lbc-v2-hero-img-wrap,
+  #foodles-probleme .lbc-v2-hero-img-wrap {
+    width: 90% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 24px rgba(62, 57, 52, 0.1) !important;
+  }
+
+  .lbc-v2-hero-img-wrap img,
+  #foodles-probleme .lbc-v2-hero-img-wrap img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 240px !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 10px !important;
   }
 
   /* SECTION "CE QUE J'AI CHERCHÉ À COMPRENDRE" SANS CARTE EXTERIEURE SUR MOBILE */
@@ -4482,6 +4534,122 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     box-shadow: none !important;
     padding: 0 !important;
     margin-bottom: 24px !important;
+  }
+
+  /* ACTION D'AGRANDISSEMENT DU CAROUSEL PERSONA PLACÉE SOUS L'IMAGE ET ALIGNÉE À DROITE SUR MOBILE */
+  .lbc-v2-personas-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    position: relative !important;
+    width: 88% !important;
+    max-width: 88% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .lbc-v2-personas-zoom-badge {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    background: transparent !important;
+    border: none !important;
+    color: #477A6A !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin-top: 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    pointer-events: auto !important;
+    transition: color 0.15s ease !important;
+  }
+
+  .lbc-v2-personas-zoom-badge:hover,
+  .lbc-v2-personas-zoom-badge:active,
+  .lbc-v2-personas-zoom-badge:focus {
+    color: #355C50 !important;
+  }
+
+  .lbc-v2-personas-zoom-badge svg {
+    color: inherit !important;
+    stroke: currentColor !important;
+    vertical-align: -1px !important;
+  }
+
+  /* SECTION "LE PROJET DERRIÈRE LES ÉCRANS" — LIGNES ÉDITORIALES SANS FOND DE CARTE SUR MOBILE */
+  .lbc-v2-learnings-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: visible !important;
+    overflow: visible !important;
+    margin-bottom: 24px !important;
+  }
+
+  .lbc-v2-learnings-grid .lbc-v2-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    flex: none !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(212, 204, 201, 0.5) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 0 14px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .lbc-v2-learnings-grid .lbc-v2-card:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .lbc-v2-learnings-grid .lbc-v2-card-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #3E3934 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* 5 PETITES CARTES (CE QUE LA REFONTE DEVAIT PERMETTRE) SUR MOBILE */
+  .lbc-v2-card-bullets li {
+    align-items: flex-start !important;
+    padding: 10px 14px !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .lbc-v2-card-bullets li::before {
+    margin-top: 3px !important;
+  }
+
+  .lbc-v2-bullet-title {
+    font-size: 13px !important;
+    color: #C76D4B !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .lbc-v2-bullet-desc {
+    font-size: 12px !important;
+    color: #3E3934 !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 1.45 !important;
   }
 }
 
