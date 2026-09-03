@@ -4721,7 +4721,55 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     box-shadow: none !important;
     padding: 0 !important;
     margin-top: 24px !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* SECTION "CE QUE J'AI APPRIS" — PILE VERTICALE DE 3 BLOCS AVEC SÉPARATEURS SUR MOBILE */
+  #lbc-sec-7 {
+    margin-top: 6px !important;
+    padding-top: 0 !important;
+  }
+
+  #lbc-sec-7 .lbc-v2-learnings-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: visible !important;
+    overflow: visible !important;
     margin-bottom: 28px !important;
+  }
+
+  #lbc-sec-7 .lbc-v2-learnings-grid .lbc-v2-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    flex: none !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(212, 204, 201, 0.5) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 0 14px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #lbc-sec-7 .lbc-v2-learnings-grid .lbc-v2-card:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  #lbc-sec-7 .lbc-v2-learnings-grid .lbc-v2-card-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #3E3934 !important;
+    margin-bottom: 6px !important;
   }
 }
 
