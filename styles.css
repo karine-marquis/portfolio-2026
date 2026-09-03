@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    KM UX/UI DESIGNER â€” HOMEPAGE SCÃˆNE & FOOTER (INTEGRATION IMAGE FOODLES KARINE)
    ========================================================================== */
 
@@ -4832,6 +4832,69 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   .lbc-v2-main-content {
     border-bottom-left-radius: 12px !important;
     border-bottom-right-radius: 12px !important;
+  }
+}
+
+/* ==========================================================================
+   BOUTON FLOTTANT "REMONTER EN HAUT" (MODALES DE PROJETS DESKTOP & MOBILE)
+   ========================================================================== */
+.modal-scroll-top-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #F7F3EE;
+  border: 1px solid #D4CCC9;
+  box-shadow: 0 4px 14px rgba(62, 57, 52, 0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 99999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.modal-scroll-top-btn.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+.modal-scroll-top-btn:hover {
+  background-color: #EEEAE5;
+  border-color: var(--color-accent);
+  box-shadow: 0 6px 18px rgba(62, 57, 52, 0.22);
+}
+
+.modal-scroll-top-btn:focus-visible {
+  outline: 2px solid var(--color-accent) !important;
+  outline-offset: 3px !important;
+}
+
+.modal-scroll-top-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--color-accent);
+  transition: transform 0.2s ease;
+}
+
+.modal-scroll-top-btn:hover svg {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .modal-scroll-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
   }
 }
 

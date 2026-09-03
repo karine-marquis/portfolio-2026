@@ -456,6 +456,11 @@
       </div>
     </footer>
 
+    <button id="modalScrollToTopBtn" class="modal-scroll-top-btn" onclick="scrollModalToTop()" aria-label="Remonter en haut">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
     <script>
       if (window.lucide) lucide.createIcons();
       function scrollToLbcSection(secId, el) {
@@ -468,6 +473,26 @@
           el.classList.add('active');
         }
       }
+
+      function scrollModalToTop() {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const scrollBehavior = prefersReducedMotion ? 'instant' : 'smooth';
+        window.scrollTo({ top: 0, behavior: scrollBehavior });
+      }
+
+      function handleModalScrollForTopBtn() {
+        const topBtn = document.getElementById('modalScrollToTopBtn');
+        if (!topBtn) return;
+        const windowScroll = window.scrollY || window.pageYOffset || 0;
+        if (windowScroll >= 700) {
+          topBtn.classList.add('visible');
+        } else {
+          topBtn.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', handleModalScrollForTopBtn, { passive: true });
+      document.addEventListener('DOMContentLoaded', handleModalScrollForTopBtn);
     </script>
     <script src="app.js"></script>
   </body>

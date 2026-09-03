@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=20260903_terracotta_unified_var_accent">
+  <link rel="stylesheet" href="styles.css?v=20260903_scroll_top_direct_body_child">
   <style>
     .bambinets-narrative-chemin-wrap {
       border-radius: 16px;
@@ -249,16 +249,52 @@
       containerEl.style.cursor = 'default';
     }
 
+    function getModalScrollTop() {
+      const overlay = document.getElementById('projectDrawerOverlay');
+      if (overlay && overlay.classList.contains('active')) {
+        return overlay.scrollTop;
+      }
+      return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    }
+
+    function scrollModalToTop() {
+      const overlay = document.getElementById('projectDrawerOverlay');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const scrollBehavior = prefersReducedMotion ? 'instant' : 'smooth';
+
+      if (overlay && overlay.classList.contains('active')) {
+        overlay.scrollTo({ top: 0, behavior: scrollBehavior });
+      }
+      window.scrollTo({ top: 0, behavior: scrollBehavior });
+    }
+
+    function handleModalScrollForTopBtn() {
+      const topBtn = document.getElementById('modalScrollToTopBtn');
+      if (!topBtn) return;
+
+      const st = getModalScrollTop();
+      if (st >= 700) {
+        topBtn.classList.add('visible');
+      } else {
+        topBtn.classList.remove('visible');
+      }
+    }
+
     function initModalScrollListener() {
-      const scrollables = document.querySelectorAll('#projectDrawerOverlay, .lbc-v2-main-content, .bambinets-main-content, .foodles-main-content');
-      scrollables.forEach(function(el) {
-        if (!el) return;
-        el.removeEventListener('scroll', updateActiveMenuItem);
-        el.addEventListener('scroll', updateActiveMenuItem, { passive: true });
-      });
+      const overlay = document.getElementById('projectDrawerOverlay');
+      if (overlay) {
+        overlay.removeEventListener('scroll', updateActiveMenuItem);
+        overlay.addEventListener('scroll', updateActiveMenuItem, { passive: true });
+        overlay.removeEventListener('scroll', handleModalScrollForTopBtn);
+        overlay.addEventListener('scroll', handleModalScrollForTopBtn, { passive: true });
+      }
       window.removeEventListener('scroll', updateActiveMenuItem);
       window.addEventListener('scroll', updateActiveMenuItem, { passive: true });
+      window.removeEventListener('scroll', handleModalScrollForTopBtn);
+      window.addEventListener('scroll', handleModalScrollForTopBtn, { passive: true });
+
       updateActiveMenuItem();
+      handleModalScrollForTopBtn();
     }
 
     document.addEventListener('DOMContentLoaded', initModalScrollListener);
@@ -355,6 +391,13 @@
   <script src="https://unpkg.com/lucide@latest" onload="initIconsSafely()"></script>
 </head>
 <body>
+
+  <!-- BOUTON FLOTTANT REMONTER EN HAUT (ENFANT DIRECT DE BODY) -->
+  <button id="modalScrollToTopBtn" class="modal-scroll-top-btn" onclick="scrollModalToTop()" aria-label="Remonter en haut">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
 
   <!-- CASE STUDY CANVA DRAWER MODAL INTERACTIF EMBEDDED -->
   <div class="drawer-overlay" id="projectDrawerOverlay">
