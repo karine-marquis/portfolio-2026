@@ -4232,12 +4232,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
-/* COMPORTEMENT DESKTOP DU DROPDOWN ACCORDEON (.lbc-v2-menu-details) */
-.lbc-v2-menu-details {
-  display: block;
-  width: 100%;
-}
-.lbc-v2-menu-details summary {
+/* BOUTON MENUS MOBILE DÉDIÉ (.lbc-v2-mobile-menu-btn) */
+.lbc-v2-mobile-menu-btn {
   display: none !important;
 }
 
@@ -4324,59 +4320,121 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     margin: 6px 0 !important;
   }
 
-  /* BOUTON COMPACT DE NAVIGATION INTERNE "Dans ce projet ▾" */
-  .lbc-v2-menu-details {
-    width: 100% !important;
-    margin-top: 4px !important;
-    display: block !important;
-  }
-
-  .lbc-v2-menu-summary {
+  /* BOUTON VISIBLE SUR MOBILE "Dans ce projet ▾" */
+  .lbc-v2-mobile-menu-btn {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     width: 100% !important;
-    padding: 8px 12px !important;
-    background: #FFFFFF !important;
+    background: #F7F3EE !important;
+    color: #3E3934 !important;
     border: 1px solid #D4CCC9 !important;
-    border-radius: 8px !important;
+    border-radius: 7px !important;
+    box-shadow: none !important;
+    min-height: 32px !important;
+    padding: 5px 12px !important;
     font-size: 12px !important;
     font-weight: 600 !important;
-    color: #3E3934 !important;
     cursor: pointer !important;
-    list-style: none !important;
+    margin-top: 6px !important;
+    margin-bottom: 4px !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
     user-select: none !important;
-    margin: 0 !important;
+    outline: none !important;
+    transition: background 0.15s ease, border-color 0.15s ease !important;
   }
 
-  .lbc-v2-menu-summary::-webkit-details-marker,
-  .lbc-v2-menu-summary::marker {
-    display: none !important;
+  .lbc-v2-mobile-menu-btn .menu-btn-arrow {
+    font-size: 10.5px !important;
+    transition: transform 0.2s ease !important;
+    color: #C76D4B !important;
   }
 
-  .lbc-v2-menu-details[open] .menu-summary-arrow {
+  .lbc-v2-mobile-menu-btn.active .menu-btn-arrow {
     transform: rotate(180deg) !important;
   }
 
-  .lbc-v2-menu-details:not([open]) .lbc-v2-menu-list {
+  .lbc-v2-menu-list {
     display: none !important;
   }
 
-  .lbc-v2-menu-details[open] .lbc-v2-menu-list {
+  /* LISTE OUVERTE SANS GRAND CADRE ENGLOBANT SUR FOND DE MODALE */
+  .lbc-v2-menu-list.mobile-open {
     display: flex !important;
     flex-direction: column !important;
-    gap: 4px !important;
+    gap: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 4px 0 !important;
     margin-top: 6px !important;
-    padding: 6px 0 !important;
-    border-top: 1px solid rgba(155, 86, 32, 0.15) !important;
+    margin-bottom: 12px !important;
+    width: 100% !important;
     overflow-x: hidden !important;
   }
 
-  .lbc-v2-menu-item {
+  .lbc-v2-menu-list.mobile-open li,
+  .lbc-v2-menu-list.mobile-open .lbc-v2-menu-item {
     width: 100% !important;
-    padding: 6px 8px !important;
-    font-size: 11px !important;
+    padding: 10px 0 !important;
+    font-size: 11.5px !important;
     white-space: normal !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(212, 204, 201, 0.45) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .lbc-v2-menu-list.mobile-open li:last-child,
+  .lbc-v2-menu-list.mobile-open .lbc-v2-menu-item:last-child {
+    border-bottom: none !important;
+  }
+
+  .lbc-v2-menu-list.mobile-open a {
+    color: #3E3934 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  .lbc-v2-menu-list.mobile-open .menu-num {
+    color: #C76D4B !important;
+    font-weight: 700 !important;
+    font-size: 10.5px !important;
+    background: transparent !important;
+  }
+
+  .lbc-v2-menu-list.mobile-open .menu-label {
+    color: #3E3934 !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+  }
+
+  /* "REMONTER EN HAUT" : SUPPRESSION DU DOUBLE TRAIT (SÉPARATEUR UNIQUE ET NET) */
+  .lbc-v2-menu-list.mobile-open .lbc-v2-menu-item.lbc-v2-menu-back-top {
+    margin-top: 4px !important;
+    padding-top: 10px !important;
+    padding-bottom: 6px !important;
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .lbc-v2-menu-list.mobile-open .lbc-v2-menu-item.lbc-v2-menu-back-top .menu-num {
+    color: #C76D4B !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    background: transparent !important;
+  }
+
+  .lbc-v2-menu-list.mobile-open .lbc-v2-menu-item.lbc-v2-menu-back-top .menu-label {
+    color: #3E3934 !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
   }
 
   .lbc-v2-main-content {

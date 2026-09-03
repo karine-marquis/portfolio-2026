@@ -267,6 +267,22 @@ function openProjectDrawer(projectId) {
 }
 
 /* HELPER SCROLL ET AUDIO POUR LA MODALE V2 */
+function toggleMobileProjectMenu(btn) {
+  if (!btn) return;
+  const sidebar = btn.closest('.lbc-v2-sidebar') || btn.parentElement;
+  if (!sidebar) return;
+  const menuList = sidebar.querySelector('.lbc-v2-menu-list');
+  if (!menuList) return;
+  const isOpen = menuList.classList.contains('mobile-open');
+  if (isOpen) {
+    menuList.classList.remove('mobile-open');
+    btn.classList.remove('active');
+  } else {
+    menuList.classList.add('mobile-open');
+    btn.classList.add('active');
+  }
+}
+
 function scrollToLbcSection(secId, itemEl) {
   const target = document.getElementById(secId);
   if (target) {
@@ -289,8 +305,13 @@ function scrollToLbcSection(secId, itemEl) {
     itemEl.classList.add('active');
 
     if (window.innerWidth <= 768) {
-      const details = itemEl.closest('details');
-      if (details) details.removeAttribute('open');
+      const sidebar = itemEl.closest('.lbc-v2-sidebar') || itemEl.closest('aside');
+      if (sidebar) {
+        const menuList = sidebar.querySelector('.lbc-v2-menu-list');
+        const btn = sidebar.querySelector('.lbc-v2-mobile-menu-btn');
+        if (menuList) menuList.classList.remove('mobile-open');
+        if (btn) btn.classList.remove('active');
+      }
     }
   }
 }
