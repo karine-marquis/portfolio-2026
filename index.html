@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=20260902_cards_cta_tight">
+  <link rel="stylesheet" href="styles.css?v=20260903_budget_nowrap_fix">
   <style>
     .bambinets-narrative-chemin-wrap {
       border-radius: 16px;
@@ -408,18 +408,21 @@
               </div>
             </div>
             <div class="lbc-v2-sidebar-sep"></div>
-            <ul class="lbc-v2-menu-list">
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le point de départ</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Ce que j’ai cherché à comprendre</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Ce que la refonte devait permettre</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3-5', this)"><span class="menu-num">4</span><span class="menu-label">Le projet derrière les écrans</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-4', this)"><span class="menu-num">5</span><span class="menu-label">Ma démarche</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-5', this)"><span class="menu-num">6</span><span class="menu-label">Ce que j’ai découvert</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-6', this)"><span class="menu-num">7</span><span class="menu-label">Les solutions retenues</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-7', this)"><span class="menu-num">8</span><span class="menu-label">Ce que j’ai appris</span></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)"><span class="menu-num">9</span><span class="menu-label">Explorer le projet autrement</span></li>
-              <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('lbc-sec-1')"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></li>
-            </ul>
+            <details class="lbc-v2-menu-details">
+              <summary class="lbc-v2-menu-summary">Dans ce projet <span class="menu-summary-arrow">▾</span></summary>
+              <ul class="lbc-v2-menu-list">
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le point de départ</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Ce que j’ai cherché à comprendre</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3', this)"><span class="menu-num">3</span><span class="menu-label">Ce que la refonte devait permettre</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-3-5', this)"><span class="menu-num">4</span><span class="menu-label">Le projet derrière les écrans</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-4', this)"><span class="menu-num">5</span><span class="menu-label">Ma démarche</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-5', this)"><span class="menu-num">6</span><span class="menu-label">Ce que j’ai découvert</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-6', this)"><span class="menu-num">7</span><span class="menu-label">Les solutions retenues</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-7', this)"><span class="menu-num">8</span><span class="menu-label">Ce que j’ai appris</span></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('lbc-sec-8', this)"><span class="menu-num">9</span><span class="menu-label">Explorer le projet autrement</span></li>
+                <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('lbc-sec-1')"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></li>
+              </ul>
+            </details>
           </aside>
           <main class="lbc-v2-main-content" id="lbcMainScroll">
             <div class="lbc-v2-hero-row" id="lbc-sec-1">
@@ -479,7 +482,7 @@
               <!-- 3 CARTES HARMONISÉES EN SURFACE CLAIRE ET RESPIRANTE -->
               <div class="lbc-v2-learnings-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; width: 100% !important; margin-bottom: 20px !important;">
                 <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid #D4CCC9 !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important;">
-                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px; color: #3E3934;">Budget prévisionnel : <span style="color: #C76D4B; font-weight: 700;">50 000 €</span></h4>
+                  <h4 class="lbc-v2-card-title" style="font-size: 15.5px; margin-bottom: 8px; color: #3E3934;">Budget prévisionnel :<br><span style="display: inline-block; color: #9B5620; font-weight: 700; font-size: 16.5px; margin-top: 4px; white-space: nowrap;">50&nbsp;000&nbsp;€</span></h4>
                   <p class="lbc-v2-card-body" style="font-size: 13.5px; color: #5C5248; line-height: 1.5;">UX/UI · gestion de projet · développement · production de contenus · accessibilité</p>
                 </div>
                 <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid #D4CCC9 !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important;">
@@ -682,19 +685,22 @@
                 </div>
               </div>
               <div class="lbc-v2-sidebar-sep"></div>
-              <ul class="lbc-v2-menu-list">
-                <li class="lbc-v2-menu-item active" onclick="scrollToLbcSection('bb-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le projet</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Le besoin & les contraintes</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-4', this)"><span class="menu-num">3</span><span class="menu-label">Architecture & wireframes</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-5', this)"><span class="menu-num">4</span><span class="menu-label">Le prototype</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-accessibilite', this)"><span class="menu-num">5</span><span class="menu-label">Accessibilité</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-6', this)"><span class="menu-num">6</span><span class="menu-label">Points d’attention</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-3', this)"><span class="menu-num">7</span><span class="menu-label">Les arbitrages</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-learnings', this)"><span class="menu-num">8</span><span class="menu-label">Ce que j’ai appris</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-suites', this)"><span class="menu-num">9</span><span class="menu-label">Suites & recommandations</span></li>
-                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-7', this)"><span class="menu-num">10</span><span class="menu-label">Explorer autrement</span></li>
-                <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('bb-sec-1')"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></li>
-              </ul>
+              <details class="lbc-v2-menu-details">
+                <summary class="lbc-v2-menu-summary">Dans ce projet <span class="menu-summary-arrow">▾</span></summary>
+                <ul class="lbc-v2-menu-list">
+                  <li class="lbc-v2-menu-item active" onclick="scrollToLbcSection('bb-sec-1', this)"><span class="menu-num">1</span><span class="menu-label">Le projet</span></li>
+                  <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-2', this)"><span class="menu-num">2</span><span class="menu-label">Le besoin & les contraintes</span></li>
+                  <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-4', this)"><span class="menu-num">3</span><span class="menu-label">Architecture & wireframes</span></li>
+                  <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-5', this)"><span class="menu-num">4</span><span class="menu-label">Le prototype</span></li>
+                  <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-accessibilite', this)"><span class="menu-num">5</span><span class="menu-label">Accessibilité</span></li>
+                  <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-6', this)"><span class="menu-num">6</span><span class="menu-label">Points d’attention</span></li>
+                  <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-3', this)"><span class="menu-num">7</span><span class="menu-label">Les arbitrages</span></li>
+                  <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-learnings', this)"><span class="menu-num">8</span><span class="menu-label">Ce que j’ai appris</span></li>
+                  <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-suites', this)"><span class="menu-num">9</span><span class="menu-label">Suites & recommandations</span></li>
+                  <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('bb-sec-7', this)"><span class="menu-num">10</span><span class="menu-label">Explorer autrement</span></li>
+                  <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('bb-sec-1')"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></li>
+                </ul>
+              </details>
             </aside>
 
             <main class="lbc-v2-main-content" id="bbMainScroll">
@@ -1093,18 +1099,21 @@
               </div>
             </div>
             <div class="lbc-v2-sidebar-sep"></div>
-            <ul class="lbc-v2-menu-list">
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-probleme', this)"><a href="#foodles-probleme"><span class="menu-num">1</span><span class="menu-label">Tout le monde avait une idée du problème</span></a></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-seconde-compte', this)"><a href="#foodles-seconde-compte"><span class="menu-num">2</span><span class="menu-label">Quand chaque seconde compte</span></a></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-a-verifier', this)"><a href="#foodles-a-verifier"><span class="menu-num">3</span><span class="menu-label">Ce qu’il fallait vérifier</span></a></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-terrain-tranche', this)"><a href="#foodles-terrain-tranche"><span class="menu-num">4</span><span class="menu-label">Le terrain tranche</span></a></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-atomic-research', this)"><a href="#foodles-atomic-research"><span class="menu-num">5</span><span class="menu-label">Des observations aux preuves — Atomic UX Research</span></a></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-resultats-tests', this)"><a href="#foodles-resultats-tests"><span class="menu-num">6</span><span class="menu-label">Ce que les tests ont révélé</span></a></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-ameliorations', this)"><a href="#foodles-ameliorations"><span class="menu-num">7</span><span class="menu-label">Ce que l’expérience devait mieux permettre</span></a></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-apprentissages', this)"><a href="#foodles-apprentissages"><span class="menu-num">8</span><span class="menu-label">Ce que ce projet m’a appris</span></a></li>
-              <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-explorer-autrement', this)"><a href="#foodles-explorer-autrement"><span class="menu-num">9</span><span class="menu-label">Explorer le projet autrement</span></a></li>
-              <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('foodles-top')"><a href="#foodles-top"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></a></li>
-            </ul>
+            <details class="lbc-v2-menu-details">
+              <summary class="lbc-v2-menu-summary">Dans ce projet <span class="menu-summary-arrow">▾</span></summary>
+              <ul class="lbc-v2-menu-list">
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-probleme', this)"><a href="#foodles-probleme"><span class="menu-num">1</span><span class="menu-label">Tout le monde avait une idée du problème</span></a></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-seconde-compte', this)"><a href="#foodles-seconde-compte"><span class="menu-num">2</span><span class="menu-label">Quand chaque seconde compte</span></a></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-a-verifier', this)"><a href="#foodles-a-verifier"><span class="menu-num">3</span><span class="menu-label">Ce qu’il fallait vérifier</span></a></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-terrain-tranche', this)"><a href="#foodles-terrain-tranche"><span class="menu-num">4</span><span class="menu-label">Le terrain tranche</span></a></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-atomic-research', this)"><a href="#foodles-atomic-research"><span class="menu-num">5</span><span class="menu-label">Des observations aux preuves — Atomic UX Research</span></a></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-resultats-tests', this)"><a href="#foodles-resultats-tests"><span class="menu-num">6</span><span class="menu-label">Ce que les tests ont révélé</span></a></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-ameliorations', this)"><a href="#foodles-ameliorations"><span class="menu-num">7</span><span class="menu-label">Ce que l’expérience devait mieux permettre</span></a></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-apprentissages', this)"><a href="#foodles-apprentissages"><span class="menu-num">8</span><span class="menu-label">Ce que ce projet m’a appris</span></a></li>
+                <li class="lbc-v2-menu-item" onclick="scrollToLbcSection('foodles-explorer-autrement', this)"><a href="#foodles-explorer-autrement"><span class="menu-num">9</span><span class="menu-label">Explorer le projet autrement</span></a></li>
+                <li class="lbc-v2-menu-item lbc-v2-menu-back-top" onclick="scrollToLbcSection('foodles-top')"><span class="menu-num" style="background: transparent; color: var(--color-accent);">↑</span><span class="menu-label" style="font-weight: 600; color: var(--color-accent);">Remonter en haut</span></a></li>
+              </ul>
+            </details>
           </aside>
 
           <!-- CONTENU PRINCIPAL JAPANDI -->

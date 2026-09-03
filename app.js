@@ -287,6 +287,11 @@ function scrollToLbcSection(secId, itemEl) {
       document.querySelectorAll('.lbc-v2-menu-item, .bambinets-menu-item').forEach(el => el.classList.remove('active'));
     }
     itemEl.classList.add('active');
+
+    if (window.innerWidth <= 768) {
+      const details = itemEl.closest('details');
+      if (details) details.removeAttribute('open');
+    }
   }
 }
 

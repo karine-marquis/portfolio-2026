@@ -4232,3 +4232,159 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
+/* COMPORTEMENT DESKTOP DU DROPDOWN ACCORDEON (.lbc-v2-menu-details) */
+.lbc-v2-menu-details {
+  display: block;
+  width: 100%;
+}
+.lbc-v2-menu-details summary {
+  display: none !important;
+}
+
+/* ==========================================================================
+   STRICT MOBILE (≤ 768px) : COMPACTAGE SIDEBAR PROJET ET MENU ACCORDÉON
+   ========================================================================== */
+@media (max-width: 768px) {
+  .lbc-v2-modal-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .lbc-v2-sidebar {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    align-self: auto !important;
+    z-index: auto !important;
+    padding: 10px 14px 8px 14px !important;
+  }
+
+  .lbc-v2-sidebar .modal-top-nav {
+    margin-bottom: 4px !important;
+  }
+
+  .lbc-v2-sidebar-brand {
+    margin-bottom: 4px !important;
+  }
+
+  .lbc-v2-sidebar-kicker {
+    margin-bottom: 1px !important;
+  }
+
+  .lbc-v2-brand-title {
+    font-size: 18px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .lbc-v2-brand-category {
+    font-size: 10.5px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .lbc-v2-brand-tagline {
+    font-size: 11px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .lbc-v2-sidebar-meta-block {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4px 6px !important;
+    margin-top: 4px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .lbc-v2-meta-item {
+    padding: 4px 6px !important;
+  }
+
+  .lbc-v2-meta-label {
+    font-size: 8px !important;
+    margin-bottom: 1px !important;
+  }
+
+  .lbc-v2-meta-value {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .lbc-v2-sidebar-sep {
+    margin: 6px 0 !important;
+  }
+
+  /* BOUTON COMPACT DE NAVIGATION INTERNE "Dans ce projet ▾" */
+  .lbc-v2-menu-details {
+    width: 100% !important;
+    margin-top: 4px !important;
+    display: block !important;
+  }
+
+  .lbc-v2-menu-summary {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 8px 12px !important;
+    background: #FFFFFF !important;
+    border: 1px solid #D4CCC9 !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #3E3934 !important;
+    cursor: pointer !important;
+    list-style: none !important;
+    user-select: none !important;
+    margin: 0 !important;
+  }
+
+  .lbc-v2-menu-summary::-webkit-details-marker,
+  .lbc-v2-menu-summary::marker {
+    display: none !important;
+  }
+
+  .lbc-v2-menu-details[open] .menu-summary-arrow {
+    transform: rotate(180deg) !important;
+  }
+
+  .lbc-v2-menu-details:not([open]) .lbc-v2-menu-list {
+    display: none !important;
+  }
+
+  .lbc-v2-menu-details[open] .lbc-v2-menu-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    margin-top: 6px !important;
+    padding: 6px 0 !important;
+    border-top: 1px solid rgba(155, 86, 32, 0.15) !important;
+    overflow-x: hidden !important;
+  }
+
+  .lbc-v2-menu-item {
+    width: 100% !important;
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+    white-space: normal !important;
+  }
+
+  .lbc-v2-main-content {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
