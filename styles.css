@@ -1,16 +1,16 @@
-/* ==========================================================================
-   KM UX/UI DESIGNER — HOMEPAGE SCÈNE & FOOTER (INTEGRATION IMAGE FOODLES KARINE)
+﻿/* ==========================================================================
+   KM UX/UI DESIGNER â€” HOMEPAGE SCÃˆNE & FOOTER (INTEGRATION IMAGE FOODLES KARINE)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root {
-  /* CHARTE COLORIMÉTRIQUE JAPANDI OFFICIELLE KARINE */
-  --color-background: #F5F4F0;   /* Fond principal du site (Dominante Crème clair) */
-  --color-surface: #EEEAE5;      /* Cartes, encarts & surfaces détachées */
-  --color-surface-var: #E6E4E0;  /* Variation très légère entre 2 blocs */
-  --color-hero-rose: #E0CFC3;    /* Rose-beige doux pour Hero V2 et grands blocs éditoriaux */
-  --color-beige-warm: #D5CABA;   /* Beige chaud pour fonds intermédiaires, badges doux, variations cartes */
+  /* CHARTE COLORIMÃ‰TRIQUE JAPANDI OFFICIELLE KARINE */
+  --color-background: #F5F4F0;   /* Fond principal du site (Dominante CrÃ¨me clair) */
+  --color-surface: #EEEAE5;      /* Cartes, encarts & surfaces dÃ©tachÃ©es */
+  --color-surface-var: #E6E4E0;  /* Variation trÃ¨s lÃ©gÃ¨re entre 2 blocs */
+  --color-hero-rose: #E0CFC3;    /* Rose-beige doux pour Hero V2 et grands blocs Ã©ditoriaux */
+  --color-beige-warm: #D5CABA;   /* Beige chaud pour fonds intermÃ©diaires, badges doux, variations cartes */
 
   /* TYPOGRAPHIE & COULEURS DE TEXTE */
   --color-body: #3E3934;         /* Texte principal (Brun profond titres et paragraphes) */
@@ -19,11 +19,11 @@
   --color-h2: #3E3934;
   --color-h3: #3E3934;
   --color-heading: #3E3934;
-  --color-text-muted: #6F665F;   /* Texte secondaire (Métadonnées, légendes, dates, infos secondaires) */
+  --color-text-muted: #6F665F;   /* Texte secondaire (MÃ©tadonnÃ©es, lÃ©gendes, dates, infos secondaires) */
   --color-subtle: #6F665F;
 
-  /* BORDURES & SÉPARATEURS */
-  --color-border: #D4CCC9;       /* Bordures fines, séparateurs & contours de cartes */
+  /* BORDURES & SÃ‰PARATEURS */
+  --color-border: #D4CCC9;       /* Bordures fines, sÃ©parateurs & contours de cartes */
 
   /* ACCENTS TERRACOTTA (ACTION & MISE EN AVANT) */
   --color-accent: #9B5620;       /* Terracotta principal (CTA principaux, accents, pastilles) */
@@ -31,14 +31,14 @@
   --color-primary: #9B5620;
   --color-primary-hover: #7A4217;
   --color-primary-soft: #E0CFC3;
-  --color-ochre-soft: #DCB482;   /* Ocre doux (Accent tertiaire très ponctuel) */
+  --color-ochre-soft: #DCB482;   /* Ocre doux (Accent tertiaire trÃ¨s ponctuel) */
 
   /* ACCENTS VERT SAUGE (RESPIRATION & ACCENTS SECONDAIRES) */
-  --color-sauge-soft: #C7D1BF;  /* Vert sauge principal (Tags, pills, repères visuels) */
-  --color-sauge-dark: #55624F;  /* Vert sauge foncé (Texte sur fond sauge, état actif) */
+  --color-sauge-soft: #C7D1BF;  /* Vert sauge principal (Tags, pills, repÃ¨res visuels) */
+  --color-sauge-dark: #55624F;  /* Vert sauge foncÃ© (Texte sur fond sauge, Ã©tat actif) */
   --color-sauge-border: #AEBBA6;/* Bordure vert sauge */
   --color-sauge-muted: #C7D1BF; /* Sauge doux */
-  --color-taupe-warm: #8F837A;  /* Taupe chaud (Éléments très secondaires, petits pictos, traits) */
+  --color-taupe-warm: #8F837A;  /* Taupe chaud (Ã‰lÃ©ments trÃ¨s secondaires, petits pictos, traits) */
 
   --font-h1: 'Playfair Display', Georgia, serif;
   --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -81,7 +81,7 @@ html, body {
   padding-top: 0 !important;
 }
 
-/* APPLICATION DES RÈGLES TYPOGRAPHIQUES & COULEURS DESIGN SYSTEM JAPANDI KARINE */
+/* APPLICATION DES RÃˆGLES TYPOGRAPHIQUES & COULEURS DESIGN SYSTEM JAPANDI KARINE */
 h1, .projects-main-title, .hero-home-title, .brand-km, .text-very-strong {
   color: #3E3934 !important;
   font-family: var(--font-h1) !important;
@@ -125,7 +125,7 @@ strong, b {
   display: none !important;
 }
 
-/* NAVBAR EN VERRE BLANC DÉPOLI LUMINEUX DÉCOUPÉ DU FOND SABLE */
+/* NAVBAR EN VERRE BLANC DÃ‰POLI LUMINEUX DÃ‰COUPÃ‰ DU FOND SABLE */
 .navbar {
   position: fixed;
   top: 0;
@@ -240,7 +240,7 @@ strong, b {
   border-radius: 50%;
 }
 
-/* BOUTON CTA PRINCIPAL (HARMONISÉ PILULE SATIN) */
+/* BOUTON CTA PRINCIPAL (HARMONISÃ‰ PILULE SATIN) */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -267,7 +267,7 @@ strong, b {
   box-shadow: 0 8px 22px rgba(180, 92, 58, 0.35) !important;
 }
 
-/* BOUTON CTA NAVBAR ÉDITORIAL UNIFIÉ (VERT SAUGE COMPACT) */
+/* BOUTON CTA NAVBAR Ã‰DITORIAL UNIFIÃ‰ (VERT SAUGE COMPACT) */
 .btn-nav-outline {
   display: inline-flex;
   align-items: center;
@@ -295,7 +295,7 @@ strong, b {
   box-shadow: 0 4px 12px rgba(85, 98, 79, 0.25) !important;
 }
 
-/* CTA SECONDAIRE EN LIEN TEXTE SOULIGNÉ */
+/* CTA SECONDAIRE EN LIEN TEXTE SOULIGNÃ‰ */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -323,7 +323,7 @@ strong, b {
   filter: drop-shadow(0 3px 6px rgba(197, 83, 53, 0.2));
 }
 
-/* HERO SCÈNE */
+/* HERO SCÃˆNE */
 .home-hero-full-scene {
   position: relative;
   width: 100%;
@@ -508,7 +508,7 @@ strong, b {
   border-radius: 12px;
 }
 
-/* PLACEHOLDER VISUEL 100% NEUTRE SANS DEGRADÉ NI CADRE ORANGE */
+/* PLACEHOLDER VISUEL 100% NEUTRE SANS DEGRADÃ‰ NI CADRE ORANGE */
 .cs-card-media-placeholder {
   width: 100%;
   height: 100%;
@@ -639,7 +639,7 @@ strong, b {
   opacity: 0.85;
 }
 
-/* LIGNE DES 5 PICTO-ÉTAPES */
+/* LIGNE DES 5 PICTO-Ã‰TAPES */
 .cs-steps-row {
   display: flex;
   align-items: flex-start;
@@ -929,7 +929,7 @@ strong, b {
   text-align: center !important;
 }
 
-/* ANIMATION FLÈCHE SCROLL CUE JAPANDI */
+/* ANIMATION FLÃˆCHE SCROLL CUE JAPANDI */
 @keyframes scrollBounce {
   0%, 100% {
     transform: translateY(0);
@@ -1049,7 +1049,7 @@ strong, b {
   transition: opacity 250ms cubic-bezier(0.16, 1, 0.3, 1), transform 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* MASQUAGE DE LA BARRE DE SCROLL BRUTE ET DESIGN ÉPURÉ */
+/* MASQUAGE DE LA BARRE DE SCROLL BRUTE ET DESIGN Ã‰PURÃ‰ */
 .drawer-content::-webkit-scrollbar,
 .lbc-mockup-modal-container::-webkit-scrollbar {
   display: none !important;
@@ -1057,7 +1057,7 @@ strong, b {
   height: 0 !important;
 }
 
-/* FLÈCHE FLOTTANTE CONTINUE EN PARALLAXE SUR L'AXE VERTICAL */
+/* FLÃˆCHE FLOTTANTE CONTINUE EN PARALLAXE SUR L'AXE VERTICAL */
 .lbc-scroll-pill-indicator {
   position: absolute !important;
   right: 28px !important;
@@ -1215,7 +1215,7 @@ strong, b {
 }
 
 /* ==========================================================================
-   CARTE PROJET "EN UN COUP D'ŒIL" (JAPANDI HIGH END)
+   CARTE PROJET "EN UN COUP D'Å’IL" (JAPANDI HIGH END)
    ========================================================================== */
 .case-studies-glance-list {
   display: flex;
@@ -1366,7 +1366,7 @@ strong, b {
   margin-bottom: 14px !important;
 }
 
-/* SECTION "LE PROJET EN UN COUP D'ŒIL" (COMPACTE -28%) */
+/* SECTION "LE PROJET EN UN COUP D'Å’IL" (COMPACTE -28%) */
 .glance-steps-section {
   margin-top: 6px;
   margin-bottom: 6px;
@@ -1461,7 +1461,7 @@ strong, b {
   font-size: 13px;
 }
 
-/* BANDEAU MÉTHODOLOGIE SIENNE BRÛLÉE DÉCOLLÉ & ÉLÉGANT */
+/* BANDEAU MÃ‰THODOLOGIE SIENNE BRÃ›LÃ‰E DÃ‰COLLÃ‰ & Ã‰LÃ‰GANT */
 .glance-methodo-bar {
   background: #E2E7E0 !important;
   color: #3E3934 !important;
@@ -1511,7 +1511,7 @@ strong, b {
   font-size: 11px;
 }
 
-/* FOOTER DE CARTE & CTA SECONDAIRE "ENTRER DANS LE PROJET →" */
+/* FOOTER DE CARTE & CTA SECONDAIRE "ENTRER DANS LE PROJET â†’" */
 .glance-card-footer {
   display: flex;
   justify-content: flex-end;
@@ -1556,7 +1556,7 @@ strong, b {
   color: #9B5620 !important;
 }
 
-/* BOUTON LIEN "← RETOUR À L'ACCUEIL" EN HAUT DES PAGES */
+/* BOUTON LIEN "â† RETOUR Ã€ L'ACCUEIL" EN HAUT DES PAGES */
 .back-home-link {
   display: inline-flex;
   align-items: center;
@@ -1808,7 +1808,7 @@ strong, b {
 }
 
 /* ==========================================================================
-   MODALE LES CORDONS BLEUS V2 — DESIGN MOCKUP DU CONSTAT AUX SOLUTIONS
+   MODALE LES CORDONS BLEUS V2 â€” DESIGN MOCKUP DU CONSTAT AUX SOLUTIONS
    ========================================================================== */
 .lbc-v2-modal-layout {
   display: flex;
@@ -1860,7 +1860,7 @@ strong, b {
   font-weight: 700 !important;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: #C76D4B !important;
+  color: var(--color-accent) !important;
   margin-bottom: 1px !important;
   opacity: 1 !important;
 }
@@ -1877,7 +1877,7 @@ strong, b {
 .lbc-v2-brand-category {
   font-family: var(--font-sans) !important;
   font-size: 11.5px !important;
-  color: #C76D4B !important;
+  color: var(--color-accent) !important;
   font-weight: 600 !important;
   margin-bottom: 2px !important;
 }
@@ -1904,7 +1904,7 @@ strong, b {
   font-weight: 700 !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #C76D4B !important;
+  color: var(--color-accent) !important;
   margin-bottom: 1px !important;
   opacity: 1 !important;
   display: flex;
@@ -1913,7 +1913,7 @@ strong, b {
 
 .lbc-v2-meta-label i,
 .lbc-v2-meta-label svg {
-  color: #C76D4B !important;
+  color: var(--color-accent) !important;
 }
 
 .lbc-v2-meta-value {
@@ -1996,7 +1996,7 @@ strong, b {
 .bambinets-menu-item.active .menu-num,
 .foodles-menu-item:hover .menu-num,
 .foodles-menu-item.active .menu-num {
-  background: #C76D4B !important;
+  background: var(--color-accent) !important;
   color: #FFFFFF !important;
   margin-left: -24px !important;
   padding-left: 24px !important;
@@ -2081,7 +2081,7 @@ strong, b {
   align-items: center;
   gap: 6px;
   background: #E0CFC3 !important;
-  color: #C76D4B !important;
+  color: var(--color-accent) !important;
   font-family: var(--font-sans) !important;
   font-size: 11px !important;
   font-weight: 700 !important;
@@ -2189,7 +2189,7 @@ strong, b {
   display: none !important;
 }
 
-/* PLANCHE PERSONAS HARMONISÉE ÉDITORIALE & DOUCE */
+/* PLANCHE PERSONAS HARMONISÃ‰E Ã‰DITORIALE & DOUCE */
 .lbc-v2-persona-tabs {
   display: flex !important;
   justify-content: center !important;
@@ -2230,12 +2230,12 @@ strong, b {
 }
 
 .lbc-v2-persona-tab:hover {
-  color: #C76D4B !important;
+  color: var(--color-accent) !important;
 }
 
 .lbc-v2-persona-tab.active {
   background: #FFFDFC !important;
-  color: #C76D4B !important;
+  color: var(--color-accent) !important;
   font-weight: 700 !important;
   box-shadow: 0 2px 6px rgba(62, 57, 52, 0.08) !important;
 }
@@ -2306,7 +2306,7 @@ strong, b {
 
 .lbc-v2-deliverable-horizontal:hover {
   transform: translateY(-2px) !important;
-  border-color: #C76D4B !important;
+  border-color: var(--color-accent) !important;
   box-shadow: 0 8px 24px rgba(62, 57, 52, 0.08) !important;
 }
 
@@ -2361,7 +2361,7 @@ strong, b {
 
 .lbc-v2-personas-wrapper:hover {
   transform: translateY(-2px) !important;
-  border-color: #C76D4B !important;
+  border-color: var(--color-accent) !important;
   box-shadow: 0 10px 24px rgba(62, 57, 52, 0.09) !important;
 }
 
@@ -2489,7 +2489,7 @@ strong, b {
   transition: transform 0.15s ease, background 0.15s ease !important;
 }
 .image-lightbox-btn-hd:hover {
-  background: #B35C3A !important;
+  background: var(--color-accent) !important;
   transform: scale(1.05) !important;
 }
 
@@ -2579,7 +2579,7 @@ strong, b {
 }
 
 .lbc-v2-card-bullets li::before {
-  content: "✦";
+  content: "âœ¦";
   color: var(--color-accent) !important;
   font-size: 11px;
   flex-shrink: 0;
@@ -2596,7 +2596,7 @@ strong, b {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-weight: 600;
-  color: #C76D4B !important;
+  color: var(--color-accent) !important;
   font-size: 13.5px;
   line-height: 1.35;
   display: block;
@@ -2936,7 +2936,7 @@ strong, b {
 }
 
 /* ==========================================================================
-   BULLES DE PAROLE ÉDITORIALES — VERBATIMS TESTERS (FOODLES & PROJETS)
+   BULLES DE PAROLE Ã‰DITORIALES â€” VERBATIMS TESTERS (FOODLES & PROJETS)
    ========================================================================== */
 .verbatim-bubbles-container {
   display: grid;
@@ -3027,7 +3027,7 @@ strong, b {
 }
 
 /* ==========================================================================
-   FOODLES SECTION 3 — CE QU'IL FALLAIT VÉRIFIER (PRÉSENTATION ÉDITORIALE)
+   FOODLES SECTION 3 â€” CE QU'IL FALLAIT VÃ‰RIFIER (PRÃ‰SENTATION Ã‰DITORIALE)
    ========================================================================== */
 .foodles-questions-grid {
   display: grid;
@@ -3082,7 +3082,7 @@ strong, b {
 }
 
 /* ==========================================================================
-   FOODLES SECTION 7 — CE QUE L'EXPÉRIENCE DEVAIT MIEUX PERMETTRE (4 AXES ÉDITORIAUX)
+   FOODLES SECTION 7 â€” CE QUE L'EXPÃ‰RIENCE DEVAIT MIEUX PERMETTRE (4 AXES Ã‰DITORIAUX)
    ========================================================================== */
 .foodles-axes-grid {
   display: grid;
@@ -3145,7 +3145,7 @@ strong, b {
 }
 
 /* ==========================================================================
-   ILLUSTRATIONS NARRATIVES FOODLES (PONCTUATIONS VISUELLES CENTRÉES A 62%)
+   ILLUSTRATIONS NARRATIVES FOODLES (PONCTUATIONS VISUELLES CENTRÃ‰ES A 62%)
    ========================================================================== */
 .foodles-narrative-img-wrap {
   width: 100% !important;
@@ -3226,7 +3226,7 @@ strong, b {
 }
 
 /* ==========================================================================
-   FOODLES HERO ILLUSTRATION — HAUTEUR VISUELLE RÉDUITE DE 12-15% SUR DESKTOP
+   FOODLES HERO ILLUSTRATION â€” HAUTEUR VISUELLE RÃ‰DUITE DE 12-15% SUR DESKTOP
    ========================================================================== */
 #foodles-probleme.lbc-v2-hero-row {
   align-items: center !important;
@@ -3317,12 +3317,12 @@ strong, b {
 
 .lbc-v2-menu-back-top:hover {
   opacity: 1 !important;
-  color: var(--color-accent-hover, #B05836) !important;
+  color: var(--color-accent-hover, var(--color-accent)) !important;
 }
 
 .lbc-v2-menu-back-top:hover .menu-label,
 .lbc-v2-menu-back-top:hover .menu-num {
-  color: var(--color-accent-hover, #B05836) !important;
+  color: var(--color-accent-hover, var(--color-accent)) !important;
 }
 
 .lbc-v2-back-top-btn {
@@ -3362,7 +3362,7 @@ strong, b {
   .glance-step-arrow { display: none; }
 }
 
-/* ZÉRO BARRE DE DÉFILEMENT - ÉPURE TOTALE (OPTION 3) */
+/* ZÃ‰RO BARRE DE DÃ‰FILEMENT - Ã‰PURE TOTALE (OPTION 3) */
 .lbc-scroll-pill-indicator {
   display: none !important;
 }
@@ -3389,7 +3389,7 @@ strong, b {
   filter: contrast(1.15) saturate(1.22) brightness(0.96);
 }
 
-/* SECTION CE QUE J'AI APPRIS — GRILLE HORIZONTALE 3 CARTE S */
+/* SECTION CE QUE J'AI APPRIS â€” GRILLE HORIZONTALE 3 CARTE S */
 .lbc-v2-learnings-block {
   margin-top: 32px;
   margin-bottom: 40px;
@@ -3408,7 +3408,7 @@ strong, b {
   }
 }
 
-/* BOUTON CROIX DE FERMETURE (COPIE CONFORME CAPTURE EN HAUT À DROITE DE LA CARTE MODALE) */
+/* BOUTON CROIX DE FERMETURE (COPIE CONFORME CAPTURE EN HAUT Ã€ DROITE DE LA CARTE MODALE) */
 .lbc-v2-modal-layout {
   position: relative !important;
 }
@@ -3451,7 +3451,7 @@ strong, b {
   border-bottom: none !important;
 }
 
-/* SUPPRESSION DÉFINITIVE DES ILLUSTRATIONS EN BAS DE SIDEBAR */
+/* SUPPRESSION DÃ‰FINITIVE DES ILLUSTRATIONS EN BAS DE SIDEBAR */
 .lbc-v2-sidebar-bottom-wrap,
 .lbc-v2-sidebar-bottom-img,
 .lbc-v2-sidebar-bg-img {
@@ -3489,15 +3489,15 @@ html {
    GRAMMAIRE D'ANIMATION GLOBALE JAPANDI HAUT DE GAMME & PREMIUM (UX/UI SPEC)
    ========================================================================== */
 
-/* 1. TYPOLOGIE & TEMPOS ET COURBES D'ACCÉLÉRATION */
+/* 1. TYPOLOGIE & TEMPOS ET COURBES D'ACCÃ‰LÃ‰RATION */
 :root {
-  --ease-japandi: cubic-bezier(0.16, 1, 0.3, 1); /* Courbe douce et raffinée */
+  --ease-japandi: cubic-bezier(0.16, 1, 0.3, 1); /* Courbe douce et raffinÃ©e */
   --duration-hover: 0.25s;  /* Micro-interactions (250 ms) */
-  --duration-state: 0.35s;  /* Changements d'état (350 ms) */
+  --duration-state: 0.35s;  /* Changements d'Ã©tat (350 ms) */
   --duration-appear: 0.5s;   /* Apparitions et modales (500 ms) */
 }
 
-/* 2. DÉFILEMENT FLUIDE & ANCRES NATURELLES */
+/* 2. DÃ‰FILEMENT FLUIDE & ANCRES NATURELLES */
 html {
   scroll-behavior: smooth !important;
 }
@@ -3518,7 +3518,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
               box-shadow var(--duration-state) var(--ease-japandi) !important;
 }
 
-/* 4. BOUTONS & CTAs (MICRO-DÉPLACEMENT VERTICAL -1.5PX & FLÈCHE +3PX) */
+/* 4. BOUTONS & CTAs (MICRO-DÃ‰PLACEMENT VERTICAL -1.5PX & FLÃˆCHE +3PX) */
 .btn-primary, .btn-secondary, .glance-card-cta, .cs-btn-canva-main, .footer-contact-link {
   transition: transform var(--duration-state) var(--ease-japandi),
               background-color var(--duration-hover) var(--ease-japandi),
@@ -3541,7 +3541,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   transform: translateX(3px) !important;
 }
 
-/* 5. CARTES ET ENCARTS (MICRO-ÉLÉVATION PROGRESSIVE -3PX SANS DEPLACEMENT BRUSQUE) */
+/* 5. CARTES ET ENCARTS (MICRO-Ã‰LÃ‰VATION PROGRESSIVE -3PX SANS DEPLACEMENT BRUSQUE) */
 .glance-card-item, .card-japandi, .lbc-v2-card, .lbc-v2-subcard {
   transition: transform var(--duration-state) var(--ease-japandi),
               box-shadow var(--duration-state) var(--ease-japandi),
@@ -3567,7 +3567,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   scroll-behavior: smooth !important;
 }
 
-/* 7. RESPECT STRICT DE PREFERS-REDUCED-MOTION (ACCESSIBILITÉ WCAG AAA) */
+/* 7. RESPECT STRICT DE PREFERS-REDUCED-MOTION (ACCESSIBILITÃ‰ WCAG AAA) */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
@@ -3582,7 +3582,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 }
 
 /* ==========================================================================
-   ÉTAPE 1 : HEADER MOBILE RESPONSIVE (BREAKPOINT MOBILE ≤ 768px & 390px)
+   Ã‰TAPE 1 : HEADER MOBILE RESPONSIVE (BREAKPOINT MOBILE â‰¤ 768px & 390px)
    ========================================================================== */
 @media (max-width: 768px) {
   .navbar {
@@ -3614,7 +3614,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     white-space: nowrap !important;
   }
 
-  /* ÉTAPE 2 : HERO HOME RESPONSIVE */
+  /* Ã‰TAPE 2 : HERO HOME RESPONSIVE */
   .home-hero-v2-container {
     padding: 76px 20px 32px 20px !important;
   }
@@ -3680,7 +3680,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   /* ==========================================================================
-     FOOTER HOME RESPONSIVE MOBILE — SIGNATURE DISCRÈTE ULTRA-LÉGÈRE
+     FOOTER HOME RESPONSIVE MOBILE â€” SIGNATURE DISCRÃˆTE ULTRA-LÃ‰GÃˆRE
      ========================================================================== */
   #page-home .site-footer {
     margin-top: 44px !important;
@@ -3940,7 +3940,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   outline-offset: 2px !important;
 }
 
-/* FEEDBACK DISCRET POUR BOUTON FERMETURE ✕ ET CTA MOBILE */
+/* FEEDBACK DISCRET POUR BOUTON FERMETURE âœ• ET CTA MOBILE */
 .mobile-menu-close-btn {
   transition: transform 200ms ease, border-color 200ms ease, background-color 200ms ease !important;
 }
@@ -3980,7 +3980,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
-/* STYLES ÉDITORIAUX DU H1 ET PARAGRAPHE PAGE PROJETS */
+/* STYLES Ã‰DITORIAUX DU H1 ET PARAGRAPHE PAGE PROJETS */
 .projects-main-title {
   font-family: 'Playfair Display', Georgia, serif !important;
   margin-bottom: 16px;
@@ -4026,7 +4026,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 }
 
 /* ==========================================================================
-   OPTION 1 : HERO PAGE PROJETS RESPONSIVE MOBILE — L'ÉQUILIBRE ÉDITORIAL JAPANDI (≤ 768px & 390px)
+   OPTION 1 : HERO PAGE PROJETS RESPONSIVE MOBILE â€” L'Ã‰QUILIBRE Ã‰DITORIAL JAPANDI (â‰¤ 768px & 390px)
    ========================================================================== */
 @media (max-width: 768px) {
   #page-projects .content-wrap.section-spacing,
@@ -4083,7 +4083,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   /* ==========================================================================
-     CARTES PROJETS MOBILE — TITRE EN PREMIER + OMBRAGE PREMIUM + ZÉRO SCROLL
+     CARTES PROJETS MOBILE â€” TITRE EN PREMIER + OMBRAGE PREMIUM + ZÃ‰RO SCROLL
      ========================================================================== */
   .case-studies-glance-list {
     gap: 20px !important;
@@ -4141,7 +4141,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     line-height: 1.35 !important;
   }
 
-  /* OMBRAGE PREMIUM SOUS L'ILLUSTRATION & MARGES ÉGALES */
+  /* OMBRAGE PREMIUM SOUS L'ILLUSTRATION & MARGES Ã‰GALES */
   .project-glance-card .glance-media-col {
     width: 100% !important;
     height: auto !important;
@@ -4216,7 +4216,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     display: none !important;
   }
 
-  /* APPROCHE & OUTILS & BOUTON CTA RESSERRÉS EN BAS DE CARTE */
+  /* APPROCHE & OUTILS & BOUTON CTA RESSERRÃ‰S EN BAS DE CARTE */
   .glance-methodo-bar {
     margin: 6px 16px 4px 16px !important;
     padding: 10px 14px !important;
@@ -4259,13 +4259,13 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
-/* BOUTON MENUS MOBILE DÉDIÉ (.lbc-v2-mobile-menu-btn) */
+/* BOUTON MENUS MOBILE DÃ‰DIÃ‰ (.lbc-v2-mobile-menu-btn) */
 .lbc-v2-mobile-menu-btn {
   display: none !important;
 }
 
 /* ==========================================================================
-   STRICT MOBILE (≤ 768px) : COMPACTAGE SIDEBAR PROJET ET MENU ACCORDÉON
+   STRICT MOBILE (â‰¤ 768px) : COMPACTAGE SIDEBAR PROJET ET MENU ACCORDÃ‰ON
    ========================================================================== */
 @media (max-width: 768px) {
   .lbc-v2-modal-layout {
@@ -4347,7 +4347,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     margin: 6px 0 !important;
   }
 
-  /* BOUTON VISIBLE SUR MOBILE "Dans ce projet ▾" */
+  /* BOUTON VISIBLE SUR MOBILE "Dans ce projet â–¾" */
   .lbc-v2-mobile-menu-btn {
     display: flex !important;
     align-items: center !important;
@@ -4375,7 +4375,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   .lbc-v2-mobile-menu-btn .menu-btn-arrow {
     font-size: 10.5px !important;
     transition: transform 0.2s ease !important;
-    color: #C76D4B !important;
+    color: var(--color-accent) !important;
   }
 
   .lbc-v2-mobile-menu-btn.active .menu-btn-arrow {
@@ -4427,7 +4427,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   .lbc-v2-menu-list.mobile-open .menu-num {
-    color: #C76D4B !important;
+    color: var(--color-accent) !important;
     font-weight: 700 !important;
     font-size: 10.5px !important;
     background: transparent !important;
@@ -4439,7 +4439,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     opacity: 1 !important;
   }
 
-  /* "REMONTER EN HAUT" : SUPPRESSION DU DOUBLE TRAIT (SÉPARATEUR UNIQUE ET NET) */
+  /* "REMONTER EN HAUT" : SUPPRESSION DU DOUBLE TRAIT (SÃ‰PARATEUR UNIQUE ET NET) */
   .lbc-v2-menu-list.mobile-open .lbc-v2-menu-item.lbc-v2-menu-back-top {
     margin-top: 4px !important;
     padding-top: 10px !important;
@@ -4452,7 +4452,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   .lbc-v2-menu-list.mobile-open .lbc-v2-menu-item.lbc-v2-menu-back-top .menu-num {
-    color: #C76D4B !important;
+    color: var(--color-accent) !important;
     font-weight: 700 !important;
     font-size: 11px !important;
     background: transparent !important;
@@ -4484,7 +4484,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     padding-top: 0 !important;
   }
 
-  /* ÉTIQUETTE ÉDITORIALE VERT SAUGE "LE PROJET EN DÉTAIL" SUR MOBILE */
+  /* Ã‰TIQUETTE Ã‰DITORIALE VERT SAUGE "LE PROJET EN DÃ‰TAIL" SUR MOBILE */
   .lbc-v2-pill-badge {
     display: inline-block !important;
     background: #E2E8DD !important;
@@ -4501,7 +4501,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     box-shadow: none !important;
   }
 
-  /* IMAGE HERO RECENTRÉE ET LÉGÈREMENT COMPACTÉE SUR MOBILE */
+  /* IMAGE HERO RECENTRÃ‰E ET LÃ‰GÃˆREMENT COMPACTÃ‰E SUR MOBILE */
   .lbc-v2-hero-img-wrap,
   #foodles-probleme .lbc-v2-hero-img-wrap {
     width: 90% !important;
@@ -4526,7 +4526,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     border-radius: 10px !important;
   }
 
-  /* SECTION "CE QUE J'AI CHERCHÉ À COMPRENDRE" SANS CARTE EXTERIEURE SUR MOBILE */
+  /* SECTION "CE QUE J'AI CHERCHÃ‰ Ã€ COMPRENDRE" SANS CARTE EXTERIEURE SUR MOBILE */
   #lbc-sec-2 {
     background: transparent !important;
     border: none !important;
@@ -4536,7 +4536,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     margin-bottom: 24px !important;
   }
 
-  /* ACTION D'AGRANDISSEMENT DU CAROUSEL PERSONA PLACÉE SOUS L'IMAGE ET ALIGNÉE À DROITE SUR MOBILE */
+  /* ACTION D'AGRANDISSEMENT DU CAROUSEL PERSONA PLACÃ‰E SOUS L'IMAGE ET ALIGNÃ‰E Ã€ DROITE SUR MOBILE */
   .lbc-v2-personas-wrapper {
     display: flex !important;
     flex-direction: column !important;
@@ -4580,7 +4580,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     vertical-align: -1px !important;
   }
 
-  /* SECTION "LE PROJET DERRIÈRE LES ÉCRANS" — LIGNES ÉDITORIALES SANS FOND DE CARTE SUR MOBILE */
+  /* SECTION "LE PROJET DERRIÃˆRE LES Ã‰CRANS" â€” LIGNES Ã‰DITORIALES SANS FOND DE CARTE SUR MOBILE */
   .lbc-v2-learnings-grid {
     display: flex !important;
     flex-direction: column !important;
@@ -4641,7 +4641,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
   .lbc-v2-bullet-title {
     font-size: 13px !important;
-    color: #C76D4B !important;
+    color: var(--color-accent) !important;
     font-style: italic !important;
     font-weight: 600 !important;
     line-height: 1.35 !important;
@@ -4656,13 +4656,13 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     line-height: 1.45 !important;
   }
 
-  /* LIGNE FORFAIT ESTIMÉ RAPPROCHÉE DU BLOC SUIVI POST-LANCEMENT SUR MOBILE */
+  /* LIGNE FORFAIT ESTIMÃ‰ RAPPROCHÃ‰E DU BLOC SUIVI POST-LANCEMENT SUR MOBILE */
   .lbc-v2-forfait-line {
     display: inline-block !important;
     margin-top: 4px !important;
   }
 
-  /* ACTION D'AGRANDISSEMENT DES LIVRABLES "MA DÉMARCHE" SOUS L'IMAGE ET ALIGNÉE À DROITE SUR MOBILE */
+  /* ACTION D'AGRANDISSEMENT DES LIVRABLES "MA DÃ‰MARCHE" SOUS L'IMAGE ET ALIGNÃ‰E Ã€ DROITE SUR MOBILE */
   .lbc-v2-deliverable-horizontal {
     display: flex !important;
     flex-direction: column !important;
@@ -4702,7 +4702,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     vertical-align: -1px !important;
   }
 
-  /* SECTION "CE QUE J'AI DÉCOUVERT" SANS CARTE EXTERIEURE SUR MOBILE */
+  /* SECTION "CE QUE J'AI DÃ‰COUVERT" SANS CARTE EXTERIEURE SUR MOBILE */
   #lbc-sec-5 {
     background: transparent !important;
     border: none !important;
@@ -4724,7 +4724,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     margin-bottom: 12px !important;
   }
 
-  /* SECTION "CE QUE J'AI APPRIS" — PILE VERTICALE DE 3 BLOCS AVEC SÉPARATEURS SUR MOBILE */
+  /* SECTION "CE QUE J'AI APPRIS" â€” PILE VERTICALE DE 3 BLOCS AVEC SÃ‰PARATEURS SUR MOBILE */
   #lbc-sec-7 {
     margin-top: 6px !important;
     padding-top: 0 !important;
@@ -4770,6 +4770,68 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     font-weight: 700 !important;
     color: #3E3934 !important;
     margin-bottom: 6px !important;
+  }
+
+  /* SECTION "EXPLORER LE PROJET AUTREMENT" SUR MOBILE */
+  .lbc-v2-coulisses-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* 1. CARTE VIDÃ‰O (BLOC DÃ‰DIÃ‰ POUR LA RESSOURCE PRINCIPALE) */
+  .lbc-v2-coulisses-grid > .lbc-v2-subcard:first-child {
+    background: #F7F3EE !important;
+    border: 1px solid #D4CCC9 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 14px rgba(70, 40, 25, 0.04) !important;
+    padding: 14px 16px !important;
+    height: auto !important;
+  }
+
+  .lbc-v2-coulisses-right-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    height: auto !important;
+  }
+
+  /* 2. BLOC AUDIO (LIGNE Ã‰DITORIALE COMPACTE AVEC SÃ‰PARATEUR) */
+  .lbc-v2-coulisses-right-stack > .lbc-v2-subcard:first-child {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(212, 204, 201, 0.5) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 0 20px 0 !important;
+    height: auto !important;
+  }
+
+  /* 3. BLOC PDF (LIGNE Ã‰DITORIALE COMPACTE) */
+  .lbc-v2-coulisses-right-stack > .lbc-v2-subcard:last-child {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  /* 4. CTA FINAL (ESPACEMENT SOUS LE BLOC PDF) */
+  .lbc-v2-contact-card {
+    margin-top: 30px !important;
+    margin-bottom: 24px !important;
+    padding-top: 0 !important;
+    transform: none !important;
+  }
+
+  /* RÃ‰DUCTION DU BORDER-RADIUS INFÃ‰RIEUR DU CONTENEUR GLOBAL DE LA MODALE SUR MOBILE */
+  .lbc-v2-modal-layout,
+  .drawer-content,
+  .lbc-v2-main-content {
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
   }
 }
 
