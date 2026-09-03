@@ -4443,6 +4443,45 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     height: auto !important;
     max-height: none !important;
     overflow: visible !important;
+    padding-top: 0 !important;
+  }
+
+  .lbc-v2-hero-row {
+    margin-top: 12px !important;
+    padding-top: 0 !important;
+    gap: 12px !important;
+  }
+
+  .lbc-v2-hero-text {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* ÉTIQUETTE ÉDITORIALE TERRACOTTA "LE PROJET EN DÉTAIL" SUR MOBILE */
+  .lbc-v2-pill-badge {
+    display: inline-block !important;
+    background: #F7F3EE !important;
+    color: #C76D4B !important;
+    border: 1px solid rgba(199, 109, 75, 0.35) !important;
+    border-radius: 5px !important;
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+    box-shadow: none !important;
+  }
+
+  /* SECTION "CE QUE J'AI CHERCHÉ À COMPRENDRE" SANS CARTE EXTERIEURE SUR MOBILE */
+  #lbc-sec-2 {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 24px !important;
   }
 }
 
