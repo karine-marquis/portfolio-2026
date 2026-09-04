@@ -4839,69 +4839,47 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 }
 
 /* ==========================================================================
-   BOUTON FLOTTANT "REMONTER EN HAUT" (MOBILE UNIQUEMENT — MASQUÉ SUR DESKTOP)
+   MASQUAGE DÉFINITIF DU BOUTON FLOTTANT & LIENS DISCRETS EN FIN DE SECTION
    ========================================================================== */
-.modal-scroll-top-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--color-accent) !important;
-  color: #FFFDFC !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  box-shadow: 0 6px 20px rgba(74, 42, 23, 0.3) !important;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 99999 !important;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+.modal-scroll-top-btn,
+#modalScrollToTopBtn {
+  display: none !important;
 }
 
-@media (min-width: 769px) {
-  #modalScrollToTopBtn {
-    display: none !important;
-  }
+.mobile-section-back-top {
+  display: none !important;
 }
 
 @media (max-width: 768px) {
-  #modalScrollToTopBtn {
-    display: inline-flex !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    z-index: 99999 !important;
-    transform: translateY(0) !important;
+  .mobile-section-back-top {
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-top: 14px !important;
+    margin-bottom: 6px !important;
+    padding-top: 6px !important;
   }
-}
 
-.modal-scroll-top-btn:hover {
-  background-color: var(--color-accent-hover) !important;
-  border-color: rgba(255, 255, 255, 0.45) !important;
-  box-shadow: 0 8px 24px rgba(74, 42, 23, 0.4) !important;
-}
+  .mobile-back-top-link {
+    font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: var(--color-accent) !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    opacity: 0.9 !important;
+    transition: opacity 0.2s ease !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+  }
 
-.modal-scroll-top-btn:focus-visible {
-  outline: 2px solid #FFFDFC !important;
-  outline-offset: 3px !important;
-}
-
-.modal-scroll-top-btn svg {
-  width: 18px;
-  height: 18px;
-  stroke: #FFFDFC !important;
-  transition: transform 0.2s ease;
-}
-
-.modal-scroll-top-btn:hover svg {
-  transform: translateY(-2px);
+  .mobile-back-top-link:hover,
+  .mobile-back-top-link:focus {
+    opacity: 1 !important;
+    text-decoration: underline !important;
+  }
 }
 
