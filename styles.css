@@ -2909,9 +2909,13 @@ strong, b {
   transform: translateX(-160px) !important;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1440px) {
   .lbc-v2-contact-card {
     transform: none !important;
+  }
+
+  .lbc-v2-main-content {
+    padding-bottom: 96px !important;
   }
 }
 
