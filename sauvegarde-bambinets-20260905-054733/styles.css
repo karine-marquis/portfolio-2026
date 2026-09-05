@@ -4883,15 +4883,3 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
-
-/* Bambinets : deux colonnes desktop, une colonne mobile. */
-#bb-sec-3 .lbc-v2-learnings-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 16px !important;
-}
-@media (max-width: 768px) {
-  #bb-sec-3 .lbc-v2-learnings-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 14px !important;
-  }
-}
