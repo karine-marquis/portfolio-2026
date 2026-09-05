@@ -879,15 +879,15 @@
                 <!-- 3 POINTS EDITORIAUX SUR FOND LIBRE -->
                 <div class="bambinets-access-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; margin-bottom: 20px;">
                   <div style="border-right: 1px solid #E5DCD3; padding-right: 14px;">
-                    <h4 style="font-size: 14px; font-weight: 500; color: #69584D; margin: 0 0 6px 0;">Arriver et comprendre où aller</h4>
+                    <h4 style="font-size: 14px; font-weight: 700; color: #1E1915; margin: 0 0 6px 0;">Arriver et comprendre où aller</h4>
                     <p style="font-size: 12px; color: #5C5248; line-height: 1.45; margin: 0;">Dès l’accueil, les fonctions principales devaient être suffisamment claires pour qu’un parent ou un professionnel sache quoi faire sans mode d’emploi.</p>
                   </div>
                   <div style="border-right: 1px solid #E5DCD3; padding-right: 14px;">
-                    <h4 style="font-size: 14px; font-weight: 500; color: #69584D; margin: 0 0 6px 0;">Chercher un signe sans fouiller partout</h4>
+                    <h4 style="font-size: 14px; font-weight: 700; color: #1E1915; margin: 0 0 6px 0;">Chercher un signe sans fouiller partout</h4>
                     <p style="font-size: 12px; color: #5C5248; line-height: 1.45; margin: 0;">La recherche et les catégories devaient offrir un chemin court vers le bon contenu, surtout quand l’utilisateur n’a ni les deux mains libres ni cinq minutes devant lui.</p>
                   </div>
                   <div>
-                    <h4 style="font-size: 14px; font-weight: 500; color: #69584D; margin: 0 0 6px 0;">Apprendre sans perdre le fil</h4>
+                    <h4 style="font-size: 14px; font-weight: 700; color: #1E1915; margin: 0 0 6px 0;">Apprendre sans perdre le fil</h4>
                     <p style="font-size: 12px; color: #5C5248; line-height: 1.45; margin: 0;">Dans le quiz, chaque étape devait mener naturellement à la suivante, avec une progression lisible et un retour immédiat après chaque réponse.</p>
                   </div>
                 </div>
@@ -903,15 +903,15 @@
 
                   <div class="bambinets-access-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 16px; margin-bottom: 20px;">
                     <div style="border-right: 1px solid #E5DCD3; padding-right: 14px;">
-                      <h5 style="font-size: 13px; font-weight: 500; color: #69584D; margin: 0 0 4px 0;">Rendre les actions évidentes</h5>
+                      <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0 0 4px 0;">Rendre les actions évidentes</h5>
                       <p style="font-size: 11.5px; color: #5C5248; line-height: 1.45; margin: 0;">Les boutons, pictogrammes et zones interactives devaient être immédiatement repérables, surtout sur mobile.</p>
                     </div>
                     <div style="border-right: 1px solid #E5DCD3; padding-right: 14px;">
-                      <h5 style="font-size: 13px; font-weight: 500; color: #69584D; margin: 0 0 4px 0;">Maintenir des repères stables</h5>
+                      <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0 0 4px 0;">Maintenir des repères stables</h5>
                       <p style="font-size: 11.5px; color: #5C5248; line-height: 1.45; margin: 0;">Les écrans devaient rester cohérents entre eux pour éviter que l’utilisateur ait l’impression de réapprendre l’application à chaque étape.</p>
                     </div>
                     <div>
-                      <h5 style="font-size: 13px; font-weight: 500; color: #69584D; margin: 0 0 4px 0;">Faire de l’illustration un soutien, pas une distraction</h5>
+                      <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0 0 4px 0;">Faire de l’illustration un soutien, pas une distraction</h5>
                       <p style="font-size: 11.5px; color: #5C5248; line-height: 1.45; margin: 0;">Vidéos, couleurs et visuels devaient accompagner l’apprentissage sans prendre le dessus sur l’information.</p>
                     </div>
                   </div>
@@ -956,7 +956,7 @@
                 </div>
 
                 <!-- BLOC DE PRECISION DISCRET -->
-                <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding: 6px 0 6px 14px; background: transparent; margin-top: 18px; margin-bottom: 14px;">
+                <div style="border-left: 2.5px solid var(--color-accent); padding: 6px 0 6px 14px; background: transparent; margin-top: 18px; margin-bottom: 14px;">
                   <p style="font-size: 12px; color: #5C5248; line-height: 1.5; margin: 0;">Cette attention portée à l’accessibilité concernait le prototype. Une conformité complète aurait aussi dépendu de l’implémentation : structure sémantique, navigation clavier, alternatives textuelles, attributs ARIA et compatibilité avec les technologies d’assistance.</p>
                 </div>
 
@@ -970,24 +970,24 @@
                 <p class="lbc-v2-intro-p" style="margin-bottom: 24px; color: #3E3934;">Mon prototype devait donc me permettre de vérifier une chose simple : est-ce qu’on comprend où aller, quoi faire et comment avancer sans réfléchir trop longtemps ?</p>
                 
                 <div class="bambinets-2col-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 20px;">
-                  <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
                     <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">01</div>
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Trouver rapidement son chemin</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Trouver rapidement son chemin</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Les fonctions principales restent accessibles depuis des entrées stables et faciles à repérer. Mon objectif : ne jamais laisser l'utilisateur se demander où chercher.</div>
                   </div>
-                  <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
                     <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">02</div>
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Retrouver un signe sans perdre de temps</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Retrouver un signe sans perdre de temps</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Recherche et catégories offrent deux chemins directs vers le contenu. Pas besoin de parcourir tout le glossaire pour trouver ce qu’on cherche.</div>
                   </div>
-                  <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
                     <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">03</div>
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Être guidé sans être pris par la main</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Être guidé sans être pris par la main</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Le quiz avance étape par étape. J’ai veillé à ce que les repères soient suffisamment visibles pour rassurer un public débutant sans alourdir l’expérience.</div>
                   </div>
-                  <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
                     <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">04</div>
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Comprendre immédiatement ce qui vient de se passer</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Comprendre immédiatement ce qui vient de se passer</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Un feedback clair après chaque réponse aide à situer l’erreur ou la réussite et soutient la mémorisation.</div>
                   </div>
                 </div>
@@ -1002,22 +1002,22 @@
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 20px; align-items: stretch;">
                   <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9; display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
                     <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">01</div>
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 8px;">Simplifier demande plus de choix qu’on ne l’imagine</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Simplifier demande plus de choix qu’on ne l’imagine</div>
                     <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Sur Bambinets, j’ai compris que rendre une interface simple ne consiste pas à enlever des éléments au hasard. Il faut décider ce qui mérite vraiment l’attention, ce qui peut attendre et ce qui risque de créer une hésitation inutile.</div>
                   </div>
                   <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9; display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
                     <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">02</div>
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 8px;">Concevoir pour un public débutant change la manière de hiérarchiser</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Concevoir pour un public débutant change la manière de hiérarchiser</div>
                     <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Quand l’utilisateur ne connaît ni le sujet ni l’outil, chaque libellé, chaque repère et chaque transition compte davantage. Il faut accompagner suffisamment pour rassurer, sans transformer le parcours en mode d’emploi permanent.</div>
                   </div>
                   <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9; display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
                     <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">03</div>
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 8px;">Un design system n’est pas une cage</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Un design system n’est pas une cage</div>
                     <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Travailler à partir d’un univers graphique déjà défini m’a appris à ne pas confondre cohérence visuelle et rigidité. Quand la lisibilité ou la compréhension l’exige, certains éléments doivent pouvoir être ajustés sans casser l’identité du produit.</div>
                   </div>
                   <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9; display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
                     <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">04</div>
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 8px;">L’accessibilité ne s’arrête pas à la maquette</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">L’accessibilité ne s’arrête pas à la maquette</div>
                     <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Vérifier les contrastes, la hiérarchie et les zones interactives est nécessaire, mais ce projet m’a aussi rappelé qu’une interface ne devient pas accessible parce qu’un prototype coche quelques critères. Une partie essentielle du travail se joue ensuite dans l’implémentation.</div>
                   </div>
                 </div>
@@ -1030,21 +1030,25 @@
                 <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-primary, #9B5620) !important;">Ce que la suite devait permettre de confirmer</h3>
                 <p class="lbc-v2-intro-p" style="margin-bottom: 24px; color: #3E3934;">Mon prototype posait une première expérience fluide et cohérente. Pour moi, la suite logique ne consistait pas à empiler de nouvelles fonctionnalités : il fallait surtout confronter ma maquette à des usages réels sur le terrain avant d'aller plus loin.</p>
 
-                <div class="bambinets-suites-list" style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 20px;">
-                  <div class="bambinets-suite-item">
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Enrichir progressivement le contenu</div>
+                <div class="bambinets-2col-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 20px;">
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
+                    <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">01</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Enrichir progressivement le contenu</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Ajouter de nouveaux signes et étoffer les catégories, tout en préservant la logique de recherche immédiate qui fait la force de l'application.</div>
                   </div>
-                  <div class="bambinets-suite-item">
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Confronter mon travail à de vrais utilisateurs</div>
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
+                    <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">02</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Confronter mon travail à de vrais utilisateurs</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Observer parents et professionnels en situation réelle dans la crèche, pour vérifier mes hypothèses de navigation et corriger les moindres hésitations.</div>
                   </div>
-                  <div class="bambinets-suite-item">
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Affiner les parcours que j'ai dessinés</div>
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
+                    <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">03</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Affiner les parcours que j'ai dessinés</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Tester et ajuster les micro-interactions de mon prototype, en particulier les repères de progression du quiz et la clarté des feedbacks visuels.</div>
                   </div>
-                  <div class="bambinets-suite-item">
-                    <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Poursuivre le chantier d’accessibilité avec les développeurs</div>
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
+                    <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">04</div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 6px;">Poursuivre le chantier d’accessibilité avec les développeurs</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Intégrer les exigences techniques indissociables de mon travail de maquette : alternatives textuelles, navigation clavier, attributs ARIA et structure sémantique.</div>
                   </div>
                 </div>

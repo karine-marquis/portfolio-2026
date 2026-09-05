@@ -4909,11 +4909,3 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     grid-template-columns: minmax(0, 1fr) !important;
   }
 }
-
-/* Bambinets : suites et recommandations sur mobile. */
-@media (max-width: 768px) {
-  #bb-sec-suites > .bambinets-2col-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
-    align-items: start;
-  }
-}

@@ -4895,25 +4895,3 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     gap: 14px !important;
   }
 }
-
-/* Bambinets : points 01 a 04 lisibles sur mobile. */
-@media (max-width: 768px) {
-  #bb-sec-6 > .bambinets-2col-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-}
-
-/* Bambinets : cartes Ce que j'ai appris sur mobile. */
-@media (max-width: 768px) {
-  #bb-sec-learnings > div {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-}
-
-/* Bambinets : suites et recommandations sur mobile. */
-@media (max-width: 768px) {
-  #bb-sec-suites > .bambinets-2col-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
-    align-items: start;
-  }
-}

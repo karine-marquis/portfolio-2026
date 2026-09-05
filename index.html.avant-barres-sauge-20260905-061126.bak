@@ -956,7 +956,7 @@
                 </div>
 
                 <!-- BLOC DE PRECISION DISCRET -->
-                <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding: 6px 0 6px 14px; background: transparent; margin-top: 18px; margin-bottom: 14px;">
+                <div style="border-left: 2.5px solid var(--color-accent); padding: 6px 0 6px 14px; background: transparent; margin-top: 18px; margin-bottom: 14px;">
                   <p style="font-size: 12px; color: #5C5248; line-height: 1.5; margin: 0;">Cette attention portée à l’accessibilité concernait le prototype. Une conformité complète aurait aussi dépendu de l’implémentation : structure sémantique, navigation clavier, alternatives textuelles, attributs ARIA et compatibilité avec les technologies d’assistance.</p>
                 </div>
 
@@ -970,22 +970,22 @@
                 <p class="lbc-v2-intro-p" style="margin-bottom: 24px; color: #3E3934;">Mon prototype devait donc me permettre de vérifier une chose simple : est-ce qu’on comprend où aller, quoi faire et comment avancer sans réfléchir trop longtemps ?</p>
                 
                 <div class="bambinets-2col-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 20px;">
-                  <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
                     <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">01</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Trouver rapidement son chemin</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Les fonctions principales restent accessibles depuis des entrées stables et faciles à repérer. Mon objectif : ne jamais laisser l'utilisateur se demander où chercher.</div>
                   </div>
-                  <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
                     <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">02</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Retrouver un signe sans perdre de temps</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Recherche et catégories offrent deux chemins directs vers le contenu. Pas besoin de parcourir tout le glossaire pour trouver ce qu’on cherche.</div>
                   </div>
-                  <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
                     <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">03</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Être guidé sans être pris par la main</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Le quiz avance étape par étape. J’ai veillé à ce que les repères soient suffisamment visibles pour rassurer un public débutant sans alourdir l’expérience.</div>
                   </div>
-                  <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
+                  <div style="border-left: 2.5px solid var(--color-primary, #9B5620); padding-left: 14px;">
                     <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">04</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Comprendre immédiatement ce qui vient de se passer</div>
                     <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Un feedback clair après chaque réponse aide à situer l’erreur ou la réussite et soutient la mémorisation.</div>
