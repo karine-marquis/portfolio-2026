@@ -2320,19 +2320,42 @@ strong, b {
   object-fit: contain !important;
 }
 
-.lbc-v2-deliverable-horizontal .deliverable-zoom-badge {
-  position: absolute !important;
-  bottom: 10px !important;
-  right: 10px !important;
-  background: #55624F !important;
-  color: #FFFDFC !important;
+.lbc-v2-deliverable-horizontal .deliverable-zoom-badge,
+.lbc-v2-personas-zoom-badge {
+  position: relative !important;
+  bottom: auto !important;
+  right: auto !important;
+  background: transparent !important;
+  border: none !important;
+  color: #477A6A !important;
   font-size: 11.5px !important;
-  font-weight: 600 !important;
-  padding: 5px 12px !important;
-  border-radius: 20px !important;
-  box-shadow: 0 4px 12px rgba(62, 57, 52, 0.25) !important;
-  pointer-events: none !important;
-  z-index: 2 !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-top: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  pointer-events: auto !important;
+  transition: color 0.15s ease !important;
+}
+
+.lbc-v2-deliverable-horizontal .deliverable-zoom-badge:hover,
+.lbc-v2-deliverable-horizontal .deliverable-zoom-badge:active,
+.lbc-v2-deliverable-horizontal .deliverable-zoom-badge:focus,
+.lbc-v2-personas-zoom-badge:hover,
+.lbc-v2-personas-zoom-badge:active,
+.lbc-v2-personas-zoom-badge:focus {
+  color: #355C50 !important;
+}
+
+.lbc-v2-deliverable-horizontal .deliverable-zoom-badge svg,
+.lbc-v2-personas-zoom-badge svg {
+  color: inherit !important;
+  stroke: currentColor !important;
+  vertical-align: -1px !important;
 }
 
 /* 2. ASSETS VERTICAUX (Fiches Personas Camille, Marc, Sarah) */
@@ -2375,20 +2398,6 @@ strong, b {
   object-fit: contain !important;
   opacity: 1 !important;
   filter: none !important;
-}
-
-.lbc-v2-personas-zoom-badge {
-  position: absolute !important;
-  bottom: 10px !important;
-  right: 10px !important;
-  background: #55624F !important;
-  color: #FFFDFC !important;
-  font-size: 11.5px !important;
-  font-weight: 600 !important;
-  padding: 5px 12px !important;
-  border-radius: 20px !important;
-  box-shadow: 0 4px 12px rgba(62, 57, 52, 0.25) !important;
-  pointer-events: none !important;
 }
 
 /* LIGHTBOX IMAGE ZOOM MODAL & SHADOWS POUR TOUTES LES ILLUSTRATIONS DE LA PAGE */
