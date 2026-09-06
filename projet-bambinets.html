@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bambinets — Karine Marquis UX Designer</title>
     <meta name="description" content="Étude de cas UX Research & Micro-Learning — Bambinets par Karine Marquis" />
-    <link rel="stylesheet" href="styles.css?v=20260825_final" />
+    <link rel="stylesheet" href="styles.css?v=20260906_harmonisation_modales" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
       if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
@@ -238,8 +238,8 @@
           </div>
         </section>
 
-        <!-- LE DEFI (FOND LIBRE) -->
-        <section id="sec-defi" style="margin-bottom: 28px;">
+        <!-- LE DEFI (FOND SAUGE DOUX) -->
+        <section id="sec-defi" style="background: #DDE6D8; border-radius: 16px; padding: 24px; border: 1px solid #C7D1BF; margin-bottom: 32px;">
           <h3 class="bambinets-v2-card-title">02. Un outil pensé pour des moments qui ne sont jamais vraiment calmes</h3>
           <p class="bambinets-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Quand la crèche Les Bambinets m’a sollicitée, la promesse était claire : permettre aux parents et aux professionnels de la petite enfance d’apprendre quelques signes clés pour mieux communiquer avec l’enfant avant que le langage verbal soit pleinement installé.</p>
           <p class="bambinets-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Sur le papier, la demande semblait classique : un glossaire vidéo, des favoris, des microquiz et une FAQ.</p>
@@ -292,6 +292,7 @@
           </div>
 
           <p class="bambinets-v2-card-body" style="margin-top: 16px; font-weight: 600; color: var(--color-accent) !important;">Le vrai travail n’a donc pas été d’ajouter des écrans. Il a surtout consisté à retirer les hésitations inutiles entre eux.</p>
+          <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
         </section>
 
         <!-- MA DEMARCHE & FLOWCHART MIRO (FOND LIBRE) -->
@@ -305,15 +306,16 @@
           <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #E5DCD3;">
             <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #9B5620); margin-bottom: 4px;">Le flowchart — Donner une place claire à chaque intention</h4>
             <p style="font-size: 12px; color: #6F665F; line-height: 1.45; margin-bottom: 10px;">Le flowchart m’a permis de relier ces parcours, d’anticiper les retours possibles et d’éviter les impasses avant de traduire cette structure avec les composants du design system.</p>
-            <div onclick="openLightbox('assets/PROJTS/BAMBINETS/flowchart_bambinets2.png', 'Flowchart UX du parcours principal — Bambinets — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="position: relative; cursor: zoom-in; background: #F5F4F0; padding: 6px; border-radius: 12px; text-align: center; max-width: 88%; margin: 0 auto;">
+            <div onclick="openLightbox('assets/PROJTS/BAMBINETS/flowchart_bambinets2.png', 'Flowchart UX du parcours principal — Bambinets — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" class="lbc-v2-deliverable-horizontal" style="max-width: 88%; margin: 0 auto;">
               <img src="assets/PROJTS/BAMBINETS/flowchart_bambinets2.png" alt="Flowchart UX Japandi Bambinets" style="max-height: 380px; width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
-              <span style="position: absolute; bottom: 8px; right: 12px; background: #55624F; color: #FFFDFC; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 14px;">🔍 Cliquer pour agrandir</span>
+              <span class="deliverable-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>Agrandir l’image</span>
             </div>
             <p style="font-size: 11.5px; color: #8A7669; margin-top: 12px; margin-bottom: 8px; font-style: italic;">Cette vue est une illustration simplifiée de l’architecture. Le flowchart complet est disponible sur Miro.</p>
             <div>
               <a href="https://miro.com/app/live-embed/uXjVGOHAlBA=/?focusWidget=3458764664048727312&embedMode=view_only_without_ui&embedId=66393186859" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-primary, #9B5620); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">Explorer le flowchart complet sur Miro ↗</a>
             </div>
           </div>
+          <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
         </section>
 
         <!-- LES SOLUTIONS RETENUES & FIGMA (FOND LIBRE) -->
@@ -364,9 +366,9 @@
 
             <p style="font-size: 13px; font-weight: 600; color: var(--color-accent) !important; line-height: 1.5; margin-top: 16px; margin-bottom: 18px;">Le prototype haute fidélité n’était donc pas une couche de finition. C’était le moment où la structure, l’apprentissage et l’interface devaient enfin parler le même langage.</p>
 
-            <div onclick="openLightbox('assets/PROJTS/BAMBINETS/bambinets-proto-hifi-couleur-2.png', 'Prototype Mobile Hi-Fi & Cartographie des flux d’interaction — Bambinets — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" style="position: relative; cursor: zoom-in; background: #F5F4F0; padding: 6px; border-radius: 12px; text-align: center; max-width: 88%; margin: 0 auto;">
+            <div onclick="openLightbox('assets/PROJTS/BAMBINETS/bambinets-proto-hifi-couleur-2.png', 'Prototype Mobile Hi-Fi & Cartographie des flux d’interaction — Bambinets — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" class="lbc-v2-deliverable-horizontal" style="max-width: 88%; margin: 0 auto;">
               <img src="assets/PROJTS/BAMBINETS/bambinets-proto-hifi-couleur-2.png" alt="Prototype Mobile Hi-Fi & Liaisons d’interactions Bambinets" style="max-height: 380px; width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
-              <span style="position: absolute; bottom: 8px; right: 12px; background: #55624F; color: #FFFDFC; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 14px;">🔍 Cliquer pour agrandir</span>
+              <span class="deliverable-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>Agrandir l’image</span>
             </div>
             <p style="font-size: 11.5px; color: #8A7669; margin-top: 12px; margin-bottom: 12px; font-style: italic;">Cette vue rassemble les principaux écrans du projet. Les maquettes complètes et le prototype interactif sont disponibles sur Figma.</p>
             <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
@@ -374,6 +376,7 @@
               <a href="https://www.figma.com/design/k0obRF21UNiAWdAZ22JpsM/Les-Bambinets-HI-FI?node-id=7741-2&t=CyQusabg6xXrcJhH-1" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-primary, #9B5620); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">Voir Prototype basse fidélité interactif sur Figma ↗</a>
             </div>
           </div>
+          <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
         </section>
 
         <!-- ACCESSIBILITE (FOND LIBRE) -->
@@ -407,10 +410,11 @@
           </div>
 
           <p class="bambinets-v2-card-body" style="margin-top: 12px; font-weight: 600; color: var(--color-accent) !important;">Autrement dit : le prototype pouvait préparer le terrain. Il ne pouvait pas, à lui seul, garantir l’accessibilité du produit final.</p>
+          <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
         </section>
 
-        <!-- POINTS D'ATTENTION DU PROTOTYPE (FOND LIBRE) -->
-        <section id="sec-learnings" style="margin-top: 36px; margin-bottom: 40px; padding-bottom: 28px; border-bottom: 1px solid #E5DCD3;">
+        <!-- POINTS D'ATTENTION DU PROTOTYPE (FOND SAUGE DOUX) -->
+        <section id="sec-learnings" style="background: #DDE6D8; border-radius: 16px; padding: 24px; border: 1px solid #C7D1BF; margin-top: 36px; margin-bottom: 40px;">
           <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-primary, #9B5620) !important;">08. Quand chaque seconde d’attention compte</h3>
           <p class="lbc-v2-intro-p" style="margin-bottom: 10px; color: #3E3934;">Dans une crèche, personne ne consulte une application dans le calme avec vingt minutes devant soi. L’attention se partage entre l’enfant, le groupe, les gestes du quotidien et ce qu’il faut retrouver tout de suite.</p>
           <p class="lbc-v2-intro-p" style="margin-bottom: 24px; color: #3E3934;">Mon prototype devait donc me permettre de vérifier une chose simple : est-ce qu’on comprend où aller, quoi faire et comment avancer sans réfléchir trop longtemps ?</p>
@@ -439,6 +443,7 @@
           </div>
 
           <p style="font-size: 11.5px; color: #8A7669; font-style: italic; line-height: 1.45; margin-top: 16px; margin-bottom: 0;">Ces éléments sont des points d’attention de conception identifiés à partir de mon prototype. Ils ne correspondent pas aux résultats d’une campagne formelle de tests utilisateurs.</p>
+          <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
         </section>
 
         <!-- CE QUE J'AI APPRIS (CARTES CONSERVEES) -->
@@ -469,6 +474,7 @@
           </div>
 
           <p class="bambinets-v2-card-body" style="margin-top: 16px; font-weight: 600; color: var(--color-accent) !important;">Au final, Bambinets m’a surtout appris qu’une interface pédagogique réussie ne doit pas montrer tout ce qu’elle sait faire. Elle doit aider l’utilisateur à apprendre sans lui demander d’apprendre l’interface en même temps.</p>
+          <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
         </section>
 
         <!-- SUITES & RECOMMANDATIONS (FOND LIBRE) -->
@@ -599,6 +605,13 @@
         </div>
       </div>
     </footer>
+    <script>
+      function scrollModalToTop() {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const scrollBehavior = prefersReducedMotion ? 'instant' : 'smooth';
+        window.scrollTo({ top: 0, behavior: scrollBehavior });
+      }
+    </script>
     <script src="app.js"></script>
   </body>
 </html>

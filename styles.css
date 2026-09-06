@@ -4917,3 +4917,56 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     align-items: start;
   }
 }
+
+/* Bambinets : section Le Défi (fond sauge doux) */
+#sec-defi,
+#bb-sec-2 {
+  background: #DDE6D8 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  border: 1px solid #C7D1BF !important;
+  margin-bottom: 32px !important;
+}
+
+/* Bambinets : section Points d'attention (fond sauge doux) */
+#sec-learnings,
+#bb-sec-6 {
+  background: #DDE6D8 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  border: 1px solid #C7D1BF !important;
+  margin-top: 36px !important;
+  margin-bottom: 40px !important;
+}
+
+/* Bambinets : section Ce que j'ai appris (fond neutre de page) */
+#sec-appris,
+#bb-sec-learnings {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Les Cordons Bleus : sections sauge */
+#lbc-sec-3,
+#lbc-sec-5 {
+  background: #DDE6D8 !important;
+  border: 1px solid #C7D1BF !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+}
+
+/* Foodles : sections sauge */
+#foodles-a-verifier,
+#foodles-resultats-tests {
+  background: #DDE6D8 !important;
+  border: 1px solid #C7D1BF !important;
+}
+
+/* Bambinets : cartes internes en clair sur fond sauge */
+#sec-appris .bambinets-fin-card,
+#bb-sec-learnings .lbc-v2-subcard {
+  background: #F7F3EE !important;
+  border: 1px solid #D4CCC9 !important;
+}
+
