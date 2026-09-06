@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KM UX - UI Designer — Karine Marquis | UX/UI & E-Learning</title>
+  <meta name="description" content="Portfolio de KM (Karine Marquis) — UX - UI Designer Senior. Conception d'expériences utiles, claires et humaines.">
+  
+  <!-- Fonts: Playfair Display & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Anti-cache CSS parameter -->
+  <link rel="stylesheet" href="styles.css?v=20260815_optical_size_playfair">
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR INTERACTIF SOFT MAGNÉTIQUE -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="custom-cursor-dot" id="customCursorDot"></div>
+
+  <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Approche - Offre - Projets - À propos - À lire) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;">
+        <span class="brand-km">KM</span>
+        <span class="brand-sub">UX - UI Designer</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link active" onclick="navigateTo('home'); return false;">Accueil</a></li>
+          <li><a href="#approach" class="nav-link" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
+          <li><a href="#offer" class="nav-link" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
+          <li><a href="#projects" class="nav-link" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
+          <li><a href="#about" class="nav-link" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
+          <li><a href="#blog" class="nav-link" onclick="navigateTo('blog'); return false;">Journal</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn-nav-outline" onclick="navigateTo('contact'); return false;">
+        On en parle ?
+      </a>
+    </div>
+  </header>
+
+  <main class="main-body-wrap">
+
+    <!-- ==========================================================================
+       PAGE 1: ACCUEIL — FOND FULL COVER UNIFIÉ
+       ========================================================================== -->
+    <section id="page-home" class="spa-page-section active">
+      <div class="home-hero-full-scene">
+        
+        <div class="home-hero-align-container">
+          <div class="home-hero-content-left">
+            <h1 class="hero-home-title">
+              Ce n’est pas l’utilisateur qu’il faut changer.<br>
+              <span style="color: #A63A2B !important; font-style: italic;">C’est le chemin qu’on lui donne à suivre.</span>
+            </h1>
+
+            <p class="hero-home-subtitle" style="font-size: 16px; font-weight: 500; line-height: 1.45; opacity: 0.95; margin-bottom: 12px;">
+              Des parcours plus clairs.<br>
+              Des expériences qui aident à <strong>comprendre, apprendre et passer à l’action.</strong>
+            </p>
+
+            <p class="hero-home-desc" style="font-size: 14.5px; opacity: 0.88; line-height: 1.5; margin-bottom: 24px;">
+              J’aide à clarifier les parcours pour que l’expérience demande moins d’effort — et un peu moins de patience héroïque.
+            </p>
+
+            <div class="hero-home-ctas">
+              <a href="#projects" class="btn-primary hero-btn-main" onclick="navigateTo('projects'); return false;">
+                Découvrir mes projets
+              </a>
+              <a href="#approach" class="btn-secondary hero-btn-sec" onclick="navigateTo('approach'); return false;">
+                Voir mon approche
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER FULL-WIDTH INTEGRÉ DANS LA SCÈNE FULL COVER -->
+        <footer class="site-footer">
+          <div class="footer-container">
+            
+            <!-- BLOC 1: MARQUE & TAGLINE -->
+            <div class="footer-col-brand">
+              <a href="#home" class="brand-logo-wrap" onclick="navigateTo('home'); return false;">
+                <span class="brand-km">KM</span>
+                <span class="brand-sub">UX - UI Designer</span>
+              </a>
+              <div class="footer-availability-badge">
+                <span class="status-dot"></span> Disponible pour une nouvelle mission
+              </div>
+            </div>
+
+            <!-- BLOC 2: SITEMAP SLIM INLINE -->
+            <div class="footer-col-links">
+              <ul class="footer-inline-links">
+                <li><a href="#home" onclick="navigateTo('home'); return false;">Accueil</a></li>
+                <li><a href="#approach" onclick="navigateTo('approach'); return false;">Mon approche</a></li>
+                <li><a href="#offer" onclick="navigateTo('offer'); return false;">Mon offre</a></li>
+                <li><a href="#projects" onclick="navigateTo('projects'); return false;">Mes projets</a></li>
+                <li><a href="#about" onclick="navigateTo('about'); return false;">Qui suis-je ?</a></li>
+                <li><a href="#blog" onclick="navigateTo('blog'); return false;">Journal</a></li>
+              </ul>
+            </div>
+
+            <!-- BLOC 3: CONTACT & RÉSEAUX DISCRETS -->
+            <div class="footer-col-contact">
+              <a href="mailto:contact@km-ux.net" class="footer-contact-link">
+                <i data-lucide="mail"></i> contact@km-ux.net
+              </a>
+              <div class="footer-socials-wrap">
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-social-btn">LinkedIn</a>
+                <span class="social-dot-sep">•</span>
+                <a href="https://malt.fr" target="_blank" rel="noopener" class="footer-social-btn">Malt</a>
+                <span class="social-dot-sep">•</span>
+                <a href="https://github.com/caprie/portfolio-ux" target="_blank" rel="noopener" class="footer-social-btn">GitHub</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- BANDEAU ULTRA LÉGER CITATION & COPYRIGHT -->
+          <div class="footer-bottom-bar">
+            <div class="footer-container footer-bottom-flex">
+              <div class="footer-copyright">
+                © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
+              </div>
+              <div class="footer-quote-italic">
+                "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
+              </div>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 2: PROJETS (FIDELE AU MOCKUP AVEC MODALE CANVA)
+       ========================================================================== -->
+    <section id="page-projects" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        
+        <div style="margin-bottom: 36px;">
+          <h1 class="projects-main-title" style="font-family: 'Playfair Display', serif; font-size: 46px; margin-bottom: 12px;">Mes projets</h1>
+          <p class="body-large" style="max-width: 800px; font-size: 16px; opacity: 0.9;">
+            Chaque projet est une rencontre, un contexte unique et des utilisateurs réels. Voici <strong>une sélection de missions</strong> qui illustrent ma démarche.
+          </p>
+        </div>
+
+        <div class="case-studies-list" id="caseStudiesContainer">
+          <!-- Injecté par app.js (4 Cartes Projets) -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 3: MON APPROCHE
+       ========================================================================== -->
+    <section id="page-approach" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">L'Approche UX/UI de Bout en Bout</h2>
+          <p class="section-subtitle body-large">
+            De la recherche utilisateur initiale jusqu'à la mesure d'impact, chaque étape vise la clarté et l'engagement durable.
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          <div class="card-japandi">
+            <div class="step-card-number">01</div>
+            <h3>1. Empathie & Recherche</h3>
+            <p class="body-small">Interviews utilisateurs, audit d'ergonomie, personas et cartographie des parcours (User Journeys).</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">02</div>
+            <h3>2. Définition du Problème</h3>
+            <p class="body-small">Formulation précise du besoin humain sous-jacent et élimination des points de friction.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">03</div>
+            <h3>3. Idéation & Co-construction</h3>
+            <p class="body-small">Tri de cartes, arborescence de l'information et ateliers d'idéation avec les équipes métier.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">04</div>
+            <h3>4. Prototypage Rapide</h3>
+            <p class="body-small">Wireframes épurés sur papier puis prototypes interactifs haute-fidélité sur Figma avec tokens de design.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">05</div>
+            <h3>5. Tests Utilisateurs</h3>
+            <p class="body-small">Mise à l'épreuve des prototypes auprès d'utilisateurs réels pour observer l'ergonomie et valider l'utilisabilité.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div class="step-card-number">06</div>
+            <h3>6. Recette & Hand-off</h3>
+            <p class="body-small">Spécifications rigoureuses pour les développeurs, suivi de l'intégration et amélioration continue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 4: À PROPOS
+       ========================================================================== -->
+    <section id="page-about" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Un parcours non linéaire (et c'est tant mieux !)</h2>
+          <p class="section-subtitle body-large">
+            Une expérience riche alliant création artistique, rigueur d'ingénieur et expertise en gestion de projets e-learning.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+          <div style="border-radius: var(--radius-md); overflow: hidden; height: 380px;">
+            <img src="assets/nouvelle%20home%202.jpg" alt="Karine Marquis à son atelier UX" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div>
+            <h3 style="font-size: 26px; margin-bottom: 12px;">Artiste, Ingénieure & UX - UI Designer</h3>
+            <p class="body-normal">
+              Fortement animée par la pédagogie et l'apprentissage sous toutes ses formes, je conçois des interfaces comme on tracerait un chemin : sans embûches inutiles, avec des repères visuels clairs et une intention bienveillante à chaque étape.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 5: OFFRE
+       ========================================================================== -->
+    <section id="page-offer" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Accompagnement UX/UI Sur-Mesure</h2>
+          <p class="section-subtitle body-large">
+            Du diagnostic ergonomique rapide à la refonte complète d'un produit E-Learning.
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          <div class="card-japandi">
+            <div style="font-size: 13px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">Pilier 1</div>
+            <h3>Audit UX & Diagnostic Ergonomique</h3>
+            <p class="body-small">Analyse poussée de ton produit ou LMS existant pour identifier pourquoi tes utilisateurs bloquent et où ils abandonnent.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div style="font-size: 13px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">Pilier 2</div>
+            <h3>Design System & Jetons Figma</h3>
+            <p class="body-small">Construction d'une bibliothèque UI propre, accessible WCAG AAA et réutilisable pour tes équipes dev.</p>
+          </div>
+
+          <div class="card-japandi">
+            <div style="font-size: 13px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">Pilier 3</div>
+            <h3>Conception E-Learning Sur-Mesure</h3>
+            <p class="body-small">De l’idée initiale jusqu’au prototype haute-fidélité prêt pour la recette dev : recherche, wireframes, UI et tests.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 6: TARIFS (TJM 450 € & PACKS)
+       ========================================================================== -->
+    <section id="page-pricing" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Taux Journalier Moyen (TJM) : 450 € / Jour</h2>
+          <p class="section-subtitle body-large">Ou forfaits d'accompagnement sur-mesure au projet ci-dessous.</p>
+        </div>
+
+        <div class="pricing-grid" id="pricingPacksContainer">
+          <!-- Injecté par app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 7: VEILLE / À LIRE
+       ========================================================================== -->
+    <section id="page-blog" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">À lire — Articles, Veille & Retours d'Expérience</h2>
+          <p class="section-subtitle body-large">Réflexions sur l'ergonomie, la charge cognitive, la technique et l'apprentissage digital.</p>
+        </div>
+
+        <div class="story-timeline" id="blogArticlesContainer">
+          <!-- Injecté par app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       PAGE 8: CONTACT
+       ========================================================================== -->
+    <section id="page-contact" class="spa-page-section">
+      <div class="content-wrap section-spacing">
+        <div class="section-header-center" style="margin-bottom: 32px;">
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Discutons de ton projet</h2>
+          <p class="section-subtitle body-large">Une question, une refonte E-Learning ou un besoin en Design System ? Envoie-moi un message.</p>
+        </div>
+
+        <div class="card-japandi" style="max-width: 700px; margin: 0 auto;">
+          <form id="contactFormSpa" onsubmit="handleContactSubmit(event)">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px;">
+              <div>
+                <label class="body-small" style="font-weight: 600; display: block; margin-bottom: 6px; color: var(--color-heading);">Ton Nom / Entreprise *</label>
+                <input type="text" required placeholder="ex: Sarah Connor, TechCorp" style="width: 100%; padding: 12px 16px; background: var(--color-background); border: 1px solid rgba(217,210,200,0.8); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px;">
+              </div>
+
+              <div>
+                <label class="body-small" style="font-weight: 600; display: block; margin-bottom: 6px; color: var(--color-heading);">Adresse Email *</label>
+                <input type="email" required placeholder="sarah@entreprise.com" style="width: 100%; padding: 12px 16px; background: var(--color-background); border: 1px solid rgba(217,210,200,0.8); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px;">
+              </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label class="body-small" style="font-weight: 600; display: block; margin-bottom: 6px; color: var(--color-heading);">Détails de ton projet</label>
+              <textarea rows="4" placeholder="Décris en quelques mots tes objectifs et tes échéances..." style="width: 100%; padding: 12px 16px; background: var(--color-background); border: 1px solid rgba(217,210,200,0.8); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%;">
+              <i data-lucide="send"></i> Envoyer le message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CASE STUDY CANVA DRAWER MODAL INTERACTIF -->
+  <div class="drawer-overlay" id="projectDrawerOverlay">
+    <div class="drawer-content" style="max-width: 900px;">
+      <button class="drawer-close-btn" onclick="closeProjectDrawer()"><i data-lucide="x"></i></button>
+      <div id="projectDrawerContainer"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

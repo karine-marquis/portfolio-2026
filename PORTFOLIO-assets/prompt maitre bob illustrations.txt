@@ -1,0 +1,119 @@
+L’image 1 est le contenu à transformer.
+L’image 2 est la référence de style.
+
+Transforme l’image 1 en conservant strictement sa composition, son cadrage, la position des personnages, les objets, le décor et les proportions générales.
+
+Ne change pas la scène.
+Ne supprime aucun élément important.
+N’ajoute aucun objet inutile.
+Ne modifie pas la posture, les vêtements, la coiffure ni l’expression du personnage.
+Ne recadre pas l’image.
+
+Applique uniquement à l’image 1 le style, la lumière, les matières, la palette et le niveau de réalisme de l’image 2.
+Ne mélange pas les compositions.
+
+DIRECTION ARTISTIQUE :
+
+– digital painting semi-réaliste haut de gamme, très détaillé ;
+– rendu nettement plus réaliste que pictural ;
+– réalisme doux, sans atteindre le photoréalisme pur ;
+– finition éditoriale premium ;
+– anatomie naturelle et crédible ;
+– visage réaliste, subtil et détaillé ;
+– peau naturelle avec texture très légère, volumes crédibles et nuances de carnation ;
+– yeux, nez, lèvres et mâchoire anatomiquement réalistes ;
+– éviter absolument l’effet visage peint, lissé ou illustré ;
+– cheveux très détaillés, avec mèches individuelles, volumes naturels et reflets subtils ;
+
+MATIÈRES ET TEXTURES :
+
+– toutes les matières doivent être immédiatement identifiables ;
+– tissu en lin : fibres visibles, irrégularités légères et plis naturels ;
+– velours côtelé : côtes fines clairement visibles et relief réaliste ;
+– bois : veinage naturel visible ;
+– verre : transparence, reflets et épaisseur crédibles ;
+– métal : reflets doux et réalistes ;
+– céramique : finition mate ou légèrement satinée ;
+– papier : texture légère et naturelle ;
+– aucune surface ne doit paraître lisse, plastique ou générique ;
+
+LUMIÈRE :
+
+– lumière naturelle chaude de fin d’après-midi ;
+– ambiance golden hour intérieure douce ;
+– éclairage chaud mais pas orange ;
+– contraste modéré ;
+– hautes lumières maîtrisées ;
+– aucune zone brûlée ou surexposée ;
+– ombres naturelles, diffuses et crédibles ;
+– lumière latérale venant d’une fenêtre ;
+– profondeur créée par la lumière et non par des contours dessinés ;
+– conserver des détails dans les ombres ;
+– rendu lumineux mais feutré ;
+
+PALETTE :
+
+– beige chaud ;
+– ivoire ;
+– brun naturel ;
+– terracotta discret ;
+– bois chaud ;
+– verts naturels désaturés lorsqu’ils sont présents ;
+– aucune saturation excessive ;
+
+ATMOSPHÈRE :
+
+– calme ;
+– chaleureuse ;
+– humaine ;
+– élégante ;
+– immersive ;
+– éditoriale ;
+– premium ;
+– naturelle ;
+– intemporelle ;
+
+LE RÉSULTAT NE DOIT PAS RESSEMBLER À :
+
+– une aquarelle ;
+– une illustration traditionnelle ;
+– un dessin ;
+– un cartoon ;
+– un anime ;
+– une image 3D ;
+– un rendu CGI ;
+– une photo brute ;
+– une peinture avec coups de pinceau visibles ;
+– un rendu Canva ;
+– une image trop lisse ;
+– une peau plastique ;
+– une illustration floue ou molle.
+
+PRIORITÉS ABSOLUES :
+
+1. réalisme du visage et des mains ;
+2. anatomie crédible des doigts et des articulations ;
+3. richesse des textures ;
+4. rendu réaliste des vêtements ;
+5. lumière naturelle douce ;
+6. cohérence des matières ;
+7. finesse des cheveux ;
+8. conservation exacte de la composition originale.
+
+Les mains doivent être anatomiquement correctes :
+– cinq doigts par main ;
+– articulations naturelles ;
+– prise des objets physiquement crédible ;
+– aucun doigt fusionné, supplémentaire ou déformé.
+
+Conserve les éventuelles zones de vide destinées à accueillir du texte dans la mise en page du site.
+
+Aucun texte ajouté.
+Aucun logo ajouté.
+Aucune icône ajoutée.
+Aucun objet décoratif supplémentaire.
+Aucune modification de la composition.
+
+Le résultat final doit ressembler à une illustration éditoriale numérique extrêmement détaillée, à mi-chemin entre photographie chaleureuse et digital painting réaliste, avec le même niveau de réalisme, de texture et de lumière que l’image de référence.
+
+Format final : conserver le ratio de l’image 1.
