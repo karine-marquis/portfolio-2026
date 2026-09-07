@@ -5389,18 +5389,37 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 /* RESPONSIVE MOBILE (≤ 768px) */
 @media (max-width: 768px) {
   #page-approach .approach-chapters-wrapper {
-    gap: 44px !important;
-    padding-bottom: 24px !important;
+    width: calc(100% - 48px) !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    gap: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  .approach-chapter,
-  .approach-chapter-right-vignette,
-  .approach-chapter-left-vignette {
+  #page-approach .section-spacing {
+    padding-bottom: 0 !important;
+  }
+
+  #page-approach .approach-chapter,
+  #page-approach .approach-chapter-right-vignette,
+  #page-approach .approach-chapter-left-vignette {
     display: flex !important;
     flex-direction: column !important;
     gap: 0 !important;
-    margin-bottom: 36px !important;
-    padding-bottom: 36px !important;
+    margin-bottom: 26px !important;
+    padding-bottom: 28px !important;
+  }
+
+  #page-approach .approach-chapter:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #page-approach .site-footer {
+    margin-top: 60px !important;
   }
 
   .desktop-only-vignette {
@@ -5410,7 +5429,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   .mobile-only-vignette {
     display: block !important;
     width: 100% !important;
-    margin: 12px 0 20px 0 !important;
+    margin: 12px 0 24px 0 !important;
   }
 
   .chapter-vignette-placeholder,
