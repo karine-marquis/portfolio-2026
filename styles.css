@@ -5122,6 +5122,13 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border: 1px solid #C7D1BF !important;
 }
 
+/* Mon approche : cartes 2 et 5 sur fond sauge */
+#page-approach .timeline-grid > .card-japandi:nth-child(2),
+#page-approach .timeline-grid > .card-japandi:nth-child(5) {
+  background: #DDE6D8 !important;
+  border: 1px solid #C7D1BF !important;
+}
+
 /* Bambinets : cartes internes en clair sur fond sauge */
 #sec-appris .bambinets-fin-card,
 #bb-sec-learnings .lbc-v2-subcard {
