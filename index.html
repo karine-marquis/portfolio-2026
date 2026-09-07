@@ -1270,7 +1270,7 @@
             <!-- SECTION 4 : LE TERRAIN TRANCHE -->
             <div class="lbc-v2-cards-grid" style="gap: 24px; margin-bottom: 32px;">
               <div class="lbc-v2-card" id="foodles-terrain-tranche">
-                <div style="display: grid; grid-template-columns: 1fr 440px; gap: 28px; align-items: center;">
+                <div class="foodles-terrain-grid" style="display: grid; grid-template-columns: 1fr 440px; gap: 28px; align-items: center;">
                   <div>
                     <h3 class="lbc-v2-card-title" style="margin-top: 0; margin-bottom: 16px;">Le terrain tranche</h3>
                     <p class="lbc-v2-card-body" style="margin-bottom: 12px;">Les hypothèses étaient posées. Il fallait maintenant les confronter à de vraies utilisations.</p>
@@ -1302,23 +1302,23 @@
 
                 <!-- PROCESS HORIZONTAL SOBRE 4 ETAPES -->
                 <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #D4CCC9;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; flex-wrap: nowrap;">
-                    <div style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
+                  <div class="foodles-atomic-process" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; flex-wrap: nowrap;">
+                    <div class="foodles-atomic-step" style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
                       <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">01</span>
                       <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Expérience</span>
                     </div>
-                    <span style="color: var(--color-primary, #9B5620); font-size: 16px; font-weight: 700;">→</span>
-                    <div style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
+                    <span class="foodles-atomic-arrow" style="color: var(--color-primary, #9B5620); font-size: 16px; font-weight: 700;">→</span>
+                    <div class="foodles-atomic-step" style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
                       <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">02</span>
                       <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Fait</span>
                     </div>
-                    <span style="color: var(--color-primary, #9B5620); font-size: 16px; font-weight: 700;">→</span>
-                    <div style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
+                    <span class="foodles-atomic-arrow" style="color: var(--color-primary, #9B5620); font-size: 16px; font-weight: 700;">→</span>
+                    <div class="foodles-atomic-step" style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
                       <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">03</span>
                       <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Insight</span>
                     </div>
-                    <span style="color: var(--color-primary, #9B5620); font-size: 16px; font-weight: 700;">→</span>
-                    <div style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
+                    <span class="foodles-atomic-arrow" style="color: var(--color-primary, #9B5620); font-size: 16px; font-weight: 700;">→</span>
+                    <div class="foodles-atomic-step" style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
                       <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">04</span>
                       <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Conclusion</span>
                     </div>
@@ -1347,7 +1347,7 @@
                 </div>
 
                 <!-- GRILLE DE 4 CONSTATS (2x2 DESKTOP) -->
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;">
+                <div class="foodles-constats-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;">
                   
                   <!-- CARTE 01 -->
                   <div class="lbc-v2-subcard" style="background: #F5F4F0; border-radius: 14px; padding: 20px; border: 1px solid #D4CCC9; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
@@ -1417,7 +1417,7 @@
                 <div style="margin-top: 32px; padding-top: 28px; border-top: 1.5px dashed #EADCD3;">
                   <h4 style="font-size: 15px; font-weight: 700; color: #1E1915; margin: 0 0 16px 0;">Les hypothèses à l’épreuve des tests</h4>
                   
-                  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                  <div class="foodles-hypotheses-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
                     
                     <!-- H2 -->
                     <div style="background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
@@ -1585,7 +1585,7 @@
             <div id="foodles-apprentissages" class="lbc-v2-learnings-block" style="margin-top: 32px; margin-bottom: 40px;">
               <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-primary, #9B5620) !important;">Ce que ce projet m’a appris</h3>
               <p class="lbc-v2-intro-p" style="margin-bottom: 24px;">Concevoir pour un usage quotidien au travail exige d'éliminer les moindres frictions. Une réservation sans effort est le meilleur vecteur d'adoption.</p>
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+              <div class="foodles-learnings-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
                 <div class="lbc-v2-subcard">
                   <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">01</div>
                   <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Concevoir pour un moment de hâte</div>
@@ -2103,11 +2103,15 @@
        ========================================================================== -->
     <section id="page-approach" class="spa-page-section">
       <div class="content-wrap section-spacing">
-        <div class="section-header-center" style="margin-bottom: 32px;">
-          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">L'Approche UX/UI de Bout en Bout</h2>
-          <p class="section-subtitle body-large">
-            De la recherche utilisateur initiale jusqu'à la mesure d'impact, chaque étape vise la clarté et l'engagement durable.
-          </p>
+        <div class="approach-hero-wrapper" style="text-align: center; max-width: 860px; margin: 0 auto 56px auto; padding-top: 24px;">
+          <h1 class="approach-hero-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 400; color: #3E3934; line-height: 1.25; margin-top: 0; margin-bottom: 32px; max-width: 840px; margin-left: auto; margin-right: auto;">
+            Et si on concevait des parcours <span style="color: #9B5620;">pour chacun</span>, pas des parcours pour tous ?
+          </h1>
+          <div class="approach-hero-intro" style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #3E3934; line-height: 1.65; max-width: 760px; margin-left: auto; margin-right: auto; text-align: center;">
+            <p style="margin-bottom: 16px;">Chaque projet arrive avec ses contraintes, ses usages et ses petites manies.</p>
+            <p style="margin-bottom: 16px;">Je ne plaque pas une méthode toute faite : j’observe, je choisis les bons outils, je teste ce qui mérite de l’être et j’ajuste au fur et à mesure.</p>
+            <p style="margin: 0;">L’objectif, c’est de construire un parcours qui fonctionne pour de vraies personnes — pas pour un utilisateur imaginaire qui comprend tout du premier coup.</p>
+          </div>
         </div>
 
         <div class="timeline-grid">

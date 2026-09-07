@@ -3239,6 +3239,156 @@ strong, b {
   }
 }
 
+/* FOODLES SECTION 4 (LE TERRAIN TRANCHE) — RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  #foodles-terrain-tranche .foodles-terrain-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+  #foodles-terrain-tranche .foodles-terrain-grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* FOODLES SECTION 5 (ATOMIC UX RESEARCH) — RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  #foodles-atomic-research {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  #foodles-atomic-research .lbc-v2-card-title,
+  #foodles-atomic-research h3 {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #foodles-atomic-research .foodles-atomic-process {
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #foodles-atomic-research .foodles-atomic-step {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    box-sizing: border-box !important;
+  }
+
+  #foodles-atomic-research .foodles-atomic-arrow {
+    transform: rotate(90deg) !important;
+    display: block !important;
+    text-align: center !important;
+    margin: 2px auto !important;
+  }
+}
+
+/* FOODLES SECTION 6 (CE QUE LES TESTS ONT RÉVÉLÉ) — RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  #foodles-resultats-tests {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  #foodles-resultats-tests p,
+  #foodles-resultats-tests div,
+  #foodles-resultats-tests h3,
+  #foodles-resultats-tests h4,
+  #foodles-resultats-tests h5 {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  #foodles-resultats-tests .foodles-narrative-img-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #foodles-resultats-tests .foodles-narrative-img-wrap img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  #foodles-resultats-tests .foodles-constats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #foodles-resultats-tests .foodles-hypotheses-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #foodles-resultats-tests .foodles-hypotheses-grid > div {
+    grid-column: span 1 !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #foodles-resultats-tests .foodles-hypotheses-grid > div > div:last-child {
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+}
+
+/* FOODLES SECTION 8 (CE QUE CE PROJET M’A APPRIS) — RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  #foodles-apprentissages {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  #foodles-apprentissages .foodles-learnings-grid,
+  #foodles-apprentissages .lbc-v2-learnings-grid,
+  #foodles-apprentissages > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #foodles-apprentissages .lbc-v2-subcard,
+  #foodles-apprentissages .lbc-v2-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
 /* ==========================================================================
    FOODLES HERO ILLUSTRATION â€” HAUTEUR VISUELLE RÃ‰DUITE DE 12-15% SUR DESKTOP
    ========================================================================== */
@@ -3740,14 +3890,14 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
   #page-home .footer-col-contact {
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 6px !important;
+    gap: 10px !important;
     margin-right: 0 !important;
-    margin-top: 2px !important;
-    margin-bottom: 4px !important;
+    margin-top: 4px !important;
+    margin-bottom: 8px !important;
     width: 100% !important;
   }
 
@@ -4977,5 +5127,296 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 #bb-sec-learnings .lbc-v2-subcard {
   background: #F7F3EE !important;
   border: 1px solid #D4CCC9 !important;
+}
+
+/* MON APPROCHE HERO — RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  .approach-hero-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    margin-bottom: 40px !important;
+    padding-top: 12px !important;
+    text-align: center !important;
+    overflow-x: hidden !important;
+  }
+
+  .approach-hero-title {
+    font-size: 26px !important;
+    line-height: 1.35 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 24px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .approach-hero-intro {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .approach-hero-intro p {
+    margin-bottom: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+/* FOOTER RESPONSIVE MOBILE — DISPOSITION VERTICALE EN COLONNE POUR TOUS LES FOOTERS */
+@media (max-width: 768px) {
+  html, body, .main-body-wrap, .spa-page-section {
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+  }
+
+  .site-footer,
+  #page-home .site-footer,
+  #page-approach .site-footer,
+  #page-projects .site-footer,
+  #page-offer .site-footer,
+  #page-about .site-footer,
+  #page-blog .site-footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    margin-top: 32px !important;
+    padding-top: 24px !important;
+    padding-bottom: 32px !important;
+    background: #F5F4F0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .site-footer .footer-container,
+  #page-home .footer-container,
+  #page-approach .footer-container,
+  #page-projects .footer-container,
+  #page-offer .footer-container,
+  #page-about .footer-container,
+  #page-blog .footer-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .site-footer .footer-col-brand,
+  #page-home .footer-col-brand,
+  #page-approach .footer-col-brand,
+  #page-projects .footer-col-brand,
+  #page-offer .footer-col-brand,
+  #page-about .footer-col-brand,
+  #page-blog .footer-col-brand {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .site-footer .footer-brand-name,
+  #page-home .footer-brand-name,
+  #page-approach .footer-brand-name,
+  #page-projects .footer-brand-name,
+  #page-offer .footer-brand-name,
+  #page-about .footer-brand-name,
+  #page-blog .footer-brand-name {
+    font-size: 18px !important;
+    color: #3E3934 !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .site-footer .footer-availability-badge,
+  #page-home .footer-availability-badge,
+  #page-approach .footer-availability-badge,
+  #page-projects .footer-availability-badge,
+  #page-offer .footer-availability-badge,
+  #page-about .footer-availability-badge,
+  #page-blog .footer-availability-badge {
+    font-size: 11.5px !important;
+    padding: 4px 12px !important;
+    border-radius: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    margin: 0 !important;
+    border: 1px solid rgba(155, 86, 32, 0.35) !important;
+    visibility: visible !important;
+  }
+
+  .site-footer .footer-col-contact,
+  #page-home .footer-col-contact,
+  #page-approach .footer-col-contact,
+  #page-projects .footer-col-contact,
+  #page-offer .footer-col-contact,
+  #page-about .footer-col-contact,
+  #page-blog .footer-col-contact {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+
+  .site-footer .footer-contact-link,
+  .site-footer .footer-social-btn,
+  #page-home .footer-contact-link,
+  #page-home .footer-social-btn,
+  #page-approach .footer-contact-link,
+  #page-approach .footer-social-btn,
+  #page-projects .footer-contact-link,
+  #page-projects .footer-social-btn,
+  #page-offer .footer-contact-link,
+  #page-offer .footer-social-btn,
+  #page-about .footer-contact-link,
+  #page-about .footer-social-btn,
+  #page-blog .footer-contact-link,
+  #page-blog .footer-social-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 12.5px !important;
+    color: #3E3934 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    height: auto !important;
+  }
+
+  .site-footer .footer-bottom-bar,
+  #page-home .footer-bottom-bar,
+  #page-approach .footer-bottom-bar,
+  #page-projects .footer-bottom-bar,
+  #page-offer .footer-bottom-bar,
+  #page-about .footer-bottom-bar,
+  #page-blog .footer-bottom-bar {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-top: 14px !important;
+    padding: 14px 0 0 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    border: none !important;
+    border-top: 1px solid rgba(212, 204, 201, 0.4) !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+
+  .site-footer .footer-bottom-flex,
+  #page-home .footer-bottom-flex,
+  #page-approach .footer-bottom-flex,
+  #page-projects .footer-bottom-flex,
+  #page-offer .footer-bottom-flex,
+  #page-about .footer-bottom-flex,
+  #page-blog .footer-bottom-flex {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .site-footer .footer-quote-italic,
+  #page-home .footer-quote-italic,
+  #page-approach .footer-quote-italic,
+  #page-projects .footer-quote-italic,
+  #page-offer .footer-quote-italic,
+  #page-about .footer-quote-italic,
+  #page-blog .footer-quote-italic {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+    color: #333F30 !important;
+    font-style: italic !important;
+    text-align: center !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    height: auto !important;
+  }
+
+  .site-footer .footer-copyright,
+  #page-home .footer-copyright,
+  #page-approach .footer-copyright,
+  #page-projects .footer-copyright,
+  #page-offer .footer-copyright,
+  #page-about .footer-copyright,
+  #page-blog .footer-copyright {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 0.8 !important;
+    font-size: 10.5px !important;
+    line-height: 1.4 !important;
+    color: #3E3934 !important;
+    text-align: center !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    height: auto !important;
+  }
 }
 
