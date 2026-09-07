@@ -5122,11 +5122,322 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border: 1px solid #C7D1BF !important;
 }
 
-/* Mon approche : cartes 2 et 5 sur fond sauge */
-#page-approach .timeline-grid > .card-japandi:nth-child(2),
-#page-approach .timeline-grid > .card-japandi:nth-child(5) {
+/* ==========================================================================
+   MON APPROCHE — STRUCTURE EN 3 CHAPITRES ÉDITORIAUX JAPANDI
+   ========================================================================== */
+#page-approach .approach-chapters-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 16px 0 48px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.approach-chapter {
+  position: relative;
+  background: transparent;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(212, 204, 201, 0.6);
+}
+
+.approach-chapter:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Alternance Desktop : Vignette à droite (Chapitres 1 et 3) */
+.approach-chapter-right-vignette {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Alternance Desktop : Vignette à gauche (Chapitre 2) */
+.approach-chapter-left-vignette {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Colonne de contenu principal du chapitre */
+.chapter-content-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* En-tête de chapitre (Surtitre + Titre) */
+.chapter-header {
+  margin-bottom: 24px;
+}
+
+.chapter-eyebrow {
+  display: block;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: #9B5620 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 6px !important;
+}
+
+.chapter-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.25 !important;
+}
+
+/* Grille des 2 étapes du chapitre */
+.chapter-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* Zone Vignette Placeholder (30-35% de la largeur) */
+.chapter-vignette-col {
+  width: 100%;
+  height: 100%;
+}
+
+.desktop-only-vignette {
+  display: block;
+}
+
+.mobile-only-vignette {
+  display: none;
+}
+
+.chapter-vignette-placeholder {
+  width: 100%;
+  min-height: 240px;
+  height: 100%;
+  max-height: 360px;
+  background: #EFECE7 !important;
+  border: 1px dashed #D4CCC9 !important;
+  border-radius: 16px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.chapter-vignette-container {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  max-height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(62, 57, 52, 0.16) !important;
+  border: 1px solid rgba(212, 204, 201, 0.8);
+  background: #FAF8F5;
+  box-sizing: border-box;
+  transition: transform 240ms ease, box-shadow 240ms ease !important;
+}
+
+.chapter-vignette-container:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 18px 36px rgba(62, 57, 52, 0.18) !important;
+}
+
+.chapter-vignette-img {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  max-height: 360px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
+}
+
+.vignette-label {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #6F665F !important;
+  opacity: 0.75 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* 1. BLOCS NEUTRES (Étapess 01 et 04) */
+#page-approach .roadmap-item-neutral {
+  background: #FAF8F5 !important;
+  border: 1px solid #D4CCC9 !important;
+  border-radius: 16px !important;
+  padding: 26px 28px !important;
+  box-shadow: 0 4px 18px rgba(62, 57, 52, 0.04) !important;
+  transition: transform 240ms ease, box-shadow 240ms ease !important;
+}
+
+#page-approach .roadmap-item-neutral:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(62, 57, 52, 0.08) !important;
+}
+
+/* 2. BLOCS SAUGE PÂLE (Étapess 02 et 05) */
+#page-approach .roadmap-item-sauge {
   background: #DDE6D8 !important;
   border: 1px solid #C7D1BF !important;
+  border-radius: 16px !important;
+  padding: 26px 28px !important;
+  box-shadow: 0 4px 18px rgba(62, 57, 52, 0.04) !important;
+  transition: transform 240ms ease, box-shadow 240ms ease !important;
+}
+
+#page-approach .roadmap-item-sauge:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(62, 57, 52, 0.08) !important;
+}
+
+/* 3. BLOCS ÉDITORIAUX / NOTES (Étapess 03 et 06) */
+#page-approach .roadmap-item-editorial {
+  background: #EFECE7 !important;
+  border: none !important;
+  border-radius: 0 14px 14px 0 !important;
+  box-shadow: 0 8px 20px rgba(62, 57, 52, 0.11) !important;
+  padding: 26px 28px !important;
+  position: relative !important;
+  transition: transform 240ms ease, box-shadow 240ms ease !important;
+}
+
+#page-approach .roadmap-item-editorial:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(62, 57, 52, 0.14) !important;
+}
+
+#page-approach .roadmap-item-editorial::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 4px !important;
+  background-color: #AEBBA6 !important;
+  border-radius: 4px !important;
+}
+
+/* ACCESSIBILITÉ — RÉDUCTION DE MOUVEMENT */
+@media (prefers-reduced-motion: reduce) {
+  .chapter-vignette-container,
+  #page-approach .roadmap-item-neutral,
+  #page-approach .roadmap-item-sauge,
+  #page-approach .roadmap-item-editorial {
+    transition: none !important;
+    transform: none !important;
+  }
+  .chapter-vignette-container:hover,
+  #page-approach .roadmap-item-neutral:hover,
+  #page-approach .roadmap-item-sauge:hover,
+  #page-approach .roadmap-item-editorial:hover {
+    transform: none !important;
+  }
+}
+
+/* Label des notes éditoriales (Mon parti pris / Et après ?) */
+.roadmap-editorial-label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #9B5620;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+/* Typographie & éléments internes des cartes */
+#page-approach .roadmap-item .step-card-number {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 30px;
+  color: #9B5620 !important;
+  font-weight: 400 !important;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+#page-approach .roadmap-item h3 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 16.5px !important;
+  font-weight: 600 !important;
+  color: #3E3934 !important;
+  line-height: 1.35 !important;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+#page-approach .roadmap-item .body-small {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: #3E3934 !important;
+  opacity: 0.9;
+  margin: 0 !important;
+}
+
+/* RESPONSIVE MOBILE (≤ 768px) */
+@media (max-width: 768px) {
+  #page-approach .approach-chapters-wrapper {
+    gap: 44px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .approach-chapter,
+  .approach-chapter-right-vignette,
+  .approach-chapter-left-vignette {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-bottom: 36px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .desktop-only-vignette {
+    display: none !important;
+  }
+
+  .mobile-only-vignette {
+    display: block !important;
+    width: 100% !important;
+    margin: 12px 0 20px 0 !important;
+  }
+
+  .chapter-vignette-placeholder,
+  .chapter-vignette-container {
+    min-height: 160px !important;
+    height: 180px !important;
+    max-height: 220px !important;
+  }
+
+  .chapter-header {
+    margin-bottom: 8px !important;
+  }
+
+  .chapter-title {
+    font-size: 24px !important;
+  }
+
+  .chapter-steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  #page-approach .roadmap-item-neutral,
+  #page-approach .roadmap-item-sauge,
+  #page-approach .roadmap-item-editorial {
+    padding: 20px 18px !important;
+  }
 }
 
 /* Bambinets : cartes internes en clair sur fond sauge */
