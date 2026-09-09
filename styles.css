@@ -5386,8 +5386,232 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   margin: 0 !important;
 }
 
+/* BLOC CTA PRINCIPAL EN FIN DE PAGE MON APPROCHE */
+#page-approach .approach-footer-cta-wrapper {
+  text-align: center;
+  margin-top: 64px;
+  margin-bottom: 24px;
+  padding: 0 16px;
+}
+
+#page-approach .approach-footer-cta-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 28px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+  line-height: 1.3 !important;
+}
+
+/* ==========================================================================
+   MON OFFRE — HERO DESKTOP ÉDITORIAL EN 2 COLONNES JAPANDI
+   ========================================================================== */
+#page-offer .offer-hero-wrapper {
+  margin-bottom: 64px;
+  padding-top: 16px;
+}
+
+#page-offer .offer-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 56px;
+  align-items: start;
+}
+
+#page-offer .offer-hero-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-offer .offer-hero-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 38px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  line-height: 1.25 !important;
+  margin-top: 0 !important;
+  margin-bottom: 28px !important;
+}
+
+#page-offer .offer-hero-body p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15.5px !important;
+  line-height: 1.68 !important;
+  color: #3E3934 !important;
+  opacity: 0.92;
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+}
+
+#page-offer .offer-hero-highlight {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  color: #9B5620 !important;
+  margin-top: 28px !important;
+  margin-bottom: 24px !important;
+  line-height: 1.35 !important;
+}
+
+#page-offer .offer-hero-cta-wrapper {
+  margin-top: 24px;
+}
+
+/* Colonne Illustration Droite */
+#page-offer .offer-hero-img-col {
+  position: sticky;
+  top: 110px;
+  width: 100%;
+}
+
+#page-offer .offer-hero-img-container {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 22px 48px rgba(62, 57, 52, 0.18) !important;
+  border: 1px solid rgba(212, 204, 201, 0.8);
+  background: #FAF8F5;
+  box-sizing: border-box;
+  transition: transform 240ms ease, box-shadow 240ms ease !important;
+}
+
+#page-offer .offer-hero-img-container:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 26px 54px rgba(62, 57, 52, 0.22) !important;
+}
+
+#page-offer .offer-hero-img {
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 16px;
+}
+
+/* ACCORDÉONS PRESTATIONS MON OFFRE — STRUCTURE & STYLE FERMÉ ÉDITORIAL */
+#page-offer .offer-accordions-wrapper {
+  max-width: 1140px;
+  margin: 0 auto 64px auto;
+  border-top: 1px solid rgba(212, 204, 201, 0.7);
+}
+
+.offer-accordion-item {
+  border-bottom: 1px solid rgba(212, 204, 201, 0.7);
+  background: transparent;
+}
+
+.offer-accordion-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+  padding: 24px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 240ms ease;
+}
+
+.offer-accordion-header:hover {
+  background-color: rgba(239, 236, 231, 0.3);
+}
+
+/* Colonne Gauche : Numéro + Titre & Pitch */
+.offer-accordion-col-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.offer-accordion-number {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #9B5620 !important;
+  letter-spacing: 0.06em !important;
+  padding-top: 2px;
+  min-width: 24px;
+}
+
+.offer-accordion-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-accordion-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 26px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin: 0 0 6px 0 !important;
+  line-height: 1.2 !important;
+}
+
+.offer-accordion-pitch {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14.5px !important;
+  line-height: 1.55 !important;
+  color: #3E3934 !important;
+  opacity: 0.88;
+  margin: 0 !important;
+  max-width: 680px;
+}
+
+/* Colonne Droite : Durée/Prix + Chevron simple sans cercle */
+.offer-accordion-col-right {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.offer-accordion-meta-editorial {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 4px;
+}
+
+.offer-meta-duration {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #3E3934 !important;
+}
+
+.offer-meta-price {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #3E3934 !important;
+  opacity: 0.95;
+}
+
+/* Chevron simple sans cercle */
+.offer-accordion-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #9B5620;
+  background: none;
+  border: none;
+  padding: 4px;
+  transition: transform 240ms ease, opacity 240ms ease;
+}
+
+.offer-accordion-header:hover .offer-accordion-chevron {
+  opacity: 0.8;
+  transform: translateY(2px);
+}
+
 /* RESPONSIVE MOBILE (≤ 768px) */
 @media (max-width: 768px) {
+  #page-offer .offer-hero-img-container {
+    box-shadow: 0 10px 24px rgba(62, 57, 52, 0.12) !important;
+  }
+
   #page-approach .approach-chapters-wrapper {
     width: calc(100% - 48px) !important;
     max-width: 100% !important;
@@ -5400,6 +5624,17 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
   #page-approach .section-spacing {
     padding-bottom: 0 !important;
+  }
+
+  #page-approach .approach-footer-cta-wrapper {
+    margin-top: 44px !important;
+    margin-bottom: 16px !important;
+    padding: 0 12px !important;
+  }
+
+  #page-approach .approach-footer-cta-title {
+    font-size: 22px !important;
+    margin-bottom: 20px !important;
   }
 
   #page-approach .approach-chapter,
