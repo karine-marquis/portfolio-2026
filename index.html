@@ -2389,9 +2389,9 @@
 
         <!-- LISTE ACCORDÉONS PRESTATIONS MON OFFRE -->
         <div class="offer-accordions-wrapper">
-          <!-- ACCORDÉON 01 — AUDIT UX (TEMPLATE FERMÉ ÉDITORIAL) -->
-          <article class="offer-accordion-item offer-accordion-closed">
-            <header class="offer-accordion-header">
+          <!-- ACCORDÉON 01 — AUDIT UX -->
+          <article class="offer-accordion-item offer-accordion-closed" id="offer-accordion-01">
+            <button type="button" class="offer-accordion-header" onclick="toggleOfferAccordion(this)" aria-expanded="false" aria-controls="offer-accordion-body-01" id="offer-accordion-header-01">
               <div class="offer-accordion-col-main">
                 <span class="offer-accordion-number">01</span>
                 <div class="offer-accordion-title-block">
@@ -2407,18 +2407,107 @@
                   <span class="offer-meta-duration">À partir de 3 jours</span>
                   <span class="offer-meta-price">À partir de 1 450 € HT</span>
                 </div>
-                <span class="offer-accordion-chevron" aria-label="Déplier le détail de la prestation">
+                <span class="offer-accordion-chevron" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
               </div>
-            </header>
+            </button>
+
+            <!-- CONTENU DÉVELOPPÉ (ÉTAT OUVERT) -->
+            <div class="offer-accordion-body" id="offer-accordion-body-01" role="region" aria-labelledby="offer-accordion-header-01">
+              <div class="offer-accordion-content-inner">
+                
+                <!-- 1. TEXTE D'INTRODUCTION -->
+                <div class="offer-accordion-intro-full">
+                  <p>Un audit n’est pas une chasse aux défauts. Il sert à comprendre ce qui freine réellement l’usage, ce qui relève d’un détail et ce qui mérite une vraie décision de conception.</p>
+                  <p>Je croise l’analyse du parcours avec le contexte du projet, les retours déjà disponibles et, lorsque c’est pertinent, un benchmark ou une recherche ciblée auprès des utilisateurs.</p>
+                </div>
+
+                <!-- 2. GRILLE 2 COLONNES (40% / 60%) -->
+                <div class="offer-accordion-main-grid">
+                  
+                  <!-- SOUS-SECTION GAUCHE : UTILES QUAND -->
+                  <div class="offer-accordion-col-useful">
+                    <h3 class="offer-subsection-title">Utile quand</h3>
+                    <ul class="offer-useful-list">
+                      <li>les retours s’accumulent mais personne ne sait vraiment quoi traiter en premier</li>
+                      <li>une refonte est envisagée sans savoir précisément ce qu’il faut changer</li>
+                      <li>plusieurs hypothèses circulent mais manquent encore de preuves</li>
+                      <li>il faut sécuriser des décisions avant d’engager davantage de temps et de budget</li>
+                    </ul>
+                  </div>
+
+                  <!-- SOUS-SECTION DROITE : COMMENT ÇA SE PASSE -->
+                  <div class="offer-accordion-col-steps">
+                    <h3 class="offer-subsection-title">Comment ça se passe</h3>
+                    <div class="offer-steps-rows">
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Cadrage</span>
+                        <span class="offer-step-duration">½ journée</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Analyse UX</span>
+                        <span class="offer-step-duration">1 à 1½ jour</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Benchmark</span>
+                        <span class="offer-step-duration">½ journée</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Recherche / tests</span>
+                        <span class="offer-step-duration">1 à 2 jours <span class="offer-step-note">si nécessaire</span></span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Analyse & priorisation</span>
+                        <span class="offer-step-duration">½ journée</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Recommandations & restitution</span>
+                        <span class="offer-step-duration">½ à 1 journée</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- 3. DEUX FORMATS EN BAS -->
+                <div class="offer-accordion-formats-section">
+                  <h3 class="offer-subsection-title">Deux formats selon le besoin</h3>
+                  
+                  <div class="offer-formats-grid">
+                    <!-- FORMAT 1 -->
+                    <div class="offer-format-item">
+                      <div class="offer-format-header">
+                        <h4 class="offer-format-title">Audit ciblé</h4>
+                        <div class="offer-format-meta">Environ 3 jours · À partir de 1 450 € HT</div>
+                      </div>
+                      <p class="offer-format-text">Pour analyser un parcours ou un problème bien délimité et identifier rapidement les priorités.</p>
+                    </div>
+
+                    <!-- FORMAT 2 -->
+                    <div class="offer-format-item">
+                      <div class="offer-format-header">
+                        <h4 class="offer-format-title">Audit approfondi</h4>
+                        <div class="offer-format-meta">Environ 5 à 6 jours · Environ 2 700 € HT</div>
+                      </div>
+                      <p class="offer-format-text">Pour explorer plusieurs frictions, approfondir les hypothèses et intégrer si nécessaire de la recherche ou des tests utilisateurs.</p>
+                    </div>
+                  </div>
+
+                  <p class="offer-formats-disclaimer">
+                    Le prix final dépend du périmètre et des méthodes réellement nécessaires.
+                  </p>
+                </div>
+
+              </div>
+            </div>
           </article>
 
-          <!-- ACCORDÉON 02 — SPRINT UX (TEMPLATE FERMÉ ÉDITORIAL) -->
-          <article class="offer-accordion-item offer-accordion-closed">
-            <header class="offer-accordion-header">
+          <!-- ACCORDÉON 02 — SPRINT UX (CONTENU DÉVELOPPÉ) -->
+          <article class="offer-accordion-item offer-accordion-closed" id="offer-accordion-02">
+            <button type="button" class="offer-accordion-header" onclick="toggleOfferAccordion(this)" aria-expanded="false" aria-controls="offer-accordion-body-02" id="offer-accordion-header-02">
               <div class="offer-accordion-col-main">
                 <span class="offer-accordion-number">02</span>
                 <div class="offer-accordion-title-block">
@@ -2434,18 +2523,92 @@
                   <span class="offer-meta-duration">À partir de 5 jours</span>
                   <span class="offer-meta-price">À partir de 2 450 € HT</span>
                 </div>
-                <span class="offer-accordion-chevron" aria-label="Déplier le détail de la prestation">
+                <span class="offer-accordion-chevron" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
               </div>
-            </header>
+            </button>
+
+            <div class="offer-accordion-body" id="offer-accordion-body-02" role="region" aria-labelledby="offer-accordion-header-02">
+              <div class="offer-accordion-content-inner">
+                <div class="offer-accordion-intro-full">
+                  <p>Une idée paraît bonne sur le papier. Encore faut-il vérifier qu’elle tient debout une fois mise entre les mains des utilisateurs. Le sprint permet de cadrer, prototyper, tester et ajuster rapidement avant d’engager plus de temps et de budget.</p>
+                  <p>Je pars d’une question précise et des éléments déjà disponibles pour construire un parcours, rendre une piste tangible et la confronter à l’usage. Les retours servent à ajuster la proposition et à décider de la suite.</p>
+                </div>
+                <div class="offer-accordion-main-grid">
+                  <div class="offer-accordion-col-useful">
+                    <h3 class="offer-subsection-title">Utile quand</h3>
+                    <ul class="offer-useful-list">
+                      <li>une idée ou une fonctionnalité doit être testée avant de lancer le développement</li>
+                      <li>plusieurs pistes sont possibles et l’équipe a besoin de concret pour choisir</li>
+                      <li>un parcours mérite d’être repensé sur un périmètre bien délimité</li>
+                      <li>il faut rendre une hypothèse tangible pour recueillir des retours utilisateurs</li>
+                    </ul>
+                  </div>
+                  <div class="offer-accordion-col-steps">
+                    <h3 class="offer-subsection-title">Comment ça se passe</h3>
+                    <div class="offer-steps-rows">
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Cadrage & hypothèses</span>
+                        <span class="offer-step-duration">½ à 1 jour</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Recherche ciblée</span>
+                        <span class="offer-step-duration">½ à 1 jour</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Parcours & architecture</span>
+                        <span class="offer-step-duration">1 à 1½ jour</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Wireframes & prototype</span>
+                        <span class="offer-step-duration">1½ à 2 jours</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Tests utilisateurs</span>
+                        <span class="offer-step-duration">½ à 1 jour</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Itérations</span>
+                        <span class="offer-step-duration">½ à 1 jour</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Restitution</span>
+                        <span class="offer-step-duration">½ journée</span>
+                      </div>
+                    </div>
+                    <p class="offer-formats-disclaimer">Les temps sont indicatifs et s’adaptent au format retenu. Le calendrier dépend aussi de la disponibilité des participants aux tests.</p>
+                  </div>
+                </div>
+                <div class="offer-accordion-formats-section">
+                  <h3 class="offer-subsection-title">Deux formats selon le besoin</h3>
+                  <div class="offer-formats-grid">
+                    <div class="offer-format-item">
+                      <div class="offer-format-header">
+                        <h4 class="offer-format-title">Sprint ciblé</h4>
+                        <div class="offer-format-meta">Environ 5 jours · À partir de 2 450 € HT</div>
+                      </div>
+                      <p class="offer-format-text">Pour travailler une hypothèse sur un parcours bien délimité, construire un prototype ciblé et l’ajuster à partir des premiers tests.</p>
+                    </div>
+                    <div class="offer-format-item">
+                      <div class="offer-format-header">
+                        <h4 class="offer-format-title">Sprint complet</h4>
+                        <div class="offer-format-meta">Environ 8 jours · Environ 3 900 € HT</div>
+                      </div>
+                      <p class="offer-format-text">Pour approfondir la recherche et le parcours, développer le prototype et consacrer davantage de temps aux tests et aux itérations.</p>
+                    </div>
+                  </div>
+                  <p class="offer-formats-disclaimer">Le prix final dépend du périmètre, du niveau de détail du prototype et des modalités de recherche et de tests définies ensemble.</p>
+                </div>
+              </div>
+            </div>
           </article>
 
-          <!-- ACCORDÉON 03 — ACCOMPAGNEMENT UX (TEMPLATE FERMÉ ÉDITORIAL) -->
-          <article class="offer-accordion-item offer-accordion-closed">
-            <header class="offer-accordion-header">
+          <!-- ACCORDÉON 03 — ACCOMPAGNEMENT UX (CONTENU DÉVELOPPÉ) -->
+          <article class="offer-accordion-item offer-accordion-closed" id="offer-accordion-03">
+            <button type="button" class="offer-accordion-header" onclick="toggleOfferAccordion(this)" aria-expanded="false" aria-controls="offer-accordion-body-03" id="offer-accordion-header-03">
               <div class="offer-accordion-col-main">
                 <span class="offer-accordion-number">03</span>
                 <div class="offer-accordion-title-block">
@@ -2461,13 +2624,86 @@
                   <span class="offer-meta-duration">À partir de 4 jours / mois</span>
                   <span class="offer-meta-price">À partir de 1 800 € HT / mois</span>
                 </div>
-                <span class="offer-accordion-chevron" aria-label="Déplier le détail de la prestation">
+                <span class="offer-accordion-chevron" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
               </div>
-            </header>
+            </button>
+
+            <div class="offer-accordion-body" id="offer-accordion-body-03" role="region" aria-labelledby="offer-accordion-header-03">
+              <div class="offer-accordion-content-inner">
+                <div class="offer-accordion-intro-full">
+                  <p>Le projet avance, les décisions s’enchaînent, et l’UX finit parfois par arriver après la bataille. J’interviens au fil du projet pour garder les usages, les parcours et les arbitrages dans la boucle — sans rajouter une couche de réunion pour le plaisir.</p>
+                  <p>Nous définissons les priorités et un rythme de travail adapté à votre équipe. Selon les besoins, je peux analyser un parcours, préparer une recherche, concevoir des écrans, prototyper, tester ou accompagner les échanges avec les personnes qui réalisent le produit.</p>
+                </div>
+                <div class="offer-accordion-main-grid">
+                  <div class="offer-accordion-col-useful">
+                    <h3 class="offer-subsection-title">Utile quand</h3>
+                    <ul class="offer-useful-list">
+                      <li>l’équipe a besoin d’un appui UX régulier sans mobiliser un temps plein</li>
+                      <li>un projet évolue et les décisions de conception demandent un suivi dans la durée</li>
+                      <li>les retours utilisateurs doivent se traduire en améliorations concrètes au fil des versions</li>
+                      <li>un chantier nécessite du renfort pour relier recherche, conception et mise en œuvre</li>
+                    </ul>
+                  </div>
+                  <div class="offer-accordion-col-steps">
+                    <h3 class="offer-subsection-title">Comment ça se passe</h3>
+                    <div class="offer-steps-rows">
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Cadrage de la collaboration</span>
+                        <span class="offer-step-duration">Au démarrage</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Choix des priorités</span>
+                        <span class="offer-step-duration">En début de mois</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Recherche, conception & tests</span>
+                        <span class="offer-step-duration">Sur les jours prévus</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Points avec l’équipe</span>
+                        <span class="offer-step-duration">Aux étapes clés</span>
+                      </div>
+                      <div class="offer-step-row">
+                        <span class="offer-step-name">Bilan & prochaines priorités</span>
+                        <span class="offer-step-duration">En fin de mois</span>
+                      </div>
+                    </div>
+                    <p class="offer-formats-disclaimer">Le temps se répartit selon les priorités du mois. Les points de suivi font partie des jours prévus et s’adaptent au rythme de l’équipe.</p>
+                  </div>
+                </div>
+                <div class="offer-accordion-formats-section">
+                  <h3 class="offer-subsection-title">Trois cadences selon le besoin</h3>
+                  <div class="offer-formats-grid">
+                    <div class="offer-format-item">
+                      <div class="offer-format-header">
+                        <h4 class="offer-format-title">4 jours par mois</h4>
+                        <div class="offer-format-meta">1 800 € HT / mois</div>
+                      </div>
+                      <p class="offer-format-text">Pour garder un regard UX régulier, traiter des sujets ciblés et soutenir les décisions de l’équipe.</p>
+                    </div>
+                    <div class="offer-format-item">
+                      <div class="offer-format-header">
+                        <h4 class="offer-format-title">6 jours par mois</h4>
+                        <div class="offer-format-meta">2 700 € HT / mois</div>
+                      </div>
+                      <p class="offer-format-text">Pour suivre un chantier dans la durée et articuler analyse, conception et retours utilisateurs.</p>
+                    </div>
+                    <div class="offer-format-item">
+                      <div class="offer-format-header">
+                        <h4 class="offer-format-title">8 jours par mois</h4>
+                        <div class="offer-format-meta">3 600 € HT / mois</div>
+                      </div>
+                      <p class="offer-format-text">Pour un renfort plus présent, faire avancer plusieurs sujets priorisés et accompagner leur mise en œuvre.</p>
+                    </div>
+                  </div>
+                  <p class="offer-formats-disclaimer">Ces repères reposent sur un tarif de 450 € HT par jour. Le périmètre, la cadence et les modalités de collaboration sont définis ensemble avant le démarrage.</p>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -2711,10 +2947,6 @@
 
   </main>
 
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="data.js?v=20260825_final"></script>
-  <script src="app.js"></script>
 </body>
 </html>
 

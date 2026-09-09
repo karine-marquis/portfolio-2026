@@ -40,6 +40,34 @@ function scrollToLbcSection(secId, el) {
   }
 }
 
+/* ACCORDÉONS PRESTATIONS — GESTION D'OUVERTURE / FERMETURE & ACCESSIBILITÉ EXCLUSIVE */
+function toggleOfferAccordion(headerBtn) {
+  if (!headerBtn) return;
+  const item = headerBtn.closest('.offer-accordion-item');
+  if (!item) return;
+
+  const isExpanded = headerBtn.getAttribute('aria-expanded') === 'true';
+  
+  if (isExpanded) {
+    headerBtn.setAttribute('aria-expanded', 'false');
+    item.classList.remove('offer-accordion-open');
+    item.classList.add('offer-accordion-closed');
+  } else {
+    // Refermer tous les autres accordéons de la section offres pour l'ouverture exclusive
+    const allItems = document.querySelectorAll('.offer-accordion-item');
+    allItems.forEach(other => {
+      const otherBtn = other.querySelector('.offer-accordion-header');
+      if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+      other.classList.remove('offer-accordion-open');
+      other.classList.add('offer-accordion-closed');
+    });
+
+    headerBtn.setAttribute('aria-expanded', 'true');
+    item.classList.add('offer-accordion-open');
+    item.classList.remove('offer-accordion-closed');
+  }
+}
+
 /* CONTROLES AUDIO PODCAST FOODLES & BAMBINETS */
 function toggleFoodlesAudio(btn) {
   const audio = document.getElementById('fdAudioElement');
