@@ -108,7 +108,7 @@ p, body, .glance-project-desc, .glance-step-label, .body-large, .body-normal, .b
 }
 
 .btn-primary {
-  background-color: #9B5620 !important;
+  background-color: #55624F !important;
 }
 
 strong, b {
@@ -240,34 +240,8 @@ strong, b {
   border-radius: 50%;
 }
 
-/* BOUTON CTA PRINCIPAL (HARMONISÃ‰ PILULE SATIN) */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 11px 24px !important;
-  background-color: var(--color-primary);
-  color: #FFFFFF !important;
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 14.5px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.03em;
-  border-radius: 24px !important;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(166, 58, 43, 0.22) !important;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.btn-primary:hover {
-  background-color: var(--color-accent-hover) !important;
-  color: #FFFFFF !important;
-  transform: translateY(-1.5px);
-  box-shadow: 0 8px 22px rgba(180, 92, 58, 0.35) !important;
-}
-
-/* BOUTON CTA NAVBAR Ã‰DITORIAL UNIFIÃ‰ (VERT SAUGE COMPACT) */
+/* BOUTON CTA PRINCIPAL OFFICIEL HARMONISÉ (VERT SAUGE COMPACT) */
+.btn-primary,
 .btn-nav-outline {
   display: inline-flex;
   align-items: center;
@@ -287,6 +261,7 @@ strong, b {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
+.btn-primary:hover,
 .btn-nav-outline:hover {
   background-color: #44513E !important;
   color: #FFFFFF !important;
@@ -5408,15 +5383,19 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
    MON OFFRE — HERO DESKTOP ÉDITORIAL EN 2 COLONNES JAPANDI
    ========================================================================== */
 #page-offer .offer-hero-wrapper {
-  margin-bottom: 64px;
-  padding-top: 16px;
+  background-color: #F7EFEC;
+  border-bottom: 1px solid #D4CCC9;
+  box-shadow: none !important;
+  border-radius: 16px;
+  padding: 48px 52px;
+  margin-bottom: 56px;
 }
 
 #page-offer .offer-hero-grid {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 56px;
-  align-items: start;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
 }
 
 #page-offer .offer-hero-text-col {
@@ -5424,34 +5403,52 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   flex-direction: column;
 }
 
+#page-offer .offer-hero-editorial-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+#page-offer .offer-hero-kicker {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  color: #9B5620 !important;
+}
+
+#page-offer .offer-hero-kicker-line {
+  display: inline-block;
+  width: 42px;
+  height: 1px;
+  background-color: #D4CCC9;
+  opacity: 0.8;
+}
+
 #page-offer .offer-hero-title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 38px !important;
+  font-size: 36px !important;
   font-weight: 500 !important;
   color: #3E3934 !important;
   line-height: 1.25 !important;
   margin-top: 0 !important;
-  margin-bottom: 28px !important;
+  margin-bottom: 18px !important;
 }
 
 #page-offer .offer-hero-body p {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 15.5px !important;
-  line-height: 1.68 !important;
+  line-height: 1.65 !important;
   color: #3E3934 !important;
   opacity: 0.92;
   margin-top: 0 !important;
-  margin-bottom: 18px !important;
+  margin-bottom: 14px !important;
 }
 
-#page-offer .offer-hero-highlight {
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 19px !important;
-  font-weight: 600 !important;
-  color: #9B5620 !important;
-  margin-top: 28px !important;
-  margin-bottom: 24px !important;
-  line-height: 1.35 !important;
+#page-offer .offer-hero-body p:last-child {
+  margin-bottom: 0 !important;
 }
 
 #page-offer .offer-hero-cta-wrapper {
@@ -5460,8 +5457,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
 /* Colonne Illustration Droite */
 #page-offer .offer-hero-img-col {
-  position: sticky;
-  top: 110px;
+  position: relative;
   width: 100%;
 }
 
@@ -5484,11 +5480,55 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 #page-offer .offer-hero-img {
   width: 100%;
   height: auto;
-  max-height: 620px;
   object-fit: cover;
   object-position: center;
   display: block;
   border-radius: 16px;
+}
+
+/* INTRODUCTION SECTION DES OFFRES */
+#page-offer .offer-section-header {
+  max-width: 1140px;
+  margin: 44px auto 32px auto;
+}
+
+#page-offer .offer-section-kicker {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: #9B5620 !important;
+  display: block;
+  margin-bottom: 8px;
+}
+
+#page-offer .offer-section-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  line-height: 1.3 !important;
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+}
+
+#page-offer .offer-section-intro {
+  max-width: 720px;
+}
+
+#page-offer .offer-section-intro p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #3E3934 !important;
+  opacity: 0.9;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+#page-offer .offer-section-intro p:last-child {
+  margin-bottom: 0 !important;
 }
 
 /* ACCORDÉONS PRESTATIONS MON OFFRE — STRUCTURE & STYLE FERMÉ ÉDITORIAL */
@@ -5812,6 +5852,11 @@ button.offer-accordion-header:focus-visible {
 
 /* RESPONSIVE MOBILE (≤ 768px) */
 @media (max-width: 768px) {
+  #page-offer .offer-hero-wrapper {
+    padding: 28px 20px;
+    margin-bottom: 36px;
+  }
+
   #page-offer .offer-hero-img-container {
     box-shadow: 0 10px 24px rgba(62, 57, 52, 0.12) !important;
   }
