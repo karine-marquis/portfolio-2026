@@ -20,8 +20,8 @@
   --color-cta: #596756;           /* Vert sombre CTA (Boutons principaux .btn-primary) */
   --color-cta-hover: #44513E;     /* Vert sombre survol */
 
-  --color-sauge-soft: #C7D1BF;    /* Sauge doux */
-  --color-sauge-border: #AEBBA6;  /* Bordure sauge */
+  --color-sauge-soft: #E3E8DF;    /* Sauge doux */
+  --color-sauge-border: #CBD4C7;  /* Bordure sauge */
 
   --color-border: #D5C9C1;        /* Bordures fines & séparateurs */
 
@@ -2098,10 +2098,10 @@ strong, b {
   font-size: 11.5px !important;
   font-weight: 600 !important;
   color: #55624F !important;
-  background: #C7D1BF !important;
+  background: var(--color-sauge-soft, #E3E8DF) !important;
   padding: 5px 13px;
   border-radius: 18px;
-  border: 1px solid #AEBBA6 !important;
+  border: 1px solid var(--color-sauge-border, #CBD4C7) !important;
   transition: all 0.2s ease !important;
 }
 
@@ -2340,7 +2340,7 @@ strong, b {
   max-width: 520px !important;
   border-radius: 16px !important;
   overflow: hidden !important;
-  border: 1px solid #AEBBA6 !important;
+  border: 1px solid var(--color-sauge-border, #CBD4C7) !important;
   position: relative !important;
   cursor: zoom-in !important;
   background: #F7F3EE !important;
@@ -5138,20 +5138,20 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 /* Bambinets : section Le Défi (fond sauge doux) */
 #sec-defi,
 #bb-sec-2 {
-  background: #DDE6D8 !important;
+  background: var(--color-sauge-soft, #E3E8DF) !important;
   border-radius: 16px !important;
   padding: 24px !important;
-  border: 1px solid #C7D1BF !important;
+  border: 1px solid var(--color-sauge-border, #CBD4C7) !important;
   margin-bottom: 32px !important;
 }
 
 /* Bambinets : section Points d'attention (fond sauge doux) */
 #sec-learnings,
 #bb-sec-6 {
-  background: #DDE6D8 !important;
+  background: var(--color-sauge-soft, #E3E8DF) !important;
   border-radius: 16px !important;
   padding: 24px !important;
-  border: 1px solid #C7D1BF !important;
+  border: 1px solid var(--color-sauge-border, #CBD4C7) !important;
   margin-top: 36px !important;
   margin-bottom: 40px !important;
 }
@@ -5167,8 +5167,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 /* Les Cordons Bleus : sections sauge */
 #lbc-sec-3,
 #lbc-sec-5 {
-  background: #DDE6D8 !important;
-  border: 1px solid #C7D1BF !important;
+  background: var(--color-sauge-soft, #E3E8DF) !important;
+  border: 1px solid var(--color-sauge-border, #CBD4C7) !important;
   border-radius: 16px !important;
   padding: 24px !important;
 }
@@ -5176,8 +5176,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 /* Foodles : sections sauge */
 #foodles-a-verifier,
 #foodles-resultats-tests {
-  background: #DDE6D8 !important;
-  border: 1px solid #C7D1BF !important;
+  background: var(--color-sauge-soft, #E3E8DF) !important;
+  border: 1px solid var(--color-sauge-border, #CBD4C7) !important;
 }
 
 /* ==========================================================================
@@ -5345,8 +5345,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
 /* 2. BLOCS SAUGE PÂLE (Étapess 02 et 05) */
 #page-approach .roadmap-item-sauge {
-  background: #DDE6D8 !important;
-  border: 1px solid #C7D1BF !important;
+  background: var(--color-sauge-soft, #E3E8DF) !important;
+  border: 1px solid var(--color-sauge-border, #CBD4C7) !important;
   border-radius: 16px !important;
   padding: 26px 28px !important;
   box-shadow: 0 6px 18px rgba(62, 57, 52, 0.10) !important;
@@ -5381,7 +5381,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   bottom: 0 !important;
   left: 0 !important;
   width: 4px !important;
-  background-color: #AEBBA6 !important;
+  background-color: var(--color-sauge-border, #CBD4C7) !important;
   border-radius: 4px !important;
 }
 
@@ -5465,8 +5465,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
    MON OFFRE — HERO DESKTOP ÉDITORIAL EN 2 COLONNES JAPANDI
    ========================================================================== */
 #page-offer .offer-hero-wrapper {
-  background-color: #F1E3DE;
-  border: 1px solid #D5C9C1;
+  background-color: var(--color-sauge-soft, #E3E8DF);
+  border: 1px solid var(--color-sauge-border, #CBD4C7);
   box-shadow: none !important;
   border-radius: 16px;
   padding: 48px 52px;
@@ -5548,8 +5548,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(62, 57, 52, 0.10) !important;
-  border: 1px solid #D5C9C1;
-  background: #F1E3DE;
+  border: 1px solid var(--color-sauge-border, #CBD4C7);
+  background: var(--color-sauge-soft, #E3E8DF);
   box-sizing: border-box;
   transition: box-shadow var(--duration-card) var(--ease-japandi) !important;
 }
@@ -5952,13 +5952,13 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border-radius: 16px;
   overflow: hidden;
   box-sizing: border-box;
-  border: 1px solid #D5C9C1;
+  border: 1px solid var(--color-sauge-border, #CBD4C7);
 }
 
 #page-offer .offer-vision-text-block {
   width: 100%;
   height: 100%;
-  background: #F1E3DE;
+  background: var(--color-sauge-soft, #E3E8DF);
   border-radius: 0;
   padding: 20px 26px;
   display: flex;
@@ -6461,9 +6461,9 @@ button.offer-accordion-header:focus-visible {
 /* BLOC CTA FINAL ÉDITORIAL (MON OFFRE) */
 #page-offer .offer-final-cta-block {
   margin-top: 40px;
-  background: #F1E3DE;
+  background: var(--color-sauge-soft, #E3E8DF);
   border-radius: 16px;
-  border: 1px solid #D5C9C1;
+  border: 1px solid var(--color-sauge-border, #CBD4C7);
   padding: 32px 40px;
   display: flex;
   align-items: center;
@@ -6536,7 +6536,7 @@ button.offer-accordion-header:focus-visible {
   display: flex;
   flex-direction: column;
   padding-left: 16px;
-  border-left: 2px solid #AEBBA6;
+  border-left: 2px solid var(--color-sauge-border, #CBD4C7);
 }
 
 .offer-format-header {
@@ -7023,7 +7023,7 @@ button.offer-accordion-header:focus-visible {
 #page-offer .offer-accordion-intro-full p:first-child { font-size: 19px !important; font-weight: 500; line-height: 1.75 !important; }
 #page-offer .offer-accordion-main-grid { gap: 64px; margin-bottom: 48px; padding-bottom: 48px; border-color: #D4CCC9; }
 #page-offer .offer-subsection-title { font-size: 27px !important; margin-bottom: 28px !important; }
-#page-offer .offer-subsection-title::before { content: ''; display: block; width: 32px; height: 3px; background: #AEBBA6; margin-bottom: 16px; }
+#page-offer .offer-subsection-title::before { content: ''; display: block; width: 32px; height: 3px; background: var(--color-sauge-border, #CBD4C7); margin-bottom: 16px; }
 #page-offer .offer-useful-list li { font-size: 16px !important; line-height: 1.75 !important; opacity: 1; margin-bottom: 20px; padding-left: 22px; }
 #page-offer .offer-steps-rows { gap: 0; }
 #page-offer .offer-step-row { gap: 24px; padding: 15px 0; font-size: 16px !important; border-bottom: 1px solid #D4CCC9; }
@@ -7032,7 +7032,7 @@ button.offer-accordion-header:focus-visible {
 #page-offer .offer-step-duration { font-size: 14px; text-align: right; }
 #page-offer .offer-formats-grid { gap: 24px; margin-bottom: 24px; }
 #page-offer #offer-accordion-03 .offer-formats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-#page-offer .offer-format-item { padding: 26px 24px 28px; background: #EEEAE5; border-left: 3px solid #AEBBA6; }
+#page-offer .offer-format-item { padding: 26px 24px 28px; background: #EEEAE5; border-left: 3px solid var(--color-sauge-border, #CBD4C7); }
 #page-offer .offer-format-header { margin-bottom: 18px; }
 #page-offer .offer-format-title { font-size: 23px !important; margin-bottom: 12px !important; }
 #page-offer .offer-format-meta { font-size: 15px !important; line-height: 1.7; }

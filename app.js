@@ -120,10 +120,30 @@ function navigateTo(pageId) {
   if (!pageId) return;
   const cleanId = pageId.replace(/^#/, '').replace(/^page-/, '');
 
+  // 1. FERMER ET RÉINITIALISER LES DRAWERS ET LEURS SCROLLTOPS
   if (typeof closeProjectDrawer === 'function') {
     closeProjectDrawer();
   }
+  const drawerOverlay = document.getElementById('projectDrawerOverlay');
+  if (drawerOverlay) {
+    drawerOverlay.scrollTop = 0;
+  }
+  const modalScrollables = document.querySelectorAll('.lbc-v2-main-content, .bambinets-main-content, .foodles-main-content, .lbc-v2-modal-layout, .bambinets-page-container');
+  modalScrollables.forEach(el => {
+    if (el) el.scrollTop = 0;
+  });
 
+  // 2. NETTOYER LE HASH ET EMPÊCHER LA DÉRIVE DE L'URL (PAS DE #foodles OU #03 PARASITE)
+  try {
+    const targetHash = `#${cleanId}`;
+    if (window.location.hash !== targetHash) {
+      history.pushState(null, '', targetHash);
+    }
+  } catch (e) {
+    // Fallback silencieux si file:// restreint pushState
+  }
+
+  // 3. AFFICHER LA PAGE CIBLE ET MASQUER LES AUTRES SECTIONS
   const sections = document.querySelectorAll('.spa-page-section');
   sections.forEach(sec => {
     sec.classList.remove('active');
@@ -142,7 +162,8 @@ function navigateTo(pageId) {
     }
   }
 
-  const navLinks = document.querySelectorAll('.nav-link');
+  // 4. METTRE À JOUR L'ÉTAT ACTIF DES LIENS DE NAVIGATION
+  const navLinks = document.querySelectorAll('.nav-link, .mobile-menu-link');
   navLinks.forEach(link => {
     link.classList.remove('active');
     const href = link.getAttribute('href');
@@ -151,18 +172,19 @@ function navigateTo(pageId) {
     }
   });
 
-  try {
-    if (window.location.hash !== `#${cleanId}`) {
-      history.pushState(null, '', `#${cleanId}`);
-    }
-  } catch (e) {
-    // Fallback silencieux si file:// restreint pushState
-  }
-
-  window.scrollTo(0, 0);
+  // 5. RESET DU SCROLL APRÈS RENDU ET REFLOW SUR DOUBLE REQUESTANIMATIONFRAME
   requestAnimationFrame(() => {
-    window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
   });
+
   if (window.lucide) lucide.createIcons();
 }
 
@@ -538,7 +560,12 @@ function closeProjectDrawer() {
   const overlay = document.getElementById('projectDrawerOverlay');
   if (overlay) {
     overlay.classList.remove('active');
+    overlay.scrollTop = 0;
   }
+  const modalScrollables = document.querySelectorAll('.lbc-v2-main-content, .bambinets-main-content, .foodles-main-content, .lbc-v2-modal-layout, .bambinets-page-container');
+  modalScrollables.forEach(el => {
+    if (el) el.scrollTop = 0;
+  });
 }
 
 /* ==========================================================================
