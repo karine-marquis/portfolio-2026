@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -16,7 +16,7 @@
     .bambinets-narrative-chemin-wrap {
       border-radius: 16px;
       overflow: hidden;
-      border: 1px solid #D4CCC9;
+      border: 1px solid var(--color-border);
       box-shadow: 0 4px 16px rgba(70, 40, 25, 0.05);
       background: var(--color-surface, #FFFDFC);
       max-width: 58%;
@@ -43,7 +43,7 @@
       .bambinets-access-grid > div {
         border-right: none !important;
         padding-right: 0 !important;
-        border-bottom: 1px solid #E5DCD3;
+        border-bottom: 1px solid var(--color-border);
         padding-bottom: 12px;
       }
       .bambinets-access-grid > div:last-child {
@@ -54,6 +54,10 @@
   </style>
 
   <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
     function openLightbox(imgSrc, captionText) {
       let lightbox = document.getElementById('imageLightboxOverlay');
       if (!lightbox) {
@@ -101,64 +105,6 @@
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeLightbox();
-    });
-
-    function navigateTo(pageId) {
-      if (!pageId) pageId = 'home';
-      const cleanId = pageId.replace(/^#/, '').replace(/^page-/, '');
-      const sections = document.querySelectorAll('.spa-page-section');
-      sections.forEach(function(sec) {
-        sec.classList.remove('active');
-        sec.style.display = 'none';
-      });
-      const target = document.getElementById('page-' + cleanId) || document.getElementById('page-home');
-      if (target) {
-        target.classList.add('active');
-        target.style.display = 'block';
-      }
-      const navLinks = document.querySelectorAll('.nav-link');
-      navLinks.forEach(function(link) {
-        link.classList.remove('active');
-        const href = link.getAttribute('href');
-        if (href === '#' + cleanId || href === '#page-' + cleanId) {
-          link.classList.add('active');
-        }
-      });
-      try {
-        if (window.location.hash !== '#' + cleanId && window.location.hash !== '#page-' + cleanId) {
-          history.pushState(null, '', '#' + cleanId);
-        }
-      } catch (e) {}
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function initRoutingFromHash() {
-      const rawHash = window.location.hash.replace(/^#/, '').replace(/^page-/, '');
-      if (rawHash === 'cordons-bleus' || rawHash === 'bambinets' || rawHash === 'foodles') {
-        navigateTo('projects');
-        openProjectDrawer(rawHash);
-      } else {
-        navigateTo(rawHash || 'home');
-      }
-    }
-
-    window.addEventListener('hashchange', initRoutingFromHash);
-    document.addEventListener('DOMContentLoaded', initRoutingFromHash);
-    window.addEventListener('load', initRoutingFromHash);
-
-    document.addEventListener('click', function(e) {
-      const link = e.target.closest('a[href^="#"]');
-      if (link) {
-        const href = link.getAttribute('href');
-        if (href && href.length > 1 && !href.startsWith('#lbc-sec-')) {
-          const cleanId = href.replace(/^#/, '').replace(/^page-/, '');
-          const targetSec = document.getElementById('page-' + cleanId);
-          if (targetSec) {
-            e.preventDefault();
-            navigateTo(cleanId);
-          }
-        }
-      }
     });
 
     function initIconsSafely() {
@@ -500,7 +446,7 @@
                   <span class="lbc-v2-personas-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>Agrandir l’image</span>
                 </div>
 
-                <p class="lbc-v2-card-body" style="margin-top: 14px; font-size: 13.5px; line-height: 1.5; color: #5C5248;">J'ai structuré ma recherche autour de ces profils pour me servir de <strong>repères de conception vivants</strong> : des besoins, des contraintes et des niveaux d’autonomie différents à confronter tout au long de mes choix de design.</p>
+                <p class="lbc-v2-card-body" style="margin-top: 14px; font-size: 13.5px; line-height: 1.5; color: var(--color-text-muted);">J'ai structuré ma recherche autour de ces profils pour me servir de <strong>repères de conception vivants</strong> : des besoins, des contraintes et des niveaux d’autonomie différents à confronter tout au long de mes choix de design.</p>
                 <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
               </div>
               <div class="lbc-v2-card" id="lbc-sec-3" style="background: #DDE6D8 !important; border: 1px solid #C7D1BF !important; border-radius: 16px !important; padding: 24px !important;">
@@ -546,26 +492,26 @@
             <!-- SECTION : LE PROJET DERRIERE LES ECRANS (3 CARTES + GANTT) -->
             <div id="lbc-sec-3-5" class="lbc-v2-learnings-block" style="margin-top: 28px; margin-bottom: 32px;">
               <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px;">Le projet derrière les écrans</h3>
-              <p class="lbc-v2-card-body" style="margin-bottom: 16px; color: #5C5248;">Pour moi, concevoir une bonne expérience ne suffisait pas. Il fallait aussi vérifier qu’elle puisse <strong>réellement exister sur le terrain</strong> : avec un budget maîtrisé, une anticipation des aléas et une méthode pour <strong>mesurer l'impact réel après le lancement</strong>.</p>
+              <p class="lbc-v2-card-body" style="margin-bottom: 16px; color: var(--color-text-muted);">Pour moi, concevoir une bonne expérience ne suffisait pas. Il fallait aussi vérifier qu’elle puisse <strong>réellement exister sur le terrain</strong> : avec un budget maîtrisé, une anticipation des aléas et une méthode pour <strong>mesurer l'impact réel après le lancement</strong>.</p>
               
               <!-- 3 CARTES HARMONISÉES EN SURFACE CLAIRE ET RESPIRANTE -->
               <div class="lbc-v2-learnings-grid">
                 <div class="lbc-v2-card">
                   <h4 class="lbc-v2-card-title">Budget prévisionnel :<br><span style="display: inline-block; color: var(--color-accent); font-weight: 700; font-size: 16.5px; margin-top: 4px; white-space: nowrap;">50&nbsp;000&nbsp;€</span></h4>
-                  <p class="lbc-v2-card-body" style="font-size: 13.5px; color: #5C5248; line-height: 1.5;">UX/UI · gestion de projet · développement · production de contenus · accessibilité</p>
+                  <p class="lbc-v2-card-body" style="font-size: 13.5px; color: var(--color-text-muted); line-height: 1.5;">UX/UI · gestion de projet · développement · production de contenus · accessibilité</p>
                 </div>
                 <div class="lbc-v2-card">
                   <h4 class="lbc-v2-card-title">Marge de contingence</h4>
-                  <p class="lbc-v2-card-body" style="font-size: 13.5px; color: #5C5248; line-height: 1.5;">Jusqu’à <strong style="color: var(--color-accent);">20 %</strong> d'ajustement selon les retours terrain.</p>
+                  <p class="lbc-v2-card-body" style="font-size: 13.5px; color: var(--color-text-muted); line-height: 1.5;">Jusqu’à <strong style="color: var(--color-accent);">20 %</strong> d'ajustement selon les retours terrain.</p>
                 </div>
                 <div class="lbc-v2-card">
                   <h4 class="lbc-v2-card-title">Suivi post-lancement</h4>
-                  <p class="lbc-v2-card-body" style="font-size: 13.5px; color: #5C5248; line-height: 1.5;">Analyse des <strong style="color: var(--color-accent);">KPI à M+1, M+3, M+6 et M+9</strong>, pour ajuster mes choix de design à partir des usages réels.<br><span class="lbc-v2-forfait-line" style="display: inline-block; margin-top: 6px; font-weight: 600; color: var(--color-accent);">Forfait estimé : 2 500 €</span></p>
+                  <p class="lbc-v2-card-body" style="font-size: 13.5px; color: var(--color-text-muted); line-height: 1.5;">Analyse des <strong style="color: var(--color-accent);">KPI à M+1, M+3, M+6 et M+9</strong>, pour ajuster mes choix de design à partir des usages réels.<br><span class="lbc-v2-forfait-line" style="display: inline-block; margin-top: 6px; font-weight: 600; color: var(--color-accent);">Forfait estimé : 2 500 €</span></p>
                 </div>
               </div>
 
               <!-- TEXTE DE TRANSITION VERS LE GANTT -->
-              <p class="lbc-v2-card-body" style="margin-top: 20px; margin-bottom: 12px; font-size: 14px; color: #5C5248; line-height: 1.55;">Une fois ce cadre stratégique posé, j'ai construit le diagramme de Gantt pour visualiser les dépendances, les chevauchements et sécuriser les grandes étapes du déploiement sur six mois.</p>
+              <p class="lbc-v2-card-body" style="margin-top: 20px; margin-bottom: 12px; font-size: 14px; color: var(--color-text-muted); line-height: 1.55;">Une fois ce cadre stratégique posé, j'ai construit le diagramme de Gantt pour visualiser les dépendances, les chevauchements et sécuriser les grandes étapes du déploiement sur six mois.</p>
 
               <!-- DIAGRAMME DE GANTT INTEGRÉ ET GRAND FORMAT -->
               <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/gantt_lcb.png?v=20260831_gantt_v1', 'Diagramme de Gantt — Planning de pilotage Les Cordons Bleus — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/gantt_lcb.png?v=20260831_gantt_v1', 'Diagramme de Gantt — Planning de pilotage Les Cordons Bleus — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir le diagramme de Gantt Les Cordons Bleus en plein écran" title="Agrandir l’image" class="lbc-v2-deliverable-horizontal">
@@ -580,9 +526,9 @@
                 <p class="lbc-v2-card-body">Je ne suis pas partie des écrans. Je suis partie de ce qui devait se passer <strong>avant, pendant et surtout après le cours</strong>.<br><br>J'ai pensé ce service comme un tout indissociable : <strong>l’expérience vécue par l’apprenant</strong>, <strong>l’organisation côté école</strong>, les <strong>points de contact numériques</strong> et la <strong>continuité dans le temps</strong>.</p>
                 
                 <!-- USER JOURNEY MAP -->
-                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #D4CCC9;">
-                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #9B5620); margin-bottom: 4px;">User Journey Map — Cartographier l’expérience de l’apprenant</h4>
-                  <p style="font-size: 13px; color: #5C5248; line-height: 1.5; margin-bottom: 10px;">Avant de structurer les coulisses du service, j'ai cartographié <strong>le parcours complet de l’apprenant</strong> : ses actions, ses pensées, ses émotions et le <strong>point de rupture post-cours</strong>.</p>
+                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--color-border);">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-accent); margin-bottom: 4px;">User Journey Map — Cartographier l’expérience de l’apprenant</h4>
+                  <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 10px;">Avant de structurer les coulisses du service, j'ai cartographié <strong>le parcours complet de l’apprenant</strong> : ses actions, ses pensées, ses émotions et le <strong>point de rupture post-cours</strong>.</p>
                   <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/user_journey_map_lcb.png?v=20260831_karine_cjm_real_file_v7', 'User Journey Map — Parcours de l\'Apprenant Les Cordons Bleus — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/user_journey_map_lcb.png?v=20260831_karine_cjm_real_file_v7', 'User Journey Map — Parcours de l\'Apprenant Les Cordons Bleus — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir le User Journey Map Les Cordons Bleus en plein écran" title="Agrandir l’image" class="lbc-v2-deliverable-horizontal">
                     <img src="assets/PROJTS/CORDONS_BLEUS/user_journey_map_lcb.png?v=20260831_karine_cjm_real_file_v7" alt="User Journey Map Les Cordons Bleus">
                     <span class="deliverable-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>Agrandir l’image</span>
@@ -590,9 +536,9 @@
                 </div>
 
                 <!-- SERVICE BLUEPRINT -->
-                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #D4CCC9;">
-                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #9B5620); margin-bottom: 4px;">Service Blueprint — Voir l’expérience au-delà de l’écran</h4>
-                  <p style="font-size: 13px; color: #5C5248; line-height: 1.5; margin-bottom: 10px;">Le parcours ne se joue pas uniquement dans l’interface. Le service blueprint m’a permis de relier ce que vit l’apprenant à ce qui doit se passer <strong>en coulisses</strong> pour que cette <strong>continuité fonctionne réellement</strong>.</p>
+                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--color-border);">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-accent); margin-bottom: 4px;">Service Blueprint — Voir l’expérience au-delà de l’écran</h4>
+                  <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 10px;">Le parcours ne se joue pas uniquement dans l’interface. Le service blueprint m’a permis de relier ce que vit l’apprenant à ce qui doit se passer <strong>en coulisses</strong> pour que cette <strong>continuité fonctionne réellement</strong>.</p>
                   <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/blueprint_cb.png', 'Service Blueprint — De la découverte du site à l’après-cours — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/blueprint_cb.png', 'Service Blueprint — De la découverte du site à l’après-cours — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir l'illustration du Service Blueprint Les Cordons Bleus en plein écran" title="Agrandir l’image" class="lbc-v2-deliverable-horizontal">
                     <img src="assets/PROJTS/CORDONS_BLEUS/blueprint_cb.png" alt="Service Blueprint Les Cordons Bleus">
                     <span class="deliverable-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>Agrandir l’image</span>
@@ -600,9 +546,9 @@
                 </div>
 
                 <!-- ROADMAP DU SERVICE -->
-                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #D4CCC9;">
-                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #9B5620); margin-bottom: 4px;">Roadmap du service — Passer des intentions à un plan d’action</h4>
-                  <p style="font-size: 13px; color: #5C5248; line-height: 1.5; margin-bottom: 10px;">Une bonne idée sans ordre de marche reste une intention. La roadmap m'a permis de <strong>transformer les besoins en priorités</strong>, avec une progression réaliste et des <strong>étapes mesurables en 3 phases</strong>.</p>
+                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--color-border);">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-accent); margin-bottom: 4px;">Roadmap du service — Passer des intentions à un plan d’action</h4>
+                  <p style="font-size: 13px; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 10px;">Une bonne idée sans ordre de marche reste une intention. La roadmap m'a permis de <strong>transformer les besoins en priorités</strong>, avec une progression réaliste et des <strong>étapes mesurables en 3 phases</strong>.</p>
                   <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/roadmap_lcb.png', 'Roadmap du service et du parcours en 3 phases — Les Cordons Bleus — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/roadmap_lcb.png', 'Roadmap du service et du parcours en 3 phases — Les Cordons Bleus — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir l'illustration de la Roadmap du service Les Cordons Bleus en plein écran" title="Agrandir l’image" class="lbc-v2-deliverable-horizontal">
                     <img src="assets/PROJTS/CORDONS_BLEUS/roadmap_lcb.png" alt="Roadmap du service et du parcours Les Cordons Bleus">
                     <span class="deliverable-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>Agrandir l’image</span>
@@ -618,8 +564,8 @@
               <div class="lbc-v2-card" id="lbc-sec-6">
                 <h3 class="lbc-v2-card-title">Les solutions retenues</h3>
                 <p class="lbc-v2-card-body">À partir de ce constat, j'ai articulé mes solutions autour d’un principe fort : <strong>prolonger l’accompagnement sans prolonger artificiellement le cours</strong>.<br><br>J'ai conçu un compagnon numérique s'appuyant sur des <strong>micro-étapes guidées</strong>, un <strong>suivi personnalisé du geste</strong> et une <strong>passerelle fluide</strong> entre l’atelier présentiel et la cuisine de la maison.</p>
-                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #D4CCC9;">
-                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #9B5620); margin-bottom: 4px;">Problème ➔ Opportunité ➔ Fonctionnalité</h4>
+                <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--color-border);">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-accent); margin-bottom: 4px;">Problème ➔ Opportunité ➔ Fonctionnalité</h4>
                   <p style="font-size: 12px; color: #6F665F; line-height: 1.45; margin-bottom: 10px;">Chaque fonctionnalité retenue dans ma matrice découle directement d'un point de douleur identifié lors de l’analyse terrain.</p>
                   <div onclick="openLightbox('assets/PROJTS/CORDONS_BLEUS/matrix_probleme_opportunite.png', 'Matrice Problème ➔ Opportunité ➔ Fonctionnalité — Les Cordons Bleus — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/CORDONS_BLEUS/matrix_probleme_opportunite.png', 'Matrice Problème ➔ Opportunité ➔ Fonctionnalité — Les Cordons Bleus — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir l'illustration de la Matrice Opportunité Les Cordons Bleus en plein écran" title="Agrandir l’image" class="lbc-v2-deliverable-horizontal">
                     <img src="assets/PROJTS/CORDONS_BLEUS/matrix_probleme_opportunite.png" alt="Matrice Problème ➔ Opportunité ➔ Fonctionnalité UX Les Cordons Bleus">
@@ -697,7 +643,7 @@
                       </div>
                     </div>
                     <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6F665F !important; line-height: 1.45 !important; margin-bottom: 14px !important;">Une version textuelle accessible reprend les éléments essentiels de la présentation.</p>
-                    <a href="assets/retranscription-presentation-cordons-bleus.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-primary, #9B5620); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;"><i data-lucide="download" style="width: 13px; height: 13px; color: currentColor;"></i> Lire la version textuelle (PDF) ↗</a>
+                    <a href="assets/retranscription-presentation-cordons-bleus.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;"><i data-lucide="download" style="width: 13px; height: 13px; color: currentColor;"></i> Lire la version textuelle (PDF) ↗</a>
                   </div>
                 </div>
               </div>
@@ -797,7 +743,7 @@
 
               <!-- LE DEFI & CE QUE LA REFONTE DEVAIT PERMETTRE (FOND SAUGE DOUX) -->
               <div id="bb-sec-2" style="background: #DDE6D8; border-radius: 16px; padding: 24px; border: 1px solid #C7D1BF; margin-bottom: 32px;">
-                <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: #1E1915;">Un outil pensé pour des moments qui ne sont jamais vraiment calmes</h3>
+                <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: var(--color-text);">Un outil pensé pour des moments qui ne sont jamais vraiment calmes</h3>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Quand la crèche Les Bambinets m’a sollicitée, la promesse était claire : permettre aux parents et aux professionnels de la petite enfance d’apprendre quelques signes clés pour mieux communiquer avec l’enfant avant que le langage verbal soit pleinement installé.</p>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Sur le papier, la demande semblait classique : un glossaire vidéo, des favoris, des microquiz et une FAQ.</p>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Mais sur le terrain, l’application devait fonctionner dans un contexte où l’utilisateur n’est jamais entièrement disponible. À la maison comme en crèche, l’attention se partage en permanence entre l’enfant, le groupe et l’urgence du moment.</p>
@@ -809,7 +755,7 @@
                 </div>
 
                 <div style="margin-top: 24px;">
-                  <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: #1E1915;">Passer du besoin au bon geste, sans perdre de temps</h3>
+                  <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: var(--color-text);">Passer du besoin au bon geste, sans perdre de temps</h3>
                   <p class="lbc-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Glossaire vidéo, recherche par catégories, favoris et micro-quiz construisent un parcours court :</p>
                   <ul class="lbc-v2-card-bullets" style="margin-bottom: 0;">
                     <li><strong>Voir et découvrir</strong> un signe au moment exact où il devient utile</li>
@@ -822,26 +768,26 @@
 
               <!-- LE PROJET DERRIERE LES ECRANS / ARBITRAGES ET CONTRAINTES -->
               <div id="bb-sec-3" class="lbc-v2-learnings-block" style="margin-top: 28px; margin-bottom: 36px;">
-                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-primary, #9B5620) !important;">Faire des choix sans perdre le fil</h3>
+                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-accent) !important;">Faire des choix sans perdre le fil</h3>
                 <p class="lbc-v2-card-body" style="margin-bottom: 10px; color: #3E3934;">Bambinets n’était pas un projet complexe parce qu’il fallait concevoir beaucoup de fonctionnalités. Il l’était parce qu’il fallait savoir quoi écarter.</p>
                 <p class="lbc-v2-card-body" style="margin-bottom: 20px; color: #3E3934;">À chaque arbitrage de design, je me posais la même question : comment façonner un outil pédagogique suffisamment riche pour être utile, sans créer de charge mentale superflue pour les utilisateurs ?</p>
                 
                 <div class="lbc-v2-learnings-grid" style="display: grid !important; width: 100% !important; align-items: stretch !important; margin-bottom: 20px !important;">
-                  <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid #D4CCC9 !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; height: 100% !important; box-sizing: border-box !important;">
+                  <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid var(--color-border) !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; height: 100% !important; box-sizing: border-box !important;">
                     <h4 class="lbc-v2-card-title" style="font-size: 15px; margin-bottom: 8px; color: #3E3934;">Simplifier sans appauvrir</h4>
-                    <p class="lbc-v2-card-body" style="font-size: 12.5px; color: #5C5248; line-height: 1.5; margin: 0;">J’ai dû calibrer le juste niveau d’information pour des débutants : apporter assez de clés pour apprendre sereinement, sans jamais submerger l’utilisateur.</p>
+                    <p class="lbc-v2-card-body" style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5; margin: 0;">J’ai dû calibrer le juste niveau d’information pour des débutants : apporter assez de clés pour apprendre sereinement, sans jamais submerger l’utilisateur.</p>
                   </div>
-                  <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid #D4CCC9 !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; height: 100% !important; box-sizing: border-box !important;">
+                  <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid var(--color-border) !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; height: 100% !important; box-sizing: border-box !important;">
                     <h4 class="lbc-v2-card-title" style="font-size: 15px; margin-bottom: 8px; color: #3E3934;">Limiter le périmètre</h4>
-                    <p class="lbc-v2-card-body" style="font-size: 12.5px; color: #5C5248; line-height: 1.5; margin: 0;">J’ai fait le choix de restreindre ce prototype à une vingtaine de signes essentiels. L’objectif n’était pas de tout étaler, mais de valider des parcours d’une fluidité irréprochable.</p>
+                    <p class="lbc-v2-card-body" style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5; margin: 0;">J’ai fait le choix de restreindre ce prototype à une vingtaine de signes essentiels. L’objectif n’était pas de tout étaler, mais de valider des parcours d’une fluidité irréprochable.</p>
                   </div>
-                  <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid #D4CCC9 !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; height: 100% !important; box-sizing: border-box !important;">
+                  <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid var(--color-border) !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; height: 100% !important; box-sizing: border-box !important;">
                     <h4 class="lbc-v2-card-title" style="font-size: 15px; margin-bottom: 8px; color: #3E3934;">Composer avec un design system existant</h4>
-                    <p class="lbc-v2-card-body" style="font-size: 12.5px; color: #5C5248; line-height: 1.5; margin: 0;">L’identité visuelle préexistait. J’ai donc choisi de respecter ce cadre graphique tout en adaptant certains composants d’interface dès que la lisibilité sur mobile l’exigeait.</p>
+                    <p class="lbc-v2-card-body" style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5; margin: 0;">L’identité visuelle préexistait. J’ai donc choisi de respecter ce cadre graphique tout en adaptant certains composants d’interface dès que la lisibilité sur mobile l’exigeait.</p>
                   </div>
-                  <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid #D4CCC9 !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; height: 100% !important; box-sizing: border-box !important;">
+                  <div class="lbc-v2-card" style="background: #F7F3EE !important; border: 1px solid var(--color-border) !important; box-shadow: 0 4px 14px rgba(62, 57, 52, 0.04) !important; padding: 20px !important; border-radius: 14px !important; display: flex !important; flex-direction: column !important; justify-content: flex-start !important; height: 100% !important; box-sizing: border-box !important;">
                     <h4 class="lbc-v2-card-title" style="font-size: 15px; margin-bottom: 8px; color: #3E3934;">Relier les fonctionnalités sans créer un labyrinthe</h4>
-                    <p class="lbc-v2-card-body" style="font-size: 12.5px; color: #5C5248; line-height: 1.5; margin: 0;">Glossaire, recherche, favoris, quiz et FAQ devaient former un tout cohérent. J’ai veillé à ce que l’utilisateur ne ressente jamais la moindre rupture de navigation.</p>
+                    <p class="lbc-v2-card-body" style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Glossaire, recherche, favoris, quiz et FAQ devaient former un tout cohérent. J’ai veillé à ce que l’utilisateur ne ressente jamais la moindre rupture de navigation.</p>
                   </div>
                 </div>
                 <p class="lbc-v2-card-body" style="margin-top: 16px; font-weight: 600; color: var(--color-accent) !important;">Mon vrai travail n’a donc pas été d’ajouter des écrans. Il a surtout consisté à éliminer la moindre hésitation entre eux.</p>
@@ -849,71 +795,71 @@
               </div>
 
               <!-- DEMARCHE & ARCHITECTURE (FOND LIBRE) -->
-              <div id="bb-sec-4" style="margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid #E5DCD3;">
-                <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: #1E1915;">Avant de dessiner les écrans, trouver le chemin le plus court</h3>
+              <div id="bb-sec-4" style="margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--color-border);">
+                <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: var(--color-text);">Avant de dessiner les écrans, trouver le chemin le plus court</h3>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">J’ai d’abord structuré l’application autour de quatre clés d’entrée évidentes : <strong>Glossaire</strong>, <strong>Favoris</strong>, <strong>Quiz</strong> et <strong>FAQ</strong>.</p>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Depuis le glossaire, l’utilisateur parcourt les signes par catégorie, lance une recherche rapide et accède directement à la fiche du signe. Chaque fiche rassemble la démonstration vidéo, une description claire du geste et la possibilité de l’ajouter aux favoris en un tap.</p>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Pour le quiz, j’ai conçu une logique tout aussi fluide : une question à la fois, un repère de progression rassurant, un feedback immédiat et un bilan bienveillant.</p>
                 <p class="lbc-v2-card-body" style="margin-top: 14px; margin-bottom: 20px; font-weight: 600; color: var(--color-accent) !important;">Mon objectif n’était pas de multiplier les chemins possibles. Il fallait au contraire que l’utilisateur sache toujours où il se trouve, ce qu’il peut faire ensuite et comment revenir à l’essentiel.</p>
 
-                <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #E5DCD3;">
-                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-primary, #9B5620); margin-bottom: 4px;">Le flowchart — Donner une place claire à chaque intention</h4>
+                <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--color-border);">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-accent); margin-bottom: 4px;">Le flowchart — Donner une place claire à chaque intention</h4>
                   <p style="font-size: 12px; color: #6F665F; margin-bottom: 10px;">Le flowchart m’a permis de relier ces parcours, d’anticiper les retours possibles et d’éviter les impasses avant de traduire cette structure avec les composants du design system.</p>
                   <div onclick="openLightbox('assets/PROJTS/BAMBINETS/flowchart_bambinets2.png', 'Flowchart UX du parcours principal — Bambinets — Cliquer pour fermer ✕')" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox('assets/PROJTS/BAMBINETS/flowchart_bambinets2.png', 'Flowchart UX du parcours principal — Bambinets — Cliquer pour fermer ✕')" role="button" tabindex="0" aria-label="Agrandir l'illustration du Flowchart Bambinets en plein écran" title="Agrandir l’image" class="lbc-v2-deliverable-horizontal" style="max-width: 88%; margin: 0 auto;">
                     <img src="assets/PROJTS/BAMBINETS/flowchart_bambinets2.png" alt="Flowchart UX Japandi Bambinets" style="max-height: 380px; width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
                     <span class="deliverable-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>Agrandir l’image</span>
                   </div>
-                  <p style="font-size: 11.5px; color: #8A7669; margin-top: 12px; margin-bottom: 8px; font-style: italic;">Cette vue est une illustration simplifiée de l’architecture. Le flowchart complet est disponible sur Miro.</p>
+                  <p style="font-size: 11.5px; color: var(--color-text-muted); margin-top: 12px; margin-bottom: 8px; font-style: italic;">Cette vue est une illustration simplifiée de l’architecture. Le flowchart complet est disponible sur Miro.</p>
                   <div>
-                    <a href="https://miro.com/app/live-embed/uXjVGOHAlBA=/?focusWidget=3458764664048727312&embedMode=view_only_without_ui&embedId=66393186859" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-primary, #9B5620); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Explorer le flowchart complet du projet Bambinets sur Miro (s'ouvre dans un nouvel onglet)">Explorer le flowchart complet sur Miro ↗</a>
+                    <a href="https://miro.com/app/live-embed/uXjVGOHAlBA=/?focusWidget=3458764664048727312&embedMode=view_only_without_ui&embedId=66393186859" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Explorer le flowchart complet du projet Bambinets sur Miro (s'ouvre dans un nouvel onglet)">Explorer le flowchart complet sur Miro ↗</a>
                   </div>
                 </div>
                 <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
               </div>
 
               <!-- LE PROTOTYPE (FOND LIBRE) -->
-              <div id="bb-sec-5" style="margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid #E5DCD3;">
-                <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: #1E1915;">Avant de penser joli, il fallait surtout éviter de perdre quelqu’un en route</h3>
+              <div id="bb-sec-5" style="margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--color-border);">
+                <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: var(--color-text);">Avant de penser joli, il fallait surtout éviter de perdre quelqu’un en route</h3>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">À ce stade, pas de couleurs, pas d’illustrations, pas de petites vidéos mignonnes. Juste des blocs gris, des boutons et une question très simple que je me posais à chaque écran : est-ce que le parcours fonctionne vraiment ?</p>
                 <p class="lbc-v2-card-body" style="margin-bottom: 16px; color: #3E3934;">Les wireframes m’ont permis de tester la logique à nu avant l’habillage : comprendre où l’on arrive, comment retrouver un signe en deux secondes, comment lancer le quiz et comment enchaîner sans avoir à réfléchir.</p>
 
                 <!-- 3 POINTS EDITORIAUX SUR FOND LIBRE -->
                 <div class="bambinets-access-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; margin-bottom: 20px;">
-                  <div style="border-right: 1px solid #E5DCD3; padding-right: 14px;">
+                  <div style="border-right: 1px solid var(--color-border); padding-right: 14px;">
                     <h4 style="font-size: 14px; font-weight: 500; color: #69584D; margin: 0 0 6px 0;">Arriver et comprendre où aller</h4>
-                    <p style="font-size: 12px; color: #5C5248; line-height: 1.45; margin: 0;">Dès l’accueil, les fonctions principales devaient être suffisamment claires pour qu’un parent ou un professionnel sache quoi faire sans mode d’emploi.</p>
+                    <p style="font-size: 12px; color: var(--color-text-muted); line-height: 1.45; margin: 0;">Dès l’accueil, les fonctions principales devaient être suffisamment claires pour qu’un parent ou un professionnel sache quoi faire sans mode d’emploi.</p>
                   </div>
-                  <div style="border-right: 1px solid #E5DCD3; padding-right: 14px;">
+                  <div style="border-right: 1px solid var(--color-border); padding-right: 14px;">
                     <h4 style="font-size: 14px; font-weight: 500; color: #69584D; margin: 0 0 6px 0;">Chercher un signe sans fouiller partout</h4>
-                    <p style="font-size: 12px; color: #5C5248; line-height: 1.45; margin: 0;">La recherche et les catégories devaient offrir un chemin court vers le bon contenu, surtout quand l’utilisateur n’a ni les deux mains libres ni cinq minutes devant lui.</p>
+                    <p style="font-size: 12px; color: var(--color-text-muted); line-height: 1.45; margin: 0;">La recherche et les catégories devaient offrir un chemin court vers le bon contenu, surtout quand l’utilisateur n’a ni les deux mains libres ni cinq minutes devant lui.</p>
                   </div>
                   <div>
                     <h4 style="font-size: 14px; font-weight: 500; color: #69584D; margin: 0 0 6px 0;">Apprendre sans perdre le fil</h4>
-                    <p style="font-size: 12px; color: #5C5248; line-height: 1.45; margin: 0;">Dans le quiz, chaque étape devait mener naturellement à la suivante, avec une progression lisible et un retour immédiat après chaque réponse.</p>
+                    <p style="font-size: 12px; color: var(--color-text-muted); line-height: 1.45; margin: 0;">Dans le quiz, chaque étape devait mener naturellement à la suivante, avec une progression lisible et un retour immédiat après chaque réponse.</p>
                   </div>
                 </div>
 
                 <p class="lbc-v2-card-body" style="margin-top: 16px; margin-bottom: 24px; font-weight: 600; color: var(--color-accent) !important;">C’était mon moment de vérité : si le parcours ne tenait pas avec quelques rectangles gris, aucune couche de peinture ne viendrait le sauver.</p>
 
                 <!-- BLOC HI-FI SUR FOND LIBRE -->
-                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #E5DCD3;">
-                  <h4 style="font-size: 16px; font-weight: 700; color: var(--color-primary, #9B5620); margin-bottom: 12px;">Donner une forme au parcours sans perdre sa simplicité</h4>
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--color-border);">
+                  <h4 style="font-size: 16px; font-weight: 700; color: var(--color-accent); margin-bottom: 12px;">Donner une forme au parcours sans perdre sa simplicité</h4>
                   <p style="font-size: 13px; color: #3E3934; line-height: 1.5; margin-bottom: 10px;">Une fois la structure posée, il fallait faire entrer Bambinets dans son univers visuel — sans transformer l’application en sapin de Noël pédagogique.</p>
                   <p style="font-size: 13px; color: #3E3934; line-height: 1.5; margin-bottom: 10px;">Le style guide existait déjà. Mon rôle n’était donc pas de réinventer l’identité, mais de faire vivre le parcours à l’intérieur de ce cadre : choisir les bons composants, ajuster la typographie, les pictogrammes et certains éléments d’interface quand cela servait la compréhension.</p>
                   <p style="font-size: 13px; color: #3E3934; line-height: 1.5; margin-bottom: 16px;">À ce stade, chaque détail graphique devait avoir une utilité : aider à repérer une action, comprendre où l’on se trouve, reconnaître un contenu ou avancer sans hésiter.</p>
 
                   <div class="bambinets-access-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 16px; margin-bottom: 20px;">
-                    <div style="border-right: 1px solid #E5DCD3; padding-right: 14px;">
+                    <div style="border-right: 1px solid var(--color-border); padding-right: 14px;">
                       <h5 style="font-size: 13px; font-weight: 500; color: #69584D; margin: 0 0 4px 0;">Rendre les actions évidentes</h5>
-                      <p style="font-size: 11.5px; color: #5C5248; line-height: 1.45; margin: 0;">Les boutons, pictogrammes et zones interactives devaient être immédiatement repérables, surtout sur mobile.</p>
+                      <p style="font-size: 11.5px; color: var(--color-text-muted); line-height: 1.45; margin: 0;">Les boutons, pictogrammes et zones interactives devaient être immédiatement repérables, surtout sur mobile.</p>
                     </div>
-                    <div style="border-right: 1px solid #E5DCD3; padding-right: 14px;">
+                    <div style="border-right: 1px solid var(--color-border); padding-right: 14px;">
                       <h5 style="font-size: 13px; font-weight: 500; color: #69584D; margin: 0 0 4px 0;">Maintenir des repères stables</h5>
-                      <p style="font-size: 11.5px; color: #5C5248; line-height: 1.45; margin: 0;">Les écrans devaient rester cohérents entre eux pour éviter que l’utilisateur ait l’impression de réapprendre l’application à chaque étape.</p>
+                      <p style="font-size: 11.5px; color: var(--color-text-muted); line-height: 1.45; margin: 0;">Les écrans devaient rester cohérents entre eux pour éviter que l’utilisateur ait l’impression de réapprendre l’application à chaque étape.</p>
                     </div>
                     <div>
                       <h5 style="font-size: 13px; font-weight: 500; color: #69584D; margin: 0 0 4px 0;">Faire de l’illustration un soutien, pas une distraction</h5>
-                      <p style="font-size: 11.5px; color: #5C5248; line-height: 1.45; margin: 0;">Vidéos, couleurs et visuels devaient accompagner l’apprentissage sans prendre le dessus sur l’information.</p>
+                      <p style="font-size: 11.5px; color: var(--color-text-muted); line-height: 1.45; margin: 0;">Vidéos, couleurs et visuels devaient accompagner l’apprentissage sans prendre le dessus sur l’information.</p>
                     </div>
                   </div>
 
@@ -923,43 +869,43 @@
                     <img src="assets/PROJTS/BAMBINETS/bambinets-proto-hifi-couleur-2.png" alt="Prototype Mobile Hi-Fi & Liaisons d’interactions Bambinets" style="max-height: 380px; width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 8px; object-fit: contain;">
                     <span class="deliverable-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px; vertical-align: -1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>Agrandir l’image</span>
                   </div>
-                  <p style="font-size: 11.5px; color: #8A7669; margin-top: 12px; margin-bottom: 12px; font-style: italic;">Cette vue rassemble les principaux écrans du projet. Les maquettes complètes et le prototype interactif sont disponibles sur Figma.</p>
+                  <p style="font-size: 11.5px; color: var(--color-text-muted); margin-top: 12px; margin-bottom: 12px; font-style: italic;">Cette vue rassemble les principaux écrans du projet. Les maquettes complètes et le prototype interactif sont disponibles sur Figma.</p>
                   <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
-                    <a href="https://www.figma.com/proto/k0obRF21UNiAWdAZ22JpsM/Les-Bambinets-HI-FI?node-id=7747-2&t=8UhgSRq7c4ZWggrr-1&scaling=scale-down&content-scaling=fixed&page-id=7587%3A2" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-primary, #9B5620); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Découvrir les maquettes haute fidélité sur Figma (s'ouvre dans un nouvel onglet)">Découvrir les maquettes haute fidélité sur Figma ↗</a>
-                    <a href="https://www.figma.com/design/k0obRF21UNiAWdAZ22JpsM/Les-Bambinets-HI-FI?node-id=7741-2&t=CyQusabg6xXrcJhH-1" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-primary, #9B5620); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Voir le prototype basse fidélité interactif sur Figma (s'ouvre dans un nouvel onglet)">Voir Prototype basse fidélité interactif sur Figma ↗</a>
+                    <a href="https://www.figma.com/proto/k0obRF21UNiAWdAZ22JpsM/Les-Bambinets-HI-FI?node-id=7747-2&t=8UhgSRq7c4ZWggrr-1&scaling=scale-down&content-scaling=fixed&page-id=7587%3A2" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Découvrir les maquettes haute fidélité sur Figma (s'ouvre dans un nouvel onglet)">Découvrir les maquettes haute fidélité sur Figma ↗</a>
+                    <a href="https://www.figma.com/design/k0obRF21UNiAWdAZ22JpsM/Les-Bambinets-HI-FI?node-id=7741-2&t=CyQusabg6xXrcJhH-1" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Voir le prototype basse fidélité interactif sur Figma (s'ouvre dans un nouvel onglet)">Voir Prototype basse fidélité interactif sur Figma ↗</a>
                   </div>
                 </div>
                 <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
               </div>
 
               <!-- ACCESSIBILITE (FOND LIBRE) -->
-              <div id="bb-sec-accessibilite" style="margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid #E5DCD3;">
-                <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: #1E1915;">Rendre l’interface simple, sans exclure au passage</h3>
+              <div id="bb-sec-accessibilite" style="margin-bottom: 36px; padding-bottom: 24px; border-bottom: 1px solid var(--color-border);">
+                <h3 class="lbc-v2-card-title" style="font-size: 20px; margin-bottom: 12px; color: var(--color-text);">Rendre l’interface simple, sans exclure au passage</h3>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Dans Bambinets, la simplicité ne devait pas seulement rendre l’application plus agréable. Elle devait aussi la rendre plus facile à lire, à comprendre et à utiliser pour le plus grand nombre.</p>
                 <p class="lbc-v2-card-body" style="margin-bottom: 16px; color: #3E3934;">Le brief fixait un objectif de niveau AA pour les contrastes et la lisibilité. J’ai donc vérifié et ajusté les couleurs dans Figma, travaillé la hiérarchie typographique, les espacements et la taille des éléments interactifs pour que l’interface reste claire sur mobile.</p>
 
                 <!-- PRESENTATION EDITORIALE AEREE SUR FOND LIBRE (3 COLONNES DESKTOP) -->
                 <div class="bambinets-access-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; margin-bottom: 24px;">
-                  <div style="border-right: 1px solid #E5DCD3; padding-right: 16px;">
-                    <span style="font-size: 11px; font-weight: 700; color: var(--color-primary, #9B5620); letter-spacing: 0.5px; display: block; margin-bottom: 4px;">01</span>
-                    <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: #1E1915; margin: 0 0 6px 0; line-height: 1.35;">Des contrastes qui restent lisibles</h4>
-                    <p style="font-size: 12px; color: #5C5248; line-height: 1.5; margin: 0;">Les couleurs ont été contrôlées et ajustées afin d’éviter qu’un choix visuel nuise à la lecture ou à la compréhension.</p>
+                  <div style="border-right: 1px solid var(--color-border); padding-right: 16px;">
+                    <span style="font-size: 11px; font-weight: 700; color: var(--color-accent); letter-spacing: 0.5px; display: block; margin-bottom: 4px;">01</span>
+                    <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: var(--color-text); margin: 0 0 6px 0; line-height: 1.35;">Des contrastes qui restent lisibles</h4>
+                    <p style="font-size: 12px; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Les couleurs ont été contrôlées et ajustées afin d’éviter qu’un choix visuel nuise à la lecture ou à la compréhension.</p>
                   </div>
-                  <div style="border-right: 1px solid #E5DCD3; padding-right: 16px;">
-                    <span style="font-size: 11px; font-weight: 700; color: var(--color-primary, #9B5620); letter-spacing: 0.5px; display: block; margin-bottom: 4px;">02</span>
-                    <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: #1E1915; margin: 0 0 6px 0; line-height: 1.35;">Des actions faciles à repérer</h4>
-                    <p style="font-size: 12px; color: #5C5248; line-height: 1.5; margin: 0;">Les boutons et zones interactives devaient être suffisamment visibles et suffisamment grands pour être utilisés sans précision chirurgicale.</p>
+                  <div style="border-right: 1px solid var(--color-border); padding-right: 16px;">
+                    <span style="font-size: 11px; font-weight: 700; color: var(--color-accent); letter-spacing: 0.5px; display: block; margin-bottom: 4px;">02</span>
+                    <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: var(--color-text); margin: 0 0 6px 0; line-height: 1.35;">Des actions faciles à repérer</h4>
+                    <p style="font-size: 12px; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Les boutons et zones interactives devaient être suffisamment visibles et suffisamment grands pour être utilisés sans précision chirurgicale.</p>
                   </div>
                   <div>
-                    <span style="font-size: 11px; font-weight: 700; color: var(--color-primary, #9B5620); letter-spacing: 0.5px; display: block; margin-bottom: 4px;">03</span>
-                    <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: #1E1915; margin: 0 0 6px 0; line-height: 1.35;">Une hiérarchie qui guide sans surcharger</h4>
-                    <p style="font-size: 12px; color: #5C5248; line-height: 1.5; margin: 0;">Tailles de texte, espacements et densité des écrans ont été pensés pour permettre de comprendre rapidement ce qui est important.</p>
+                    <span style="font-size: 11px; font-weight: 700; color: var(--color-accent); letter-spacing: 0.5px; display: block; margin-bottom: 4px;">03</span>
+                    <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 15px; font-weight: 600; color: var(--color-text); margin: 0 0 6px 0; line-height: 1.35;">Une hiérarchie qui guide sans surcharger</h4>
+                    <p style="font-size: 12px; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Tailles de texte, espacements et densité des écrans ont été pensés pour permettre de comprendre rapidement ce qui est important.</p>
                   </div>
                 </div>
 
                 <!-- BLOC DE PRECISION DISCRET -->
                 <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding: 6px 0 6px 14px; background: transparent; margin-top: 18px; margin-bottom: 14px;">
-                  <p style="font-size: 12px; color: #5C5248; line-height: 1.5; margin: 0;">Cette attention portée à l’accessibilité concernait le prototype. Une conformité complète aurait aussi dépendu de l’implémentation : structure sémantique, navigation clavier, alternatives textuelles, attributs ARIA et compatibilité avec les technologies d’assistance.</p>
+                  <p style="font-size: 12px; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Cette attention portée à l’accessibilité concernait le prototype. Une conformité complète aurait aussi dépendu de l’implémentation : structure sémantique, navigation clavier, alternatives textuelles, attributs ARIA et compatibilité avec les technologies d’assistance.</p>
                 </div>
 
                 <p class="lbc-v2-card-body" style="margin-top: 12px; font-weight: 600; color: var(--color-accent) !important;">Autrement dit : le prototype pouvait préparer le terrain. Il ne pouvait pas, à lui seul, garantir l’accessibilité du produit final.</p>
@@ -968,59 +914,59 @@
 
               <!-- POINTS D'ATTENTION DU PROTOTYPE (FOND SAUGE DOUX) -->
               <div id="bb-sec-6" style="background: #DDE6D8; border-radius: 16px; padding: 24px; border: 1px solid #C7D1BF; margin-top: 36px; margin-bottom: 40px;">
-                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-primary, #9B5620) !important;">Quand chaque seconde d’attention compte</h3>
+                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-accent) !important;">Quand chaque seconde d’attention compte</h3>
                 <p class="lbc-v2-intro-p" style="margin-bottom: 10px; color: #3E3934;">Dans une crèche, personne ne consulte une application dans le calme avec vingt minutes devant soi. L’attention se partage entre l’enfant, le groupe, les gestes du quotidien et ce qu’il faut retrouver tout de suite.</p>
                 <p class="lbc-v2-intro-p" style="margin-bottom: 24px; color: #3E3934;">Mon prototype devait donc me permettre de vérifier une chose simple : est-ce qu’on comprend où aller, quoi faire et comment avancer sans réfléchir trop longtemps ?</p>
                 
                 <div class="bambinets-2col-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 20px;">
                   <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
-                    <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">01</div>
+                    <div style="font-size: 11px; font-weight: 800; color: var(--color-accent); margin-bottom: 4px;">01</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Trouver rapidement son chemin</div>
-                    <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Les fonctions principales restent accessibles depuis des entrées stables et faciles à repérer. Mon objectif : ne jamais laisser l'utilisateur se demander où chercher.</div>
+                    <div style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5;">Les fonctions principales restent accessibles depuis des entrées stables et faciles à repérer. Mon objectif : ne jamais laisser l'utilisateur se demander où chercher.</div>
                   </div>
                   <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
-                    <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">02</div>
+                    <div style="font-size: 11px; font-weight: 800; color: var(--color-accent); margin-bottom: 4px;">02</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Retrouver un signe sans perdre de temps</div>
-                    <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Recherche et catégories offrent deux chemins directs vers le contenu. Pas besoin de parcourir tout le glossaire pour trouver ce qu’on cherche.</div>
+                    <div style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5;">Recherche et catégories offrent deux chemins directs vers le contenu. Pas besoin de parcourir tout le glossaire pour trouver ce qu’on cherche.</div>
                   </div>
                   <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
-                    <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">03</div>
+                    <div style="font-size: 11px; font-weight: 800; color: var(--color-accent); margin-bottom: 4px;">03</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Être guidé sans être pris par la main</div>
-                    <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Le quiz avance étape par étape. J’ai veillé à ce que les repères soient suffisamment visibles pour rassurer un public débutant sans alourdir l’expérience.</div>
+                    <div style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5;">Le quiz avance étape par étape. J’ai veillé à ce que les repères soient suffisamment visibles pour rassurer un public débutant sans alourdir l’expérience.</div>
                   </div>
                   <div style="border-left: 2.5px solid var(--color-sauge-border, #AEBBA6); padding-left: 14px;">
-                    <div style="font-size: 11px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 4px;">04</div>
+                    <div style="font-size: 11px; font-weight: 800; color: var(--color-accent); margin-bottom: 4px;">04</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Comprendre immédiatement ce qui vient de se passer</div>
-                    <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Un feedback clair après chaque réponse aide à situer l’erreur ou la réussite et soutient la mémorisation.</div>
+                    <div style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5;">Un feedback clair après chaque réponse aide à situer l’erreur ou la réussite et soutient la mémorisation.</div>
                   </div>
                 </div>
 
-                <p style="font-size: 11.5px; color: #8A7669; font-style: italic; line-height: 1.45; margin-top: 16px; margin-bottom: 0;">Ces éléments sont des points d’attention de conception identifiés à partir de mon prototype. Ils ne correspondent pas aux résultats d’une campagne formelle de tests utilisateurs.</p>
+                <p style="font-size: 11.5px; color: var(--color-text-muted); font-style: italic; line-height: 1.45; margin-top: 16px; margin-bottom: 0;">Ces éléments sont des points d’attention de conception identifiés à partir de mon prototype. Ils ne correspondent pas aux résultats d’une campagne formelle de tests utilisateurs.</p>
                 <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
               </div>
 
               <!-- CE QUE J'AI APPRIS (CARTES CONSERVEES) -->
               <div id="bb-sec-learnings" class="lbc-v2-learnings-block" style="margin-top: 32px; margin-bottom: 40px;">
-                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 16px; color: var(--color-primary, #9B5620) !important;">Ce que j’ai appris</h3>
+                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 16px; color: var(--color-accent) !important;">Ce que j’ai appris</h3>
                 
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 20px; align-items: stretch;">
-                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9; display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
-                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">01</div>
+                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid var(--color-border); display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-accent); margin-bottom: 6px;">01</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 8px;">Simplifier demande plus de choix qu’on ne l’imagine</div>
                     <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Sur Bambinets, j’ai compris que rendre une interface simple ne consiste pas à enlever des éléments au hasard. Il faut décider ce qui mérite vraiment l’attention, ce qui peut attendre et ce qui risque de créer une hésitation inutile.</div>
                   </div>
-                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9; display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
-                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">02</div>
+                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid var(--color-border); display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-accent); margin-bottom: 6px;">02</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 8px;">Concevoir pour un public débutant change la manière de hiérarchiser</div>
                     <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Quand l’utilisateur ne connaît ni le sujet ni l’outil, chaque libellé, chaque repère et chaque transition compte davantage. Il faut accompagner suffisamment pour rassurer, sans transformer le parcours en mode d’emploi permanent.</div>
                   </div>
-                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9; display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
-                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">03</div>
+                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid var(--color-border); display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-accent); margin-bottom: 6px;">03</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 8px;">Un design system n’est pas une cage</div>
                     <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Travailler à partir d’un univers graphique déjà défini m’a appris à ne pas confondre cohérence visuelle et rigidité. Quand la lisibilité ou la compréhension l’exige, certains éléments doivent pouvoir être ajustés sans casser l’identité du produit.</div>
                   </div>
-                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid #D4CCC9; display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
-                    <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">04</div>
+                  <div class="lbc-v2-subcard" style="background: #F7F3EE; border-radius: 12px; padding: 18px; border: 1px solid var(--color-border); display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box;">
+                    <div style="font-size: 13px; font-weight: 800; color: var(--color-accent); margin-bottom: 6px;">04</div>
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 8px;">L’accessibilité ne s’arrête pas à la maquette</div>
                     <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Vérifier les contrastes, la hiérarchie et les zones interactives est nécessaire, mais ce projet m’a aussi rappelé qu’une interface ne devient pas accessible parce qu’un prototype coche quelques critères. Une partie essentielle du travail se joue ensuite dans l’implémentation.</div>
                   </div>
@@ -1032,25 +978,25 @@
 
               <!-- SUITES & RECOMMANDATIONS (FOND LIBRE) -->
               <div id="bb-sec-suites" style="margin-top: 36px; margin-bottom: 40px;">
-                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-primary, #9B5620) !important;">Ce que la suite devait permettre de confirmer</h3>
+                <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-accent) !important;">Ce que la suite devait permettre de confirmer</h3>
                 <p class="lbc-v2-intro-p" style="margin-bottom: 24px; color: #3E3934;">Mon prototype posait une première expérience fluide et cohérente. Pour moi, la suite logique ne consistait pas à empiler de nouvelles fonctionnalités : il fallait surtout confronter ma maquette à des usages réels sur le terrain avant d'aller plus loin.</p>
 
                 <div class="bambinets-suites-list" style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 20px;">
                   <div class="bambinets-suite-item">
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Enrichir progressivement le contenu</div>
-                    <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Ajouter de nouveaux signes et étoffer les catégories, tout en préservant la logique de recherche immédiate qui fait la force de l'application.</div>
+                    <div style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5;">Ajouter de nouveaux signes et étoffer les catégories, tout en préservant la logique de recherche immédiate qui fait la force de l'application.</div>
                   </div>
                   <div class="bambinets-suite-item">
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Confronter mon travail à de vrais utilisateurs</div>
-                    <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Observer parents et professionnels en situation réelle dans la crèche, pour vérifier mes hypothèses de navigation et corriger les moindres hésitations.</div>
+                    <div style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5;">Observer parents et professionnels en situation réelle dans la crèche, pour vérifier mes hypothèses de navigation et corriger les moindres hésitations.</div>
                   </div>
                   <div class="bambinets-suite-item">
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Affiner les parcours que j'ai dessinés</div>
-                    <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Tester et ajuster les micro-interactions de mon prototype, en particulier les repères de progression du quiz et la clarté des feedbacks visuels.</div>
+                    <div style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5;">Tester et ajuster les micro-interactions de mon prototype, en particulier les repères de progression du quiz et la clarté des feedbacks visuels.</div>
                   </div>
                   <div class="bambinets-suite-item">
                     <div style="font-size: 15px; font-weight: 500; color: #69584D; margin-bottom: 6px;">Poursuivre le chantier d’accessibilité avec les développeurs</div>
-                    <div style="font-size: 12.5px; color: #5C5248; line-height: 1.5;">Intégrer les exigences techniques indissociables de mon travail de maquette : alternatives textuelles, navigation clavier, attributs ARIA et structure sémantique.</div>
+                    <div style="font-size: 12.5px; color: var(--color-text-muted); line-height: 1.5;">Intégrer les exigences techniques indissociables de mon travail de maquette : alternatives textuelles, navigation clavier, attributs ARIA et structure sémantique.</div>
                   </div>
                 </div>
 
@@ -1109,7 +1055,7 @@
                         </div>
                       </div>
                       <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6F665F !important; line-height: 1.45 !important; margin-bottom: 14px !important;">Une version textuelle accessible reprend les éléments essentiels de la présentation.</p>
-                      <a href="assets/bambinets-canva-version-textuelle-accessible.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-primary, #9B5620); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Lire la retranscription textuelle accessible du projet Bambinets au format PDF (s'ouvre dans un nouvel onglet)"><i data-lucide="download" style="width: 13px; height: 13px; color: currentColor;"></i> Lire la version textuelle (PDF) ↗</a>
+                      <a href="assets/bambinets-canva-version-textuelle-accessible.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Lire la retranscription textuelle accessible du projet Bambinets au format PDF (s'ouvre dans un nouvel onglet)"><i data-lucide="download" style="width: 13px; height: 13px; color: currentColor;"></i> Lire la version textuelle (PDF) ↗</a>
                     </div>
                   </div>
                 </div>
@@ -1275,16 +1221,16 @@
                     <h3 class="lbc-v2-card-title" style="margin-top: 0; margin-bottom: 16px;">Le terrain tranche</h3>
                     <p class="lbc-v2-card-body" style="margin-bottom: 12px;">Les hypothèses étaient posées. Il fallait maintenant les confronter à de vraies utilisations.</p>
                     <p class="lbc-v2-card-body" style="margin-bottom: 12px;">J’ai mené cinq entretiens semi-directifs sur le prototype, avec des tâches simples à réaliser sans guider les participants.</p>
-                    <p class="lbc-v2-card-body" style="margin: 0; color: #9B5620 !important; font-weight: 600 !important;">Ce qui comptait n’était pas seulement ce qu’ils disaient, mais aussi où ils hésitaient, ce qu’ils cherchaient, les détours qu’ils faisaient et les informations qu’ils ne voyaient pas tout de suite.</p>
+                    <p class="lbc-v2-card-body" style="margin: 0; color: var(--color-accent) !important; font-weight: 600 !important;">Ce qui comptait n’était pas seulement ce qu’ils disaient, mais aussi où ils hésitaient, ce qu’ils cherchaient, les détours qu’ils faisaient et les informations qu’ils ne voyaient pas tout de suite.</p>
                   </div>
                   <div>
-                    <div style="border-radius: 14px; overflow: hidden; border: 1px solid #D4CCC9; background: #1E1915; box-shadow: 0 6px 22px rgba(70, 40, 25, 0.1);">
+                    <div style="border-radius: 14px; overflow: hidden; border: 1px solid var(--color-border); background: #1E1915; box-shadow: 0 6px 22px rgba(70, 40, 25, 0.1);">
                       <video controls style="width: 100%; max-height: 320px; display: block; border-radius: 14px;" preload="metadata" poster="assets/PROJTS/FOODLES/foodles-vignette-extrait.png">
                         <source src="assets/PROJTS/FOODLES/foodles-test-user-TM-apercu.mp4" type="video/mp4">
                         Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
                       </video>
                     </div>
-                    <span style="font-size: 11.5px; color: #8A7669; margin-top: 8px; display: block; text-align: center;">Extrait d’un entretien semi-directif sur le prototype</span>
+                    <span style="font-size: 11.5px; color: var(--color-text-muted); margin-top: 8px; display: block; text-align: center;">Extrait d’un entretien semi-directif sur le prototype</span>
                   </div>
                 </div>
                 <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
@@ -1298,29 +1244,29 @@
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px;">À la fin des entretiens, j’avais des hésitations, des remarques, des comportements parfois répétés, parfois isolés.</p>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px;">Mais une phrase entendue une fois ne devient pas automatiquement une décision de design.</p>
                 <p class="lbc-v2-card-body" style="margin-bottom: 12px;">J’ai donc utilisé Atomic UX Research pour remettre chaque observation dans son contexte, séparer les faits des interprétations et garder une trace claire du chemin qui mène jusqu’à la recommandation.</p>
-                <p class="lbc-v2-card-body" style="margin-bottom: 24px; color: #9B5620 !important; font-weight: 600 !important;">Autrement dit : partir de ce qui s’est réellement passé pendant le test, comprendre ce que cela révèle, puis seulement décider ce qu’il faut améliorer.</p>
+                <p class="lbc-v2-card-body" style="margin-bottom: 24px; color: var(--color-accent) !important; font-weight: 600 !important;">Autrement dit : partir de ce qui s’est réellement passé pendant le test, comprendre ce que cela révèle, puis seulement décider ce qu’il faut améliorer.</p>
 
                 <!-- PROCESS HORIZONTAL SOBRE 4 ETAPES -->
-                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #D4CCC9;">
+                <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--color-border);">
                   <div class="foodles-atomic-process" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; flex-wrap: nowrap;">
-                    <div class="foodles-atomic-step" style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
-                      <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">01</span>
-                      <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Expérience</span>
+                    <div class="foodles-atomic-step" style="flex: 1; background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); text-align: center;">
+                      <span style="font-size: 10px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">01</span>
+                      <span style="font-size: 13.5px; font-weight: 600; color: var(--color-text);">Expérience</span>
                     </div>
-                    <span class="foodles-atomic-arrow" style="color: var(--color-primary, #9B5620); font-size: 16px; font-weight: 700;">→</span>
-                    <div class="foodles-atomic-step" style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
-                      <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">02</span>
-                      <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Fait</span>
+                    <span class="foodles-atomic-arrow" style="color: var(--color-accent); font-size: 16px; font-weight: 700;">→</span>
+                    <div class="foodles-atomic-step" style="flex: 1; background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); text-align: center;">
+                      <span style="font-size: 10px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">02</span>
+                      <span style="font-size: 13.5px; font-weight: 600; color: var(--color-text);">Fait</span>
                     </div>
-                    <span class="foodles-atomic-arrow" style="color: var(--color-primary, #9B5620); font-size: 16px; font-weight: 700;">→</span>
-                    <div class="foodles-atomic-step" style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
-                      <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">03</span>
-                      <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Insight</span>
+                    <span class="foodles-atomic-arrow" style="color: var(--color-accent); font-size: 16px; font-weight: 700;">→</span>
+                    <div class="foodles-atomic-step" style="flex: 1; background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); text-align: center;">
+                      <span style="font-size: 10px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">03</span>
+                      <span style="font-size: 13.5px; font-weight: 600; color: var(--color-text);">Insight</span>
                     </div>
-                    <span class="foodles-atomic-arrow" style="color: var(--color-primary, #9B5620); font-size: 16px; font-weight: 700;">→</span>
-                    <div class="foodles-atomic-step" style="flex: 1; background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; text-align: center;">
-                      <span style="font-size: 10px; font-weight: 700; color: #8A7669; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">04</span>
-                      <span style="font-size: 13.5px; font-weight: 600; color: #1E1915;">Conclusion</span>
+                    <span class="foodles-atomic-arrow" style="color: var(--color-accent); font-size: 16px; font-weight: 700;">→</span>
+                    <div class="foodles-atomic-step" style="flex: 1; background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); text-align: center;">
+                      <span style="font-size: 10px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">04</span>
+                      <span style="font-size: 13.5px; font-weight: 600; color: var(--color-text);">Conclusion</span>
                     </div>
                   </div>
                 </div>
@@ -1338,7 +1284,7 @@
                   <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Les photos étaient soignées, les plats donnaient envie, et la structure paraissait familière.</p>
                   <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Puis les utilisateurs ont commencé à chercher.</p>
                   <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Un allergène. Une catégorie. Un plat disponible. Le temps de chauffe. Une confirmation après avoir ajouté quelque chose au panier.</p>
-                  <p class="lbc-v2-card-body" style="margin: 0; color: #9B5620 !important; font-weight: 600 !important;">Et c’est là que les petites hésitations se sont accumulées.</p>
+                  <p class="lbc-v2-card-body" style="margin: 0; color: var(--color-accent) !important; font-weight: 600 !important;">Et c’est là que les petites hésitations se sont accumulées.</p>
                 </div>
 
                 <!-- ILLUSTRATION FEMME AU TELEPHONE ET LUMIERE DOREE -->
@@ -1350,49 +1296,49 @@
                 <div class="foodles-constats-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px;">
                   
                   <!-- CARTE 01 -->
-                  <div class="lbc-v2-subcard" style="background: #F5F4F0; border-radius: 14px; padding: 20px; border: 1px solid #D4CCC9; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
-                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #9B5620); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 01</div>
-                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">Trouver ce qu’on peut manger demandait trop d’effort</h4>
+                  <div class="lbc-v2-subcard" style="background: var(--color-bg-secondary); border-radius: 14px; padding: 20px; border: 1px solid var(--color-border); box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 01</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: var(--color-text); margin: 0 0 10px 0; line-height: 1.35;">Trouver ce qu’on peut manger demandait trop d’effort</h4>
                     <p style="font-size: 12px; color: #3E3934; line-height: 1.5; margin: 0 0 8px 0;">Les utilisateurs arrivaient à trouver l’information, mais souvent après plusieurs détours.</p>
                     <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">Allergènes, régimes alimentaires, pictogrammes : tout était là, sans être assez visible ni assez immédiat.</p>
                   </div>
 
                   <!-- CARTE 02 -->
-                  <div class="lbc-v2-subcard" style="background: #F5F4F0; border-radius: 14px; padding: 20px; border: 1px solid #D4CCC9; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
-                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #9B5620); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 02</div>
-                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">La navigation ne suivait pas toujours les réflexes naturels</h4>
+                  <div class="lbc-v2-subcard" style="background: var(--color-bg-secondary); border-radius: 14px; padding: 20px; border: 1px solid var(--color-border); box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 02</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: var(--color-text); margin: 0 0 10px 0; line-height: 1.35;">La navigation ne suivait pas toujours les réflexes naturels</h4>
                     <p style="font-size: 12px; color: #3E3934; line-height: 1.5; margin: 0 0 8px 0;">Le scroll horizontal a surpris plusieurs participants. Certains cherchaient instinctivement à descendre, d’autres ne voyaient pas immédiatement qu’il fallait glisser sur le côté.</p>
                     <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">La navigation finissait par fonctionner, mais pas toujours de façon évidente.</p>
                   </div>
 
                   <!-- CARTE 03 -->
-                  <div class="lbc-v2-subcard" style="background: #F5F4F0; border-radius: 14px; padding: 20px; border: 1px solid #D4CCC9; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
-                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #9B5620); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 03</div>
-                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">La fiche produit donnait beaucoup d’informations, sans toujours montrer les bonnes en premier</h4>
+                  <div class="lbc-v2-subcard" style="background: var(--color-bg-secondary); border-radius: 14px; padding: 20px; border: 1px solid var(--color-border); box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 03</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: var(--color-text); margin: 0 0 10px 0; line-height: 1.35;">La fiche produit donnait beaucoup d’informations, sans toujours montrer les bonnes en premier</h4>
                     <p style="font-size: 12px; color: #3E3934; line-height: 1.5; margin: 0 0 8px 0;">Les allergènes se perdaient dans la page, le temps de chauffe manquait, certains textes étaient difficiles à lire.</p>
                     <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">L’information existait, mais elle ne venait pas toujours au bon moment.</p>
                   </div>
 
                   <!-- CARTE 04 -->
-                  <div class="lbc-v2-subcard" style="background: #F5F4F0; border-radius: 14px; padding: 20px; border: 1px solid #D4CCC9; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
-                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-primary, #9B5620); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 04</div>
-                    <h4 style="font-size: 14.5px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0; line-height: 1.35;">Et parfois, le doute apparaissait après l’action</h4>
-                    <p style="font-size: 12px; color: #3E3934; line-height: 1.5; margin: 0 0 8px 0;">Ajouter un plat au panier sans confirmation suffisamment visible obligeait l’utilisateur à se demander : <span style="color: #9B5620; font-weight: 600;">« Est-ce que ça a marché ? »</span></p>
+                  <div class="lbc-v2-subcard" style="background: var(--color-bg-secondary); border-radius: 14px; padding: 20px; border: 1px solid var(--color-border); box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                    <div style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Constat 04</div>
+                    <h4 style="font-size: 14.5px; font-weight: 700; color: var(--color-text); margin: 0 0 10px 0; line-height: 1.35;">Et parfois, le doute apparaissait après l’action</h4>
+                    <p style="font-size: 12px; color: #3E3934; line-height: 1.5; margin: 0 0 8px 0;">Ajouter un plat au panier sans confirmation suffisamment visible obligeait l’utilisateur à se demander : <span style="color: var(--color-accent); font-weight: 600;">« Est-ce que ça a marché ? »</span></p>
                     <p style="font-size: 12px; color: #7C6A5F; line-height: 1.5; margin: 0;">Ce manque de feedback ajoutait un doute inutile à une action pourtant simple.</p>
                   </div>
 
                 </div>
 
                 <!-- BLOC CONFIANCE HORIZONTAL -->
-                <div style="margin-top: 24px; background: #F5F4F0; border-radius: 14px; padding: 20px 24px; border: 1px solid #D4CCC9; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
-                  <h4 style="font-size: 15px; font-weight: 700; color: #1E1915; margin: 0 0 8px 0; line-height: 1.35;">Une autre question est apparue : la confiance</h4>
+                <div style="margin-top: 24px; background: var(--color-bg-secondary); border-radius: 14px; padding: 20px 24px; border: 1px solid var(--color-border); box-shadow: 0 4px 14px rgba(70, 40, 25, 0.03);">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-text); margin: 0 0 8px 0; line-height: 1.35;">Une autre question est apparue : la confiance</h4>
                   <p style="font-size: 12.5px; color: #3E3934; line-height: 1.5; margin: 0 0 6px 0;">Les photos étaient attractives, mais certains participants cherchaient davantage de repères sur la qualité, l’origine ou la composition des plats.</p>
-                  <p style="font-size: 12.5px; color: #9B5620 !important; font-weight: 600 !important; line-height: 1.5; margin: 0;">Une belle image ne suffit pas toujours à rassurer quand on choisit ce qu’on va manger.</p>
+                  <p style="font-size: 12.5px; color: var(--color-accent) !important; font-weight: 600 !important; line-height: 1.5; margin: 0;">Une belle image ne suffit pas toujours à rassurer quand on choisit ce qu’on va manger.</p>
                 </div>
 
                 <!-- BLOC CITATIONS VERBATIMS EN BULLES ÉDITORIALES (VERT SAUGE MANUSCRIT) -->
-                <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid #D4CCC9;">
-                  <h4 style="font-size: 15px; font-weight: 700; color: #1E1915; margin: 0 0 16px 0;">Quelques mots entendus pendant les tests</h4>
+                <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--color-border);">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-text); margin: 0 0 16px 0;">Quelques mots entendus pendant les tests</h4>
                   
                   <div class="verbatim-bubbles-container">
                     <div class="verbatim-bubble-card verbatim-bubble-left">
@@ -1415,15 +1361,15 @@
 
                 <!-- BLOC SCORES : LES HYPOTHÈSES À L'ÉPREUVE DES TESTS -->
                 <div style="margin-top: 32px; padding-top: 28px; border-top: 1.5px dashed #EADCD3;">
-                  <h4 style="font-size: 15px; font-weight: 700; color: #1E1915; margin: 0 0 16px 0;">Les hypothèses à l’épreuve des tests</h4>
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-text); margin: 0 0 16px 0;">Les hypothèses à l’épreuve des tests</h4>
                   
                   <div class="foodles-hypotheses-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
                     
                     <!-- H2 -->
-                    <div style="background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                    <div style="background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; gap: 12px;">
                       <div>
-                        <span style="font-size: 10.5px; font-weight: 700; color: #9B5620; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H2</span>
-                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Allergènes et ingrédients</h5>
+                        <span style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H2</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin: 0;">Allergènes et ingrédients</h5>
                       </div>
                       <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;">
                         <span style="font-size: 11px; font-weight: 600; background: #F5EBE6; color: #9E4D32; padding: 4px 10px; border-radius: 14px; border: 1px solid #EADCD3;">4 partiels (sur 4 obs.)</span>
@@ -1431,23 +1377,23 @@
                     </div>
 
                     <!-- H4 -->
-                    <div style="background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                    <div style="background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; gap: 12px;">
                       <div>
-                        <span style="font-size: 10.5px; font-weight: 700; color: #9B5620; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H4</span>
-                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Visuels produits</h5>
+                        <span style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H4</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin: 0;">Visuels produits</h5>
                       </div>
                       <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end;">
                         <span style="font-size: 10.5px; font-weight: 600; background: #EADCD3; color: #5C3222; padding: 3px 8px; border-radius: 12px;">2 validés</span>
                         <span style="font-size: 10.5px; font-weight: 600; background: #FFFDFC; color: #7C6A5F; padding: 3px 8px; border-radius: 12px; border: 1px solid #EADCD3;">3 partiels</span>
-                        <span style="font-size: 10.5px; font-weight: 600; background: #F5EBE6; color: #9B5620; padding: 3px 8px; border-radius: 12px;">1 invalidé</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #F5EBE6; color: var(--color-accent); padding: 3px 8px; border-radius: 12px;">1 invalidé</span>
                       </div>
                     </div>
 
                     <!-- H5 -->
-                    <div style="background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                    <div style="background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; gap: 12px;">
                       <div>
-                        <span style="font-size: 10.5px; font-weight: 700; color: #9B5620; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H5</span>
-                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Catégorisation des plats</h5>
+                        <span style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H5</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin: 0;">Catégorisation des plats</h5>
                       </div>
                       <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end;">
                         <span style="font-size: 10.5px; font-weight: 600; background: #EADCD3; color: #5C3222; padding: 3px 8px; border-radius: 12px;">1 validé</span>
@@ -1456,23 +1402,23 @@
                     </div>
 
                     <!-- H7 -->
-                    <div style="background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                    <div style="background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; gap: 12px;">
                       <div>
-                        <span style="font-size: 10.5px; font-weight: 700; color: #9B5620; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H7</span>
-                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Scroll horizontal</h5>
+                        <span style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H7</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin: 0;">Scroll horizontal</h5>
                       </div>
                       <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end;">
                         <span style="font-size: 10.5px; font-weight: 600; background: #EADCD3; color: #5C3222; padding: 3px 8px; border-radius: 12px;">2 validés</span>
                         <span style="font-size: 10.5px; font-weight: 600; background: #FFFDFC; color: #7C6A5F; padding: 3px 8px; border-radius: 12px; border: 1px solid #EADCD3;">2 partiels</span>
-                        <span style="font-size: 10.5px; font-weight: 600; background: #F5EBE6; color: #9B5620; padding: 3px 8px; border-radius: 12px;">1 invalidé</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #F5EBE6; color: var(--color-accent); padding: 3px 8px; border-radius: 12px;">1 invalidé</span>
                       </div>
                     </div>
 
                     <!-- H8 -->
-                    <div style="background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                    <div style="background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; gap: 12px;">
                       <div>
-                        <span style="font-size: 10.5px; font-weight: 700; color: #9B5620; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H8</span>
-                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Lisibilité de la fiche produit</h5>
+                        <span style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H8</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin: 0;">Lisibilité de la fiche produit</h5>
                       </div>
                       <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;">
                         <span style="font-size: 11px; font-weight: 600; background: #F5EBE6; color: #9E4D32; padding: 4px 10px; border-radius: 14px; border: 1px solid #EADCD3;">4 partiels (sur 4 obs.)</span>
@@ -1480,10 +1426,10 @@
                     </div>
 
                     <!-- H11 -->
-                    <div style="background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                    <div style="background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; gap: 12px;">
                       <div>
-                        <span style="font-size: 10.5px; font-weight: 700; color: #9B5620; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H11</span>
-                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Lisibilité et contrastes</h5>
+                        <span style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H11</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin: 0;">Lisibilité et contrastes</h5>
                       </div>
                       <div style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;">
                         <span style="font-size: 11px; font-weight: 600; background: #F5EBE6; color: #9E4D32; padding: 4px 10px; border-radius: 14px; border: 1px solid #EADCD3;">3 partiels (sur 3 obs.)</span>
@@ -1491,15 +1437,15 @@
                     </div>
 
                     <!-- H12 -->
-                    <div style="background: #F5F4F0; border-radius: 12px; padding: 14px 16px; border: 1px solid #D4CCC9; display: flex; align-items: center; justify-content: space-between; gap: 12px; grid-column: span 2;">
+                    <div style="background: var(--color-bg-secondary); border-radius: 12px; padding: 14px 16px; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; gap: 12px; grid-column: span 2;">
                       <div>
-                        <span style="font-size: 10.5px; font-weight: 700; color: #9B5620; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H12</span>
-                        <h5 style="font-size: 13px; font-weight: 700; color: #1E1915; margin: 0;">Valorisation du premier écran</h5>
+                        <span style="font-size: 10.5px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">Hypothèse H12</span>
+                        <h5 style="font-size: 13px; font-weight: 700; color: var(--color-text); margin: 0;">Valorisation du premier écran</h5>
                       </div>
                       <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end;">
                         <span style="font-size: 10.5px; font-weight: 600; background: #EADCD3; color: #5C3222; padding: 3px 8px; border-radius: 12px;">2 validés</span>
                         <span style="font-size: 10.5px; font-weight: 600; background: #FFFDFC; color: #7C6A5F; padding: 3px 8px; border-radius: 12px; border: 1px solid #EADCD3;">2 partiels</span>
-                        <span style="font-size: 10.5px; font-weight: 600; background: #F5EBE6; color: #9B5620; padding: 3px 8px; border-radius: 12px;">1 invalidé</span>
+                        <span style="font-size: 10.5px; font-weight: 600; background: #F5EBE6; color: var(--color-accent); padding: 3px 8px; border-radius: 12px;">1 invalidé</span>
                       </div>
                     </div>
 
@@ -1507,10 +1453,10 @@
                 </div>
 
                 <!-- PHRASE DE CONCLUSION SECTION 6 -->
-                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #D4CCC9;">
+                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border);">
                   <p class="lbc-v2-card-body" style="margin-bottom: 8px;">Pris séparément, ces résultats peuvent sembler mineurs.</p>
                   <p class="lbc-v2-card-body" style="margin-bottom: 8px;">Mis bout à bout, ils racontent tous la même chose :</p>
-                  <p class="lbc-v2-card-body" style="margin: 0; color: #9B5620 !important; font-weight: 600 !important; font-size: 13.5px !important; line-height: 1.55;">l’interface fonctionne, mais elle demande encore trop souvent à l’utilisateur de chercher, interpréter ou vérifier ce qui devrait être évident.</p>
+                  <p class="lbc-v2-card-body" style="margin: 0; color: var(--color-accent) !important; font-weight: 600 !important; font-size: 13.5px !important; line-height: 1.55;">l’interface fonctionne, mais elle demande encore trop souvent à l’utilisateur de chercher, interpréter ou vérifier ce qui devrait être évident.</p>
                 </div>
                 <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
               </div>
@@ -1526,7 +1472,7 @@
                   <p class="lbc-v2-card-body" style="margin-bottom: 10px;">On savait où les utilisateurs hésitaient, quelles informations arrivaient trop tard, et à quels moments l’interface leur demandait un effort qui n’aurait pas dû exister.</p>
                   <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Il ne s’agissait donc pas de tout reconstruire. Il fallait surtout remettre les bonnes informations au bon endroit, au bon moment.</p>
                   <p class="lbc-v2-card-body" style="margin-bottom: 10px;">Au moment de choisir son déjeuner, personne n’a envie d’enquêter. L’utilisateur veut savoir rapidement ce qui est disponible, vérifier qu’un plat lui convient, comprendre ce qu’il doit faire ensuite et être certain que son action a bien été prise en compte.</p>
-                  <p class="lbc-v2-card-body" style="margin: 0; color: #9B5620 !important; font-weight: 600 !important;">C’est là que les recommandations ont pris forme.</p>
+                  <p class="lbc-v2-card-body" style="margin: 0; color: var(--color-accent) !important; font-weight: 600 !important;">C’est là que les recommandations ont pris forme.</p>
                 </div>
 
                 <!-- ILLUSTRATION SOLUTIONS RETENUES -->
@@ -1572,10 +1518,10 @@
                 </div>
 
                 <!-- CONCLUSION EN CLAIR -->
-                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #D4CCC9;">
-                  <h4 style="font-size: 15px; font-weight: 700; color: #1E1915; margin: 0 0 10px 0;">En clair</h4>
+                <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border);">
+                  <h4 style="font-size: 15px; font-weight: 700; color: var(--color-text); margin: 0 0 10px 0;">En clair</h4>
                   <p class="lbc-v2-card-body" style="margin-bottom: 8px;">Les recommandations ne cherchaient pas à ajouter davantage d’interface.</p>
-                  <p class="lbc-v2-card-body" style="margin: 0; color: #9B5620 !important; font-weight: 600 !important; font-size: 13.5px !important; line-height: 1.55;">Elles cherchaient au contraire à retirer de l’effort : moins chercher, moins interpréter, moins hésiter — et pouvoir choisir plus simplement.</p>
+                  <p class="lbc-v2-card-body" style="margin: 0; color: var(--color-accent) !important; font-weight: 600 !important; font-size: 13.5px !important; line-height: 1.55;">Elles cherchaient au contraire à retirer de l’effort : moins chercher, moins interpréter, moins hésiter — et pouvoir choisir plus simplement.</p>
                 </div>
                 <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
               </div>
@@ -1583,22 +1529,22 @@
 
             <!-- APPRIS (8) -->
             <div id="foodles-apprentissages" class="lbc-v2-learnings-block" style="margin-top: 32px; margin-bottom: 40px;">
-              <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-primary, #9B5620) !important;">Ce que ce projet m’a appris</h3>
+              <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-accent) !important;">Ce que ce projet m’a appris</h3>
               <p class="lbc-v2-intro-p" style="margin-bottom: 24px;">Concevoir pour un usage quotidien au travail exige d'éliminer les moindres frictions. Une réservation sans effort est le meilleur vecteur d'adoption.</p>
               <div class="foodles-learnings-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
                 <div class="lbc-v2-subcard">
-                  <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">01</div>
-                  <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Concevoir pour un moment de hâte</div>
+                  <div style="font-size: 13px; font-weight: 800; color: var(--color-accent); margin-bottom: 6px;">01</div>
+                  <div style="font-size: 15px; font-weight: 700; color: var(--color-text); margin-bottom: 8px;">Concevoir pour un moment de hâte</div>
                   <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">La pause déjeuner est un moment où l'attention est limitée. Chaque écran doit apporter une réponse immédiate sans détour.</div>
                 </div>
                 <div class="lbc-v2-subcard">
-                  <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">02</div>
-                  <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Anticiper l'information clé</div>
+                  <div style="font-size: 13px; font-weight: 800; color: var(--color-accent); margin-bottom: 6px;">02</div>
+                  <div style="font-size: 15px; font-weight: 700; color: var(--color-text); margin-bottom: 8px;">Anticiper l'information clé</div>
                   <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">Faire remonter le stock et la disponibilité dès l'accueil évite les déceptions et les retours en arrière frustrants.</div>
                 </div>
                 <div class="lbc-v2-subcard">
-                  <div style="font-size: 13px; font-weight: 800; color: var(--color-primary, #9B5620); margin-bottom: 6px;">03</div>
-                  <div style="font-size: 15px; font-weight: 700; color: #1E1915; margin-bottom: 8px;">Relier le physique au digital</div>
+                  <div style="font-size: 13px; font-weight: 800; color: var(--color-accent); margin-bottom: 6px;">03</div>
+                  <div style="font-size: 15px; font-weight: 700; color: var(--color-text); margin-bottom: 8px;">Relier le physique au digital</div>
                   <div style="font-size: 12.5px; color: #3E3934; line-height: 1.5;">L'expérience ne s'arrête pas au clic : l'ouverture du frigo et le retrait du plat doivent être en parfaite synchro avec l'application.</div>
                 </div>
               </div>
@@ -1620,7 +1566,7 @@
                   </div>
                   <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6F665F !important; line-height: 1.45 !important; margin-bottom: 12px !important;">Le projet Foodles, de la problématique aux solutions retenues, avec les choix d'ergonomie et livrables.</p>
                   
-                  <div style="border-radius: 12px; overflow: hidden; border: 1px solid #D4CCC9; background: #1E1915; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.05);">
+                  <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--color-border); background: #1E1915; box-shadow: 0 4px 14px rgba(70, 40, 25, 0.05);">
                     <video controls style="width: 100%; max-height: 400px; display: block; border-radius: 12px;" preload="metadata" poster="assets/PROJTS/FOODLES/presentation foodles.png">
                       <source src="assets/PROJTS/FOODLES/foodles-presentation-2.mp4" type="video/mp4">
                       Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
@@ -1663,8 +1609,8 @@
                     </div>
                     <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6F665F !important; line-height: 1.45 !important; margin-bottom: 14px !important;">Une version textuelle accessible reprend les éléments essentiels de la présentation.</p>
                     <div style="display: flex; flex-direction: column; gap: 8px;">
-                      <a href="assets/foodles-canva-version-textuelle-accessible.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-primary, #9B5620); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Lire la retranscription textuelle accessible du projet Foodles au format PDF (s'ouvre dans un nouvel onglet)"><i data-lucide="download" style="width: 13px; height: 13px; color: currentColor;"></i> Lire la version textuelle (PDF) ↗</a>
-                      <a href="assets/PROJTS/FOODLES/2.2 Projet FOODLES.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-primary, #9B5620); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Voir le support complet de présentation Foodles au format PDF (s'ouvre dans un nouvel onglet)"><i data-lucide="file-text" style="width: 13px; height: 13px; color: currentColor;"></i> Support complet de présentation (PDF) ↗</a>
+                      <a href="assets/foodles-canva-version-textuelle-accessible.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Lire la retranscription textuelle accessible du projet Foodles au format PDF (s'ouvre dans un nouvel onglet)"><i data-lucide="download" style="width: 13px; height: 13px; color: currentColor;"></i> Lire la version textuelle (PDF) ↗</a>
+                      <a href="assets/PROJTS/FOODLES/2.2 Projet FOODLES.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" aria-label="Voir le support complet de présentation Foodles au format PDF (s'ouvre dans un nouvel onglet)"><i data-lucide="file-text" style="width: 13px; height: 13px; color: currentColor;"></i> Support complet de présentation (PDF) ↗</a>
                     </div>
                   </div>
                 </div>
@@ -2105,7 +2051,7 @@
       <div class="content-wrap section-spacing">
         <div class="approach-hero-wrapper" style="text-align: center; max-width: 860px; margin: 0 auto 56px auto; padding-top: 24px;">
           <h1 class="approach-hero-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 42px; font-weight: 400; color: #3E3934; line-height: 1.25; margin-top: 0; margin-bottom: 32px; max-width: 840px; margin-left: auto; margin-right: auto;">
-            Et si on concevait des parcours <span style="color: #9B5620;">pour chacun</span>, pas des parcours pour tous ?
+            Et si on concevait des parcours <span style="color: var(--color-accent);">pour chacun</span>, pas des parcours pour tous ?
           </h1>
           <div class="approach-hero-intro" style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #3E3934; line-height: 1.65; max-width: 760px; margin-left: auto; margin-right: auto; text-align: center;">
             <p style="margin-bottom: 16px;">Chaque projet arrive avec ses contraintes, ses usages et ses petites manies.</p>
@@ -2293,7 +2239,7 @@
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-          <div style="border-radius: var(--radius-md); overflow: hidden; height: 380px;">
+          <div style="border-radius: 16px; overflow: hidden; height: 380px;">
             <img src="assets/nouvelle%20home%202.jpg" alt="Karine Marquis à son atelier UX" style="width:100%; height:100%; object-fit:cover;">
           </div>
           <div>
@@ -2830,7 +2776,7 @@
             <!-- ITEM 1 : DURÉES -->
             <div class="offer-durees-frais-item">
               <div class="offer-durees-item-header">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9B5620" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="offer-durees-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="offer-durees-item-icon" aria-hidden="true">
                   <circle cx="12" cy="12" r="10"></circle>
                   <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
@@ -2842,7 +2788,7 @@
             <!-- ITEM 2 : CADRAGE -->
             <div class="offer-durees-frais-item">
               <div class="offer-durees-item-header">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9B5620" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="offer-durees-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="offer-durees-item-icon" aria-hidden="true">
                   <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
                   <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
                   <path d="m9 14 2 2 4-4"></path>
@@ -2855,7 +2801,7 @@
             <!-- ITEM 3 : FRAIS -->
             <div class="offer-durees-frais-item">
               <div class="offer-durees-item-header">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9B5620" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="offer-durees-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="offer-durees-item-icon" aria-hidden="true">
                   <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"></path>
                   <line x1="8" y1="6" x2="16" y2="6"></line>
                   <line x1="8" y1="10" x2="16" y2="10"></line>

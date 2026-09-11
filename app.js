@@ -120,6 +120,10 @@ function navigateTo(pageId) {
   if (!pageId) return;
   const cleanId = pageId.replace(/^#/, '').replace(/^page-/, '');
 
+  if (typeof closeProjectDrawer === 'function') {
+    closeProjectDrawer();
+  }
+
   const sections = document.querySelectorAll('.spa-page-section');
   sections.forEach(sec => {
     sec.classList.remove('active');
@@ -155,15 +159,21 @@ function navigateTo(pageId) {
     // Fallback silencieux si file:// restreint pushState
   }
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo(0, 0);
+  requestAnimationFrame(() => {
+    window.scrollTo(0, 0);
+  });
   if (window.lucide) lucide.createIcons();
 }
 
 function initRoutingFromHash() {
   const hash = window.location.hash.replace(/^#/, '').replace(/^page-/, '');
-  if (hash && document.getElementById(`page-${hash}`)) {
+  if (hash === 'cordons-bleus' || hash === 'bambinets' || hash === 'foodles') {
+    navigateTo('projects');
+    if (typeof openProjectDrawer === 'function') openProjectDrawer(hash);
+  } else if (hash && document.getElementById(`page-${hash}`)) {
     navigateTo(hash);
-  } else if (!hash) {
+  } else {
     navigateTo('home');
   }
 }

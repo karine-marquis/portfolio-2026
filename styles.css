@@ -9,41 +9,30 @@
   --color-bg-main: #F3EFEA;       /* Fond principal du site (Beige lin clair validé) */
   --color-bg-secondary: #E9DED3;  /* Surfaces, cartes, encarts & footer (Beige sable soutenu) */
   --color-bg-powder: #F1E3DE;     /* Fond poudré doux (Hero, vision, encarts éditoriaux) */
+  --color-surface-light: #FFFDFC; /* Surface claire (Cartes blanches / conteneurs) */
 
   --color-text: #3E3934;          /* Texte principal (Brun profond) */
+  --color-text-muted: #6F665F;    /* Texte secondaire / atténué */
 
   --color-accent: #A85E3F;        /* Terracotta éditorial (Labels, kickers, accents) */
+  --color-accent-hover: #8E4C31;  /* Terracotta survol */
+
   --color-cta: #596756;           /* Vert sombre CTA (Boutons principaux .btn-primary) */
+  --color-cta-hover: #44513E;     /* Vert sombre survol */
+
+  --color-sauge-soft: #C7D1BF;    /* Sauge doux */
+  --color-sauge-border: #AEBBA6;  /* Bordure sauge */
 
   --color-border: #D5C9C1;        /* Bordures fines & séparateurs */
 
-  /* ALIAS & COMPATIBILITÉ ANCIENNES VARIABLES */
+  /* ALIAS DE COMPATIBILITÉ ACTIFS */
   --color-background: var(--color-bg-main);
   --color-surface: var(--color-bg-secondary);
-  --color-surface-var: #E6E4E0;
-  --color-hero-rose: var(--color-bg-powder);
-  --color-beige-warm: #D5CABA;
-
   --color-body: var(--color-text);
-  --color-text-main: var(--color-text);
-  --color-h1: var(--color-text);
-  --color-h2: var(--color-text);
-  --color-h3: var(--color-text);
   --color-heading: var(--color-text);
-  --color-text-muted: #6F665F;
-  --color-subtle: #6F665F;
-
-  --color-accent-hover: #8E4C31;
+  --color-h1: var(--color-text);
+  --color-subtle: var(--color-text-muted);
   --color-primary: var(--color-accent);
-  --color-primary-hover: #8E4C31;
-  --color-primary-soft: var(--color-bg-powder);
-  --color-ochre-soft: #DCB482;
-
-  --color-sauge-soft: #C7D1BF;
-  --color-sauge-dark: var(--color-cta);
-  --color-sauge-border: #AEBBA6;
-  --color-sauge-muted: #C7D1BF;
-  --color-taupe-warm: #8F837A;
 
   --font-h1: 'Playfair Display', Georgia, serif;
   --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -55,6 +44,7 @@
   --shadow-card-left-bottom-hover: -14px 16px 34px rgba(62, 57, 52, 0.10);
 
   --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-md: 16px;
 }
 
 * {
@@ -213,7 +203,7 @@ strong, b {
 }
 
 .nav-link.active:hover {
-  color: #7A4217 !important;
+  color: var(--color-accent) !important;
   font-weight: 500 !important;
 }
 
@@ -698,7 +688,7 @@ strong, b {
 }
 
 .cs-btn-canva-main:hover {
-  background-color: #B84737 !important;
+  background-color: var(--color-accent) !important;
   transform: translateY(-1.5px);
   box-shadow: 0 6px 18px rgba(166, 58, 43, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
 }
@@ -1242,7 +1232,7 @@ strong, b {
   min-height: 280px;
   overflow: hidden;
   background: transparent !important;
-  border-radius: 0;
+  border-radius: 12px !important;
   border: none !important;
   display: flex;
   align-items: center;
@@ -1264,7 +1254,7 @@ strong, b {
   object-fit: cover;
   object-position: center 15%;
   display: block;
-  border-radius: 10px !important;
+  border-radius: 0 !important;
   border: none !important;
   box-shadow: 0 6px 18px rgba(62, 57, 52, 0.08) !important;
 }
@@ -2245,7 +2235,7 @@ strong, b {
   height: auto !important;
   display: block !important;
   margin: 0 auto !important;
-  border-radius: 8px !important;
+  border-radius: 16px !important;
   object-fit: contain !important;
   transition: opacity 0.28s cubic-bezier(0.25, 1, 0.5, 1), transform 0.28s cubic-bezier(0.25, 1, 0.5, 1) !important;
   will-change: opacity, transform !important;
@@ -2277,7 +2267,7 @@ strong, b {
 .lbc-v2-deliverable-horizontal {
   width: 100% !important;
   margin-top: 12px !important;
-  border-radius: 12px !important;
+  border-radius: 16px !important;
   overflow: hidden !important;
   border: 1px solid #D4CCC9 !important;
   position: relative !important;
@@ -2301,7 +2291,7 @@ strong, b {
   height: auto !important;
   display: block !important;
   margin: 0 auto !important;
-  border-radius: 8px !important;
+  border-radius: 0 !important;
   object-fit: contain !important;
 }
 
@@ -2348,7 +2338,7 @@ strong, b {
   margin: 10px auto 0 auto !important;
   width: 60% !important;
   max-width: 520px !important;
-  border-radius: 14px !important;
+  border-radius: 16px !important;
   overflow: hidden !important;
   border: 1px solid #AEBBA6 !important;
   position: relative !important;
@@ -2445,7 +2435,7 @@ strong, b {
   max-width: 98vw !important;
   max-height: 92vh !important;
   object-fit: contain !important;
-  border-radius: 8px !important;
+  border-radius: 16px !important;
   box-shadow: 0 24px 60px rgba(0,0,0,0.8) !important;
   cursor: zoom-in !important;
   transition: width 0.25s ease, max-width 0.25s ease, max-height 0.25s ease !important;
@@ -3191,7 +3181,7 @@ strong, b {
   max-width: 230px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  border-radius: 14px !important;
+  border-radius: 12px !important;
   border: 1px solid #D4CCC9 !important;
   box-shadow: 0 6px 22px rgba(70, 40, 25, 0.08) !important;
   overflow: hidden !important;
@@ -3204,7 +3194,7 @@ strong, b {
   height: auto !important;
   object-fit: contain !important;
   display: block !important;
-  border-radius: 14px !important;
+  border-radius: 0 !important;
 }
 
 @media (max-width: 900px) {
@@ -4378,7 +4368,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     max-height: none !important;
     margin: 6px 0 16px 0 !important;
     padding: 0 !important;
-    border-radius: 0 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
     border: none !important;
     background: transparent !important;
     display: block !important;
@@ -4391,7 +4382,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     object-fit: cover !important;
     object-position: center 20% !important;
     margin: 0 auto !important;
-    border-radius: 8px !important;
+    border-radius: 0 !important;
     border: none !important;
     box-shadow: 0 8px 22px rgba(62, 57, 52, 0.12), 0 2px 6px rgba(62, 57, 52, 0.06) !important;
     display: block !important;
@@ -4740,7 +4731,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     margin-left: auto !important;
     margin-right: auto !important;
     display: block !important;
-    border-radius: 10px !important;
+    border-radius: 16px !important;
     overflow: hidden !important;
     box-shadow: 0 8px 24px rgba(62, 57, 52, 0.1) !important;
   }
@@ -4752,7 +4743,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     max-height: 240px !important;
     object-fit: cover !important;
     display: block !important;
-    border-radius: 10px !important;
+    border-radius: 0 !important;
   }
 
   /* SECTION "CE QUE J'AI CHERCHÃ‰ Ã€ COMPRENDRE" SANS CARTE EXTERIEURE SUR MOBILE */
