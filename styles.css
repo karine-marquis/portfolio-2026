@@ -5,40 +5,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root {
-  /* CHARTE COLORIMÃ‰TRIQUE JAPANDI OFFICIELLE KARINE */
-  --color-background: #F5F4F0;   /* Fond principal du site (Dominante CrÃ¨me clair) */
-  --color-surface: #EEEAE5;      /* Cartes, encarts & surfaces dÃ©tachÃ©es */
-  --color-surface-var: #E6E4E0;  /* Variation trÃ¨s lÃ©gÃ¨re entre 2 blocs */
-  --color-hero-rose: #E0CFC3;    /* Rose-beige doux pour Hero V2 et grands blocs Ã©ditoriaux */
-  --color-beige-warm: #D5CABA;   /* Beige chaud pour fonds intermÃ©diaires, badges doux, variations cartes */
+  /* CHARTE COLORIMÉTRIQUE JAPANDI OFFICIELLE (PALETTE 2026) */
+  --color-bg-main: #F3EFEA;       /* Fond principal du site (Beige lin chaud) */
+  --color-bg-secondary: #E9DED3;  /* Surfaces, cartes, encarts & footer (Beige sable soutenu) */
+  --color-bg-powder: #F1E3DE;     /* Fond poudré doux (Hero, vision, encarts éditoriaux) */
 
-  /* TYPOGRAPHIE & COULEURS DE TEXTE */
-  --color-body: #3E3934;         /* Texte principal (Brun profond titres et paragraphes) */
-  --color-text-main: #3E3934;
-  --color-h1: #3E3934;
-  --color-h2: #3E3934;
-  --color-h3: #3E3934;
-  --color-heading: #3E3934;
-  --color-text-muted: #6F665F;   /* Texte secondaire (MÃ©tadonnÃ©es, lÃ©gendes, dates, infos secondaires) */
+  --color-text: #3E3934;          /* Texte principal (Brun profond) */
+
+  --color-accent: #A85E3F;        /* Terracotta éditorial (Labels, kickers, accents) */
+  --color-cta: #596756;           /* Vert sombre CTA (Boutons principaux .btn-primary) */
+
+  --color-border: #D5C9C1;        /* Bordures fines & séparateurs */
+
+  /* ALIAS & COMPATIBILITÉ ANCIENNES VARIABLES */
+  --color-background: var(--color-bg-main);
+  --color-surface: var(--color-bg-secondary);
+  --color-surface-var: #E6E4E0;
+  --color-hero-rose: var(--color-bg-powder);
+  --color-beige-warm: #D5CABA;
+
+  --color-body: var(--color-text);
+  --color-text-main: var(--color-text);
+  --color-h1: var(--color-text);
+  --color-h2: var(--color-text);
+  --color-h3: var(--color-text);
+  --color-heading: var(--color-text);
+  --color-text-muted: #6F665F;
   --color-subtle: #6F665F;
 
-  /* BORDURES & SÃ‰PARATEURS */
-  --color-border: #D4CCC9;       /* Bordures fines, sÃ©parateurs & contours de cartes */
+  --color-accent-hover: #8E4C31;
+  --color-primary: var(--color-accent);
+  --color-primary-hover: #8E4C31;
+  --color-primary-soft: var(--color-bg-powder);
+  --color-ochre-soft: #DCB482;
 
-  /* ACCENTS TERRACOTTA (ACTION & MISE EN AVANT) */
-  --color-accent: #9B5620;       /* Terracotta principal (CTA principaux, accents, pastilles) */
-  --color-accent-hover: #7A4217; /* Survol (Hover) / version plus soutenue */
-  --color-primary: #9B5620;
-  --color-primary-hover: #7A4217;
-  --color-primary-soft: #E0CFC3;
-  --color-ochre-soft: #DCB482;   /* Ocre doux (Accent tertiaire trÃ¨s ponctuel) */
-
-  /* ACCENTS VERT SAUGE (RESPIRATION & ACCENTS SECONDAIRES) */
-  --color-sauge-soft: #C7D1BF;  /* Vert sauge principal (Tags, pills, repÃ¨res visuels) */
-  --color-sauge-dark: #55624F;  /* Vert sauge foncÃ© (Texte sur fond sauge, Ã©tat actif) */
-  --color-sauge-border: #AEBBA6;/* Bordure vert sauge */
-  --color-sauge-muted: #C7D1BF; /* Sauge doux */
-  --color-taupe-warm: #8F837A;  /* Taupe chaud (Ã‰lÃ©ments trÃ¨s secondaires, petits pictos, traits) */
+  --color-sauge-soft: #C7D1BF;
+  --color-sauge-dark: var(--color-cta);
+  --color-sauge-border: #AEBBA6;
+  --color-sauge-muted: #C7D1BF;
+  --color-taupe-warm: #8F837A;
 
   --font-h1: 'Playfair Display', Georgia, serif;
   --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -298,12 +303,16 @@ strong, b {
   filter: drop-shadow(0 3px 6px rgba(197, 83, 53, 0.2));
 }
 
-/* HERO SCÃˆNE */
+/* HERO SCÈNE */
+#page-home {
+  background-color: var(--color-bg-main, #F3EFEA);
+}
+
 .home-hero-full-scene {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: #E3D4C4;
+  background: #E9DED3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -341,17 +350,17 @@ strong, b {
   max-height: 480px;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(35, 20, 15, 0.28), 0 8px 24px rgba(155, 86, 32, 0.32);
-  border: 1.5px solid rgba(155, 86, 32, 0.35);
-  background: #FAF5F0;
+  box-shadow: 0 24px 60px rgba(35, 20, 15, 0.28), 0 8px 24px rgba(168, 94, 63, 0.32);
+  border: 1.5px solid rgba(168, 94, 63, 0.35);
+  background: #F1E3DE;
   animation: heroFloat 6s ease-in-out infinite;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .home-hero-media-right:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 32px 76px rgba(35, 20, 15, 0.38), 0 12px 32px rgba(155, 86, 32, 0.45);
-  border-color: rgba(155, 86, 32, 0.6);
+  box-shadow: 0 32px 76px rgba(35, 20, 15, 0.38), 0 12px 32px rgba(168, 94, 63, 0.45);
+  border-color: rgba(168, 94, 63, 0.6);
 }
 
 .home-hero-media-right img {
@@ -5577,6 +5586,421 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
+/* SECTION EXPERTISE DIGITAL LEARNING (MON OFFRE) */
+#page-offer .offer-learning-section {
+  width: 100%;
+  max-width: 1140px;
+  margin: 72px auto 80px auto;
+  padding-top: 56px;
+  border-top: 1px solid rgba(212, 204, 201, 0.6);
+}
+
+#page-offer .offer-learning-container {
+  width: 100%;
+}
+
+#page-offer .offer-learning-content-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 44px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+#page-offer .offer-learning-media-block {
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+}
+
+#page-offer .offer-learning-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+#page-offer .offer-learning-text-block {
+  width: 100%;
+}
+
+#page-offer .offer-learning-label {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: #9B5620 !important;
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#page-offer .offer-learning-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  line-height: 1.25 !important;
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+#page-offer .offer-learning-subtitle {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 16.5px !important;
+  font-weight: 500 !important;
+  color: #786D65 !important;
+  line-height: 1.4 !important;
+  margin-top: 0 !important;
+  margin-bottom: 28px !important;
+}
+
+#page-offer .offer-learning-main-text {
+  max-width: 780px;
+  margin-bottom: 56px;
+}
+
+#page-offer .offer-learning-main-text p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  color: #3E3934 !important;
+  opacity: 0.9;
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+}
+
+#page-offer .offer-learning-main-text p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* GRILLE DES 4 SOUS-PARTIES — STRUCTURE ÉDITORIALE AÉRÉE */
+#page-offer .offer-learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 56px;
+}
+
+#page-offer .offer-learning-item {
+  border-top: 1px solid rgba(212, 204, 201, 0.55);
+  padding-top: 24px;
+}
+
+#page-offer .offer-learning-item-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 19px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin-top: 0 !important;
+  margin-bottom: 12px !important;
+  line-height: 1.35 !important;
+}
+
+#page-offer .offer-learning-item-text {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #3E3934 !important;
+  opacity: 0.88;
+  margin: 0 !important;
+}
+
+#page-offer .offer-learning-item-note {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: #6B5E54 !important;
+  font-style: italic;
+  margin-top: 14px !important;
+  margin-bottom: 0 !important;
+  padding-left: 14px;
+  border-left: 2px solid rgba(155, 86, 32, 0.4);
+}
+
+@media (max-width: 900px) {
+  #page-offer .offer-learning-section {
+    margin: 56px auto 64px auto;
+    padding-top: 44px;
+  }
+  #page-offer .offer-learning-content-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+  #page-offer .offer-learning-title {
+    font-size: 28px !important;
+  }
+  #page-offer .offer-learning-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  #page-offer .offer-learning-section {
+    margin: 44px auto 48px auto;
+    padding-top: 36px;
+  }
+  #page-offer .offer-learning-title {
+    font-size: 24px !important;
+  }
+  #page-offer .offer-learning-subtitle {
+    font-size: 15px !important;
+  }
+  #page-offer .offer-learning-main-text {
+    margin-bottom: 40px;
+  }
+  #page-offer .offer-learning-grid {
+    gap: 32px;
+  }
+}
+
+/* SECTION CE QUE JE PEUX PRENDRE EN CHARGE (MON OFFRE) */
+#page-offer .offer-scope-section {
+  width: 100%;
+  max-width: 1140px;
+  margin: 72px auto 32px auto;
+  padding-top: 56px;
+  border-top: 1px solid rgba(212, 204, 201, 0.6);
+}
+
+#page-offer .offer-scope-container {
+  width: 100%;
+}
+
+#page-offer .offer-scope-label {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: #9B5620 !important;
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#page-offer .offer-scope-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  line-height: 1.25 !important;
+  margin-top: 0 !important;
+  margin-bottom: 36px !important;
+}
+
+#page-offer .offer-scope-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(212, 204, 201, 0.55);
+}
+
+#page-offer .offer-scope-row {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(212, 204, 201, 0.55);
+}
+
+#page-offer .offer-scope-row-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 19px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+}
+
+#page-offer .offer-scope-row-desc {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #3E3934 !important;
+  opacity: 0.88;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  #page-offer .offer-scope-section {
+    margin: 56px auto 32px auto;
+    padding-top: 44px;
+  }
+  #page-offer .offer-scope-title {
+    font-size: 28px !important;
+    margin-bottom: 28px !important;
+  }
+  #page-offer .offer-scope-row {
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    padding: 18px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  #page-offer .offer-scope-section {
+    margin: 44px auto 28px auto;
+    padding-top: 36px;
+  }
+  #page-offer .offer-scope-title {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+  }
+  #page-offer .offer-scope-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 16px 0;
+  }
+}
+
+/* BLOC UNE VISION PLUS LARGE (MON OFFRE) */
+#page-offer .offer-vision-section {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 48px;
+  padding-top: 0;
+  border-top: 1px solid rgba(212, 204, 201, 0.6);
+  box-sizing: border-box;
+}
+
+#page-offer .offer-vision-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#page-offer .offer-vision-text-block {
+  width: 100%;
+  height: 100%;
+  background: #F7EFEC;
+  border-radius: 0;
+  padding: 20px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#page-offer .offer-vision-label {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: #9B5620 !important;
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+#page-offer .offer-vision-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 23px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  line-height: 1.25 !important;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+#page-offer .offer-vision-body p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+  color: #3E3934 !important;
+  opacity: 0.9;
+  margin-top: 0 !important;
+  margin-bottom: 6px !important;
+}
+
+#page-offer .offer-vision-body p:last-child {
+  margin-bottom: 0 !important;
+}
+
+#page-offer .offer-vision-cta-wrapper {
+  margin-top: 14px;
+}
+
+#page-offer .offer-vision-media-block {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+}
+
+#page-offer .offer-vision-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 0;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  #page-offer .offer-vision-section {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 36px;
+    margin-bottom: 40px;
+    padding-top: 28px;
+  }
+  #page-offer .offer-vision-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    border-radius: 16px;
+  }
+  #page-offer .offer-vision-text-block {
+    padding: 22px 20px;
+  }
+  #page-offer .offer-vision-title {
+    font-size: 21px !important;
+  }
+  #page-offer .offer-vision-media-block {
+    width: 100%;
+    height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  #page-offer .offer-vision-section {
+    margin-top: 44px;
+    margin-bottom: 48px;
+    padding-top: 36px;
+  }
+  #page-offer .offer-vision-text-block {
+    padding: 28px 24px;
+  }
+  #page-offer .offer-vision-title {
+    font-size: 22px !important;
+    margin-bottom: 16px !important;
+  }
+  #page-offer .offer-vision-body p {
+    font-size: 14px !important;
+  }
+  #page-offer .offer-vision-media-block {
+    width: 100%;
+    height: 240px;
+  }
+}
+
 .offer-accordion-item {
   border-bottom: 1px solid rgba(212, 204, 201, 0.7);
   background: transparent;
@@ -5835,6 +6259,196 @@ button.offer-accordion-header:focus-visible {
 /* 3. Section Formats en bas */
 .offer-accordion-formats-section {
   margin-top: 8px;
+}
+
+/* BLOC MODALITÉS ÉDITORIAL (MON OFFRE) */
+#page-offer .offer-modalites-block {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(212, 204, 201, 0.45);
+}
+
+#page-offer .offer-modalites-label {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: #9B5620 !important;
+  display: block;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+#page-offer .offer-modalites-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+  line-height: 1.3 !important;
+}
+
+#page-offer .offer-modalites-text {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  color: #3E3934 !important;
+  opacity: 0.92;
+  max-width: 780px;
+}
+
+#page-offer .offer-modalites-text p {
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+#page-offer .offer-modalites-highlight {
+  font-weight: 600 !important;
+  color: #9B5620 !important;
+  margin-top: 14px !important;
+  margin-bottom: 0 !important;
+  display: block;
+}
+
+/* BLOC DURÉES & FRAIS ÉDITORIAL (MON OFFRE) */
+#page-offer .offer-durees-frais-block {
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(212, 204, 201, 0.45);
+}
+
+#page-offer .offer-durees-frais-label {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: #9B5620 !important;
+  display: block;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+#page-offer .offer-durees-frais-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+  line-height: 1.3 !important;
+}
+
+.offer-durees-frais-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.offer-durees-frais-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-durees-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.offer-durees-item-icon {
+  flex-shrink: 0;
+}
+
+.offer-durees-item-title {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #3E3934 !important;
+  margin: 0 !important;
+}
+
+.offer-durees-item-text {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  color: #3E3934 !important;
+  opacity: 0.88;
+  margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .offer-durees-frais-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* BLOC CTA FINAL ÉDITORIAL (MON OFFRE) */
+#page-offer .offer-final-cta-block {
+  margin-top: 40px;
+  background: #F7EFEC;
+  border-radius: 16px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+#page-offer .offer-final-cta-content {
+  flex: 1;
+  max-width: 680px;
+}
+
+#page-offer .offer-final-cta-label {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  color: #9B5620 !important;
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+#page-offer .offer-final-cta-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  line-height: 1.3 !important;
+  margin-top: 0 !important;
+  margin-bottom: 6px !important;
+}
+
+#page-offer .offer-final-cta-text {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  color: #3E3934 !important;
+  opacity: 0.88;
+  margin: 0 !important;
+}
+
+#page-offer .offer-final-cta-action {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  #page-offer .offer-final-cta-block {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  #page-offer .offer-final-cta-title {
+    font-size: 20px !important;
+  }
 }
 
 .offer-formats-grid {
