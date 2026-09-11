@@ -2991,8 +2991,8 @@ strong, b {
 }
 
 .verbatim-bubble-card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 18px rgba(70, 40, 25, 0.06) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px rgba(62, 57, 52, 0.16) !important;
 }
 
 .verbatim-bubbles-container > .verbatim-bubble-card:nth-child(2) {
@@ -3691,17 +3691,16 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   transform: translateX(3px) !important;
 }
 
-/* 5. CARTES ET ENCARTS (MICRO-ÉLÉVATION PROGRESSIVE -3PX SUR 350MS) */
+/* 5. CARTES ET ENCARTS TEXTES INTERACTIFS (MICRO-ÉLÉVATION PROGRESSIVE -3PX & OMBRES HARMONISÉES) */
 .glance-card-item,
 .card-japandi,
-.chapter-vignette-container,
 #page-approach .roadmap-item-neutral,
 #page-approach .roadmap-item-sauge,
 #page-approach .roadmap-item-editorial,
-#page-offer .offer-hero-img-container,
 .verbatim-bubble-card,
 .lbc-v2-card,
 .lbc-v2-subcard {
+  box-shadow: 0 6px 18px rgba(62, 57, 52, 0.10) !important;
   transition: transform var(--duration-card) var(--ease-japandi),
               box-shadow var(--duration-card) var(--ease-japandi),
               border-color var(--duration-card) var(--ease-japandi) !important;
@@ -3709,25 +3708,34 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
 .glance-card-item:hover,
 .card-japandi:hover,
-.chapter-vignette-container:hover,
 #page-approach .roadmap-item-neutral:hover,
 #page-approach .roadmap-item-sauge:hover,
 #page-approach .roadmap-item-editorial:hover,
-#page-offer .offer-hero-img-container:hover,
 .verbatim-bubble-card:hover {
   transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px rgba(62, 57, 52, 0.16) !important;
 }
 
-/* 6. IMAGES & ILLUSTRATIONS (ZOOM LÉGER SCALE 1.02 SUR 500MS) */
+/* 6. IMAGES & ILLUSTRATIONS (OMBRES AU REPOS 0 8px 20px, HOVER 0 14px 30px + ZOOM SCALE 1.02 SANS TRANSLATEY) */
 .chapter-vignette-container,
 .offer-vision-container,
-.glance-card-item,
+.offer-learning-media-block,
 #page-offer .offer-hero-img-container {
+  box-shadow: 0 8px 20px rgba(62, 57, 52, 0.10) !important;
+  transition: box-shadow var(--duration-card) var(--ease-japandi) !important;
   overflow: hidden;
+}
+
+.chapter-vignette-container:hover,
+.offer-vision-container:hover,
+.offer-learning-media-block:hover,
+#page-offer .offer-hero-img-container:hover {
+  box-shadow: 0 14px 30px rgba(62, 57, 52, 0.15) !important;
 }
 
 .chapter-vignette-img,
 .offer-vision-img,
+.offer-learning-img,
 .glance-card-img,
 .offer-hero-img {
   transition: transform var(--duration-img) var(--ease-japandi) !important;
@@ -3735,6 +3743,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
 .chapter-vignette-container:hover .chapter-vignette-img,
 .offer-vision-container:hover .offer-vision-img,
+.offer-learning-media-block:hover .offer-learning-img,
 .glance-card-item:hover .glance-card-img,
 #page-offer .offer-hero-img-container:hover .offer-hero-img {
   transform: scale(1.02) !important;
@@ -5297,16 +5306,15 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   max-height: 360px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 14px 32px rgba(62, 57, 52, 0.16) !important;
+  box-shadow: 0 8px 20px rgba(62, 57, 52, 0.10) !important;
   border: 1px solid rgba(212, 204, 201, 0.8);
   background: #FAF8F5;
   box-sizing: border-box;
-  transition: transform 240ms ease, box-shadow 240ms ease !important;
+  transition: box-shadow var(--duration-card) var(--ease-japandi) !important;
 }
 
 .chapter-vignette-container:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 18px 36px rgba(62, 57, 52, 0.18) !important;
+  box-shadow: 0 14px 30px rgba(62, 57, 52, 0.15) !important;
 }
 
 .chapter-vignette-img {
@@ -5335,13 +5343,13 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border: 1px solid #D4CCC9 !important;
   border-radius: 16px !important;
   padding: 26px 28px !important;
-  box-shadow: 0 4px 18px rgba(62, 57, 52, 0.04) !important;
-  transition: transform 240ms ease, box-shadow 240ms ease !important;
+  box-shadow: 0 6px 18px rgba(62, 57, 52, 0.10) !important;
+  transition: transform var(--duration-card) var(--ease-japandi), box-shadow var(--duration-card) var(--ease-japandi) !important;
 }
 
 #page-approach .roadmap-item-neutral:hover {
   transform: translateY(-3px) !important;
-  box-shadow: 0 8px 24px rgba(62, 57, 52, 0.08) !important;
+  box-shadow: 0 12px 28px rgba(62, 57, 52, 0.16) !important;
 }
 
 /* 2. BLOCS SAUGE PÂLE (Étapess 02 et 05) */
@@ -5350,13 +5358,13 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border: 1px solid #C7D1BF !important;
   border-radius: 16px !important;
   padding: 26px 28px !important;
-  box-shadow: 0 4px 18px rgba(62, 57, 52, 0.04) !important;
-  transition: transform 240ms ease, box-shadow 240ms ease !important;
+  box-shadow: 0 6px 18px rgba(62, 57, 52, 0.10) !important;
+  transition: transform var(--duration-card) var(--ease-japandi), box-shadow var(--duration-card) var(--ease-japandi) !important;
 }
 
 #page-approach .roadmap-item-sauge:hover {
   transform: translateY(-3px) !important;
-  box-shadow: 0 8px 24px rgba(62, 57, 52, 0.08) !important;
+  box-shadow: 0 12px 28px rgba(62, 57, 52, 0.16) !important;
 }
 
 /* 3. BLOCS ÉDITORIAUX / NOTES (Étapess 03 et 06) */
@@ -5364,15 +5372,15 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   background: #EFECE7 !important;
   border: none !important;
   border-radius: 0 14px 14px 0 !important;
-  box-shadow: 0 8px 20px rgba(62, 57, 52, 0.11) !important;
+  box-shadow: 0 6px 18px rgba(62, 57, 52, 0.10) !important;
   padding: 26px 28px !important;
   position: relative !important;
-  transition: transform 240ms ease, box-shadow 240ms ease !important;
+  transition: transform var(--duration-card) var(--ease-japandi), box-shadow var(--duration-card) var(--ease-japandi) !important;
 }
 
 #page-approach .roadmap-item-editorial:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 10px 24px rgba(62, 57, 52, 0.14) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px rgba(62, 57, 52, 0.16) !important;
 }
 
 #page-approach .roadmap-item-editorial::before {
@@ -5548,16 +5556,15 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 22px 48px rgba(62, 57, 52, 0.18) !important;
+  box-shadow: 0 8px 20px rgba(62, 57, 52, 0.10) !important;
   border: 1px solid #D5C9C1;
   background: #F1E3DE;
   box-sizing: border-box;
-  transition: transform 240ms ease, box-shadow 240ms ease !important;
+  transition: box-shadow var(--duration-card) var(--ease-japandi) !important;
 }
 
 #page-offer .offer-hero-img-container:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 26px 54px rgba(62, 57, 52, 0.22) !important;
+  box-shadow: 0 14px 30px rgba(62, 57, 52, 0.15) !important;
 }
 
 #page-offer .offer-hero-img {
