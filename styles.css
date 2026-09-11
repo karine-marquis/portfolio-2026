@@ -6,7 +6,7 @@
 
 :root {
   /* CHARTE COLORIMÉTRIQUE JAPANDI OFFICIELLE (PALETTE 2026) */
-  --color-bg-main: #F3EFEA;       /* Fond principal du site (Beige lin chaud) */
+  --color-bg-main: #F3EFEA;       /* Fond principal du site (Beige lin clair validé) */
   --color-bg-secondary: #E9DED3;  /* Surfaces, cartes, encarts & footer (Beige sable soutenu) */
   --color-bg-powder: #F1E3DE;     /* Fond poudré doux (Hero, vision, encarts éditoriaux) */
 
@@ -303,9 +303,15 @@ strong, b {
   filter: drop-shadow(0 3px 6px rgba(197, 83, 53, 0.2));
 }
 
-/* HERO SCÈNE */
-#page-home {
-  background-color: var(--color-bg-main, #F3EFEA);
+/* HERO SCÈNE & FONDS PRINCIPAUX DES PAGES */
+#page-home,
+#page-approach,
+#page-offer,
+#page-projects,
+#page-about,
+#page-blog,
+#page-contact {
+  background-color: #F3EFEA !important;
 }
 
 .home-hero-full-scene {
@@ -5392,8 +5398,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
    MON OFFRE — HERO DESKTOP ÉDITORIAL EN 2 COLONNES JAPANDI
    ========================================================================== */
 #page-offer .offer-hero-wrapper {
-  background-color: #F7EFEC;
-  border-bottom: 1px solid #D4CCC9;
+  background-color: #F1E3DE;
+  border: 1px solid #D5C9C1;
   box-shadow: none !important;
   border-radius: 16px;
   padding: 48px 52px;
@@ -5475,8 +5481,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 22px 48px rgba(62, 57, 52, 0.18) !important;
-  border: 1px solid rgba(212, 204, 201, 0.8);
-  background: #FAF8F5;
+  border: 1px solid #D5C9C1;
+  background: #F1E3DE;
   box-sizing: border-box;
   transition: transform 240ms ease, box-shadow 240ms ease !important;
 }
@@ -5880,12 +5886,13 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border-radius: 16px;
   overflow: hidden;
   box-sizing: border-box;
+  border: 1px solid #D5C9C1;
 }
 
 #page-offer .offer-vision-text-block {
   width: 100%;
   height: 100%;
-  background: #F7EFEC;
+  background: #F1E3DE;
   border-radius: 0;
   padding: 20px 26px;
   display: flex;
@@ -6388,8 +6395,9 @@ button.offer-accordion-header:focus-visible {
 /* BLOC CTA FINAL ÉDITORIAL (MON OFFRE) */
 #page-offer .offer-final-cta-block {
   margin-top: 40px;
-  background: #F7EFEC;
+  background: #F1E3DE;
   border-radius: 16px;
+  border: 1px solid #D5C9C1;
   padding: 32px 40px;
   display: flex;
   align-items: center;
@@ -6931,7 +6939,7 @@ button.offer-accordion-header:focus-visible {
   transition: background-color 200ms ease;
 }
 #page-offer .offer-accordion-header:hover { background: #EEEAE5; }
-#page-offer .offer-accordion-open > .offer-accordion-header { background: #E5EADF; }
+#page-offer .offer-accordion-open > .offer-accordion-header { background: #E9DED3; }
 #page-offer .offer-accordion-col-main { gap: 24px; min-width: 0; }
 #page-offer .offer-accordion-number { padding-top: 8px; font-size: 16px !important; }
 #page-offer .offer-accordion-title { font-size: 34px !important; margin-bottom: 12px !important; }
