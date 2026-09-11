@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try { renderArticles(); } catch(e){ console.error('Articles error:', e); }
   try { initRoutingFromHash(); } catch(e){ console.error('Routing error:', e); }
   try { initSidebarScrollSpy(); } catch(e){ console.error('Scrollspy error:', e); }
+  try { initScrollRevealObserver(); } catch(e){ console.error('ScrollReveal error:', e); }
 
   window.addEventListener('hashchange', initRoutingFromHash);
   window.addEventListener('popstate', initRoutingFromHash);
@@ -763,4 +764,22 @@ document.addEventListener('keydown', function(e) {
     }
   }
 });
+
+/* SCROLL REVEAL OBSERVER */
+function initScrollRevealObserver() {
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('revealed'));
+  }
+}
 
