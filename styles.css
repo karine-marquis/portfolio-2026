@@ -5465,18 +5465,17 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
    MON OFFRE — HERO DESKTOP ÉDITORIAL EN 2 COLONNES JAPANDI
    ========================================================================== */
 #page-offer .offer-hero-wrapper {
-  background-color: var(--color-sauge-soft, #E3E8DF);
-  border: 1px solid var(--color-sauge-border, #CBD4C7);
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 20px 0 0 0 !important;
   box-shadow: none !important;
-  border-radius: 16px;
-  padding: 48px 52px;
   margin-bottom: 56px;
 }
 
 #page-offer .offer-hero-grid {
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 48px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
   align-items: center;
 }
 
@@ -5488,8 +5487,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 #page-offer .offer-hero-editorial-tag {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 14px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 #page-offer .offer-hero-kicker {
@@ -5497,36 +5496,41 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   font-size: 12px !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.12em !important;
-  color: #9B5620 !important;
+  letter-spacing: 0.14em !important;
+  color: var(--color-accent) !important;
 }
 
 #page-offer .offer-hero-kicker-line {
   display: inline-block;
-  width: 42px;
+  width: 36px;
   height: 1px;
-  background-color: #D4CCC9;
-  opacity: 0.8;
+  background-color: var(--color-border);
+  opacity: 0.7;
 }
 
 #page-offer .offer-hero-title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 36px !important;
+  font-size: 38px !important;
   font-weight: 500 !important;
-  color: #3E3934 !important;
-  line-height: 1.25 !important;
+  color: var(--color-text) !important;
+  line-height: 1.28 !important;
   margin-top: 0 !important;
-  margin-bottom: 18px !important;
+  margin-bottom: 24px !important;
+  max-width: 640px;
+}
+
+#page-offer .offer-hero-body {
+  max-width: 580px;
 }
 
 #page-offer .offer-hero-body p {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 15.5px !important;
-  line-height: 1.65 !important;
-  color: #3E3934 !important;
-  opacity: 0.92;
+  font-size: 16.5px !important;
+  line-height: 1.75 !important;
+  color: var(--color-text) !important;
+  opacity: 0.9;
   margin-top: 0 !important;
-  margin-bottom: 14px !important;
+  margin-bottom: 16px !important;
 }
 
 #page-offer .offer-hero-body p:last-child {
@@ -5534,7 +5538,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 }
 
 #page-offer .offer-hero-cta-wrapper {
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
 /* Colonne Illustration Droite */
@@ -5545,17 +5549,18 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
 #page-offer .offer-hero-img-container {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(62, 57, 52, 0.10) !important;
-  border: 1px solid var(--color-sauge-border, #CBD4C7);
-  background: var(--color-sauge-soft, #E3E8DF);
+  box-shadow: -12px 18px 44px rgba(62, 57, 52, 0.08) !important;
+  border: none !important;
+  background: transparent;
   box-sizing: border-box;
-  transition: box-shadow var(--duration-card) var(--ease-japandi) !important;
+  transition: transform var(--duration-card) var(--ease-japandi), box-shadow var(--duration-card) var(--ease-japandi) !important;
 }
 
 #page-offer .offer-hero-img-container:hover {
-  box-shadow: 0 14px 30px rgba(62, 57, 52, 0.15) !important;
+  transform: translateY(-3px);
+  box-shadow: -14px 22px 48px rgba(62, 57, 52, 0.12) !important;
 }
 
 #page-offer .offer-hero-img {
@@ -5564,13 +5569,13 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   object-fit: cover;
   object-position: center;
   display: block;
-  border-radius: 16px;
+  border-radius: 20px;
 }
 
 /* INTRODUCTION SECTION DES OFFRES */
 #page-offer .offer-section-header {
   max-width: 1140px;
-  margin: 44px auto 32px auto;
+  margin: 0 auto 32px auto;
 }
 
 #page-offer .offer-section-kicker {
@@ -5624,7 +5629,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   position: relative;
   width: 100%;
   max-width: 1140px;
-  height: 230px;
+  height: auto;
   margin: 0 auto 56px auto;
   border-radius: 16px;
   overflow: hidden;
@@ -5634,16 +5639,67 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
 #page-offer .offer-pause-banner-img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   border-radius: 16px;
-  object-fit: cover;
-  object-position: center 30%;
+  object-fit: contain;
+  transition: transform 400ms var(--ease-japandi, cubic-bezier(0.16, 1, 0.3, 1)) !important;
+}
+
+#page-offer .offer-pause-banner:hover .offer-pause-banner-img {
+  transform: scale(1.015) !important;
+}
+
+.offer-pause-banner-cta-btn {
+  position: absolute;
+  bottom: 4.5%;
+  left: 53.5%;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--color-accent, #A85E3F) !important;
+  color: #FFFDFC !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.03em !important;
+  border-radius: 6px !important;
+  border: 1px solid #8E4C31 !important;
+  padding: 5px 14px !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  white-space: nowrap;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(168, 94, 63, 0.18) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.offer-pause-banner-cta-btn:hover {
+  background-color: var(--color-accent-hover, #8E4C31) !important;
+  color: #FFFFFF !important;
+  border-color: #7A3F27 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(168, 94, 63, 0.28) !important;
+}
+
+.offer-pause-banner-cta-btn:focus-visible {
+  outline: 2px solid var(--color-accent, #A85E3F);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .offer-pause-banner-cta-btn {
+    padding: 4px 10px !important;
+    font-size: 10.5px !important;
+    border-radius: 4px !important;
+    left: 52%;
+    bottom: 3.5%;
+  }
 }
 
 @media (max-width: 900px) {
   #page-offer .offer-pause-banner {
-    height: 190px;
+    height: auto;
     margin: 0 auto 44px auto;
   }
 }
@@ -5658,136 +5714,235 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 }
 
-/* SECTION EXPERTISE DIGITAL LEARNING (MON OFFRE) */
-#page-offer .offer-learning-section {
+/* SECTION MÉTHODES & COMPÉTENCES (MON OFFRE) */
+#page-offer .offer-methods-section {
   width: 100%;
   max-width: 1140px;
   margin: 72px auto 80px auto;
   padding-top: 56px;
-  border-top: 1px solid rgba(212, 204, 201, 0.6);
+  border-top: 1px solid var(--color-border, #CBD4C7);
 }
 
-#page-offer .offer-learning-container {
-  width: 100%;
+#page-offer .offer-methods-header {
+  max-width: 780px;
+  margin-bottom: 48px;
 }
 
-#page-offer .offer-learning-content-layout {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 44px;
-  align-items: center;
-  margin-bottom: 56px;
-}
-
-#page-offer .offer-learning-media-block {
-  border-radius: 16px;
-  overflow: hidden;
-  display: flex;
-}
-
-#page-offer .offer-learning-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 16px;
-  display: block;
-}
-
-#page-offer .offer-learning-text-block {
-  width: 100%;
-}
-
-#page-offer .offer-learning-label {
+#page-offer .offer-methods-kicker {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
   font-weight: 600 !important;
+  text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
-  color: #9B5620 !important;
+  color: var(--color-accent) !important;
   display: block;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-#page-offer .offer-learning-title {
+#page-offer .offer-methods-title {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 32px !important;
   font-weight: 500 !important;
-  color: #3E3934 !important;
-  line-height: 1.25 !important;
+  color: var(--color-text) !important;
+  line-height: 1.28 !important;
   margin-top: 0 !important;
   margin-bottom: 8px !important;
 }
 
-#page-offer .offer-learning-subtitle {
+#page-offer .offer-methods-subtitle {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 16.5px !important;
   font-weight: 500 !important;
-  color: #786D65 !important;
+  color: var(--color-text-muted, #786D65) !important;
   line-height: 1.4 !important;
   margin-top: 0 !important;
-  margin-bottom: 28px !important;
+  margin-bottom: 18px !important;
 }
 
-#page-offer .offer-learning-main-text {
-  max-width: 780px;
-  margin-bottom: 56px;
-}
-
-#page-offer .offer-learning-main-text p {
+#page-offer .offer-methods-intro {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 15px !important;
-  line-height: 1.65 !important;
-  color: #3E3934 !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: var(--color-text) !important;
   opacity: 0.9;
-  margin-top: 0 !important;
-  margin-bottom: 16px !important;
-}
-
-#page-offer .offer-learning-main-text p:last-child {
-  margin-bottom: 0 !important;
-}
-
-/* GRILLE DES 4 SOUS-PARTIES — STRUCTURE ÉDITORIALE AÉRÉE */
-#page-offer .offer-learning-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 56px;
-}
-
-#page-offer .offer-learning-item {
-  border-top: 1px solid rgba(212, 204, 201, 0.55);
-  padding-top: 24px;
-}
-
-#page-offer .offer-learning-item-title {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 19px !important;
-  font-weight: 500 !important;
-  color: #3E3934 !important;
-  margin-top: 0 !important;
-  margin-bottom: 12px !important;
-  line-height: 1.35 !important;
-}
-
-#page-offer .offer-learning-item-text {
-  font-family: 'Montserrat', sans-serif !important;
-  font-size: 14.5px !important;
-  line-height: 1.6 !important;
-  color: #3E3934 !important;
-  opacity: 0.88;
   margin: 0 !important;
 }
 
-#page-offer .offer-learning-item-note {
+/* Grille 6 Cartes Éditoriales Épurées */
+#page-offer .offer-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+#page-offer .offer-method-card {
+  background: #F7F3EE;
+  border: 1px solid var(--color-border, #D5C9C1);
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(62, 57, 52, 0.03);
+  transition: transform 300ms var(--ease-japandi, cubic-bezier(0.16, 1, 0.3, 1)), box-shadow 300ms var(--ease-japandi, cubic-bezier(0.16, 1, 0.3, 1)), border-color 300ms ease;
+}
+
+#page-offer .offer-method-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(62, 57, 52, 0.07);
+  border-color: var(--color-accent, #A85E3F);
+}
+
+#page-offer .offer-method-card-icon {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent, #A85E3F);
+  margin-bottom: 20px;
+}
+
+#page-offer .offer-method-card-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  color: var(--color-text) !important;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+  line-height: 1.3 !important;
+}
+
+#page-offer .offer-method-card-desc {
   font-family: 'Montserrat', sans-serif !important;
-  font-size: 13.5px !important;
-  line-height: 1.55 !important;
-  color: #6B5E54 !important;
-  font-style: italic;
-  margin-top: 14px !important;
-  margin-bottom: 0 !important;
-  padding-left: 14px;
-  border-left: 2px solid rgba(155, 86, 32, 0.4);
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  color: var(--color-text) !important;
+  margin: 0 !important;
+}
+
+/* BANNIÈRE RESPIRATION VISUELLE SOUS LES CARTES MÉTHODES */
+#page-offer .offer-methods-banner {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto 56px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(62, 57, 52, 0.08);
+  display: block;
+}
+
+#page-offer .offer-methods-banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Bloc Collaboration Horizontal */
+#page-offer .offer-collab-block {
+  background: var(--color-sauge-soft, #E3E8DF);
+  border-radius: 16px;
+  padding: 44px 52px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+#page-offer .offer-collab-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#page-offer .offer-collab-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 26px !important;
+  font-weight: 500 !important;
+  color: var(--color-text) !important;
+  line-height: 1.3 !important;
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+}
+
+#page-offer .offer-collab-desc {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 15.5px !important;
+  line-height: 1.7 !important;
+  color: var(--color-text) !important;
+  opacity: 0.9;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+}
+
+#page-offer .offer-collab-cta-link {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--color-accent, #A85E3F) !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 250ms ease, color 250ms ease;
+}
+
+#page-offer .offer-collab-cta-link:hover {
+  color: var(--color-accent-hover, #8E4C31) !important;
+  transform: translateX(3px);
+}
+
+#page-offer .offer-collab-img-col {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: -8px 12px 28px rgba(62, 57, 52, 0.08);
+}
+
+#page-offer .offer-collab-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1000px) {
+  #page-offer .offer-methods-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  #page-offer .offer-collab-block {
+    grid-template-columns: 1fr;
+    padding: 36px 32px;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  #page-offer .offer-methods-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  #page-offer .offer-methods-section {
+    margin: 48px auto 56px auto;
+    padding-top: 40px;
+  }
+  #page-offer .offer-collab-block {
+    padding: 28px 24px;
+  }
+  #page-offer .offer-methods-title {
+    font-size: 26px !important;
+  }
+  #page-offer .offer-collab-title {
+    font-size: 22px !important;
+  }
 }
 
 @media (max-width: 900px) {
@@ -6464,7 +6619,7 @@ button.offer-accordion-header:focus-visible {
   background: var(--color-sauge-soft, #E3E8DF);
   border-radius: 16px;
   border: 1px solid var(--color-sauge-border, #CBD4C7);
-  padding: 32px 40px;
+  padding: 22px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6515,7 +6670,7 @@ button.offer-accordion-header:focus-visible {
   #page-offer .offer-final-cta-block {
     flex-direction: column;
     align-items: flex-start;
-    padding: 24px 20px;
+    padding: 18px 20px;
     gap: 20px;
     margin-top: 32px;
   }
@@ -6580,12 +6735,16 @@ button.offer-accordion-header:focus-visible {
 /* RESPONSIVE MOBILE (≤ 768px) */
 @media (max-width: 768px) {
   #page-offer .offer-hero-wrapper {
-    padding: 28px 20px;
-    margin-bottom: 36px;
+    padding: 36px 24px;
+    border-radius: 20px;
+    margin-bottom: 44px;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   #page-offer .offer-hero-img-container {
-    box-shadow: 0 10px 24px rgba(62, 57, 52, 0.12) !important;
+    box-shadow: -6px 12px 28px rgba(62, 57, 52, 0.08) !important;
+    border: none !important;
   }
 
   .offer-accordion-content-inner {
@@ -6992,20 +7151,22 @@ button.offer-accordion-header:focus-visible {
 
 
 /* Mon offre : hiérarchie et respiration des trois prestations. */
-#page-offer .offer-accordions-wrapper { border-top: none; }
+#page-offer .offer-accordions-wrapper {
+  border-top: 1px solid var(--color-border) !important;
+}
 #page-offer .offer-accordion-item {
-  margin-bottom: 28px;
-  border-top: 1px solid #D4CCC9;
-  border-bottom: 1px solid #D4CCC9;
+  margin-bottom: 0 !important;
+  border-top: none !important;
+  border-bottom: 1px solid var(--color-border) !important;
 }
 #page-offer .offer-accordion-header {
-  padding: 36px 28px;
-  gap: 40px;
+  padding: 24px 8px !important;
+  gap: 32px !important;
   border-radius: 0;
   transition: background-color 200ms ease;
 }
 #page-offer .offer-accordion-header:hover { background: #EEEAE5; }
-#page-offer .offer-accordion-open > .offer-accordion-header { background: #E9DED3; }
+#page-offer .offer-accordion-open > .offer-accordion-header { background: var(--color-sauge-soft); }
 #page-offer .offer-accordion-col-main { gap: 24px; min-width: 0; }
 #page-offer .offer-accordion-number { padding-top: 8px; font-size: 16px !important; }
 #page-offer .offer-accordion-title { font-size: 34px !important; margin-bottom: 12px !important; }
@@ -7032,7 +7193,7 @@ button.offer-accordion-header:focus-visible {
 #page-offer .offer-step-duration { font-size: 14px; text-align: right; }
 #page-offer .offer-formats-grid { gap: 24px; margin-bottom: 24px; }
 #page-offer #offer-accordion-03 .offer-formats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-#page-offer .offer-format-item { padding: 26px 24px 28px; background: #EEEAE5; border-left: 3px solid var(--color-sauge-border, #CBD4C7); }
+#page-offer .offer-format-item { padding: 26px 24px 28px; background: #F7F3EE; border: 1px solid var(--color-border); border-left: 3px solid var(--color-sauge-border, #CBD4C7); }
 #page-offer .offer-format-header { margin-bottom: 18px; }
 #page-offer .offer-format-title { font-size: 23px !important; margin-bottom: 12px !important; }
 #page-offer .offer-format-meta { font-size: 15px !important; line-height: 1.7; }
