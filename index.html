@@ -345,6 +345,11 @@
     </svg>
   </button>
 
+  <!-- BOUTON GLOBAL RETOUR EN HAUT (MOBILE UNIQUEMENT) -->
+  <button id="globalMobileScrollToTopBtn" class="global-mobile-scroll-top-btn" aria-label="Revenir en haut de la page">
+    <span aria-hidden="true">↑</span>
+  </button>
+
   <!-- CASE STUDY CANVA DRAWER MODAL INTERACTIF EMBEDDED -->
   <div class="drawer-overlay" id="projectDrawerOverlay">
     <div class="drawer-content" style="max-width: 1280px; background: #F2E5DE; padding: 0;">
@@ -2071,8 +2076,9 @@
               </header>
 
               <div class="chapter-vignette-col mobile-only-vignette">
-                <div class="chapter-vignette-container">
+                <div class="chapter-vignette-container" style="position: relative; overflow: visible;">
                   <img src="Mon-approche/Observer.png" alt="Illustration d’un espace de travail évoquant une phase d’observation et de prise de notes en UX design" class="chapter-vignette-img">
+                  <div class="approach-hero-note">Observer / Comprendre / Concevoir / Ensemble</div>
                 </div>
               </div>
 
@@ -2330,8 +2336,7 @@
 
         <!-- INTRODUCTION SECTION DES OFFRES -->
         <div class="offer-section-header">
-          <span class="offer-section-kicker">MES OFFRES</span>
-          <h2 class="offer-section-title">Trois façons de travailler ensemble</h2>
+          <h2 class="offer-section-title">3 façons de travailler ensemble</h2>
           <div class="offer-section-intro">
             <p>Vous avez des retours mais pas encore les priorités ? Une idée à tester avant d’aller plus loin ? Ou besoin d’un regard UX dans la durée ?</p>
             <p>Trois façons de travailler ensemble, selon l’étape où en est votre projet.</p>
@@ -2633,8 +2638,15 @@
 
         <!-- BANNIÈRE ILLUSTRÉE / PAUSE VISUELLE -->
         <div class="offer-pause-banner">
-          <img src="Mon-approche/conviction_design_entre_carnets_et_café.png" alt="Des recommandations concrètes. Parce qu’un PDF de 80 pages n’a encore jamais réparé un parcours tout seul." class="offer-pause-banner-img" loading="lazy">
+          <div class="offer-pause-banner-content">
+            <span class="offer-pause-banner-kicker">MA CONVICTION</span>
+            <h3 class="offer-pause-banner-title">Ce n’est pas à l’utilisateur de s’adapter.</h3>
+            <p class="offer-pause-banner-desc">Une bonne expérience ne demande pas plus d’effort. Elle s’intègre naturellement dans la vie des gens, avec leurs contraintes, leurs doutes et leurs objectifs.</p>
+          </div>
           <a href="#page-approach" onclick="navigateTo('approach')" class="offer-pause-banner-cta-btn">En savoir plus sur mon approche →</a>
+          <div class="offer-pause-banner-img-wrap">
+            <img src="Mon-approche/conviction_design_entre_carnets_et_café.png" alt="Des recommandations concrètes. Parce qu’un PDF de 80 pages n’a encore jamais réparé un parcours tout seul." class="offer-pause-banner-img" loading="lazy">
+          </div>
         </div>
 
         <!-- SECTION MÉTHODES CONCRÈTES ET COMPLÉMENTAIRES -->

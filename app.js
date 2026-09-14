@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try { initRoutingFromHash(); } catch(e){ console.error('Routing error:', e); }
   try { initSidebarScrollSpy(); } catch(e){ console.error('Scrollspy error:', e); }
   try { initScrollRevealObserver(); } catch(e){ console.error('ScrollReveal error:', e); }
+  try { initGlobalMobileBackToTop(); } catch(e){ console.error('BackToTop error:', e); }
 
   window.addEventListener('hashchange', initRoutingFromHash);
   window.addEventListener('popstate', initRoutingFromHash);
@@ -818,5 +819,31 @@ function initScrollRevealObserver() {
   } else {
     document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('revealed'));
   }
+}
+
+/* BOUTON GLOBAL RETOUR EN HAUT (MOBILE UNIQUEMENT) */
+function initGlobalMobileBackToTop() {
+  const btn = document.getElementById('globalMobileScrollToTopBtn');
+  if (!btn) return;
+
+  function updateVisibility() {
+    const threshold = window.innerHeight || 400;
+    if (window.scrollY >= threshold) {
+      btn.classList.add('is-visible');
+    } else {
+      btn.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+  updateVisibility();
+
+  btn.addEventListener('click', function() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+  });
 }
 

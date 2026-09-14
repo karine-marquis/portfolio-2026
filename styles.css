@@ -5328,6 +5328,10 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   letter-spacing: 0.04em !important;
 }
 
+.approach-hero-note {
+  display: none;
+}
+
 /* 1. BLOCS NEUTRES (Étapess 01 et 04) */
 #page-approach .roadmap-item-neutral {
   background: #FAF8F5 !important;
@@ -5586,7 +5590,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   letter-spacing: 0.1em !important;
   color: #9B5620 !important;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 
 #page-offer .offer-section-title {
@@ -5625,6 +5629,10 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 }
 
 /* BANNIÈRE ILLUSTRÉE / PAUSE VISUELLE (MON OFFRE) */
+.offer-pause-banner-content {
+  display: none;
+}
+
 #page-offer .offer-pause-banner {
   position: relative;
   width: 100%;
@@ -5657,43 +5665,143 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background-color: var(--color-accent, #A85E3F) !important;
+  background-color: #55624F !important;
   color: #FFFDFC !important;
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12.5px !important;
   font-weight: 500 !important;
   letter-spacing: 0.03em !important;
   border-radius: 6px !important;
-  border: 1px solid #8E4C31 !important;
+  border: 1px solid #485443 !important;
   padding: 5px 14px !important;
   cursor: pointer;
   text-decoration: none !important;
   white-space: nowrap;
   z-index: 5;
-  box-shadow: 0 2px 6px rgba(168, 94, 63, 0.18) !important;
+  box-shadow: 0 2px 6px rgba(85, 98, 79, 0.18) !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .offer-pause-banner-cta-btn:hover {
-  background-color: var(--color-accent-hover, #8E4C31) !important;
+  background-color: #44513E !important;
   color: #FFFFFF !important;
-  border-color: #7A3F27 !important;
+  border-color: #394435 !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(168, 94, 63, 0.28) !important;
+  box-shadow: 0 4px 12px rgba(85, 98, 79, 0.28) !important;
 }
 
 .offer-pause-banner-cta-btn:focus-visible {
-  outline: 2px solid var(--color-accent, #A85E3F);
+  outline: 2px solid #55624F;
   outline-offset: 2px;
 }
 
 @media (max-width: 768px) {
+  /* Gouttière mobile harmonisée (20px) pour la page Mon offre */
+  #page-offer .content-wrap {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ombre légère mobile pour les cartes Mon offre */
+  #page-offer .offer-pause-banner,
+  #page-offer .offer-method-card,
+  #page-offer .offer-vision-container,
+  #page-offer .offer-final-cta-block {
+    box-shadow: 0 6px 18px rgba(62, 57, 52, 0.08) !important;
+  }
+
+  #page-offer .offer-pause-banner {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 auto 40px auto !important;
+    padding: 24px 18px !important;
+    background: #F7F3EE !important;
+    border: 1px solid rgba(212, 204, 201, 0.45) !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    height: auto !important;
+  }
+
+  .offer-pause-banner-content {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-bottom: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .offer-pause-banner-kicker {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    color: #9B5620 !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+    text-transform: uppercase !important;
+  }
+
+  .offer-pause-banner-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 23px !important;
+    font-weight: 500 !important;
+    color: #3E3934 !important;
+    line-height: 1.3 !important;
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .offer-pause-banner-desc {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #3E3934 !important;
+    opacity: 0.9 !important;
+    margin: 0 !important;
+  }
+
   .offer-pause-banner-cta-btn {
-    padding: 4px 10px !important;
-    font-size: 10.5px !important;
-    border-radius: 4px !important;
-    left: 52%;
-    bottom: 3.5%;
+    position: static !important;
+    display: inline-flex !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+    font-size: 12.5px !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    transform: none !important;
+    box-shadow: 0 2px 6px rgba(85, 98, 79, 0.18) !important;
+    box-sizing: border-box !important;
+  }
+
+  .offer-pause-banner-img-wrap {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: 220px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+
+  #page-offer .offer-pause-banner-img {
+    width: 200% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover !important;
+    object-position: left center !important;
+    border-radius: 12px !important;
+    transform: none !important;
   }
 }
 
@@ -5708,9 +5816,6 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   #page-offer .offer-pause-banner {
     height: auto;
     margin: 0 auto 36px auto;
-  }
-  #page-offer .offer-pause-banner-img {
-    height: auto;
   }
 }
 
@@ -5922,6 +6027,14 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     grid-template-columns: 1fr;
     padding: 36px 32px;
     gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  #page-offer .offer-methods-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -6187,7 +6300,8 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     margin-right: 0;
     margin-top: 36px;
     margin-bottom: 40px;
-    padding-top: 28px;
+    padding-top: 0;
+    border-top: none !important;
   }
   #page-offer .offer-vision-container {
     grid-template-columns: 1fr;
@@ -6211,7 +6325,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   #page-offer .offer-vision-section {
     margin-top: 44px;
     margin-bottom: 48px;
-    padding-top: 36px;
+    padding-top: 0 !important;
   }
   #page-offer .offer-vision-text-block {
     padding: 28px 24px;
@@ -6734,17 +6848,75 @@ button.offer-accordion-header:focus-visible {
 
 /* RESPONSIVE MOBILE (≤ 768px) */
 @media (max-width: 768px) {
+  /* MON OFFRE HERO — RESPONSIVE MOBILE */
   #page-offer .offer-hero-wrapper {
-    padding: 36px 24px;
-    border-radius: 20px;
-    margin-bottom: 44px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px 20px 24px 20px !important;
+    box-sizing: border-box !important;
+    margin-bottom: 40px !important;
     border: none !important;
     box-shadow: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  #page-offer .offer-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  #page-offer .offer-hero-text-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #page-offer .offer-hero-title {
+    font-size: 26px !important;
+    line-height: 1.35 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  #page-offer .offer-hero-body {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #page-offer .offer-hero-body p {
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+  }
+
+  #page-offer .offer-hero-cta-wrapper {
+    display: none !important;
+  }
+
+  #page-offer .offer-hero-img-col {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   #page-offer .offer-hero-img-container {
+    width: 100% !important;
+    max-width: 100% !important;
     box-shadow: -6px 12px 28px rgba(62, 57, 52, 0.08) !important;
     border: none !important;
+    transform: translateX(12px) !important;
+  }
+
+  #page-offer .offer-hero-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 
   .offer-accordion-content-inner {
@@ -6829,6 +7001,24 @@ button.offer-accordion-header:focus-visible {
     min-height: 160px !important;
     height: 180px !important;
     max-height: 220px !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  .approach-hero-note {
+    display: block !important;
+    position: absolute !important;
+    top: -18px !important;
+    right: 8px !important;
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-style: italic !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: var(--color-accent, #9B5620) !important;
+    line-height: 1.3 !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+    white-space: nowrap !important;
   }
 
   .chapter-header {
@@ -7207,6 +7397,12 @@ button.offer-accordion-header:focus-visible {
   #page-offer #offer-accordion-03 .offer-formats-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
+  #page-offer .offer-section-header {
+    width: calc(100% - 32px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
   #page-offer .offer-accordions-wrapper { width: calc(100% - 32px); }
   #page-offer .offer-accordion-item { margin-bottom: 24px; }
   #page-offer .offer-accordion-header { grid-template-columns: 1fr; padding: 28px 20px; gap: 20px; }
@@ -7228,4 +7424,68 @@ button.offer-accordion-header:focus-visible {
   #page-offer .offer-accordion-header,
   #page-offer .offer-accordion-body,
   #page-offer .offer-accordion-chevron { transition: none; }
+}
+
+/* ==========================================================================
+   BOUTON GLOBAL RETOUR EN HAUT (MOBILE UNIQUEMENT)
+   ========================================================================== */
+@media (min-width: 769px) {
+  .global-mobile-scroll-top-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .global-mobile-scroll-top-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    background-color: var(--color-cta, #596756) !important;
+    color: #FFFDFC !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 50% !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 14px rgba(45, 58, 49, 0.25) !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 300ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 200ms ease !important;
+  }
+
+  .global-mobile-scroll-top-btn.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  .global-mobile-scroll-top-btn:focus-visible {
+    outline: 2px solid var(--color-cta, #596756) !important;
+    outline-offset: 3px !important;
+  }
+
+  .global-mobile-scroll-top-btn:hover,
+  .global-mobile-scroll-top-btn:active {
+    background-color: var(--color-cta-hover, #44513E) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .global-mobile-scroll-top-btn {
+    transition: none !important;
+  }
 }
