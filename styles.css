@@ -1183,7 +1183,6 @@ strong, b {
   .case-study-item-card { grid-template-columns: 1fr; }
   .timeline-grid, .pricing-grid { grid-template-columns: 1fr; }
   .footer-banner-box { flex-direction: column; text-align: center; gap: 16px; }
-  .nav-menu { display: none; }
   .footer-container { flex-direction: column; align-items: flex-start; gap: 16px; }
   .footer-inline-links { flex-wrap: wrap; gap: 14px; }
   .footer-bottom-flex { flex-direction: column; text-align: center; }
@@ -3803,6 +3802,13 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 /* ==========================================================================
    Ã‰TAPE 1 : HEADER MOBILE RESPONSIVE (BREAKPOINT MOBILE â‰¤ 768px & 390px)
    ========================================================================== */
+@media (max-width: 1100px) {
+  .navbar nav,
+  .nav-menu {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     height: 66px !important;
@@ -3811,11 +3817,6 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   .nav-container {
     padding: 0 20px !important;
     height: 100% !important;
-  }
-  
-  .navbar nav,
-  .nav-menu {
-    display: none !important;
   }
 
   .brand-km {
@@ -4193,7 +4194,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border-top: 1px solid #E5DCD3 !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .mobile-hamburger-btn {
     display: inline-flex !important;
   }
@@ -5693,6 +5694,14 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 .offer-pause-banner-cta-btn:focus-visible {
   outline: 2px solid #55624F;
   outline-offset: 2px;
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  #page-offer .content-wrap {
+    width: min(100% - 48px, 980px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -7427,26 +7436,28 @@ button.offer-accordion-header:focus-visible {
 }
 
 /* ==========================================================================
-   BOUTON GLOBAL RETOUR EN HAUT (MOBILE UNIQUEMENT)
+   BOUTON GLOBAL RETOUR EN HAUT (MOBILE & TABLETTE JUSQU'À 1100PX)
    ========================================================================== */
-@media (min-width: 769px) {
+@media (min-width: 1101px) {
+  #globalMobileScrollToTopBtn.global-mobile-scroll-top-btn,
   .global-mobile-scroll-top-btn {
     display: none !important;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  #globalMobileScrollToTopBtn.global-mobile-scroll-top-btn,
   .global-mobile-scroll-top-btn {
     display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 24px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
+    align-items: center !important;
+    justify-content: center !important;
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 20px !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
     background-color: var(--color-cta, #596756) !important;
     color: #FFFDFC !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
@@ -7455,11 +7466,12 @@ button.offer-accordion-header:focus-visible {
     font-size: 20px !important;
     font-weight: 600 !important;
     line-height: 1 !important;
-    cursor: pointer;
-    z-index: 9999;
+    cursor: pointer !important;
+    z-index: 9999 !important;
     box-shadow: 0 4px 14px rgba(45, 58, 49, 0.25) !important;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none !important;
     transform: translateY(12px);
     transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1),
                 visibility 300ms cubic-bezier(0.16, 1, 0.3, 1),
@@ -7467,17 +7479,22 @@ button.offer-accordion-header:focus-visible {
                 background-color 200ms ease !important;
   }
 
+  #globalMobileScrollToTopBtn.global-mobile-scroll-top-btn.is-visible,
   .global-mobile-scroll-top-btn.is-visible {
     opacity: 1 !important;
     visibility: visible !important;
+    pointer-events: auto !important;
     transform: translateY(0) !important;
   }
 
+  #globalMobileScrollToTopBtn.global-mobile-scroll-top-btn:focus-visible,
   .global-mobile-scroll-top-btn:focus-visible {
     outline: 2px solid var(--color-cta, #596756) !important;
     outline-offset: 3px !important;
   }
 
+  #globalMobileScrollToTopBtn.global-mobile-scroll-top-btn:hover,
+  #globalMobileScrollToTopBtn.global-mobile-scroll-top-btn:active,
   .global-mobile-scroll-top-btn:hover,
   .global-mobile-scroll-top-btn:active {
     background-color: var(--color-cta-hover, #44513E) !important;
@@ -7485,6 +7502,7 @@ button.offer-accordion-header:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  #globalMobileScrollToTopBtn.global-mobile-scroll-top-btn,
   .global-mobile-scroll-top-btn {
     transition: none !important;
   }

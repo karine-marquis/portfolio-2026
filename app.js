@@ -821,14 +821,15 @@ function initScrollRevealObserver() {
   }
 }
 
-/* BOUTON GLOBAL RETOUR EN HAUT (MOBILE UNIQUEMENT) */
+/* BOUTON GLOBAL RETOUR EN HAUT (MOBILE & TABLETTE) */
 function initGlobalMobileBackToTop() {
   const btn = document.getElementById('globalMobileScrollToTopBtn');
   if (!btn) return;
 
   function updateVisibility() {
+    const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const threshold = window.innerHeight || 400;
-    if (window.scrollY >= threshold) {
+    if (scrollPos >= threshold) {
       btn.classList.add('is-visible');
     } else {
       btn.classList.remove('is-visible');
@@ -836,6 +837,8 @@ function initGlobalMobileBackToTop() {
   }
 
   window.addEventListener('scroll', updateVisibility, { passive: true });
+  window.addEventListener('resize', updateVisibility, { passive: true });
+  window.addEventListener('orientationchange', updateVisibility, { passive: true });
   updateVisibility();
 
   btn.addEventListener('click', function() {
