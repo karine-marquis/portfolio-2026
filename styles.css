@@ -437,6 +437,57 @@ strong, b {
   margin: 0 auto;
 }
 
+#page-about .content-wrap {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
+}
+
+/* Hero Page T'es qui ? (À propos) — Composition éditoriale compacte */
+#page-about .section-header-center {
+  margin-bottom: 16px !important;
+}
+
+#page-about .about-hero-grid {
+  display: grid !important;
+  grid-template-columns: 360px 1fr !important;
+  gap: 36px !important;
+  align-items: flex-start !important;
+  margin-top: 0 !important;
+}
+
+#page-about .about-hero-img-col {
+  width: 100% !important;
+  max-width: 360px !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  box-shadow: 0 14px 32px rgba(62, 57, 52, 0.08) !important;
+  border: 1px solid var(--color-border) !important;
+  transform: translateX(calc(-1 * ((100vw - 1140px) / 2 + 32px - 5px))) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--color-surface) !important;
+}
+
+#page-about .about-hero-img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 540px !important;
+  object-fit: contain !important;
+  display: block !important;
+  border-radius: 0 !important;
+}
+
+#page-about .about-hero-text-col {
+  padding-top: 10px !important;
+}
+
 .section-spacing {
   padding: 20px 0 40px 0;
 }
@@ -5702,19 +5753,52 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 @media (min-width: 769px) and (max-width: 1100px) {
   #page-offer .content-wrap,
   #page-approach .content-wrap,
-  #page-projects .content-wrap {
+  #page-projects .content-wrap,
+  #page-about .content-wrap {
     width: min(100% - 48px, 980px) !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
+
+  #page-about .about-hero-grid {
+    grid-template-columns: 310px 1fr !important;
+    gap: 28px !important;
+    align-items: flex-start !important;
+    margin-top: 0 !important;
+  }
+
+  #page-about .about-hero-img-col {
+    max-width: 310px !important;
+    transform: translateX(-35px) !important;
+    border-radius: 0 !important;
+  }
 }
 
-@media (max-width: 768px) {
-  /* Gouttière mobile harmonisée (20px) pour la page Mon offre */
-  #page-offer .content-wrap {
+@media (max-width: 767px) {
+  /* Gouttière mobile harmonisée (20px) pour la page Mon offre & T'es qui ? */
+  #page-offer .content-wrap,
+  #page-about .content-wrap {
     padding-left: 20px !important;
     padding-right: 20px !important;
     box-sizing: border-box !important;
+  }
+
+  #page-about .about-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    margin-top: 0 !important;
+  }
+
+  #page-about .about-hero-img-col {
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    transform: none !important;
+  }
+
+  #page-about .about-hero-text-col {
+    padding-top: 0 !important;
   }
 
   /* Ombre légère mobile pour les cartes Mon offre */
@@ -7422,6 +7506,16 @@ button.offer-accordion-header:focus-visible {
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
     height: auto !important;
+  }
+
+  .footer-ai-mention {
+    display: block !important;
+    margin-top: 4px !important;
+    font-size: 9.5px !important;
+    opacity: 0.75 !important;
+    font-weight: 400 !important;
+    line-height: 1.35 !important;
+    color: inherit !important;
   }
 }
 
