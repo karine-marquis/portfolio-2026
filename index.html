@@ -1632,8 +1632,7 @@
 
 
 
-  <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Approche - Offre - Projets - À propos - À lire) -->
-  <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Approche - Offre - Projets - À propos - À lire) -->
+  <!-- NAVBAR OVERLAY EXACTE (Logo KM + UX - UI Designer | Ordre : Accueil - Projets - Approche - Offre - T’es qui ? - Journal) -->
   <header class="navbar">
     <div class="nav-container">
       <a href="#page-home" onclick="navigateTo('home')" class="brand-logo-wrap" aria-label="Retour à l'accueil KM UX - UI Designer">
@@ -1644,9 +1643,9 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="#page-home" onclick="navigateTo('home'); return false;" class="nav-link active">Accueil</a></li>
+          <li><a href="#page-projects" onclick="navigateTo('projects'); return false;" class="nav-link">Mes projets</a></li>
           <li><a href="#page-approach" onclick="navigateTo('approach'); return false;" class="nav-link">Mon approche</a></li>
           <li><a href="#page-offer" onclick="navigateTo('offer'); return false;" class="nav-link">Mon offre</a></li>
-          <li><a href="#page-projects" onclick="navigateTo('projects'); return false;" class="nav-link">Mes projets</a></li>
           <li><a href="#page-about" onclick="navigateTo('about'); return false;" class="nav-link">T’es qui ?</a></li>
           <li><a href="#page-blog" onclick="navigateTo('blog'); return false;" class="nav-link">Journal</a></li>
         </ul>
@@ -1675,9 +1674,9 @@
     <nav class="mobile-menu-nav">
       <ul class="mobile-menu-list">
         <li><a href="#page-home" onclick="navigateTo('home'); closeMobileMenu();" class="mobile-menu-link">Accueil</a></li>
+        <li><a href="#page-projects" onclick="navigateTo('projects'); closeMobileMenu();" class="mobile-menu-link">Mes projets</a></li>
         <li><a href="#page-approach" onclick="navigateTo('approach'); closeMobileMenu();" class="mobile-menu-link">Mon approche</a></li>
         <li><a href="#page-offer" onclick="navigateTo('offer'); closeMobileMenu();" class="mobile-menu-link">Mon offre</a></li>
-        <li><a href="#page-projects" onclick="navigateTo('projects'); closeMobileMenu();" class="mobile-menu-link">Mes projets</a></li>
         <li><a href="#page-about" onclick="navigateTo('about'); closeMobileMenu();" class="mobile-menu-link">T’es qui ?</a></li>
         <li><a href="#page-blog" onclick="navigateTo('blog'); closeMobileMenu();" class="mobile-menu-link">Journal</a></li>
       </ul>
@@ -1782,7 +1781,7 @@
               </div>
               <div class="footer-copyright">
                 © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-                <span class="footer-ai-mention">Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, à partir de mes contenus et de ma direction artistique.</span>
+                <span class="footer-ai-mention">Certaines images du site ont été optimisées avec l’aide de l’IA.</span>
               </div>
             </div>
           </div>
@@ -2044,7 +2043,7 @@
             </div>
             <div class="footer-copyright">
               © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-              <span class="footer-ai-mention">Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, à partir de mes contenus et de ma direction artistique.</span>
+              <span class="footer-ai-mention">Certaines images du site ont été optimisées avec l’aide de l’IA.</span>
             </div>
           </div>
         </div>
@@ -2228,7 +2227,7 @@
             </div>
             <div class="footer-copyright">
               © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-              <span class="footer-ai-mention">Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, à partir de mes contenus et de ma direction artistique.</span>
+              <span class="footer-ai-mention">Certaines images du site ont été optimisées avec l’aide de l’IA.</span>
             </div>
           </div>
         </div>
@@ -2240,28 +2239,46 @@
        ========================================================================== -->
     <section id="page-about" class="spa-page-section">
       <div class="content-wrap section-spacing">
-        <div class="section-header-center" style="margin-bottom: 32px;">
-          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Un parcours non linéaire (et c'est tant mieux !)</h2>
-          <p class="section-subtitle body-large">
-            Une expérience riche alliant création artistique, rigueur d'ingénieur et expertise en gestion de projets e-learning.
-          </p>
-        </div>
-
         <div class="about-hero-grid">
           <div class="about-hero-img-col">
-            <img src="assets/avatar-2.png" alt="Karine Marquis à son atelier UX" class="about-hero-img">
+            <img src="assets/avatar-horizontal.png" alt="Karine Marquis à son atelier UX" class="about-hero-img">
           </div>
           <div class="about-hero-text-col">
-            <h3 style="font-size: 26px; margin-bottom: 12px;">Artiste, Ingénieure & UX - UI Designer</h3>
-            <p class="body-normal">
-              Fortement animée par la pédagogie et l'apprentissage sous toutes ses formes, je conçois des interfaces comme on tracerait un chemin : sans embûches inutiles, avec des repères visuels clairs et une intention bienveillante à chaque étape.
+            <!-- DÉTAIL DÉCORATIF MANUSCRIT HERO -->
+            <img src="assets/detail-hero-decorative.png" alt="" class="about-hero-decorative-note" aria-hidden="true">
+
+            <div class="about-hero-editorial-tag">
+              <span class="about-hero-kicker">T’ES QUI ?</span>
+              <span class="about-hero-kicker-line"></span>
+            </div>
+            
+            <h1 class="about-hero-title">
+              Un parcours non linéaire <span class="about-hero-accent">(et c’est tant mieux !)</span>
+            </h1>
+
+            <div class="about-hero-body" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+              <p style="margin: 0;">Je suis arrivée à l’UX avec un parcours déjà bien rempli : relation client, management, sciences de l’éducation, histoire de l’art, digital learning, gestion de projet et création.</p>
+              <p style="margin: 0;">Ces détours m’ont appris quelque chose d’essentiel : une expérience ne se résume jamais à l’écran qu’on a devant soi. Il y a un contexte, des personnes, des contraintes, des habitudes et des usages réels.</p>
+              <p style="margin: 0;">Aujourd’hui, c’est avec ce regard-là que je pratique l’UX : observer, comprendre, simplifier et concevoir des parcours qui fonctionnent dans la vraie vie.</p>
+            </div>
+
+            <!-- BLOC LE FIL ROUGE (TIMELINE IMAGE) -->
+            <div class="about-hero-fil-rouge-block">
+              <div class="about-hero-timeline-wrapper">
+                <img src="assets/timeline-fil-rouge.png" alt="Timeline Le fil rouge : De la relation client à l’UX" class="about-hero-timeline-img">
+              </div>
+            </div>
+
+            <!-- MENTION DISCRÈTE SECTION ARTISTIQUE / IA -->
+            <p class="about-artistic-disclaimer">
+              Les œuvres présentées sont mes créations. Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, sous ma direction artistique.
             </p>
           </div>
         </div>
       </div>
 
       <!-- FOOTER FULL-WIDTH INTEGRÉ -->
-      <footer class="site-footer" style="margin-top: 16px;">
+      <footer class="site-footer" style="margin-top: 0;">
         <div class="footer-container">
           
           <!-- BLOC 1: NOM & BADGE DISPONIBILITÉ -->
@@ -2293,7 +2310,7 @@
             </div>
             <div class="footer-copyright">
               © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-              <span class="footer-ai-mention">Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, à partir de mes contenus et de ma direction artistique.</span>
+              <span class="footer-ai-mention">Certaines images du site ont été optimisées avec l’aide de l’IA.</span>
             </div>
           </div>
         </div>
@@ -2927,7 +2944,7 @@
             </div>
             <div class="footer-copyright">
               © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-              <span class="footer-ai-mention">Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, à partir de mes contenus et de ma direction artistique.</span>
+              <span class="footer-ai-mention">Certaines images du site ont été optimisées avec l’aide de l’IA.</span>
             </div>
           </div>
         </div>
@@ -2982,7 +2999,7 @@
             </div>
             <div class="footer-copyright">
               © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-              <span class="footer-ai-mention">Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, à partir de mes contenus et de ma direction artistique.</span>
+              <span class="footer-ai-mention">Certaines images du site ont été optimisées avec l’aide de l’IA.</span>
             </div>
           </div>
         </div>
@@ -3037,7 +3054,7 @@
             </div>
             <div class="footer-copyright">
               © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-              <span class="footer-ai-mention">Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, à partir de mes contenus et de ma direction artistique.</span>
+              <span class="footer-ai-mention">Certaines images du site ont été optimisées avec l’aide de l’IA.</span>
             </div>
           </div>
         </div>
@@ -3113,7 +3130,7 @@
             </div>
             <div class="footer-copyright">
               © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-              <span class="footer-ai-mention">Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, à partir de mes contenus et de ma direction artistique.</span>
+              <span class="footer-ai-mention">Certaines images du site ont été optimisées avec l’aide de l’IA.</span>
             </div>
           </div>
         </div>

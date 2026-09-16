@@ -442,50 +442,195 @@ strong, b {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 32px;
+  padding-left: 0 !important;
   padding-right: 32px;
   box-sizing: border-box;
 }
 
-/* Hero Page T'es qui ? (À propos) — Composition éditoriale compacte */
-#page-about .section-header-center {
-  margin-bottom: 16px !important;
+/* Hero Page T’es qui ? (À propos) — Composition éditoriale desktop */
+@media (min-width: 1141px) {
+
+  #page-about .about-hero-grid {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(630px, 46vw) minmax(0, 630px) !important;
+    gap: clamp(44px, 4vw, 80px) !important;
+
+    align-items: center !important;
+
+    min-height: 0 !important;
+    padding: 36px 0 16px !important;
+
+    box-sizing: border-box !important;
+  }
+
+  #page-about .about-hero-img-col {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: translateY(35px) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    overflow: visible !important;
+  }
+
+  #page-about .about-hero-img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+    border-radius: 0 !important;
+  }
+
+  #page-about .about-hero-text-col {
+    width: 100% !important;
+    max-width: 630px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    align-self: center !important;
+    position: relative !important;
+  }
 }
 
-#page-about .about-hero-grid {
-  display: grid !important;
-  grid-template-columns: 360px 1fr !important;
-  gap: 36px !important;
-  align-items: flex-start !important;
-  margin-top: 0 !important;
-}
-
-#page-about .about-hero-img-col {
-  width: 100% !important;
-  max-width: 360px !important;
-  height: auto !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-  box-shadow: 0 14px 32px rgba(62, 57, 52, 0.08) !important;
-  border: 1px solid var(--color-border) !important;
-  transform: translateX(calc(-1 * ((100vw - 1140px) / 2 + 32px - 5px))) !important;
+#page-about .about-hero-editorial-tag {
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
-  background: var(--color-surface) !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
 }
 
-#page-about .about-hero-img {
-  width: 100% !important;
-  height: auto !important;
-  max-height: 540px !important;
-  object-fit: contain !important;
+#page-about .about-hero-kicker {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  color: var(--color-accent) !important;
+  text-transform: uppercase !important;
+}
+
+#page-about .about-hero-kicker-line {
+  flex-grow: 0 !important;
+  width: 32px !important;
+  height: 1px !important;
+  background-color: #D9D2C8 !important;
+}
+
+#page-about .about-hero-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 34px !important;
+  font-weight: 400 !important;
+  color: #3E3934 !important;
+  line-height: 1.25 !important;
+  margin: 0 0 10px 0 !important;
+}
+
+#page-about .about-hero-accent {
+  font-style: italic !important;
+  color: var(--color-accent) !important;
+  font-weight: 500 !important;
+}
+
+#page-about .about-hero-subtitle {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #5C5248 !important;
+  line-height: 1.55 !important;
+  margin: 0 0 14px 0 !important;
+}
+
+#page-about .about-hero-role-divider {
+  display: none !important;
+}
+
+#page-about .about-hero-role {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 21px !important;
+  font-weight: 600 !important;
+  color: #3E3934 !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.35 !important;
+}
+
+#page-about .about-hero-body {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 13.5px !important;
+  color: #3E3934 !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+}
+
+/* Bloc Le fil rouge (Timeline image) sur la page T'es qui ? */
+.about-hero-fil-rouge-block {
+  margin-top: 22px;
+}
+
+.about-hero-timeline-wrapper {
+  width: 100%;
+}
+
+#page-about .about-hero-timeline-img,
+.about-hero-timeline-img {
   display: block !important;
+  width: min(780px, 100%) !important;
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 !important;
   border-radius: 0 !important;
 }
 
+.about-artistic-disclaimer {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 11px;
+  color: #8C827A;
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-style: italic;
+  line-height: 1.45;
+  text-align: left;
+}
+
+/* Élément décoratif manuscrit sur la page T'es qui ? */
 #page-about .about-hero-text-col {
-  padding-top: 10px !important;
+  position: relative;
+}
+
+.about-hero-decorative-note {
+  position: absolute !important;
+  top: -66px !important;
+  right: -220px !important;
+  width: 245px !important;
+  max-width: none !important;
+  height: auto !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+@media (max-width: 1400px) {
+  .about-hero-decorative-note {
+    right: -140px !important;
+  }
+}
+
+@media (max-width: 1140px) {
+  .about-hero-decorative-note {
+    display: none !important;
+  }
 }
 
 .section-spacing {
@@ -5761,15 +5906,16 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   #page-about .about-hero-grid {
-    grid-template-columns: 310px 1fr !important;
+    grid-template-columns: 360px 1fr !important;
     gap: 28px !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     margin-top: 0 !important;
   }
 
   #page-about .about-hero-img-col {
-    max-width: 310px !important;
-    transform: translateX(-35px) !important;
+    max-width: 360px !important;
+    transform: translateX(calc(-1 * (100vw - min(100vw - 48px, 980px)) / 2)) !important;
+    margin: 0 !important;
     border-radius: 0 !important;
   }
 }
