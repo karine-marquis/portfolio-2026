@@ -455,8 +455,9 @@ strong, b {
     margin-left: calc(50% - 50vw) !important;
 
     display: grid !important;
-    grid-template-columns: minmax(630px, 46vw) minmax(0, 630px) !important;
-    gap: clamp(44px, 4vw, 80px) !important;
+    grid-template-columns: minmax(560px, 1fr) minmax(0, 630px) !important;
+    column-gap: 48px !important;
+    row-gap: 32px !important;
 
     align-items: center !important;
 
@@ -480,18 +481,20 @@ strong, b {
     justify-content: flex-start !important;
 
     overflow: visible !important;
+    height: 520px !important;
   }
 
   #page-about .about-hero-img {
     display: block !important;
 
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
 
     max-width: none !important;
     max-height: none !important;
 
-    object-fit: contain !important;
+    object-fit: cover !important;
+    object-position: center center !important;
     border-radius: 0 !important;
   }
 
@@ -594,41 +597,74 @@ strong, b {
   border-radius: 0 !important;
 }
 
+/* ROADMAP */
+#page-about .about-roadmap-wrap {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 8px auto 0 !important;
+}
+
+#page-about .about-roadmap-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+#page-about .about-ai-note,
 .about-artistic-disclaimer {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 11px;
-  color: #8C827A;
-  margin-top: 18px;
-  margin-bottom: 0;
-  font-style: italic;
-  line-height: 1.45;
-  text-align: left;
+  color: var(--color-accent) !important;
+  font-style: italic !important;
+  font-size: 11px !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+  opacity: 0.78 !important;
+  max-width: 520px !important;
+  margin-top: 14px !important;
+  margin-bottom: 0 !important;
+  text-align: left !important;
 }
 
-/* Élément décoratif manuscrit sur la page T'es qui ? */
+/* ===== HERO ABOUT : base ===== */
 #page-about .about-hero-text-col {
-  position: relative;
+  position: relative !important;
+  padding-right: 300px !important; /* réserve la place de la note */
+  max-width: none !important;
 }
 
-.about-hero-decorative-note {
+/* la note manuscrite */
+#page-about .about-top-note {
   position: absolute !important;
-  top: -66px !important;
-  right: -220px !important;
-  width: 245px !important;
-  max-width: none !important;
+  top: 28px !important;
+  right: 28px !important;
+  width: 220px !important;
+  max-width: 220px !important;
   height: auto !important;
   pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+/* image de la note si besoin */
+#page-about .about-top-note img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* le vrai contenu texte doit rester devant et lisible */
+#page-about .about-hero-text-col > *:not(.about-top-note) {
+  position: relative !important;
   z-index: 2 !important;
 }
 
-@media (max-width: 1400px) {
-  .about-hero-decorative-note {
-    right: -140px !important;
+@media (max-width: 1140px) {
+  #page-about .about-hero-text-col {
+    padding-right: 0 !important;
   }
 }
 
-@media (max-width: 1140px) {
-  .about-hero-decorative-note {
+@media (max-width: 768px) {
+  #page-about .about-top-note {
     display: none !important;
   }
 }
