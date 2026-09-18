@@ -355,7 +355,7 @@
     <div class="drawer-content" style="max-width: 1280px; background: #F2E5DE; padding: 0;">
       <div id="projectDrawerContainer">
         <!-- MODALE CORDONS BLEUS -->
-        <div id="modal-cordons-bleus" class="project-modal-wrapper" style="display: block;">
+        <div id="modal-cordons-bleus" class="project-modal-wrapper" style="display: none;">
           <div class="lbc-v2-modal-layout">
             <button class="modal-card-close-btn" onclick="closeProjectDrawer()" aria-label="Fermer la modale">✕</button>
           <aside class="lbc-v2-sidebar">
@@ -2259,7 +2259,7 @@
             </h1>
 
             <div class="about-hero-body" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
-              <p style="margin: 0;">Je suis arrivée à l’UX avec un parcours déjà bien rempli : relation client, management, sciences de l’éducation, histoire de l’art, digital learning, gestion de projet et création.</p>
+              <p style="margin: 0;">Je suis arrivée à l’UX avec un parcours déjà bien rempli : relation client, management, sciences de l’éducation, histoire de l’art, digital learning, développement front-end, gestion de projet et création.</p>
               <p style="margin: 0;">Ces détours m’ont appris quelque chose d’essentiel : une expérience ne se résume jamais à l’écran qu’on a devant soi. Il y a un contexte, des personnes, des contraintes, des habitudes et des usages réels.</p>
               <p style="margin: 0;">Aujourd’hui, c’est avec ce regard-là que je pratique l’UX : observer, comprendre, simplifier et concevoir des parcours qui fonctionnent dans la vraie vie.</p>
             </div>
@@ -2269,11 +2269,90 @@
               Les œuvres présentées sont mes créations. Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, sous ma direction artistique.
             </p>
           </div>
+        </div>
+      </div>
 
-          <!-- BLOC ROADMAP FULL-WIDTH DE LA GRILLE -->
-          <div class="about-roadmap-wrap">
-            <img src="assets/timeline-fil-rouge.png" alt="Timeline Le fil rouge : De la relation client à l’UX" class="about-roadmap-image">
+      <!-- ==========================================================================
+         BLOC LE FIL ROUGE (TIMELINE VISUELLE)
+         ========================================================================== -->
+      <div class="about-timeline-wrap content-wrap">
+        <img src="assets/timeline-2.png" alt="Le fil rouge — Parcours de Karine Marquis" class="about-timeline-img">
+      </div>
+
+      <!-- ==========================================================================
+         SECTION 2 : CE QUI ME GUIDE (VALEURS ÉDITORIALES)
+         ========================================================================== -->
+      <div class="about-values-section">
+        <div class="content-wrap">
+          <div class="about-values-header">
+            <div class="about-values-title-wrap">
+              <div class="about-hero-editorial-tag">
+                <span class="about-hero-kicker">VALEURS</span>
+                <span class="about-hero-kicker-line"></span>
+              </div>
+              <h2 class="about-values-title">Ce qui me guide</h2>
+              <img src="assets/soulignage.png" alt="" class="about-values-title-underline" aria-hidden="true">
+            </div>
+
+            <!-- NOTE MANUSCRITE ÉDITORIALE (ASSET IMAGE DÉDIÉ) -->
+            <div class="values-handwritten-note" aria-hidden="true">
+              <img src="assets/note-valeurs.png" alt="Des expériences qui se répondent et font sens." class="values-note-img">
+            </div>
           </div>
+
+          <div class="about-values-grid">
+            <!-- LIGNE 1 : 3 COLONNES -->
+            <!-- BLOC 01: TRANSPARENCE -->
+            <div class="about-value-item value-item-1">
+              <span class="about-value-num">01</span>
+              <h3 class="about-value-heading">Transparence</h3>
+              <p class="about-value-desc">Dire ce que je vois, simplement, même quand la réponse n’est pas celle qu’on espérait.</p>
+            </div>
+
+            <!-- BLOC 02: HONNÊTETÉ -->
+            <div class="about-value-item value-item-2">
+              <span class="about-value-num">02</span>
+              <h3 class="about-value-heading">Honnêteté</h3>
+              <p class="about-value-desc">Ne pas survendre une solution si elle ne répond pas réellement au besoin.</p>
+            </div>
+
+            <!-- BLOC 03: EMPATHIE -->
+            <div class="about-value-item value-item-3">
+              <span class="about-value-num">03</span>
+              <h3 class="about-value-heading">Empathie</h3>
+              <p class="about-value-desc">Écouter, observer et comprendre avant de supposer.</p>
+            </div>
+
+            <!-- LIGNE 2 : 2 BLOCS PLUS LARGES -->
+            <!-- BLOC 04: PASSION -->
+            <div class="about-value-item value-item-4">
+              <span class="about-value-num">04</span>
+              <h3 class="about-value-heading">Passion</h3>
+              <p class="about-value-desc">Garder l’envie de comprendre, d’explorer et d’aller un peu plus loin.</p>
+            </div>
+
+            <!-- BLOC 05: TRANSMISSION DU SAVOIR -->
+            <div class="about-value-item value-item-5">
+              <span class="about-value-num">05</span>
+              <h3 class="about-value-heading">Transmission du savoir</h3>
+              <p class="about-value-desc">Rendre les choses compréhensibles pour qu’elles puissent vraiment être utilisées et partagées.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ASSETS DÉCORATIFS SECTION VALEURS -->
+        <img src="assets/coffee-stain.png" alt="" class="about-values-coffee-stain" aria-hidden="true">
+        <img src="assets/note-mantra.png" alt="" class="about-values-mantra-note" aria-hidden="true">
+        <img src="assets/tache-aquarelle-sauge.png" alt="" class="about-values-soft-stain" aria-hidden="true">
+      </div>
+
+      <!-- CTA INTERMÉDIAIRE SECTION T'ES QUI ? -->
+      <div class="about-inter-cta-wrap">
+        <div class="about-inter-cta-inner">
+          <a href="#page-contact" onclick="navigateTo('contact')" class="btn-primary">
+            On en parle ? →
+          </a>
+          <img src="assets/accent-traits.png" alt="" class="about-inter-cta-accent-traits" aria-hidden="true">
         </div>
       </div>
 

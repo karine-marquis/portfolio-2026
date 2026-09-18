@@ -2,7 +2,7 @@
    KM UX/UI DESIGNER â€” HOMEPAGE SCÃˆNE & FOOTER (INTEGRATION IMAGE FOODLES KARINE)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root {
   /* CHARTE COLORIMÉTRIQUE JAPANDI OFFICIELLE (PALETTE 2026) */
@@ -115,12 +115,15 @@ strong, b {
   letter-spacing: 0.01em;
 }
 
-/* RESTAURATION CURSEUR NATIVE ERGONOMIQUE */
-.custom-cursor, .custom-cursor-dot {
-  display: none !important;
+/* MENU MOBILE OVERLAY MASQUÉ PAR DÉFAUT SUR DESKTOP */
+.mobile-menu-overlay {
+  display: none;
+}
+.mobile-menu-overlay.active {
+  display: flex;
 }
 
-/* NAVBAR EN VERRE BLANC DÃ‰POLI LUMINEUX DÃ‰COUPÃ‰ DU FOND SABLE */
+/* NAVBAR EN VERRE BLANC DÉPOLI LUMINEUX DÉCOUPÉ DU FOND SABLE */
 .navbar {
   position: fixed;
   top: 0;
@@ -665,6 +668,349 @@ strong, b {
 
 @media (max-width: 768px) {
   #page-about .about-top-note {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   SECTION 2: CE QUI ME GUIDE (VALEURS ÉDITORIALES PAGE T'ES QUI ?)
+   ========================================================================== */
+.about-values-section {
+  position: relative;
+  background-color: #E1E8DF !important;
+  background-image: url('assets/fond-vert-texturé.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding: 68px 0 84px 0;
+  border-top: none;
+  overflow: visible;
+}
+
+/* Bord découpe papier organique haut */
+.about-values-section::before {
+  content: '';
+  display: block !important;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 10' preserveAspectRatio='none'%3E%3Cpath fill='%23E1E8DF' d='M0,10 L0,4 Q15,0 30,5 Q60,9 90,3 Q120,0 150,6 Q180,9 210,4 Q240,0 270,6 Q300,9 330,3 Q360,0 390,7 Q420,10 450,4 Q480,0 510,6 Q540,9 570,3 Q600,0 630,7 Q660,10 690,4 Q720,0 750,6 Q780,9 810,3 Q840,0 870,7 Q900,10 930,4 Q960,0 990,6 Q1020,9 1050,3 Q1080,0 1110,6 Q1140,9 1170,4 Q1185,1 1200,5 L1200,10 Z'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 1200px 10px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Bord découpe papier organique bas */
+.about-values-section::after {
+  content: '';
+  display: block !important;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 10' preserveAspectRatio='none'%3E%3Cpath fill='%23E1E8DF' d='M0,0 L0,6 Q15,10 30,5 Q60,1 90,7 Q120,10 150,4 Q180,1 210,6 Q240,10 270,4 Q300,1 330,7 Q360,10 390,3 Q420,0 450,6 Q480,10 510,4 Q540,1 570,7 Q600,10 630,3 Q660,0 690,6 Q720,10 750,4 Q780,1 810,7 Q840,10 870,3 Q900,0 930,6 Q960,10 990,4 Q1020,1 1050,7 Q1080,10 1110,4 Q1140,1 1170,6 Q1185,9 1200,5 L1200,0 Z'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 1200px 10px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Tache aquarelle sauge douce ton sur ton */
+.about-values-soft-stain {
+  position: absolute !important;
+  top: 20px !important;
+  left: -80px !important;
+  width: 440px !important;
+  height: auto !important;
+  opacity: 0.28 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  mix-blend-mode: multiply !important;
+}
+
+.about-values-section .content-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.about-values-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.about-values-title-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.about-values-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 30px !important;
+  font-weight: 400 !important;
+  color: #3E3934 !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+}
+
+/* Soulignement manuscrit terracotta sous le titre Ce qui me guide */
+.about-values-title-underline {
+  position: absolute;
+  left: 6px;
+  bottom: -26px;
+  width: 145px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Asset image dédié pour la note manuscrite de section */
+.values-handwritten-note {
+  position: relative;
+  display: block;
+  width: 210px;
+  max-width: 45%;
+  margin-right: 48px;
+  opacity: 0.92;
+  transform: rotate(-1.5deg);
+  pointer-events: none;
+}
+
+/* Traits d'accent terracotta à proximité de la note manuscrite haut droite */
+.about-values-accent-traits {
+  position: absolute;
+  left: -42px;
+  bottom: -4px;
+  width: 55px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.values-note-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 44px 36px;
+  align-items: start;
+}
+
+.about-value-item {
+  position: relative;
+  padding-top: 22px;
+  border-top: 1px solid rgba(195, 206, 191, 0.85);
+  transition: var(--transition-smooth);
+}
+
+.about-value-num {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+
+.about-value-heading {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.3 !important;
+}
+
+.about-value-desc {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 13.5px !important;
+  line-height: 1.65 !important;
+  color: #5C5248 !important;
+  margin: 0 !important;
+}
+
+/* Composition Éditoriale Asymétrique 3 + 2 (Desktop) */
+@media (min-width: 1024px) {
+  .about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 48px 36px;
+  }
+
+  /* LIGNE 1 : 3 Colonnes */
+  .about-value-item.value-item-1 {
+    grid-column: span 4;
+    transform: translateY(0);
+  }
+  .about-value-item.value-item-2 {
+    grid-column: span 4;
+    transform: translateY(28px);
+  }
+  .about-value-item.value-item-3 {
+    grid-column: span 4;
+    transform: translateY(-6px);
+  }
+
+  /* LIGNE 2 : 2 Blocs (Transmission du savoir plus large) */
+  .about-value-item.value-item-4 {
+    grid-column: span 5;
+    transform: translateY(12px);
+  }
+  .about-value-item.value-item-5 {
+    grid-column: span 7;
+    transform: translateY(26px);
+  }
+}
+
+/* Tablette (2 colonnes) */
+@media (max-width: 1023px) and (min-width: 769px) {
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 32px;
+  }
+  .about-value-item.value-item-1,
+  .about-value-item.value-item-2,
+  .about-value-item.value-item-3,
+  .about-value-item.value-item-4,
+  .about-value-item.value-item-5 {
+    grid-column: span 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile (1 colonne) */
+@media (max-width: 768px) {
+  .about-values-section {
+    padding: 44px 0 52px 0;
+  }
+  .about-values-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .values-handwritten-note {
+    width: 180px;
+    margin-right: 0;
+    transform: none;
+  }
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about-value-item.value-item-1,
+  .about-value-item.value-item-2,
+  .about-value-item.value-item-3,
+  .about-value-item.value-item-4,
+  .about-value-item.value-item-5 {
+    grid-column: span 1;
+    transform: none;
+  }
+  .about-values-coffee-stain,
+  .about-values-mantra-note,
+  .about-values-accent-traits {
+    display: none !important;
+  }
+  .about-values-soft-stain {
+    width: 260px !important;
+    left: -40px !important;
+    opacity: 0.20 !important;
+  }
+}
+
+/* Tache de café décorative section Valeurs */
+.about-values-coffee-stain {
+  position: absolute !important;
+  bottom: 20px !important;
+  right: -45px !important;
+  width: 210px !important;
+  height: auto !important;
+  opacity: 0.35 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Note manuscrite mantra décorative section Valeurs */
+.about-values-mantra-note {
+  position: absolute !important;
+  bottom: 25px !important;
+  left: 20px !important;
+  width: 195px !important;
+  height: auto !important;
+  opacity: 0.88 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+  .about-values-mantra-note {
+    width: 160px !important;
+    left: 10px !important;
+    bottom: 15px !important;
+  }
+  .about-values-title-underline {
+    width: 130px !important;
+    bottom: -24px !important;
+  }
+  .about-values-accent-traits {
+    width: 45px !important;
+    left: -32px !important;
+  }
+}
+
+/* CTA Intermédiaire section T'es qui ? */
+.about-inter-cta-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 78px 0 58px 0;
+  width: 100%;
+}
+
+.about-inter-cta-inner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.about-inter-cta-accent-traits {
+  position: absolute;
+  right: auto;
+  left: calc(0% - 56px);
+  top: 50%;
+  width: 42px;
+  height: auto;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+  .about-inter-cta-wrap {
+    padding: 60px 0 46px 0;
+  }
+  .about-inter-cta-accent-traits {
+    width: 36px;
+    left: calc(0% - 48px);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-inter-cta-wrap {
+    padding: 44px 0;
+  }
+  .about-inter-cta-accent-traits {
     display: none !important;
   }
 }
@@ -7860,3 +8206,23 @@ button.offer-accordion-header:focus-visible {
     transition: none !important;
   }
 }
+
+/* ==========================================================================
+   PAGE À PROPOS : BLOC VISUEL LE FIL ROUGE (TIMELINE)
+   ========================================================================== */
+.about-timeline-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto 60px auto;
+  width: 100%;
+  max-width: 1140px;
+}
+
+.about-timeline-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+

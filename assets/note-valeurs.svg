@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 90" width="240" height="90">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&amp;display=swap');
+    .note-text {
+      font-family: 'Caveat', cursive, sans-serif;
+      font-weight: 500;
+      font-size: 21px;
+      fill: #A85E3F;
+      opacity: 0.9;
+    }
+  </style>
+  <text x="10" y="26" class="note-text">Des expériences</text>
+  <text x="10" y="52" class="note-text">qui se répondent</text>
+  <text x="10" y="78" class="note-text">et font sens.</text>
+</svg>
