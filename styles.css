@@ -678,58 +678,21 @@ strong, b {
 .about-values-section {
   position: relative;
   background-color: #E1E8DF !important;
-  background-image: url('assets/fond-vert-texturé.png') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+  background-image: none !important;
   padding: 68px 0 84px 0;
   border-top: none;
   overflow: visible;
 }
 
-/* Bord découpe papier organique haut */
-.about-values-section::before {
-  content: '';
-  display: block !important;
-  position: absolute;
-  top: -5px;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 10' preserveAspectRatio='none'%3E%3Cpath fill='%23E1E8DF' d='M0,10 L0,4 Q15,0 30,5 Q60,9 90,3 Q120,0 150,6 Q180,9 210,4 Q240,0 270,6 Q300,9 330,3 Q360,0 390,7 Q420,10 450,4 Q480,0 510,6 Q540,9 570,3 Q600,0 630,7 Q660,10 690,4 Q720,0 750,6 Q780,9 810,3 Q840,0 870,7 Q900,10 930,4 Q960,0 990,6 Q1020,9 1050,3 Q1080,0 1110,6 Q1140,9 1170,4 Q1185,1 1200,5 L1200,10 Z'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: 1200px 10px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Bord découpe papier organique bas */
+/* Suppression des effets de bordure découpe papier pour un aplat uni sobre */
+.about-values-section::before,
 .about-values-section::after {
-  content: '';
-  display: block !important;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 10' preserveAspectRatio='none'%3E%3Cpath fill='%23E1E8DF' d='M0,0 L0,6 Q15,10 30,5 Q60,1 90,7 Q120,10 150,4 Q180,1 210,6 Q240,10 270,4 Q300,1 330,7 Q360,10 390,3 Q420,0 450,6 Q480,10 510,4 Q540,1 570,7 Q600,10 630,3 Q660,0 690,6 Q720,10 750,4 Q780,1 810,7 Q840,10 870,3 Q900,0 930,6 Q960,10 990,4 Q1020,1 1050,7 Q1080,10 1110,4 Q1140,1 1170,6 Q1185,9 1200,5 L1200,0 Z'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: 1200px 10px;
-  z-index: 2;
-  pointer-events: none;
+  display: none !important;
 }
 
-/* Tache aquarelle sauge douce ton sur ton */
+/* Tache aquarelle sauge floue masquée pour conserver une zone propre et sobre */
 .about-values-soft-stain {
-  position: absolute !important;
-  top: 20px !important;
-  left: -80px !important;
-  width: 440px !important;
-  height: auto !important;
-  opacity: 0.28 !important;
-  pointer-events: none !important;
-  z-index: 0 !important;
-  mix-blend-mode: multiply !important;
+  display: none !important;
 }
 
 .about-values-section .content-wrap {
