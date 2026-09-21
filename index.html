@@ -1647,7 +1647,6 @@
           <li><a href="#page-approach" onclick="navigateTo('approach'); return false;" class="nav-link">Mon approche</a></li>
           <li><a href="#page-offer" onclick="navigateTo('offer'); return false;" class="nav-link">Mon offre</a></li>
           <li><a href="#page-about" onclick="navigateTo('about'); return false;" class="nav-link">T’es qui ?</a></li>
-          <li><a href="#page-blog" onclick="navigateTo('blog'); return false;" class="nav-link">Journal</a></li>
         </ul>
       </nav>
 
@@ -1678,7 +1677,6 @@
         <li><a href="#page-approach" onclick="navigateTo('approach'); closeMobileMenu();" class="mobile-menu-link">Mon approche</a></li>
         <li><a href="#page-offer" onclick="navigateTo('offer'); closeMobileMenu();" class="mobile-menu-link">Mon offre</a></li>
         <li><a href="#page-about" onclick="navigateTo('about'); closeMobileMenu();" class="mobile-menu-link">T’es qui ?</a></li>
-        <li><a href="#page-blog" onclick="navigateTo('blog'); closeMobileMenu();" class="mobile-menu-link">Journal</a></li>
       </ul>
     </nav>
     <div class="mobile-menu-footer">
@@ -2239,48 +2237,143 @@
        ========================================================================== -->
     <section id="page-about" class="spa-page-section">
       <div class="content-wrap section-spacing">
-        <div class="about-hero-grid">
-          <div class="about-hero-img-col">
-            <img src="assets/avatar-horizontal.png" alt="Karine Marquis à son atelier UX" class="about-hero-img">
-          </div>
-          <div class="about-hero-text-col">
-            <!-- DÉTAIL DÉCORATIF MANUSCRIT HERO -->
-            <div class="about-top-note">
-              <img src="assets/detail-hero-decorative.png" alt="" class="about-hero-decorative-note" aria-hidden="true">
+        <!-- HAUT DE PAGE / HERO CARNET D'ATELIER (ÉTAPE 1) -->
+        <div class="about-hero-workshop">
+          
+          <!-- COLONNE GAUCHE : PHOTO GRANDE TAILLE, ANNOTATION ET NOTE CRÉER.RELIER.TRANSMETTRE. -->
+          <div class="about-hero-photo-col">
+            <div class="about-hero-photo-frame">
+              <img src="assets/scotch-beige.png" alt="" class="about-hero-tape-top" aria-hidden="true">
+              <img src="assets/avatar-horizontal.png" alt="Karine Marquis à son atelier UX" class="about-hero-photo-img">
             </div>
 
-            <div class="about-hero-editorial-tag">
-              <span class="about-hero-kicker">T’ES QUI ?</span>
-              <span class="about-hero-kicker-line"></span>
+            <!-- ANNOTATION À GAUCHE DE LA PHOTO (POSITIONNÉE SANS CHEVAUCHER LA NAV) -->
+            <div class="about-hero-annotation-left">
+              <span class="about-handwriting">Le design<br>se nourrit<br>des chemins<br>de traverse.</span>
+              <img src="assets/fleche-main.png" alt="" class="about-handwriting-arrow" aria-hidden="true">
             </div>
-            
+
+            <!-- NOTE MANUSCRITE "CRÉER. RELIER. TRANSMETTRE." OVERLAP BAS PHOTO -->
+            <div class="about-hero-note-card">
+              <img src="assets/note-mots-cles.png" alt="Créer. Relier. Transmettre." class="about-note-mots-img">
+            </div>
+          </div>
+
+          <!-- COLONNE DROITE : TITRE DOMINANT, TEXTES ET DESSIN DU MARCHÉ INTÉGRÉ -->
+          <div class="about-hero-text-col">
+            <div class="about-hero-header-flex">
+              <div class="about-hero-editorial-tag">
+                <span class="about-hero-kicker">T’ES QUI ?</span>
+                <span class="about-hero-kicker-line"></span>
+              </div>
+              <span class="about-handwriting about-handwriting-curiosity">Curiosité<br>toujours.</span>
+            </div>
+
             <h1 class="about-hero-title">
-              Un parcours non linéaire <span class="about-hero-accent">(et c’est tant mieux !)</span>
+              <span class="about-hero-title-line">Un parcours</span>
+              <span class="about-hero-title-line">non linéaire</span>
+              <span class="about-hero-accent">(et c’est tant mieux !)</span>
             </h1>
 
-            <div class="about-hero-body" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
-              <p style="margin: 0;">Je suis arrivée à l’UX avec un parcours déjà bien rempli : relation client, management, sciences de l’éducation, histoire de l’art, digital learning, développement front-end, gestion de projet et création.</p>
-              <p style="margin: 0;">Ces détours m’ont appris quelque chose d’essentiel : une expérience ne se résume jamais à l’écran qu’on a devant soi. Il y a un contexte, des personnes, des contraintes, des habitudes et des usages réels.</p>
-              <p style="margin: 0;">Aujourd’hui, c’est avec ce regard-là que je pratique l’UX : observer, comprendre, simplifier et concevoir des parcours qui fonctionnent dans la vraie vie.</p>
+            <div class="about-hero-body">
+              <p>Je suis arrivée à l’UX avec un parcours déjà bien rempli : relation client, management, sciences de l’éducation, histoire de l’art, digital learning, formation front-end, gestion de projet et création.</p>
+              <p>Ces détours m’ont appris quelque chose d’essentiel : une expérience ne se résume jamais à l’écran qu’on a devant soi. Il y a un contexte, des personnes, des contraintes, des habitudes et des usages réels.</p>
+              <p>Aujourd’hui, c’est avec ce regard-là que je pratique l’UX : observer, comprendre, simplifier et concevoir des parcours qui fonctionnent dans la vraie vie.</p>
             </div>
 
-            <!-- MENTION DISCRÈTE SECTION ARTISTIQUE / IA -->
-            <p class="about-artistic-disclaimer about-ai-note">
-              Les œuvres présentées sont mes créations. Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, sous ma direction artistique.
-            </p>
+            <!-- CROQUIS MARCHÉ INTÉGRÉ EN BAS À DROITE AVEC MULTIPLY MIX-BLEND-MODE -->
+            <div class="about-hero-sketch-wrap">
+              <span class="about-handwriting about-sketch-caption">Observer<br>Comprendre<br>Agir.</span>
+              <img src="assets/marché.png" alt="Croquis de marché" class="about-hero-sketch-img">
+            </div>
           </div>
         </div>
-      </div>
+
+        <!-- BLOC LE FIL ROUGE (TIMELINE SINUEUSE EN 8 ÉTAPES DISCRETES) -->
+        <div class="about-timeline-section">
+          <div class="about-timeline-header">
+            <span class="about-timeline-accent">|</span>
+            <h2 class="about-timeline-title">Le fil rouge</h2>
+          </div>
+
+          <div class="about-timeline-track">
+            <!-- Ligne sinueuse SVG -->
+            <svg class="about-timeline-svg-line" viewBox="0 0 1100 130" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <path d="M 40 65 C 100 15, 160 115, 220 65 C 280 15, 340 115, 400 65 C 460 15, 520 115, 580 65 C 640 15, 700 115, 760 65 C 820 15, 880 115, 940 65 C 1000 15, 1040 65, 1070 65" stroke="var(--color-accent, #A85E3F)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            </svg>
+
+            <div class="about-timeline-nodes">
+              <!-- Étape 1 -->
+              <div class="about-timeline-node node-up">
+                <div class="about-node-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <span class="about-node-label">Relation<br>client</span>
+              </div>
+
+              <!-- Étape 2 -->
+              <div class="about-timeline-node node-down">
+                <div class="about-node-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                </div>
+                <span class="about-node-label">Management</span>
+              </div>
+
+              <!-- Étape 3 -->
+              <div class="about-timeline-node node-up">
+                <div class="about-node-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"></path><path d="M6 18V6"></path><path d="M10 18V6"></path><path d="M14 18V6"></path><path d="M18 18V6"></path></svg>
+                </div>
+                <span class="about-node-label">Histoire<br>de l’art</span>
+              </div>
+
+              <!-- Étape 4 -->
+              <div class="about-timeline-node node-down">
+                <div class="about-node-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                </div>
+                <span class="about-node-label">Sciences de<br>l’éducation</span>
+              </div>
+
+              <!-- Étape 5 -->
+              <div class="about-timeline-node node-up">
+                <div class="about-node-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line></svg>
+                </div>
+                <span class="about-node-label">Digital<br>learning</span>
+              </div>
+
+              <!-- Étape 6 -->
+              <div class="about-timeline-node node-down">
+                <div class="about-node-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                </div>
+                <span class="about-node-label">Gestion<br>de projet</span>
+              </div>
+
+              <!-- Étape 7 -->
+              <div class="about-timeline-node node-up">
+                <div class="about-node-circle">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <span class="about-node-label">Formation<br>front-end</span>
+              </div>
+
+              <!-- Étape 8 (UX) -->
+              <div class="about-timeline-node node-final">
+                <div class="about-node-circle node-circle-highlight">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.55.6 2.83 1.5 3.5.76.76 1.23 1.52 1.41 2.5z"></path></svg>
+                </div>
+                <span class="about-node-label node-label-highlight">UX</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="about-timeline-footer-quote">Des détours en apparence. Un même fil : <em>comprendre, transmettre, créer.</em></p>
+        </div>
 
       <!-- ==========================================================================
-         BLOC LE FIL ROUGE (TIMELINE VISUELLE)
-         ========================================================================== -->
-      <div class="about-timeline-wrap content-wrap">
-        <img src="assets/timeline-2.png" alt="Le fil rouge — Parcours de Karine Marquis" class="about-timeline-img">
-      </div>
-
-      <!-- ==========================================================================
-         SECTION 2 : CE QUI ME GUIDE (VALEURS ÉDITORIALES)
+         SECTION 2 : CE QUI ME GUIDE (VALEURS ÉDITORIALES - COMPOSITION AÉRÉE SUR FOND)
          ========================================================================== -->
       <div class="about-values-section">
         <div class="content-wrap">
@@ -2294,67 +2387,232 @@
               <img src="assets/soulignage.png" alt="" class="about-values-title-underline" aria-hidden="true">
             </div>
 
-            <!-- NOTE MANUSCRITE ÉDITORIALE (ASSET IMAGE DÉDIÉ) -->
+            <!-- NOTE MANUSCRITE ÉDITORIALE -->
             <div class="values-handwritten-note" aria-hidden="true">
               <img src="assets/note-valeurs.png" alt="Des expériences qui se répondent et font sens." class="values-note-img">
             </div>
           </div>
 
-          <div class="about-values-grid">
-            <!-- LIGNE 1 : 3 COLONNES -->
-            <!-- BLOC 01: TRANSPARENCE -->
-            <div class="about-value-item value-item-1">
-              <span class="about-value-num">01</span>
-              <h3 class="about-value-heading">Transparence</h3>
-              <p class="about-value-desc">Dire ce que je vois, simplement, même quand la réponse n’est pas celle qu’on espérait.</p>
+          <!-- COMPOSITION CARNET D'ATELIER : 5 VALEURS DISPOSÉES DIRECTEMENT SUR LE FOND AUTOUR DE L'ŒUVRE CENTRALE -->
+          <div class="about-values-workshop">
+            <!-- COLONNE GAUCHE (2 VALEURS) -->
+            <div class="about-values-col about-values-col-left">
+              <div class="about-value-item">
+                <h3 class="about-value-heading">Transparence</h3>
+                <p class="about-value-desc">Dire ce que je vois, simplement, même quand la réponse n’est pas celle qu’on espérait.</p>
+              </div>
+
+              <div class="about-value-item">
+                <h3 class="about-value-heading">Honnêteté</h3>
+                <p class="about-value-desc">Ne pas survendre une solution si elle ne répond pas réellement au besoin.</p>
+              </div>
             </div>
 
-            <!-- BLOC 02: HONNÊTETÉ -->
-            <div class="about-value-item value-item-2">
-              <span class="about-value-num">02</span>
-              <h3 class="about-value-heading">Honnêteté</h3>
-              <p class="about-value-desc">Ne pas survendre une solution si elle ne répond pas réellement au besoin.</p>
+            <!-- COLONNE CENTRALE : ŒUVRE GRAPHITE (CHAMBRE GRAPHITE) -->
+            <div class="about-values-center-artwork">
+              <div class="about-graphite-frame">
+                <img src="assets/scotch-beige.png" alt="" class="about-graphite-tape" aria-hidden="true">
+                <img src="assets/chambre-graphite.png" alt="Dessin au graphite — Karine Marquis" class="about-graphite-img">
+              </div>
             </div>
 
-            <!-- BLOC 03: EMPATHIE -->
-            <div class="about-value-item value-item-3">
-              <span class="about-value-num">03</span>
-              <h3 class="about-value-heading">Empathie</h3>
-              <p class="about-value-desc">Écouter, observer et comprendre avant de supposer.</p>
-            </div>
+            <!-- COLONNE DROITE (3 VALEURS) -->
+            <div class="about-values-col about-values-col-right">
+              <div class="about-value-item">
+                <h3 class="about-value-heading">Empathie</h3>
+                <p class="about-value-desc">Écouter, observer et comprendre avant de supposer.</p>
+              </div>
 
-            <!-- LIGNE 2 : 2 BLOCS PLUS LARGES -->
-            <!-- BLOC 04: PASSION -->
-            <div class="about-value-item value-item-4">
-              <span class="about-value-num">04</span>
-              <h3 class="about-value-heading">Passion</h3>
-              <p class="about-value-desc">Garder l’envie de comprendre, d’explorer et d’aller un peu plus loin.</p>
-            </div>
+              <div class="about-value-item">
+                <h3 class="about-value-heading">Passion</h3>
+                <p class="about-value-desc">Garder l’envie de comprendre, d’explorer et d’aller un peu plus loin.</p>
+              </div>
 
-            <!-- BLOC 05: TRANSMISSION DU SAVOIR -->
-            <div class="about-value-item value-item-5">
-              <span class="about-value-num">05</span>
-              <h3 class="about-value-heading">Transmission du savoir</h3>
-              <p class="about-value-desc">Rendre les choses compréhensibles pour qu’elles puissent vraiment être utilisées et partagées.</p>
+              <div class="about-value-item">
+                <h3 class="about-value-heading">Transmission du savoir</h3>
+                <p class="about-value-desc">Rendre les choses compréhensibles pour qu’elles puissent vraiment être utilisées et partagées.</p>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- ASSETS DÉCORATIFS SECTION VALEURS -->
         <img src="assets/coffee-stain.png" alt="" class="about-values-coffee-stain" aria-hidden="true">
-        <img src="assets/note-mantra.png" alt="" class="about-values-mantra-note" aria-hidden="true">
         <img src="assets/tache-aquarelle-sauge.png" alt="" class="about-values-soft-stain" aria-hidden="true">
       </div>
 
-      <!-- CTA INTERMÉDIAIRE SECTION T'ES QUI ? -->
-      <div class="about-inter-cta-wrap">
-        <div class="about-inter-cta-inner">
-          <a href="#page-contact" onclick="navigateTo('contact')" class="btn-primary">
-            On en parle ? →
-          </a>
-          <img src="assets/accent-traits.png" alt="" class="about-inter-cta-accent-traits" aria-hidden="true">
+      <!-- ==========================================================================
+         SECTION 3 : ART & SENSIBILITÉ (PORTRAIT BLEU HARMONIEUX)
+         ========================================================================== -->
+      <section class="about-art-section">
+        <div class="content-wrap">
+          <div class="about-art-grid">
+            
+            <!-- COLONNE GAUCHE : TEXTE & INTRO ÉDITORIALE -->
+            <div class="about-art-text-col">
+              <div class="about-hero-editorial-tag">
+                <span class="about-hero-kicker">ART & SENSIBILITÉ</span>
+                <span class="about-hero-kicker-line"></span>
+              </div>
+
+              <h2 class="about-art-title">Observer, créer, faire le lien.</h2>
+
+              <div class="about-art-body">
+                <p>Avant l’UX, il y avait déjà l’observation. J’ai longtemps dessiné ce que je voyais : des visages, des gestes, des scènes prises sur le vif, des lieux habités.</p>
+                <p>L’art m’a appris à regarder les détails, les ambiances et tout ce qui donne de la présence, du sens et de l’émotion à une image.</p>
+                <p>Ce regard m’accompagne encore aujourd’hui en UX : observer avant d’interpréter, comprendre ce qui se joue dans une posture, un usage ou une situation réelle, relier les détails et rendre l’humain visible.</p>
+              </div>
+
+              <p class="about-art-subnote">La même curiosité, d’un carnet à l’écran.</p>
+            </div>
+
+            <!-- COLONNE DROITE : PORTRAIT BLEU ACCENT SANS DOMINER -->
+            <div class="about-art-visual-col">
+              <div class="about-art-bic-frame">
+                <img src="assets/scotch-beige.png" alt="" class="about-bic-tape-top" aria-hidden="true">
+                <img src="assets/bic-portfolio.png" alt="Dessin au stylo bille bleu — Portrait Karine Marquis" class="about-art-bic-img">
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- ==========================================================================
+         SECTION 4 : RECOMMANDATION
+         ========================================================================== -->
+      <section class="about-testimonial-section">
+        <div class="content-wrap">
+          <div class="about-testimonial-inner">
+            
+            <div class="about-hero-editorial-tag">
+              <span class="about-hero-kicker">RECOMMANDATION</span>
+              <span class="about-hero-kicker-line"></span>
+            </div>
+
+            <h2 class="about-testimonial-title">Ceux qui ont travaillé avec moi en parlent mieux.</h2>
+
+            <blockquote class="about-testimonial-quote">
+              <p>“Karine a une grande connaissance des Arts et la volonté de partager son savoir.</p>
+              <p>Elle possède l'énergie nécessaire pour mener à bien et diriger des projets ainsi qu'une très bonne connaissance des sciences éducatives et pédagogiques.</p>
+              <p>Elle est en plus dotée d'une grande imagination qu'elle utilise à bon escient dans son travail.”</p>
+            </blockquote>
+
+            <div class="about-testimonial-author">
+              <strong class="about-testimonial-name">Olivier Alzéari</strong>
+              <span class="about-testimonial-role">Chef de projet IT / Product Owner</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         SECTION 5 : OUTILS & PRATIQUES
+         ========================================================================== -->
+      <section class="about-tools-section">
+        <div class="content-wrap">
+          
+          <div class="about-hero-editorial-tag">
+            <span class="about-hero-kicker">OUTILS & PRATIQUES</span>
+            <span class="about-hero-kicker-line"></span>
+          </div>
+
+          <h2 class="about-tools-title">Mes outils pour ne pas perdre le fil</h2>
+          <p class="about-tools-intro">Je ne choisis pas un outil parce qu’il est à la mode. Je le garde s’il m’aide à mieux comprendre, mieux structurer, mieux collaborer ou aller plus vite sans perdre le sens.</p>
+
+          <div class="about-tools-grid">
+            <div class="about-tools-block">
+              <h3 class="about-tools-block-title">1. UX & conception</h3>
+              <p class="about-tools-block-sub">Comprendre · Structurer · Concevoir</p>
+              <p class="about-tools-block-desc">Je commence souvent par poser les idées à la main : croquis, notes, schémas. Puis j’utilise Figma, Miro, Canva et Notion pour structurer, tester des pistes et rendre les échanges plus concrets.</p>
+              <div class="about-tools-list">
+                <span class="about-tools-pill">Papier & stylo</span>
+                <span class="about-tools-pill">Figma</span>
+                <span class="about-tools-pill">Miro</span>
+                <span class="about-tools-pill">Canva</span>
+                <span class="about-tools-pill">Notion</span>
+              </div>
+              <p class="about-tools-note">Méthode maison : si le chat se rendort au bout de 30 secondes, aucune friction critique détectée.</p>
+            </div>
+
+            <div class="about-tools-block">
+              <h3 class="about-tools-block-title">2. Tech & intégration</h3>
+              <p class="about-tools-block-sub">Prototyper · Intégrer · Comprendre</p>
+              <p class="about-tools-block-desc">Ma formation front-end me permet de mieux anticiper ce qui est faisable, de comprendre les contraintes techniques et de dialoguer plus facilement avec les développeurs.</p>
+              <div class="about-tools-list">
+                <span class="about-tools-pill">HTML</span>
+                <span class="about-tools-pill">CSS</span>
+                <span class="about-tools-pill">GitHub</span>
+                <span class="about-tools-pill">GitHub Desktop</span>
+                <span class="about-tools-pill">Gravity / Antigravity</span>
+              </div>
+              <div class="about-tools-notion-row">
+                <span class="about-tools-notion-label">Notion :</span>
+                <span class="about-tools-pill-subtle">JavaScript</span>
+              </div>
+            </div>
+
+            <div class="about-tools-block">
+              <h3 class="about-tools-block-title">3. IA & création</h3>
+              <p class="about-tools-block-sub">Explorer · Chercher · Produire</p>
+              <p class="about-tools-block-desc">J’utilise l’IA pour explorer, reformuler, comparer, générer des pistes visuelles, prototyper plus vite et enrichir mes productions. Elle m’aide à ouvrir des possibles ; les choix, eux, restent les miens.</p>
+              <div class="about-tools-list">
+                <span class="about-tools-pill">ChatGPT</span>
+                <span class="about-tools-pill">Claude</span>
+                <span class="about-tools-pill">Gemini</span>
+                <span class="about-tools-pill">Grok</span>
+                <span class="about-tools-pill">NotebookLM</span>
+                <span class="about-tools-pill">CapCut</span>
+              </div>
+              <div class="about-tools-notion-row">
+                <span class="about-tools-notion-label">Pratique ponctuelle :</span>
+                <span class="about-tools-pill-subtle">Google Flow / Omni</span>
+              </div>
+            </div>
+
+            <div class="about-tools-block">
+              <h3 class="about-tools-block-title">4. Collaboration & organisation</h3>
+              <p class="about-tools-block-sub">Organiser · Partager · Avancer</p>
+              <p class="about-tools-block-desc">Je préfère les outils simples qui évitent de perdre du temps en coordination : partager l’information, suivre l’avancement et garder un contact direct tout au long du projet.</p>
+              <div class="about-tools-list">
+                <span class="about-tools-pill">WhatsApp</span>
+                <span class="about-tools-pill">Trello</span>
+                <span class="about-tools-pill">Google Drive / Docs</span>
+                <span class="about-tools-pill">Notion</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+         SECTION 6 : CTA FINAL "UN PROJET EN TÊTE ?" (SUPPORT PAPIER DÉCHIRÉ)
+         ========================================================================== -->
+      <section class="about-cta-final-section">
+        <div class="content-wrap">
+          <!-- Trait fin terracotta avec flèche vers le bouton -->
+          <svg class="about-cta-arrow-svg" viewBox="0 0 1200 370" preserveAspectRatio="none" aria-hidden="true">
+            <!-- Version Desktop (pointe vers la gauche du bouton) -->
+            <path class="cta-arrow-desktop" d="M 0,205 C 160,237 310,237 467,237 M 458,231 L 467,237 L 458,243" stroke="#A85E3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            <!-- Version Mobile (flèche décalée de +24px vers le bas) -->
+            <path class="cta-arrow-mobile" d="M 0,319 C 200,364 440,359 600,312 M 593,321 L 600,312 L 607,321" stroke="#A85E3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          </svg>
+
+          <div class="about-cta-paper-wrapper">
+            <img src="assets/tache-aquarelle-sauge.png" alt="" class="about-cta-stain-bg" aria-hidden="true">
+            <img src="assets/papier-dechire-1.png" alt="" class="about-cta-paper-bg" aria-hidden="true">
+            <div class="about-cta-paper-content">
+              <h2 class="about-cta-final-title">Un projet en tête ?</h2>
+              <p class="about-cta-final-text">Un besoin, une idée, un projet à clarifier ?</p>
+              <a href="mailto:karinemarquis.ux@gmail.com" class="about-cta-final-btn" aria-label="Contacter Karine Marquis par e-mail">
+                On en parle ? →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- FOOTER FULL-WIDTH INTEGRÉ -->
       <footer class="site-footer" style="margin-top: 0;">
@@ -3086,61 +3344,6 @@
     </section>
 
     <!-- ==========================================================================
-       PAGE 7: VEILLE / À LIRE
-       ========================================================================== -->
-    <section id="page-blog" class="spa-page-section">
-      <div class="content-wrap section-spacing">
-        <div class="section-header-center" style="margin-bottom: 32px;">
-          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">À lire — Articles, Veille & Retours d'Expérience</h2>
-          <p class="section-subtitle body-large">Réflexions sur l'ergonomie, la charge cognitive, la technique et l'apprentissage digital.</p>
-        </div>
-
-        <div class="story-timeline" id="blogArticlesContainer">
-          <!-- Injecté par app.js -->
-        </div>
-      </div>
-
-      <!-- FOOTER FULL-WIDTH INTEGRÉ -->
-      <footer class="site-footer" style="margin-top: 16px;">
-        <div class="footer-container">
-          
-          <!-- BLOC 1: NOM & BADGE DISPONIBILITÉ -->
-          <div class="footer-col-brand">
-            <a href="#page-home" onclick="navigateTo('home')" class="footer-brand-name" aria-label="Retour à l'accueil Karine Marquis" style="font-family: 'Playfair Display', Georgia, serif; font-size: 18.5px; font-weight: 500; color: #3E3934; text-decoration: none; letter-spacing: -0.01em;">
-              Karine Marquis
-            </a>
-            <div class="footer-availability-badge">
-              <span class="status-dot"></span> Disponible pour une nouvelle mission
-            </div>
-          </div>
-
-          <!-- BLOC 2: CONTACT & RÉSEAUX DISCRETS -->
-          <div class="footer-col-contact">
-            <a href="mailto:karinemarquis.ux@gmail.com" class="footer-contact-link" aria-label="Envoyer un e-mail à Karine Marquis">
-              ✦ Me contacter par e-mail →
-            </a>
-            <a href="https://www.linkedin.com/in/karine-marquis-ux/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil LinkedIn de Karine Marquis">✦ LinkedIn</a>
-            <a href="https://fr.malt.be/profile/karinemarquis" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Profil Malt de Karine Marquis">✦ Malt</a>
-          </div>
-
-        </div>
-
-        <!-- BANDEAU ULTRA LÉGER CITATION & COPYRIGHT -->
-        <div class="footer-bottom-bar">
-          <div class="footer-container footer-bottom-flex">
-            <div class="footer-quote-italic">
-              "Je ne promets pas de sauver Internet. Déjà, rendre un parcours plus clair, c'est pas mal."
-            </div>
-            <div class="footer-copyright">
-              © 2026 Karine Marquis — KM UX - UI Designer. Tous droits réservés.
-              <span class="footer-ai-mention">Certaines images du site ont été optimisées avec l’aide de l’IA.</span>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </section>
-
-    <!-- ==========================================================================
        PAGE 8: CONTACT
        ========================================================================== -->
     <section id="page-contact" class="spa-page-section">
@@ -3232,6 +3435,14 @@
     </section>
 
   </main>
+
+  <!-- LIGHTBOX DÉDIÉE SECTION ART & SENSIBILITÉ -->
+  <div id="aboutArtLightbox" class="about-art-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Agrandissement de l'œuvre">
+    <button type="button" class="about-art-lightbox-close" id="aboutArtLightboxClose" aria-label="Fermer l’image agrandie">×</button>
+    <div class="about-art-lightbox-content">
+      <img id="aboutArtLightboxImg" src="" alt="" class="about-art-lightbox-img">
+    </div>
+  </div>
 
 </body>
 </html>

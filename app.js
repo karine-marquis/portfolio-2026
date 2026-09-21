@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try { initSidebarScrollSpy(); } catch(e){ console.error('Scrollspy error:', e); }
   try { initScrollRevealObserver(); } catch(e){ console.error('ScrollReveal error:', e); }
   try { initGlobalMobileBackToTop(); } catch(e){ console.error('BackToTop error:', e); }
+  try { initAboutArtLightbox(); } catch(e){ console.error('Art Lightbox error:', e); }
 
   window.addEventListener('hashchange', initRoutingFromHash);
   window.addEventListener('popstate', initRoutingFromHash);
@@ -585,18 +586,6 @@ function renderPricingPacks() {
   `).join('');
 }
 
-function renderArticles() {
-  const container = document.getElementById('blogArticlesContainer');
-  if (!container || typeof ARTICLES_DATA === 'undefined' || !Array.isArray(ARTICLES_DATA)) return;
-  container.innerHTML = ARTICLES_DATA.map(a => `
-    <div class="card-japandi" style="margin-bottom: 16px;">
-      <div style="font-size: 12px; color: var(--color-primary); font-weight: 600; margin-bottom: 4px;">${a.category} • ${a.date}</div>
-      <h3 style="font-size: 22px; margin-bottom: 6px;">${a.title}</h3>
-      <p class="body-small">${a.summary}</p>
-    </div>
-  `).join('');
-}
-
 function handleContactSubmit(e) {
   e.preventDefault();
   alert('Merci ! Ton message a été envoyé avec succès.');
@@ -849,4 +838,75 @@ function initGlobalMobileBackToTop() {
     });
   });
 }
+
+/* LIGHTBOX DÉDIÉE SECTION ART & SENSIBILITÉ (PAGE T'ES QUI ?) */
+function initAboutArtLightbox() {
+  const lightbox = document.getElementById('aboutArtLightbox');
+  const lightboxImg = document.getElementById('aboutArtLightboxImg');
+  const closeBtn = document.getElementById('aboutArtLightboxClose');
+  const artCards = document.querySelectorAll('.about-art-section .about-art-card');
+
+  if (!lightbox || !lightboxImg || !artCards.length) return;
+
+  let previousActiveElement = null;
+
+  function openLightbox(imgEl) {
+    if (!imgEl || !imgEl.src) return;
+    previousActiveElement = document.activeElement;
+    lightboxImg.src = imgEl.src;
+    lightboxImg.alt = imgEl.alt || 'Création artistique — Karine Marquis';
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+    lightboxImg.alt = '';
+    if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+      previousActiveElement.focus();
+    }
+  }
+
+  artCards.forEach(card => {
+    const img = card.querySelector('img.about-art-img');
+    if (!img) return;
+
+    card.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openLightbox(img);
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(img);
+      }
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+  }
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('about-art-lightbox-content')) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+}
+
 

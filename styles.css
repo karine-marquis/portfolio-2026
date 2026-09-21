@@ -298,7 +298,6 @@ strong, b {
 #page-offer,
 #page-projects,
 #page-about,
-#page-blog,
 #page-contact {
   background-color: #F3EFEA !important;
 }
@@ -7771,8 +7770,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .site-footer,
   #page-projects .site-footer,
   #page-offer .site-footer,
-  #page-about .site-footer,
-  #page-blog .site-footer {
+  #page-about .site-footer {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -7797,8 +7795,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .footer-container,
   #page-projects .footer-container,
   #page-offer .footer-container,
-  #page-about .footer-container,
-  #page-blog .footer-container {
+  #page-about .footer-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -7818,8 +7815,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .footer-col-brand,
   #page-projects .footer-col-brand,
   #page-offer .footer-col-brand,
-  #page-about .footer-col-brand,
-  #page-blog .footer-col-brand {
+  #page-about .footer-col-brand {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -7834,8 +7830,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .footer-brand-name,
   #page-projects .footer-brand-name,
   #page-offer .footer-brand-name,
-  #page-about .footer-brand-name,
-  #page-blog .footer-brand-name {
+  #page-about .footer-brand-name {
     font-size: 18px !important;
     color: #3E3934 !important;
     margin-bottom: 0 !important;
@@ -7848,8 +7843,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .footer-availability-badge,
   #page-projects .footer-availability-badge,
   #page-offer .footer-availability-badge,
-  #page-about .footer-availability-badge,
-  #page-blog .footer-availability-badge {
+  #page-about .footer-availability-badge {
     font-size: 11.5px !important;
     padding: 4px 12px !important;
     border-radius: 12px !important;
@@ -7867,8 +7861,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .footer-col-contact,
   #page-projects .footer-col-contact,
   #page-offer .footer-col-contact,
-  #page-about .footer-col-contact,
-  #page-blog .footer-col-contact {
+  #page-about .footer-col-contact {
     display: flex !important;
     flex-direction: column !important;
     flex-wrap: wrap !important;
@@ -7895,9 +7888,7 @@ button.offer-accordion-header:focus-visible {
   #page-offer .footer-contact-link,
   #page-offer .footer-social-btn,
   #page-about .footer-contact-link,
-  #page-about .footer-social-btn,
-  #page-blog .footer-contact-link,
-  #page-blog .footer-social-btn {
+  #page-about .footer-social-btn {
     display: inline-flex !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -7918,8 +7909,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .footer-bottom-bar,
   #page-projects .footer-bottom-bar,
   #page-offer .footer-bottom-bar,
-  #page-about .footer-bottom-bar,
-  #page-blog .footer-bottom-bar {
+  #page-about .footer-bottom-bar {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -7939,8 +7929,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .footer-bottom-flex,
   #page-projects .footer-bottom-flex,
   #page-offer .footer-bottom-flex,
-  #page-about .footer-bottom-flex,
-  #page-blog .footer-bottom-flex {
+  #page-about .footer-bottom-flex {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -7959,8 +7948,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .footer-quote-italic,
   #page-projects .footer-quote-italic,
   #page-offer .footer-quote-italic,
-  #page-about .footer-quote-italic,
-  #page-blog .footer-quote-italic {
+  #page-about .footer-quote-italic {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -7982,8 +7970,7 @@ button.offer-accordion-header:focus-visible {
   #page-approach .footer-copyright,
   #page-projects .footer-copyright,
   #page-offer .footer-copyright,
-  #page-about .footer-copyright,
-  #page-blog .footer-copyright {
+  #page-about .footer-copyright {
     display: block !important;
     visibility: visible !important;
     opacity: 0.8 !important;
@@ -8187,5 +8174,1717 @@ button.offer-accordion-header:focus-visible {
   height: auto;
   object-fit: contain;
   display: block;
+}
+
+/* ==========================================================================
+   PAGE À PROPOS : SECTION ART & SENSIBILITÉ
+   ========================================================================== */
+.about-art-section {
+  padding: 88px 0 96px 0;
+  background-color: var(--color-bg-main, #F3EFEA);
+  position: relative;
+}
+
+.about-art-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-art-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+  }
+}
+
+.about-art-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-art-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 34px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin: 16px 0 24px 0 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .about-art-title {
+    font-size: 40px !important;
+  }
+}
+
+.about-art-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.about-art-body p {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: #5C5248 !important;
+  margin: 0 !important;
+}
+
+.about-art-subnote {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 17px !important;
+  color: var(--color-accent, #A85E3F) !important;
+  margin: 0 !important;
+  padding-left: 16px;
+  border-left: 2px solid var(--color-accent, #A85E3F);
+}
+
+/* ZONE VISUELLE — COMPOSITION COLLAGE ARTISTIQUE ASYMÉTRIQUE */
+.about-art-visual-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-art-collage-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  min-height: 420px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+/* CARTE / EMPLACEMENT ŒUVRE 1 (Principal vertical décalé) */
+.about-art-card-main {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  transform: translateY(-8px);
+}
+
+/* CARTE / EMPLACEMENT ŒUVRE 2 (Haut droit) */
+.about-art-card-top-right {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  transform: translateY(12px) rotate(1deg);
+}
+
+/* CARTE / EMPLACEMENT ŒUVRE 3 (Bas droit) */
+.about-art-card-bottom-right {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  transform: translateY(-10px) rotate(-1deg);
+}
+
+.about-art-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(62, 57, 52, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-art-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(62, 57, 52, 0.08);
+}
+
+.about-art-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-art-card-top-right .about-art-img,
+.about-art-card-bottom-right .about-art-img {
+  aspect-ratio: 4 / 3;
+}
+
+/* PLACEHOLDERS ŒUVRES DISCRETS & ÉDITORIAUX */
+.about-art-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-color: #EBE3DA;
+  border: 1px dashed rgba(168, 94, 63, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.about-art-card-top-right .about-art-placeholder,
+.about-art-card-bottom-right .about-art-placeholder {
+  aspect-ratio: 4 / 3;
+}
+
+.about-art-placeholder-label {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #8C8075;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+}
+
+/* ADAPTATION MOBILE */
+@media (max-width: 767px) {
+  .about-art-section {
+    padding: 60px 0 68px 0;
+  }
+
+  .about-art-collage-wrapper {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+
+  .about-art-card-main,
+  .about-art-card-top-right,
+  .about-art-card-bottom-right {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    transform: none !important;
+  }
+
+  .about-art-card-main .about-art-placeholder {
+    aspect-ratio: 16 / 10;
+  }
+
+  .about-art-card-top-right .about-art-placeholder,
+  .about-art-card-bottom-right .about-art-placeholder {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ==========================================================================
+   LIGHTBOX SECTION ART & SENSIBILITÉ
+   ========================================================================== */
+.about-art-section .about-art-card {
+  cursor: zoom-in !important;
+}
+
+.about-art-section .about-art-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(62, 57, 52, 0.16);
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.about-art-section .about-art-card:hover::after,
+.about-art-section .about-art-card:focus-visible::after {
+  opacity: 1;
+}
+
+.about-art-section .about-art-card:focus-visible {
+  outline: 3px solid var(--color-accent, #A85E3F);
+  outline-offset: 4px;
+}
+
+/* BADGE AGRANDIR AVEC LOUPE */
+.about-art-zoom-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(62, 57, 52, 0.82);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #FFFDFC;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.about-art-zoom-badge svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+/* SUR DESKTOP : APPARAÎT AU SURVOL ET FOCUS */
+@media (hover: hover) and (pointer: fine) {
+  .about-art-section .about-art-card:hover .about-art-zoom-badge,
+  .about-art-section .about-art-card:focus-visible .about-art-zoom-badge {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SUR TACTILE / MOBILE : VISIBLE EN PERMANENCE, DISCRET */
+@media (hover: none), (max-width: 768px) {
+  .about-art-zoom-badge {
+    opacity: 0.92;
+    transform: translateY(0);
+    padding: 4px 8px;
+    font-size: 10.5px;
+    background: rgba(62, 57, 52, 0.85);
+  }
+}
+
+.about-art-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.88);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.about-art-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.about-art-lightbox-close {
+  position: fixed !important;
+  top: 24px !important;
+  right: 24px !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  background-color: rgba(30, 30, 30, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: #FFFFFF !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 32px !important;
+  font-weight: 300 !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  border-radius: 50% !important;
+  z-index: 999999 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+.about-art-lightbox-close:hover,
+.about-art-lightbox-close:focus-visible {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  outline: 2px solid #FFFFFF !important;
+  outline-offset: 3px !important;
+  transform: scale(1.08) !important;
+}
+
+.about-art-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-art-lightbox-img {
+  max-width: 100%;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .about-art-lightbox {
+    padding: 16px;
+  }
+
+  .about-art-lightbox-close {
+    top: 16px !important;
+    right: 16px !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    font-size: 30px !important;
+  }
+
+  .about-art-lightbox-content {
+    max-width: 95vw;
+    max-height: 85vh;
+  }
+}
+
+/* ==========================================================================
+   PAGE À PROPOS : SECTION RECOMMANDATION
+   ========================================================================== */
+.about-testimonial-section {
+  padding: 88px 0 96px 0;
+  background-color: #E9DED3;
+  border-top: 1px solid rgba(212, 204, 201, 0.6);
+  position: relative;
+}
+
+.about-testimonial-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-testimonial-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin: 16px 0 36px 0 !important;
+  line-height: 1.28 !important;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .about-testimonial-title {
+    font-size: 38px !important;
+  }
+}
+
+.about-testimonial-quote {
+  position: relative;
+  margin: 0 0 32px 0;
+  padding: 0 0 0 28px;
+  border-left: 3px solid var(--color-accent, #A85E3F);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-testimonial-quote p {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 19px !important;
+  line-height: 1.65 !important;
+  color: #3E3934 !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .about-testimonial-quote p {
+    font-size: 21px !important;
+  }
+}
+
+.about-testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 31px;
+}
+
+.about-testimonial-name {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-style: normal !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #3E3934 !important;
+  letter-spacing: 0.01em;
+}
+
+.about-testimonial-role {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 13.5px;
+  color: var(--color-text-muted, #6F665F);
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  .about-testimonial-section {
+    padding: 60px 0 68px 0;
+  }
+  .about-testimonial-quote {
+    padding-left: 20px;
+    border-left-width: 2px;
+  }
+  .about-testimonial-author {
+    padding-left: 22px;
+  }
+}
+
+/* ==========================================================================
+   PAGE À PROPOS : SECTION OUTILS & PRATIQUES
+   ========================================================================== */
+.about-tools-section {
+  padding: 88px 0 96px 0;
+  background-color: var(--color-bg-main, #F3EFEA);
+  border-top: 1px solid rgba(212, 204, 201, 0.6);
+  position: relative;
+}
+
+.about-tools-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin: 16px 0 12px 0 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .about-tools-title {
+    font-size: 38px !important;
+  }
+}
+
+.about-tools-intro {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  color: #5C5248 !important;
+  margin: 0 0 48px 0 !important;
+  max-width: 840px;
+}
+
+.about-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 36px;
+}
+
+@media (max-width: 1023px) and (min-width: 640px) {
+  .about-tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 28px;
+  }
+}
+
+@media (max-width: 639px) {
+  .about-tools-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about-tools-section {
+    padding: 60px 0 68px 0;
+  }
+}
+
+.about-tools-block {
+  padding-top: 20px;
+  border-top: 1px solid rgba(212, 204, 201, 0.75);
+}
+
+.about-tools-block-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  margin: 0 !important;
+  line-height: 1.35 !important;
+}
+
+.about-tools-block-sub {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent, #A85E3F);
+  margin: 6px 0 10px 0 !important;
+}
+
+.about-tools-block-desc {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #5C5248 !important;
+  margin: 0 0 18px 0 !important;
+}
+
+.about-tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-tools-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  background-color: #FFFDFC;
+  border: 1px solid rgba(212, 204, 201, 0.85);
+  border-radius: 20px;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  color: #3E3934;
+  box-shadow: 0 2px 6px rgba(62, 57, 52, 0.03);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-tools-pill:hover {
+  border-color: var(--color-accent, #A85E3F);
+  transform: translateY(-1px);
+}
+
+.about-tools-notion-row {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+}
+
+.about-tools-notion-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #8C8075;
+  font-style: italic;
+}
+
+.about-tools-pill-subtle {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background-color: transparent;
+  border: 1px dashed rgba(212, 204, 201, 0.85);
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #6F665F;
+}
+
+.about-tools-note {
+  margin-top: 12px;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8C8075;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   SECTION CTA FINAL "T'ES QUI ?" (ON EN PARLE ?)
+   ========================================================================== */
+.about-cta-final-section {
+  padding: 100px 0 110px 0;
+  background-color: var(--color-bg-main, #F3EFEA);
+  border-top: 1px solid rgba(212, 204, 201, 0.6);
+  text-align: center;
+}
+
+.about-cta-final-container {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-cta-final-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 38px !important;
+  font-weight: 500 !important;
+  color: #3E3934 !important;
+  line-height: 1.25 !important;
+  margin: 0 0 16px 0 !important;
+}
+
+.about-cta-final-text {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  color: #5C5248 !important;
+  line-height: 1.6 !important;
+  margin: 0 0 36px 0 !important;
+  max-width: 520px;
+}
+
+.about-cta-final-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background-color: var(--color-cta, #596756);
+  color: #FFFFFF !important;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 40px;
+  box-shadow: 0 4px 14px rgba(69, 81, 67, 0.2);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-cta-final-btn:hover {
+  background-color: var(--color-cta-hover, #44513E);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(69, 81, 67, 0.3);
+}
+
+@media (max-width: 768px) {
+  .about-cta-final-section {
+    padding: 70px 20px 80px 20px;
+  }
+  .about-cta-final-title {
+    font-size: 30px !important;
+    margin-bottom: 12px !important;
+  }
+  .about-cta-final-text {
+    font-size: 15px !important;
+    margin-bottom: 28px !important;
+  }
+  .about-cta-final-btn {
+    padding: 13px 28px;
+    font-size: 14.5px;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* ==========================================================================
+   REFONTE CARNET D'ATELIER — ÉTAPE 1 : HERO & FIL ROUGE SINUEUX (#page-about)
+   ========================================================================== */
+#page-about .about-handwriting {
+  font-family: 'Caveat', cursive, sans-serif !important;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #5C5248;
+}
+
+#page-about .about-hero-workshop {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 52px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+#page-about .about-hero-photo-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#page-about .about-hero-photo-frame {
+  position: relative;
+  background: #FFFDFC;
+  padding: 16px 16px 20px 16px;
+  border-radius: 4px;
+  box-shadow: 0 14px 40px rgba(62, 57, 52, 0.1), 0 2px 8px rgba(62, 57, 52, 0.04);
+  transform: rotate(-1.5deg);
+  max-width: 500px;
+  width: 100%;
+}
+
+#page-about .about-hero-photo-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+#page-about .about-hero-tape-top {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%) rotate(1deg);
+  width: 150px;
+  height: auto;
+  z-index: 3;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+#page-about .about-hero-annotation-left {
+  position: absolute;
+  top: 40px;
+  left: -110px;
+  max-width: 150px;
+  z-index: 4;
+}
+
+#page-about .about-handwriting-arrow {
+  width: 55px;
+  height: auto;
+  display: block;
+  margin-top: 6px;
+  margin-left: 20px;
+}
+
+#page-about .about-hero-note-card {
+  position: absolute;
+  bottom: -35px;
+  right: -25px;
+  z-index: 5;
+  transform: rotate(3deg);
+  transition: transform 0.3s ease;
+}
+
+#page-about .about-hero-note-card:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+#page-about .about-note-mots-img {
+  width: 250px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(62, 57, 52, 0.14));
+}
+
+#page-about .about-hero-text-col {
+  position: relative;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+#page-about .about-hero-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+#page-about .about-handwriting-curiosity {
+  position: relative;
+  font-size: 22px;
+  color: #5C5248;
+  transform: rotate(6deg);
+  line-height: 1.25;
+  margin-right: -10px;
+}
+
+#page-about .about-hero-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 58px !important;
+  line-height: 1.08 !important;
+  color: #1F1C19 !important;
+  margin-bottom: 24px !important;
+}
+
+#page-about .about-hero-accent {
+  color: var(--color-accent, #A85E3F) !important;
+  font-style: italic;
+  font-weight: 400;
+}
+
+#page-about .about-hero-body {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #5C5248;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+#page-about .about-handwriting-curiosity {
+  position: absolute;
+  top: 100px;
+  right: -20px;
+  transform: rotate(8deg);
+  font-size: 20px;
+  color: var(--color-text-muted);
+}
+
+#page-about .about-hero-sketch-wrap {
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+#page-about .about-hero-sketch-img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  opacity: 0.85;
+  filter: contrast(1.05);
+}
+
+#page-about .about-sketch-caption {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 20px;
+  color: #5C5248;
+  line-height: 1.25;
+}
+
+#page-about .about-timeline-section {
+  margin-top: 30px;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+#page-about .about-timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+#page-about .about-timeline-accent {
+  color: var(--color-accent, #A85E3F);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#page-about .about-timeline-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 32px !important;
+  color: #3E3934 !important;
+  margin: 0 !important;
+}
+
+#page-about .about-timeline-track {
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+  margin-bottom: 24px;
+}
+
+#page-about .about-timeline-svg-line {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#page-about .about-timeline-nodes {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+
+#page-about .about-timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#page-about .about-timeline-node.node-up {
+  transform: translateY(-20px);
+}
+
+#page-about .about-timeline-node.node-down {
+  transform: translateY(35px);
+}
+
+#page-about .about-timeline-node.node-final {
+  transform: translateY(-10px);
+}
+
+#page-about .about-node-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-bg-secondary, #E9DED3);
+  border: 1.5px solid var(--color-accent, #A85E3F);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text, #3E3934);
+  box-shadow: 0 4px 10px rgba(62, 57, 52, 0.06);
+  margin-bottom: 8px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+#page-about .about-node-circle:hover {
+  transform: scale(1.12);
+  background: #FFFDFC;
+}
+
+#page-about .node-circle-highlight {
+  width: 52px;
+  height: 52px;
+  background: var(--color-accent, #A85E3F);
+  color: #FFFFFF !important;
+  border-color: var(--color-accent, #A85E3F);
+  box-shadow: 0 6px 16px rgba(168, 94, 63, 0.35);
+}
+
+#page-about .about-node-label {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #3E3934;
+}
+
+#page-about .node-label-highlight {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-accent, #A85E3F);
+}
+
+#page-about .about-timeline-footer-quote {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 15px;
+  color: #5C5248;
+  text-align: center;
+  margin-top: 36px;
+}
+
+#page-about .about-timeline-footer-quote em {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 22px;
+  color: var(--color-accent, #A85E3F);
+  font-style: normal;
+}
+
+@media (max-width: 1024px) {
+  #page-about .about-hero-workshop {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+#page-about .about-hero-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 54px !important;
+  line-height: 1.1 !important;
+  color: #1F1C19 !important;
+  margin-bottom: 24px !important;
+  display: block !important;
+}
+
+#page-about .about-hero-title-line {
+  display: block !important;
+  white-space: nowrap !important;
+}
+
+#page-about .about-hero-accent {
+  color: #A85E3F !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  font-size: 54px !important;
+  display: block !important;
+  white-space: nowrap !important;
+  margin-top: 4px !important;
+}
+
+#page-about .about-hero-body {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #4A433D;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+  max-width: 620px;
+}
+
+#page-about .about-hero-sketch-wrap {
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#page-about .about-hero-sketch-img {
+  max-width: 520px !important;
+  width: 100% !important;
+  height: auto !important;
+  mix-blend-mode: multiply !important;
+  filter: contrast(1.05) !important;
+  display: block !important;
+}
+
+#page-about .about-sketch-caption {
+  position: absolute;
+  left: 10px;
+  bottom: 25px;
+  font-size: 22px;
+  color: #5C5248;
+  line-height: 1.25;
+}
+
+#page-about .about-timeline-section {
+  margin-top: 30px;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+#page-about .about-timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+#page-about .about-timeline-accent {
+  color: var(--color-accent, #A85E3F);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#page-about .about-timeline-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 32px !important;
+  color: #3E3934 !important;
+  margin: 0 !important;
+}
+
+#page-about .about-timeline-track {
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+  margin-bottom: 24px;
+}
+
+#page-about .about-timeline-svg-line {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#page-about .about-timeline-nodes {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+
+#page-about .about-timeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#page-about .about-timeline-node.node-up {
+  transform: translateY(-20px);
+}
+
+#page-about .about-timeline-node.node-down {
+  transform: translateY(35px);
+}
+
+#page-about .about-timeline-node.node-final {
+  transform: translateY(-10px);
+}
+
+#page-about .about-node-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-bg-secondary, #E9DED3);
+  border: 1.5px solid var(--color-accent, #A85E3F);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text, #3E3934);
+  box-shadow: 0 4px 10px rgba(62, 57, 52, 0.06);
+  margin-bottom: 8px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+#page-about .about-node-circle:hover {
+  transform: scale(1.12);
+  background: #FFFDFC;
+}
+
+#page-about .node-circle-highlight {
+  width: 52px;
+  height: 52px;
+  background: var(--color-accent, #A85E3F);
+  color: #FFFFFF !important;
+  border-color: var(--color-accent, #A85E3F);
+  box-shadow: 0 6px 16px rgba(168, 94, 63, 0.35);
+}
+
+#page-about .about-node-label {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #3E3934;
+}
+
+#page-about .node-label-highlight {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-accent, #A85E3F);
+}
+
+#page-about .about-timeline-footer-quote {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 15px;
+  color: #5C5248;
+  text-align: center;
+  margin-top: 36px;
+}
+
+#page-about .about-timeline-footer-quote em {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 22px;
+  color: var(--color-accent, #A85E3F);
+  font-style: normal;
+}
+
+@media (max-width: 1024px) {
+  #page-about .about-hero-workshop {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  #page-about .about-hero-annotation-left {
+    display: none;
+  }
+    gap: 36px;
+  }
+  #page-about .about-hero-annotation-left {
+    display: none;
+  }
+  #page-about .about-handwriting-curiosity {
+    display: none;
+  }
+  #page-about .about-timeline-svg-line {
+    display: none;
+  }
+  #page-about .about-timeline-nodes {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px 16px;
+  }
+  #page-about .about-timeline-node.node-up,
+  #page-about .about-timeline-node.node-down,
+  #page-about .about-timeline-node.node-final {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #page-about .about-hero-title {
+    font-size: 30px !important;
+  }
+  #page-about .about-timeline-nodes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+  }
+  #page-about .about-hero-note-card {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  #page-about .about-hero-sketch-wrap {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   REFONTE CARNET D'ATELIER — ÉTAPE 2 : VALEURS AUTOUR DE L'ŒUVRE & SECTION ART (#page-about)
+   ========================================================================== */
+#page-about .about-values-section {
+  margin-bottom: 75px;
+  position: relative;
+}
+
+#page-about .about-values-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+#page-about .values-handwritten-note {
+  max-width: 230px;
+  transform: rotate(2deg);
+}
+
+#page-about .values-note-img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(62, 57, 52, 0.08));
+}
+
+#page-about .about-values-workshop {
+  display: grid;
+  grid-template-columns: 1fr 400px 1fr;
+  gap: 36px;
+  align-items: center;
+  position: relative;
+}
+
+#page-about .about-values-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#page-about .about-value-item {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  position: relative;
+  transition: none !important;
+}
+
+#page-about .about-value-item:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+#page-about .about-value-heading {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  color: #3E3934 !important;
+  margin-bottom: 8px !important;
+}
+
+#page-about .about-value-desc {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #5C5248;
+  margin: 0;
+}
+
+#page-about .about-values-center-artwork {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#page-about .about-graphite-frame {
+  position: relative;
+  background: #FFFDFC;
+  padding: 14px 14px 18px 14px;
+  border-radius: 4px;
+  box-shadow: 0 10px 32px rgba(62, 57, 52, 0.09), 0 2px 6px rgba(62, 57, 52, 0.04);
+  transform: rotate(-1deg);
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+}
+
+#page-about .about-graphite-tape {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 120px;
+  height: auto;
+  z-index: 3;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+#page-about .about-graphite-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+/* SECTION ART & SENSIBILITÉ */
+#page-about .about-art-section {
+  margin-bottom: 75px;
+  position: relative;
+}
+
+#page-about .about-art-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: center;
+}
+
+#page-about .about-art-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+#page-about .about-art-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 34px !important;
+  color: #3E3934 !important;
+  margin-bottom: 22px !important;
+}
+
+#page-about .about-art-body {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5C5248;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+#page-about .about-art-subnote {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 22px;
+  color: var(--color-accent, #A85E3F);
+}
+
+#page-about .about-art-bic-frame {
+  position: relative;
+  background: #FFFDFC;
+  padding: 12px 12px 16px 12px;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(62, 57, 52, 0.08);
+  transform: rotate(2deg);
+  text-align: center;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#page-about .about-bic-tape-top {
+  position: absolute;
+  top: -12px;
+  right: 30px;
+  transform: rotate(4deg);
+  width: 95px;
+  height: auto;
+  z-index: 3;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+#page-about .about-art-bic-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+/* ADAPTATIONS TABLETTE ET MOBILE ÉTAPE 2 */
+@media (max-width: 1024px) {
+  #page-about .about-values-workshop {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  #page-about .about-values-center-artwork {
+    order: -1;
+    max-width: 380px;
+    margin: 0 auto 10px auto;
+  }
+  #page-about .about-art-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  #page-about .about-art-bic-frame {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  #page-about .about-values-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  #page-about .values-handwritten-note {
+    max-width: 200px;
+  }
+  #page-about .about-art-title {
+    font-size: 28px !important;
+  }
+}
+
+/* ==========================================================================
+   SUPPORT PAPIER DÉCHIRÉ CTA FINAL « UN PROJET EN TÊTE ? » (#page-about)
+   ========================================================================== */
+#page-about .about-cta-final-section {
+  padding: 50px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+
+#page-about .about-cta-final-section .content-wrap {
+  position: relative;
+  width: 100%;
+}
+
+#page-about .about-cta-arrow-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  overflow: visible;
+}
+
+#page-about .about-cta-paper-wrapper {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-about .about-cta-stain-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.15);
+  width: 120%;
+  max-width: 760px;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+#page-about .about-cta-paper-bg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 12px 28px rgba(62, 57, 52, 0.12));
+}
+
+#page-about .about-cta-paper-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 55px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#page-about .about-cta-final-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 34px !important;
+  font-weight: 600 !important;
+  color: #3E3934 !important;
+  margin-bottom: 10px !important;
+}
+
+#page-about .about-cta-final-text {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 15.5px !important;
+  color: #5C5248 !important;
+  margin-bottom: 22px !important;
+}
+
+#page-about .about-cta-final-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-cta, #596756);
+  color: #FFFFFF !important;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+#page-about .about-cta-final-btn:hover {
+  background-color: var(--color-cta-hover, #44513E);
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE MOBILE 390PX — PROTECTION CONTRE LES DÉBORDEMENTS HORIZONTAUX (#page-about) */
+@media (max-width: 640px) {
+  /* Conteneurs & gouttières 20px */
+  #page-about .content-wrap {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Outils & Pratiques : wrapping & contraintes */
+  .about-tools-block-title,
+  .about-tools-block-sub,
+  .about-tools-block-desc,
+  .about-tools-note {
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .about-tools-list {
+    flex-wrap: wrap !important;
+    gap: 8px 6px !important;
+  }
+
+  .about-tools-pill,
+  .about-tools-pill-subtle {
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal !important;
+    word-break: break-word;
+    font-size: 12px !important;
+    padding: 4px 10px !important;
+  }
+
+  .about-tools-notion-row {
+    flex-wrap: wrap !important;
+    max-width: 100%;
+  }
+
+  /* Support papier CTA final sur mobile */
+  #page-about .about-cta-paper-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  #page-about .about-cta-paper-content {
+    padding: 16px 20px !important;
+  }
+
+  #page-about .about-cta-final-title {
+    font-size: 22px !important;
+    margin-bottom: 6px !important;
+  }
+
+  #page-about .about-cta-final-text {
+    font-size: 13px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  #page-about .about-cta-final-btn {
+    font-size: 13.5px !important;
+    padding: 8px 20px !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+  /* Footer mobile */
+  .footer-container {
+    padding: 0 20px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .footer-col-contact {
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    gap: 10px 16px !important;
+    margin-right: 0 !important;
+  }
+
+  .footer-availability-badge {
+    max-width: 100%;
+    white-space: normal !important;
+    box-sizing: border-box;
+  }
+
+  .footer-bottom-bar {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* GESTION FLÈCHE TERRACOTTA DESKTOP VS MOBILE (< 768px) */
+.cta-arrow-mobile {
+  display: none !important;
+}
+
+.cta-arrow-desktop {
+  display: block !important;
+}
+
+@media (max-width: 767px) {
+  #page-about .about-cta-arrow-svg {
+    display: block !important;
+  }
+  .cta-arrow-desktop {
+    display: none !important;
+  }
+  .cta-arrow-mobile {
+    display: block !important;
+  }
 }
 

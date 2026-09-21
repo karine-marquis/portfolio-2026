@@ -88,11 +88,6 @@ function updateActiveNav() {
     activeLabel = "Offre";
   } else if (currentPage === "apropos.html") {
     activeLabel = "À propos";
-  } else if (
-    currentPage === "journal.html" ||
-    currentPage.startsWith("article-")
-  ) {
-    activeLabel = "À lire";
   } else if (currentPage === "contact.html") {
     activeLabel = "Contact";
   }
