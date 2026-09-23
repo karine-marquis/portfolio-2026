@@ -8183,7 +8183,7 @@ button.offer-accordion-header:focus-visible {
    PAGE À PROPOS : SECTION ART & SENSIBILITÉ
    ========================================================================== */
 .about-art-section {
-  padding: 88px 0 96px 0;
+  padding: 48px 0 56px 0;
   background-color: var(--color-bg-main, #F3EFEA);
   position: relative;
 }
@@ -8568,7 +8568,7 @@ button.offer-accordion-header:focus-visible {
    PAGE À PROPOS : SECTION RECOMMANDATION
    ========================================================================== */
 .about-testimonial-section {
-  padding: 88px 0 96px 0;
+  padding: 56px 0 96px 0;
   background-color: #E9DED3;
   border-top: 1px solid rgba(212, 204, 201, 0.6);
   position: relative;
@@ -9267,132 +9267,26 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-timeline-section {
-  margin-top: 30px;
-  margin-bottom: 80px;
-  position: relative;
-}
-
-#page-about .about-timeline-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 40px;
-}
-
-#page-about .about-timeline-accent {
-  color: var(--color-accent, #A85E3F);
-  font-size: 24px;
-  font-weight: 700;
-}
-
-#page-about .about-timeline-title {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 32px !important;
-  color: #3E3934 !important;
-  margin: 0 !important;
-}
-
-#page-about .about-timeline-track {
+  margin-top: 24px;
+  margin-bottom: 75px;
   position: relative;
   width: 100%;
-  min-height: 180px;
-  margin-bottom: 24px;
 }
 
-#page-about .about-timeline-svg-line {
-  position: absolute;
-  top: 30px;
-  left: 0;
+#page-about .about-timeline-visual-wrap {
   width: 100%;
-  height: 100px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-#page-about .about-timeline-nodes {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 8px;
-  align-items: center;
-}
-
-#page-about .about-timeline-node {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-#page-about .about-timeline-node.node-up {
-  transform: translateY(-20px);
-}
-
-#page-about .about-timeline-node.node-down {
-  transform: translateY(35px);
-}
-
-#page-about .about-timeline-node.node-final {
-  transform: translateY(-10px);
-}
-
-#page-about .about-node-circle {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--color-bg-secondary, #E9DED3);
-  border: 1.5px solid var(--color-accent, #A85E3F);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  color: var(--color-text, #3E3934);
-  box-shadow: 0 4px 10px rgba(62, 57, 52, 0.06);
-  margin-bottom: 8px;
-  transition: transform 0.25s ease, background-color 0.25s ease;
+  align-items: center;
 }
 
-#page-about .about-node-circle:hover {
-  transform: scale(1.12);
-  background: #FFFDFC;
-}
-
-#page-about .node-circle-highlight {
-  width: 52px;
-  height: 52px;
-  background: var(--color-accent, #A85E3F);
-  color: #FFFFFF !important;
-  border-color: var(--color-accent, #A85E3F);
-  box-shadow: 0 6px 16px rgba(168, 94, 63, 0.35);
-}
-
-#page-about .about-node-label {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.35;
-  color: #3E3934;
-}
-
-#page-about .node-label-highlight {
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--color-accent, #A85E3F);
-}
-
-#page-about .about-timeline-footer-quote {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 15px;
-  color: #5C5248;
-  text-align: center;
-  margin-top: 36px;
-}
-
-#page-about .about-timeline-footer-quote em {
-  font-family: 'Caveat', cursive, sans-serif;
-  font-size: 22px;
-  color: var(--color-accent, #A85E3F);
-  font-style: normal;
+#page-about .about-timeline-img {
+  width: 100%;
+  max-width: 1140px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 @media (max-width: 1024px) {
@@ -9403,35 +9297,29 @@ button.offer-accordion-header:focus-visible {
   #page-about .about-hero-annotation-left {
     display: none;
   }
-    gap: 36px;
-  }
-  #page-about .about-hero-annotation-left {
-    display: none;
-  }
   #page-about .about-handwriting-curiosity {
     display: none;
   }
-  #page-about .about-timeline-svg-line {
+  #page-about .about-timeline-track {
+    min-width: 960px;
+  }
+}
+
+@media (max-width: 768px) {
+  #page-about .about-timeline-header-line {
     display: none;
   }
-  #page-about .about-timeline-nodes {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px 16px;
+  #page-about .about-timeline-synthesis-box {
+    padding: 16px 20px;
   }
-  #page-about .about-timeline-node.node-up,
-  #page-about .about-timeline-node.node-down,
-  #page-about .about-timeline-node.node-final {
-    transform: none !important;
+  #page-about .about-timeline-synthesis-text {
+    font-size: 20px;
   }
 }
 
 @media (max-width: 640px) {
   #page-about .about-hero-title {
     font-size: 30px !important;
-  }
-  #page-about .about-timeline-nodes {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 12px;
   }
   #page-about .about-hero-note-card {
     margin-left: 0;
@@ -9448,7 +9336,7 @@ button.offer-accordion-header:focus-visible {
 #page-about .about-values-section {
   background-color: #EBF0E9 !important;
   padding: 36px 0 18px 0 !important;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   position: relative;
 }
 
@@ -9742,14 +9630,14 @@ button.offer-accordion-header:focus-visible {
 
 /* SECTION ART & SENSIBILITÉ */
 #page-about .about-art-section {
-  margin-bottom: 75px;
+  margin-bottom: 0;
   position: relative;
 }
 
 #page-about .about-art-grid {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 52px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 36px;
   align-items: center;
 }
 
@@ -9787,33 +9675,35 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-art-visual-col {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  position: relative;
 }
 
 #page-about .about-art-graphite-wrap {
   position: relative;
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
+  width: calc(100% + 30px);
+  max-width: 560px;
+  margin-left: -30px;
 }
 
 #page-about .about-art-graphite-img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(62, 57, 52, 0.08);
+  filter: drop-shadow(0 12px 30px rgba(62, 57, 52, 0.11));
 }
 
 #page-about .about-art-credit-note {
   font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 12px;
+  font-size: 11.5px;
   line-height: 1.5;
-  color: #8C827A;
-  margin-top: 10px;
-  margin-bottom: 0;
+  color: #786E65;
+  opacity: 0.95;
+  max-width: 380px;
+  margin: 6px auto 0 auto;
   text-align: left;
+  padding: 0;
 }
 
 /* ADAPTATIONS TABLETTE ET MOBILE ÉTAPE 2 */
@@ -9841,6 +9731,11 @@ button.offer-accordion-header:focus-visible {
     gap: 36px;
   }
   #page-about .about-art-graphite-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  #page-about .about-art-credit-note {
     max-width: 100%;
   }
 }
