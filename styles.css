@@ -792,7 +792,7 @@ strong, b {
 .about-value-heading {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 20px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   color: #3E3934 !important;
   margin: 0 0 10px 0 !important;
   line-height: 1.3 !important;
@@ -9446,17 +9446,44 @@ button.offer-accordion-header:focus-visible {
    REFONTE CARNET D'ATELIER — ÉTAPE 2 : VALEURS AUTOUR DE L'ŒUVRE & SECTION ART (#page-about)
    ========================================================================== */
 #page-about .about-values-section {
-  padding: 48px 0 42px 0 !important;
-  margin-bottom: 50px;
+  background-color: #EBF0E9 !important;
+  padding: 36px 0 18px 0 !important;
+  margin-bottom: 28px;
   position: relative;
+}
+
+/* Voile léger au-dessus de la texture pour adoucir le grain et éclaircir le fond */
+#page-about .about-values-section::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(240, 245, 238, 0.58) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Ligne de séparation discrète en bas (famille terracotta / beige désaturée) */
+#page-about .about-values-section .content-wrap {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(168, 94, 63, 0.18);
+  padding-bottom: 6px;
 }
 
 #page-about .about-values-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 38px;
+  margin-bottom: 22px;
   position: relative;
+}
+
+#page-about .about-values-title-wrap {
+  margin-left: calc((100% - 692px) / 2);
 }
 
 #page-about .about-values-title {
@@ -9476,11 +9503,28 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .values-handwritten-note {
-  max-width: 230px;
-  transform: rotate(2deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 220px;
+  transform: none;
+}
+
+#page-about .about-values-coffee-stain {
+  position: absolute;
+  top: -18px;
+  right: -24px;
+  width: 135px;
+  height: auto;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
 }
 
 #page-about .values-note-img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
   filter: drop-shadow(0 4px 12px rgba(62, 57, 52, 0.08));
@@ -9491,9 +9535,9 @@ button.offer-accordion-header:focus-visible {
   display: grid;
   grid-template-columns: repeat(2, 330px);
   justify-content: center;
-  gap: 22px 48px;
+  gap: 16px 32px;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto -26px auto;
 }
 
 #page-about .about-value-item {
@@ -9502,13 +9546,14 @@ button.offer-accordion-header:focus-visible {
   border: none !important;
   box-shadow: none !important;
   position: relative;
-  transition: none !important;
+  transition: transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  will-change: transform;
 }
 
 #page-about .about-value-paper-wrapper {
   position: relative;
   width: 100%;
-  max-width: 320px;
+  max-width: 330px;
   display: block;
 }
 
@@ -9517,6 +9562,13 @@ button.offer-accordion-header:focus-visible {
   height: auto;
   display: block;
   filter: drop-shadow(0 6px 18px rgba(62, 57, 52, 0.10));
+  transition: filter 0.28s ease;
+}
+
+/* Micro-renforcement de l'ombre au survol */
+#page-about .about-value-item:hover .about-value-paper-bg,
+#page-about .about-value-item:focus-within .about-value-paper-bg {
+  filter: drop-shadow(0 10px 22px rgba(62, 57, 52, 0.15));
 }
 
 #page-about .about-value-paper-content {
@@ -9543,19 +9595,31 @@ button.offer-accordion-header:focus-visible {
 
 /* RANGÉE 1 : TRANSPARENCE (GAUCHE) & HONNÊTETÉ (DROITE) */
 #page-about .about-value-card-1 {
-  justify-self: end;
-  transform: rotate(-0.5deg);
+  justify-self: center;
+  transform: translateY(0);
+}
+#page-about .about-value-card-1:hover,
+#page-about .about-value-card-1:focus-within {
+  transform: translateY(-4px);
 }
 
 #page-about .about-value-card-2 {
-  justify-self: start;
-  transform: rotate(1deg);
+  justify-self: center;
+  transform: translateY(0);
+}
+#page-about .about-value-card-2:hover,
+#page-about .about-value-card-2:focus-within {
+  transform: translateY(-4px);
 }
 
 /* RANGÉE 2 : EMPATHIE (GAUCHE) & PASSION (DROITE) */
 #page-about .about-value-card-3 {
-  justify-self: end;
-  transform: rotate(-1.2deg);
+  justify-self: center;
+  transform: translateY(-30px);
+}
+#page-about .about-value-card-3:hover,
+#page-about .about-value-card-3:focus-within {
+  transform: translateY(-34px);
 }
 
 #page-about .about-value-card-3 .about-value-paper-bg {
@@ -9567,8 +9631,12 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-value-card-4 {
-  justify-self: start;
-  transform: rotate(1.2deg);
+  justify-self: center;
+  transform: translateY(-30px);
+}
+#page-about .about-value-card-4:hover,
+#page-about .about-value-card-4:focus-within {
+  transform: translateY(-34px);
 }
 
 #page-about .about-value-card-4 .about-value-paper-bg {
@@ -9579,73 +9647,67 @@ button.offer-accordion-header:focus-visible {
   display: none !important;
 }
 
-/* RANGÉE 3 : TRANSMISSION DU SAVOIR (CENTRÉE EN SOCLE) */
+/* VALEUR FONDATRICE : TRANSMISSION DU SAVOIR (CENTRÉE EN TÊTE) */
 #page-about .about-value-card-5 {
   grid-column: 1 / -1;
   justify-self: center;
-  max-width: 440px !important;
+  max-width: 295px !important;
   width: 100%;
-  margin-top: 4px;
-  transform: rotate(0deg);
+  margin-bottom: 0;
+  transform: translateY(0);
+}
+#page-about .about-value-card-5:hover,
+#page-about .about-value-card-5:focus-within {
+  transform: translateY(-4px);
 }
 
 #page-about .about-value-card-5 .about-value-paper-bg {
-  filter: drop-shadow(0 8px 22px rgba(62, 57, 52, 0.11));
+  filter: drop-shadow(0 6px 18px rgba(62, 57, 52, 0.10));
+  transition: filter 0.28s ease;
+}
+#page-about .about-value-card-5:hover .about-value-paper-bg,
+#page-about .about-value-card-5:focus-within .about-value-paper-bg {
+  filter: drop-shadow(0 10px 22px rgba(62, 57, 52, 0.15));
 }
 
 #page-about .about-value-card-5 .about-value-paper-content {
-  padding: 26px 36px;
+  padding: 14px 20px;
 }
 
 #page-about .about-value-card-5 .about-value-heading {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 22px !important;
+  font-size: 20px !important;
   font-weight: 600 !important;
-  color: #26211C !important;
-  margin-bottom: 8px !important;
-  letter-spacing: -0.015em;
-  line-height: 1.25;
+  font-style: normal !important;
+  color: #3E3934 !important;
+  margin-bottom: 4px !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.25 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #page-about .about-value-card-5 .about-value-desc {
   font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 14px !important;
-  line-height: 1.6 !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
   color: #484039 !important;
-  max-width: 370px;
+  max-width: 260px;
   margin: 0;
 }
 
-#page-about .about-values-coffee-stain {
-  position: absolute;
-  top: 15px;
-  right: -25px;
-  width: 140px;
-  height: auto;
-  opacity: 0.5;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 0;
-}
-
-#page-about .about-values-soft-stain {
-  position: absolute;
-  bottom: -20px;
-  left: -35px;
-  width: 220px;
-  height: auto;
-  opacity: 0.45;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 0;
-}
 
 #page-about .about-value-heading {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 22px !important;
+  font-size: 20px !important;
   font-weight: 600 !important;
+  font-style: normal !important;
   color: #3E3934 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 6px !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.25 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #page-about .about-value-desc {
@@ -9686,8 +9748,8 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-art-grid {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 48px;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 52px;
   align-items: center;
 }
 
@@ -9698,9 +9760,12 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-art-title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 34px !important;
+  font-size: 44px !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.015em !important;
   color: #3E3934 !important;
-  margin-bottom: 22px !important;
+  margin-bottom: 24px !important;
 }
 
 #page-about .about-art-body {
@@ -9720,42 +9785,42 @@ button.offer-accordion-header:focus-visible {
   color: var(--color-accent, #A85E3F);
 }
 
-#page-about .about-art-bic-frame {
+#page-about .about-art-visual-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-about .about-art-graphite-wrap {
   position: relative;
-  background: #FFFDFC;
-  padding: 12px 12px 16px 12px;
-  border-radius: 4px;
-  box-shadow: 0 8px 24px rgba(62, 57, 52, 0.08);
-  transform: rotate(2deg);
-  text-align: center;
-  max-width: 320px;
   width: 100%;
+  max-width: 480px;
   margin: 0 auto;
 }
 
-#page-about .about-bic-tape-top {
-  position: absolute;
-  top: -12px;
-  right: 30px;
-  transform: rotate(4deg);
-  width: 95px;
-  height: auto;
-  z-index: 3;
-  opacity: 0.9;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-}
-
-#page-about .about-art-bic-img {
+#page-about .about-art-graphite-img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 2px;
   display: block;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(62, 57, 52, 0.08);
+}
+
+#page-about .about-art-credit-note {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8C827A;
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-align: left;
 }
 
 /* ADAPTATIONS TABLETTE ET MOBILE ÉTAPE 2 */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  #page-about .about-values-title-wrap {
+    margin-left: 0;
+  }
   #page-about .about-values-workshop {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -9775,8 +9840,8 @@ button.offer-accordion-header:focus-visible {
     grid-template-columns: 1fr;
     gap: 36px;
   }
-  #page-about .about-art-bic-frame {
-    max-width: 300px;
+  #page-about .about-art-graphite-wrap {
+    max-width: 100%;
   }
 }
 
@@ -9786,6 +9851,7 @@ button.offer-accordion-header:focus-visible {
     gap: 16px;
   }
   #page-about .values-handwritten-note {
+    position: static;
     max-width: 200px;
   }
   #page-about .about-art-title {
