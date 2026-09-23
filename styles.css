@@ -677,8 +677,11 @@ strong, b {
 .about-values-section {
   position: relative;
   background-color: #E1E8DF !important;
-  background-image: none !important;
-  padding: 68px 0 84px 0;
+  background-image: url('assets/fond-vert-texturé.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding: 44px 0 38px 0;
   border-top: none;
   overflow: visible;
 }
@@ -9244,6 +9247,7 @@ button.offer-accordion-header:focus-visible {
   width: 100%;
 }
 
+
 #page-about .about-hero-sketch-img {
   max-width: 520px !important;
   width: 100% !important;
@@ -9442,7 +9446,8 @@ button.offer-accordion-header:focus-visible {
    REFONTE CARNET D'ATELIER — ÉTAPE 2 : VALEURS AUTOUR DE L'ŒUVRE & SECTION ART (#page-about)
    ========================================================================== */
 #page-about .about-values-section {
-  margin-bottom: 75px;
+  padding: 48px 0 42px 0 !important;
+  margin-bottom: 50px;
   position: relative;
 }
 
@@ -9450,8 +9455,24 @@ button.offer-accordion-header:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 36px;
+  margin-bottom: 38px;
   position: relative;
+}
+
+#page-about .about-values-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 32px !important;
+  color: #3E3934 !important;
+  margin: 0 0 3px 0 !important;
+}
+
+#page-about .about-values-handwritten-sub {
+  display: block;
+  font-family: 'Caveat', cursive, sans-serif !important;
+  font-size: 21px;
+  color: var(--color-accent, #A85E3F);
+  margin-top: 2px;
+  line-height: 1.2;
 }
 
 #page-about .values-handwritten-note {
@@ -9465,18 +9486,14 @@ button.offer-accordion-header:focus-visible {
   filter: drop-shadow(0 4px 12px rgba(62, 57, 52, 0.08));
 }
 
+/* COMPOSITION STRUCTURÉE 2 + 2 + 1 */
 #page-about .about-values-workshop {
   display: grid;
-  grid-template-columns: 1fr 400px 1fr;
-  gap: 36px;
-  align-items: center;
+  grid-template-columns: repeat(2, 330px);
+  justify-content: center;
+  gap: 22px 48px;
   position: relative;
-}
-
-#page-about .about-values-col {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  margin: 0 auto;
 }
 
 #page-about .about-value-item {
@@ -9488,9 +9505,139 @@ button.offer-accordion-header:focus-visible {
   transition: none !important;
 }
 
-#page-about .about-value-item:hover {
-  transform: none !important;
-  box-shadow: none !important;
+#page-about .about-value-paper-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  display: block;
+}
+
+#page-about .about-value-paper-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(62, 57, 52, 0.10));
+}
+
+#page-about .about-value-paper-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 28px;
+  box-sizing: border-box;
+}
+
+#page-about .about-value-paper-content .about-value-heading {
+  margin-bottom: 6px !important;
+}
+
+#page-about .about-value-paper-content .about-value-desc {
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+}
+
+/* RANGÉE 1 : TRANSPARENCE (GAUCHE) & HONNÊTETÉ (DROITE) */
+#page-about .about-value-card-1 {
+  justify-self: end;
+  transform: rotate(-0.5deg);
+}
+
+#page-about .about-value-card-2 {
+  justify-self: start;
+  transform: rotate(1deg);
+}
+
+/* RANGÉE 2 : EMPATHIE (GAUCHE) & PASSION (DROITE) */
+#page-about .about-value-card-3 {
+  justify-self: end;
+  transform: rotate(-1.2deg);
+}
+
+#page-about .about-value-card-3 .about-value-paper-bg {
+  mix-blend-mode: multiply !important;
+}
+
+#page-about .about-value-card-3 .about-value-paper-content {
+  display: none !important;
+}
+
+#page-about .about-value-card-4 {
+  justify-self: start;
+  transform: rotate(1.2deg);
+}
+
+#page-about .about-value-card-4 .about-value-paper-bg {
+  mix-blend-mode: multiply !important;
+}
+
+#page-about .about-value-card-4 .about-value-paper-content {
+  display: none !important;
+}
+
+/* RANGÉE 3 : TRANSMISSION DU SAVOIR (CENTRÉE EN SOCLE) */
+#page-about .about-value-card-5 {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 440px !important;
+  width: 100%;
+  margin-top: 4px;
+  transform: rotate(0deg);
+}
+
+#page-about .about-value-card-5 .about-value-paper-bg {
+  filter: drop-shadow(0 8px 22px rgba(62, 57, 52, 0.11));
+}
+
+#page-about .about-value-card-5 .about-value-paper-content {
+  padding: 26px 36px;
+}
+
+#page-about .about-value-card-5 .about-value-heading {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  color: #26211C !important;
+  margin-bottom: 8px !important;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+#page-about .about-value-card-5 .about-value-desc {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #484039 !important;
+  max-width: 370px;
+  margin: 0;
+}
+
+#page-about .about-values-coffee-stain {
+  position: absolute;
+  top: 15px;
+  right: -25px;
+  width: 140px;
+  height: auto;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#page-about .about-values-soft-stain {
+  position: absolute;
+  bottom: -20px;
+  left: -35px;
+  width: 220px;
+  height: auto;
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
 }
 
 #page-about .about-value-heading {
@@ -9513,39 +9660,22 @@ button.offer-accordion-header:focus-visible {
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #page-about .about-graphite-frame {
   position: relative;
-  background: #FFFDFC;
-  padding: 14px 14px 18px 14px;
-  border-radius: 4px;
-  box-shadow: 0 10px 32px rgba(62, 57, 52, 0.09), 0 2px 6px rgba(62, 57, 52, 0.04);
-  transform: rotate(-1deg);
+  display: inline-block;
   text-align: center;
   max-width: 380px;
   width: 100%;
 }
 
-#page-about .about-graphite-tape {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-3deg);
-  width: 120px;
-  height: auto;
-  z-index: 3;
-  opacity: 0.9;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-}
-
 #page-about .about-graphite-img {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border-radius: 2px;
   display: block;
+  margin: 0 auto;
 }
 
 /* SECTION ART & SENSIBILITÉ */
@@ -9628,12 +9758,18 @@ button.offer-accordion-header:focus-visible {
 @media (max-width: 1024px) {
   #page-about .about-values-workshop {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 20px;
   }
-  #page-about .about-values-center-artwork {
-    order: -1;
-    max-width: 380px;
-    margin: 0 auto 10px auto;
+  #page-about .about-value-card-1,
+  #page-about .about-value-card-2,
+  #page-about .about-value-card-3,
+  #page-about .about-value-card-4,
+  #page-about .about-value-card-5 {
+    grid-column: auto !important;
+    justify-self: center !important;
+    transform: none !important;
+    max-width: 320px !important;
+    margin: 0 auto;
   }
   #page-about .about-art-grid {
     grid-template-columns: 1fr;
