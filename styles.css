@@ -9769,7 +9769,7 @@ button.offer-accordion-header:focus-visible {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 12px 30px rgba(62, 57, 52, 0.11));
+  filter: drop-shadow(3px 6px 16px rgba(62, 57, 52, 0.10));
 }
 
 #page-about .about-art-credit-note {
