@@ -9234,36 +9234,8 @@ button.offer-accordion-header:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 0;
   max-width: 620px;
-}
-
-#page-about .about-hero-sketch-wrap {
-  position: relative;
-  margin-top: 10px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-
-#page-about .about-hero-sketch-img {
-  max-width: 520px !important;
-  width: 100% !important;
-  height: auto !important;
-  mix-blend-mode: multiply !important;
-  filter: contrast(1.05) !important;
-  display: block !important;
-}
-
-#page-about .about-sketch-caption {
-  position: absolute;
-  left: 10px;
-  bottom: 25px;
-  font-size: 22px;
-  color: #5C5248;
-  line-height: 1.25;
 }
 
 #page-about .about-timeline-section {
@@ -9271,6 +9243,67 @@ button.offer-accordion-header:focus-visible {
   margin-bottom: 75px;
   position: relative;
   width: 100%;
+  padding: 20px 0;
+  overflow: visible;
+}
+
+/* TOUCHES AQUARELLE SAUGE DISTRIBUÉES, DIFFUSES & SUBTILES (SECTION LE FIL ROUGE) */
+#page-about .about-timeline-touch {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  filter: blur(2px);
+}
+
+#page-about .about-timeline-touch-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+/* 1. Lavis doux sous le titre « Le fil rouge » et le départ (déborde sur la gauche) */
+#page-about .about-timeline-touch-title {
+  top: -24px;
+  left: -50px;
+  width: 400px;
+  max-width: 80vw;
+  transform: rotate(-10deg) scale(1.12, 0.80);
+  opacity: 0.58;
+}
+
+/* 2. Lavis diffus et fluide derrière le flux central des icônes */
+#page-about .about-timeline-touch-icons-flow {
+  top: 35px;
+  left: 330px;
+  width: 490px;
+  max-width: 85vw;
+  transform: rotate(6deg) scale(1.15, 0.65);
+  opacity: 0.52;
+}
+
+/* 3. Bande aquarellée délicate en soutien sous la phrase manuscrite du bas */
+#page-about .about-timeline-touch-bottom-note {
+  bottom: -18px;
+  left: 80px;
+  width: 520px;
+  max-width: 88vw;
+  transform: rotate(-3deg) scale(1.20, 0.55);
+  opacity: 0.50;
+}
+
+/* 4. Touche atmosphérique à droite vers l'arrivée UX (déborde sur la droite) */
+#page-about .about-timeline-touch-right-accent {
+  top: 45px;
+  right: -50px;
+  width: 350px;
+  max-width: 72vw;
+  transform: rotate(140deg) scale(1.08, 0.75);
+  opacity: 0.54;
 }
 
 #page-about .about-timeline-visual-wrap {
@@ -9278,6 +9311,8 @@ button.offer-accordion-header:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 #page-about .about-timeline-img {
@@ -9287,6 +9322,7 @@ button.offer-accordion-header:focus-visible {
   display: block;
   margin: 0 auto;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 @media (max-width: 1024px) {
@@ -9325,41 +9361,77 @@ button.offer-accordion-header:focus-visible {
     margin-left: 0;
     margin-top: 10px;
   }
-  #page-about .about-hero-sketch-wrap {
-    justify-content: center;
-  }
 }
 
 /* ==========================================================================
    REFONTE CARNET D'ATELIER — ÉTAPE 2 : VALEURS AUTOUR DE L'ŒUVRE & SECTION ART (#page-about)
    ========================================================================== */
 #page-about .about-values-section {
-  background-color: #EBF0E9 !important;
-  padding: 36px 0 18px 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding: 24px 0 10px 0 !important;
   margin-bottom: 32px;
   position: relative;
+  overflow: visible;
 }
 
-/* Voile léger au-dessus de la texture pour adoucir le grain et éclaircir le fond */
-#page-about .about-values-section::before {
-  content: "" !important;
-  display: block !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  background: rgba(240, 245, 238, 0.58) !important;
-  pointer-events: none !important;
-  z-index: 0 !important;
-}
-
-/* Ligne de séparation discrète en bas (famille terracotta / beige désaturée) */
 #page-about .about-values-section .content-wrap {
   position: relative;
   z-index: 1;
-  border-bottom: 1px solid rgba(168, 94, 63, 0.18);
-  padding-bottom: 6px;
+}
+
+/* MATIÈRE ÉDITORIALE DISCRÈTE (TOUCHES SAUGE DIFFUSES & AÉRÉES) */
+#page-about .values-touch-bg {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+#page-about .values-touch-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+/* 1. Voile sauge léger derrière la zone centrale (Transmission du savoir / Honnêteté) */
+#page-about .values-touch-center-veil {
+  top: 25px;
+  left: 230px;
+  width: 300px;
+  transform: rotate(12deg) scale(1.05, 0.75);
+  opacity: 0.32;
+}
+
+/* 2. Petite touche basse délicate vers Empathie / Passion */
+#page-about .values-touch-bottom-subtle {
+  top: 240px;
+  left: 210px;
+  width: 240px;
+  transform: rotate(-15deg) scale(1.0, 0.70);
+  opacity: 0.28;
+}
+
+/* 3. Touche très discrète autour de l'étiquette en haut à droite */
+#page-about .values-touch-note-echo {
+  top: -65px;
+  right: -25px;
+  width: 175px;
+  transform: rotate(45deg) scale(0.90, 0.75);
+  opacity: 0.26;
+}
+
+/* 4. Petite projection diffuse très discrète */
+#page-about .values-touch-micro-fleck {
+  top: 85px;
+  left: -15px;
+  width: 95px;
+  transform: rotate(-40deg) scale(0.85, 0.65);
+  opacity: 0.20;
 }
 
 #page-about .about-values-header {
@@ -9434,8 +9506,14 @@ button.offer-accordion-header:focus-visible {
   border: none !important;
   box-shadow: none !important;
   position: relative;
+  z-index: 1;
   transition: transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
   will-change: transform;
+}
+
+#page-about .about-value-item:hover,
+#page-about .about-value-item:focus-within {
+  z-index: 3;
 }
 
 #page-about .about-value-paper-wrapper {
