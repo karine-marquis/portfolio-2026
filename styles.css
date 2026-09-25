@@ -8163,20 +8163,38 @@ button.offer-accordion-header:focus-visible {
 /* ==========================================================================
    PAGE À PROPOS : BLOC VISUEL LE FIL ROUGE (TIMELINE)
    ========================================================================== */
-.about-timeline-wrap {
+.about-timeline-section {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+  margin: 20px auto 60px auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.about-timeline-visual-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px auto 60px auto;
   width: 100%;
   max-width: 1140px;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .about-timeline-img {
+  width: 100%;
   max-width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 /* ==========================================================================
@@ -8565,251 +8583,87 @@ button.offer-accordion-header:focus-visible {
 }
 
 /* ==========================================================================
-   PAGE À PROPOS : SECTION RECOMMANDATION
+   PAGE À PROPOS : SECTION RECOMMANDATION (ASSET VISUEL ÉDITORIAL)
    ========================================================================== */
 .about-testimonial-section {
-  padding: 56px 0 96px 0;
-  background-color: #E9DED3;
-  border-top: 1px solid rgba(212, 204, 201, 0.6);
+  padding: 80px 0 88px 0;
+  background-color: transparent;
   position: relative;
+  overflow: visible;
+  border: none;
+  box-shadow: none;
 }
 
-.about-testimonial-inner {
-  max-width: 820px;
+.about-testimonial-asset-wrapper {
+  width: 100%;
+  max-width: 1140px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
-.about-testimonial-title {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 32px !important;
-  font-weight: 500 !important;
-  color: #3E3934 !important;
-  margin: 16px 0 36px 0 !important;
-  line-height: 1.28 !important;
-  letter-spacing: -0.01em;
+.about-testimonial-asset-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
-@media (min-width: 768px) {
-  .about-testimonial-title {
-    font-size: 38px !important;
-  }
-}
-
-.about-testimonial-quote {
-  position: relative;
-  margin: 0 0 32px 0;
-  padding: 0 0 0 28px;
-  border-left: 3px solid var(--color-accent, #A85E3F);
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.about-testimonial-quote p {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-style: italic !important;
-  font-size: 19px !important;
-  line-height: 1.65 !important;
-  color: #3E3934 !important;
-  margin: 0 !important;
-}
-
-@media (min-width: 768px) {
-  .about-testimonial-quote p {
-    font-size: 21px !important;
-  }
-}
-
-.about-testimonial-author {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding-left: 31px;
-}
-
-.about-testimonial-name {
-  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-style: normal !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  color: #3E3934 !important;
-  letter-spacing: 0.01em;
-}
-
-.about-testimonial-role {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 13.5px;
-  color: var(--color-text-muted, #6F665F);
-  font-weight: 400;
-}
-
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .about-testimonial-section {
-    padding: 60px 0 68px 0;
-  }
-  .about-testimonial-quote {
-    padding-left: 20px;
-    border-left-width: 2px;
-  }
-  .about-testimonial-author {
-    padding-left: 22px;
+    padding: 48px 0 56px 0;
   }
 }
+
 
 /* ==========================================================================
-   PAGE À PROPOS : SECTION OUTILS & PRATIQUES
+   PAGE À PROPOS : SECTION OUTILS & PRATIQUES (ASSET VISUEL TRANSPARENT)
    ========================================================================== */
 .about-tools-section {
-  padding: 88px 0 96px 0;
-  background-color: var(--color-bg-main, #F3EFEA);
-  border-top: 1px solid rgba(212, 204, 201, 0.6);
-  position: relative;
-}
-
-.about-tools-title {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 32px !important;
-  font-weight: 500 !important;
-  color: #3E3934 !important;
-  margin: 16px 0 12px 0 !important;
-  line-height: 1.25 !important;
-  letter-spacing: -0.01em;
-}
-
-@media (min-width: 768px) {
-  .about-tools-title {
-    font-size: 38px !important;
-  }
-}
-
-.about-tools-intro {
-  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-size: 16px !important;
-  line-height: 1.65 !important;
-  color: #5C5248 !important;
-  margin: 0 0 48px 0 !important;
-  max-width: 840px;
-}
-
-.about-tools-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 36px;
-}
-
-@media (max-width: 1023px) and (min-width: 640px) {
-  .about-tools-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px 28px;
-  }
-}
-
-@media (max-width: 639px) {
-  .about-tools-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .about-tools-section {
-    padding: 60px 0 68px 0;
-  }
-}
-
-.about-tools-block {
-  padding-top: 20px;
-  border-top: 1px solid rgba(212, 204, 201, 0.75);
-}
-
-.about-tools-block-title {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 20px !important;
-  font-weight: 500 !important;
-  color: #3E3934 !important;
-  margin: 0 !important;
-  line-height: 1.35 !important;
-}
-
-.about-tools-block-sub {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-accent, #A85E3F);
-  margin: 6px 0 10px 0 !important;
-}
-
-.about-tools-block-desc {
-  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-size: 14px !important;
-  line-height: 1.6 !important;
-  color: #5C5248 !important;
-  margin: 0 0 18px 0 !important;
-}
-
-.about-tools-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.about-tools-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 12px;
-  background-color: #FFFDFC;
-  border: 1px solid rgba(212, 204, 201, 0.85);
-  border-radius: 20px;
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 13px;
-  font-weight: 500;
-  color: #3E3934;
-  box-shadow: 0 2px 6px rgba(62, 57, 52, 0.03);
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.about-tools-pill:hover {
-  border-color: var(--color-accent, #A85E3F);
-  transform: translateY(-1px);
-}
-
-.about-tools-notion-row {
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 8px;
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-}
-
-.about-tools-notion-label {
-  font-size: 12px;
-  font-weight: 500;
-  color: #8C8075;
-  font-style: italic;
-}
-
-.about-tools-pill-subtle {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 10px;
+  padding: 80px 0 88px 0;
   background-color: transparent;
-  border: 1px dashed rgba(212, 204, 201, 0.85);
-  border-radius: 16px;
-  font-size: 12px;
-  font-weight: 400;
-  color: #6F665F;
+  border: none;
+  position: relative;
+  overflow: visible;
 }
 
-.about-tools-note {
-  margin-top: 12px;
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 12px;
-  line-height: 1.5;
-  color: #8C8075;
-  font-style: italic;
+.about-tools-asset-wrapper {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.about-tools-asset-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .about-tools-section {
+    padding: 48px 0 56px 0;
+  }
 }
 
 /* ==========================================================================
@@ -8818,7 +8672,7 @@ button.offer-accordion-header:focus-visible {
 .about-cta-final-section {
   padding: 100px 0 110px 0;
   background-color: var(--color-bg-main, #F3EFEA);
-  border-top: 1px solid rgba(212, 204, 201, 0.6);
+  border-top: none;
   text-align: center;
 }
 
@@ -9066,134 +8920,6 @@ button.offer-accordion-header:focus-visible {
   line-height: 1.25;
 }
 
-#page-about .about-timeline-section {
-  margin-top: 30px;
-  margin-bottom: 80px;
-  position: relative;
-}
-
-#page-about .about-timeline-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 40px;
-}
-
-#page-about .about-timeline-accent {
-  color: var(--color-accent, #A85E3F);
-  font-size: 24px;
-  font-weight: 700;
-}
-
-#page-about .about-timeline-title {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 32px !important;
-  color: #3E3934 !important;
-  margin: 0 !important;
-}
-
-#page-about .about-timeline-track {
-  position: relative;
-  width: 100%;
-  min-height: 180px;
-  margin-bottom: 24px;
-}
-
-#page-about .about-timeline-svg-line {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-#page-about .about-timeline-nodes {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 8px;
-  align-items: center;
-}
-
-#page-about .about-timeline-node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-#page-about .about-timeline-node.node-up {
-  transform: translateY(-20px);
-}
-
-#page-about .about-timeline-node.node-down {
-  transform: translateY(35px);
-}
-
-#page-about .about-timeline-node.node-final {
-  transform: translateY(-10px);
-}
-
-#page-about .about-node-circle {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--color-bg-secondary, #E9DED3);
-  border: 1.5px solid var(--color-accent, #A85E3F);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text, #3E3934);
-  box-shadow: 0 4px 10px rgba(62, 57, 52, 0.06);
-  margin-bottom: 8px;
-  transition: transform 0.25s ease, background-color 0.25s ease;
-}
-
-#page-about .about-node-circle:hover {
-  transform: scale(1.12);
-  background: #FFFDFC;
-}
-
-#page-about .node-circle-highlight {
-  width: 52px;
-  height: 52px;
-  background: var(--color-accent, #A85E3F);
-  color: #FFFFFF !important;
-  border-color: var(--color-accent, #A85E3F);
-  box-shadow: 0 6px 16px rgba(168, 94, 63, 0.35);
-}
-
-#page-about .about-node-label {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.35;
-  color: #3E3934;
-}
-
-#page-about .node-label-highlight {
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--color-accent, #A85E3F);
-}
-
-#page-about .about-timeline-footer-quote {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 15px;
-  color: #5C5248;
-  text-align: center;
-  margin-top: 36px;
-}
-
-#page-about .about-timeline-footer-quote em {
-  font-family: 'Caveat', cursive, sans-serif;
-  font-size: 22px;
-  color: var(--color-accent, #A85E3F);
-  font-style: normal;
-}
 
 @media (max-width: 1024px) {
   #page-about .about-hero-workshop {
@@ -9236,6 +8962,55 @@ button.offer-accordion-header:focus-visible {
   gap: 16px;
   margin-bottom: 0;
   max-width: 620px;
+}
+
+/* BLOC DE TRANSITION DÉDIÉ : HERO -> LE FIL ROUGE */
+.about-thread-transition {
+  position: relative;
+  width: min(740px, 72vw);
+  min-height: 120px;
+  margin: 18px auto 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: visible;
+}
+
+@media (min-width: 1024px) {
+  .about-thread-transition {
+    transform: translateX(-120px);
+  }
+}
+
+.about-thread-transition__label {
+  margin: 0 0 6px -20px;
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  line-height: 1.2;
+  font-weight: 400;
+  color: rgba(62, 57, 52, 0.78);
+  text-align: center;
+  transform: rotate(-1deg);
+}
+
+.about-thread-transition__svg {
+  display: block;
+  width: 100%;
+  height: 72px;
+  overflow: visible;
+}
+
+.about-thread-transition__path {
+  fill: none;
+  stroke: var(--color-accent, #C76D4B);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 5 7;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.9;
 }
 
 #page-about .about-timeline-section {
@@ -9336,12 +9111,31 @@ button.offer-accordion-header:focus-visible {
   #page-about .about-handwriting-curiosity {
     display: none;
   }
+  .about-thread-transition {
+    transform: translateX(-20px);
+  }
   #page-about .about-timeline-track {
     min-width: 960px;
   }
 }
 
 @media (max-width: 768px) {
+  .about-thread-transition {
+    width: min(88vw, 560px);
+    min-height: 90px;
+    margin: 12px auto 20px;
+    transform: translateX(-8px);
+  }
+
+  .about-thread-transition__svg {
+    height: 56px;
+  }
+
+  .about-thread-transition__label {
+    font-size: 1.05rem;
+    margin-left: 0;
+  }
+
   #page-about .about-timeline-header-line {
     display: none;
   }
