@@ -8723,7 +8723,7 @@ button.offer-accordion-header:focus-visible {
   grid-template-columns: 500px 1fr;
   gap: 52px;
   align-items: flex-start;
-  margin-bottom: 75px;
+  margin-bottom: 36px;
   position: relative;
 }
 
@@ -9103,7 +9103,7 @@ button.offer-accordion-header:focus-visible {
    ========================================================================== */
 #page-about .about-values-section {
   background: transparent !important;
-  padding: 30px 0 60px 0 !important;
+  padding: 12px 0 45px 0 !important;
   position: relative;
   overflow: visible;
 }
@@ -9491,7 +9491,7 @@ button.offer-accordion-header:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: 52px;
+  margin-top: 38px;
 }
 
 #page-about .about-values-visuals-wrap {
@@ -9708,6 +9708,7 @@ button.offer-accordion-header:focus-visible {
 
 /* SECTION ART & SENSIBILITÉ */
 #page-about .about-art-section {
+  padding: 36px 0 52px 0 !important;
   margin-bottom: 0;
   position: relative;
 }
@@ -9842,7 +9843,15 @@ button.offer-accordion-header:focus-visible {
    SECTION 4 : RECOMMANDATION (SUPPORT PAPIER DÉCHIRÉ & AQUARELLE SAUGE) (#page-about)
    ========================================================================== */
 #page-about .about-testimonial-section {
-  padding: 60px 0 50px 0 !important;
+  padding: 48px 0 20px 0 !important;
+  position: relative;
+  background: transparent !important;
+  overflow: visible;
+}
+
+/* SECTION 5 : OUTILS & PRATIQUES (#page-about) */
+#page-about .about-tools-section {
+  padding: 24px 0 50px 0 !important;
   position: relative;
   background: transparent !important;
   overflow: visible;
