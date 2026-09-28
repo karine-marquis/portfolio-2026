@@ -96,19 +96,19 @@ const ARTICLES_DATA = [
 const PRICING_PACKS = [
   {
     title: "Audit UX & Diagnostic Ergonomique",
-    price: "2 400 €",
+    price: "2 181,82 €",
     delay: "1 à 2 Semaines",
     desc: "Évaluation complète de votre produit existant avec rapport d'audit heuristique et préconisations de refonte."
   },
   {
     title: "Design System & Tokens Figma",
-    price: "4 800 €",
+    price: "4 363,64 €",
     delay: "3 à 4 Semaines",
     desc: "Bibliothèque UI propre, accessible WCAG AAA et documentée pour accélérer vos équipes dev."
   },
   {
     title: "Conception E-Learning Sur-Mesure",
-    price: "7 500 €",
+    price: "6 818,18 €",
     delay: "4 à 6 Semaines",
     desc: "De la recherche utilisateur jusqu'au prototype haute-fidélité prêt pour la recette dev."
   }

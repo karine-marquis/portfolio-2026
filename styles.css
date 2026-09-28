@@ -574,9 +574,9 @@ strong, b {
 
 #page-about .about-hero-body {
   font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-size: 13.5px !important;
-  color: #3E3934 !important;
-  line-height: 1.65 !important;
+  font-size: 14px !important;
+  color: #4A433D !important;
+  line-height: 1.6 !important;
   margin: 0 !important;
 }
 
@@ -630,45 +630,7 @@ strong, b {
 /* ===== HERO ABOUT : base ===== */
 #page-about .about-hero-text-col {
   position: relative !important;
-  padding-right: 300px !important; /* réserve la place de la note */
   max-width: none !important;
-}
-
-/* la note manuscrite */
-#page-about .about-top-note {
-  position: absolute !important;
-  top: 28px !important;
-  right: 28px !important;
-  width: 220px !important;
-  max-width: 220px !important;
-  height: auto !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-}
-
-/* image de la note si besoin */
-#page-about .about-top-note img {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-}
-
-/* le vrai contenu texte doit rester devant et lisible */
-#page-about .about-hero-text-col > *:not(.about-top-note) {
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-@media (max-width: 1140px) {
-  #page-about .about-hero-text-col {
-    padding-right: 0 !important;
-  }
-}
-
-@media (max-width: 768px) {
-  #page-about .about-top-note {
-    display: none !important;
-  }
 }
 
 /* ==========================================================================
@@ -8753,7 +8715,7 @@ button.offer-accordion-header:focus-visible {
   font-family: 'Caveat', cursive, sans-serif !important;
   font-size: 22px;
   line-height: 1.3;
-  color: #5C5248;
+  color: var(--color-accent, #A85E3F) !important;
 }
 
 #page-about .about-hero-workshop {
@@ -8761,7 +8723,7 @@ button.offer-accordion-header:focus-visible {
   grid-template-columns: 500px 1fr;
   gap: 52px;
   align-items: flex-start;
-  margin-bottom: 80px;
+  margin-bottom: 75px;
   position: relative;
 }
 
@@ -8769,6 +8731,7 @@ button.offer-accordion-header:focus-visible {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-top: 105px;
 }
 
 #page-about .about-hero-photo-frame {
@@ -8782,11 +8745,18 @@ button.offer-accordion-header:focus-visible {
   width: 100%;
 }
 
+@media (min-width: 1025px) {
+  #page-about .about-hero-photo-frame {
+    top: 24px;
+  }
+}
+
 #page-about .about-hero-photo-img {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: 12% center;
   border-radius: 2px;
   display: block;
 }
@@ -8812,30 +8782,16 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-handwriting-arrow {
-  width: 55px;
+  width: 62px;
   height: auto;
   display: block;
-  margin-top: 6px;
-  margin-left: 20px;
+  margin-top: 8px;
+  margin-left: 18px;
+  pointer-events: none;
 }
 
-#page-about .about-hero-note-card {
-  position: absolute;
-  bottom: -35px;
-  right: -25px;
-  z-index: 5;
-  transform: rotate(3deg);
-  transition: transform 0.3s ease;
-}
-
-#page-about .about-hero-note-card:hover {
-  transform: rotate(0deg) scale(1.03);
-}
-
-#page-about .about-note-mots-img {
-  width: 250px;
-  height: auto;
-  filter: drop-shadow(0 8px 24px rgba(62, 57, 52, 0.14));
+#page-about .about-handwriting-arrow path {
+  stroke: var(--color-accent, #A85E3F) !important;
 }
 
 #page-about .about-hero-text-col {
@@ -8854,8 +8810,9 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-handwriting-curiosity {
   position: relative;
+  font-family: 'Caveat', cursive, sans-serif !important;
   font-size: 22px;
-  color: #5C5248;
+  color: var(--color-accent, #A85E3F) !important;
   transform: rotate(6deg);
   line-height: 1.25;
   margin-right: -10px;
@@ -8877,23 +8834,15 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-hero-body {
   font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 15.5px;
-  line-height: 1.7;
-  color: #5C5248;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4A433D;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   margin-bottom: 24px;
 }
 
-#page-about .about-handwriting-curiosity {
-  position: absolute;
-  top: 100px;
-  right: -20px;
-  transform: rotate(8deg);
-  font-size: 20px;
-  color: var(--color-text-muted);
-}
 
 #page-about .about-hero-sketch-wrap {
   position: relative;
@@ -8953,72 +8902,31 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-hero-body {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 16px;
-  line-height: 1.7;
-  color: #4A433D;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 0;
-  max-width: 620px;
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #4A433D !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  margin-bottom: 4px !important;
+  max-width: 100% !important;
 }
 
-/* BLOC DE TRANSITION DÉDIÉ : HERO -> LE FIL ROUGE */
-.about-thread-transition {
-  position: relative;
-  width: min(740px, 72vw);
-  min-height: 120px;
-  margin: 18px auto 26px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  overflow: visible;
-}
-
-@media (min-width: 1024px) {
-  .about-thread-transition {
-    transform: translateX(-120px);
-  }
-}
-
-.about-thread-transition__label {
-  margin: 0 0 6px -20px;
-  font-family: 'Caveat', cursive, sans-serif;
-  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
-  line-height: 1.2;
-  font-weight: 400;
-  color: rgba(62, 57, 52, 0.78);
-  text-align: center;
-  transform: rotate(-1deg);
-}
-
-.about-thread-transition__svg {
-  display: block;
-  width: 100%;
-  height: 72px;
-  overflow: visible;
-}
-
-.about-thread-transition__path {
-  fill: none;
-  stroke: var(--color-accent, #C76D4B);
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 5 7;
-  vector-effect: non-scaling-stroke;
-  opacity: 0.9;
+#page-about .about-hero-body p {
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #4A433D !important;
+  margin: 0 !important;
 }
 
 #page-about .about-timeline-section {
-  margin-top: 24px;
-  margin-bottom: 75px;
+  margin-top: -10px;
+  margin-bottom: 0;
   position: relative;
   width: 100%;
-  padding: 20px 0;
+  padding: 0;
   overflow: visible;
 }
 
@@ -9082,9 +8990,10 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-timeline-visual-wrap {
-  width: 100%;
+  width: 111%;
+  max-width: 111%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -9092,12 +9001,50 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-timeline-img {
   width: 100%;
-  max-width: 1140px;
+  max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0;
   object-fit: contain;
   mix-blend-mode: multiply;
+  filter: contrast(1.05) brightness(0.98);
+}
+
+/* CTA intermédiaire : transition vers l'offre (placé sous la photo à gauche, aligné avec la frise) */
+#page-about .about-hero-cta-wrap {
+  margin-top: 68px;
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+#page-about .about-hero-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-accent, #A85E3F);
+  background: transparent;
+  border: 1.5px solid var(--color-accent, #A85E3F);
+  border-radius: 999px;
+  padding: 9px 22px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 8px rgba(168, 94, 63, 0.06);
+}
+
+#page-about .about-hero-cta-link:hover,
+#page-about .about-hero-cta-link:focus-visible {
+  background: var(--color-accent, #A85E3F);
+  color: #FFFDFC;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(168, 94, 63, 0.18);
 }
 
 @media (max-width: 1024px) {
@@ -9105,14 +9052,25 @@ button.offer-accordion-header:focus-visible {
     grid-template-columns: 1fr;
     gap: 36px;
   }
+  #page-about .about-hero-photo-col {
+    margin-top: 0;
+  }
   #page-about .about-hero-annotation-left {
     display: none;
   }
   #page-about .about-handwriting-curiosity {
     display: none;
   }
-  .about-thread-transition {
-    transform: translateX(-20px);
+  #page-about .about-timeline-section {
+    margin-top: 20px;
+  }
+  #page-about .about-hero-cta-wrap {
+    justify-content: center;
+    margin-top: 16px;
+  }
+  #page-about .about-timeline-visual-wrap {
+    width: 100%;
+    max-width: 100%;
   }
   #page-about .about-timeline-track {
     min-width: 960px;
@@ -9120,22 +9078,6 @@ button.offer-accordion-header:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .about-thread-transition {
-    width: min(88vw, 560px);
-    min-height: 90px;
-    margin: 12px auto 20px;
-    transform: translateX(-8px);
-  }
-
-  .about-thread-transition__svg {
-    height: 56px;
-  }
-
-  .about-thread-transition__label {
-    font-size: 1.05rem;
-    margin-left: 0;
-  }
-
   #page-about .about-timeline-header-line {
     display: none;
   }
@@ -9150,10 +9092,6 @@ button.offer-accordion-header:focus-visible {
 @media (max-width: 640px) {
   #page-about .about-hero-title {
     font-size: 30px !important;
-  }
-  #page-about .about-hero-note-card {
-    margin-left: 0;
-    margin-top: 10px;
   }
 }
 
@@ -9232,7 +9170,7 @@ button.offer-accordion-header:focus-visible {
   font-family: 'Caveat', cursive, sans-serif !important;
   font-size: 26px !important;
   font-weight: 500 !important;
-  color: #221E1B !important;
+  color: var(--color-accent, #A85E3F) !important;
   margin: 0 !important;
   line-height: 1.15 !important;
   display: block;
@@ -9248,6 +9186,10 @@ button.offer-accordion-header:focus-visible {
   display: block;
   pointer-events: none;
   filter: drop-shadow(0 1px 1px rgba(0,0,0,0.08));
+}
+
+#page-about .about-values-handwritten-curve path {
+  stroke: var(--color-accent, #A85E3F) !important;
 }
 
 /* Petite note manuscrite éditoriale en haut à droite */
@@ -9294,36 +9236,38 @@ button.offer-accordion-header:focus-visible {
   display: block;
   mix-blend-mode: multiply;
   user-select: none;
+  filter: blur(3px);
 }
 
-/* Tache 1 : Arrière-plan haut gauche / centre (déborde autour de Transmission & Empathie) */
+/* Tache 1 : Arrière-plan haut gauche / centre (déborde doucement autour de Transmission & Créativité) */
 #page-about .about-values-aquarelle-1 {
   top: -10px;
   left: 4%;
   width: 660px;
   height: auto;
-  opacity: 0.62;
+  opacity: 0.48;
   transform: rotate(-5deg);
 }
 
-/* Tache 2 : Arrière-plan haut droit (déborde autour de Bienveillance et flanc droit) */
+/* Tache 2 : Arrière-plan haut droit (déborde autour de Transparence et flanc droit) */
 #page-about .about-values-aquarelle-2 {
   top: 30px;
   right: -50px;
   width: 600px;
   height: auto;
-  opacity: 0.58;
+  opacity: 0.45;
   transform: rotate(16deg) scale(1.05);
 }
 
-/* Tache 3 : Arrière-plan bas centre / gauche (déborde sous Transparence, Passion & Intégrité) */
+/* Tache 3 : Arrière-plan bas centre / gauche (très légère et diffuse sous les cartes) */
 #page-about .about-values-aquarelle-3 {
   bottom: -45px;
   left: 20%;
   width: 720px;
   height: auto;
-  opacity: 0.60;
+  opacity: 0.40;
   transform: rotate(-10deg) scale(1.1);
+  filter: blur(4px);
 }
 
 /* --- LIGNE HAUTE : TRANSMISSION DU SAVOIR (EN TÊTE) + EMPATHIE + BIENVEILLANCE --- */
@@ -9522,44 +9466,57 @@ button.offer-accordion-header:focus-visible {
   transform: rotate(0deg) translateY(2px);
 }
 
-#page-about .about-value-card-passion {
+#page-about .about-value-card-passion,
+#page-about .about-value-card-creativite {
   transform: rotate(-1.5deg) translateY(-4px);
 }
-#page-about .about-value-card-passion:hover {
+#page-about .about-value-card-passion:hover,
+#page-about .about-value-card-creativite:hover {
   transform: rotate(-0.5deg) translateY(-8px);
 }
 
-#page-about .about-value-card-honnetete {
+#page-about .about-value-card-honnetete,
+#page-about .about-value-card-integrite {
   transform: rotate(1.5deg) translateY(8px);
 }
-#page-about .about-value-card-honnetete:hover {
+#page-about .about-value-card-honnetete:hover,
+#page-about .about-value-card-integrite:hover {
   transform: rotate(0.5deg) translateY(4px);
 }
 
 /* --- COMPOSITION VISUELLE BASSE : MARCHÉ (PAYSAGE) + PORTRAIT AU BIC BLEU --- */
+#page-about .about-values-visuals-outer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 52px;
+}
+
 #page-about .about-values-visuals-wrap {
   position: relative;
   width: 100%;
-  margin-top: 52px;
+  margin-top: 0;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   overflow: visible;
 }
 
-/* Tache aquarelle sauge en arrière-plan du groupe visuel bas */
+/* Tache aquarelle sauge en arrière-plan du groupe visuel bas (très subtile et fondue) */
 #page-about .about-values-bottom-aquarelle {
   position: absolute;
   top: -45px;
   right: 80px;
   width: 720px;
   height: auto;
-  opacity: 0.48;
+  opacity: 0.34;
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 0;
   transform: rotate(-7deg);
-  filter: blur(1px);
+  filter: blur(2.5px);
   user-select: none;
 }
 
@@ -9644,8 +9601,10 @@ button.offer-accordion-header:focus-visible {
   }
   #page-about .about-value-card-transparence,
   #page-about .about-value-card-honnetete,
+  #page-about .about-value-card-integrite,
   #page-about .about-value-card-empathie,
   #page-about .about-value-card-passion,
+  #page-about .about-value-card-creativite,
   #page-about .about-value-card-transmission,
   #page-about .about-value-card-bienveillance {
     transform: none !important;
@@ -9654,18 +9613,24 @@ button.offer-accordion-header:focus-visible {
   }
   #page-about .about-value-card-transparence:hover,
   #page-about .about-value-card-honnetete:hover,
+  #page-about .about-value-card-integrite:hover,
   #page-about .about-value-card-empathie:hover,
   #page-about .about-value-card-passion:hover,
+  #page-about .about-value-card-creativite:hover,
   #page-about .about-value-card-transmission:hover,
   #page-about .about-value-card-bienveillance:hover {
     transform: translateY(-4px) !important;
   }
 
+  #page-about .about-values-visuals-outer {
+    align-items: center;
+    margin-top: 36px;
+  }
   #page-about .about-values-visuals-wrap {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 36px;
+    margin-top: 0;
   }
   #page-about .about-values-marche-wrapper {
     max-width: 540px;
@@ -9681,9 +9646,18 @@ button.offer-accordion-header:focus-visible {
     width: 180px;
     transform: rotate(-2.5deg);
   }
+  #page-about .about-values-credit-note {
+    max-width: 540px;
+    text-align: center;
+    margin-top: 14px;
+  }
 }
 
 @media (max-width: 640px) {
+  #page-about .about-values-credit-note {
+    max-width: 100%;
+    text-align: center;
+  }
   #page-about .about-values-title {
     font-size: 34px !important;
   }
@@ -9808,6 +9782,12 @@ button.offer-accordion-header:focus-visible {
   margin: 6px auto 0 auto;
   text-align: left;
   padding: 0;
+}
+
+#page-about .about-values-credit-note {
+  max-width: 650px;
+  margin: 12px 0 0 0;
+  text-align: right;
 }
 
 /* ADAPTATIONS TABLETTE ET MOBILE ÉTAPE 2 */
@@ -10003,7 +9983,7 @@ button.offer-accordion-header:focus-visible {
 #page-about .about-testimonial-note-text {
   font-family: 'Caveat', cursive, sans-serif !important;
   font-size: 20px !important;
-  color: #221E1B !important;
+  color: var(--color-accent, #A85E3F) !important;
   margin: 0 !important;
   line-height: 1.15 !important;
 }
@@ -10013,6 +9993,10 @@ button.offer-accordion-header:focus-visible {
   height: auto;
   margin-top: 2px;
   display: block;
+}
+
+#page-about .about-testimonial-note-curve path {
+  stroke: var(--color-accent, #A85E3F) !important;
 }
 
 /* Responsive Recommandation */
@@ -10064,7 +10048,7 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-cta-paper-wrapper {
   position: relative;
-  max-width: 600px;
+  max-width: 495px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -10076,13 +10060,14 @@ button.offer-accordion-header:focus-visible {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1.15);
-  width: 120%;
-  max-width: 760px;
+  transform: translate(-50%, -50%) scale(1.05);
+  width: 118%;
+  max-width: 610px;
   height: auto;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.85;
+  opacity: 0.75;
+  filter: blur(2px);
 }
 
 #page-about .about-cta-paper-bg {
@@ -10091,7 +10076,7 @@ button.offer-accordion-header:focus-visible {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 12px 28px rgba(62, 57, 52, 0.12));
+  filter: drop-shadow(0 10px 24px rgba(62, 57, 52, 0.11));
 }
 
 #page-about .about-cta-paper-content {
@@ -10105,24 +10090,24 @@ button.offer-accordion-header:focus-visible {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 55px;
+  padding: 24px 38px;
   text-align: center;
   box-sizing: border-box;
 }
 
 #page-about .about-cta-final-title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 34px !important;
+  font-size: 30px !important;
   font-weight: 600 !important;
   color: #3E3934 !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 8px !important;
 }
 
 #page-about .about-cta-final-text {
   font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-size: 15.5px !important;
+  font-size: 14.5px !important;
   color: #5C5248 !important;
-  margin-bottom: 22px !important;
+  margin-bottom: 18px !important;
 }
 
 #page-about .about-cta-final-btn {

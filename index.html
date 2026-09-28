@@ -2240,7 +2240,7 @@
         <!-- HAUT DE PAGE / HERO CARNET D'ATELIER (ÉTAPE 1) -->
         <div class="about-hero-workshop">
           
-          <!-- COLONNE GAUCHE : PHOTO GRANDE TAILLE, ANNOTATION ET NOTE CRÉER.RELIER.TRANSMETTRE. -->
+          <!-- COLONNE GAUCHE : PHOTO GRANDE TAILLE, ANNOTATION ET CTA TRANSITION -->
           <div class="about-hero-photo-col">
             <div class="about-hero-photo-frame">
               <img src="assets/scotch-beige.png" alt="" class="about-hero-tape-top" aria-hidden="true">
@@ -2250,12 +2250,16 @@
             <!-- ANNOTATION À GAUCHE DE LA PHOTO (POSITIONNÉE SANS CHEVAUCHER LA NAV) -->
             <div class="about-hero-annotation-left">
               <span class="about-handwriting">Le design<br>se nourrit<br>des chemins<br>de traverse.</span>
-              <img src="assets/fleche-main.png" alt="" class="about-handwriting-arrow" aria-hidden="true">
+              <svg class="about-handwriting-arrow" viewBox="0 0 75 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M 3 13 C 22 17 45 15 68 10 M 56 4 C 61 6 65 8 69 10 C 64 13 60 16 57 19" stroke="#A85E3F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+              </svg>
             </div>
 
-            <!-- NOTE MANUSCRITE "CRÉER. RELIER. TRANSMETTRE." OVERLAP BAS PHOTO -->
-            <div class="about-hero-note-card">
-              <img src="assets/note-mots-cles.png" alt="Créer. Relier. Transmettre." class="about-note-mots-img">
+            <!-- CTA INTERMÉDIAIRE : TRANSITION VERS L'OFFRE -->
+            <div class="about-hero-cta-wrap">
+              <a href="#page-offer" onclick="navigateTo('offer')" class="about-hero-cta-link" aria-label="Voir comment Karine Marquis peut vous accompagner">
+                Voir comment je peux vous accompagner →
+              </a>
             </div>
           </div>
 
@@ -2280,41 +2284,21 @@
               <p>Ces détours m’ont appris quelque chose d’essentiel : une expérience ne se résume jamais à l’écran qu’on a devant soi. Il y a un contexte, des personnes, des contraintes, des habitudes et des usages réels.</p>
               <p>Aujourd’hui, c’est avec ce regard-là que je pratique l’UX : observer, comprendre, simplifier et concevoir des parcours qui fonctionnent dans la vraie vie.</p>
             </div>
+
+            <!-- BLOC LE FIL ROUGE DIRECTEMENT INTÉGRÉ SOUS LE TEXTE (COLONNE DROITE) -->
+            <div class="about-timeline-section">
+              <div class="about-timeline-visual-wrap">
+                <img 
+                  src="assets/mockup-frise-2.png" 
+                  alt="Le fil rouge : parcours de Karine Marquis — Relation client, Management, Sciences de l’éducation, Digital learning, Gestion de projet, Développement front-end, UX. Des détours en apparence. Un même fil rouge : comprendre les usages, transmettre clairement et donner forme aux idées." 
+                  class="about-timeline-img"
+                  loading="lazy"
+                >
+              </div>
+            </div>
           </div>
         </div>
-
-        <!-- BLOC DE TRANSITION DÉDIÉ : HERO -> LE FIL ROUGE -->
-        <div class="about-thread-transition" aria-hidden="true">
-          <p class="about-thread-transition__label">
-            Des chemins de traverse, un même fil.
-          </p>
-
-          <svg
-            class="about-thread-transition__svg"
-            viewBox="0 0 740 90"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <path
-              class="about-thread-transition__path"
-              d="M 30 55
-                 C 135 20, 230 75, 340 45
-                 C 440 18, 545 62, 670 34"
-            />
-          </svg>
-        </div>
-
-        <!-- BLOC LE FIL ROUGE (VISUEL PRINCIPAL TIMELINE) -->
-        <div class="about-timeline-section">
-          <div class="about-timeline-visual-wrap">
-            <img 
-              src="assets/timeline.png" 
-              alt="Le fil rouge : parcours de Karine Marquis — Relation client, Management, Histoire de l’art, Sciences de l’éducation, Digital learning, Gestion de projet, Développement front-end, UX. Des détours en apparence. Un même fil rouge : comprendre les usages, transmettre clairement et donner forme aux idées." 
-              class="about-timeline-img"
-              loading="lazy"
-            >
-          </div>
-        </div>
+      </div>
 
       <!-- ==========================================================================
          SECTION 2 : CE QUI ME GUIDE (VALEURS ÉDITORIALES - STRUCTURE HAUTE)
@@ -2332,7 +2316,7 @@
               <div class="about-values-handwritten-block">
                 <p class="about-values-subtitle">Dans le travail<br>comme dans la vie.</p>
                 <svg class="about-values-handwritten-curve" viewBox="0 0 240 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M 4 8 Q 90 17 180 10 T 235 6" stroke="#25211E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.88" />
+                  <path d="M 4 8 Q 90 17 180 10 T 235 6" stroke="#A85E3F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.88" />
                 </svg>
               </div>
             </div>
@@ -2354,7 +2338,7 @@
             <img src="assets/tache-aquarelle-sauge.png" alt="" class="about-values-aquarelle about-values-aquarelle-3">
           </div>
 
-          <!-- LIGNE HAUTE : TRANSMISSION DU SAVOIR (EN TÊTE) + EMPATHIE + BIENVEILLANCE -->
+          <!-- LIGNE HAUTE : TRANSMISSION DU SAVOIR (EN TÊTE) + CRÉATIVITÉ + TRANSPARENCE -->
           <div class="about-values-top-row">
 
             <!-- CARTE 1 : TRANSMISSION DU SAVOIR (VALEUR CENTRALE / EN TÊTE) -->
@@ -2367,31 +2351,17 @@
               </div>
             </div>
 
-            <!-- CARTE 2 : EMPATHIE -->
-            <div class="about-value-item about-value-paper-wrapper about-value-card-empathie">
-              <img src="assets/papier-dechire-1.png" alt="" class="about-value-paper-bg" aria-hidden="true">
+            <!-- CARTE 2 : CRÉATIVITÉ -->
+            <div class="about-value-item about-value-paper-wrapper about-value-card-creativite">
+              <img src="assets/scotch-beige.png" alt="" class="about-value-scotch-tape about-value-scotch-top-right" aria-hidden="true">
+              <img src="assets/papier-dechire-3-clean.png" alt="" class="about-value-paper-bg" aria-hidden="true">
               <div class="about-value-paper-content">
-                <h3 class="about-value-heading">Empathie</h3>
-                <p class="about-value-desc">Écouter, observer et comprendre avant de supposer.</p>
+                <h3 class="about-value-heading">Créativité</h3>
+                <p class="about-value-desc">Explorer les détours, sortir du cadre et imaginer des solutions inattendues quand les réponses classiques ne suffisent pas.</p>
               </div>
             </div>
 
-            <!-- CARTE 3 : BIENVEILLANCE -->
-            <div class="about-value-item about-value-paper-wrapper about-value-card-bienveillance">
-              <img src="assets/scotch-beige.png" alt="" class="about-value-scotch-tape about-value-scotch-top-center" aria-hidden="true">
-              <img src="assets/papier-froisse.png" alt="" class="about-value-paper-bg" aria-hidden="true">
-              <div class="about-value-paper-content">
-                <h3 class="about-value-heading">Bienveillance</h3>
-                <p class="about-value-desc">Créer un cadre où l’on peut dire les choses, essayer, se tromper et avancer sans juger.</p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- LIGNE BASSE : TRANSPARENCE + PASSION + INTÉGRITÉ -->
-          <div class="about-values-bottom-row">
-
-            <!-- CARTE 4 : TRANSPARENCE -->
+            <!-- CARTE 3 : TRANSPARENCE -->
             <div class="about-value-item about-value-paper-wrapper about-value-card-transparence">
               <img src="assets/scotch-beige.png" alt="" class="about-value-scotch-tape about-value-scotch-top-center" aria-hidden="true">
               <img src="assets/papier-dechire-1.png" alt="" class="about-value-paper-bg" aria-hidden="true">
@@ -2401,18 +2371,32 @@
               </div>
             </div>
 
-            <!-- CARTE 5 : PASSION -->
-            <div class="about-value-item about-value-paper-wrapper about-value-card-passion">
-              <img src="assets/scotch-beige.png" alt="" class="about-value-scotch-tape about-value-scotch-top-right" aria-hidden="true">
-              <img src="assets/papier-dechire-3-clean.png" alt="" class="about-value-paper-bg" aria-hidden="true">
+          </div>
+
+          <!-- LIGNE BASSE : EMPATHIE + BIENVEILLANCE + INTÉGRITÉ -->
+          <div class="about-values-bottom-row">
+
+            <!-- CARTE 4 : EMPATHIE -->
+            <div class="about-value-item about-value-paper-wrapper about-value-card-empathie">
+              <img src="assets/papier-dechire-1.png" alt="" class="about-value-paper-bg" aria-hidden="true">
               <div class="about-value-paper-content">
-                <h3 class="about-value-heading">Passion</h3>
-                <p class="about-value-desc">Garder l’envie de comprendre, d’explorer et d’aller un peu plus loin.</p>
+                <h3 class="about-value-heading">Empathie</h3>
+                <p class="about-value-desc">Écouter, observer et comprendre avant de supposer.</p>
+              </div>
+            </div>
+
+            <!-- CARTE 5 : BIENVEILLANCE -->
+            <div class="about-value-item about-value-paper-wrapper about-value-card-bienveillance">
+              <img src="assets/scotch-beige.png" alt="" class="about-value-scotch-tape about-value-scotch-top-center" aria-hidden="true">
+              <img src="assets/papier-froisse.png" alt="" class="about-value-paper-bg" aria-hidden="true">
+              <div class="about-value-paper-content">
+                <h3 class="about-value-heading">Bienveillance</h3>
+                <p class="about-value-desc">Créer un cadre où l’on peut dire les choses, essayer, se tromper et avancer sans juger.</p>
               </div>
             </div>
 
             <!-- CARTE 6 : INTÉGRITÉ -->
-            <div class="about-value-item about-value-paper-wrapper about-value-card-honnetete">
+            <div class="about-value-item about-value-paper-wrapper about-value-card-integrite">
               <img src="assets/papier-dechire-2.png" alt="" class="about-value-paper-bg" aria-hidden="true">
               <div class="about-value-paper-content">
                 <h3 class="about-value-heading">Intégrité</h3>
@@ -2423,26 +2407,29 @@
           </div>
 
           <!-- COMPOSITION VISUELLE BASSE : DESSIN PAYSAGE MARCHÉ SUR PAPIER DÉCHIRÉ + PORTRAIT AU BIC BLEU -->
-          <div class="about-values-visuals-wrap">
-            <!-- Tache aquarelle sauge douce en arrière-plan du groupe visuel bas -->
-            <img src="assets/tache-aquarelle-sauge.png" alt="" class="about-values-bottom-aquarelle" aria-hidden="true">
+          <div class="about-values-visuals-outer">
+            <div class="about-values-visuals-wrap">
+              <!-- Tache aquarelle sauge douce en arrière-plan du groupe visuel bas -->
+              <img src="assets/tache-aquarelle-sauge.png" alt="" class="about-values-bottom-aquarelle" aria-hidden="true">
 
-            <div class="about-values-marche-wrapper">
-              <img 
-                src="assets/marche-papier.png" 
-                alt="Dessin au graphite du marché sur papier déchiré — Observer, créer, faire le lien" 
-                class="about-values-marche-img"
-                loading="lazy"
-              >
+              <div class="about-values-marche-wrapper">
+                <img 
+                  src="assets/marche-papier.png" 
+                  alt="Dessin au graphite du marché sur papier déchiré — Observer, créer, faire le lien" 
+                  class="about-values-marche-img"
+                  loading="lazy"
+                >
+              </div>
+              <div class="about-values-bic-wrapper">
+                <img 
+                  src="assets/bic-portfolio.png" 
+                  alt="Portrait au stylo à bille bleu — Dessin d'atelier" 
+                  class="about-values-bic-img"
+                  loading="lazy"
+                >
+              </div>
             </div>
-            <div class="about-values-bic-wrapper">
-              <img 
-                src="assets/bic-portfolio.png" 
-                alt="Portrait au stylo à bille bleu — Dessin d'atelier" 
-                class="about-values-bic-img"
-                loading="lazy"
-              >
-            </div>
+            <p class="about-art-credit-note about-values-credit-note">Les œuvres présentées sont mes créations. Certaines images ont été retravaillées et optimisées avec l’aide de l’IA, sous ma direction artistique.</p>
           </div>
 
         </div>
@@ -2683,7 +2670,7 @@
               <div class="offer-accordion-col-right">
                 <div class="offer-accordion-meta-editorial">
                   <span class="offer-meta-duration">À partir de 3 jours</span>
-                  <span class="offer-meta-price">À partir de 1 650 € HT</span>
+                  <span class="offer-meta-price">À partir de 1 500 € HT</span>
                 </div>
                 <span class="offer-accordion-chevron" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -2759,7 +2746,7 @@
                     <div class="offer-format-item">
                       <div class="offer-format-header">
                         <h4 class="offer-format-title">Audit ciblé</h4>
-                        <div class="offer-format-meta">Environ 3 jours · À partir de 1 650 € HT</div>
+                        <div class="offer-format-meta">Environ 3 jours · À partir de 1 500 € HT</div>
                       </div>
                       <p class="offer-format-text">Pour analyser un parcours ou un problème bien délimité et identifier rapidement les priorités.</p>
                     </div>
@@ -2768,7 +2755,7 @@
                     <div class="offer-format-item">
                       <div class="offer-format-header">
                         <h4 class="offer-format-title">Audit approfondi</h4>
-                        <div class="offer-format-meta">Environ 5 à 6 jours · À partir de 2 750 € HT</div>
+                        <div class="offer-format-meta">Environ 5 à 6 jours · À partir de 2 500 € HT</div>
                       </div>
                       <p class="offer-format-text">Pour explorer plusieurs frictions, approfondir les hypothèses et intégrer si nécessaire de la recherche ou des tests utilisateurs.</p>
                     </div>
@@ -2799,7 +2786,7 @@
               <div class="offer-accordion-col-right">
                 <div class="offer-accordion-meta-editorial">
                   <span class="offer-meta-duration">À partir de 5 jours</span>
-                  <span class="offer-meta-price">À partir de 2 750 € HT</span>
+                  <span class="offer-meta-price">À partir de 2 500 € HT</span>
                 </div>
                 <span class="offer-accordion-chevron" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -2866,14 +2853,14 @@
                     <div class="offer-format-item">
                       <div class="offer-format-header">
                         <h4 class="offer-format-title">Sprint ciblé</h4>
-                        <div class="offer-format-meta">Environ 5 jours · À partir de 2 750 € HT</div>
+                        <div class="offer-format-meta">Environ 5 jours · À partir de 2 500 € HT</div>
                       </div>
                       <p class="offer-format-text">Pour travailler une hypothèse sur un parcours bien délimité, construire un prototype ciblé et l’ajuster à partir des premiers tests.</p>
                     </div>
                     <div class="offer-format-item">
                       <div class="offer-format-header">
                         <h4 class="offer-format-title">Sprint complet</h4>
-                        <div class="offer-format-meta">Environ 8 jours · Environ 4 400 € HT</div>
+                        <div class="offer-format-meta">Environ 8 jours · Environ 4 000 € HT</div>
                       </div>
                       <p class="offer-format-text">Pour approfondir la recherche et le parcours, développer le prototype et consacrer davantage de temps aux tests et aux itérations.</p>
                     </div>
@@ -2900,7 +2887,7 @@
               <div class="offer-accordion-col-right">
                 <div class="offer-accordion-meta-editorial">
                   <span class="offer-meta-duration">À partir de 4 jours / mois</span>
-                  <span class="offer-meta-price">À partir de 2 200 € HT / mois</span>
+                  <span class="offer-meta-price">À partir de 2 000 € HT / mois</span>
                 </div>
                 <span class="offer-accordion-chevron" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -3146,7 +3133,7 @@
           <div class="offer-modalites-text">
             <p>Toutes les missions n’ont pas besoin du même format. Certaines se prêtent à un forfait, d’autres à quelques jours ciblés ou à un accompagnement plus régulier.</p>
             <p>Avant de démarrer, on clarifie ensemble le périmètre, les priorités et ce qui doit réellement être livré.</p>
-            <p class="offer-modalites-highlight">Interventions au temps passé : à partir de 550 € HT / jour</p>
+            <p class="offer-modalites-highlight">Interventions au temps passé : à partir de 500 € HT / jour</p>
           </div>
         </div>
 
@@ -3253,12 +3240,12 @@
     </section>
 
     <!-- ==========================================================================
-       PAGE 6: TARIFS (TJM 450 € & PACKS)
+       PAGE 6: TARIFS (TJM 500 € & PACKS)
        ========================================================================== -->
     <section id="page-pricing" class="spa-page-section">
       <div class="content-wrap section-spacing">
         <div class="section-header-center" style="margin-bottom: 32px;">
-          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Taux Journalier Moyen (TJM) : 450 € / Jour</h2>
+          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Taux Journalier Moyen (TJM) : 500 € / Jour</h2>
           <p class="section-subtitle body-large">Ou forfaits d'accompagnement sur-mesure au projet ci-dessous.</p>
         </div>
 
