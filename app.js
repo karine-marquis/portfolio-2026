@@ -19,8 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = link.getAttribute('href');
       if (href && href.length > 1 && !href.startsWith('#lbc-sec-')) {
         const cleanId = href.replace(/^#/, '').replace(/^page-/, '');
-        const targetSec = document.getElementById(`page-${cleanId}`);
-        if (targetSec) {
+        if (typeof pageSectionsMap !== 'undefined' && pageSectionsMap.has(`page-${cleanId}`)) {
+          e.preventDefault();
+          navigateTo(cleanId);
+        } else if (document.getElementById(`page-${cleanId}`)) {
           e.preventDefault();
           navigateTo(cleanId);
         }
@@ -116,17 +118,48 @@ function seekFoodlesAudio(slider) {
 }
 
 /* ==========================================================================
-   1. SPA ROUTING NAVIGATION
+   1. SPA ROUTING & DOM ISOLATION (MODE AUDIT ACCESSIBILITÉ)
    ========================================================================== */
+const pageSectionsMap = new Map();
+const sectionPlaceholders = new Map();
+let drawerOverlayNode = null;
+
+function initDomSections() {
+  if (pageSectionsMap.size === 0) {
+    const sections = document.querySelectorAll('.spa-page-section');
+    sections.forEach(sec => {
+      const id = sec.id;
+      pageSectionsMap.set(id, sec);
+      const placeholder = document.createComment(` placeholder for ${id} `);
+      if (sec.parentNode) {
+        sec.parentNode.insertBefore(placeholder, sec);
+      }
+      sectionPlaceholders.set(id, placeholder);
+    });
+
+    const drawer = document.getElementById('projectDrawerOverlay');
+    if (drawer) {
+      drawerOverlayNode = drawer;
+    }
+  }
+}
+
 function navigateTo(pageId) {
   if (!pageId) return;
+  initDomSections();
+
   const cleanId = pageId.replace(/^#/, '').replace(/^page-/, '');
+  let targetId = `page-${cleanId}`;
+
+  if (!pageSectionsMap.has(targetId)) {
+    targetId = 'page-about';
+  }
 
   // 1. FERMER ET RÉINITIALISER LES DRAWERS ET LEURS SCROLLTOPS
   if (typeof closeProjectDrawer === 'function') {
     closeProjectDrawer();
   }
-  const drawerOverlay = document.getElementById('projectDrawerOverlay');
+  const drawerOverlay = drawerOverlayNode || document.getElementById('projectDrawerOverlay');
   if (drawerOverlay) {
     drawerOverlay.scrollTop = 0;
   }
@@ -135,7 +168,7 @@ function navigateTo(pageId) {
     if (el) el.scrollTop = 0;
   });
 
-  // 2. NETTOYER LE HASH ET EMPÊCHER LA DÉRIVE DE L'URL (PAS DE #foodles OU #03 PARASITE)
+  // 2. GESTION DU HASH DANS L'URL
   try {
     const targetHash = `#${cleanId}`;
     if (window.location.hash !== targetHash) {
@@ -145,23 +178,40 @@ function navigateTo(pageId) {
     // Fallback silencieux si file:// restreint pushState
   }
 
-  // 3. AFFICHER LA PAGE CIBLE ET MASQUER LES AUTRES SECTIONS
-  const sections = document.querySelectorAll('.spa-page-section');
-  sections.forEach(sec => {
-    sec.classList.remove('active');
-    sec.style.display = 'none';
+  // 3. MONTER UNIQUEMENT LA SECTION ACTIVE DANS LE DOM (les autres sont physiquement détachées)
+  pageSectionsMap.forEach((sec, id) => {
+    if (id === targetId) {
+      const placeholder = sectionPlaceholders.get(id);
+      if (placeholder && placeholder.parentNode && !sec.parentNode) {
+        placeholder.parentNode.insertBefore(sec, placeholder);
+      }
+      sec.classList.add('active');
+      sec.style.display = 'block';
+    } else {
+      sec.classList.remove('active');
+      sec.style.display = 'none';
+      if (sec.parentNode) {
+        sec.parentNode.removeChild(sec);
+      }
+    }
   });
 
-  const targetSection = document.getElementById(`page-${cleanId}`);
-  if (targetSection) {
-    targetSection.classList.add('active');
-    targetSection.style.display = 'block';
-  } else {
-    const homeSec = document.getElementById('page-home');
-    if (homeSec) {
-      homeSec.classList.add('active');
-      homeSec.style.display = 'block';
+  // Si on n'est pas sur la page projets, détacher également le drawer overlay du DOM
+  if (drawerOverlayNode) {
+    if (cleanId === 'projects') {
+      if (!drawerOverlayNode.parentNode) {
+        document.body.appendChild(drawerOverlayNode);
+      }
+    } else {
+      if (drawerOverlayNode.parentNode) {
+        drawerOverlayNode.parentNode.removeChild(drawerOverlayNode);
+      }
     }
+  }
+
+  // Si on arrive sur la page projets, s'assurer que les cartes sont rendues
+  if (cleanId === 'projects' && typeof renderCaseStudiesList === 'function') {
+    try { renderCaseStudiesList(); } catch(e){}
   }
 
   // 4. METTRE À JOUR L'ÉTAT ACTIF DES LIENS DE NAVIGATION
@@ -169,7 +219,7 @@ function navigateTo(pageId) {
   navLinks.forEach(link => {
     link.classList.remove('active');
     const href = link.getAttribute('href');
-    if (href === `#${cleanId}` || href === `#page-${cleanId}`) {
+    if (href === `#${cleanId}` || href === `#page-${cleanId}` || href === `#${targetId}`) {
       link.classList.add('active');
     }
   });
@@ -191,14 +241,16 @@ function navigateTo(pageId) {
 }
 
 function initRoutingFromHash() {
+  initDomSections();
   const hash = window.location.hash.replace(/^#/, '').replace(/^page-/, '');
   if (hash === 'cordons-bleus' || hash === 'bambinets' || hash === 'foodles') {
     navigateTo('projects');
     if (typeof openProjectDrawer === 'function') openProjectDrawer(hash);
-  } else if (hash && document.getElementById(`page-${hash}`)) {
+  } else if (hash && pageSectionsMap.has(`page-${hash}`)) {
     navigateTo(hash);
   } else {
-    navigateTo('home');
+    // Si aucun hash ou page non trouvée, on ouvre T'es qui ? (about) pour l'audit isolé
+    navigateTo(hash || 'about');
   }
 }
 

@@ -521,10 +521,10 @@ strong, b {
 
 #page-about .about-hero-kicker {
   font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
-  color: var(--color-accent) !important;
+  letter-spacing: 0.14em !important;
+  color: #944D32 !important;
   text-transform: uppercase !important;
 }
 
@@ -617,10 +617,10 @@ strong, b {
 .about-artistic-disclaimer {
   color: var(--color-accent) !important;
   font-style: italic !important;
-  font-size: 11px !important;
-  line-height: 1.45 !important;
+  font-size: 12.5px !important;
+  line-height: 1.5 !important;
   font-weight: 400 !important;
-  opacity: 0.78 !important;
+  opacity: 0.9 !important;
   max-width: 520px !important;
   margin-top: 14px !important;
   margin-bottom: 0 !important;
@@ -8713,8 +8713,9 @@ button.offer-accordion-header:focus-visible {
    ========================================================================== */
 #page-about .about-handwriting {
   font-family: 'Caveat', cursive, sans-serif !important;
-  font-size: 22px;
-  line-height: 1.3;
+  font-size: 25px !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
   color: var(--color-accent, #A85E3F) !important;
 }
 
@@ -8811,10 +8812,11 @@ button.offer-accordion-header:focus-visible {
 #page-about .about-handwriting-curiosity {
   position: relative;
   font-family: 'Caveat', cursive, sans-serif !important;
-  font-size: 22px;
+  font-size: 25px !important;
+  font-weight: 500 !important;
   color: var(--color-accent, #A85E3F) !important;
   transform: rotate(6deg);
-  line-height: 1.25;
+  line-height: 1.25 !important;
   margin-right: -10px;
 }
 
@@ -8864,9 +8866,10 @@ button.offer-accordion-header:focus-visible {
   position: absolute;
   left: 20px;
   bottom: 20px;
-  font-size: 20px;
-  color: #5C5248;
-  line-height: 1.25;
+  font-size: 23px;
+  font-weight: 500;
+  color: #4A433D;
+  line-height: 1.3;
 }
 
 
@@ -9028,23 +9031,24 @@ button.offer-accordion-header:focus-visible {
   font-family: var(--font-sans, 'Montserrat', sans-serif);
   font-size: 13.5px;
   font-weight: 600;
-  color: var(--color-accent, #A85E3F);
+  color: #944D32 !important;
   background: transparent;
-  border: 1.5px solid var(--color-accent, #A85E3F);
+  border: 1.5px solid #944D32 !important;
   border-radius: 999px;
   padding: 9px 22px;
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 2px 8px rgba(168, 94, 63, 0.06);
+  box-shadow: 0 2px 8px rgba(148, 77, 50, 0.08);
 }
 
 #page-about .about-hero-cta-link:hover,
 #page-about .about-hero-cta-link:focus-visible {
-  background: var(--color-accent, #A85E3F);
-  color: #FFFDFC;
+  background: #944D32 !important;
+  border-color: #944D32 !important;
+  color: #FFFDFC !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(168, 94, 63, 0.18);
+  box-shadow: 0 6px 16px rgba(148, 77, 50, 0.22);
 }
 
 @media (max-width: 1024px) {
@@ -9085,7 +9089,7 @@ button.offer-accordion-header:focus-visible {
     padding: 16px 20px;
   }
   #page-about .about-timeline-synthesis-text {
-    font-size: 20px;
+    font-size: 23px;
   }
 }
 
@@ -9168,11 +9172,11 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-values-subtitle {
   font-family: 'Caveat', cursive, sans-serif !important;
-  font-size: 26px !important;
+  font-size: 27px !important;
   font-weight: 500 !important;
   color: var(--color-accent, #A85E3F) !important;
   margin: 0 !important;
-  line-height: 1.15 !important;
+  line-height: 1.2 !important;
   display: block;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
@@ -9491,7 +9495,9 @@ button.offer-accordion-header:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-right: 180px;
   margin-top: 38px;
+  box-sizing: border-box;
 }
 
 #page-about .about-values-visuals-wrap {
@@ -9624,6 +9630,7 @@ button.offer-accordion-header:focus-visible {
   #page-about .about-values-visuals-outer {
     align-items: center;
     margin-top: 36px;
+    padding-right: 0 !important;
   }
   #page-about .about-values-visuals-wrap {
     flex-direction: column;
@@ -9661,7 +9668,7 @@ button.offer-accordion-header:focus-visible {
     font-size: 34px !important;
   }
   #page-about .about-values-subtitle {
-    font-size: 20px !important;
+    font-size: 23px !important;
   }
   #page-about .about-value-paper-content {
     padding: 18px 22px;
@@ -9746,9 +9753,11 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-art-subnote {
-  font-family: 'Caveat', cursive, sans-serif;
-  font-size: 22px;
-  color: var(--color-accent, #A85E3F);
+  font-family: 'Caveat', cursive, sans-serif !important;
+  font-size: 25px !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  color: var(--color-accent, #A85E3F) !important;
 }
 
 #page-about .about-art-visual-col {
@@ -9773,11 +9782,11 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-art-credit-note {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 11.5px;
-  line-height: 1.5;
-  color: #786E65;
-  opacity: 0.95;
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: #635A52 !important;
+  opacity: 1 !important;
   max-width: 380px;
   margin: 6px auto 0 auto;
   text-align: left;
@@ -9942,10 +9951,10 @@ button.offer-accordion-header:focus-visible {
 #page-about .about-testimonial-quote-text p {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-style: normal !important;
-  font-size: 20px !important;
-  line-height: 1.55 !important;
+  font-size: 22px !important;
+  line-height: 1.58 !important;
   color: #1F1B18 !important;
-  margin: 0 0 10px 0 !important;
+  margin: 0 0 11px 0 !important;
 }
 
 #page-about .about-testimonial-quote-text p.about-testimonial-quote-highlight {
@@ -9970,12 +9979,12 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-testimonial-author-role {
-  font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 12.5px;
-  font-weight: 500;
-  color: #635A52;
-  line-height: 1.3;
-  margin-top: 2px;
+  font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #554D46 !important;
+  line-height: 1.35 !important;
+  margin-top: 3px !important;
 }
 
 /* Petite note manuscrite sur la droite */
@@ -9990,10 +9999,11 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-testimonial-note-text {
   font-family: 'Caveat', cursive, sans-serif !important;
-  font-size: 20px !important;
+  font-size: 24px !important;
+  font-weight: 500 !important;
   color: var(--color-accent, #A85E3F) !important;
   margin: 0 !important;
-  line-height: 1.15 !important;
+  line-height: 1.2 !important;
 }
 
 #page-about .about-testimonial-note-curve {
@@ -10031,7 +10041,8 @@ button.offer-accordion-header:focus-visible {
    SUPPORT PAPIER DÉCHIRÉ CTA FINAL « UN PROJET EN TÊTE ? » (#page-about)
    ========================================================================== */
 #page-about .about-cta-final-section {
-  padding: 50px 0;
+  padding: 0 0 50px 0 !important;
+  margin-top: -65px !important;
   position: relative;
   display: flex;
   justify-content: center;
@@ -10248,6 +10259,10 @@ button.offer-accordion-header:focus-visible {
 }
 
 @media (max-width: 767px) {
+  #page-about .about-cta-final-section {
+    padding: 0 20px 40px 20px !important;
+    margin-top: -20px !important;
+  }
   #page-about .about-cta-arrow-svg {
     display: block !important;
   }
