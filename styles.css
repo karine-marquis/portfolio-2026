@@ -9561,7 +9561,6 @@ button.offer-accordion-header:focus-visible {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 2px;
   filter: drop-shadow(0 10px 24px rgba(62, 57, 52, 0.13));
   background: transparent;
   border: none;
@@ -10057,7 +10056,7 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-cta-paper-wrapper {
   position: relative;
-  max-width: 495px;
+  max-width: 425px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -10071,7 +10070,7 @@ button.offer-accordion-header:focus-visible {
   left: 50%;
   transform: translate(-50%, -50%) scale(1.05);
   width: 118%;
-  max-width: 610px;
+  max-width: 520px;
   height: auto;
   pointer-events: none;
   z-index: 0;
@@ -10099,24 +10098,24 @@ button.offer-accordion-header:focus-visible {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px 38px;
+  padding: 18px 28px;
   text-align: center;
   box-sizing: border-box;
 }
 
 #page-about .about-cta-final-title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 30px !important;
+  font-size: 26px !important;
   font-weight: 600 !important;
   color: #3E3934 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 4px !important;
 }
 
 #page-about .about-cta-final-text {
   font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-size: 14.5px !important;
+  font-size: 13.5px !important;
   color: #5C5248 !important;
-  margin-bottom: 18px !important;
+  margin-bottom: 14px !important;
 }
 
 #page-about .about-cta-final-btn {
@@ -10127,9 +10126,9 @@ button.offer-accordion-header:focus-visible {
   background-color: var(--color-cta, #596756);
   color: #FFFFFF !important;
   font-family: var(--font-sans, 'Montserrat', sans-serif);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  padding: 12px 28px;
+  padding: 10px 24px;
   border-radius: 999px;
   text-decoration: none;
   transition: background-color 0.25s ease, transform 0.25s ease;
@@ -10183,29 +10182,29 @@ button.offer-accordion-header:focus-visible {
 
   /* Support papier CTA final sur mobile */
   #page-about .about-cta-paper-wrapper {
-    max-width: 100% !important;
+    max-width: 360px !important;
     width: 100% !important;
     margin: 0 auto !important;
   }
 
   #page-about .about-cta-paper-content {
-    padding: 16px 20px !important;
+    padding: 14px 18px !important;
   }
 
   #page-about .about-cta-final-title {
-    font-size: 22px !important;
-    margin-bottom: 6px !important;
+    font-size: 21px !important;
+    margin-bottom: 4px !important;
   }
 
   #page-about .about-cta-final-text {
-    font-size: 13px !important;
-    margin-bottom: 12px !important;
-    line-height: 1.4 !important;
+    font-size: 12.5px !important;
+    margin-bottom: 10px !important;
+    line-height: 1.35 !important;
   }
 
   #page-about .about-cta-final-btn {
-    font-size: 13.5px !important;
-    padding: 8px 20px !important;
+    font-size: 13px !important;
+    padding: 7px 18px !important;
     max-width: 100%;
     box-sizing: border-box;
     white-space: nowrap;
