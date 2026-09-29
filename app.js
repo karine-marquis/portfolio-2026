@@ -360,7 +360,15 @@ function openProjectDrawer(projectId) {
     if (mBambinets) mBambinets.style.display = 'none';
     if (mFoodles) mFoodles.style.display = 'block';
   } else {
-    if (mCordons) mCordons.style.display = 'block';
+    if (mCordons) {
+      mCordons.querySelectorAll('img[data-src]').forEach(img => {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+      });
+      mCordons.style.display = 'block';
+    }
     if (mBambinets) mBambinets.style.display = 'none';
     if (mFoodles) mFoodles.style.display = 'none';
   }
