@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   try { if (window.lucide) lucide.createIcons(); } catch(e){}
-  try { renderCaseStudiesList(); } catch(e){ console.error('Case studies error:', e); }
   try { renderPricingPacks(); } catch(e){ console.error('Pricing error:', e); }
   try { renderArticles(); } catch(e){ console.error('Articles error:', e); }
   try { initRoutingFromHash(); } catch(e){ console.error('Routing error:', e); }
@@ -259,7 +258,24 @@ function initRoutingFromHash() {
    ========================================================================== */
 function renderCaseStudiesList() {
   const container = document.getElementById('caseStudiesContainer');
-  if (!container || typeof CASE_STUDIES_PRESENTATION === 'undefined' || !Array.isArray(CASE_STUDIES_PRESENTATION)) return;
+  if (!container) return;
+
+  const lazyImages = container.querySelectorAll('img[data-src]');
+  if (lazyImages.length > 0) {
+    lazyImages.forEach(img => {
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+      }
+    });
+    return;
+  }
+
+  if (container.children.length > 0) {
+    return;
+  }
+
+  if (typeof CASE_STUDIES_PRESENTATION === 'undefined' || !Array.isArray(CASE_STUDIES_PRESENTATION)) return;
 
   container.className = 'case-studies-glance-list';
   container.innerHTML = '';
