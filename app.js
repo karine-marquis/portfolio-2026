@@ -213,6 +213,19 @@ function navigateTo(pageId) {
     try { renderCaseStudiesList(); } catch(e){}
   }
 
+  // Si on arrive sur la page approche, hydrater ses images en chargement différé
+  if (cleanId === 'approach') {
+    const secApproach = pageSectionsMap.get('page-approach') || document.getElementById('page-approach');
+    if (secApproach) {
+      secApproach.querySelectorAll('img[data-src]').forEach(img => {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+      });
+    }
+  }
+
   // 4. METTRE À JOUR L'ÉTAT ACTIF DES LIENS DE NAVIGATION
   const navLinks = document.querySelectorAll('.nav-link, .mobile-menu-link');
   navLinks.forEach(link => {
