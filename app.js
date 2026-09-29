@@ -353,12 +353,34 @@ function openProjectDrawer(projectId) {
 
   if (projectId === 'bambinets') {
     if (mCordons) mCordons.style.display = 'none';
-    if (mBambinets) mBambinets.style.display = 'block';
+    if (mBambinets) {
+      mBambinets.querySelectorAll('img[data-src]').forEach(img => {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+      });
+      mBambinets.style.display = 'block';
+    }
     if (mFoodles) mFoodles.style.display = 'none';
   } else if (projectId === 'foodles') {
     if (mCordons) mCordons.style.display = 'none';
     if (mBambinets) mBambinets.style.display = 'none';
-    if (mFoodles) mFoodles.style.display = 'block';
+    if (mFoodles) {
+      mFoodles.querySelectorAll('img[data-src]').forEach(img => {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+      });
+      mFoodles.querySelectorAll('video[data-poster]').forEach(vid => {
+        if (vid.dataset.poster) {
+          vid.poster = vid.dataset.poster;
+          vid.removeAttribute('data-poster');
+        }
+      });
+      mFoodles.style.display = 'block';
+    }
   } else {
     if (mCordons) {
       mCordons.querySelectorAll('img[data-src]').forEach(img => {
