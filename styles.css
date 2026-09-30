@@ -9013,6 +9013,10 @@ button.offer-accordion-header:focus-visible {
   filter: contrast(1.05) brightness(0.98);
 }
 
+#page-about .about-timeline-mobile-v {
+  display: none !important;
+}
+
 /* CTA intermédiaire : transition vers l'offre (placé sous la photo à gauche, aligné avec la frise) */
 #page-about .about-hero-cta-wrap {
   margin-top: 68px;
@@ -9055,33 +9059,315 @@ button.offer-accordion-header:focus-visible {
   #page-about .about-hero-workshop {
     grid-template-columns: 1fr;
     gap: 36px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   #page-about .about-hero-photo-col {
     margin-top: 0;
+    max-width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  #page-about .about-hero-photo-frame {
+    top: 0;
+    margin: 0 auto;
   }
   #page-about .about-hero-annotation-left {
-    display: none;
+    display: none !important;
   }
   #page-about .about-handwriting-curiosity {
-    display: none;
+    display: none !important;
   }
   #page-about .about-timeline-section {
     margin-top: 20px;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
   }
   #page-about .about-hero-cta-wrap {
     justify-content: center;
-    margin-top: 16px;
+    margin-top: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   #page-about .about-timeline-visual-wrap {
     width: 100%;
     max-width: 100%;
+    overflow: hidden;
   }
   #page-about .about-timeline-track {
-    min-width: 960px;
+    min-width: 0;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
+  #page-about .about-hero-workshop {
+    gap: 28px;
+    margin-bottom: 24px;
+    overflow-x: clip;
+  }
+  #page-about .about-handwriting-curiosity {
+    display: none !important;
+  }
+  #page-about .about-hero-photo-frame {
+    max-width: min(100%, 340px);
+    width: 100%;
+    padding: 12px 12px 16px 12px;
+    box-sizing: border-box;
+    transform: rotate(-1deg);
+  }
+  #page-about .about-hero-photo-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 12% center;
+    display: block;
+  }
+  #page-about .about-hero-tape-top {
+    width: 120px;
+    top: -14px;
+  }
+  #page-about .about-hero-title {
+    font-size: clamp(26px, 7.5vw, 34px) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 16px !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+  #page-about .about-hero-title-line {
+    white-space: normal !important;
+    display: block !important;
+  }
+  #page-about .about-hero-accent {
+    font-size: clamp(24px, 7vw, 32px) !important;
+    white-space: normal !important;
+    display: block !important;
+    margin-top: 4px !important;
+    line-height: 1.2 !important;
+  }
+  #page-about .about-hero-body {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    gap: 10px !important;
+    margin-bottom: 16px !important;
+  }
+  #page-about .about-hero-cta-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 16px;
+    padding: 0 4px;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  #page-about .about-hero-cta-link {
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 12.5px;
+    padding: 9px 16px;
+    text-align: center;
+    justify-content: center;
+    white-space: normal;
+    line-height: 1.35;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  #page-about .about-timeline-section {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 14px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  #page-about .about-timeline-desktop-wrap {
+    display: none !important;
+  }
+  #page-about .about-timeline-mobile-v {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 4px;
+    box-sizing: border-box;
+  }
+  #page-about .about-timeline-v-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  #page-about .about-timeline-v-bar {
+    width: 2.5px;
+    height: 16px;
+    background: #A85E3F;
+    border-radius: 2px;
+    display: inline-block;
+    opacity: 0.85;
+  }
+  #page-about .about-timeline-v-title {
+    font-family: var(--font-serif, 'Playfair Display', serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: #2B2623;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  #page-about .about-timeline-v-track-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 2px 14px 2px;
+    box-sizing: border-box;
+  }
+  #page-about .about-timeline-v-thread-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, 280px);
+    height: 100%;
+    object-fit: fill;
+    opacity: 0.82;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: multiply;
+  }
+  #page-about .about-timeline-v-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #page-about .about-timeline-v-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  #page-about .about-timeline-v-item.v-step-left {
+    justify-content: flex-start;
+    padding-right: 14px;
+    gap: 8px;
+  }
+  #page-about .about-timeline-v-item.v-step-right {
+    justify-content: flex-end;
+    padding-left: 14px;
+    gap: 8px;
+  }
+  #page-about .about-timeline-v-item.v-step-target {
+    justify-content: center;
+    margin-top: 8px;
+  }
+  #page-about .about-timeline-v-card {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 0;
+    padding: 6px 14px 7px 12px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    max-width: 88%;
+    box-shadow: none;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 2px 4px rgba(60, 50, 40, 0.06));
+  }
+  #page-about .about-timeline-v-item:nth-child(1) .about-timeline-v-card {
+    background-image: url('assets/papier-dechire-1.png');
+    transform: rotate(-1.5deg);
+  }
+  #page-about .about-timeline-v-item:nth-child(2) .about-timeline-v-card {
+    background-image: url('assets/papier-dechire-2.png');
+    transform: rotate(1.2deg);
+  }
+  #page-about .about-timeline-v-item:nth-child(3) .about-timeline-v-card {
+    background-image: url('assets/papier-froisse.png');
+    transform: rotate(-0.8deg);
+  }
+  #page-about .about-timeline-v-item:nth-child(4) .about-timeline-v-card {
+    background-image: url('assets/papier-dechire-1.png');
+    transform: rotate(1.4deg);
+  }
+  #page-about .about-timeline-v-item:nth-child(5) .about-timeline-v-card {
+    background-image: url('assets/papier-dechire-2.png');
+    transform: rotate(-1.2deg);
+  }
+  #page-about .about-timeline-v-item:nth-child(6) {
+    padding-left: 24px;
+  }
+  #page-about .about-timeline-v-item:nth-child(6) .about-timeline-v-card {
+    background-image: url('assets/papier-froisse.png');
+    transform: rotate(0.8deg);
+  }
+  #page-about .about-timeline-v-num {
+    font-family: 'Caveat', cursive, sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #9E5336;
+    letter-spacing: 0.02em;
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  #page-about .about-timeline-v-label {
+    font-family: var(--font-sans, 'Montserrat', sans-serif);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #2E2723;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+  #page-about .about-timeline-v-card.v-card-ux {
+    background-image: url('assets/papier-dechire-1.png');
+    padding: 8px 18px 9px 15px;
+    gap: 7px;
+    transform: rotate(-0.5deg);
+    filter: drop-shadow(0 2px 6px rgba(168, 94, 63, 0.15));
+  }
+  #page-about .about-timeline-v-card.v-card-ux .about-timeline-v-num {
+    color: #8F442A;
+    font-size: 15.5px;
+    font-weight: 700;
+  }
+  #page-about .about-timeline-v-card.v-card-ux .about-timeline-v-label {
+    font-family: var(--font-serif, 'Playfair Display', serif);
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #8F442A;
+    letter-spacing: 0.02em;
+  }
+  #page-about .about-timeline-v-synthesis {
+    margin-top: 18px;
+    padding: 12px 14px;
+    background: rgba(168, 94, 63, 0.035);
+    border-left: 2px solid rgba(168, 94, 63, 0.5);
+    border-radius: 0 6px 6px 0;
+    box-sizing: border-box;
+  }
+  #page-about .about-timeline-v-synthesis-text {
+    font-family: 'Caveat', cursive, sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+    color: #554A42 !important;
+    margin: 0 !important;
+  }
+  #page-about .about-timeline-touch {
+    display: none !important;
+  }
   #page-about .about-timeline-header-line {
     display: none;
   }
@@ -9093,9 +9379,19 @@ button.offer-accordion-header:focus-visible {
   }
 }
 
-@media (max-width: 640px) {
-  #page-about .about-hero-title {
-    font-size: 30px !important;
+@media (max-width: 480px) {
+  #page-about .about-hero-photo-frame {
+    max-width: 290px;
+    padding: 10px 10px 14px 10px;
+    transform: rotate(-0.8deg);
+  }
+  #page-about .about-hero-tape-top {
+    width: 105px;
+    top: -12px;
+  }
+  #page-about .about-hero-cta-link {
+    font-size: 12px;
+    padding: 8px 14px;
   }
 }
 
