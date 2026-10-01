@@ -8765,7 +8765,7 @@ button.offer-accordion-header:focus-visible {
 #page-about .about-hero-tape-top {
   position: absolute;
   top: -18px;
-  left: 50%;
+  left: 34%;
   transform: translateX(-50%) rotate(1deg);
   width: 150px;
   height: auto;
@@ -9127,7 +9127,9 @@ button.offer-accordion-header:focus-visible {
   }
   #page-about .about-hero-tape-top {
     width: 120px;
-    top: -14px;
+    top: -24px;
+    left: calc(50% - 26px);
+    transform: translateX(-50%) rotate(-1.5deg);
   }
   #page-about .about-hero-title {
     font-size: clamp(26px, 7.5vw, 34px) !important;
@@ -9387,7 +9389,9 @@ button.offer-accordion-header:focus-visible {
   }
   #page-about .about-hero-tape-top {
     width: 105px;
-    top: -12px;
+    top: -22px;
+    left: 20px;
+    transform: rotate(-1.5deg);
   }
   #page-about .about-hero-cta-link {
     font-size: 12px;
