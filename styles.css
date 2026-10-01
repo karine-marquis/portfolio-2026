@@ -8757,7 +8757,7 @@ button.offer-accordion-header:focus-visible {
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: 12% center;
+  object-position: center 15%;
   border-radius: 2px;
   display: block;
 }
@@ -9122,7 +9122,7 @@ button.offer-accordion-header:focus-visible {
     height: auto;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    object-position: 12% center;
+    object-position: center 15%;
     display: block;
   }
   #page-about .about-hero-tape-top {
