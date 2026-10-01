@@ -9549,7 +9549,7 @@ button.offer-accordion-header:focus-visible {
   left: 4%;
   width: 660px;
   height: auto;
-  opacity: 0.48;
+  opacity: 0.30;
   transform: rotate(-5deg);
 }
 
@@ -9559,7 +9559,7 @@ button.offer-accordion-header:focus-visible {
   right: -50px;
   width: 600px;
   height: auto;
-  opacity: 0.45;
+  opacity: 0.28;
   transform: rotate(16deg) scale(1.05);
 }
 
@@ -9569,7 +9569,7 @@ button.offer-accordion-header:focus-visible {
   left: 20%;
   width: 720px;
   height: auto;
-  opacity: 0.40;
+  opacity: 0.25;
   transform: rotate(-10deg) scale(1.1);
   filter: blur(4px);
 }
@@ -9867,7 +9867,8 @@ button.offer-accordion-header:focus-visible {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 10px 24px rgba(62, 57, 52, 0.13));
+  opacity: 0.90;
+  filter: drop-shadow(0 8px 20px rgba(62, 57, 52, 0.11)) contrast(0.93) brightness(1.02);
   background: transparent;
   border: none;
 }
@@ -9927,42 +9928,17 @@ button.offer-accordion-header:focus-visible {
     transform: translateY(-4px) !important;
   }
 
+  #page-about .about-values-section {
+    padding-bottom: 28px !important;
+  }
   #page-about .about-values-visuals-outer {
-    align-items: center;
-    margin-top: 36px;
-    padding-right: 0 !important;
-  }
-  #page-about .about-values-visuals-wrap {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
-  }
-  #page-about .about-values-marche-wrapper {
-    max-width: 540px;
-    margin: 0 auto;
-  }
-  #page-about .about-values-bic-wrapper {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin-top: -60px;
-    margin-right: auto;
-    margin-left: 20px;
-    width: 180px;
-    transform: rotate(-2.5deg);
-  }
-  #page-about .about-values-credit-note {
-    max-width: 540px;
-    text-align: center;
-    margin-top: 14px;
+    display: none !important;
   }
 }
 
 @media (max-width: 640px) {
-  #page-about .about-values-credit-note {
-    max-width: 100%;
-    text-align: center;
+  #page-about .about-values-section {
+    padding-bottom: 20px !important;
   }
   #page-about .about-values-title {
     font-size: 34px !important;
@@ -9978,15 +9954,6 @@ button.offer-accordion-header:focus-visible {
   }
   #page-about .about-value-desc {
     font-size: 13px !important;
-  }
-
-  #page-about .about-values-marche-wrapper {
-    max-width: 100%;
-  }
-  #page-about .about-values-bic-wrapper {
-    width: 145px;
-    margin-top: -40px;
-    margin-left: 10px;
   }
 }
 
@@ -10094,13 +10061,21 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-values-credit-note {
-  max-width: 650px;
-  margin: 12px 0 0 0;
-  text-align: right;
+  font-size: 11.5px !important;
+  line-height: 1.45 !important;
+  color: #7A7067 !important;
+  opacity: 0.85 !important;
+  max-width: 440px;
+  margin: 6px 0 0 0;
+  text-align: left;
 }
 
 /* ADAPTATIONS TABLETTE ET MOBILE ÉTAPE 2 */
 @media (max-width: 768px) {
+  #page-about .about-values-aquarelle {
+    opacity: 0.22 !important;
+    filter: blur(4px) !important;
+  }
   #page-about .about-values-title-wrap {
     margin-left: 0;
   }
