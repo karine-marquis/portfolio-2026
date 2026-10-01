@@ -8610,6 +8610,11 @@ button.offer-accordion-header:focus-visible {
   box-shadow: none;
 }
 
+.about-tools-asset-wrapper picture {
+  width: 100%;
+  display: block;
+}
+
 .about-tools-asset-img {
   width: 100%;
   max-width: 100%;
@@ -8703,8 +8708,6 @@ button.offer-accordion-header:focus-visible {
   .about-cta-final-btn {
     padding: 13px 28px;
     font-size: 14.5px;
-    width: 100%;
-    max-width: 280px;
   }
 }
 
@@ -10105,6 +10108,12 @@ button.offer-accordion-header:focus-visible {
   }
   #page-about .about-art-credit-note {
     max-width: 100%;
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+    color: #7A7067 !important;
+    opacity: 0.85 !important;
+    margin: 5px 0 0 0;
+    text-align: left;
   }
 }
 
@@ -10117,8 +10126,50 @@ button.offer-accordion-header:focus-visible {
     position: static;
     max-width: 200px;
   }
+  #page-about .about-art-section {
+    padding: 24px 0 12px 0 !important;
+  }
   #page-about .about-art-title {
     font-size: 28px !important;
+  }
+  #page-about .about-art-credit-note {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+    color: #7A7067 !important;
+    opacity: 0.85 !important;
+    margin: 4px 0 0 0;
+    text-align: left;
+  }
+  #page-about .about-testimonial-section {
+    padding: 12px 0 20px 0 !important;
+  }
+  #page-about .about-testimonial-header {
+    margin-bottom: 20px;
+  }
+  #page-about .about-testimonial-title {
+    font-size: 23.5px !important;
+    line-height: 1.25 !important;
+  }
+  #page-about .about-testimonial-title-underline {
+    width: 105px;
+    bottom: -5px;
+  }
+  #page-about .about-testimonial-quote-text p {
+    font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+    font-style: normal !important;
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    color: #4A423B !important;
+    margin: 0 0 10px 0 !important;
+  }
+  #page-about .about-testimonial-quote-text p.about-testimonial-quote-highlight {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-style: italic !important;
+    font-size: 16.5px !important;
+    line-height: 1.55 !important;
+    color: #1A1715 !important;
+    font-weight: 400 !important;
+    margin-top: 12px !important;
   }
 }
 
@@ -10294,6 +10345,18 @@ button.offer-accordion-header:focus-visible {
 
 /* Responsive Recommandation */
 @media (max-width: 900px) {
+  #page-about .about-art-section {
+    padding: 28px 0 16px 0 !important;
+  }
+  #page-about .about-testimonial-section {
+    padding: 16px 0 20px 0 !important;
+  }
+  #page-about .about-testimonial-header {
+    margin-bottom: 24px;
+  }
+  #page-about .about-testimonial-title {
+    font-size: 28px !important;
+  }
   #page-about .about-testimonial-paper-content {
     grid-template-columns: 1fr;
     position: relative;
@@ -10305,6 +10368,23 @@ button.offer-accordion-header:focus-visible {
   }
   #page-about .about-testimonial-quote-mark {
     display: none;
+  }
+  #page-about .about-testimonial-quote-text p {
+    font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
+    font-style: normal !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: #4A423B !important;
+    margin: 0 0 10px 0 !important;
+  }
+  #page-about .about-testimonial-quote-text p.about-testimonial-quote-highlight {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-style: italic !important;
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+    color: #1A1715 !important;
+    font-weight: 400 !important;
+    margin-top: 12px !important;
   }
   #page-about .about-testimonial-note-wrap {
     margin-top: 16px;
@@ -10468,32 +10548,79 @@ button.offer-accordion-header:focus-visible {
 
   /* Support papier CTA final sur mobile */
   #page-about .about-cta-paper-wrapper {
-    max-width: 360px !important;
+    max-width: 270px !important;
     width: 100% !important;
     margin: 0 auto !important;
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  #page-about .about-cta-stain-bg {
+    opacity: 0.20 !important;
+    transform: translate(-50%, -50%) scale(0.82) !important;
+    filter: blur(3px) contrast(0.9) !important;
   }
 
   #page-about .about-cta-paper-content {
-    padding: 14px 18px !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 8px 12px !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
   }
 
   #page-about .about-cta-final-title {
-    font-size: 21px !important;
-    margin-bottom: 4px !important;
+    font-size: 17px !important;
+    line-height: 1.18 !important;
+    margin-bottom: 2px !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   #page-about .about-cta-final-text {
-    font-size: 12.5px !important;
-    margin-bottom: 10px !important;
-    line-height: 1.35 !important;
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   #page-about .about-cta-final-btn {
-    font-size: 13px !important;
-    padding: 7px 18px !important;
-    max-width: 100%;
-    box-sizing: border-box;
-    white-space: nowrap;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.01em !important;
+    padding: 5px 14px !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    box-sizing: border-box !important;
+    white-space: nowrap !important;
+    margin: 0 auto !important;
+    align-self: center !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    box-shadow: 0 2px 8px rgba(69, 81, 67, 0.16) !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
   }
 
   /* Footer mobile */
@@ -10533,19 +10660,19 @@ button.offer-accordion-header:focus-visible {
   display: block !important;
 }
 
+/* ABOUT — CTA FINAL MOBILE : compactage + suppression flèche */
 @media (max-width: 767px) {
+  #page-about .about-tools-section {
+    padding-bottom: 18px !important;
+  }
+
   #page-about .about-cta-final-section {
-    padding: 0 20px 40px 20px !important;
-    margin-top: -20px !important;
+    margin-top: -6px !important;
+    padding: 0 20px 12px 20px !important;
   }
+
   #page-about .about-cta-arrow-svg {
-    display: block !important;
-  }
-  .cta-arrow-desktop {
     display: none !important;
-  }
-  .cta-arrow-mobile {
-    display: block !important;
   }
 }
 
