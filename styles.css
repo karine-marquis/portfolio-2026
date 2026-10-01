@@ -10676,3 +10676,67 @@ button.offer-accordion-header:focus-visible {
   }
 }
 
+/* MON OFFRE — correction des grands espaces verticaux mobile */
+@media (max-width: 768px) {
+
+  /* 1 — Fin des accordéons / Pause café */
+  #page-offer .offer-accordion-item:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  #page-offer .offer-accordions-wrapper {
+    margin-bottom: 24px !important;
+  }
+
+  #page-offer .offer-pause-banner {
+    margin-top: 0 !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* 2 — Section Digital Learning */
+  #page-offer .offer-methods-section {
+    margin-top: 24px !important;
+    margin-bottom: 32px !important;
+    padding-top: 20px !important;
+  }
+
+  #page-offer .offer-methods-header {
+    margin-bottom: 20px !important;
+  }
+
+  /* 3 — Grille / bannière Digital Learning */
+  #page-offer .offer-methods-grid {
+    margin-bottom: 24px !important;
+  }
+
+  #page-offer .offer-methods-banner {
+    margin-bottom: 24px !important;
+  }
+
+  /* 4 — Ce que je fais / Ce que je ne fais pas */
+  #page-offer .offer-scope-section {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+    padding-top: 20px !important;
+  }
+
+  /* 5 — Ma vision */
+  #page-offer .offer-vision-section {
+    margin-top: 20px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* 6 — Modalités d’intervention */
+  #page-offer .offer-modalites-block {
+    margin-top: 20px !important;
+    padding-top: 16px !important;
+  }
+
+  /* 7 — Durées & Frais */
+  #page-offer .offer-durees-frais-block {
+    margin-top: 20px !important;
+    padding-top: 16px !important;
+  }
+}
+
+
