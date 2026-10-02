@@ -25,9 +25,10 @@ Bambinets ancien/
 Captures site/
 Foodles ancien/
 
-# Exceptions : podcasts audio servis sur le site
+# Exceptions : médias servis sur le site
 !assets/podcasts/
 !assets/podcasts/*.mp3
+!assets/PROJTS/FOODLES/foodles-test-user-TM-apercu.mp4
 
 # System & IDE files
 .DS_Store
