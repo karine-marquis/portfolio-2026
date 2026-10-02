@@ -3394,39 +3394,70 @@
     </section>
 
     <!-- ==========================================================================
-       PAGE 8: CONTACT
+       PAGE 8: CONTACT (REFONTE ÉDITORIALE CARNET)
        ========================================================================== -->
     <section id="page-contact" class="spa-page-section">
-      <div class="content-wrap section-spacing">
-        <div class="section-header-center" style="margin-bottom: 32px;">
-          <h2 class="section-title" style="font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 12px;">Discutons de ton projet</h2>
-          <p class="section-subtitle body-large">Une question, une refonte E-Learning ou un besoin en Design System ? Envoie-moi un message.</p>
+      <div class="content-wrap contact-main-wrap">
+        
+        <!-- COMPOSITION ÉDITORIALE HAUT DE PAGE : TEXTE À GAUCHE + PORTRAIT EN HAUT À DROITE -->
+        <div class="contact-top-row">
+          
+          <!-- EN-TÊTE : SUR-TITRE, TITRE & TEXTE D'INTRODUCTION -->
+          <div class="contact-header-block">
+            <span class="contact-kicker">CONTACT</span>
+            <h2 class="contact-title">
+              Et si on<br>
+              <span class="contact-title-accent">en parlait ?</span>
+            </h2>
+            <p class="contact-intro-text">
+              Une idée prend forme, un projet évolue, une envie se précise… dites-moi où vous en êtes. Quelques lignes suffisent pour commencer à tracer la suite.
+            </p>
+          </div>
+
+          <!-- PORTRAIT PHOTO & ANNOTATION MANUSCRITE ASSOCIÉE -->
+          <div class="contact-visual-col">
+            <div class="contact-photo-wrapper">
+              <div class="contact-photo-frame">
+                <img src="assets/scotch-beige.png" alt="" class="contact-tape-top" aria-hidden="true">
+                <img src="assets/avatars/DESSINS/Image ChatGPT 1 oct. 2026, 19_45_45.png" alt="Portrait illustré de Karine Marquis, designer UX" class="contact-photo-img" loading="eager">
+              </div>
+              <p class="contact-handwriting-note">
+                On échange, mais le café, lui, reste à moi.
+              </p>
+            </div>
+          </div>
+
         </div>
 
-        <div class="card-japandi" style="max-width: 700px; margin: 0 auto;">
-          <form id="contactFormSpa" onsubmit="handleContactSubmit(event)">
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px;">
-              <div>
-                <label class="body-small" style="font-weight: 600; display: block; margin-bottom: 6px; color: var(--color-heading);">Ton Nom / Entreprise *</label>
-                <input type="text" required placeholder="ex: Sarah Connor, TechCorp" style="width: 100%; padding: 12px 16px; background: var(--color-background); border: 1px solid rgba(217,210,200,0.8); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px;">
-              </div>
-
-              <div>
-                <label class="body-small" style="font-weight: 600; display: block; margin-bottom: 6px; color: var(--color-heading);">Adresse Email *</label>
-                <input type="email" required placeholder="sarah@entreprise.com" style="width: 100%; padding: 12px 16px; background: var(--color-background); border: 1px solid rgba(217,210,200,0.8); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px;">
-              </div>
+        <!-- CARTE FORMULAIRE (ARRIVE IMMÉDIATEMENT SOUS L'EN-TÊTE) -->
+        <div class="contact-card-paper">
+          <form id="contactFormSpa" class="contact-form-inner" onsubmit="handleContactSubmit(event)">
+            <div class="contact-field-group">
+              <label for="contactPrenom" class="contact-field-label">Votre prénom *</label>
+              <input type="text" id="contactPrenom" name="prenom" required placeholder="Votre prénom" class="contact-input">
             </div>
 
-            <div style="margin-bottom: 20px;">
-              <label class="body-small" style="font-weight: 600; display: block; margin-bottom: 6px; color: var(--color-heading);">Détails de ton projet</label>
-              <textarea rows="4" placeholder="Décris en quelques mots tes objectifs et tes échéances..." style="width: 100%; padding: 12px 16px; background: var(--color-background); border: 1px solid rgba(217,210,200,0.8); border-radius: var(--radius-sm); font-family: inherit; font-size: 15px;"></textarea>
+            <div class="contact-field-group">
+              <label for="contactEmail" class="contact-field-label">Votre e-mail *</label>
+              <input type="email" id="contactEmail" name="email" required placeholder="votre@email.com" class="contact-input">
             </div>
 
-            <button type="submit" class="btn-primary" style="width: 100%;">
-              <i data-lucide="send"></i> Envoyer le message
+            <div class="contact-field-group">
+              <label for="contactMessage" class="contact-field-label">Votre message *</label>
+              <textarea id="contactMessage" name="message" rows="3" required class="contact-textarea"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary contact-btn-submit">
+              Envoyer mon message →
             </button>
+
+            <div class="contact-direct-wrap">
+              <span class="contact-direct-label">Un message direct ?</span>
+              <a href="mailto:karinemarquis.ux@gmail.com" class="contact-direct-email">karinemarquis.ux@gmail.com</a>
+            </div>
           </form>
         </div>
+
       </div>
 
       <!-- FOOTER FULL-WIDTH INTEGRÉ -->
