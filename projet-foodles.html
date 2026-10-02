@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
@@ -622,7 +622,9 @@
                   <span class="lbc-v2-player-timer" id="fdAudioDurationText">--:--</span>
                   <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);" aria-hidden="true"></i>
                 </div>
-                <audio id="fdAudioElement" src="assets/podcasts/foodles.m4a" ontimeupdate="updateFoodlesAudioProgress()"></audio>
+                <audio id="fdAudioElement" preload="metadata" playsinline ontimeupdate="updateFoodlesAudioProgress()">
+                  <source src="assets/podcasts/foodles.mp3" type="audio/mpeg">
+                </audio>
                 <p class="lbc-v2-disclaimer-note" style="margin-top: 12px; font-size: 11.5px; color: #6F665F; line-height: 1.5;">
                   ✨ <strong>Podcast réalisé avec NotebookLM (IA) — Version 1 :</strong><br>
                   • <em>Forme :</em> Ce podcast est généré automatiquement par IA, de légères imperfections de prononciation ou de fluidité peuvent subsister.<br>

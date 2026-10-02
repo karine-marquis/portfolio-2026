@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
@@ -547,7 +547,9 @@
                   <span class="lbc-v2-player-timer">13:49</span>
                   <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);"></i>
                 </div>
-                <audio id="bbAudioElement" src="assets/podcasts/bambinets.m4a" ontimeupdate="updateBambinetsAudioProgress()"></audio>
+                <audio id="bbAudioElement" preload="metadata" playsinline ontimeupdate="updateBambinetsAudioProgress()">
+                  <source src="assets/podcasts/bambinets.mp3" type="audio/mpeg">
+                </audio>
                 <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
               </div>
 

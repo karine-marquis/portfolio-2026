@@ -252,15 +252,34 @@
       const icon = document.getElementById('lbcPlayIcon');
       if (!audio) return;
       if (audio.paused) {
-        audio.play();
-        if (icon) {
-          icon.setAttribute('data-lucide', 'pause');
-          if (window.lucide) lucide.createIcons();
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            const currentIcon = document.getElementById('lbcPlayIcon');
+            if (currentIcon) {
+              currentIcon.setAttribute('data-lucide', 'pause');
+              if (window.lucide) lucide.createIcons();
+            }
+          }).catch(err => {
+            console.warn('Lecture audio pour Cordons Bleus bloquée ou rejetée :', err);
+            const currentIcon = document.getElementById('lbcPlayIcon');
+            if (currentIcon) {
+              currentIcon.setAttribute('data-lucide', 'play');
+              if (window.lucide) lucide.createIcons();
+            }
+          });
+        } else {
+          const currentIcon = document.getElementById('lbcPlayIcon');
+          if (currentIcon) {
+            currentIcon.setAttribute('data-lucide', 'pause');
+            if (window.lucide) lucide.createIcons();
+          }
         }
       } else {
         audio.pause();
-        if (icon) {
-          icon.setAttribute('data-lucide', 'play');
+        const currentIcon = document.getElementById('lbcPlayIcon');
+        if (currentIcon) {
+          currentIcon.setAttribute('data-lucide', 'play');
           if (window.lucide) lucide.createIcons();
         }
       }
@@ -645,7 +664,9 @@
                       <span class="lbc-v2-player-timer">11:47</span>
                       <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);"></i>
                     </div>
-                    <audio id="lbcAudioElement" src="assets/podcasts/cordons-bleus-podcast.m4a" ontimeupdate="updateLbcAudioProgress()"></audio>
+                    <audio id="lbcAudioElement" preload="metadata" playsinline ontimeupdate="updateLbcAudioProgress()">
+                      <source src="assets/podcasts/cordons-bleus-podcast.mp3" type="audio/mpeg">
+                    </audio>
                     <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
                   </div>
                   <div class="lbc-v2-subcard">
@@ -1056,7 +1077,9 @@
                         <span class="lbc-v2-player-timer">13:49</span>
                         <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);" aria-hidden="true"></i>
                       </div>
-                      <audio id="bbAudioElement" src="assets/podcasts/bambinets.m4a" ontimeupdate="updateBambinetsAudioProgress()"></audio>
+                      <audio id="bbAudioElement" preload="metadata" playsinline ontimeupdate="updateBambinetsAudioProgress()">
+                        <source src="assets/podcasts/bambinets.mp3" type="audio/mpeg">
+                      </audio>
                       <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
                     </div>
 
@@ -1605,7 +1628,9 @@
                       <span class="lbc-v2-player-timer" id="fdAudioDurationText">--:--</span>
                       <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);" aria-hidden="true"></i>
                     </div>
-                    <audio id="fdAudioElement" src="assets/podcasts/foodles.m4a" ontimeupdate="updateFoodlesAudioProgress()"></audio>
+                    <audio id="fdAudioElement" preload="metadata" playsinline ontimeupdate="updateFoodlesAudioProgress()">
+                      <source src="assets/podcasts/foodles.mp3" type="audio/mpeg">
+                    </audio>
                     <p class="lbc-v2-disclaimer-note" style="margin-top: 12px; font-size: 11.5px; color: #6F665F; line-height: 1.5;">
                       ✨ <strong>Podcast réalisé avec NotebookLM (IA) — Version 1 :</strong><br>
                       • <em>Forme :</em> Ce podcast est généré automatiquement par IA, de légères imperfections de prononciation ou de fluidité peuvent subsister.<br>

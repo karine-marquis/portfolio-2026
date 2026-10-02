@@ -74,17 +74,7 @@ function toggleOfferAccordion(headerBtn) {
 
 /* CONTROLES AUDIO PODCAST FOODLES & BAMBINETS */
 function toggleFoodlesAudio(btn) {
-  const audio = document.getElementById('fdAudioElement');
-  const icon = document.getElementById('fdPlayIcon');
-  if (!audio) return;
-  if (audio.paused) {
-    audio.play();
-    if (icon) icon.setAttribute('data-lucide', 'pause');
-  } else {
-    audio.pause();
-    if (icon) icon.setAttribute('data-lucide', 'play');
-  }
-  if (window.lucide) lucide.createIcons();
+  toggleAudio('fdAudioElement', 'fdPlayIcon');
 }
 
 function updateFoodlesAudioProgress() {
@@ -590,15 +580,34 @@ function toggleAudio(audioId, iconId) {
   if (!audio) return;
 
   if (audio.paused) {
-    audio.play();
-    if (icon) {
-      icon.setAttribute('data-lucide', 'pause');
-      if (window.lucide) lucide.createIcons();
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        const currentIcon = document.getElementById(iconId);
+        if (currentIcon) {
+          currentIcon.setAttribute('data-lucide', 'pause');
+          if (window.lucide) lucide.createIcons();
+        }
+      }).catch(err => {
+        console.warn(`Lecture audio pour #${audioId} bloquée ou rejetée :`, err);
+        const currentIcon = document.getElementById(iconId);
+        if (currentIcon) {
+          currentIcon.setAttribute('data-lucide', 'play');
+          if (window.lucide) lucide.createIcons();
+        }
+      });
+    } else {
+      const currentIcon = document.getElementById(iconId);
+      if (currentIcon) {
+        currentIcon.setAttribute('data-lucide', 'pause');
+        if (window.lucide) lucide.createIcons();
+      }
     }
   } else {
     audio.pause();
-    if (icon) {
-      icon.setAttribute('data-lucide', 'play');
+    const currentIcon = document.getElementById(iconId);
+    if (currentIcon) {
+      currentIcon.setAttribute('data-lucide', 'play');
       if (window.lucide) lucide.createIcons();
     }
   }
