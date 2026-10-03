@@ -7204,12 +7204,64 @@ button.offer-accordion-header:focus-visible {
   margin-bottom: 10px !important;
 }
 
-#page-offer .offer-modalites-highlight {
+#page-offer .offer-modalites-rates-wrap {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+#page-offer .offer-modalites-rate-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#page-offer .offer-modalites-rate-label {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #786D65 !important;
+}
+
+#page-offer .offer-modalites-rate-secondary .offer-modalites-rate-label {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #8A8077 !important;
+  letter-spacing: 0.06em !important;
+}
+
+#page-offer .offer-modalites-rate-amount {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 17px !important;
   font-weight: 600 !important;
   color: #9B5620 !important;
-  margin-top: 14px !important;
+}
+
+#page-offer .offer-modalites-rate-secondary .offer-modalites-rate-amount {
+  font-size: 15.5px !important;
+  font-weight: 600 !important;
+  color: #A85E3F !important;
+}
+
+#page-offer .offer-modalites-rate-divider {
+  width: 1px;
+  height: 42px;
+  background-color: rgba(212, 204, 201, 0.7);
+}
+
+#page-offer .offer-modalites-disclaimer {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: #786D65 !important;
+  font-style: italic !important;
+  margin-top: 8px !important;
   margin-bottom: 0 !important;
-  display: block;
 }
 
 /* BLOC DURÉES & FRAIS ÉDITORIAL (MON OFFRE) */
@@ -10736,6 +10788,17 @@ button.offer-accordion-header:focus-visible {
   #page-offer .offer-modalites-block {
     margin-top: 20px !important;
     padding-top: 16px !important;
+  }
+
+  #page-offer .offer-modalites-rates-wrap {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    margin-top: 14px !important;
+  }
+
+  #page-offer .offer-modalites-rate-divider {
+    display: none !important;
   }
 
   /* 7 — Durées & Frais */
