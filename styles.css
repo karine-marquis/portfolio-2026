@@ -580,9 +580,9 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 
 #page-about .about-hero-body {
   font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-size: 14px !important;
+  font-size: 15px !important;
   color: #4A433D !important;
-  line-height: 1.6 !important;
+  line-height: 1.65 !important;
   margin: 0 !important;
 }
 
@@ -8967,8 +8967,8 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-hero-body {
   font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-size: 14px !important;
-  line-height: 1.6 !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
   color: #4A433D !important;
   display: flex !important;
   flex-direction: column !important;
@@ -8979,8 +8979,8 @@ button.offer-accordion-header:focus-visible {
 
 #page-about .about-hero-body p {
   font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
-  font-size: 14px !important;
-  line-height: 1.6 !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
   color: #4A433D !important;
   margin: 0 !important;
 }
@@ -9210,9 +9210,10 @@ button.offer-accordion-header:focus-visible {
     margin-top: 4px !important;
     line-height: 1.2 !important;
   }
-  #page-about .about-hero-body {
-    font-size: 13.5px !important;
-    line-height: 1.55 !important;
+  #page-about .about-hero-body,
+  #page-about .about-hero-body p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
     gap: 10px !important;
     margin-bottom: 16px !important;
   }
@@ -10014,7 +10015,8 @@ button.offer-accordion-header:focus-visible {
     font-size: 19px !important;
   }
   #page-about .about-value-desc {
-    font-size: 13px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
   }
 }
 
@@ -10189,6 +10191,11 @@ button.offer-accordion-header:focus-visible {
   }
   #page-about .about-art-title {
     font-size: 28px !important;
+  }
+  #page-about .about-art-body,
+  #page-about .about-art-body p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
   }
   #page-about .about-art-credit-note {
     font-size: 11px !important;
@@ -10650,8 +10657,8 @@ button.offer-accordion-header:focus-visible {
   }
 
   #page-about .about-cta-final-text {
-    font-size: 11px !important;
-    line-height: 1.25 !important;
+    font-size: 12.5px !important;
+    line-height: 1.35 !important;
     margin-bottom: 6px !important;
     text-align: center !important;
     width: 100% !important;
@@ -10660,10 +10667,10 @@ button.offer-accordion-header:focus-visible {
   }
 
   #page-about .about-cta-final-btn {
-    font-size: 11px !important;
+    font-size: 12.5px !important;
     font-weight: 500 !important;
     letter-spacing: 0.01em !important;
-    padding: 5px 14px !important;
+    padding: 6px 16px !important;
     width: auto !important;
     max-width: fit-content !important;
     box-sizing: border-box !important;
