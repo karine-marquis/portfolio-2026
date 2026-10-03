@@ -3,42 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Page non trouvée | Karine Marquis — UX / UI Designer</title>
+  <title>404 - Page non trouvée | Karine Marquis — UX / LX Designer</title>
   <base href="/portfolio-2026/">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      background-color: var(--color-surface) !important;
-    }
-    .error-404-hero-img {
-      width: 100%;
-      max-width: 720px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      filter: contrast(1.15) saturate(1.22) brightness(0.96);
+      min-height: 100vh;
+      background-color: #F8F4EE !important;
     }
   </style>
 </head>
-<body class="theme-japandi" style="background-color: var(--color-surface) !important; display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh;">
+<body class="theme-japandi" style="background-color: #F8F4EE !important; display: flex; flex-direction: column; min-height: 100vh; margin: 0; padding: 0;">
+  
   <header class="site-header sticky-header" style="background-color: rgba(255, 253, 252, 0.95) !important;">
     <div class="nav-container">
       <a href="index.html#page-home" class="brand-logo-wrap" aria-label="Retour à l'accueil KM UX / LX Designer">
         <span class="brand-km">KM</span>
         <span class="brand-sub">UX / LX Designer</span>
       </a>
-      <nav>
+      <nav aria-label="Navigation principale">
         <ul class="nav-menu">
           <li><a href="index.html#page-home" class="nav-link">Accueil</a></li>
           <li><a href="index.html#page-projects" class="nav-link">Mes projets</a></li>
@@ -51,27 +41,108 @@
     </div>
   </header>
 
-  <main style="flex: 1; display: flex; align-items: flex-start; justify-content: center; width: 100%; padding-top: 0; background-color: var(--color-surface) !important;">
-    <h1 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">Erreur 404 — Page non trouvée</h1>
-    <section class="spa-page-section active" style="width: 100%; display: flex; align-items: center; justify-content: center; background-color: var(--color-surface) !important;">
-      <div class="content-wrap" style="width: 100%; display: flex; align-items: center; justify-content: center; padding: 0;">
+  <main style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; width: 100%; background-color: #F8F4EE !important;">
+    
+    <section class="error-404-page active" style="width: 100%; display: flex; flex-direction: column; align-items: center; background-color: #F8F4EE !important;">
+      <div class="error-404-container">
         
-        <div class="error-404-layout" style="position: relative; width: 100%; max-width: 720px; margin: -20px auto 0 auto; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-          <img src="assets/404-illustration.png" alt="Cette page a clairement pris une mauvaise direction - 404 Karine Marquis" class="error-404-hero-img">
+        <!-- PARTIE HAUTE : 2 COLONNES (COLLAGE GAUCHE + BLOC ÉDITORIAL DROITE) -->
+        <div class="error-404-hero">
           
-          <div style="margin-top: 18px; text-align: center;">
-            <a href="index.html#page-home" class="btn-primary" style="padding: 10px 22px; font-size: 14px; font-weight: 500; border-radius: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-              Retourner à l'accueil ➔
+          <!-- COLONNE GAUCHE : COLLAGE VISUEL -->
+          <div class="error-404-collage-col">
+            <div class="error-404-collage-frame">
+              <img 
+                src="assets/404-collage.png" 
+                alt="" 
+                class="error-404-collage-img"
+                aria-hidden="true"
+                loading="eager"
+              >
+            </div>
+          </div>
+
+          <!-- COLONNE DROITE : CONTENU ÉDITORIAL HTML SÉLECTIONNABLE & ACCESSIBLE -->
+          <div class="error-404-content-col">
+            
+            <div class="error-404-kicker-wrap">
+              <span class="error-404-kicker-line" aria-hidden="true"></span>
+              <span class="error-404-kicker">ERREUR 404</span>
+              <span class="error-404-kicker-line" aria-hidden="true"></span>
+            </div>
+
+            <h1 class="error-404-title">
+              Bon. Là,<br>
+              <span class="error-404-title-accent">
+                on s’est un peu<br>
+                perdus.
+                <svg class="error-404-rays" width="34" height="28" viewBox="0 0 34 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 22L12 16" stroke="#A85E3F" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M16 26L20 14" stroke="#A85E3F" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M30 20L24 10" stroke="#A85E3F" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </h1>
+
+            <p class="error-404-desc">
+              La page que vous cherchez a filé à l’anglaise.<br>
+              Revenons calmement à l’accueil.
+            </p>
+
+            <div class="error-404-action-row">
+              <a href="index.html#page-home" class="error-404-cta-btn" id="error404CtaBtn">
+                Reprendre le fil <span class="error-404-btn-arrow" aria-hidden="true">→</span>
+              </a>
+
+              <div class="error-404-annotation-aside" aria-hidden="true">
+                <span class="error-404-annotation-text">
+                  Probablement<br>
+                  partie explorer<br>
+                  d’autres horizons.
+                </span>
+                <svg class="error-404-annotation-arrow" width="28" height="42" viewBox="0 0 28 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 4C14 10 22 20 18 32C16 36 12 38 10 38M10 38L15 34M10 38L14 41" stroke="#A85E3F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- FIL ROUGE DÉCORATIF SVG (TRANSITION COLLAGE -> BOUTON -> PAYSAGE) -->
+        <svg class="error-404-fil-rouge-desktop" viewBox="0 0 1140 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 280 340 C 380 380, 520 370, 680 355 C 760 348, 810 365, 820 395 C 830 425, 805 440, 795 442 C 785 444, 780 435, 785 425 C 795 405, 830 430, 890 490" stroke="#D13A28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+        </svg>
+
+        <!-- PARTIE BASSE : PAYSAGE AQUARELLÉ & PANNEAU DIRECTIONNEL INTERACTIF -->
+        <div class="error-404-landscape-wrap">
+          <img 
+            src="assets/404-landscape.png" 
+            alt="Illustration d’un paysage aquarellé avec un chemin sinueux et un panneau directionnel en bois indiquant Accueil, Mes projets, On en parle ?" 
+            class="error-404-landscape-img"
+            loading="lazy"
+          >
+
+          <!-- ZONES DE CLIC INTERACTIVES ET ACCESSIBLES SUR LE PANNEAU DIRECTIONNEL -->
+          <div class="error-404-signpost-hitboxes" role="navigation" aria-label="Directions alternatives">
+            <a href="index.html#page-home" class="error-404-sign-hitbox sign-home" aria-label="Accueil — Retourner à la page d’accueil" title="Accueil">
+              <span class="sr-only">Accueil</span>
+            </a>
+            <a href="index.html#page-projects" class="error-404-sign-hitbox sign-projects" aria-label="Mes projets — Découvrir mes projets UX" title="Mes projets">
+              <span class="sr-only">Mes projets</span>
+            </a>
+            <a href="index.html#page-contact" class="error-404-sign-hitbox sign-contact" aria-label="On en parle ? — Contacter Karine Marquis" title="On en parle ?">
+              <span class="sr-only">On en parle ?</span>
             </a>
           </div>
         </div>
 
       </div>
     </section>
+
   </main>
 
   <script>if (window.lucide) lucide.createIcons();</script>
 </body>
 </html>
-
-

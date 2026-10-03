@@ -11316,3 +11316,462 @@ button.offer-accordion-header:focus-visible {
     text-underline-offset: 4px;
   }
 }
+
+/* ==========================================================================
+   PAGE 404 : COMPOSITION FIDÈLE DESKTOP & MOBILE
+   ========================================================================== */
+
+#page-404,
+.error-404-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background-color: #F8F4EE !important;
+  background-image: radial-gradient(#E8E0D5 0.75px, transparent 0.75px), radial-gradient(#E8E0D5 0.75px, #F8F4EE 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow-x: clip;
+  padding: 32px 0 0 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+html:has(#page-404.active),
+body:has(#page-404.active) {
+  background-color: #F8F4EE !important;
+}
+
+.error-404-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* HERO 2 COLONNES DESKTOP */
+.error-404-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 36px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* COLONNE GAUCHE : COLLAGE */
+.error-404-collage-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.error-404-collage-frame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+}
+
+.error-404-collage-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(60, 48, 38, 0.08));
+}
+
+/* COLONNE DROITE : CONTENU ÉDITORIAL */
+.error-404-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  padding-left: 10px;
+}
+
+/* SURTITRE — ERREUR 404 — */
+.error-404-kicker-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.error-404-kicker-line {
+  width: 44px;
+  height: 1.5px;
+  background-color: #A85E3F;
+  opacity: 0.6;
+}
+
+.error-404-kicker {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #A85E3F;
+  margin: 0;
+}
+
+/* TITRE H1 */
+.error-404-title {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: clamp(40px, 4.4vw, 58px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: #2B2623;
+  margin: 0 0 24px 0;
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.error-404-title-accent {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-style: italic;
+  font-weight: 400;
+  color: #A85E3F;
+  display: inline;
+  position: relative;
+}
+
+.error-404-rays {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+  transform: translateY(-8px);
+}
+
+/* TEXTE DESCRIPTIF */
+.error-404-desc {
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: #4A433D;
+  margin: 0 0 32px 0;
+  max-width: 460px;
+}
+
+/* LIGNE BOUTON + ANNOTATION LATÉRALE */
+.error-404-action-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  position: relative;
+  width: 100%;
+}
+
+.error-404-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans, 'Montserrat', sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #FFFFFF !important;
+  background-color: #4A5746;
+  padding: 13px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(74, 87, 70, 0.22);
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.error-404-cta-btn:hover,
+.error-404-cta-btn:focus-visible {
+  background-color: #3B4638;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 87, 70, 0.32);
+  outline: 2px solid #A85E3F;
+  outline-offset: 3px;
+}
+
+.error-404-btn-arrow {
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.error-404-cta-btn:hover .error-404-btn-arrow {
+  transform: translateX(4px);
+}
+
+.error-404-annotation-aside {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.error-404-annotation-text {
+  font-family: 'Caveat', cursive, sans-serif;
+  font-size: 17.5px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #A85E3F;
+  white-space: nowrap;
+}
+
+.error-404-annotation-arrow {
+  flex-shrink: 0;
+  transform: translateY(4px);
+}
+
+/* FIL ROUGE SVG DÉCORATIF DESKTOP */
+.error-404-fil-rouge-desktop {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* PAYSAGE DU BAS */
+.error-404-landscape-wrap {
+  width: 100%;
+  max-width: 1060px;
+  margin: -30px auto 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.error-404-landscape-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: contrast(1.02);
+}
+
+/* HITBOXES CLIQUABLES DU PANNEAU DIRECTIONNEL */
+.error-404-signpost-hitboxes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.error-404-sign-hitbox {
+  position: absolute;
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.error-404-sign-hitbox.sign-home {
+  top: 16%;
+  left: 71.5%;
+  width: 25.5%;
+  height: 12.5%;
+}
+
+.error-404-sign-hitbox.sign-projects {
+  top: 31%;
+  left: 71.5%;
+  width: 25.5%;
+  height: 12.5%;
+}
+
+.error-404-sign-hitbox.sign-contact {
+  top: 44%;
+  left: 69%;
+  width: 28%;
+  height: 12.5%;
+}
+
+.error-404-sign-hitbox:hover {
+  background-color: rgba(168, 94, 63, 0.08);
+  transform: scale(1.02);
+}
+
+.error-404-sign-hitbox:focus-visible {
+  outline: 2.5px solid #A85E3F;
+  outline-offset: 2px;
+  background-color: rgba(168, 94, 63, 0.12);
+}
+
+/* ==========================================================================
+   RESPONSIVE MOBILE (<= 768px & 390px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  #page-404,
+  .error-404-page {
+    padding: 24px 0 0 0 !important;
+    min-height: auto;
+  }
+
+  .error-404-container {
+    padding: 0 16px;
+  }
+
+  .error-404-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .error-404-collage-frame {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .error-404-content-col {
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .error-404-kicker-wrap {
+    margin-bottom: 16px;
+    justify-content: center;
+  }
+
+  .error-404-kicker-line {
+    width: 28px;
+  }
+
+  .error-404-kicker {
+    font-size: 12px;
+  }
+
+  .error-404-title {
+    font-size: clamp(32px, 8.5vw, 42px);
+    margin-bottom: 16px;
+  }
+
+  .error-404-rays {
+    display: inline-block;
+    transform: translateY(-4px) scale(0.85);
+  }
+
+  .error-404-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 auto 24px auto;
+    max-width: 340px;
+  }
+
+  .error-404-action-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .error-404-cta-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .error-404-annotation-aside {
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  .error-404-annotation-text {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .error-404-annotation-arrow {
+    display: none;
+  }
+
+  .error-404-fil-rouge-desktop {
+    display: none;
+  }
+
+  .error-404-landscape-wrap {
+    margin-top: 20px;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.error-404-sign-hitbox .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.error-404-sign-hitbox:hover {
+  background-color: transparent;
+  transform: none;
+}
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .error-404-sign-hitbox {
+    --sign-angle: -1deg;
+  }
+
+  .error-404-sign-hitbox::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/404-landscape.png");
+    background-repeat: no-repeat;
+    background-size: 392.156863% 800%;
+    opacity: 0;
+    transform: none;
+    transition: opacity 120ms ease, transform 220ms ease;
+    pointer-events: none;
+  }
+
+  .error-404-sign-hitbox.sign-home::after {
+    background-position: 95.973154% 18.285714%;
+    clip-path: polygon(7% 29%, 78% 1%, 94% 30%, 80% 79%, 8% 100%);
+  }
+
+  .error-404-sign-hitbox.sign-projects {
+    --sign-angle: 1deg;
+  }
+
+  .error-404-sign-hitbox.sign-projects::after {
+    background-position: 95.973154% 35.428571%;
+    clip-path: polygon(8% 15%, 90% 0%, 92% 78%, 10% 96%);
+  }
+
+  .error-404-sign-hitbox.sign-contact::after {
+    background-size: 357.142857% 800%;
+    background-position: 95.833333% 50.285714%;
+    clip-path: polygon(5% 37%, 16% 4%, 94% 9%, 94% 100%, 16% 79%);
+  }
+
+  .error-404-sign-hitbox:hover::after {
+    opacity: 1;
+    transform: translateY(-4px) rotate(var(--sign-angle)) scale(1.025);
+  }
+
+  .error-404-sign-hitbox:active::after {
+    transform: translateY(-1px) scale(1.01);
+  }
+}
