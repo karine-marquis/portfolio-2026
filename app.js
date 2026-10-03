@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   try { renderArticles(); } catch(e){ console.error('Articles error:', e); }
   try { initRoutingFromHash(); } catch(e){ console.error('Routing error:', e); }
   try { initSidebarScrollSpy(); } catch(e){ console.error('Scrollspy error:', e); }
-  try { initScrollRevealObserver(); } catch(e){ console.error('ScrollReveal error:', e); }
   try { initGlobalMobileBackToTop(); } catch(e){ console.error('BackToTop error:', e); }
   try { initAboutArtLightbox(); } catch(e){ console.error('Art Lightbox error:', e); }
 
@@ -215,6 +214,9 @@ function navigateTo(pageId) {
       });
     }
   }
+
+  // Actualiser les cibles après le montage et l'hydratation de la page active.
+  try { initScrollRevealObserver(); } catch(e){ console.error('ScrollReveal error:', e); }
 
   // 4. METTRE À JOUR L'ÉTAT ACTIF DES LIENS DE NAVIGATION
   const navLinks = document.querySelectorAll('.nav-link, .mobile-menu-link');
@@ -913,20 +915,27 @@ document.addEventListener('keydown', function(e) {
 });
 
 /* SCROLL REVEAL OBSERVER */
-function initScrollRevealObserver() {
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
+let scrollRevealObserver = null;
 
-    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+function initScrollRevealObserver() {
+  // Retirer les anciennes cibles, notamment celles des pages détachées du DOM.
+  if (scrollRevealObserver) scrollRevealObserver.disconnect();
+  const elements = document.querySelectorAll('.scroll-reveal:not(.revealed)');
+
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (!scrollRevealObserver) {
+      scrollRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.target.isConnected) {
+            entry.target.classList.add('revealed');
+            scrollRevealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+    }
+    elements.forEach(el => scrollRevealObserver.observe(el));
   } else {
-    document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('revealed'));
+    elements.forEach(el => el.classList.add('revealed'));
   }
 }
 
