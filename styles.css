@@ -8686,8 +8686,33 @@ button.offer-accordion-header:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .about-tools-section {
+  .about-tools-section,
+  #page-about .about-tools-section {
     padding: 48px 0 56px 0;
+    overflow-x: clip !important;
+  }
+  .about-tools-asset-wrapper,
+  #page-about .about-tools-asset-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+  .about-tools-asset-wrapper picture,
+  #page-about .about-tools-asset-wrapper picture {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+  }
+  .about-tools-asset-img,
+  #page-about .about-tools-asset-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+    transform: none !important;
+    object-fit: contain !important;
   }
 }
 
@@ -9163,6 +9188,9 @@ button.offer-accordion-header:focus-visible {
 }
 
 @media (max-width: 768px) {
+  #page-about {
+    overflow-x: clip !important;
+  }
   #page-about .about-hero-workshop {
     gap: 28px;
     margin-bottom: 24px;
@@ -10135,6 +10163,12 @@ button.offer-accordion-header:focus-visible {
 
 /* ADAPTATIONS TABLETTE ET MOBILE ÉTAPE 2 */
 @media (max-width: 768px) {
+  #page-about .about-values-section {
+    overflow-x: clip !important;
+  }
+  #page-about .about-values-aquarelles-wrap {
+    overflow: hidden !important;
+  }
   #page-about .about-values-aquarelle {
     opacity: 0.22 !important;
     filter: blur(4px) !important;
