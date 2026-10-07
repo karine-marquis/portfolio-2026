@@ -1942,11 +1942,11 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   position: absolute;
   right: -8px;
   top: 22px;
-  color: rgba(155, 86, 32, 0.35);
+  color: #8A4B20;
   font-size: 13px;
 }
 
-/* BANDEAU MÃ‰THODOLOGIE SIENNE BRÃ›LÃ‰E DÃ‰COLLÃ‰ & Ã‰LÃ‰GANT */
+/* BANDEAU MÉTHODOLOGIE SIENNE BRÛLÉE DÉCOLLÉ & ÉLÉGANT */
 .glance-methodo-bar {
   background: #E2E7E0 !important;
   color: #3E3934 !important;
@@ -1992,7 +1992,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 }
 
 .glance-methodo-sep {
-  color: rgba(62, 57, 52, 0.35) !important;
+  color: #3E3934 !important;
   font-size: 11px;
 }
 
