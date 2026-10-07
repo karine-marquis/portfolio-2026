@@ -7567,13 +7567,13 @@ button.offer-accordion-header:focus-visible {
   font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
-  color: #786D65 !important;
+  color: #3E3934 !important;
 }
 
 #page-offer .offer-modalites-rate-secondary .offer-modalites-rate-label {
   font-size: 11px !important;
   font-weight: 500 !important;
-  color: #8A8077 !important;
+  color: #3E3934 !important;
   letter-spacing: 0.06em !important;
 }
 
@@ -7602,7 +7602,7 @@ button.offer-accordion-header:focus-visible {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 13px !important;
   line-height: 1.5 !important;
-  color: #786D65 !important;
+  color: #3E3934 !important;
   font-style: italic !important;
   margin-top: 8px !important;
   margin-bottom: 0 !important;
