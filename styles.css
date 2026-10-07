@@ -3166,16 +3166,40 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
 /* ==========================================================================
    ACCESSIBILITÉ WCAG AA — ACCUEIL (#page-home)
    ========================================================================== */
-#page-home .hero-v2-subtitle-pillars span,
-#page-home .hero-v2-h1 span:last-child,
-#page-home .hero-v2-paragraph-1 span span,
+#page-home .hero-v2-subtitle-pillars,
+.hero-v2-subtitle-pillars {
+  color: #3E3934 !important;
+  opacity: 1 !important;
+}
+
+#page-home .hero-v2-subtitle-pillars span {
+  color: #7A3F2A !important;
+  opacity: 1 !important;
+}
+
+#page-home .hero-v2-h1 span:last-child {
+  color: #7A3F2A !important;
+}
+
+#page-home .hero-v2-paragraph-1 span span {
+  color: #7A3F2A !important;
+  opacity: 1 !important;
+}
+
 #page-home .hero-v2-cta-primary {
-  color: #9B5620 !important;
-  border-color: #9B5620 !important;
+  color: #7A3F2A !important;
+  border-color: #7A3F2A !important;
+  opacity: 1 !important;
+}
+
+#page-home .hero-v2-cta-primary:hover,
+#page-home .hero-v2-cta-primary:focus {
+  color: #5E2F1F !important;
+  border-color: #5E2F1F !important;
 }
 
 #page-home .hero-v2-arrow-divider svg {
-  stroke: #9B5620 !important;
+  stroke: #7A3F2A !important;
 }
 
 /* LIGHTBOX IMAGE ZOOM MODAL & SHADOWS POUR TOUTES LES ILLUSTRATIONS DE LA PAGE */
