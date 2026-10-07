@@ -63,14 +63,14 @@
       });
     </script>
     <style>
-      .page-inner { background: var(--color-surface, #FFFDFC); font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--color-text); margin: 0; padding: 0; }
+      .page-inner { background: var(--color-surface, #FFFDFC); --color-accent: #8A4B20 !important; --color-accent-hover: #6E3A16 !important; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--color-text); margin: 0; padding: 0; }
       .site-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; border-bottom: 1px solid var(--color-border); background: rgba(255,253,252,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
       .brand { display: flex; align-items: center; text-decoration: none; color: inherit; gap: 12px; }
       .text-logo-km { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; color: var(--color-text); }
       .text-logo-sub { font-size: 13px; color: #6F665F; font-weight: 500; }
       .nav { display: flex; gap: 24px; }
       .nav-link { text-decoration: none; color: #6F665F; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-      .nav-link:hover, .nav-link.active { color: var(--color-accent); font-weight: 600; }
+      .nav-link:hover, .nav-link.active { color: #8A4B20; font-weight: 600; }
       .nav-cta { background: #55624F; color: #FFFDFC; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 12.5px; font-weight: 500; border-radius: 6px; border: 1px solid #485443; padding: 5px 14px; box-shadow: 0 2px 6px rgba(85, 98, 79, 0.12); transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
       .nav-cta:hover { background: #44513E; color: #FFFFFF; border-color: #394435; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(85, 98, 79, 0.25); }
 
@@ -84,7 +84,7 @@
       .bambinets-sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
       .bambinets-menu-item { display: flex; align-items: center; padding: 10px 12px; border-radius: 8px; text-decoration: none; color: #3E3934; font-size: 13px; font-weight: 500; transition: all 0.2s; cursor: pointer; }
       .bambinets-menu-item:hover, .bambinets-menu-item.active { background: var(--color-surface, #FFFDFC); color: #8A4B20; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-      .bambinets-menu-num { font-size: 11px; font-weight: 700; opacity: 0.7; margin-right: 8px; font-family: monospace; }
+      .bambinets-menu-num { font-size: 11px; font-weight: 700; opacity: 1 !important; color: #8A4B20; margin-right: 8px; font-family: monospace; }
 
       .bambinets-main-content { display: flex; flex-direction: column; gap: 32px; }
       .bambinets-v2-card { background: var(--color-surface, #FFFDFC); border-radius: 16px; padding: 32px; border: 1px solid var(--color-border); box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
@@ -180,7 +180,7 @@
     <main class="bambinets-page-container">
       <!-- SIDEBAR -->
       <aside class="bambinets-sidebar">
-        <div class="bambinets-sidebar-kicker" style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-accent); margin-bottom: 4px;">CASE STUDY</div>
+        <div class="bambinets-sidebar-kicker" style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #8A4B20; margin-bottom: 4px;">CASE STUDY</div>
         <h1 class="bambinets-brand-title">Bambinets</h1>
         <div class="bambinets-brand-category">UX Design & Micro-learning</div>
         <div class="bambinets-brand-tagline">Apprendre quelques signes pour mieux se comprendre avant les premiers mots.</div>
@@ -188,7 +188,7 @@
         <div class="lbc-v2-sidebar-meta-block" style="margin-top: 16px; margin-bottom: 16px;">
           <div class="lbc-v2-meta-item">
             <div class="lbc-v2-meta-label">
-              <i data-lucide="user-check" style="width: 12px; height: 12px; color: var(--color-accent); margin-right: 5px; vertical-align: -1px;"></i>
+              <i data-lucide="user-check" style="width: 12px; height: 12px; color: #8A4B20; margin-right: 5px; vertical-align: -1px;"></i>
               MON RÔLE
             </div>
             <div class="lbc-v2-meta-value">UX Designer · Architecture & prototypage</div>
@@ -244,7 +244,7 @@
           <p class="bambinets-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Quand la crèche Les Bambinets m’a sollicitée, la promesse était claire : permettre aux parents et aux professionnels de la petite enfance d’apprendre quelques signes clés pour mieux communiquer avec l’enfant avant que le langage verbal soit pleinement installé.</p>
           <p class="bambinets-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Sur le papier, la demande semblait classique : un glossaire vidéo, des favoris, des microquiz et une FAQ.</p>
           <p class="bambinets-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Mais sur le terrain, l’application devait fonctionner dans un contexte où l’utilisateur n’est jamais entièrement disponible. À la maison comme en crèche, l’attention se partage en permanence entre l’enfant, le groupe et l’urgence du moment.</p>
-          <p class="bambinets-v2-card-body" style="margin-top: 14px; margin-bottom: 24px; font-weight: 600; color: var(--color-accent) !important;">Le véritable enjeu n’était donc pas d’accumuler du contenu pédagogique, mais de le rendre immédiatement accessible au moment exact où il peut servir.</p>
+          <p class="bambinets-v2-card-body" style="margin-top: 14px; margin-bottom: 24px; font-weight: 600; color: #8A4B20 !important;">Le véritable enjeu n’était donc pas d’accumuler du contenu pédagogique, mais de le rendre immédiatement accessible au moment exact où il peut servir.</p>
         </section>
 
         <!-- ILLUSTRATION DU PARCOURS / CHEMINEMENT ENTRE LES DEUX SECTIONS -->
@@ -268,7 +268,7 @@
 
         <!-- LE PROJET DERRIERE LES ECRANS / ARBITRAGES ET CONTRAINTES -->
         <section id="sec-projet" class="lbc-v2-learnings-block" style="margin-top: 28px; margin-bottom: 36px;">
-          <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: var(--color-accent) !important;">04. Faire des choix sans perdre le fil</h3>
+          <h3 class="lbc-v2-coulisses-title" style="margin-bottom: 12px; color: #8A4B20 !important;">04. Faire des choix sans perdre le fil</h3>
           <p class="bambinets-v2-card-body" style="margin-bottom: 10px; color: #3E3934;">Bambinets n’était pas un projet compliqué parce qu’il fallait ajouter beaucoup de choses. Il l’était parce qu’il fallait savoir quoi laisser de côté.</p>
           <p class="bambinets-v2-card-body" style="margin-bottom: 20px; color: #3E3934;">À chaque étape, la même question revenait : comment garder une application pédagogique suffisamment riche pour être utile, sans la rendre plus lourde à comprendre ou à utiliser ?</p>
           
@@ -291,7 +291,7 @@
             </div>
           </div>
 
-          <p class="bambinets-v2-card-body" style="margin-top: 16px; font-weight: 600; color: var(--color-accent) !important;">Le vrai travail n’a donc pas été d’ajouter des écrans. Il a surtout consisté à retirer les hésitations inutiles entre eux.</p>
+          <p class="bambinets-v2-card-body" style="margin-top: 16px; font-weight: 600; color: #8A4B20 !important;">Le vrai travail n’a donc pas été d’ajouter des écrans. Il a surtout consisté à retirer les hésitations inutiles entre eux.</p>
           <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
         </section>
 
@@ -301,10 +301,10 @@
           <p class="bambinets-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">J’ai d’abord structuré l’application autour de quatre clés d’entrée évidentes : <strong>Glossaire</strong>, <strong>Favoris</strong>, <strong>Quiz</strong> et <strong>FAQ</strong>.</p>
           <p class="bambinets-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Depuis le glossaire, l’utilisateur parcourt les signes par catégorie, lance une recherche rapide et accède directement à la fiche du signe. Chaque fiche rassemble la démonstration vidéo, une description claire du geste et la possibilité de l’ajouter aux favoris en un tap.</p>
           <p class="bambinets-v2-card-body" style="margin-bottom: 12px; color: #3E3934;">Pour le quiz, j’ai conçu une logique tout aussi fluide : une question à la fois, un repère de progression rassurant, un feedback immédiat et un bilan bienveillant.</p>
-          <p class="bambinets-v2-card-body" style="margin-top: 14px; margin-bottom: 20px; font-weight: 600; color: var(--color-accent) !important;">Mon objectif n’était pas de multiplier les chemins possibles. Il fallait au contraire que l’utilisateur sache toujours où il se trouve, ce qu’il peut faire ensuite et comment revenir à l’essentiel.</p>
+          <p class="bambinets-v2-card-body" style="margin-top: 14px; margin-bottom: 20px; font-weight: 600; color: #8A4B20 !important;">Mon objectif n’était pas de multiplier les chemins possibles. Il fallait au contraire que l’utilisateur sache toujours où il se trouve, ce qu’il peut faire ensuite et comment revenir à l’essentiel.</p>
 
           <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--color-border);">
-            <h4 style="font-size: 15px; font-weight: 700; color: var(--color-accent); margin-bottom: 4px;">Le flowchart — Donner une place claire à chaque intention</h4>
+            <h4 style="font-size: 15px; font-weight: 700; color: #8A4B20; margin-bottom: 4px;">Le flowchart — Donner une place claire à chaque intention</h4>
             <p style="font-size: 12px; color: #6F665F; line-height: 1.45; margin-bottom: 10px;">Le flowchart m’a permis de relier ces parcours, d’anticiper les retours possibles et d’éviter les impasses avant de traduire cette structure avec les composants du design system.</p>
             <div onclick="openLightbox('assets/PROJTS/BAMBINETS/flowchart_bambinets2.png', 'Flowchart UX du parcours principal — Bambinets — Cliquer pour fermer ✕')" title="🔍 Cliquer pour agrandir en plein écran" class="lbc-v2-deliverable-horizontal" style="max-width: 88%; margin: 0 auto;">
               <img src="assets/PROJTS/BAMBINETS/flowchart_bambinets2.png" alt="Flowchart UX Japandi Bambinets" style="max-height: 380px; width: 100%; height: auto; display: block; margin: 0 auto; object-fit: contain;">
@@ -312,7 +312,7 @@
             </div>
             <p style="font-size: 11.5px; color: var(--color-text-muted); margin-top: 12px; margin-bottom: 8px; font-style: italic;">Cette vue est une illustration simplifiée de l’architecture. Le flowchart complet est disponible sur Miro.</p>
             <div>
-              <a href="https://miro.com/app/live-embed/uXjVGOHAlBA=/?focusWidget=3458764664048727312&embedMode=view_only_without_ui&embedId=66393186859" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">Explorer le flowchart complet sur Miro ↗</a>
+              <a href="https://miro.com/app/live-embed/uXjVGOHAlBA=/?focusWidget=3458764664048727312&embedMode=view_only_without_ui&embedId=66393186859" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: #8A4B20; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">Explorer le flowchart complet sur Miro ↗</a>
             </div>
           </div>
           <div class="mobile-section-back-top"><a href="#" onclick="scrollModalToTop(); return false;" class="mobile-back-top-link">↑ Remonter en haut</a></div>
@@ -340,11 +340,11 @@
             </div>
           </div>
 
-          <p class="bambinets-v2-card-body" style="margin-top: 16px; margin-bottom: 24px; font-weight: 600; color: var(--color-accent) !important;">C’était mon moment de vérité : si le parcours ne tenait pas avec quelques rectangles gris, aucune couche de peinture ne viendrait le sauver.</p>
+          <p class="bambinets-v2-card-body" style="margin-top: 16px; margin-bottom: 24px; font-weight: 600; color: #8A4B20 !important;">C’était mon moment de vérité : si le parcours ne tenait pas avec quelques rectangles gris, aucune couche de peinture ne viendrait le sauver.</p>
 
           <!-- BLOC HI-FI SUR FOND LIBRE -->
           <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--color-border);">
-            <h4 style="font-size: 16px; font-weight: 700; color: var(--color-accent); margin-bottom: 12px;">Donner une forme au parcours sans perdre sa simplicité</h4>
+            <h4 style="font-size: 16px; font-weight: 700; color: #8A4B20; margin-bottom: 12px;">Donner une forme au parcours sans perdre sa simplicité</h4>
             <p style="font-size: 13px; color: #3E3934; line-height: 1.5; margin-bottom: 10px;">Une fois la structure posée, il fallait faire entrer Bambinets dans son univers visuel — sans transformer l’application en sapin de Noël pédagogique.</p>
             <p style="font-size: 13px; color: #3E3934; line-height: 1.5; margin-bottom: 10px;">Le style guide existait déjà. Mon rôle n’était donc pas de réinventer l’identité, mais de faire vivre le parcours à l’intérieur de ce cadre : choisir les bons composants, ajuster la typographie, les pictogrammes et certains éléments d’interface quand cela servait la compréhension.</p>
             <p style="font-size: 13px; color: #3E3934; line-height: 1.5; margin-bottom: 16px;">À ce stade, chaque détail graphique devait avoir une utilité : aider à repérer une action, comprendre où l’on se trouve, reconnaître un contenu ou avancer sans hésiter.</p>
@@ -545,7 +545,7 @@
                   <span class="lbc-v2-player-timer" id="bbAudioTimer">0:00</span>
                   <input type="range" class="lbc-v2-player-slider" id="bbAudioSeek" value="0" max="100" oninput="seekBambinetsAudio(this)">
                   <span class="lbc-v2-player-timer">13:49</span>
-                  <i data-lucide="volume-2" style="width: 16px; height: 16px; color: var(--color-accent);"></i>
+                  <i data-lucide="volume-2" style="width: 16px; height: 16px; color: #8A4B20;"></i>
                 </div>
                 <audio id="bbAudioElement" preload="metadata" playsinline ontimeupdate="updateBambinetsAudioProgress()">
                   <source src="assets/podcasts/bambinets.mp3" type="audio/mpeg">
@@ -562,7 +562,7 @@
                   </div>
                 </div>
                 <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6F665F !important; line-height: 1.45 !important; margin-bottom: 14px !important;">Une version textuelle accessible reprend les éléments essentiels de la présentation.</p>
-                <a href="assets/bambinets-canva-version-textuelle-accessible.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: var(--color-accent); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;"><i data-lucide="download" style="width: 13px; height: 13px; color: currentColor;"></i> Lire la version textuelle (PDF) ↗</a>
+                <a href="assets/bambinets-canva-version-textuelle-accessible.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: #8A4B20; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;"><i data-lucide="download" style="width: 13px; height: 13px; color: currentColor;"></i> Lire la version textuelle (PDF) ↗</a>
               </div>
             </div>
           </div>

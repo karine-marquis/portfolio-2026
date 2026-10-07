@@ -2716,12 +2716,12 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 }
 
 .lbc-v2-persona-tab:hover {
-  color: var(--color-accent) !important;
+  color: #9B5620 !important;
 }
 
 .lbc-v2-persona-tab.active {
   background: #FFFDFC !important;
-  color: var(--color-accent) !important;
+  color: #9B5620 !important;
   font-weight: 700 !important;
   box-shadow: 0 2px 6px rgba(62, 57, 52, 0.08) !important;
 }
@@ -2887,11 +2887,87 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 }
 
 /* ==========================================================================
+   ACCESSIBILITÉ WCAG AA / AAA — LES CORDONS BLEUS (MODALE & PAGE DÉDIÉE)
+   ========================================================================== */
+#modal-cordons-bleus,
+#modal-lbc,
+.page-projet-cordons-bleus,
+body.page-inner:has(#lbc-sec-1),
+body:has(#lbc-sec-1) {
+  --color-accent: #9B5620 !important;
+  --color-accent-hover: #7E3E12 !important;
+}
+
+#modal-cordons-bleus .text-terracotta,
+#modal-lbc .text-terracotta,
+.page-projet-cordons-bleus .text-terracotta,
+body:has(#lbc-sec-1) .text-terracotta {
+  color: #9B5620 !important;
+}
+
+#modal-cordons-bleus .lbc-v2-card-body span[style*="var(--color-accent)"],
+#modal-cordons-bleus span[style*="color: var(--color-accent)"],
+#modal-cordons-bleus p[style*="color: var(--color-accent)"],
+#modal-cordons-bleus h4[style*="color: var(--color-accent)"],
+#modal-cordons-bleus .lbc-v2-bullet-title,
+#modal-cordons-bleus .lbc-v2-main-title,
+#modal-cordons-bleus .lbc-v2-coulisses-title,
+#modal-cordons-bleus .lbc-v2-card-bullets li::before,
+#modal-cordons-bleus .lbc-v2-pill-badge,
+#modal-cordons-bleus .lbc-v2-sidebar-kicker,
+#modal-cordons-bleus .lbc-v2-brand-category,
+#modal-cordons-bleus .lbc-v2-meta-label,
+#modal-cordons-bleus .lbc-v2-meta-label i,
+#modal-cordons-bleus .lbc-v2-meta-label svg,
+#modal-cordons-bleus .lbc-v2-menu-back-top,
+#modal-cordons-bleus .lbc-v2-menu-back-top .menu-label,
+#modal-cordons-bleus .lbc-v2-menu-back-top .menu-num,
+.page-projet-cordons-bleus .lbc-v2-card-body span[style*="var(--color-accent)"],
+.page-projet-cordons-bleus span[style*="color: var(--color-accent)"],
+.page-projet-cordons-bleus p[style*="color: var(--color-accent)"],
+.page-projet-cordons-bleus h4[style*="color: var(--color-accent)"],
+.page-projet-cordons-bleus .lbc-v2-bullet-title,
+.page-projet-cordons-bleus .lbc-v2-main-title,
+.page-projet-cordons-bleus .lbc-v2-coulisses-title,
+.page-projet-cordons-bleus .lbc-v2-card-bullets li::before,
+.page-projet-cordons-bleus .lbc-v2-pill-badge,
+.page-projet-cordons-bleus .lbc-v2-sidebar-kicker,
+.page-projet-cordons-bleus .lbc-v2-brand-category,
+.page-projet-cordons-bleus .lbc-v2-meta-label,
+.page-projet-cordons-bleus .lbc-v2-meta-label i,
+.page-projet-cordons-bleus .lbc-v2-meta-label svg,
+.page-projet-cordons-bleus .lbc-v2-menu-back-top,
+.page-projet-cordons-bleus .lbc-v2-menu-back-top .menu-label,
+.page-projet-cordons-bleus .lbc-v2-menu-back-top .menu-num,
+body:has(#lbc-sec-1) .lbc-v2-bullet-title,
+body:has(#lbc-sec-1) .lbc-v2-card-bullets li::before,
+body:has(#lbc-sec-1) .lbc-v2-pill-badge,
+body:has(#lbc-sec-1) .lbc-v2-sidebar-kicker,
+body:has(#lbc-sec-1) .lbc-v2-brand-category,
+body:has(#lbc-sec-1) .lbc-v2-meta-label,
+body:has(#lbc-sec-1) .lbc-v2-meta-label i,
+body:has(#lbc-sec-1) .lbc-v2-meta-label svg,
+body:has(#lbc-sec-1) .lbc-v2-menu-back-top,
+body:has(#lbc-sec-1) .lbc-v2-menu-back-top .menu-label,
+body:has(#lbc-sec-1) .lbc-v2-menu-back-top .menu-num {
+  color: #9B5620 !important;
+}
+
+#modal-cordons-bleus a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+.page-projet-cordons-bleus a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+body:has(#lbc-sec-1) a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
+  color: #9B5620 !important;
+}
+
+/* ==========================================================================
    ACCESSIBILITÉ WCAG AA / AAA — BAMBINETS (MODALE & PAGE DÉDIÉE)
    ========================================================================== */
 #modal-bambinets,
-.page-projet-bambinets {
+.page-projet-bambinets,
+body:has(#bb-sec-1),
+body:has(#sec-hero) {
   --color-accent: #8A4B20 !important;
+  --color-accent-hover: #6E3A16 !important;
 }
 
 #modal-bambinets .lbc-v2-card-body,
@@ -2933,8 +3009,78 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .page-projet-bambinets .bambinets-2col-grid div[style*="font-weight: 800"],
 .page-projet-bambinets .bambinets-2col-grid div[style*="font-weight:800"],
 .page-projet-bambinets .lbc-v2-subcard > div[style*="font-weight: 800"],
-.page-projet-bambinets .lbc-v2-subcard > div[style*="font-weight:800"] {
+.page-projet-bambinets .lbc-v2-subcard > div[style*="font-weight:800"],
+#modal-bambinets .lbc-v2-sidebar-kicker,
+#modal-bambinets .lbc-v2-brand-category,
+#modal-bambinets .lbc-v2-meta-label,
+#modal-bambinets .lbc-v2-meta-label i,
+#modal-bambinets .lbc-v2-meta-label svg,
+.page-projet-bambinets .bambinets-sidebar-kicker,
+.page-projet-bambinets .bambinets-brand-category {
   color: #8A4B20 !important;
+}
+
+/* Fix spécifique Remonter en haut / Lateral navigation & 1:1 contrast */
+#modal-bambinets .lbc-v2-menu-back-top,
+#modal-bambinets .lbc-v2-menu-back-top .menu-label,
+#modal-bambinets .lbc-v2-menu-back-top .menu-num,
+.page-projet-bambinets .lbc-v2-menu-back-top,
+.page-projet-bambinets .lbc-v2-menu-back-top .menu-label,
+.page-projet-bambinets .lbc-v2-menu-back-top .menu-num {
+  color: #8A4B20 !important;
+  background: transparent !important;
+}
+
+#modal-bambinets .lbc-v2-menu-back-top:hover,
+#modal-bambinets .lbc-v2-menu-back-top:hover .menu-label,
+#modal-bambinets .lbc-v2-menu-back-top:hover .menu-num,
+.page-projet-bambinets .lbc-v2-menu-back-top:hover,
+.page-projet-bambinets .lbc-v2-menu-back-top:hover .menu-label,
+.page-projet-bambinets .lbc-v2-menu-back-top:hover .menu-num {
+  color: #44513E !important;
+  background: transparent !important;
+}
+
+/* Neutralisation absolue du background sur la puce arrow pour éviter tout 1:1 */
+.lbc-v2-menu-back-top .menu-num,
+.lbc-v2-menu-back-top:hover .menu-num,
+.lbc-v2-menu-back-top.active .menu-num,
+.lbc-v2-menu-item.lbc-v2-menu-back-top .menu-num,
+.lbc-v2-menu-item.lbc-v2-menu-back-top:hover .menu-num,
+.lbc-v2-menu-item.lbc-v2-menu-back-top.active .menu-num {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+#modal-bambinets .lbc-v2-menu-item.active .menu-num,
+#modal-bambinets .lbc-v2-menu-item:hover:not(.lbc-v2-menu-back-top) .menu-num,
+.page-projet-bambinets .lbc-v2-menu-item.active .menu-num,
+.page-projet-bambinets .lbc-v2-menu-item:hover:not(.lbc-v2-menu-back-top) .menu-num {
+  color: #FFFFFF !important;
+}
+
+#modal-bambinets .mobile-back-top-link,
+.page-projet-bambinets .mobile-back-top-link,
+#modal-cordons-bleus .mobile-back-top-link,
+.page-projet-cordons-bleus .mobile-back-top-link,
+body:has(#lbc-sec-1) .mobile-back-top-link {
+  color: #55624F !important;
+  opacity: 1 !important;
+}
+
+#modal-bambinets .mobile-back-top-link:hover,
+.page-projet-bambinets .mobile-back-top-link:hover,
+#modal-cordons-bleus .mobile-back-top-link:hover,
+.page-projet-cordons-bleus .mobile-back-top-link:hover,
+body:has(#lbc-sec-1) .mobile-back-top-link:hover {
+  color: #394435 !important;
+  opacity: 1 !important;
 }
 
 #modal-bambinets a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
@@ -3095,7 +3241,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent) !important;
+  color: #9B5620 !important;
   margin-bottom: 14px;
 }
 
@@ -3145,13 +3291,13 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 }
 
 .lbc-v2-card-bullets li:hover {
-  border-color: var(--color-accent);
+  border-color: #9B5620 !important;
   transform: translateX(3px);
 }
 
 .lbc-v2-card-bullets li::before {
   content: "\2726" !important;
-  color: var(--color-accent) !important;
+  color: #9B5620 !important;
   font-size: 12px !important;
   line-height: 1 !important;
   flex-shrink: 0 !important;
@@ -3168,7 +3314,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-weight: 600;
-  color: var(--color-accent) !important;
+  color: #9B5620 !important;
   font-size: 13.5px;
   line-height: 1.35;
   display: block;
@@ -3187,7 +3333,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .lbc-v2-coulisses-title {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 24px !important;
-  color: var(--color-accent) !important;
+  color: #9B5620 !important;
   margin-bottom: 18px !important;
 }
 
@@ -3235,8 +3381,8 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   align-items: center;
   gap: 8px;
   background: var(--color-surface) !important;
-  color: var(--color-accent) !important;
-  border: 1.5px solid var(--color-accent) !important;
+  color: #9B5620 !important;
+  border: 1.5px solid #9B5620 !important;
   font-family: 'Montserrat', sans-serif !important;
   font-size: 13.5px !important;
   font-weight: 600 !important;
@@ -3249,8 +3395,8 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 
 .btn-outline-terracotta:hover {
   background: rgba(155, 86, 32, 0.06) !important;
-  border-color: var(--color-accent-hover) !important;
-  color: var(--color-accent-hover) !important;
+  border-color: #7E3E12 !important;
+  color: #7E3E12 !important;
   transform: translateY(-1.5px) !important;
   box-shadow: 0 4px 14px rgba(155, 86, 32, 0.16) !important;
 }
@@ -3626,7 +3772,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 11px !important;
   font-weight: 600 !important;
-  color: #9B5620 !important;
+  color: #944E36 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
   display: block !important;
@@ -3645,7 +3791,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .foodles-question-desc {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12px !important;
-  color: #6F635B !important;
+  color: #3E3934 !important;
   line-height: 1.5 !important;
   margin: 0 !important;
 }
@@ -3658,7 +3804,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 }
 
 /* ==========================================================================
-   FOODLES SECTION 7 â€” CE QUE L'EXPÃ‰RIENCE DEVAIT MIEUX PERMETTRE (4 AXES Ã‰DITORIAUX)
+   FOODLES SECTION 7 — CE QUE L'EXPÉRIENCE DEVAIT MIEUX PERMETTRE (4 AXES ÉDITORIAUX)
    ========================================================================== */
 .foodles-axes-grid {
   display: grid;
@@ -3681,7 +3827,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 11px !important;
   font-weight: 600 !important;
-  color: #9B5620 !important;
+  color: #944E36 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
   display: block !important;
@@ -3708,7 +3854,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .foodles-axe-subtext {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12px !important;
-  color: #7C6A5F !important;
+  color: #3E3934 !important;
   line-height: 1.55 !important;
   margin: 0 !important;
 }
@@ -5183,7 +5329,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   .lbc-v2-mobile-menu-btn .menu-btn-arrow {
     font-size: 10.5px !important;
     transition: transform 0.2s ease !important;
-    color: var(--color-accent) !important;
+    color: #9B5620 !important;
   }
 
   .lbc-v2-mobile-menu-btn.active .menu-btn-arrow {
@@ -5235,7 +5381,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   .lbc-v2-menu-list.mobile-open .menu-num {
-    color: var(--color-accent) !important;
+    color: #9B5620 !important;
     font-weight: 700 !important;
     font-size: 10.5px !important;
     background: transparent !important;
@@ -5260,7 +5406,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   .lbc-v2-menu-list.mobile-open .lbc-v2-menu-item.lbc-v2-menu-back-top .menu-num {
-    color: var(--color-accent) !important;
+    color: #9B5620 !important;
     font-weight: 700 !important;
     font-size: 11px !important;
     background: transparent !important;
@@ -5449,7 +5595,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
   .lbc-v2-bullet-title {
     font-size: 13px !important;
-    color: var(--color-accent) !important;
+    color: #9B5620 !important;
     font-style: italic !important;
     font-weight: 600 !important;
     line-height: 1.35 !important;
@@ -5769,6 +5915,11 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 #foodles-resultats-tests {
   background: var(--color-sauge-soft, #E3E8DF) !important;
   border: 1px solid var(--color-sauge-border, #CBD4C7) !important;
+}
+
+#modal-foodles .text-terracotta,
+body.page-inner #foodles-top .text-terracotta {
+  color: #944E36 !important;
 }
 
 /* ==========================================================================
