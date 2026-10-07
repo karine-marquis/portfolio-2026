@@ -10488,7 +10488,7 @@ button.offer-accordion-header:focus-visible {
   font-family: var(--font-sans, 'Montserrat', sans-serif) !important;
   font-size: 13px !important;
   line-height: 1.55 !important;
-  color: #635A52 !important;
+  color: #3E3934 !important;
   opacity: 1 !important;
   max-width: 380px;
   margin: 6px auto 0 auto;
@@ -10499,8 +10499,8 @@ button.offer-accordion-header:focus-visible {
 #page-about .about-values-credit-note {
   font-size: 11.5px !important;
   line-height: 1.45 !important;
-  color: #7A7067 !important;
-  opacity: 0.85 !important;
+  color: #3E3934 !important;
+  opacity: 1 !important;
   max-width: 440px;
   margin: 6px 0 0 0;
   text-align: left;
@@ -10549,8 +10549,8 @@ button.offer-accordion-header:focus-visible {
     max-width: 100%;
     font-size: 11.5px !important;
     line-height: 1.45 !important;
-    color: #7A7067 !important;
-    opacity: 0.85 !important;
+    color: #3E3934 !important;
+    opacity: 1 !important;
     margin: 5px 0 0 0;
     text-align: left;
   }
@@ -10579,8 +10579,8 @@ button.offer-accordion-header:focus-visible {
   #page-about .about-art-credit-note {
     font-size: 11px !important;
     line-height: 1.4 !important;
-    color: #7A7067 !important;
-    opacity: 0.85 !important;
+    color: #3E3934 !important;
+    opacity: 1 !important;
     margin: 4px 0 0 0;
     text-align: left;
   }
