@@ -14,8 +14,8 @@
   --color-text: #3E3934;          /* Texte principal (Brun profond) */
   --color-text-muted: #6F665F;    /* Texte secondaire / atténué */
 
-  --color-accent: #A85E3F;        /* Terracotta éditorial (Labels, kickers, accents) */
-  --color-accent-hover: #8E4C31;  /* Terracotta survol */
+  --color-accent: #7A3F2A;        /* Terracotta éditorial accessible (Labels, kickers, accents) */
+  --color-accent-hover: #5E2F1F;  /* Terracotta survol */
 
   --color-cta: #596756;           /* Vert sombre CTA (Boutons principaux .btn-primary) */
   --color-cta-hover: #44513E;     /* Vert sombre survol */
@@ -2716,12 +2716,12 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 }
 
 .lbc-v2-persona-tab:hover {
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
 }
 
 .lbc-v2-persona-tab.active {
   background: #FFFDFC !important;
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
   font-weight: 700 !important;
   box-shadow: 0 2px 6px rgba(62, 57, 52, 0.08) !important;
 }
@@ -2894,15 +2894,15 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .page-projet-cordons-bleus,
 body.page-inner:has(#lbc-sec-1),
 body:has(#lbc-sec-1) {
-  --color-accent: #9B5620 !important;
-  --color-accent-hover: #7E3E12 !important;
+  --color-accent: #7A3F2A !important;
+  --color-accent-hover: #5E2F1F !important;
 }
 
 #modal-cordons-bleus .text-terracotta,
 #modal-lbc .text-terracotta,
 .page-projet-cordons-bleus .text-terracotta,
 body:has(#lbc-sec-1) .text-terracotta {
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
 }
 
 #modal-cordons-bleus .lbc-v2-card-body span[style*="var(--color-accent)"],
@@ -2950,13 +2950,13 @@ body:has(#lbc-sec-1) .lbc-v2-meta-label svg,
 body:has(#lbc-sec-1) .lbc-v2-menu-back-top,
 body:has(#lbc-sec-1) .lbc-v2-menu-back-top .menu-label,
 body:has(#lbc-sec-1) .lbc-v2-menu-back-top .menu-num {
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
 }
 
 #modal-cordons-bleus a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
 .page-projet-cordons-bleus a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
 body:has(#lbc-sec-1) a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
 }
 
 /* ==========================================================================
@@ -2966,8 +2966,8 @@ body:has(#lbc-sec-1) a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):
 .page-projet-bambinets,
 body:has(#bb-sec-1),
 body:has(#sec-hero) {
-  --color-accent: #8A4B20 !important;
-  --color-accent-hover: #6E3A16 !important;
+  --color-accent: #7A3F2A !important;
+  --color-accent-hover: #5E2F1F !important;
 }
 
 #modal-bambinets .lbc-v2-card-body,
@@ -2991,6 +2991,7 @@ body:has(#sec-hero) {
 
 #modal-bambinets .lbc-v2-coulisses-title,
 #modal-bambinets h4[style*="var(--color-accent)"],
+#modal-bambinets h4[style*="#7A3F2A"],
 #modal-bambinets h4[style*="#8A4B20"],
 #modal-bambinets span[style*="var(--color-accent)"],
 #modal-bambinets div[style*="var(--color-accent)"],
@@ -3017,7 +3018,7 @@ body:has(#sec-hero) {
 #modal-bambinets .lbc-v2-meta-label svg,
 .page-projet-bambinets .bambinets-sidebar-kicker,
 .page-projet-bambinets .bambinets-brand-category {
-  color: #8A4B20 !important;
+  color: #7A3F2A !important;
 }
 
 /* Fix spécifique Remonter en haut / Lateral navigation & 1:1 contrast */
@@ -3027,7 +3028,7 @@ body:has(#sec-hero) {
 .page-projet-bambinets .lbc-v2-menu-back-top,
 .page-projet-bambinets .lbc-v2-menu-back-top .menu-label,
 .page-projet-bambinets .lbc-v2-menu-back-top .menu-num {
-  color: #8A4B20 !important;
+  color: #7A3F2A !important;
   background: transparent !important;
 }
 
@@ -3085,12 +3086,12 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
 
 #modal-bambinets a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
 .page-projet-bambinets a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
-  color: #8A4B20 !important;
+  color: #7A3F2A !important;
 }
 
 #modal-bambinets a:hover,
 .page-projet-bambinets a:hover {
-  color: #6E3A16 !important;
+  color: #5E2F1F !important;
 }
 
 /* ==========================================================================
@@ -3241,7 +3242,7 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
   margin-bottom: 14px;
 }
 
@@ -3262,7 +3263,7 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
 
 .lbc-v2-card-body.text-terracotta,
 .text-terracotta {
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
 }
 
 .lbc-v2-card-bullets {
@@ -3291,13 +3292,13 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
 }
 
 .lbc-v2-card-bullets li:hover {
-  border-color: #9B5620 !important;
+  border-color: #7A3F2A !important;
   transform: translateX(3px);
 }
 
 .lbc-v2-card-bullets li::before {
   content: "\2726" !important;
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
   font-size: 12px !important;
   line-height: 1 !important;
   flex-shrink: 0 !important;
@@ -3314,7 +3315,7 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
   font-family: 'Playfair Display', Georgia, serif;
   font-style: italic;
   font-weight: 600;
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
   font-size: 13.5px;
   line-height: 1.35;
   display: block;
@@ -3333,7 +3334,7 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
 .lbc-v2-coulisses-title {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-size: 24px !important;
-  color: #9B5620 !important;
+  color: #7A3F2A !important;
   margin-bottom: 18px !important;
 }
 
@@ -3381,8 +3382,8 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
   align-items: center;
   gap: 8px;
   background: var(--color-surface) !important;
-  color: #9B5620 !important;
-  border: 1.5px solid #9B5620 !important;
+  color: #7A3F2A !important;
+  border: 1.5px solid #7A3F2A !important;
   font-family: 'Montserrat', sans-serif !important;
   font-size: 13.5px !important;
   font-weight: 600 !important;
@@ -3395,8 +3396,8 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
 
 .btn-outline-terracotta:hover {
   background: rgba(155, 86, 32, 0.06) !important;
-  border-color: #7E3E12 !important;
-  color: #7E3E12 !important;
+  border-color: #5E2F1F !important;
+  color: #5E2F1F !important;
   transform: translateY(-1.5px) !important;
   box-shadow: 0 4px 14px rgba(155, 86, 32, 0.16) !important;
 }
@@ -3504,7 +3505,7 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
 .lbc-v2-audio-duration {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12px !important;
-  color: #8A4B20 !important;
+  color: #7A3F2A !important;
 }
 
 .lbc-v2-custom-player {
@@ -3772,7 +3773,7 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 11px !important;
   font-weight: 600 !important;
-  color: #944E36 !important;
+  color: #7A3F2A !important;
   text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
   display: block !important;
@@ -3827,7 +3828,7 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 11px !important;
   font-weight: 600 !important;
-  color: #944E36 !important;
+  color: #7A3F2A !important;
   text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
   display: block !important;
@@ -5329,7 +5330,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   .lbc-v2-mobile-menu-btn .menu-btn-arrow {
     font-size: 10.5px !important;
     transition: transform 0.2s ease !important;
-    color: #9B5620 !important;
+    color: #7A3F2A !important;
   }
 
   .lbc-v2-mobile-menu-btn.active .menu-btn-arrow {
@@ -5381,7 +5382,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   .lbc-v2-menu-list.mobile-open .menu-num {
-    color: #9B5620 !important;
+    color: #7A3F2A !important;
     font-weight: 700 !important;
     font-size: 10.5px !important;
     background: transparent !important;
@@ -5406,7 +5407,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   }
 
   .lbc-v2-menu-list.mobile-open .lbc-v2-menu-item.lbc-v2-menu-back-top .menu-num {
-    color: #9B5620 !important;
+    color: #7A3F2A !important;
     font-weight: 700 !important;
     font-size: 11px !important;
     background: transparent !important;
@@ -5595,7 +5596,7 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
 
   .lbc-v2-bullet-title {
     font-size: 13px !important;
-    color: #9B5620 !important;
+    color: #7A3F2A !important;
     font-style: italic !important;
     font-weight: 600 !important;
     line-height: 1.35 !important;
@@ -5917,9 +5918,52 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
   border: 1px solid var(--color-sauge-border, #CBD4C7) !important;
 }
 
+/* ==========================================================================
+   ACCESSIBILITÉ WCAG AA / AAA — FOODLES (MODALE & PAGE DÉDIÉE)
+   ========================================================================== */
+#modal-foodles,
+.page-projet-foodles,
+body.page-inner:has(#foodles-top),
+body:has(#foodles-top) {
+  --color-accent: #7A3F2A !important;
+  --color-accent-hover: #5E2F1F !important;
+}
+
 #modal-foodles .text-terracotta,
-body.page-inner #foodles-top .text-terracotta {
-  color: #944E36 !important;
+.page-projet-foodles .text-terracotta,
+body:has(#foodles-top) .text-terracotta {
+  color: #7A3F2A !important;
+}
+
+#modal-foodles .foodles-sidebar-kicker,
+#modal-foodles .foodles-brand-category,
+#modal-foodles .foodles-meta-label,
+#modal-foodles .foodles-meta-label i,
+#modal-foodles .foodles-meta-label svg,
+#modal-foodles .foodles-atomic-arrow,
+#modal-foodles .foodles-menu-back-top .menu-label,
+#modal-foodles .foodles-menu-back-top .menu-num,
+.page-projet-foodles .foodles-sidebar-kicker,
+.page-projet-foodles .foodles-brand-category,
+.page-projet-foodles .foodles-meta-label,
+.page-projet-foodles .foodles-meta-label i,
+.page-projet-foodles .foodles-meta-label svg,
+.page-projet-foodles .foodles-atomic-arrow,
+.page-projet-foodles .foodles-menu-back-top .menu-label,
+.page-projet-foodles .foodles-menu-back-top .menu-num,
+body:has(#foodles-top) .foodles-sidebar-kicker,
+body:has(#foodles-top) .foodles-brand-category,
+body:has(#foodles-top) .foodles-meta-label,
+body:has(#foodles-top) .foodles-meta-label i,
+body:has(#foodles-top) .foodles-meta-label svg,
+body:has(#foodles-top) .foodles-atomic-arrow {
+  color: #7A3F2A !important;
+}
+
+#modal-foodles a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+.page-projet-foodles a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+body:has(#foodles-top) a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
+  color: #7A3F2A !important;
 }
 
 /* ==========================================================================
@@ -6690,7 +6734,7 @@ body.page-inner #foodles-top .text-terracotta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-accent, #A85E3F);
+  color: var(--color-accent, #7A3F2A);
   margin-bottom: 20px;
 }
 
@@ -6775,7 +6819,7 @@ body.page-inner #foodles-top .text-terracotta {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 14px !important;
   font-weight: 600 !important;
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
   text-decoration: none !important;
   display: inline-flex;
   align-items: center;
@@ -7472,7 +7516,7 @@ button.offer-accordion-header:focus-visible {
 #page-offer .offer-modalites-rate-secondary .offer-modalites-rate-amount {
   font-size: 15.5px !important;
   font-weight: 600 !important;
-  color: #A85E3F !important;
+  color: #7A3F2A !important;
 }
 
 #page-offer .offer-modalites-rate-divider {
@@ -8508,10 +8552,10 @@ button.offer-accordion-header:focus-visible {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-style: italic !important;
   font-size: 17px !important;
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
   margin: 0 !important;
   padding-left: 16px;
-  border-left: 2px solid var(--color-accent, #A85E3F);
+  border-left: 2px solid var(--color-accent, #7A3F2A);
 }
 
 /* ZONE VISUELLE — COMPOSITION COLLAGE ARTISTIQUE ASYMÉTRIQUE */
@@ -9029,7 +9073,7 @@ button.offer-accordion-header:focus-visible {
   font-size: 25px !important;
   font-weight: 500 !important;
   line-height: 1.25 !important;
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
 }
 
 #page-about .about-hero-workshop {
@@ -9127,7 +9171,7 @@ button.offer-accordion-header:focus-visible {
   font-family: 'Caveat', cursive, sans-serif !important;
   font-size: 25px !important;
   font-weight: 500 !important;
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
   transform: rotate(6deg);
   line-height: 1.25 !important;
   margin-right: -10px;
@@ -9142,7 +9186,7 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-hero-accent {
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
   font-style: italic;
   font-weight: 400;
 }
@@ -9208,7 +9252,7 @@ button.offer-accordion-header:focus-visible {
 }
 
 #page-about .about-hero-accent {
-  color: #A85E3F !important;
+  color: #7A3F2A !important;
   font-style: italic !important;
   font-weight: 400 !important;
   font-size: 54px !important;
@@ -9791,7 +9835,7 @@ button.offer-accordion-header:focus-visible {
   font-family: 'Caveat', cursive, sans-serif !important;
   font-size: 27px !important;
   font-weight: 500 !important;
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
   margin: 0 !important;
   line-height: 1.2 !important;
   display: block;
@@ -10342,7 +10386,7 @@ button.offer-accordion-header:focus-visible {
   font-size: 25px !important;
   font-weight: 500 !important;
   line-height: 1.3 !important;
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
 }
 
 #page-about .about-art-visual-col {
@@ -10653,7 +10697,7 @@ button.offer-accordion-header:focus-visible {
   font-family: 'Caveat', cursive, sans-serif !important;
   font-size: 24px !important;
   font-weight: 500 !important;
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
   margin: 0 !important;
   line-height: 1.2 !important;
 }
@@ -11123,7 +11167,7 @@ button.offer-accordion-header:focus-visible {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent, #A85E3F);
+  color: var(--color-accent, #7A3F2A);
   margin-bottom: 6px;
   display: inline-block;
 }
@@ -11141,7 +11185,7 @@ button.offer-accordion-header:focus-visible {
   font-family: 'Playfair Display', Georgia, serif !important;
   font-style: italic !important;
   font-weight: 600 !important;
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
 }
 
 .contact-intro-text {
@@ -11208,7 +11252,7 @@ button.offer-accordion-header:focus-visible {
   font-family: 'Caveat', cursive, sans-serif !important;
   font-size: 17.5px !important;
   font-weight: 500 !important;
-  color: var(--color-accent, #A85E3F) !important;
+  color: var(--color-accent, #7A3F2A) !important;
   line-height: 1.25 !important;
   margin: 10px 0 0 0 !important;
   text-align: center;
@@ -11316,7 +11360,7 @@ button.offer-accordion-header:focus-visible {
 }
 
 .contact-direct-email {
-  color: var(--color-accent, #A85E3F);
+  color: var(--color-accent, #7A3F2A);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -11324,7 +11368,7 @@ button.offer-accordion-header:focus-visible {
 }
 
 .contact-direct-email:hover {
-  color: var(--color-accent-hover, #8E4C31);
+  color: var(--color-accent-hover, #5E2F1F);
 }
 
 /* RESPONSIVE TABLETTE & MOBILE */
@@ -11463,7 +11507,7 @@ button.offer-accordion-header:focus-visible {
 
   #page-about .about-tools-mobile .about-tools-mobile-kicker {
     margin-bottom: 14px;
-    color: #a85e3f;
+    color: #7A3F2A;
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 1.4px;
@@ -11484,7 +11528,7 @@ button.offer-accordion-header:focus-visible {
   }
 
   #page-about .about-tools-mobile-number {
-    color: #a85e3f;
+    color: #7A3F2A;
     font-family: 'Caveat', cursive;
     font-size: 28px;
     line-height: 1.1;
@@ -11650,7 +11694,7 @@ body:has(#page-404.active) {
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #A85E3F;
+  color: #7A3F2A;
   margin: 0;
 }
 
@@ -11670,7 +11714,7 @@ body:has(#page-404.active) {
   font-family: var(--font-serif, 'Playfair Display', serif);
   font-style: italic;
   font-weight: 400;
-  color: #A85E3F;
+  color: #7A3F2A;
   display: inline;
   position: relative;
 }
@@ -11752,7 +11796,7 @@ body:has(#page-404.active) {
   font-size: 17.5px;
   font-weight: 600;
   line-height: 1.15;
-  color: #A85E3F;
+  color: #7A3F2A;
   white-space: nowrap;
 }
 
