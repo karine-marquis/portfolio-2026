@@ -3021,33 +3021,63 @@ body:has(#sec-hero) {
   color: #7A3F2A !important;
 }
 
-/* Fix spécifique Remonter en haut / Lateral navigation & 1:1 contrast */
+/* Fix spécifique Remonter en haut / Lateral navigation & contrastes Bambinets */
 #modal-bambinets .lbc-v2-menu-back-top,
 #modal-bambinets .lbc-v2-menu-back-top .menu-label,
 #modal-bambinets .lbc-v2-menu-back-top .menu-num,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top .menu-label,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top .menu-num,
 .page-projet-bambinets .lbc-v2-menu-back-top,
 .page-projet-bambinets .lbc-v2-menu-back-top .menu-label,
-.page-projet-bambinets .lbc-v2-menu-back-top .menu-num {
+.page-projet-bambinets .lbc-v2-menu-back-top .menu-num,
+.page-projet-bambinets .bambinets-menu-back-top,
+.page-projet-bambinets .bambinets-menu-back-top .bambinets-menu-num {
   color: #7A3F2A !important;
   background: transparent !important;
+  opacity: 1 !important;
 }
 
 #modal-bambinets .lbc-v2-menu-back-top:hover,
+#modal-bambinets .lbc-v2-menu-back-top:focus,
+#modal-bambinets .lbc-v2-menu-back-top:active,
 #modal-bambinets .lbc-v2-menu-back-top:hover .menu-label,
+#modal-bambinets .lbc-v2-menu-back-top:focus .menu-label,
+#modal-bambinets .lbc-v2-menu-back-top:active .menu-label,
 #modal-bambinets .lbc-v2-menu-back-top:hover .menu-num,
+#modal-bambinets .lbc-v2-menu-back-top:focus .menu-num,
+#modal-bambinets .lbc-v2-menu-back-top:active .menu-num,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top:hover,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top:focus,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top:active,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top:hover .menu-label,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top:focus .menu-label,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top:active .menu-label,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top:hover .menu-num,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top:focus .menu-num,
+#modal-bambinets .lbc-v2-menu-item.lbc-v2-menu-back-top:active .menu-num,
 .page-projet-bambinets .lbc-v2-menu-back-top:hover,
+.page-projet-bambinets .lbc-v2-menu-back-top:focus,
+.page-projet-bambinets .lbc-v2-menu-back-top:active,
 .page-projet-bambinets .lbc-v2-menu-back-top:hover .menu-label,
-.page-projet-bambinets .lbc-v2-menu-back-top:hover .menu-num {
+.page-projet-bambinets .lbc-v2-menu-back-top:focus .menu-label,
+.page-projet-bambinets .lbc-v2-menu-back-top:active .menu-label,
+.page-projet-bambinets .lbc-v2-menu-back-top:hover .menu-num,
+.page-projet-bambinets .lbc-v2-menu-back-top:focus .menu-num,
+.page-projet-bambinets .lbc-v2-menu-back-top:active .menu-num {
   color: #44513E !important;
   background: transparent !important;
+  opacity: 1 !important;
 }
 
 /* Neutralisation absolue du background sur la puce arrow pour éviter tout 1:1 */
 .lbc-v2-menu-back-top .menu-num,
 .lbc-v2-menu-back-top:hover .menu-num,
+.lbc-v2-menu-back-top:focus .menu-num,
 .lbc-v2-menu-back-top.active .menu-num,
 .lbc-v2-menu-item.lbc-v2-menu-back-top .menu-num,
 .lbc-v2-menu-item.lbc-v2-menu-back-top:hover .menu-num,
+.lbc-v2-menu-item.lbc-v2-menu-back-top:focus .menu-num,
 .lbc-v2-menu-item.lbc-v2-menu-back-top.active .menu-num {
   background: transparent !important;
   box-shadow: none !important;
@@ -3059,11 +3089,34 @@ body:has(#sec-hero) {
   width: auto !important;
 }
 
+/* Numéros et labels de navigation Bambinets — contraste supérieur à 5.5:1 sur fond #F2E5DE */
+#modal-bambinets .lbc-v2-menu-item .menu-num,
 #modal-bambinets .lbc-v2-menu-item.active .menu-num,
-#modal-bambinets .lbc-v2-menu-item:hover:not(.lbc-v2-menu-back-top) .menu-num,
+#modal-bambinets .lbc-v2-menu-item:hover .menu-num,
+#modal-bambinets .lbc-v2-menu-item:focus .menu-num,
+.page-projet-bambinets .lbc-v2-menu-item .menu-num,
 .page-projet-bambinets .lbc-v2-menu-item.active .menu-num,
-.page-projet-bambinets .lbc-v2-menu-item:hover:not(.lbc-v2-menu-back-top) .menu-num {
-  color: #FFFFFF !important;
+.page-projet-bambinets .lbc-v2-menu-item:hover .menu-num,
+.page-projet-bambinets .lbc-v2-menu-item:focus .menu-num,
+.page-projet-bambinets .bambinets-menu-num,
+.page-projet-bambinets .bambinets-menu-item .bambinets-menu-num,
+.page-projet-bambinets .bambinets-menu-item:hover .bambinets-menu-num,
+.page-projet-bambinets .bambinets-menu-item.active .bambinets-menu-num,
+.page-projet-bambinets .bambinets-menu-item:focus .bambinets-menu-num {
+  color: #7A3F2A !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+#modal-bambinets .lbc-v2-menu-item:hover .menu-num,
+#modal-bambinets .lbc-v2-menu-item:focus .menu-num,
+.page-projet-bambinets .lbc-v2-menu-item:hover .menu-num,
+.page-projet-bambinets .lbc-v2-menu-item:focus .menu-num,
+.page-projet-bambinets .bambinets-menu-item:hover .bambinets-menu-num,
+.page-projet-bambinets .bambinets-menu-item:focus .bambinets-menu-num {
+  color: #44513E !important;
+  background: transparent !important;
 }
 
 #modal-bambinets .mobile-back-top-link,
@@ -4177,14 +4230,14 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
 
 .lbc-v2-menu-back-top {
   margin-top: 10px !important;
-  border-top: 1px dashed rgba(155, 86, 32, 0.3) !important;
+  border-top: 1px dashed rgba(122, 63, 42, 0.3) !important;
   padding-top: 10px !important;
-  color: var(--color-accent, #9B5620) !important;
+  color: var(--color-accent, #7A3F2A) !important;
 }
 
 .lbc-v2-menu-back-top .menu-label,
 .lbc-v2-menu-back-top .menu-num {
-  color: var(--color-accent, #9B5620) !important;
+  color: var(--color-accent, #7A3F2A) !important;
   font-weight: 600 !important;
 }
 
