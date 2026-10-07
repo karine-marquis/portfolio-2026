@@ -236,12 +236,15 @@ strong, b {
 
 /* BOUTON CTA PRINCIPAL OFFICIEL HARMONISÉ (VERT SAUGE COMPACT) */
 .btn-primary,
-.btn-nav-outline {
+.btn-nav-outline,
+.nav-cta,
+.about-cta-final-btn,
+.offer-pause-banner-cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 5px;
   background-color: #55624F !important;
-  color: #FFFDFC !important;
+  color: #FFFFFF !important;
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12.5px !important;
   font-weight: 500 !important;
@@ -250,13 +253,26 @@ strong, b {
   border: 1px solid #485443 !important;
   padding: 5px 14px !important;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
   box-shadow: 0 2px 6px rgba(85, 98, 79, 0.12) !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .btn-primary:hover,
-.btn-nav-outline:hover {
+.btn-primary:focus,
+.btn-primary:active,
+.btn-nav-outline:hover,
+.btn-nav-outline:focus,
+.btn-nav-outline:active,
+.nav-cta:hover,
+.nav-cta:focus,
+.nav-cta:active,
+.about-cta-final-btn:hover,
+.about-cta-final-btn:focus,
+.about-cta-final-btn:active,
+.offer-pause-banner-cta-btn:hover,
+.offer-pause-banner-cta-btn:focus,
+.offer-pause-banner-cta-btn:active {
   background-color: #44513E !important;
   color: #FFFFFF !important;
   border-color: #394435 !important;
@@ -2953,9 +2969,9 @@ body:has(#lbc-sec-1) .lbc-v2-menu-back-top .menu-num {
   color: #7A3F2A !important;
 }
 
-#modal-cordons-bleus a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
-.page-projet-cordons-bleus a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
-body:has(#lbc-sec-1) a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
+#modal-cordons-bleus a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):not(.about-cta-final-btn):not(.offer-pause-banner-cta-btn):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+.page-projet-cordons-bleus a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):not(.about-cta-final-btn):not(.offer-pause-banner-cta-btn):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+body:has(#lbc-sec-1) a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):not(.about-cta-final-btn):not(.offer-pause-banner-cta-btn):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
   color: #7A3F2A !important;
 }
 
@@ -3137,8 +3153,8 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
   opacity: 1 !important;
 }
 
-#modal-bambinets a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
-.page-projet-bambinets a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
+#modal-bambinets a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):not(.about-cta-final-btn):not(.offer-pause-banner-cta-btn):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+.page-projet-bambinets a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):not(.about-cta-final-btn):not(.offer-pause-banner-cta-btn):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
   color: #7A3F2A !important;
 }
 
@@ -3692,7 +3708,7 @@ body:has(#lbc-sec-1) .mobile-back-top-link:hover {
 
 .lbc-v2-contact-card .btn-primary {
   background-color: #55624F !important;
-  color: #FFFDFC !important;
+  color: #FFFFFF !important;
   border: 1px solid #485443 !important;
   padding: 4px 14px !important;
   font-size: 12.5px !important;
@@ -6013,9 +6029,9 @@ body:has(#foodles-top) .foodles-atomic-arrow {
   color: #7A3F2A !important;
 }
 
-#modal-foodles a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
-.page-projet-foodles a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
-body:has(#foodles-top) a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
+#modal-foodles a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):not(.about-cta-final-btn):not(.offer-pause-banner-cta-btn):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+.page-projet-foodles a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):not(.about-cta-final-btn):not(.offer-pause-banner-cta-btn):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+body:has(#foodles-top) a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):not(.about-cta-final-btn):not(.offer-pause-banner-cta-btn):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
   color: #7A3F2A !important;
 }
 
