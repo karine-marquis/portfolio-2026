@@ -1964,7 +1964,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12.5px !important;
   font-weight: 700 !important;
-  color: #4A5644 !important;
+  color: #3E3934 !important;
   white-space: nowrap;
   letter-spacing: 0.02em;
 }
@@ -1987,8 +1987,9 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   white-space: nowrap;
 }
 
-.glance-methodo-item i {
-  color: #55624F !important;
+.glance-methodo-item i,
+.glance-methodo-item svg {
+  color: #3E3934 !important;
 }
 
 .glance-methodo-sep {
@@ -4942,7 +4943,6 @@ a, button, .nav-link, .footer-social-btn, .footer-contact-link, .lbc-v2-menu-ite
     font-style: italic !important;
     font-size: 12.5px !important;
     color: #9B5620 !important;
-    opacity: 0.9 !important;
     margin-top: 4px !important;
     margin-bottom: 12px !important;
     line-height: 1.35 !important;
