@@ -7274,6 +7274,7 @@ body:has(#foodles-top) a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):n
   font-size: 15px !important;
   font-weight: 600 !important;
   color: #9B5620 !important;
+  opacity: 1 !important;
   letter-spacing: 0.06em !important;
   padding-top: 2px;
   min-width: 24px;
@@ -7328,9 +7329,9 @@ body:has(#foodles-top) a:not(.btn-primary):not(.btn-nav-outline):not(.nav-cta):n
 .offer-meta-price {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 13px !important;
-  font-weight: 400 !important;
-  color: #3E3934 !important;
-  opacity: 0.95;
+  font-weight: 600 !important;
+  color: #9B5620 !important;
+  opacity: 1 !important;
 }
 
 /* Chevron simple sans cercle */
@@ -7493,7 +7494,8 @@ button.offer-accordion-header:focus-visible {
 
 .offer-step-note {
   font-size: 12.5px;
-  color: #9B5620;
+  color: #9B5620 !important;
+  opacity: 1 !important;
   font-weight: 400;
 }
 
@@ -7580,12 +7582,14 @@ button.offer-accordion-header:focus-visible {
   font-size: 17px !important;
   font-weight: 600 !important;
   color: #9B5620 !important;
+  opacity: 1 !important;
 }
 
 #page-offer .offer-modalites-rate-secondary .offer-modalites-rate-amount {
   font-size: 15.5px !important;
   font-weight: 600 !important;
   color: #7A3F2A !important;
+  opacity: 1 !important;
 }
 
 #page-offer .offer-modalites-rate-divider {
@@ -7776,6 +7780,7 @@ button.offer-accordion-header:focus-visible {
   font-size: 13px !important;
   font-weight: 600 !important;
   color: #9B5620 !important;
+  opacity: 1 !important;
 }
 
 .offer-format-text {
@@ -8379,13 +8384,13 @@ button.offer-accordion-header:focus-visible {
 #page-offer .offer-accordion-header:hover { background: #EEEAE5; }
 #page-offer .offer-accordion-open > .offer-accordion-header { background: var(--color-sauge-soft); }
 #page-offer .offer-accordion-col-main { gap: 24px; min-width: 0; }
-#page-offer .offer-accordion-number { padding-top: 8px; font-size: 16px !important; }
+#page-offer .offer-accordion-number { padding-top: 8px; font-size: 16px !important; color: #9B5620 !important; opacity: 1 !important; }
 #page-offer .offer-accordion-title { font-size: 34px !important; margin-bottom: 12px !important; }
 #page-offer .offer-accordion-pitch { font-size: 16px !important; line-height: 1.65 !important; max-width: 580px; opacity: 1; }
 #page-offer .offer-accordion-col-right { gap: 28px; }
 #page-offer .offer-accordion-meta-editorial { gap: 8px; }
 #page-offer .offer-meta-duration { font-size: 14px !important; }
-#page-offer .offer-meta-price { font-size: 15px !important; font-weight: 600 !important; color: #9B5620 !important; }
+#page-offer .offer-meta-price { font-size: 15px !important; font-weight: 600 !important; color: #9B5620 !important; opacity: 1 !important; }
 #page-offer .offer-accordion-chevron { padding: 10px; border: 1px solid #B6BDAE; border-radius: 50%; flex-shrink: 0; }
 #page-offer .offer-accordion-body { visibility: hidden; transition: opacity 200ms ease; }
 #page-offer .offer-accordion-open .offer-accordion-body { max-height: none; visibility: visible; }
@@ -8407,7 +8412,7 @@ button.offer-accordion-header:focus-visible {
 #page-offer .offer-format-item { padding: 26px 24px 28px; background: #F7F3EE; border: 1px solid var(--color-border); border-left: 3px solid var(--color-sauge-border, #CBD4C7); }
 #page-offer .offer-format-header { margin-bottom: 18px; }
 #page-offer .offer-format-title { font-size: 23px !important; margin-bottom: 12px !important; }
-#page-offer .offer-format-meta { font-size: 15px !important; line-height: 1.7; }
+#page-offer .offer-format-meta { font-size: 15px !important; line-height: 1.7; color: #9B5620 !important; opacity: 1 !important; }
 #page-offer .offer-format-text { font-size: 15px !important; line-height: 1.75 !important; opacity: 1; }
 #page-offer .offer-formats-disclaimer { font-size: 14px !important; line-height: 1.75; opacity: 1; margin-top: 24px !important; }
 @media (max-width: 1000px) {
