@@ -2345,7 +2345,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   font-weight: 700 !important;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--color-accent) !important;
+  color: #8A4B20 !important;
   margin-bottom: 1px !important;
   opacity: 1 !important;
 }
@@ -2362,7 +2362,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .lbc-v2-brand-category {
   font-family: var(--font-sans) !important;
   font-size: 11.5px !important;
-  color: var(--color-accent) !important;
+  color: #8A4B20 !important;
   font-weight: 600 !important;
   margin-bottom: 2px !important;
 }
@@ -2389,7 +2389,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   font-weight: 700 !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-accent) !important;
+  color: #8A4B20 !important;
   margin-bottom: 1px !important;
   opacity: 1 !important;
   display: flex;
@@ -2398,7 +2398,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 
 .lbc-v2-meta-label i,
 .lbc-v2-meta-label svg {
-  color: var(--color-accent) !important;
+  color: #8A4B20 !important;
 }
 
 .lbc-v2-meta-value {
@@ -2566,7 +2566,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   align-items: center;
   gap: 6px;
   background: #E0CFC3 !important;
-  color: var(--color-accent) !important;
+  color: #7D3E15 !important;
   font-family: var(--font-sans) !important;
   font-size: 11px !important;
   font-weight: 700 !important;
@@ -2812,7 +2812,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   right: auto !important;
   background: transparent !important;
   border: none !important;
-  color: #477A6A !important;
+  color: #2F594D !important;
   font-size: 11.5px !important;
   font-weight: 500 !important;
   padding: 0 !important;
@@ -2833,7 +2833,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .lbc-v2-personas-zoom-badge:hover,
 .lbc-v2-personas-zoom-badge:active,
 .lbc-v2-personas-zoom-badge:focus {
-  color: #355C50 !important;
+  color: #1E3B33 !important;
 }
 
 .lbc-v2-deliverable-horizontal .deliverable-zoom-badge svg,
@@ -2883,6 +2883,67 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
   object-fit: contain !important;
   opacity: 1 !important;
   filter: none !important;
+}
+
+/* ==========================================================================
+   ACCESSIBILITÉ WCAG AA / AAA — BAMBINETS (MODALE & PAGE DÉDIÉE)
+   ========================================================================== */
+#modal-bambinets,
+.page-projet-bambinets {
+  --color-accent: #8A4B20 !important;
+}
+
+#modal-bambinets .lbc-v2-card-body,
+#modal-bambinets .lbc-v2-intro-p,
+#modal-bambinets p,
+#modal-bambinets li,
+#modal-bambinets .bambinets-access-grid p,
+#modal-bambinets .bambinets-2col-grid div,
+#modal-bambinets .bambinets-suite-item div:nth-child(2),
+#modal-bambinets .lbc-v2-subcard-desc,
+.page-projet-bambinets .bambinets-v2-card-body,
+.page-projet-bambinets .lbc-v2-intro-p,
+.page-projet-bambinets p,
+.page-projet-bambinets li,
+.page-projet-bambinets .bambinets-access-grid p,
+.page-projet-bambinets .bambinets-2col-grid div,
+.page-projet-bambinets .bambinets-suite-item div:nth-child(2),
+.page-projet-bambinets .lbc-v2-subcard-desc {
+  color: #3E3934 !important;
+}
+
+#modal-bambinets .lbc-v2-coulisses-title,
+#modal-bambinets h4[style*="var(--color-accent)"],
+#modal-bambinets h4[style*="#8A4B20"],
+#modal-bambinets span[style*="var(--color-accent)"],
+#modal-bambinets div[style*="var(--color-accent)"],
+#modal-bambinets .bambinets-access-grid span,
+#modal-bambinets .bambinets-2col-grid div[style*="font-weight: 800"],
+#modal-bambinets .bambinets-2col-grid div[style*="font-weight:800"],
+#modal-bambinets .lbc-v2-subcard > div[style*="font-weight: 800"],
+#modal-bambinets .lbc-v2-subcard > div[style*="font-weight:800"],
+#modal-bambinets .bambinets-learn-num,
+.page-projet-bambinets .bambinets-v2-coulisses-title,
+.page-projet-bambinets .bambinets-learn-num,
+.page-projet-bambinets h4[style*="var(--color-accent)"],
+.page-projet-bambinets span[style*="var(--color-accent)"],
+.page-projet-bambinets div[style*="var(--color-accent)"],
+.page-projet-bambinets .bambinets-access-grid span,
+.page-projet-bambinets .bambinets-2col-grid div[style*="font-weight: 800"],
+.page-projet-bambinets .bambinets-2col-grid div[style*="font-weight:800"],
+.page-projet-bambinets .lbc-v2-subcard > div[style*="font-weight: 800"],
+.page-projet-bambinets .lbc-v2-subcard > div[style*="font-weight:800"] {
+  color: #8A4B20 !important;
+}
+
+#modal-bambinets a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link),
+.page-projet-bambinets a:not(.btn-primary):not(.mobile-back-top-link):not(.brand):not(.footer-brand-name):not(.footer-social-btn):not(.footer-contact-link) {
+  color: #8A4B20 !important;
+}
+
+#modal-bambinets a:hover,
+.page-projet-bambinets a:hover {
+  color: #6E3A16 !important;
 }
 
 /* LIGHTBOX IMAGE ZOOM MODAL & SHADOWS POUR TOUTES LES ILLUSTRATIONS DE LA PAGE */
@@ -3281,7 +3342,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .lbc-v2-audio-duration {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 12px !important;
-  color: var(--color-accent) !important;
+  color: #8A4B20 !important;
 }
 
 .lbc-v2-custom-player {
@@ -3317,7 +3378,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .lbc-v2-player-timer {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 11.5px !important;
-  color: #6F665F;
+  color: #3E3934;
   flex-shrink: 0;
 }
 
@@ -3331,7 +3392,7 @@ body:has(#page-contact) .mobile-menu-footer .btn-nav-outline {
 .lbc-v2-disclaimer-note {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 11px !important;
-  color: #7C6A60 !important;
+  color: #3E3934 !important;
   line-height: 1.45 !important;
 }
 
