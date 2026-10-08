@@ -708,9 +708,47 @@ function renderPricingPacks() {
   `).join('');
 }
 
-function handleContactSubmit(e) {
+async function handleContactSubmit(e) {
   e.preventDefault();
-  alert('Merci ! Ton message a été envoyé avec succès.');
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn ? submitBtn.innerText : '';
+
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Envoi en cours...';
+  }
+
+  try {
+    const formData = new FormData(form);
+    const response = await fetch('https://formspree.io/f/xbgdgaep', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      alert('Merci ! Votre message a été envoyé avec succès.');
+      form.reset();
+    } else {
+      const data = await response.json().catch(() => ({}));
+      if (data && data.errors && data.errors.length > 0) {
+        const errorMsg = data.errors.map(err => err.message).join(', ');
+        alert(`Une erreur est survenue lors de l'envoi : ${errorMsg}`);
+      } else {
+        alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer ou m'écrire directement à karinemarquis.ux@gmail.com.");
+      }
+    }
+  } catch (error) {
+    alert("Impossible de joindre le service d'envoi. Veuillez vérifier votre connexion ou m'écrire directement à karinemarquis.ux@gmail.com.");
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerText = originalBtnText;
+    }
+  }
 }
 
 /* ==========================================================================
