@@ -659,8 +659,8 @@ function playLbcVideo(container, videoId) {
         <div style="width:48px; height:48px; border-radius:50%; background:var(--color-accent); display:flex; align-items:center; justify-content:center; margin-bottom:12px; box-shadow:0 4px 14px rgba(155,86,32,0.4);">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:3px; color:#FFFDFC;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
         </div>
-        <p style="font-size:14.5px; font-weight:700; margin-bottom:6px; color:#FFFDFC;">Présentation vidéo Les Cordons Bleus</p>
-        <p style="font-size:12.5px; color:#D4CCC9; margin-bottom:18px; max-width:400px; line-height:1.45;">En consultation locale sur ordinateur (<code>file://</code>), YouTube nécessite l'ouverture directe.<br>En ligne sur le web (HTTPS), la vidéo se lise directement intégrée ici.</p>
+        <p style="font-size:14.5px; font-weight:700; margin-bottom:6px; color:#FFFDFC;">Présentation vidéo du projet</p>
+        <p style="font-size:12.5px; color:#D4CCC9; margin-bottom:18px; max-width:400px; line-height:1.45;">En consultation locale sur ordinateur (<code>file://</code>), YouTube nécessite l'ouverture directe.<br>En ligne sur le web (HTTPS), la vidéo se lance directement intégrée ici.</p>
         <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" style="background:var(--color-accent); color:#FFFDFC; font-size:13.5px; font-weight:600; padding:11px 22px; border-radius:30px; text-decoration:none; box-shadow:0 4px 14px rgba(155,86,32,0.4); display:inline-flex; align-items:center; gap:8px; transition:transform 0.2s ease;">
           Regarder la vidéo sur YouTube ↗
         </a>
@@ -670,7 +670,7 @@ function playLbcVideo(container, videoId) {
     container.innerHTML = `
       <iframe 
         src="${embedUrl}" 
-        title="Présentation vidéo du projet Les Cordons Bleus" 
+        title="Présentation vidéo du projet" 
         style="width: 100%; height: 100%; min-height: 260px; border: 0; border-radius: 12px; display: block;" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" 
