@@ -140,7 +140,7 @@ function navigateTo(pageId) {
   let targetId = `page-${cleanId}`;
 
   if (!pageSectionsMap.has(targetId)) {
-    targetId = 'page-about';
+    targetId = 'page-home';
   }
 
   // 1. FERMER ET RÉINITIALISER LES DRAWERS ET LEURS SCROLLTOPS
@@ -158,9 +158,15 @@ function navigateTo(pageId) {
 
   // 2. GESTION DU HASH DANS L'URL
   try {
-    const targetHash = `#${cleanId}`;
-    if (window.location.hash !== targetHash) {
-      history.pushState(null, '', targetHash);
+    if (cleanId === 'home') {
+      if (window.location.hash) {
+        history.pushState(null, '', window.location.pathname + window.location.search);
+      }
+    } else {
+      const targetHash = `#${cleanId}`;
+      if (window.location.hash !== targetHash) {
+        history.pushState(null, '', targetHash);
+      }
     }
   } catch (e) {
     // Fallback silencieux si file:// restreint pushState
@@ -253,8 +259,7 @@ function initRoutingFromHash() {
   } else if (hash && pageSectionsMap.has(`page-${hash}`)) {
     navigateTo(hash);
   } else {
-    // Si aucun hash ou page non trouvée, on ouvre T'es qui ? (about) pour l'audit isolé
-    navigateTo(hash || 'about');
+    navigateTo(hash || 'home');
   }
 }
 
