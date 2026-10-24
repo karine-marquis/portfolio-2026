@@ -530,40 +530,26 @@
               </div>
             </div>
 
-            <!-- CARTE PODCAST & CTA (DROITE) -->
-            <div class="lbc-v2-coulisses-right-stack">
-              <div class="lbc-v2-subcard">
-                <div class="lbc-v2-audio-header">
-                  <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
-                  <div class="lbc-v2-audio-title-wrap">
-                    <h4>Écouter le projet autrement</h4>
-                    <span class="lbc-v2-audio-duration">Durée d'écoute : 13:49 min</span>
-                  </div>
+            <!-- CARTE PODCAST (DROITE) -->
+            <div class="lbc-v2-subcard" style="justify-content: flex-start; gap: 16px;">
+              <div class="lbc-v2-audio-header">
+                <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="headphones"></i></div>
+                <div class="lbc-v2-audio-title-wrap">
+                  <h4>Écouter le projet autrement</h4>
+                  <span class="lbc-v2-audio-duration">Durée d'écoute : 13:49 min</span>
                 </div>
-                <div class="lbc-v2-custom-player">
-                  <button class="lbc-v2-play-btn" onclick="toggleBambinetsAudio(this)" aria-label="Écouter le podcast"><i data-lucide="play" id="bbPlayIcon" style="width: 16px; height: 16px;"></i></button>
-                  <span class="lbc-v2-player-timer" id="bbAudioTimer">0:00</span>
-                  <input type="range" class="lbc-v2-player-slider" id="bbAudioSeek" value="0" max="100" oninput="seekBambinetsAudio(this)">
-                  <span class="lbc-v2-player-timer">13:49</span>
-                  <i data-lucide="volume-2" style="width: 16px; height: 16px; color: #7A3F2A;"></i>
-                </div>
-                <audio id="bbAudioElement" preload="metadata" playsinline ontimeupdate="updateBambinetsAudioProgress()">
-                  <source src="assets/podcasts/bambinets.mp3" type="audio/mpeg">
-                </audio>
-                <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
               </div>
-
-              <div class="lbc-v2-subcard">
-                <div class="lbc-v2-audio-header">
-                  <div class="lbc-v2-card-icon" style="margin-bottom: 0;"><i data-lucide="file-text"></i></div>
-                  <div class="lbc-v2-audio-title-wrap">
-                    <h4>Vous préférez lire ?</h4>
-                    <span class="lbc-v2-audio-duration">Document PDF accessible</span>
-                  </div>
-                </div>
-                <p class="lbc-v2-subcard-desc" style="font-size: 11.5px !important; color: #6F665F !important; line-height: 1.45 !important; margin-bottom: 14px !important;">Une version textuelle accessible reprend les éléments essentiels de la présentation.</p>
-                <a href="assets/bambinets-canva-version-textuelle-accessible.pdf" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: #7A3F2A; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;"><i data-lucide="download" style="width: 13px; height: 13px; color: currentColor;"></i> Lire la version textuelle (PDF) ↗</a>
+              <div class="lbc-v2-custom-player">
+                <button class="lbc-v2-play-btn" onclick="toggleBambinetsAudio(this)" aria-label="Écouter le podcast"><i data-lucide="play" id="bbPlayIcon" style="width: 16px; height: 16px;"></i></button>
+                <span class="lbc-v2-player-timer" id="bbAudioTimer">0:00</span>
+                <input type="range" class="lbc-v2-player-slider" id="bbAudioSeek" value="0" max="100" oninput="seekBambinetsAudio(this)">
+                <span class="lbc-v2-player-timer">13:49</span>
+                <i data-lucide="volume-2" style="width: 16px; height: 16px; color: #7A3F2A;"></i>
               </div>
+              <audio id="bbAudioElement" preload="metadata" playsinline ontimeupdate="updateBambinetsAudioProgress()">
+                <source src="assets/podcasts/bambinets.mp3" type="audio/mpeg">
+              </audio>
+              <p class="lbc-v2-disclaimer-note">✨ <strong>Podcast réalisé avec NotebookLM — version 1.</strong><br>Quelques imperfections de prononciation ou de fluidité peuvent subsister. Merci de votre compréhension.</p>
             </div>
           </div>
         </section>
