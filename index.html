@@ -1685,8 +1685,8 @@
         
         <div class="home-hero-v2-container" style="max-width: 1180px; margin: 0 auto; padding: 85px 48px 40px 48px; width: 100%; flex-grow: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
           
-          <!-- GRAND MOT PORTFOLIO ÉDITORIAL (EN HAUT FIXE - 108PX) -->
-          <div class="hero-v2-portfolio-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 108px; font-weight: 400; color: #3E3934; letter-spacing: 0.04em; line-height: 0.95; margin-bottom: 16px; text-transform: uppercase; text-align: center;">
+          <!-- GRAND MOT PORTFOLIO ÉDITORIAL (EN HAUT FIXE - 99PX) -->
+          <div class="hero-v2-portfolio-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 99px; font-weight: 400; color: #3E3934; letter-spacing: 0.04em; line-height: 0.95; margin-bottom: 16px; text-transform: uppercase; text-align: center;">
             PORTFOLIO
           </div>
 
@@ -1696,33 +1696,37 @@
           </div>
 
           <!-- CONTENU BODY CENTRÉ VERTICALEMENT DANS LE RESTE DE LA HAUTEUR -->
-          <div class="hero-v2-body-wrapper" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; margin-top: 60px;">
+          <div class="hero-v2-body-wrapper" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; margin-top: 32px;">
 
             <!-- TITRE H1 SUR DEUX LIGNES DESKTOP -->
-            <h1 class="hero-v2-h1" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; margin-bottom: 60px; line-height: 1.28; text-align: center;">
+            <h1 class="hero-v2-h1" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; margin-bottom: 40px; line-height: 1.28; text-align: center;">
               <span style="font-size: 40px; color: #3E3934; display: block; margin-bottom: 4px; letter-spacing: -0.01em; white-space: nowrap;">Ce n’est pas l’utilisateur qu’il faut corriger.</span>
               <span style="font-size: 40px; color: #7A3F2A; font-style: italic; font-weight: 500; display: block; letter-spacing: -0.01em; white-space: nowrap;">C’est le chemin qu’on lui donne à suivre.</span>
             </h1>
 
-            <!-- PARAGRAPHE INTRODUCTIF ÉPURÉ -->
-            <p class="hero-v2-paragraph-1" style="font-family: 'Montserrat', sans-serif; font-size: 15.5px; color: #3E3934; line-height: 1.55; margin-bottom: 36px; max-width: 980px; text-align: center; margin-left: auto; margin-right: auto;">
-              Je regarde ce qui demande trop d’effort, ce qui manque de clarté, ce qui oblige à deviner. Puis je simplifie le chemin — surtout quand il faut comprendre, apprendre ou prendre en main quelque chose.
-            </p>
+            <!-- COMPOSITION ÉDITORIALE ASYMÉTRIQUE (2 COLONNES) + CTAS SOUS LA COLONNE GAUCHE SUR DESKTOP / APRÈS LES DEUX COLONNES SUR MOBILE -->
+            <div class="hero-v2-editorial-intro">
+              <div class="hero-v2-editorial-col-left">
+                <p class="hero-v2-situation-line">Un parcours numérique <span>qui fait hésiter.</span></p>
+                <p class="hero-v2-situation-line">Une formation <span>qui perd ses apprenants en route.</span></p>
+                <p class="hero-v2-situation-line">Un outil métier <span>que les équipes peinent à adopter.</span></p>
+              </div>
 
-            <!-- FLÈCHE ANIMÉE DISCRÈTE (ENTRE LE TEXTE ET LES CTAS) -->
-            <div class="hero-v2-arrow-divider" style="margin-bottom: 36px; display: flex; justify-content: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A3F2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="scroll-bounce-arrow"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
-            </div>
+              <div class="hero-v2-editorial-col-right">
+                <p>Ces situations m'intéressent parce qu'elles racontent rarement toute leur histoire à l'écran. Derrière, il y a des personnes, des habitudes, des contraintes… et parfois des évidences qui méritent d'être questionnées.</p>
+                <p>J'aime comprendre ce qui se passe vraiment avant de proposer une solution. Écouter, observer, relier les morceaux, puis travailler avec les équipes pour concevoir des expériences plus simples, des apprentissages plus utiles et des projets qui prennent vie sur le terrain.</p>
+              </div>
 
-            <!-- BLOC DES DEUX CTAS EN LIEN TEXTE SOULIGNÉ (VOIR MES PROJETS EN OCRE BOLD À GAUCHE, ON EN PARLE À DROITE) -->
-            <div class="hero-v2-ctas-row" style="display: flex; align-items: center; justify-content: center; gap: 44px; margin-left: auto; margin-right: auto;">
-              <a href="#page-projects" onclick="navigateTo('projects')" class="hero-v2-cta-primary" style="font-family: 'Montserrat', sans-serif; font-size: 15.5px; font-weight: 600; color: #7A3F2A; text-decoration: none; border-bottom: 1.5px solid #7A3F2A; padding-bottom: 3px; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.25s ease;">
-                Voir mes projets →
-              </a>
+              <!-- BLOC DES DEUX CTAS (BOUTON PRINCIPAL VERT SAUGE À GAUCHE, LIEN SECONDAIRE TERRACOTTA SOULIGNÉ À DROITE) -->
+              <div class="hero-v2-ctas-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 28px;">
+                <a href="#page-projects" onclick="navigateTo('projects'); return false;" class="btn-primary hero-v2-cta-primary">
+                  Voir mes projets →
+                </a>
 
-              <a href="#page-contact" onclick="navigateTo('contact')" class="hero-v2-cta-secondary" style="font-family: 'Montserrat', sans-serif; font-size: 15.5px; font-weight: 400; color: #3E3934; text-decoration: none; border-bottom: 1.5px solid #3E3934; padding-bottom: 3px; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.25s ease;">
-                On en parle ? →
-              </a>
+                <a href="#page-offer" onclick="navigateTo('offer'); return false;" class="hero-v2-cta-secondary" style="font-family: 'Montserrat', sans-serif; font-size: 14.5px; font-weight: 600; color: #7A3F2A; text-decoration: none; border-bottom: 1.5px solid #7A3F2A; padding-bottom: 3px; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.25s ease;">
+                  Découvrir mon offre →
+                </a>
+              </div>
             </div>
 
           </div>
