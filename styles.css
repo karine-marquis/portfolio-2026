@@ -8567,13 +8567,30 @@ button.offer-accordion-header:focus-visible {
 #page-offer .offer-format-title { font-size: 23px !important; margin-bottom: 12px !important; }
 #page-offer .offer-format-meta { font-size: 15px !important; line-height: 1.7; color: #9B5620 !important; opacity: 1 !important; }
 #page-offer .offer-format-text { font-size: 15px !important; line-height: 1.75 !important; opacity: 1; }
+#page-offer .offer-format-deliverables { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(212, 204, 201, 0.7); }
+#page-offer .offer-format-subtitle { font-family: 'Montserrat', sans-serif !important; font-size: 13px !important; font-weight: 600 !important; letter-spacing: 0.04em !important; text-transform: uppercase; color: #3E3934 !important; margin: 0 0 12px 0 !important; line-height: 1.4 !important; }
+#page-offer .offer-format-list li { font-size: 14.5px !important; line-height: 1.65 !important; margin-bottom: 10px !important; padding-left: 18px !important; }
+#page-offer .offer-format-list li:last-child { margin-bottom: 0 !important; }
+#page-offer .offer-format-note { font-family: 'Montserrat', sans-serif !important; font-size: 13.5px !important; line-height: 1.6 !important; font-style: italic; color: #6F665F !important; margin: auto 0 0 0 !important; padding-top: 16px; }
 #page-offer .offer-formats-disclaimer { font-size: 14px !important; line-height: 1.75; opacity: 1; margin-top: 24px !important; }
+#page-offer .offer-bespoke-section { max-width: 1140px; margin: 64px auto 56px auto; }
+#page-offer .offer-bespoke-list { border-top: 1px solid var(--color-border); }
+#page-offer .offer-bespoke-item { padding: 36px 8px 40px; border-bottom: 1px solid var(--color-border); }
+#page-offer .offer-bespoke-header { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 24px; flex-wrap: wrap; }
+#page-offer .offer-bespoke-title { font-family: 'Playfair Display', Georgia, serif !important; font-size: 27px !important; font-weight: 500 !important; color: #3E3934 !important; line-height: 1.3 !important; margin: 0 !important; }
+#page-offer .offer-bespoke-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+#page-offer .offer-bespoke-narrative p { font-family: 'Montserrat', sans-serif !important; font-size: 15.5px !important; line-height: 1.75 !important; color: #3E3934 !important; margin: 0 0 16px 0 !important; }
+#page-offer .offer-bespoke-narrative p:last-child { margin-bottom: 0 !important; }
+#page-offer .offer-bespoke-narrative .offer-bespoke-lead { font-size: 18px !important; font-weight: 500 !important; line-height: 1.65 !important; margin-bottom: 18px !important; }
+#page-offer .offer-bespoke-deliverables { padding-left: 28px; border-left: 3px solid var(--color-sauge-border, #CBD4C7); }
 @media (max-width: 1000px) {
   #page-offer .offer-accordion-header { gap: 24px; padding: 30px 24px; }
   #page-offer .offer-accordion-title { font-size: 30px !important; }
   #page-offer .offer-accordion-content-inner { padding: 36px 28px 44px !important; }
   #page-offer .offer-accordion-main-grid { gap: 36px; }
   #page-offer #offer-accordion-03 .offer-formats-grid { grid-template-columns: 1fr; }
+  #page-offer .offer-bespoke-grid { grid-template-columns: 1fr; gap: 28px; }
+  #page-offer .offer-bespoke-deliverables { padding-left: 20px; }
 }
 @media (max-width: 768px) {
   #page-offer .offer-section-header {
@@ -8582,7 +8599,7 @@ button.offer-accordion-header:focus-visible {
     margin-right: auto !important;
     box-sizing: border-box !important;
   }
-  #page-offer .offer-accordions-wrapper { width: calc(100% - 32px); }
+  #page-offer .offer-accordions-wrapper { width: 100%; max-width: 100%; box-sizing: border-box; }
   #page-offer .offer-accordion-item { margin-bottom: 24px; }
   #page-offer .offer-accordion-header { grid-template-columns: 1fr; padding: 28px 20px; gap: 20px; }
   #page-offer .offer-accordion-col-main { gap: 14px; }
@@ -8598,6 +8615,28 @@ button.offer-accordion-header:focus-visible {
   #page-offer .offer-step-row { flex-direction: column !important; gap: 6px !important; padding: 16px 0; }
   #page-offer .offer-step-duration { white-space: normal; text-align: left; }
   #page-offer .offer-format-item { padding: 24px 20px; }
+  #page-offer .offer-bespoke-section { margin: 48px auto 44px auto; }
+  #page-offer .offer-bespoke-list { width: 100%; max-width: 100%; margin: 0 auto; box-sizing: border-box; }
+  #page-offer .offer-bespoke-item { padding: 28px 0 32px; }
+  #page-offer .offer-bespoke-header { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 20px; }
+  #page-offer .offer-bespoke-title { font-size: 24px !important; }
+  #page-offer .offer-bespoke-narrative .offer-bespoke-lead { font-size: 17px !important; }
+  #page-offer .offer-bespoke-narrative p { font-size: 15px !important; }
+  #page-offer .offer-bespoke-deliverables { padding-left: 16px; }
+  #page-offer .offer-pause-banner-cta-btn,
+  #page-offer .offer-vision-cta,
+  #page-offer .offer-final-cta-btn {
+    min-height: 44px !important;
+    padding: 10px 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+  #page-offer .offer-final-cta-btn {
+    white-space: nowrap !important;
+    max-width: 100% !important;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   #page-offer .offer-accordion-header,

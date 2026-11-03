@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   try { if (window.lucide) lucide.createIcons(); } catch(e){}
-  try { renderPricingPacks(); } catch(e){ console.error('Pricing error:', e); }
+  // Ancien rendu tarifaire neutralisé (remplacé par #page-offer)
   try { renderArticles(); } catch(e){ console.error('Articles error:', e); }
   try { initRoutingFromHash(); } catch(e){ console.error('Routing error:', e); }
   try { initSidebarScrollSpy(); } catch(e){ console.error('Scrollspy error:', e); }
@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = link.getAttribute('href');
       if (href && href.length > 1 && !href.startsWith('#lbc-sec-')) {
         const cleanId = href.replace(/^#/, '').replace(/^page-/, '');
-        if (typeof pageSectionsMap !== 'undefined' && pageSectionsMap.has(`page-${cleanId}`)) {
+        if (cleanId === 'pricing') {
+          e.preventDefault();
+          navigateTo('offer');
+        } else if (typeof pageSectionsMap !== 'undefined' && pageSectionsMap.has(`page-${cleanId}`)) {
           e.preventDefault();
           navigateTo(cleanId);
         } else if (document.getElementById(`page-${cleanId}`)) {
@@ -117,6 +120,14 @@ function initDomSections() {
     const sections = document.querySelectorAll('.spa-page-section');
     sections.forEach(sec => {
       const id = sec.id;
+      if (id === 'page-pricing') {
+        sec.classList.remove('active');
+        sec.style.display = 'none';
+        if (sec.parentNode) {
+          sec.parentNode.removeChild(sec);
+        }
+        return;
+      }
       pageSectionsMap.set(id, sec);
       const placeholder = document.createComment(` placeholder for ${id} `);
       if (sec.parentNode) {
@@ -136,7 +147,8 @@ function navigateTo(pageId) {
   if (!pageId) return;
   initDomSections();
 
-  const cleanId = pageId.replace(/^#/, '').replace(/^page-/, '');
+  const rawId = pageId.replace(/^#/, '').replace(/^page-/, '');
+  const cleanId = (rawId === 'pricing') ? 'offer' : rawId;
   let targetId = `page-${cleanId}`;
 
   if (!pageSectionsMap.has(targetId)) {
@@ -165,7 +177,11 @@ function navigateTo(pageId) {
     } else {
       const targetHash = `#${cleanId}`;
       if (window.location.hash !== targetHash) {
-        history.pushState(null, '', targetHash);
+        if (rawId === 'pricing' || window.location.hash === '#pricing' || window.location.hash === '#page-pricing') {
+          history.replaceState(null, '', targetHash);
+        } else {
+          history.pushState(null, '', targetHash);
+        }
       }
     }
   } catch (e) {
@@ -256,6 +272,8 @@ function initRoutingFromHash() {
   if (hash === 'cordons-bleus' || hash === 'bambinets' || hash === 'foodles') {
     navigateTo('projects');
     if (typeof openProjectDrawer === 'function') openProjectDrawer(hash);
+  } else if (hash === 'pricing') {
+    navigateTo('offer');
   } else if (hash && pageSectionsMap.has(`page-${hash}`)) {
     navigateTo(hash);
   } else {
@@ -701,16 +719,9 @@ function closeProjectDrawer() {
    4. OTHER RENDERERS (PRICING & ARTICLES)
    ========================================================================== */
 function renderPricingPacks() {
+  // Neutralisé : l'ancien catalogue tarifaire (#page-pricing) est remplacé par #page-offer
   const container = document.getElementById('pricingPacksContainer');
-  if (!container || typeof PRICING_PACKS === 'undefined' || !Array.isArray(PRICING_PACKS)) return;
-  container.innerHTML = PRICING_PACKS.map(p => `
-    <div class="card-japandi">
-      <div style="font-size: 13px; font-weight: 700; color: var(--color-primary); margin-bottom: 6px;">${p.delay}</div>
-      <h3 style="font-size: 20px; margin-bottom: 8px;">${p.title}</h3>
-      <div class="price-tag" style="margin-bottom: 12px;">${p.price}</div>
-      <p class="body-small">${p.desc}</p>
-    </div>
-  `).join('');
+  if (container) container.innerHTML = '';
 }
 
 async function handleContactSubmit(e) {
@@ -743,11 +754,11 @@ async function handleContactSubmit(e) {
         const errorMsg = data.errors.map(err => err.message).join(', ');
         alert(`Une erreur est survenue lors de l'envoi : ${errorMsg}`);
       } else {
-        alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer ou m'écrire directement à karinemarquis.ux@gmail.com.");
+        alert("Une erreur est survenue lors de l'envoi. Veuillez réessayer ou m'écrire directement à contact@karinemarquis.fr.");
       }
     }
   } catch (error) {
-    alert("Impossible de joindre le service d'envoi. Veuillez vérifier votre connexion ou m'écrire directement à karinemarquis.ux@gmail.com.");
+    alert("Impossible de joindre le service d'envoi. Veuillez vérifier votre connexion ou m'écrire directement à contact@karinemarquis.fr.");
   } finally {
     if (submitBtn) {
       submitBtn.disabled = false;
